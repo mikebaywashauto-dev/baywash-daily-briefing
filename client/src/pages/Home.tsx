@@ -9,91 +9,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 2;
-const BRIEFING_DATE = "April 14, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 3;
+const BRIEFING_DATE = "April 15, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378653340/XBnCHYnGjSnDZiXGkmSWnL/hero-banner-QnbdEFGvt45GMnmwvwHXEv.webp";
-const STORY1_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378653340/XBnCHYnGjSnDZiXGkmSWnL/story1-ccc-claims-Rnio2tDZpBNpxSz7zF5qvG.webp";
-const STORY2_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378653340/XBnCHYnGjSnDZiXGkmSWnL/story2-cox-dealership-maDdRHd3dz9wBn2B3oXPwb.webp";
-const STORY3_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378653340/XBnCHYnGjSnDZiXGkmSWnL/story3-icar-highschool-a6SHbioujQN5n7giMaX2gU.webp";
-const HOTROD_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663378653340/XBnCHYnGjSnDZiXGkmSWnL/hotrod-1969-boss302-5CurWkeD8CbxDqjZXNvjoB.webp";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xfngamkZOYnPtXbC.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KFHNowtbApkLtlIe.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JtcFozaeYYHPDzmI.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qJSTDGGRJbCqCrhf.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AygHXHNffMerRPLn.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "REPAIR COSTS",
+    tag: "SAFETY",
     tagColor: "#dc2626",
-    headline: "CCC Report: 28% of Repairs Now Require Calibration as Average Costs Hit $4,500–$5,000",
-    summary: "CCC Intelligent Solutions' 2026 Crash Course report reveals that 28.3% of all repairable appraisals now include at least one calibration line — up 6.5% in Q4 alone. Average repair costs have nearly doubled since 2010, climbing from roughly $2,500 to the $4,500–$5,000 range, driven by ADAS complexity, advanced materials, and sensor-laden bumpers that can no longer be patched.",
-    whyItMatters: "Here's the number that should keep every shop owner up at night: 24% of consumers have downgraded or dropped insurance coverage to free up money, and 15% canceled car insurance entirely. That means more uninsured vehicles on the road, more out-of-pocket customers who flinch at estimates, and more pressure on your front counter to explain why a \"simple bumper job\" costs $3,000. The shops that invest in transparent digital estimates with photos and videos will close more approvals. The ones that don't will watch customers walk.",
-    source: "Claims Journal / CCC",
-    sourceUrl: "https://www.claimsjournal.com/news/national/2026/04/13/336791.htm",
+    headline: "NHTSA Finds Deadly Defect in Aftermarket Airbag Inflators Entering Vehicles Through Collision Repairs — Permanent Ban Looming",
+    summary: "The National Highway Traffic Safety Administration has issued a formal safety defect determination for airbag inflators manufactured by Jilin Province Detiannuo Safety Technology Co., Ltd. (DTN). The inflators rupture during deployment and propel metal fragments into the driver's compartment rather than inflating the airbag cushion. NHTSA has documented 10 deaths and 2 severe injuries across 12 crashes. In at least 10 of those 12 cases, the inflators reached drivers as aftermarket replacements installed following a prior collision at body shops.",
+    whyItMatters: "This is a direct liability issue for every collision repair shop that handles airbag replacements. NHTSA has identified body shops as the primary pathway through which these deadly inflators reached American vehicles. A wrongful death lawsuit has already named a body shop as a defendant. Wisconsin and Idaho have enacted criminal penalties — including felony charges when a violation results in bodily harm or death — for knowingly installing non-genuine airbags. The public comment period closes April 17. If you source airbag modules from online marketplaces or discount distributors, stop now. Inspect every vehicle arriving with evidence of a prior airbag deployment since 2020. Document the inspection on the repair order. Your license, your liability insurance, and potentially your freedom depend on it.",
+    source: "Autobody News / NHTSA",
+    sourceUrl: "https://www.autobodynews.com/news/nhtsa-finds-defect-in-airbag-inflators-entering-vehicles-through-collision-repairs-could-order-permanent-ban",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "MARKET SHIFT",
+    tag: "TECHNOLOGY",
     tagColor: "#2563eb",
-    headline: "Cox Automotive: Dealers Hit Record $9.2M in Service Revenue — But Independents Are Stealing Market Share",
-    summary: "The 2026 Cox Automotive Fixed Operations and Ownership Study shows average dealer service and parts revenue reached $9.23 million in 2025, up 33% in eight years. But here's the twist: dealer share of service visits fell from 33% to 29%, while the number of independent auto mechanic businesses in the U.S. grew 12% since 2018 to nearly 299,000.",
-    whyItMatters: "This is the best data point independent shops have gotten in years. Customers are leaving dealerships — not because dealers are bad, but because they perceive them as expensive (even though the average dealer visit is actually $14 cheaper at $261 vs. $275 for independents). The real opportunity: Cox found that losing a single service customer costs $12,000+ in lifetime revenue, and shops that send photos or videos during service see $230 more per repair order. If you're not using digital vehicle inspections yet, you're leaving money on the lift.",
-    source: "Cox Automotive",
-    sourceUrl: "https://www.coxautoinc.com/insights/dealerships-capture-record-fixed-ops-revenue-but-lose-market-share-as-customers-drift-to-general-repair-according-to-cox-automotive-study/",
+    headline: "The Best Use of AI in Collision Repair Isn't What Most People Think — It's a Second Set of Eyes",
+    summary: "A new MOTOR Magazine analysis by Brunno Moretti, president of ADAS Aftermarket by Burke Porter, argues that AI's real value in collision repair isn't replacing technicians — it's managing the growing complexity of modern repairs. Tools like Tractable use machine-learning models trained on millions of repair images to triage incoming jobs at intake. Revv analyzes estimate data to identify potential ADAS calibration requirements and generates supporting documentation tied to OEM procedures. A Revv benchmark survey found that while 86% of shops perform at least some ADAS calibrations in-house, only 21% consider their calibration processes fully optimized.",
+    whyItMatters: "That 65-point gap between 'we do calibrations' and 'our calibration process is optimized' is where money, cycle time, and liability are leaking out of your shop. When a calibration requirement is discovered after repairs are underway, you face unexpected delays, scheduling complexity, sublet coordination, insurance approval friction, and documentation challenges. AI tools aren't replacing your experienced techs — they're catching the steps that get buried across multiple OEM sources and repair plans that evolve throughout the job. OEC's RepairLogic reports shops creating repair plans more than twice as fast with automated tools. The shops that adopt these workflow tools early will see measurable improvements in cycle time and fewer supplement surprises. The ones that wait will keep eating the cost of missed steps.",
+    source: "MOTOR Magazine",
+    sourceUrl: "https://www.motor.com/2026/04/ai-collision-repair-adas-workflows/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "WORKFORCE",
+    tag: "OPERATIONS",
     tagColor: "#059669",
-    headline: "I-CAR Launches High School Pre-Apprenticeship Program in Illinois — National Rollout Planned for 2026–27",
-    summary: "I-CAR has launched a new statewide pre-apprenticeship program in Illinois, funded by DCEO grants, that gives high school students hands-on exposure to diagnostics, electronics, materials science, and ADAS calibration. Starting in the 2026–27 school year, students can earn I-CAR's Electric and Alternative Energy Vehicle Badge and receive professional tool kits upon completion.",
-    whyItMatters: "This is the pipeline play the industry has been begging for. I-CAR is positioning collision repair as a STEM career — not a fallback — and backing it with the Department of Labor's Registered Apprenticeship Program model. The Illinois pilot is explicitly designed as the launchpad for a national rollout. For shop owners: this means a new generation of entry-level techs who arrive with baseline ADAS and EV knowledge instead of starting from zero. Start building relationships with your local high school programs now, because the shops that recruit early will get first pick.",
-    source: "Body Shop Business",
-    sourceUrl: "https://www.bodyshopbusiness.com/i-car-to-expand-career-pathways-for-illinois-high-school-students-as-interest-in-skilled-trades-accelerates/",
+    headline: "Fewer Claims, More Total Losses: Shop Owners Share the Strategies Actually Keeping Their Businesses on Track",
+    summary: "With CCC data showing continued declines in claims frequency and a record-high percentage of claims resulting in total losses, Autobody News surveyed collision repair operators across the country on how they're adapting. Jesse Parks of Freeman Collision Center in Santa Rosa, CA, estimates about half of all first contacts never make it through the door — meaning marketing spend is wasted if shops aren't converting the opportunities already in front of them. Kena Dacus of Dacus Auto Body in McPherson, KS, discovered her real capture rate was far lower than CCC reports showed once she tracked leads from calls, social media, Google forms, and emails.",
+    whyItMatters: "The collision repair market has fundamentally shifted, and the shops that thrived on volume alone are being forced to recalibrate. Christian Bogden of A.U.T.O. Collision in Sandy, UT, reported an 11% decline in sales last year. But the operators who are winning aren't chasing new DRP partnerships or throwing money at advertising — they're plugging the holes. Parks says it plainly: 'We don't need to pick up another partner. We just need to look at how we manage the people who are already coming through our door.' Dacus is analyzing gross profit by insurance company and vehicle make to focus marketing on the most profitable work. DCR Systems is tracking defects coming off the line and pursuing customer upsells like batteries and wiper blades. Even small wins matter: Amber Alley of Barsotti's Body & Fender found that fixing leaking air lines and turning off compressors overnight saves hundreds to thousands per year.",
+    source: "Autobody News",
+    sourceUrl: "https://www.autobodynews.com/news/fewer-claims-more-total-losses-how-shops-are-adapting",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🔩",
-    text: "Trump signed a proclamation overhauling steel and aluminum tariff assessments. Auto trade attorneys say automaker and supplier metal costs will likely rise further.",
-    sourceUrl: "https://www.autonews.com/manufacturing/an-trump-tariffs-steel-aluminum-update-0413/",
+    icon: "\u{1F697}",
+    text: "CARFAX: Used car prices spike to ~$25,500, up $1,500 in just one month. EV prices jumped $560 — the largest surge in EV demand in over a year. Tariff-driven new-model price increases and tighter used inventory are pushing buyers into the used market.",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/used-car-prices-spike-after-hitting-12-month-low/",
   },
   {
-    icon: "🎓",
-    text: "Free webinar tomorrow (April 15, 11 AM ET): \"Happier Technicians = More Productive Shops\" — hosted by Ohio, Indiana, and Illinois auto body associations. Covers retention strategies and well-being programs.",
-    sourceUrl: "https://collisionweek.com/2026/04/14/state-associations-host-april-15-webinar-technician-well-retention/",
+    icon: "\u{1F525}",
+    text: "Providence, RI fire investigators confirm an EV lithium-ion battery thermal runaway caused the March 20 fire at Batista Auto Repair Center. The moment of ignition was caught on camera. No injuries reported, but the 10-page report is a wake-up call for every shop storing or working on EVs.",
+    sourceUrl: "https://www.wpri.com/news/local-news/providence/ev-battery-failure-caused-providence-auto-shop-fire-report-states/",
   },
   {
-    icon: "⚡",
-    text: "EV repair market hits $29.8B in 2026, projected to reach $75B by 2031. First wave of EVs now leaving warranty — independents who tool up now capture the early movers.",
-    sourceUrl: "https://blog.autodots.io/ev-repair-business-2026-garage-owners/",
+    icon: "\u{1F4F1}",
+    text: "Tekmetric launches Digital Ads and Phones at Tektonic 2026. Early ad campaigns show 10x ROI: $381 in ad spend generated 8 new customers and $3,865 in revenue. Phones product surfaces full customer history before the advisor says hello.",
+    sourceUrl: "https://lasvegassun.com/news/2026/apr/13/tekmetric-expands-platform-to-help-auto-repair-sho/",
   },
   {
-    icon: "📊",
-    text: "For the first time in a decade, shops are repairing more parts instead of replacing them — a reversal driven by economic pressure and higher labor margins over parts sales.",
-    sourceUrl: "https://roadbuddy.ai/news/industry-news/rising-car-repair-costs-hit-drivers-in-2026/",
+    icon: "\u{1F4CA}",
+    text: "New survey: 23% of automotive technicians say they'll probably leave the industry in the next five years — and not because of retirement. The workforce pipeline problem isn't coming; it's already here.",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/automotive-technician-statistics-2026-job-satisfaction-pay-and-industry-trends/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Start Sending Photos & Videos With Every Estimate",
-  text: "Cox Automotive's new study found that customers who receive photos or videos during a service visit spend $230 more per repair order on average, and 49% say visual evidence makes them more likely to approve recommended services. Most shop management systems support this. If yours doesn't, a simple text message with a phone photo works. The ROI is immediate: higher approval rates, fewer comebacks from \"I didn't know it was that bad,\" and a trust signal that separates you from the shop down the street.",
+  title: "Audit Your Capture Rate — The Real One",
+  text: "Kena Dacus of Dacus Auto Body realized her CCC-reported capture rate was misleading because leads were arriving through far more channels than the report tracks: calls, social media messages, Google and website forms, and emails. Her real capture rate was much lower than it appeared. Start conducting call audits this week. Grade your staff on tone and the information they provide. Track every referral source. As Jesse Parks of Freeman Collision Center puts it: 'We don't need to pick up another partner. We just need to look at how we manage the people who are already coming through our door.' The ROI on fixing your front counter is immediate — and it costs nothing except training time.",
 };
 
 const quoteOfTheDay = {
-  text: "Automotive collision repair has become a high-tech, STEM-based profession, and skilled workers are critical to keeping drivers safe and America moving. Students are working with the same technologies found in engineering labs and advanced manufacturing.",
-  author: "Dara Goroff",
-  title: "VP of Product Management, I-CAR",
+  text: "The most practical use of AI in collision repair isn't replacing technical judgment. It's helping shops manage the growing complexity of modern repairs, providing updates on required procedures, organizing information faster, and documenting work clearly enough that jobs move through the shop without unnecessary delays.",
+  author: "Brunno Moretti",
+  title: "President, ADAS Aftermarket by Burke Porter",
 };
 
 const rideOfTheDay = {
-  name: "1969 Ford Mustang Boss 302",
-  description: "Born to homologate Ford's Trans-Am racing effort, the Boss 302 paired a high-revving 302ci V8 with Cleveland-style canted-valve heads, a solid-lifter cam, and a close-ratio four-speed. Only produced for 1969 and 1970, it was — and remains — one of the best-handling Mustangs ever built. The black hood scoop, reflective \"Boss 302\" side stripes, and Magnum 500 wheels gave it a look that was all business. This was the Mustang that could embarrass a Corvette through the corners.",
+  name: "1970 Plymouth Barracuda Hemi",
+  description: "The third-generation Barracuda was a complete departure from the Valiant-based original — a ground-up redesign on the new E-body platform shared with the Dodge Challenger. The Hemi 'Cuda sat at the top of the food chain: a 426ci Hemi V8 rated at 425 horsepower, paired with a four-speed manual or TorqueFlite automatic. Plymouth built only 652 Hemi 'Cudas in 1970, making it one of the rarest and most valuable American muscle cars ever produced. The shaker hood scoop, hockey-stick side stripes, and aggressive stance gave it a look that matched its performance. Hemi convertible examples have sold for over $2 million at auction. This was Mopar's answer to everything — and it still wins.",
   image: HOTROD_IMG,
 };
 
@@ -186,7 +186,7 @@ export default function Home() {
             </p>
           </div>
           <p className="font-mono text-[0.6rem] tracking-wide text-right hidden sm:block" style={{ color: "#78716c" }}>
-            Your morning shop intel<br />Mon–Sat &middot; 6:00 AM ET
+            Your morning shop intel<br />Mon&ndash;Sat &middot; 6:00 AM ET
           </p>
         </div>
       </header>
@@ -207,7 +207,7 @@ export default function Home() {
                   {BRIEFING_DATE} &middot; Edition #{BRIEFING_NUMBER}
                 </span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold uppercase text-white leading-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                  Repair Costs Hit Record Highs, Independents Gain Ground, and I-CAR Builds the Next-Gen Pipeline
+                  Deadly Airbag Inflators Traced to Body Shops, AI Finds Its Real Role, and the Capture Rate Wake-Up Call
                 </h2>
               </div>
             </div>
