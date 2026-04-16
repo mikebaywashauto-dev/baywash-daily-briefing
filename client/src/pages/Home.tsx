@@ -1,4 +1,4 @@
-// 2026-04-16
+// 2026-04-15
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 5;
-const BRIEFING_DATE = "April 16, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 6;
+const BRIEFING_DATE = "April 15, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JvVkLfCZrvxnxqLE.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LXlFRxHtWPLBzSzh.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PnlpeQotdUQQDVtH.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZCTkNAFemvgNghnj.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QzwFYoZORWngElYC.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/joRpFjFxRCxGimKI.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/syttRUvyxWEkLGNy.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qgZwQqxihdcxcsXa.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zUipdarwEtoCPYYS.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/srxslWTIlNsQdYKe.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "INDUSTRY",
-    tagColor: "#dc2626",
-    headline: "Toyota and Honda Form New Canadian Lobby Group as Industry Faces Challenges",
-    summary: "Toyota and Honda have announced the creation of the Pacific Manufacturing Association of Canada (PMAC), representing the two largest auto manufacturers in Canada. PMAC will represent more than 75% of all Canadian vehicle production and employ about 60% of vehicle assembly plant workers in the country. The new association aims to have a significant voice in policy issues such as GHG emissions, electric vehicle regulations, and the upcoming Canada-United States-Mexico Agreement (CUSMA).",
-    whyItMatters: "With Toyota and Honda producing the vast majority of vehicles in Canada, their new lobby group will heavily influence future automotive policies, including those affecting the repair and aftermarket sectors. As they push for pragmatic policies regarding EV regulations and supply chains, shop owners should stay informed on how these changes might impact parts availability and the types of vehicles entering their bays.",
-    source: "Driving.ca",
-    sourceUrl: "https://driving.ca/auto-news/industry/toyota-honda-form-canadas-largest-automotive-manufacturers-association",
+    tag: "TRADE",
+    tagColor: "#059669",
+    headline: "Canada Opens the Door to Chinese-Made EVs Under New Quota System",
+    summary: "Canada has struck a landmark trade deal that lowers tariffs on Chinese-built electrified vehicles from 106.1% to just 6.1% on a quota of 49,000 units in the first year. The quota will increase by 6.5% annually to a maximum of 70,000 vehicles by 2030. BYD, Geely, and Chery are already building sales, distribution, and service networks across Canada in anticipation. The deal covers EVs, hybrids, plug-in hybrids, and extended-range hybrids, with an affordable price cap of $35,000 CAD being phased in starting in 2027.",
+    whyItMatters: "For shop owners and technicians, this is a game-changer. New Chinese brands mean new vehicle platforms, unfamiliar electrical architectures, and proprietary diagnostic systems arriving in your bays within months. Shops that invest early in EV training and tooling for these brands will have a significant competitive advantage. Start researching BYD and Geely service requirements now — the vehicles are coming, and customers will need someone who knows how to work on them.",
+    source: "MotorTrend",
+    sourceUrl: "https://www.motortrend.com/news/canada-chinese-ev-imports-impact-reaction",
     image: STORY1_IMG,
   },
   {
     id: 2,
     tag: "MARKET",
     tagColor: "#2563eb",
-    headline: "Aftermarket Outpaces Dealers in Post-Pandemic Growth",
-    summary: "Retail sales in Canada's automotive sector continued to grow in 2025, with the aftermarket segment expanding by 3.9%. Compared to pre-pandemic levels in 2019, retail sales at new-vehicle dealers are up 30.9%, while the aftermarket has surged an impressive 49.2%. The growth in the aftermarket reflects continued strength in fixed operations and consumer preference for independent repair shops.",
-    whyItMatters: "The data confirms that independent repair shops are winning market share from dealerships. Consumers are increasingly turning to the aftermarket for maintenance and repairs, driven by convenience and price. Shop owners should capitalize on this trend by continuing to offer competitive pricing, excellent customer service, and investing in the necessary tools and training to service modern vehicles.",
+    headline: "Aftermarket Surges Past Dealers — Independent Shops Are Winning",
+    summary: "New data from DesRosiers Automotive Consultants shows the aftermarket segment continues to outpace new-vehicle dealers in post-pandemic growth. Aftermarket retail sales rose 3.9% in 2025, while dealer sales grew 3.6%. Since 2019, the gap has widened dramatically: aftermarket sales have surged 49.2% compared to 30.9% for dealers. Even adjusted for inflation, the aftermarket is up 19.8% versus 13.6% for dealerships, confirming a structural shift in where Canadians choose to get their vehicles serviced.",
+    whyItMatters: "The numbers confirm what many shop owners already feel — consumers are choosing independent shops over dealerships at an accelerating rate. This is your moment to double down on customer retention, invest in modern diagnostic capabilities, and market your shop's value proposition. The trend is in your favour, but challenges around vehicle technology, data access, and fleet electrification are on the horizon. Stay ahead of the curve.",
     source: "Canadian Auto Dealer",
     sourceUrl: "https://canadianautodealer.ca/2026/04/aftermarket-outpaces-dealers-in-post-pandemic-growth/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "TRADE",
-    tagColor: "#059669",
-    headline: "Canada Strikes Back After U.S. Imposes Tariffs on Autos and Auto Parts",
-    summary: "In response to the U.S. imposing 25% tariffs on all imports of automobiles and auto parts, the Canadian government has implemented countermeasures. These include 25% tariffs on non-USMCA compliant fully assembled vehicles imported into Canada from the U.S., and 25% tariffs on non-Canadian and non-Mexican content of USMCA compliant vehicles. The Canadian government is also planning a remission framework to incentivize production and investment in Canada.",
-    whyItMatters: "The escalating trade war and retaliatory tariffs will directly impact the cost and availability of auto parts in Canada. Repair shops can expect to see price increases on imported parts, which will squeeze margins and increase repair costs for consumers. It's crucial for shop owners to closely monitor parts pricing, communicate potential delays and cost increases to customers, and explore alternative sourcing strategies where possible.",
-    source: "MSCI",
-    sourceUrl: "https://www.msci.org/canada-strikes-back-after-united-states-imposes-tariffs-on-autos-auto-parts/",
+    tag: "SALES",
+    tagColor: "#dc2626",
+    headline: "Canada Q1 Auto Sales Dip as Market Normalizes — Outlook Uncertain",
+    summary: "Canada's new-vehicle sales cooled to start 2026, with the seasonally adjusted annual rate falling to 1.85 million in March — the lowest level since September 2025. The softer first quarter reflects more normalized demand after a distorted start to last year. Light trucks accounted for 88.8% of total new light-vehicle sales in Q1 2026, up from 88.1% a year earlier. Analysts say a gradual rebound is still possible, but geopolitical uncertainty and tariff impacts cloud the outlook.",
+    whyItMatters: "Slower new-vehicle sales mean more Canadians are holding onto their current vehicles longer, which directly translates to more maintenance and repair work for independent shops. With light trucks dominating sales, shops should ensure they're equipped to handle the growing fleet of SUVs and pickups. This is also a good time to promote preventive maintenance packages to customers who are stretching the life of their vehicles.",
+    source: "Automotive News Canada",
+    sourceUrl: "https://www.autonews.com/retail/anc-canada-auto-sales-q1-2026-normalization-outlook/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🔌",
-    text: "Canada invests $10.6 million in EV charging infrastructure, supporting 14 projects to install over 1,600 chargers nationwide.",
-    sourceUrl: "https://www.electrive.com/2026/04/11/canada-invests-10-6-million-in-ev-charging-infrastructure/",
+    icon: "🏭",
+    text: "Toyota and Honda have formed the Pacific Manufacturing Association of Canada (PMAC), representing over 75% of all Canadian vehicle production and 60% of assembly plant workers.",
+    sourceUrl: "https://driving.ca/auto-news/industry/toyota-honda-form-canadas-largest-automotive-manufacturers-association",
   },
   {
-    icon: "🔒",
-    text: "Canadian auto parts retailer LACROIX reportedly faced a ransomware attack by the Lamashtu group, highlighting the growing cybersecurity threats in the automotive supply chain.",
-    sourceUrl: "https://www.yazoul.net/intel/claim/2026-04-15-lacroix-ransomware-claim-by-lamashtu-april-2026/",
+    icon: "📈",
+    text: "Canadian manufacturing sales rose 3.6% to $71.2 billion in February as several auto assembly plants ramped up operations after earlier shutdowns.",
+    sourceUrl: "https://www.biv.com/news/retail-manufacturing/manufacturing-sales-up-in-february-as-auto-production-ramped-up-after-shutdowns-12144483",
   },
   {
-    icon: "📉",
-    text: "Canadian Black Book's Used Vehicle Retention Index fell 2.1 points in December 2025, signaling a continued cooling in wholesale used values.",
-    sourceUrl: "https://canadianautodealer.ca/2026/04/aftermarket-outpaces-dealers-in-post-pandemic-growth/",
+    icon: "⚖️",
+    text: "The U.S. Supreme Court ruled certain tariffs unconstitutional — automakers and suppliers can now begin seeking refunds on an estimated $20 billion in tariff payments starting this month.",
+    sourceUrl: "https://www.autonews.com/manufacturing/an-trump-tariffs-refunds-explained-0415/",
   },
   {
     icon: "🚗",
-    text: "The 19th Annual Red Deer Spring Live Collector Car Auction is set to take place, bringing together collectors from across Canada.",
-    sourceUrl: "https://bid.egauctions.com/19th-Annual-Red-Deer-Spring-Live-Collector-Car-Auction_a75722_p13",
+    text: "Stellantis Canada Q1 sales rose 14.9% after a turbulent year, with the company selling 30,278 vehicles in the first quarter as its course correction takes hold.",
+    sourceUrl: "https://www.autonews.com/stellantis/anc-stellantis-course-correction-q1-sales-0413/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Prepare for Parts Price Volatility",
-  text: "With the recent implementation of retaliatory tariffs between the U.S. and Canada, the cost of imported auto parts is expected to rise. Review your current inventory and consider stocking up on frequently used parts before price increases take full effect. Communicate proactively with your customers about potential delays and cost adjustments on their repairs. Transparency now will save you from difficult conversations later.",
+  title: "Get Ahead on Chinese EV Training",
+  text: "With BYD, Geely, and Chery building dealer and service networks in Canada, the first Chinese-made EVs could roll into your shop sooner than you think. Start by reviewing available EV certification programs through your provincial trade authority or NAPA AutoTech. Familiarize yourself with high-voltage safety protocols specific to Chinese platforms, and begin sourcing diagnostic scan tools that support BYD and Geely protocols. Being the first shop in your area to confidently service these vehicles will be a major differentiator.",
 };
 
 const quoteOfTheDay = {
   text: "The aftermarket is indeed enjoying halcyon days, although there are uncertain waters ahead for the industry as changes in the structure of the fleet, vehicle technology, and access to data create increasing challenges.",
   author: "Andrew King",
-  title: "Managing Partner at DesRosiers Automotive Consultants",
+  title: "Managing Partner, DesRosiers Automotive Consultants",
 };
 
 const rideOfTheDay = {
-  name: "1967 Ford Mustang Shelby GT500",
-  description: "The 1967 Shelby GT500 is a legendary American muscle car, born from the collaboration between Ford and Carroll Shelby. It was the first Mustang to feature the massive 428 cubic-inch Police Interceptor V8 engine, officially rated at 355 horsepower but widely believed to produce much more. With its aggressive styling, including a fiberglass hood with a functional scoop, side scoops, and a distinctive rear spoiler, the GT500 was a force to be reckoned with on the street and the track. Only 2,048 units were produced in 1967, making it a highly sought-after collector's item today.",
+  name: "1970 Plymouth Barracuda 440 Six Pack",
+  description: "The 1970 Plymouth Barracuda is one of the most iconic muscle cars ever built, and the 440 Six Pack variant is among the most coveted. Powered by a 440 cubic-inch V8 fed by three two-barrel Holley carburetors, it produced 390 horsepower and 490 lb-ft of torque. The third-generation Barracuda featured aggressive styling with a long hood, short deck, and wide stance that screamed performance. Finished in the legendary In-Violet (Plum Crazy) purple, this particular combination is a holy grail for collectors. With fewer than 2,000 produced, surviving examples regularly command six figures at auction.",
   image: HOTROD_IMG,
 };
 
@@ -203,11 +203,11 @@ export default function Home() {
             />
             <div className="absolute inset-0 flex items-end p-6">
               <div>
-                <span className="font-mono text-[0.65rem] tracking-[0.15em] uppercase block mb-1" style={{ color: "#e05a1a" }}>
+                <span className="font-mono text-[0.65rem] tracking-[0.15em] uppercase block mb-2" style={{ color: "#e05a1a" }}>
                   {BRIEFING_DATE} &middot; Edition #{BRIEFING_NUMBER}
                 </span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold uppercase text-white leading-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                  Toyota and Honda Form New Lobby Group, Aftermarket Outpaces Dealers, and Canada Strikes Back on Tariffs
+                  Chinese EVs Head North, Aftermarket Keeps Winning, and Q1 Sales Cool Off
                 </h2>
               </div>
             </div>
