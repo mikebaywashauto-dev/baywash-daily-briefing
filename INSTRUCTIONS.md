@@ -70,6 +70,7 @@ curl -s -X POST "https://api.telegram.org/bot 8561538253:AAGiXGjyYESlmYvatkP4o7J
 - NEVER use Gmail or any email to notify Mike
 - NEVER wait for approval before sending the Telegram message
 - NEVER skip the GitHub push — this is what triggers the build and deploy
+- **NEVER delete or overwrite the `.github/workflows` folder when pushing to the source branch. This folder must always be preserved.** It contains the GitHub Actions workflow that builds and deploys the site. If it gets wiped, the automated deploy pipeline breaks.
 - GitHub Actions automatically builds and deploys when source branch is updated
 - The live site URL is always: https://baywash-daily-briefing.pages.dev
 
