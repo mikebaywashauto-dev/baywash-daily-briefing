@@ -1,0 +1,42 @@
+name: Build and Deploy Daily Briefing
+
+on:
+  push:
+    branches:
+      - source
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: source
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build React app
+        run: npx vite build
+
+      - name: Deploy to main branch
+        run: |
+          BUILT_DIR=$(find . -name "index.html" -not -path "./.git/*" -not -path "./node_modules/*" | head -1 | xargs dirname)
+          echo "Found built files at: $BUILT_DIR"
+          cd "$BUILT_DIR"
+          git init
+          git config user.email "deploy@baywashauto.com"
+          git config user.name "Baywash Deploy Bot"
+          git checkout -b main
+          git add -A
+          git commit -m "Daily briefing: $(date +%Y-%m-%d)"
+          git remote add origin https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/mikebaywashauto-dev/baywash-daily-briefing.git
+          git push --force origin main
