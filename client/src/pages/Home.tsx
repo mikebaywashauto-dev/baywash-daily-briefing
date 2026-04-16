@@ -1,4 +1,4 @@
-// 2026-04-15
+// 2026-04-16
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,9 +10,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 4;
-const BRIEFING_DATE = "April 15, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 5;
+const BRIEFING_DATE = "April 16, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
 const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JvVkLfCZrvxnxqLE.jpg";
@@ -25,76 +25,76 @@ const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_fil
 const stories = [
   {
     id: 1,
-    tag: "MATERIALS",
+    tag: "INDUSTRY",
     tagColor: "#dc2626",
-    headline: "PPG Announces Global Price Increase of Up to 20% Across All Product Lines \u2014 Already in Progress",
-    summary: "PPG has begun implementing price increases of up to 20% across all paints, coatings, and specialty products on a customer-by-customer basis. The company cited significant volatility and supply constraints in global petrochemical, energy, and transportation markets as the primary drivers. CEO Tim Knavish stated the pricing action is necessary to \u201censure availability of supply as we navigate unexpected and increased cost pressures.\u201d PPG warned that certain product categories, technologies, and regions may require even higher adjustments, and that additional price increases may follow as market conditions continue to evolve.",
-    whyItMatters: "Paint and materials are one of the largest variable costs in any collision repair operation, and PPG is the dominant refinish supplier in North America. A 20% increase \u2014 with the door open for more \u2014 hits your margins immediately. If you\u2019re on a contract, review the terms now to understand when and how the increase applies. If you\u2019re buying at list, this is the moment to negotiate volume commitments or explore alternative product lines within PPG\u2019s portfolio (Shop-Line, for example, hasn\u2019t seen an increase in two years). Most importantly, do not absorb this cost silently. Update your material rates on every estimate. Talk to your insurer partners about material cost documentation. The shops that treat this as a pass-through cost \u2014 with documentation \u2014 will survive it. The ones that eat it will feel it on every job for the rest of the year.",
-    source: "Aftermarket Matters / WSJ",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/ppg-announces-global-price-increase-of-up-to-20-already-in-progress/",
+    headline: "Toyota and Honda Form New Canadian Lobby Group as Industry Faces Challenges",
+    summary: "Toyota and Honda have announced the creation of the Pacific Manufacturing Association of Canada (PMAC), representing the two largest auto manufacturers in Canada. PMAC will represent more than 75% of all Canadian vehicle production and employ about 60% of vehicle assembly plant workers in the country. The new association aims to have a significant voice in policy issues such as GHG emissions, electric vehicle regulations, and the upcoming Canada-United States-Mexico Agreement (CUSMA).",
+    whyItMatters: "With Toyota and Honda producing the vast majority of vehicles in Canada, their new lobby group will heavily influence future automotive policies, including those affecting the repair and aftermarket sectors. As they push for pragmatic policies regarding EV regulations and supply chains, shop owners should stay informed on how these changes might impact parts availability and the types of vehicles entering their bays.",
+    source: "Driving.ca",
+    sourceUrl: "https://driving.ca/auto-news/industry/toyota-honda-form-canadas-largest-automotive-manufacturers-association",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "TECHNOLOGY",
+    tag: "MARKET",
     tagColor: "#2563eb",
-    headline: "CCC Launches Consumer Financing in CCC ONE, Powered by Sunbit \u2014 Self-Pay Repairs Now Exceed 25% of All Orders",
-    summary: "CCC Intelligent Solutions announced the availability of consumer financing directly within the CCC ONE platform through a new integration with Sunbit. The capability allows collision repair shops to offer customers flexible payment options to cover repair costs or insurance deductibles at the point of estimate. Sunbit reports approval rates exceeding 90%, offers true 0% interest options with no late fees or hard credit checks, and pays shops upfront with zero repayment risk. CollisionRight, which operates 130 repair centers, is an early adopter and reports increased service acceptance and faster vehicle throughput since implementation.",
-    whyItMatters: "Self-pay repairs now represent more than 25% of repair orders on CCC ONE \u2014 and that number is climbing as consumers downgrade insurance coverage, raise deductibles, and avoid filing claims to prevent rate increases. Every one of those customers is a conversion risk. When a $3,500 deductible or a $5,000 out-of-pocket repair lands on someone\u2019s desk, cost is the number-one reason they walk away or delay. Embedding financing into the estimate process removes that friction at the exact moment it matters. You get paid upfront. The customer gets a payment plan. The vehicle moves through your bay instead of sitting in your parking lot. If you\u2019re running CCC ONE, activate this now. If you\u2019re not, find out what financing integration your platform supports. The shops converting self-pay customers at 90%+ approval rates will pull ahead of those still handing out business cards and hoping customers come back.",
-    source: "CCC Intelligent Solutions",
-    sourceUrl: "https://ir.cccis.com/news-releases/news-release-details/ccc-introduces-consumer-financing-ccc-oner-help-collision-repair",
+    headline: "Aftermarket Outpaces Dealers in Post-Pandemic Growth",
+    summary: "Retail sales in Canada's automotive sector continued to grow in 2025, with the aftermarket segment expanding by 3.9%. Compared to pre-pandemic levels in 2019, retail sales at new-vehicle dealers are up 30.9%, while the aftermarket has surged an impressive 49.2%. The growth in the aftermarket reflects continued strength in fixed operations and consumer preference for independent repair shops.",
+    whyItMatters: "The data confirms that independent repair shops are winning market share from dealerships. Consumers are increasingly turning to the aftermarket for maintenance and repairs, driven by convenience and price. Shop owners should capitalize on this trend by continuing to offer competitive pricing, excellent customer service, and investing in the necessary tools and training to service modern vehicles.",
+    source: "Canadian Auto Dealer",
+    sourceUrl: "https://canadianautodealer.ca/2026/04/aftermarket-outpaces-dealers-in-post-pandemic-growth/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "LEGISLATION",
+    tag: "TRADE",
     tagColor: "#059669",
-    headline: "Virginia Enacts New Law Requiring Insurers to Justify and Document Every Estimate Reduction \u2014 Shops Gain New Leverage",
-    summary: "Virginia\u2019s House Bill 808 is now law, amending the state\u2019s unfair claim settlement practices statute with provisions that directly impact collision repair estimating. For any estimate modification of $3,000 or more, insurers must now provide a detailed explanation of why the estimate was lowered, a comprehensive list of all changes, the identity of the individual who made or directed each change, and must retain all versions of the estimate including documentation of each revision. The law also clarifies that vehicle owners cannot be required to submit photos as a condition of appraisal, and mandates a physical inspection when repairs are disputed.",
-    whyItMatters: "If you operate in Virginia, this changes the dynamic at your front counter and in your supplement negotiations immediately. For years, shops have dealt with unexplained estimate reductions \u2014 line items disappearing, labor times cut, parts swapped \u2014 with no paper trail and no accountability. That era is over in Virginia. Every reduction now requires a name attached to it and a written justification delivered to the policyholder. This is powerful leverage: when an insurer knows their adjuster\u2019s name will be on record for cutting structural repair time or swapping OEM parts for aftermarket, the calculus changes. The law also reinforces that photo estimating cannot be forced on consumers and that disputed repairs require in-person inspection. For shops outside Virginia, watch this closely \u2014 similar bills are moving through Ohio, Illinois, and Minnesota. Document everything. The legislative tide is turning toward transparency, and your records are your ammunition.",
-    source: "BodyShop Business",
-    sourceUrl: "https://www.bodyshopbusiness.com/virginia-approves-legislation-regulating-estimate-reductions/",
+    headline: "Canada Strikes Back After U.S. Imposes Tariffs on Autos and Auto Parts",
+    summary: "In response to the U.S. imposing 25% tariffs on all imports of automobiles and auto parts, the Canadian government has implemented countermeasures. These include 25% tariffs on non-USMCA compliant fully assembled vehicles imported into Canada from the U.S., and 25% tariffs on non-Canadian and non-Mexican content of USMCA compliant vehicles. The Canadian government is also planning a remission framework to incentivize production and investment in Canada.",
+    whyItMatters: "The escalating trade war and retaliatory tariffs will directly impact the cost and availability of auto parts in Canada. Repair shops can expect to see price increases on imported parts, which will squeeze margins and increase repair costs for consumers. It's crucial for shop owners to closely monitor parts pricing, communicate potential delays and cost increases to customers, and explore alternative sourcing strategies where possible.",
+    source: "MSCI",
+    sourceUrl: "https://www.msci.org/canada-strikes-back-after-united-states-imposes-tariffs-on-autos-auto-parts/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "\u{1F4CA}",
-    text: "CCC Crash Course 2026: 28.3% of repairable appraisals now include a calibration \u2014 up 6.5% in Q4 alone. Average repair costs hit $4,500\u2013$5,000, double what they were in 2010. Meanwhile, 24% of consumers have downgraded or dropped insurance entirely, and 33.4% of drivers are now uninsured or underinsured.",
-    sourceUrl: "https://www.claimsjournal.com/news/national/2026/04/13/336791.htm",
+    icon: "🔌",
+    text: "Canada invests $10.6 million in EV charging infrastructure, supporting 14 projects to install over 1,600 chargers nationwide.",
+    sourceUrl: "https://www.electrive.com/2026/04/11/canada-invests-10-6-million-in-ev-charging-infrastructure/",
   },
   {
-    icon: "\u{1F527}",
-    text: "Cox Automotive: Dealer fixed ops revenue hit a record $9.23M average in 2025, up 33% over eight years. But dealer share of service visits fell from 33% to 29% as customers drift to independent and general repair shops. Independents are winning on convenience and price.",
-    sourceUrl: "https://www.coxautoinc.com/insights/dealerships-capture-record-fixed-ops-revenue-but-lose-market-share-as-customers-drift-to-general-repair-according-to-cox-automotive-study/",
+    icon: "🔒",
+    text: "Canadian auto parts retailer LACROIX reportedly faced a ransomware attack by the Lamashtu group, highlighting the growing cybersecurity threats in the automotive supply chain.",
+    sourceUrl: "https://www.yazoul.net/intel/claim/2026-04-15-lacroix-ransomware-claim-by-lamashtu-april-2026/",
   },
   {
-    icon: "\u{1F4B0}",
-    text: "New car prices up 12.6% year-over-year in March, the biggest jump since 2022, driven by tariff costs on imported vehicles and parts. Used car prices spiked to ~$25,500. Cars with a high percentage of imported parts (Honda, Toyota, Hyundai, Kia) face 15\u201325% repair cost increases on affected components.",
-    sourceUrl: "https://www.latimes.com/business/story/2026-04-13/buyers-fret-as-average-cost-of-new-car-soars",
+    icon: "📉",
+    text: "Canadian Black Book's Used Vehicle Retention Index fell 2.1 points in December 2025, signaling a continued cooling in wholesale used values.",
+    sourceUrl: "https://canadianautodealer.ca/2026/04/aftermarket-outpaces-dealers-in-post-pandemic-growth/",
   },
   {
-    icon: "\u{1F3E2}",
-    text: "Ford\u2019s latest On Target bulletin includes new parking sensor paint guidelines requiring specific procedures to maintain sensor functionality after refinish. I-CAR has published the update. If you\u2019re painting bumper covers with parking aid sensors, check the new procedures before your next job.",
-    sourceUrl: "https://rts.i-car.com/crn-2410.html",
+    icon: "🚗",
+    text: "The 19th Annual Red Deer Spring Live Collector Car Auction is set to take place, bringing together collectors from across Canada.",
+    sourceUrl: "https://bid.egauctions.com/19th-Annual-Red-Deer-Spring-Live-Collector-Car-Auction_a75722_p13",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Update Your Material Rates Before the Next Estimate",
-  text: "With PPG\u2019s 20% price increase already rolling out, every estimate you write at yesterday\u2019s material rate is money you\u2019re leaving on the table. Pull your current paint invoices today. Calculate your actual per-refinish-hour material cost. Update your estimating system. When the insurer pushes back, you\u2019ll have the documentation ready: dated invoices showing the increase, a clear per-job material cost calculation, and the PPG announcement as supporting evidence. The shops that update their rates proactively and document the change will recover the cost. The shops that wait will eat it for months before they realize how much margin they\u2019ve lost.",
+  title: "Prepare for Parts Price Volatility",
+  text: "With the recent implementation of retaliatory tariffs between the U.S. and Canada, the cost of imported auto parts is expected to rise. Review your current inventory and consider stocking up on frequently used parts before price increases take full effect. Communicate proactively with your customers about potential delays and cost adjustments on their repairs. Transparency now will save you from difficult conversations later.",
 };
 
 const quoteOfTheDay = {
-  text: "Cost can be one of the biggest barriers to getting a repair approved. By embedding consumer financing into CCC ONE, we\u2019re helping shops convert more estimates into approved work while giving them an option to provide their customers with an easier, more flexible way to pay.",
-  author: "Mark Fincher",
-  title: "Vice President, Product Management at CCC",
+  text: "The aftermarket is indeed enjoying halcyon days, although there are uncertain waters ahead for the industry as changes in the structure of the fleet, vehicle technology, and access to data create increasing challenges.",
+  author: "Andrew King",
+  title: "Managing Partner at DesRosiers Automotive Consultants",
 };
 
 const rideOfTheDay = {
-  name: "1969 Chevrolet Camaro ZL1",
-  description: "The ZL1 Camaro was never supposed to exist as a production car. It started as a COPO (Central Office Production Order) workaround \u2014 dealer Fred Gibb convinced Chevrolet to build a run of Camaros with the all-aluminum 427 ZL1 engine originally developed for Can-Am racing. The result was a factory drag car disguised as a street machine: 430 horsepower on paper, well over 500 on the dyno, in a package that weighed less than a small-block car thanks to the aluminum block and heads. Chevrolet built exactly 69 ZL1 Camaros in 1969. The sticker price was $7,269 \u2014 more than a Corvette \u2014 which meant most sat on dealer lots until they were quietly discounted. Today, documented ZL1s sell for $1 million or more at auction. It remains one of the most significant and valuable American muscle cars ever built.",
+  name: "1967 Ford Mustang Shelby GT500",
+  description: "The 1967 Shelby GT500 is a legendary American muscle car, born from the collaboration between Ford and Carroll Shelby. It was the first Mustang to feature the massive 428 cubic-inch Police Interceptor V8 engine, officially rated at 355 horsepower but widely believed to produce much more. With its aggressive styling, including a fiberglass hood with a functional scoop, side scoops, and a distinctive rear spoiler, the GT500 was a force to be reckoned with on the street and the track. Only 2,048 units were produced in 1967, making it a highly sought-after collector's item today.",
   image: HOTROD_IMG,
 };
 
@@ -127,7 +127,6 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
   );
 }
 
-// --- Tag Component ---
 function ShopTag({ label, color }: { label: string; color: string }) {
   return (
     <span
@@ -208,7 +207,7 @@ export default function Home() {
                   {BRIEFING_DATE} &middot; Edition #{BRIEFING_NUMBER}
                 </span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold uppercase text-white leading-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                  PPG Hits Shops With 20% Price Hike, CCC Embeds Financing to Capture Self-Pay Work, and Virginia Rewrites the Rules on Estimate Cuts
+                  Toyota and Honda Form New Lobby Group, Aftermarket Outpaces Dealers, and Canada Strikes Back on Tariffs
                 </h2>
               </div>
             </div>
