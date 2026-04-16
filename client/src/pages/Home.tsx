@@ -1,4 +1,4 @@
-// 2026-04-15
+// 2026-04-16
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 6;
-const BRIEFING_DATE = "April 15, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 7;
+const BRIEFING_DATE = "April 16, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/joRpFjFxRCxGimKI.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/syttRUvyxWEkLGNy.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qgZwQqxihdcxcsXa.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zUipdarwEtoCPYYS.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/srxslWTIlNsQdYKe.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/yJWruZRrVrnFNvIx.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EFZtYsmmklPcLhcg.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FBjxvVDvRNTFndgr.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/eKmTCHwbHSswKkaX.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mbBrPsApIRvdeEJs.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "TRADE",
+    tag: "POLICY",
     tagColor: "#059669",
-    headline: "Canada Opens the Door to Chinese-Made EVs Under New Quota System",
-    summary: "Canada has struck a landmark trade deal that lowers tariffs on Chinese-built electrified vehicles from 106.1% to just 6.1% on a quota of 49,000 units in the first year. The quota will increase by 6.5% annually to a maximum of 70,000 vehicles by 2030. BYD, Geely, and Chery are already building sales, distribution, and service networks across Canada in anticipation. The deal covers EVs, hybrids, plug-in hybrids, and extended-range hybrids, with an affordable price cap of $35,000 CAD being phased in starting in 2027.",
-    whyItMatters: "For shop owners and technicians, this is a game-changer. New Chinese brands mean new vehicle platforms, unfamiliar electrical architectures, and proprietary diagnostic systems arriving in your bays within months. Shops that invest early in EV training and tooling for these brands will have a significant competitive advantage. Start researching BYD and Geely service requirements now — the vehicles are coming, and customers will need someone who knows how to work on them.",
-    source: "MotorTrend",
-    sourceUrl: "https://www.motortrend.com/news/canada-chinese-ev-imports-impact-reaction",
+    headline: "Carney Suspends Federal Fuel Excise Tax — 10 Cents Off Per Litre Starting April 20",
+    summary: "Prime Minister Mark Carney's newly elected majority government is delivering immediate relief at the pump. Starting April 20, 2026, the federal excise tax on gasoline (10 cents/litre) and diesel (4 cents/litre) will be suspended until Labour Day, September 7, 2026. The measure is a direct response to fuel price pressures caused by global oil disruptions tied to the ongoing Middle East conflict. The Department of Finance estimates the temporary suspension will provide over $2.4 billion in total tax relief to Canadians. The full excise tax rates will return on September 8, 2026.",
+    whyItMatters: "For shop owners, this is a double win. Lower fuel costs reduce your overhead on parts runs, service vehicles, and fleet customers' operating expenses — which can translate to more discretionary spending on maintenance. More importantly, customers who are feeling less pinched at the pump are more likely to approve recommended repairs and preventive maintenance. Communicate this relief to your clients and use the window to push deferred services. The savings window closes September 8.",
+    source: "Government of Canada",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/04/temporarily-suspending-the-federal-fuel-excise-tax.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "MARKET",
+    tag: "TRAINING",
     tagColor: "#2563eb",
-    headline: "Aftermarket Surges Past Dealers — Independent Shops Are Winning",
-    summary: "New data from DesRosiers Automotive Consultants shows the aftermarket segment continues to outpace new-vehicle dealers in post-pandemic growth. Aftermarket retail sales rose 3.9% in 2025, while dealer sales grew 3.6%. Since 2019, the gap has widened dramatically: aftermarket sales have surged 49.2% compared to 30.9% for dealers. Even adjusted for inflation, the aftermarket is up 19.8% versus 13.6% for dealerships, confirming a structural shift in where Canadians choose to get their vehicles serviced.",
-    whyItMatters: "The numbers confirm what many shop owners already feel — consumers are choosing independent shops over dealerships at an accelerating rate. This is your moment to double down on customer retention, invest in modern diagnostic capabilities, and market your shop's value proposition. The trend is in your favour, but challenges around vehicle technology, data access, and fleet electrification are on the horizon. Stay ahead of the curve.",
-    source: "Canadian Auto Dealer",
-    sourceUrl: "https://canadianautodealer.ca/2026/04/aftermarket-outpaces-dealers-in-post-pandemic-growth/",
+    headline: "Durham College Launches Ontario's Only Full-Time EV Technician Diploma — First Grads in 2027",
+    summary: "Durham College has launched a two-year Electric Drive Vehicle Technician diploma at its Vanhaverbeke Family EV Training Centre in Whitby, Ontario — one of only two full-time EV-focused college programs in the province. The program trains students to diagnose, repair, and service high-voltage EV and hybrid systems alongside conventional mechanical skills. Graduates can also enter Durham College's Motive Power Technician program in year two, earning a second diploma and apprenticeship credit in three years. The college has also launched a 30-hour upskilling course for licensed technicians, covering high-voltage safety, EV battery systems, and hybrid-electric powertrains. The first graduating class is expected in 2027.",
+    whyItMatters: "Ontario's tech shortage is real and worsening — and EV-qualified technicians are the hardest to find. Hybrid vehicle sales jumped 60% in 2025 alone, and the pipeline of EV-capable technicians is years behind demand. If you're a shop owner, now is the time to sponsor an apprentice in a program like Durham's, or send an existing tech through the 30-hour upskilling course. Shops that build EV competency now will be positioned to capture the growing wave of hybrid and electric service work that's already arriving.",
+    source: "EV Repair Magazine",
+    sourceUrl: "https://www.evrepairmag.com/news/training/article/15822277/durham-college-ev-program-targets-technician-shortage",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "SALES",
+    tag: "TRADE",
     tagColor: "#dc2626",
-    headline: "Canada Q1 Auto Sales Dip as Market Normalizes — Outlook Uncertain",
-    summary: "Canada's new-vehicle sales cooled to start 2026, with the seasonally adjusted annual rate falling to 1.85 million in March — the lowest level since September 2025. The softer first quarter reflects more normalized demand after a distorted start to last year. Light trucks accounted for 88.8% of total new light-vehicle sales in Q1 2026, up from 88.1% a year earlier. Analysts say a gradual rebound is still possible, but geopolitical uncertainty and tariff impacts cloud the outlook.",
-    whyItMatters: "Slower new-vehicle sales mean more Canadians are holding onto their current vehicles longer, which directly translates to more maintenance and repair work for independent shops. With light trucks dominating sales, shops should ensure they're equipped to handle the growing fleet of SUVs and pickups. This is also a good time to promote preventive maintenance packages to customers who are stretching the life of their vehicles.",
-    source: "Automotive News Canada",
-    sourceUrl: "https://www.autonews.com/retail/anc-canada-auto-sales-q1-2026-normalization-outlook/",
+    headline: "Toyota and Honda Form PMAC — Canada's Largest Auto Manufacturing Lobby Ahead of CUSMA Review",
+    summary: "Toyota Canada and Honda Canada have jointly launched the Pacific Manufacturing Association of Canada (PMAC), representing over 75% of all Canadian vehicle production and 60% of assembly plant workers. The new lobby group was formed ahead of the critical CUSMA free trade agreement review scheduled for July 2026. Together, Toyota produced 537,472 vehicles in Canada last year and Honda built 400,587 — both exceeding the combined output of GM, Ford, and Stellantis. PMAC will advocate for unrestricted access to the U.S. market, pragmatic EV policy, and the elimination of Section 232 tariffs that are costing the industry billions annually.",
+    whyItMatters: "The CUSMA review in July is the most consequential trade event for Canada's auto sector in decades. If tariffs remain or escalate, parts costs will rise and vehicle supply will tighten — both of which hit independent shops through higher parts prices and longer wait times. PMAC's formation signals that the industry is organizing to fight hard for a favourable outcome. Watch this space closely: the July review will shape your parts costs, vehicle availability, and customer purchasing power for years to come.",
+    source: "Driving.ca",
+    sourceUrl: "https://driving.ca/auto-news/industry/toyota-honda-form-canadas-largest-automotive-manufacturers-association",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🏭",
-    text: "Toyota and Honda have formed the Pacific Manufacturing Association of Canada (PMAC), representing over 75% of all Canadian vehicle production and 60% of assembly plant workers.",
-    sourceUrl: "https://driving.ca/auto-news/industry/toyota-honda-form-canadas-largest-automotive-manufacturers-association",
+    icon: "⛽",
+    text: "Gas prices are expected to drop by approximately 10 cents per litre at the pump starting April 20 as the federal excise tax suspension takes effect — the biggest single-day fuel price drop in Canada since the carbon tax was eliminated.",
+    sourceUrl: "https://www.pm.gc.ca/en/news/news-releases/2026/04/14/prime-minister-carney-suspends-federal-fuel-excise-tax-gasoline-and",
   },
   {
-    icon: "📈",
-    text: "Canadian manufacturing sales rose 3.6% to $71.2 billion in February as several auto assembly plants ramped up operations after earlier shutdowns.",
-    sourceUrl: "https://www.biv.com/news/retail-manufacturing/manufacturing-sales-up-in-february-as-auto-production-ramped-up-after-shutdowns-12144483",
-  },
-  {
-    icon: "⚖️",
-    text: "The U.S. Supreme Court ruled certain tariffs unconstitutional — automakers and suppliers can now begin seeking refunds on an estimated $20 billion in tariff payments starting this month.",
-    sourceUrl: "https://www.autonews.com/manufacturing/an-trump-tariffs-refunds-explained-0415/",
+    icon: "🔧",
+    text: "Ontario's automotive technician shortage has reached crisis levels in 2026, with new data showing the province is short thousands of licensed techs — and the gap is widening as retirements outpace new apprentice completions.",
+    sourceUrl: "https://www.instagram.com/p/DW9XKjajrzj/",
   },
   {
     icon: "🚗",
-    text: "Stellantis Canada Q1 sales rose 14.9% after a turbulent year, with the company selling 30,278 vehicles in the first quarter as its course correction takes hold.",
-    sourceUrl: "https://www.autonews.com/stellantis/anc-stellantis-course-correction-q1-sales-0413/",
+    text: "Repairable EV claims at independent collision shops jumped 40% year-over-year, according to new industry data — a sign that EVs are entering the mainstream repair market faster than many shops anticipated.",
+    sourceUrl: "https://climatescience.press/?p=438641",
+  },
+  {
+    icon: "🏭",
+    text: "Canada's automotive industry faces a potential $75 million per day tariff bill if CUSMA talks collapse in July, according to AMPA President Flavio Volpe — a figure that would make Canadian auto manufacturing operations immediately unfeasible.",
+    sourceUrl: "https://autosphere.ca/dealerships/2026/04/15/the-path-forward/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Get Ahead on Chinese EV Training",
-  text: "With BYD, Geely, and Chery building dealer and service networks in Canada, the first Chinese-made EVs could roll into your shop sooner than you think. Start by reviewing available EV certification programs through your provincial trade authority or NAPA AutoTech. Familiarize yourself with high-voltage safety protocols specific to Chinese platforms, and begin sourcing diagnostic scan tools that support BYD and Geely protocols. Being the first shop in your area to confidently service these vehicles will be a major differentiator.",
+  title: "Talk to Your Customers About the Fuel Tax Break",
+  text: "Starting April 20, Canadians will see roughly 10 cents per litre knocked off their gas bills. Use this as a conversation starter with customers who have been deferring maintenance. A simple message — 'With gas prices dropping this week, now's a great time to take care of that deferred service before summer' — can convert hesitant customers into booked appointments. The window runs until September 7, so you have a full summer to leverage it. Consider a targeted email or text campaign to your customer database this week.",
 };
 
 const quoteOfTheDay = {
-  text: "The aftermarket is indeed enjoying halcyon days, although there are uncertain waters ahead for the industry as changes in the structure of the fleet, vehicle technology, and access to data create increasing challenges.",
-  author: "Andrew King",
-  title: "Managing Partner, DesRosiers Automotive Consultants",
+  text: "If we are going to continue having a thriving industry here, it will be because we get a free trade agreement with the Americans and eliminate the Section 232 tariffs.",
+  author: "Brian Kingston",
+  title: "President, Canadian Vehicle Manufacturers Association",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Barracuda 440 Six Pack",
-  description: "The 1970 Plymouth Barracuda is one of the most iconic muscle cars ever built, and the 440 Six Pack variant is among the most coveted. Powered by a 440 cubic-inch V8 fed by three two-barrel Holley carburetors, it produced 390 horsepower and 490 lb-ft of torque. The third-generation Barracuda featured aggressive styling with a long hood, short deck, and wide stance that screamed performance. Finished in the legendary In-Violet (Plum Crazy) purple, this particular combination is a holy grail for collectors. With fewer than 2,000 produced, surviving examples regularly command six figures at auction.",
+  name: "1969 Dodge Charger R/T 440 Magnum",
+  description: "The 1969 Dodge Charger R/T is the definitive American muscle car — a rolling sculpture that defined an era. Powered by the legendary 440 Magnum V8 producing 375 horsepower and 480 lb-ft of torque, the R/T (Road/Track) package delivered blistering performance wrapped in one of the most dramatic body designs ever to roll off a Detroit assembly line. The hidden headlights, flying buttress C-pillars, and full-width taillights made it unmistakable. Immortalized by Bullitt and The Dukes of Hazzard, surviving R/T examples in original condition are among the most sought-after muscle cars on the planet, routinely fetching $80,000–$150,000 at auction.",
   image: HOTROD_IMG,
 };
 
@@ -197,7 +197,7 @@ export default function Home() {
           <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
             <img
               src={HERO_BANNER}
-              alt="Auto repair shop at dawn"
+              alt="Auto repair shop technician at work"
               className="w-full h-full object-cover"
               style={{ filter: "brightness(0.7)" }}
             />
@@ -207,7 +207,7 @@ export default function Home() {
                   {BRIEFING_DATE} &middot; Edition #{BRIEFING_NUMBER}
                 </span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold uppercase text-white leading-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                  Chinese EVs Head North, Aftermarket Keeps Winning, and Q1 Sales Cool Off
+                  Fuel Tax Cut Incoming, EV Tech Shortage Deepens, and CUSMA Countdown Begins
                 </h2>
               </div>
             </div>
@@ -400,14 +400,9 @@ export default function Home() {
                 Baywash Auto Repair
               </span>
             </div>
-            <div className="flex items-center gap-4">
-              <Link href="/archive" className="font-mono text-[0.65rem] tracking-[0.1em] uppercase hover:underline" style={{ color: "#a0977d" }}>
-                View Archive
-              </Link>
-              <span className="font-mono text-[0.6rem] tracking-wide" style={{ color: "#78716c" }}>
-                &copy; {new Date().getFullYear()}
-              </span>
-            </div>
+            <span className="font-mono text-[0.6rem] tracking-wide" style={{ color: "#78716c" }}>
+              {BRIEFING_DATE} &middot; Edition #{BRIEFING_NUMBER}
+            </span>
           </div>
         </div>
       </footer>
