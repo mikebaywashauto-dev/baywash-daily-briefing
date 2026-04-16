@@ -1,3 +1,4 @@
+// 2026-04-15
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
