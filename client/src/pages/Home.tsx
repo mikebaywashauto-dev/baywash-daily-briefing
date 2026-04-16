@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 3;
+const BRIEFING_NUMBER = 4;
 const BRIEFING_DATE = "April 15, 2026";
 const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xfngamkZOYnPtXbC.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KFHNowtbApkLtlIe.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JtcFozaeYYHPDzmI.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qJSTDGGRJbCqCrhf.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AygHXHNffMerRPLn.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JvVkLfCZrvxnxqLE.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LXlFRxHtWPLBzSzh.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PnlpeQotdUQQDVtH.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZCTkNAFemvgNghnj.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QzwFYoZORWngElYC.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SAFETY",
+    tag: "MATERIALS",
     tagColor: "#dc2626",
-    headline: "NHTSA Finds Deadly Defect in Aftermarket Airbag Inflators Entering Vehicles Through Collision Repairs — Permanent Ban Looming",
-    summary: "The National Highway Traffic Safety Administration has issued a formal safety defect determination for airbag inflators manufactured by Jilin Province Detiannuo Safety Technology Co., Ltd. (DTN). The inflators rupture during deployment and propel metal fragments into the driver's compartment rather than inflating the airbag cushion. NHTSA has documented 10 deaths and 2 severe injuries across 12 crashes. In at least 10 of those 12 cases, the inflators reached drivers as aftermarket replacements installed following a prior collision at body shops.",
-    whyItMatters: "This is a direct liability issue for every collision repair shop that handles airbag replacements. NHTSA has identified body shops as the primary pathway through which these deadly inflators reached American vehicles. A wrongful death lawsuit has already named a body shop as a defendant. Wisconsin and Idaho have enacted criminal penalties — including felony charges when a violation results in bodily harm or death — for knowingly installing non-genuine airbags. The public comment period closes April 17. If you source airbag modules from online marketplaces or discount distributors, stop now. Inspect every vehicle arriving with evidence of a prior airbag deployment since 2020. Document the inspection on the repair order. Your license, your liability insurance, and potentially your freedom depend on it.",
-    source: "Autobody News / NHTSA",
-    sourceUrl: "https://www.autobodynews.com/news/nhtsa-finds-defect-in-airbag-inflators-entering-vehicles-through-collision-repairs-could-order-permanent-ban",
+    headline: "PPG Announces Global Price Increase of Up to 20% Across All Product Lines \u2014 Already in Progress",
+    summary: "PPG has begun implementing price increases of up to 20% across all paints, coatings, and specialty products on a customer-by-customer basis. The company cited significant volatility and supply constraints in global petrochemical, energy, and transportation markets as the primary drivers. CEO Tim Knavish stated the pricing action is necessary to \u201censure availability of supply as we navigate unexpected and increased cost pressures.\u201d PPG warned that certain product categories, technologies, and regions may require even higher adjustments, and that additional price increases may follow as market conditions continue to evolve.",
+    whyItMatters: "Paint and materials are one of the largest variable costs in any collision repair operation, and PPG is the dominant refinish supplier in North America. A 20% increase \u2014 with the door open for more \u2014 hits your margins immediately. If you\u2019re on a contract, review the terms now to understand when and how the increase applies. If you\u2019re buying at list, this is the moment to negotiate volume commitments or explore alternative product lines within PPG\u2019s portfolio (Shop-Line, for example, hasn\u2019t seen an increase in two years). Most importantly, do not absorb this cost silently. Update your material rates on every estimate. Talk to your insurer partners about material cost documentation. The shops that treat this as a pass-through cost \u2014 with documentation \u2014 will survive it. The ones that eat it will feel it on every job for the rest of the year.",
+    source: "Aftermarket Matters / WSJ",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/ppg-announces-global-price-increase-of-up-to-20-already-in-progress/",
     image: STORY1_IMG,
   },
   {
     id: 2,
     tag: "TECHNOLOGY",
     tagColor: "#2563eb",
-    headline: "The Best Use of AI in Collision Repair Isn't What Most People Think — It's a Second Set of Eyes",
-    summary: "A new MOTOR Magazine analysis by Brunno Moretti, president of ADAS Aftermarket by Burke Porter, argues that AI's real value in collision repair isn't replacing technicians — it's managing the growing complexity of modern repairs. Tools like Tractable use machine-learning models trained on millions of repair images to triage incoming jobs at intake. Revv analyzes estimate data to identify potential ADAS calibration requirements and generates supporting documentation tied to OEM procedures. A Revv benchmark survey found that while 86% of shops perform at least some ADAS calibrations in-house, only 21% consider their calibration processes fully optimized.",
-    whyItMatters: "That 65-point gap between 'we do calibrations' and 'our calibration process is optimized' is where money, cycle time, and liability are leaking out of your shop. When a calibration requirement is discovered after repairs are underway, you face unexpected delays, scheduling complexity, sublet coordination, insurance approval friction, and documentation challenges. AI tools aren't replacing your experienced techs — they're catching the steps that get buried across multiple OEM sources and repair plans that evolve throughout the job. OEC's RepairLogic reports shops creating repair plans more than twice as fast with automated tools. The shops that adopt these workflow tools early will see measurable improvements in cycle time and fewer supplement surprises. The ones that wait will keep eating the cost of missed steps.",
-    source: "MOTOR Magazine",
-    sourceUrl: "https://www.motor.com/2026/04/ai-collision-repair-adas-workflows/",
+    headline: "CCC Launches Consumer Financing in CCC ONE, Powered by Sunbit \u2014 Self-Pay Repairs Now Exceed 25% of All Orders",
+    summary: "CCC Intelligent Solutions announced the availability of consumer financing directly within the CCC ONE platform through a new integration with Sunbit. The capability allows collision repair shops to offer customers flexible payment options to cover repair costs or insurance deductibles at the point of estimate. Sunbit reports approval rates exceeding 90%, offers true 0% interest options with no late fees or hard credit checks, and pays shops upfront with zero repayment risk. CollisionRight, which operates 130 repair centers, is an early adopter and reports increased service acceptance and faster vehicle throughput since implementation.",
+    whyItMatters: "Self-pay repairs now represent more than 25% of repair orders on CCC ONE \u2014 and that number is climbing as consumers downgrade insurance coverage, raise deductibles, and avoid filing claims to prevent rate increases. Every one of those customers is a conversion risk. When a $3,500 deductible or a $5,000 out-of-pocket repair lands on someone\u2019s desk, cost is the number-one reason they walk away or delay. Embedding financing into the estimate process removes that friction at the exact moment it matters. You get paid upfront. The customer gets a payment plan. The vehicle moves through your bay instead of sitting in your parking lot. If you\u2019re running CCC ONE, activate this now. If you\u2019re not, find out what financing integration your platform supports. The shops converting self-pay customers at 90%+ approval rates will pull ahead of those still handing out business cards and hoping customers come back.",
+    source: "CCC Intelligent Solutions",
+    sourceUrl: "https://ir.cccis.com/news-releases/news-release-details/ccc-introduces-consumer-financing-ccc-oner-help-collision-repair",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "OPERATIONS",
+    tag: "LEGISLATION",
     tagColor: "#059669",
-    headline: "Fewer Claims, More Total Losses: Shop Owners Share the Strategies Actually Keeping Their Businesses on Track",
-    summary: "With CCC data showing continued declines in claims frequency and a record-high percentage of claims resulting in total losses, Autobody News surveyed collision repair operators across the country on how they're adapting. Jesse Parks of Freeman Collision Center in Santa Rosa, CA, estimates about half of all first contacts never make it through the door — meaning marketing spend is wasted if shops aren't converting the opportunities already in front of them. Kena Dacus of Dacus Auto Body in McPherson, KS, discovered her real capture rate was far lower than CCC reports showed once she tracked leads from calls, social media, Google forms, and emails.",
-    whyItMatters: "The collision repair market has fundamentally shifted, and the shops that thrived on volume alone are being forced to recalibrate. Christian Bogden of A.U.T.O. Collision in Sandy, UT, reported an 11% decline in sales last year. But the operators who are winning aren't chasing new DRP partnerships or throwing money at advertising — they're plugging the holes. Parks says it plainly: 'We don't need to pick up another partner. We just need to look at how we manage the people who are already coming through our door.' Dacus is analyzing gross profit by insurance company and vehicle make to focus marketing on the most profitable work. DCR Systems is tracking defects coming off the line and pursuing customer upsells like batteries and wiper blades. Even small wins matter: Amber Alley of Barsotti's Body & Fender found that fixing leaking air lines and turning off compressors overnight saves hundreds to thousands per year.",
-    source: "Autobody News",
-    sourceUrl: "https://www.autobodynews.com/news/fewer-claims-more-total-losses-how-shops-are-adapting",
+    headline: "Virginia Enacts New Law Requiring Insurers to Justify and Document Every Estimate Reduction \u2014 Shops Gain New Leverage",
+    summary: "Virginia\u2019s House Bill 808 is now law, amending the state\u2019s unfair claim settlement practices statute with provisions that directly impact collision repair estimating. For any estimate modification of $3,000 or more, insurers must now provide a detailed explanation of why the estimate was lowered, a comprehensive list of all changes, the identity of the individual who made or directed each change, and must retain all versions of the estimate including documentation of each revision. The law also clarifies that vehicle owners cannot be required to submit photos as a condition of appraisal, and mandates a physical inspection when repairs are disputed.",
+    whyItMatters: "If you operate in Virginia, this changes the dynamic at your front counter and in your supplement negotiations immediately. For years, shops have dealt with unexplained estimate reductions \u2014 line items disappearing, labor times cut, parts swapped \u2014 with no paper trail and no accountability. That era is over in Virginia. Every reduction now requires a name attached to it and a written justification delivered to the policyholder. This is powerful leverage: when an insurer knows their adjuster\u2019s name will be on record for cutting structural repair time or swapping OEM parts for aftermarket, the calculus changes. The law also reinforces that photo estimating cannot be forced on consumers and that disputed repairs require in-person inspection. For shops outside Virginia, watch this closely \u2014 similar bills are moving through Ohio, Illinois, and Minnesota. Document everything. The legislative tide is turning toward transparency, and your records are your ammunition.",
+    source: "BodyShop Business",
+    sourceUrl: "https://www.bodyshopbusiness.com/virginia-approves-legislation-regulating-estimate-reductions/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "\u{1F697}",
-    text: "CARFAX: Used car prices spike to ~$25,500, up $1,500 in just one month. EV prices jumped $560 — the largest surge in EV demand in over a year. Tariff-driven new-model price increases and tighter used inventory are pushing buyers into the used market.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/used-car-prices-spike-after-hitting-12-month-low/",
-  },
-  {
-    icon: "\u{1F525}",
-    text: "Providence, RI fire investigators confirm an EV lithium-ion battery thermal runaway caused the March 20 fire at Batista Auto Repair Center. The moment of ignition was caught on camera. No injuries reported, but the 10-page report is a wake-up call for every shop storing or working on EVs.",
-    sourceUrl: "https://www.wpri.com/news/local-news/providence/ev-battery-failure-caused-providence-auto-shop-fire-report-states/",
-  },
-  {
-    icon: "\u{1F4F1}",
-    text: "Tekmetric launches Digital Ads and Phones at Tektonic 2026. Early ad campaigns show 10x ROI: $381 in ad spend generated 8 new customers and $3,865 in revenue. Phones product surfaces full customer history before the advisor says hello.",
-    sourceUrl: "https://lasvegassun.com/news/2026/apr/13/tekmetric-expands-platform-to-help-auto-repair-sho/",
-  },
-  {
     icon: "\u{1F4CA}",
-    text: "New survey: 23% of automotive technicians say they'll probably leave the industry in the next five years — and not because of retirement. The workforce pipeline problem isn't coming; it's already here.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/automotive-technician-statistics-2026-job-satisfaction-pay-and-industry-trends/",
+    text: "CCC Crash Course 2026: 28.3% of repairable appraisals now include a calibration \u2014 up 6.5% in Q4 alone. Average repair costs hit $4,500\u2013$5,000, double what they were in 2010. Meanwhile, 24% of consumers have downgraded or dropped insurance entirely, and 33.4% of drivers are now uninsured or underinsured.",
+    sourceUrl: "https://www.claimsjournal.com/news/national/2026/04/13/336791.htm",
+  },
+  {
+    icon: "\u{1F527}",
+    text: "Cox Automotive: Dealer fixed ops revenue hit a record $9.23M average in 2025, up 33% over eight years. But dealer share of service visits fell from 33% to 29% as customers drift to independent and general repair shops. Independents are winning on convenience and price.",
+    sourceUrl: "https://www.coxautoinc.com/insights/dealerships-capture-record-fixed-ops-revenue-but-lose-market-share-as-customers-drift-to-general-repair-according-to-cox-automotive-study/",
+  },
+  {
+    icon: "\u{1F4B0}",
+    text: "New car prices up 12.6% year-over-year in March, the biggest jump since 2022, driven by tariff costs on imported vehicles and parts. Used car prices spiked to ~$25,500. Cars with a high percentage of imported parts (Honda, Toyota, Hyundai, Kia) face 15\u201325% repair cost increases on affected components.",
+    sourceUrl: "https://www.latimes.com/business/story/2026-04-13/buyers-fret-as-average-cost-of-new-car-soars",
+  },
+  {
+    icon: "\u{1F3E2}",
+    text: "Ford\u2019s latest On Target bulletin includes new parking sensor paint guidelines requiring specific procedures to maintain sensor functionality after refinish. I-CAR has published the update. If you\u2019re painting bumper covers with parking aid sensors, check the new procedures before your next job.",
+    sourceUrl: "https://rts.i-car.com/crn-2410.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Audit Your Capture Rate — The Real One",
-  text: "Kena Dacus of Dacus Auto Body realized her CCC-reported capture rate was misleading because leads were arriving through far more channels than the report tracks: calls, social media messages, Google and website forms, and emails. Her real capture rate was much lower than it appeared. Start conducting call audits this week. Grade your staff on tone and the information they provide. Track every referral source. As Jesse Parks of Freeman Collision Center puts it: 'We don't need to pick up another partner. We just need to look at how we manage the people who are already coming through our door.' The ROI on fixing your front counter is immediate — and it costs nothing except training time.",
+  title: "Update Your Material Rates Before the Next Estimate",
+  text: "With PPG\u2019s 20% price increase already rolling out, every estimate you write at yesterday\u2019s material rate is money you\u2019re leaving on the table. Pull your current paint invoices today. Calculate your actual per-refinish-hour material cost. Update your estimating system. When the insurer pushes back, you\u2019ll have the documentation ready: dated invoices showing the increase, a clear per-job material cost calculation, and the PPG announcement as supporting evidence. The shops that update their rates proactively and document the change will recover the cost. The shops that wait will eat it for months before they realize how much margin they\u2019ve lost.",
 };
 
 const quoteOfTheDay = {
-  text: "The most practical use of AI in collision repair isn't replacing technical judgment. It's helping shops manage the growing complexity of modern repairs, providing updates on required procedures, organizing information faster, and documenting work clearly enough that jobs move through the shop without unnecessary delays.",
-  author: "Brunno Moretti",
-  title: "President, ADAS Aftermarket by Burke Porter",
+  text: "Cost can be one of the biggest barriers to getting a repair approved. By embedding consumer financing into CCC ONE, we\u2019re helping shops convert more estimates into approved work while giving them an option to provide their customers with an easier, more flexible way to pay.",
+  author: "Mark Fincher",
+  title: "Vice President, Product Management at CCC",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Barracuda Hemi",
-  description: "The third-generation Barracuda was a complete departure from the Valiant-based original — a ground-up redesign on the new E-body platform shared with the Dodge Challenger. The Hemi 'Cuda sat at the top of the food chain: a 426ci Hemi V8 rated at 425 horsepower, paired with a four-speed manual or TorqueFlite automatic. Plymouth built only 652 Hemi 'Cudas in 1970, making it one of the rarest and most valuable American muscle cars ever produced. The shaker hood scoop, hockey-stick side stripes, and aggressive stance gave it a look that matched its performance. Hemi convertible examples have sold for over $2 million at auction. This was Mopar's answer to everything — and it still wins.",
+  name: "1969 Chevrolet Camaro ZL1",
+  description: "The ZL1 Camaro was never supposed to exist as a production car. It started as a COPO (Central Office Production Order) workaround \u2014 dealer Fred Gibb convinced Chevrolet to build a run of Camaros with the all-aluminum 427 ZL1 engine originally developed for Can-Am racing. The result was a factory drag car disguised as a street machine: 430 horsepower on paper, well over 500 on the dyno, in a package that weighed less than a small-block car thanks to the aluminum block and heads. Chevrolet built exactly 69 ZL1 Camaros in 1969. The sticker price was $7,269 \u2014 more than a Corvette \u2014 which meant most sat on dealer lots until they were quietly discounted. Today, documented ZL1s sell for $1 million or more at auction. It remains one of the most significant and valuable American muscle cars ever built.",
   image: HOTROD_IMG,
 };
 
@@ -144,7 +144,7 @@ function Divider() {
   return (
     <div className="flex items-center gap-4 my-8">
       <div className="flex-1 h-px bg-[#1a1a1a]/15" />
-      <span className="text-[#e05a1a] text-sm">&#9670;</span>
+      <span className="text-[#1a1a1a]/20 text-xs">&#9670;</span>
       <div className="flex-1 h-px bg-[#1a1a1a]/15" />
     </div>
   );
@@ -208,7 +208,7 @@ export default function Home() {
                   {BRIEFING_DATE} &middot; Edition #{BRIEFING_NUMBER}
                 </span>
                 <h2 className="font-display text-2xl md:text-3xl font-bold uppercase text-white leading-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                  Deadly Airbag Inflators Traced to Body Shops, AI Finds Its Real Role, and the Capture Rate Wake-Up Call
+                  PPG Hits Shops With 20% Price Hike, CCC Embeds Financing to Capture Self-Pay Work, and Virginia Rewrites the Rules on Estimate Cuts
                 </h2>
               </div>
             </div>
