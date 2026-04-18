@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 8;
-const BRIEFING_DATE = "April 17, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 9;
+const BRIEFING_DATE = "April 18, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OMtCrWdXBBWbwdrN.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EStWyUUVMBFxFxkw.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lWRMWhyaopxsxekZ.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CSwFiEMqZKgzzvcP.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mTqjRmsRJQVzyTGU.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bnyiADCDPxqvVNMH.jpeg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gzLKubkffWeSpSqq.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/alaVJlJJyuWowIKu.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NKVDkyxdWRJmzjLe.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SGRhjhcUgzUUPfLI.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SAFETY",
+    tag: "RECALL",
     tagColor: "#dc2626",
-    headline: "EV Battery Thermal Runaway Destroys Shop — Providence Fire Confirms GMC Hummer EV as Cause",
-    summary: "The Providence Fire Department has officially confirmed that a March 2026 fire at a Rhode Island auto repair shop was caused by thermal runaway in the lithium-ion battery pack of a 2025 GMC Hummer EV. The vehicle, which had been towed to the shop, ignited spontaneously while parked inside the bay. The resulting fire completely destroyed the Hummer EV and caused significant damage to three other vehicles inside the shop. Investigators noted that the fire originated underneath the truck, consistent with a high-voltage battery failure. The incident was captured on the shop's security cameras, showing the moment the battery ignited. This is one of the first confirmed cases in North America where a towed EV caused a shop fire through spontaneous thermal runaway.",
-    whyItMatters: "This is a direct warning for every shop in Canada. You do not need to be working on an EV for it to become a fire hazard on your property — a towed or stored EV with a compromised battery can ignite without warning. Industry experts recommend that shops establish clear EV intake protocols: ask whether the vehicle was involved in a collision or flood, check for visible battery damage before accepting the vehicle, store EVs with suspected battery damage outdoors and away from the building, and ensure staff are trained in lithium-ion fire response. The cost of one EV shop fire — in property damage, lost revenue, and insurance — can be catastrophic. Update your intake forms and fire safety plan now.",
-    source: "Repairer Driven News",
-    sourceUrl: "https://www.repairerdrivennews.com/2026/04/16/thermal-runaway-determined-as-cause-for-repair-shop-fire/",
+    headline: "Ford Recalls 1.4 Million F-150 Trucks — 2015–2017 Models Face Sudden Transmission Downshift Risk",
+    summary: "Ford Motor Company has issued a recall covering 1,392,935 F-150 pickup trucks equipped with the 6-speed automatic 6R80 transmission, affecting vehicles produced between March 12, 2014, and August 18, 2017. The root cause is degradation of the electrical connections in the transmission lead frame. Over time, thermal cycling and vibration break down those connections, causing the Powertrain Control Module to receive a momentary incorrect signal from the Transmission Range Sensor. That faulty signal can trigger an unintended downshift — in the worst case, a sudden drop from 6th gear all the way to 2nd gear at highway speeds — causing a loss of vehicle control. Ford is aware of two injuries and one accident linked to this condition. The fix is a PCM software update; if certain diagnostic trouble codes are already present, dealers will also replace the transmission lead frame at no cost. Interim owner notification letters are scheduled to be mailed between April 27 and May 1, 2026.",
+    whyItMatters: "If your shop services Ford F-150s — and in Canada, nearly every shop does — this recall is going to drive inbound volume starting in late April. The affected range is 2015–2017 F-150s with the 6R80 six-speed automatic, which covers an enormous number of trucks still in daily use across the country. When customers start receiving their notification letters, they will be calling to book appointments. Prepare your service advisors now: the repair is a software update, and in some cases a lead frame replacement, both covered at no cost to the owner. Verify VINs at nhtsa.gov/recalls before the customer arrives so you know exactly what you are dealing with. Shops that are ready for this wave will convert it into booked appointments; shops that are not will lose the work to the dealer.",
+    source: "BizzyCar / NHTSA",
+    sourceUrl: "https://www.bizzycar.com/blog/april-2026-ford-recall-for-unintended-transmission-downshift-affecting-1392935-vehicles",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "TRADES",
+    tag: "INDUSTRY",
     tagColor: "#2563eb",
-    headline: "Skilled Trades Ontario Takes Certifying Exams In-House — Apprentices Can Now Book Directly",
-    summary: "Skilled Trades Ontario (STO) has assumed full in-house delivery of certifying exams across the province, replacing its previous contract with third-party provider Prometric, which concluded January 31, 2026. As of February 1, 2026, apprentices can book all certifying exams — including the 310S Automotive Service Technician exam — directly through the STO Portal at skilledtradesontario.ca. The change was made in direct response to feedback from apprentices and employer sponsors who reported capacity shortfalls and unreliable booking experiences under the Prometric system. STO will now deliver exams at approximately 100 locations across Ontario, including at Training Delivery Agents (TDAs), significantly expanding access for apprentices in rural and remote communities. Since taking over certification in April 2025, STO has administered over 6,000 certifying exams and handled more than 120,000 phone calls.",
-    whyItMatters: "If you sponsor apprentices, this change matters for your shop's planning. The new system promises more exam seats, better booking reliability, and the ability for apprentices to write their certifying exam at the same location where they trained. For shops in smaller Ontario communities, the expansion to 100 locations means your apprentices no longer face long drives to write their 310S exam. Encourage your apprentices to log into the STO Portal and book their upcoming exams now — the new system is live and the old Prometric process is no longer valid. Faster certification means faster productivity for your bay.",
-    source: "Indie Garage",
-    sourceUrl: "https://www.indiegarage.ca/skilled-trades-ontario-to-deliver-certifying-exams-in-house/",
+    headline: "Toyota and Honda Form PMAC — Canada's Largest Auto Manufacturers Unite Ahead of CUSMA Talks",
+    summary: "Honda Canada Inc. and Toyota Canada Inc. have launched the Pacific Manufacturing Association of Canada (PMAC), a new industry association representing the two largest vehicle manufacturers in the country. Together, Toyota and Honda produced over 938,000 vehicles in Canada last year — more than three times the combined output of GM, Ford, and Stellantis in Canada. PMAC will represent more than 75 percent of all Canadian vehicle production and approximately 60 percent of vehicle assembly plant workers in Canada. The association's creation comes at a critical juncture, with CUSMA renewal negotiations looming and ongoing U.S. tariff pressure threatening the integrated North American supply chain. PMAC's stated mandate is to engage with federal and provincial governments on manufacturing, trade, and policy issues — including GHG emission standards and EV regulations — to protect Canadian jobs and sustain long-term investment in Canadian assembly plants.",
+    whyItMatters: "PMAC's formation is a signal that Canada's largest automakers are preparing for a prolonged and difficult trade and policy fight. For independent shop owners, the outcome of CUSMA renewal and tariff negotiations will directly affect the cost and availability of parts, the pace of EV adoption mandates, and the mix of vehicles entering the Canadian fleet over the next decade. Toyota and Honda vehicles are among the most serviced in independent shops across Canada — their combined production volume means their policy positions will shape the regulatory environment your shop operates in. Watch for PMAC to become a significant voice in Ottawa on issues that matter to the repair industry, including right-to-repair and emissions regulations.",
+    source: "Driving.ca",
+    sourceUrl: "https://driving.ca/auto-news/industry/toyota-honda-form-canadas-largest-automotive-manufacturers-association",
     image: STORY2_IMG,
   },
   {
     id: 3,
     tag: "TRADE",
     tagColor: "#059669",
-    headline: "Canada Opens Door to 49,000 Chinese EVs — BYD Targets Canadian Dealers as Trump Threatens Retaliation",
-    summary: "Canada has finalized a deal to lower the tariff on Chinese-built electrified vehicles from 106.1 percent to 6.1 percent, covering a quota of 49,000 vehicles in the first year — roughly 2.5 percent of annual Canadian new car sales. The quota will grow by 6.5 percent annually, reaching a maximum of 70,000 vehicles by 2030. BYD, the world's largest EV manufacturer, is the most advanced Chinese brand in its Canadian market entry, having already hired staff and opened discussions with Canadian dealerships about the Dolphin hatchback and other models. Geely, which owns Volvo, Polestar, and Lotus, already has a Canadian presence through those brands. The deal has drawn criticism from Ontario Premier Doug Ford and others on national security grounds, and the Trump administration has threatened 100 percent retaliatory tariffs on all Canadian goods if Canada becomes a back door for Chinese vehicles entering the U.S. market.",
-    whyItMatters: "For shop owners, the arrival of Chinese EVs in Canada over the next 12 to 24 months creates both opportunity and complexity. BYD vehicles use proprietary battery chemistry, software, and repair protocols that are different from any vehicle currently in the Canadian market. Parts availability, scan tool compatibility, and OEM repair information access will all be question marks at launch. Begin tracking which brands are entering your market and what training or tooling they will require. The shops that build relationships with incoming brands early — and get ahead of the training curve — will be positioned to capture service work that competitors are unprepared for.",
-    source: "Motor Trend / Yahoo Autos",
-    sourceUrl: "https://autos.yahoo.com/policy-and-environment/articles/welcome-canada-opens-door-china-150000009.html",
+    headline: "Tariff Fears Are Cooling Canadian Car Buyers — And That Could Mean More Repair Work for Your Shop",
+    summary: "A new survey and multiple industry reports confirm that tariff uncertainty is weighing heavily on Canadian consumers' appetite for new vehicles. Many Canadians now worry that U.S.-Canada trade tensions will push new vehicle prices beyond reach, with some analysts projecting new vehicle prices could rise by $3,000 to $6,000 CAD if current tariff structures persist. Canada's Q1 2026 new-vehicle sales came in softer than 2025, and Scotiabank Economics has revised its full-year forecast down to 1.81 million units from 1.91 million in 2025. At the same time, used vehicle prices are rising sharply as spring demand heats up, with wholesale values climbing faster than expected. The combination of new vehicle price anxiety and rising used vehicle values is pushing more Canadians to hold onto their existing vehicles longer — a dynamic that directly benefits the repair and maintenance sector.",
+    whyItMatters: "When consumers delay new vehicle purchases, they invest more in maintaining the vehicles they already own. This is one of the clearest tailwinds the independent repair sector has seen in years. If your shop is not already positioning itself as the trusted partner for customers who are choosing to keep their current vehicle running rather than trading up, now is the time to make that pitch. Service reminders, maintenance packages, and proactive inspection programs are all tools that convert tariff anxiety into booked appointments. The shops that communicate clearly with their existing customer base during this period of uncertainty will build loyalty that lasts well beyond the current trade environment.",
+    source: "Automotive News Canada / BNN Bloomberg",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/technology/2026/04/16/as-new-vehicle-sales-decrease-more-canadians-could-turn-to-evs-to-save-money-expert/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "⛽",
-    text: "Canada's Q1 2026 new-vehicle sales came in softer than 2025, but Scotiabank Economics still forecasts 1.81 million new vehicles sold this year — down from 1.91 million in 2025 but reflecting a return to pre-pandemic norms rather than a demand collapse.",
-    sourceUrl: "https://www.autonews.com/retail/anc-canada-auto-sales-q1-2026-normalization-outlook/",
-  },
-  {
     icon: "🔧",
-    text: "Martinrea International, one of Canada's largest auto parts suppliers, maintained its 2026 outlook despite ongoing tariff uncertainty — a sign that Tier 1 suppliers are absorbing the current trade environment without cutting guidance, for now.",
-    sourceUrl: "https://www.martinrea.com/press-release/martinrea-maintains-2026-outlook/",
+    text: "Independent repair shops are navigating a tougher consumer environment in 2026, but industry resilience remains strong — the Auto Care Association notes that deferred maintenance and longer vehicle hold times are translating into higher average repair orders across North America.",
+    sourceUrl: "https://www.autocare.org/news/latest-news/detail/2026/04/17/repair-shops-navigating-tougher-consumer-environment",
   },
   {
     icon: "🚗",
-    text: "Used vehicle prices are jumping as spring demand heats up in Canada, with wholesale values rising faster than expected — good news for shops doing appraisals and trade-in consultations, as customer equity positions are improving.",
-    sourceUrl: "https://canadianautodealer.ca/2026/04/used-prices-jump-as-spring-demand-heats-up/",
+    text: "Mobile service is emerging as a battleground between independent shops and dealerships — dealer share of vehicles under warranty has dropped to 55 percent as mobile providers capture more routine maintenance work. Independent shops offering mobile or pick-up-and-drop-off services are gaining ground.",
+    sourceUrl: "https://www.autonews.com/retail/service-and-parts/an-indpendent-shops-start-mobile-service-0417/",
+  },
+  {
+    icon: "⚖️",
+    text: "Canadians have until the end of April to file claims in a $50 million auto parts price-fixing class-action settlement — if your shop purchased auto parts in Canada between 2008 and 2021, you may be eligible. Check the settlement website for details.",
+    sourceUrl: "https://dailyhive.com/canada/deadline-final-car-settlement",
   },
   {
     icon: "🏭",
-    text: "The federal government is set to announce new automotive R&D and innovation investments today (April 17) through Parliamentary Secretary Bardeesy — watch for details on funding that could benefit Canadian training programs and EV infrastructure.",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/04/parliamentary-secretary-bardeesy-to-announce-research-and-development-innovation-for-the-automotive-sector.html",
+    text: "Linamar Corporation, one of Canada's largest auto parts manufacturers, maintained its 2026 outlook despite the April 6 tariff changes — a positive signal that USMCA-compliant Canadian parts suppliers are holding steady under the current trade pressure.",
+    sourceUrl: "https://www.stalbertgazette.com/national-business/linamar-maintains-its-2026-outlook-despite-recent-us-tariff-changes-12149018",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Create an EV Intake Protocol Before You Need One",
-  text: "The Providence shop fire is a wake-up call. Before your next EV rolls through the door, build a simple intake checklist: Was the vehicle in a collision or flood? Are there any warning lights related to the high-voltage system? Is there visible damage to the undercarriage or battery area? If the answer to any of these is yes, store the vehicle outdoors, away from your building, and away from other vehicles until you can properly assess it. Post the protocol at your service desk and train every service advisor to ask these questions at write-up. It takes five minutes to build and could save your shop.",
+  title: "Turn the F-150 Recall Into a Service Opportunity",
+  text: "With nearly 1.4 million 2015–2017 Ford F-150s recalled for the 6R80 transmission downshift issue, notification letters start hitting mailboxes on April 27. Get ahead of it now: pull your customer database and flag every 2015–2017 F-150 with a 6-speed automatic. Reach out proactively before the letter arrives — a quick text or phone call saying 'We noticed your truck may be part of a Ford recall and we can handle the repair for you' is a powerful retention tool. The fix is a no-cost PCM software update, and in some cases a lead frame replacement. It is fast, it is free to the customer, and it gets them into your bay. Use the visit to perform a full vehicle inspection and present any deferred maintenance. One recall appointment, done right, can generate $300 to $800 in additional approved work.",
 };
 
 const quoteOfTheDay = {
-  text: "We've heard the feedback loud and clear. Apprentices and employer sponsors told us they want increased capacity and a reliable, streamlined exam experience. And that's exactly why we're making this change.",
-  author: "Candice White",
-  title: "CEO, Skilled Trades Ontario",
+  text: "For more than four decades, the teams at Toyota and Honda, along with our suppliers, have invested in Canadian communities, created high-quality jobs, and built vehicles that compete globally. The creation of PMAC reflects the shared responsibility we have as manufacturers to help strengthen the industry's future.",
+  author: "Tim Hollander",
+  title: "President, Toyota Motor Manufacturing Canada & PMAC Board Member",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth 'Cuda 426 Hemi",
-  description: "The 1970 Plymouth 'Cuda with the 426 Hemi is the holy grail of American muscle — a car so rare, so powerful, and so perfectly designed that surviving examples regularly fetch over $1 million at auction. Chrysler's legendary 426 cubic-inch Hemi V8 produced 425 horsepower (a figure widely considered understated) and 490 lb-ft of torque, making the 'Cuda one of the fastest production cars of its era. The third-generation E-body platform gave it aggressive proportions, a wide stance, and a hood scoop that meant business. Only 652 'Cudas were built with the 426 Hemi in 1970, making it one of the rarest muscle cars ever produced. It remains the benchmark by which all other muscle cars are judged.",
+  name: "1969 Dodge Charger R/T 440 Magnum",
+  description: "The 1969 Dodge Charger R/T is one of the most iconic muscle cars ever built — a car so deeply embedded in North American culture that it transcends the automotive world entirely. The R/T (Road/Track) package came standard with the 440 Magnum V8, a 375-horsepower big-block that delivered 480 lb-ft of torque and could propel the Charger through the quarter mile in the low 14-second range. The optional 426 Hemi took things further still. The second-generation B-body design — with its hidden headlights, flying buttress C-pillars, and recessed rear window — remains one of the most beautiful shapes ever to come out of Detroit. The 1969 Charger became a legend on the street, on the track, and on screen, and it remains one of the most coveted and recognized muscle cars in the world.",
   image: HOTROD_IMG,
 };
 
