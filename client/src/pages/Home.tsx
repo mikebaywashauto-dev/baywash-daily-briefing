@@ -1,4 +1,4 @@
-// 2026-04-17
+// 2026-04-19
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,9 +10,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 9;
-const BRIEFING_DATE = "April 18, 2026";
-const BRIEFING_DAY = "Saturday";
+const BRIEFING_NUMBER = 10;
+const BRIEFING_DATE = "April 19, 2026";
+const BRIEFING_DAY = "Sunday";
 
 // Image URLs
 const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bnyiADCDPxqvVNMH.jpeg";
@@ -25,35 +25,35 @@ const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_fil
 const stories = [
   {
     id: 1,
-    tag: "RECALL",
-    tagColor: "#dc2626",
-    headline: "Ford Recalls 1.4 Million F-150 Trucks — 2015–2017 Models Face Sudden Transmission Downshift Risk",
-    summary: "Ford Motor Company has issued a recall covering 1,392,935 F-150 pickup trucks equipped with the 6-speed automatic 6R80 transmission, affecting vehicles produced between March 12, 2014, and August 18, 2017. The root cause is degradation of the electrical connections in the transmission lead frame. Over time, thermal cycling and vibration break down those connections, causing the Powertrain Control Module to receive a momentary incorrect signal from the Transmission Range Sensor. That faulty signal can trigger an unintended downshift — in the worst case, a sudden drop from 6th gear all the way to 2nd gear at highway speeds — causing a loss of vehicle control. Ford is aware of two injuries and one accident linked to this condition. The fix is a PCM software update; if certain diagnostic trouble codes are already present, dealers will also replace the transmission lead frame at no cost. Interim owner notification letters are scheduled to be mailed between April 27 and May 1, 2026.",
-    whyItMatters: "If your shop services Ford F-150s — and in Canada, nearly every shop does — this recall is going to drive inbound volume starting in late April. The affected range is 2015–2017 F-150s with the 6R80 six-speed automatic, which covers an enormous number of trucks still in daily use across the country. When customers start receiving their notification letters, they will be calling to book appointments. Prepare your service advisors now: the repair is a software update, and in some cases a lead frame replacement, both covered at no cost to the owner. Verify VINs at nhtsa.gov/recalls before the customer arrives so you know exactly what you are dealing with. Shops that are ready for this wave will convert it into booked appointments; shops that are not will lose the work to the dealer.",
-    source: "BizzyCar / NHTSA",
-    sourceUrl: "https://www.bizzycar.com/blog/april-2026-ford-recall-for-unintended-transmission-downshift-affecting-1392935-vehicles",
+    tag: "ADVOCACY",
+    tagColor: "#e05a1a",
+    headline: "AIA Canada Elects New Board at 84th AGM — Focus Shifts to Right to Repair and Tech Shortage",
+    summary: "The Automotive Industries Association of Canada (AIA Canada) held its 84th Annual General Meeting on April 16, 2026, electing three new directors: Daryll O’Keefe (Fix Network), Sabrina Thring (Driven Brands), and Bryan Elwin (Mr. Lube + Tires). Jason Herle, CEO of Fountain Tire, has been appointed as the new Chair. The association, representing Canada's $43.9 billion auto care sector, is doubling down on its advocacy for the independent aftermarket. Key priorities for the new board include navigating the 'structural reset' of the industry caused by trade volatility and accelerating the push for Right to Repair legislation as vehicles become increasingly software-defined. The board also aims to address the persistent technician shortage, which remains a top concern for shops nationwide.",
+    whyItMatters: "For independent shop owners, AIA Canada is your primary voice in Ottawa. The appointment of Jason Herle as Chair brings a leader from one of Canada's largest service networks to the helm. This leadership shift signals a continued focus on ensuring independent shops have the data access and skilled labor needed to compete with dealerships. As the industry faces 'existential challenges' in 2026 from trade and technology, having a strong, unified advocacy group is critical for protecting the interests of the 26.6 million vehicles in the Canadian aftermarket.",
+    source: "AIA Canada",
+    sourceUrl: "https://www.aiacanada.com/news/aia-canada-announces-changes-to-its-board-of-directors-at-the-2026-annual-general-meeting/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "INDUSTRY",
-    tagColor: "#2563eb",
-    headline: "Toyota and Honda Form PMAC — Canada's Largest Auto Manufacturers Unite Ahead of CUSMA Talks",
-    summary: "Honda Canada Inc. and Toyota Canada Inc. have launched the Pacific Manufacturing Association of Canada (PMAC), a new industry association representing the two largest vehicle manufacturers in the country. Together, Toyota and Honda produced over 938,000 vehicles in Canada last year — more than three times the combined output of GM, Ford, and Stellantis in Canada. PMAC will represent more than 75 percent of all Canadian vehicle production and approximately 60 percent of vehicle assembly plant workers in Canada. The association's creation comes at a critical juncture, with CUSMA renewal negotiations looming and ongoing U.S. tariff pressure threatening the integrated North American supply chain. PMAC's stated mandate is to engage with federal and provincial governments on manufacturing, trade, and policy issues — including GHG emission standards and EV regulations — to protect Canadian jobs and sustain long-term investment in Canadian assembly plants.",
-    whyItMatters: "PMAC's formation is a signal that Canada's largest automakers are preparing for a prolonged and difficult trade and policy fight. For independent shop owners, the outcome of CUSMA renewal and tariff negotiations will directly affect the cost and availability of parts, the pace of EV adoption mandates, and the mix of vehicles entering the Canadian fleet over the next decade. Toyota and Honda vehicles are among the most serviced in independent shops across Canada — their combined production volume means their policy positions will shape the regulatory environment your shop operates in. Watch for PMAC to become a significant voice in Ottawa on issues that matter to the repair industry, including right-to-repair and emissions regulations.",
-    source: "Driving.ca",
-    sourceUrl: "https://driving.ca/auto-news/industry/toyota-honda-form-canadas-largest-automotive-manufacturers-association",
+    tag: "LABOUR",
+    tagColor: "#dc2626",
+    headline: "Technician Shortage Reaches Critical Levels — 642,000 New Techs Needed Across North America by 2026",
+    summary: "New data released in April 2026 confirms that the automotive technician shortage is no longer a future threat—it is a present crisis. The TechForce Foundation predicts that demand for new vehicle technicians will be three times higher than the current supply through 2026. In Canada, Statistics Canada reports that vacancies have more than doubled in recent years, with over 11,000 open positions in mid-2022 and numbers continuing to climb in 2026. Shop owners are reporting that the shortage is having a 'high' to 'moderate' impact on their ability to take on new work, leading to longer lead times for customers and increased pressure on existing staff. Industry leaders are calling for a collective effort to raise the profile of the trades and explore government training grants to bridge the gap.",
+    whyItMatters: "If you're struggling to find and keep good techs, you're not alone—it's the #1 challenge facing the industry today. This shortage is driving up labor costs and forcing shops to rethink their business models. To stay competitive, shops must invest in 'boosting their bench' through better benefits, flexible schedules, and ongoing training. As Jason Herle noted, shops may also need to reassess fee structures to reflect the high level of skill required to service modern vehicles, enabling higher compensation for certified technicians and ensuring a more sustainable future for the trade.",
+    source: "Auto Service World / TechForce",
+    sourceUrl: "https://www.autoserviceworld.com/cars-2026-executive-outlook-jason-herle/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "TRADE",
-    tagColor: "#059669",
-    headline: "Tariff Fears Are Cooling Canadian Car Buyers — And That Could Mean More Repair Work for Your Shop",
-    summary: "A new survey and multiple industry reports confirm that tariff uncertainty is weighing heavily on Canadian consumers' appetite for new vehicles. Many Canadians now worry that U.S.-Canada trade tensions will push new vehicle prices beyond reach, with some analysts projecting new vehicle prices could rise by $3,000 to $6,000 CAD if current tariff structures persist. Canada's Q1 2026 new-vehicle sales came in softer than 2025, and Scotiabank Economics has revised its full-year forecast down to 1.81 million units from 1.91 million in 2025. At the same time, used vehicle prices are rising sharply as spring demand heats up, with wholesale values climbing faster than expected. The combination of new vehicle price anxiety and rising used vehicle values is pushing more Canadians to hold onto their existing vehicles longer — a dynamic that directly benefits the repair and maintenance sector.",
-    whyItMatters: "When consumers delay new vehicle purchases, they invest more in maintaining the vehicles they already own. This is one of the clearest tailwinds the independent repair sector has seen in years. If your shop is not already positioning itself as the trusted partner for customers who are choosing to keep their current vehicle running rather than trading up, now is the time to make that pitch. Service reminders, maintenance packages, and proactive inspection programs are all tools that convert tariff anxiety into booked appointments. The shops that communicate clearly with their existing customer base during this period of uncertainty will build loyalty that lasts well beyond the current trade environment.",
-    source: "Automotive News Canada / BNN Bloomberg",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/technology/2026/04/16/as-new-vehicle-sales-decrease-more-canadians-could-turn-to-evs-to-save-money-expert/",
+    tag: "MARKET",
+    tagColor: "#2563eb",
+    headline: "Canadian Auto Sales Contract in Q1 2026 — Consumers Holding Vehicles Longer Amid Trade Uncertainty",
+    summary: "The Canadian vehicle market continues to contract in early 2026, with year-to-date sales through February dropping by 3.2%. Trade policy uncertainty and the threat of tariffs are weighing heavily on consumer confidence, leading many Canadians to delay new vehicle purchases. Scotiabank Economics has revised its full-year forecast down to 1.81 million units. However, this slowdown in new car sales is creating a significant opportunity for the repair sector. With the average age of vehicles on Canadian roads remaining high, more owners are choosing to invest in maintenance and repairs to extend the life of their current vehicles rather than trading up in a volatile market.",
+    whyItMatters: "A cooling new car market is often a tailwind for independent repair shops. When people stop buying new, they start fixing what they have. This is the perfect time to double down on preventative maintenance programs and customer retention strategies. Position your shop as the 'life extension' expert for your customers' vehicles. By building trust now through transparent service and quality repairs, you can capture the increased demand for maintenance that comes when consumers are hesitant to take on new debt.",
+    source: "Focus2move / TD Economics",
+    sourceUrl: "https://www.focus2move.com/canada-auto-sales/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "🔧",
-    text: "Independent repair shops are navigating a tougher consumer environment in 2026, but industry resilience remains strong — the Auto Care Association notes that deferred maintenance and longer vehicle hold times are translating into higher average repair orders across North America.",
+    text: "Independent shops are seeing higher average repair orders in 2026 as deferred maintenance from previous years finally hits the bays, according to the Auto Care Association.",
     sourceUrl: "https://www.autocare.org/news/latest-news/detail/2026/04/17/repair-shops-navigating-tougher-consumer-environment",
   },
   {
-    icon: "🚗",
-    text: "Mobile service is emerging as a battleground between independent shops and dealerships — dealer share of vehicles under warranty has dropped to 55 percent as mobile providers capture more routine maintenance work. Independent shops offering mobile or pick-up-and-drop-off services are gaining ground.",
-    sourceUrl: "https://www.autonews.com/retail/service-and-parts/an-indpendent-shops-start-mobile-service-0417/",
+    icon: "⚡",
+    text: "EV and hybrid maintenance is becoming the 'new normal' for Canadian shops in 2026, with a growing focus on specialized battery health checks and high-voltage system safety.",
+    sourceUrl: "https://nfsautorepair.ca/looking-ahead-whats-next-for-auto-repair-and-fleet-services-in-2026/",
   },
   {
     icon: "⚖️",
-    text: "Canadians have until the end of April to file claims in a $50 million auto parts price-fixing class-action settlement — if your shop purchased auto parts in Canada between 2008 and 2021, you may be eligible. Check the settlement website for details.",
+    text: "The deadline for the $50 million auto parts price-fixing class-action settlement in Canada is approaching at the end of April. Ensure your shop has filed its claim if eligible.",
     sourceUrl: "https://dailyhive.com/canada/deadline-final-car-settlement",
   },
   {
-    icon: "🏭",
-    text: "Linamar Corporation, one of Canada's largest auto parts manufacturers, maintained its 2026 outlook despite the April 6 tariff changes — a positive signal that USMCA-compliant Canadian parts suppliers are holding steady under the current trade pressure.",
-    sourceUrl: "https://www.stalbertgazette.com/national-business/linamar-maintains-its-2026-outlook-despite-recent-us-tariff-changes-12149018",
+    icon: "🤖",
+    text: "AI integration is redefining business confidence in the Canadian auto sector, with shops using AI for predictive maintenance scheduling and automated customer communications.",
+    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/market-trends/article/15818807/market-trends-canadian-businesses-entered-2026-with-confidence-ibm-reports",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Turn the F-150 Recall Into a Service Opportunity",
-  text: "With nearly 1.4 million 2015–2017 Ford F-150s recalled for the 6R80 transmission downshift issue, notification letters start hitting mailboxes on April 27. Get ahead of it now: pull your customer database and flag every 2015–2017 F-150 with a 6-speed automatic. Reach out proactively before the letter arrives — a quick text or phone call saying 'We noticed your truck may be part of a Ford recall and we can handle the repair for you' is a powerful retention tool. The fix is a no-cost PCM software update, and in some cases a lead frame replacement. It is fast, it is free to the customer, and it gets them into your bay. Use the visit to perform a full vehicle inspection and present any deferred maintenance. One recall appointment, done right, can generate $300 to $800 in additional approved work.",
+  title: "Invest in Your Footprint for New Tech",
+  text: "As ADAS and EVs gain momentum, don't just wait for the work to arrive—prepare your space. Reassessing your shop footprint to accommodate calibration equipment and EV charging/service areas will help you get ahead of the curve. Investing in the proper tools and modern equipment now ensures your team isn't 'chasing' technology but leading it. Even small changes, like dedicated bays for complex electronic diagnostics, can significantly improve efficiency and signal to customers that your shop is ready for the future of automotive service.",
 };
 
 const quoteOfTheDay = {
-  text: "For more than four decades, the teams at Toyota and Honda, along with our suppliers, have invested in Canadian communities, created high-quality jobs, and built vehicles that compete globally. The creation of PMAC reflects the shared responsibility we have as manufacturers to help strengthen the industry's future.",
-  author: "Tim Hollander",
-  title: "President, Toyota Motor Manufacturing Canada & PMAC Board Member",
+  text: "Investing in the proper tools, modern equipment and shop footprints to accommodate the technology will also help leaders get ahead of the curve rather than chase it.",
+  author: "Jason Herle",
+  title: "CEO, Fountain Tire & Chair, AIA Canada",
 };
 
 const rideOfTheDay = {
-  name: "1969 Dodge Charger R/T 440 Magnum",
-  description: "The 1969 Dodge Charger R/T is one of the most iconic muscle cars ever built — a car so deeply embedded in North American culture that it transcends the automotive world entirely. The R/T (Road/Track) package came standard with the 440 Magnum V8, a 375-horsepower big-block that delivered 480 lb-ft of torque and could propel the Charger through the quarter mile in the low 14-second range. The optional 426 Hemi took things further still. The second-generation B-body design — with its hidden headlights, flying buttress C-pillars, and recessed rear window — remains one of the most beautiful shapes ever to come out of Detroit. The 1969 Charger became a legend on the street, on the track, and on screen, and it remains one of the most coveted and recognized muscle cars in the world.",
+  name: "1970 Plymouth Superbird",
+  description: "The 1970 Plymouth Superbird was a high-performance, short-lived version of the Plymouth Road Runner, specifically designed for NASCAR racing. Its most striking features were the massive 'goalpost' rear wing and the aerodynamic nose cone, which added 19 inches to the car's length. Built to lure Richard Petty back to Plymouth, the Superbird was a homologation special, with nearly 2,000 units produced for the public. It was offered with three engine options, including the legendary 426 Hemi V8 producing 425 horsepower. Today, the Superbird is one of the most recognizable and sought-after muscle cars in history, representing the peak of the 'aero-car' era in American automotive design.",
   image: HOTROD_IMG,
 };
 
@@ -120,289 +120,250 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
   return (
     <div
       ref={ref}
-      className={`transition-all duration-500 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"} ${className}`}
+      className={`transition-all duration-700 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      } ${className}`}
     >
       {children}
     </div>
   );
 }
 
-function ShopTag({ label, color }: { label: string; color: string }) {
-  return (
-    <span
-      className="font-mono text-[0.65rem] font-semibold tracking-[0.12em] uppercase px-2 py-0.5 border inline-block"
-      style={{ color, borderColor: color }}
-    >
-      {label}
-    </span>
-  );
-}
-
-// --- Section Divider ---
-function Divider() {
-  return (
-    <div className="flex items-center gap-4 my-8">
-      <div className="flex-1 h-px bg-[#1a1a1a]/15" />
-      <span className="text-[#1a1a1a]/20 text-xs">&#9670;</span>
-      <div className="flex-1 h-px bg-[#1a1a1a]/15" />
-    </div>
-  );
-}
-
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#f5f0e8", color: "#1a1a1a" }}>
-      {/* Edition Stripe */}
-      <div className="w-full" style={{ backgroundColor: "#1a1a1a" }}>
-        <div className="container flex items-center justify-between py-2">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-[0.7rem] tracking-[0.15em] uppercase" style={{ color: "#e05a1a" }}>
-              Briefing #{BRIEFING_NUMBER}
-            </span>
-            <span className="font-mono text-[0.65rem] tracking-wide" style={{ color: "#a0977d" }}>
-              {BRIEFING_DATE}
-            </span>
+    <div className=\"min-h-screen bg-[#f5f0e8] text-[#1a1a1a] font-['Source_Sans_3'] selection:bg-[#e05a1a] selection:text-white\">
+      {/* Top Navigation Bar */}
+      <nav className=\"sticky top-0 z-50 bg-[#1a1a1a] text-white py-3 px-6 shadow-xl\">
+        <div className=\"max-w-7xl mx-auto flex justify-between items-center\">
+          <div className=\"flex items-center gap-4\">
+            <span className=\"bg-[#e05a1a] text-white px-2 py-0.5 text-xs font-bold tracking-tighter uppercase\">Live</span>
+            <h1 className=\"font-['Oswald'] text-xl font-bold tracking-tight uppercase\">Baywash Daily Briefing</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <Link href="/archive" className="font-mono text-[0.65rem] tracking-[0.1em] uppercase hover:underline" style={{ color: "#a0977d" }}>
-              Archive
-            </Link>
-            <span className="font-mono text-[0.65rem] tracking-wide" style={{ color: "#a0977d" }}>
-              {BRIEFING_DAY} Edition
-            </span>
+          <div className=\"hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-gray-400\">
+            <Link href=\"/\" className=\"text-[#e05a1a] hover:text-white transition-colors\">Today's Edition</Link>
+            <Link href=\"/archive\" className=\"hover:text-white transition-colors\">Archive</Link>
+            <span className=\"text-gray-600\">|</span>
+            <span>Shop Portal</span>
           </div>
         </div>
-      </div>
+      </nav>
 
-      {/* Masthead */}
-      <header className="container pt-6 pb-4">
-        <div className="flex items-end justify-between border-b-2 pb-3" style={{ borderColor: "#1a1a1a" }}>
-          <div>
-            <h1 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tight leading-none" style={{ fontFamily: "'Oswald', sans-serif" }}>
-              The Daily Briefing
-            </h1>
-            <p className="font-mono text-[0.7rem] tracking-[0.15em] uppercase mt-1" style={{ color: "#78716c" }}>
-              Baywash Auto Repair &middot; NAPA AutoTech Training
-            </p>
-          </div>
-          <p className="font-mono text-[0.6rem] tracking-wide text-right hidden sm:block" style={{ color: "#78716c" }}>
-            Your morning shop intel<br />Mon&ndash;Sat &middot; 6:00 AM ET
-          </p>
-        </div>
-      </header>
-
-      {/* Hero Banner */}
-      <AnimatedSection>
-        <div className="container mb-6">
-          <div className="relative w-full overflow-hidden" style={{ height: "280px" }}>
-            <img
-              src={HERO_BANNER}
-              alt="Auto repair shop technician at work"
-              className="w-full h-full object-cover"
-              style={{ filter: "brightness(0.7)" }}
-            />
-            <div className="absolute inset-0 flex items-end p-6">
-              <div>
-                <span className="font-mono text-[0.65rem] tracking-[0.15em] uppercase block mb-2" style={{ color: "#e05a1a" }}>
-                  {BRIEFING_DATE} &middot; Edition #{BRIEFING_NUMBER}
-                </span>
-                <h2 className="font-display text-2xl md:text-3xl font-bold uppercase text-white leading-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                  EV Shop Fire Warning, STO Exam Overhaul, and Chinese EVs Enter Canada
-                </h2>
+      <main className=\"max-w-7xl mx-auto px-6 py-12\">
+        {/* Header Section */}
+        <header className=\"border-b-4 border-[#1a1a1a] pb-8 mb-12\">
+          <div className=\"flex flex-col md:flex-row justify-between items-end gap-6\">
+            <div className=\"flex-1\">
+              <div className=\"flex items-center gap-3 mb-4\">
+                <span className=\"font-['Source_Code_Pro'] text-sm font-bold text-[#e05a1a]\">EDITION NO. {BRIEFING_NUMBER}</span>
+                <span className=\"h-px w-12 bg-gray-300\"></span>
+                <span className=\"font-['Source_Code_Pro'] text-sm text-gray-500 uppercase tracking-widest\">{BRIEFING_DAY}, {BRIEFING_DATE}</span>
               </div>
+              <h2 className=\"font-['Oswald'] text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter uppercase\">
+                The Daily <br />
+                <span className=\"text-[#e05a1a]\">Briefing.</span>
+              </h2>
+            </div>
+            <div className=\"md:w-1/3 text-right\">
+              <p className=\"text-sm text-gray-600 leading-relaxed italic\">
+                \"The essential morning intelligence for the Canadian automotive professional. 
+                Curated daily for shop owners, technicians, and industry leaders.\"
+              </p>
             </div>
           </div>
-        </div>
-      </AnimatedSection>
+        </header>
 
-      {/* Main Content Grid */}
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Left Column — Lead Stories (3/5) */}
-          <div className="lg:col-span-3">
+        {/* Hero Section */}
+        <AnimatedSection className=\"mb-16\">
+          <div className=\"relative group overflow-hidden bg-[#1a1a1a]\">
+            <img 
+              src={HERO_BANNER} 
+              alt=\"Automotive Workshop\" 
+              className=\"w-full h-[500px] object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000\"
+            />
+            <div className=\"absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent\"></div>
+            <div className=\"absolute bottom-0 left-0 p-8 md:p-12 max-w-3xl\">
+              <span className=\"inline-block bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4\">
+                Top Intelligence
+              </span>
+              <h3 className=\"font-['Oswald'] text-4xl md:text-5xl text-white font-bold leading-tight uppercase mb-6\">
+                Navigating the 2026 Structural Reset: How Canadian Shops are Adapting to Trade and Tech Shifts
+              </h3>
+              <p className=\"text-gray-300 text-lg leading-relaxed\">
+                As the industry faces unprecedented trade volatility and rapid technological advancement, 
+                independent shops are finding new ways to thrive by focusing on life-extension services 
+                and advanced technician training.
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Main Content Grid */}
+        <div className=\"grid grid-cols-1 lg:grid-cols-12 gap-12\">
+          {/* Left Column: Lead Stories */}
+          <div className=\"lg:col-span-8 space-y-16\">
             {stories.map((story, index) => (
               <AnimatedSection key={story.id} delay={index * 100}>
-                <article className="mb-8">
-                  {/* Story Number + Tag */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <span
-                      className="font-display text-4xl font-bold leading-none"
-                      style={{ fontFamily: "'Oswald', sans-serif", color: "#e05a1a" }}
-                    >
-                      {String(story.id).padStart(2, "0")}
-                    </span>
-                    <ShopTag label={story.tag} color={story.tagColor} />
+                <article className=\"group\">
+                  <div className=\"flex flex-col md:flex-row gap-8\">
+                    <div className=\"md:w-1/3\">
+                      <div className=\"relative overflow-hidden aspect-[4/5]\">
+                        <img 
+                          src={story.image} 
+                          alt={story.headline}
+                          className=\"w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500\"
+                        />
+                        <div 
+                          className=\"absolute top-0 left-0 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-widest\"
+                          style={{ backgroundColor: story.tagColor }}
+                        >
+                          {story.tag}
+                        </div>
+                      </div>
+                    </div>
+                    <div className=\"md:w-2/3\">
+                      <h4 className=\"font-['Oswald'] text-3xl font-bold leading-tight uppercase mb-4 group-hover:text-[#e05a1a] transition-colors\">
+                        {story.headline}
+                      </h4>
+                      <p className=\"text-gray-700 leading-relaxed mb-6\">
+                        {story.summary}
+                      </p>
+                      <div className=\"bg-white/50 border-l-4 border-[#1a1a1a] p-6 mb-6\">
+                        <h5 className=\"font-bold text-xs uppercase tracking-widest mb-2\">Why it matters for your shop:</h5>
+                        <p className=\"text-sm text-gray-600 leading-relaxed\">
+                          {story.whyItMatters}
+                        </p>
+                      </div>
+                      <div className=\"flex items-center justify-between\">
+                        <span className=\"font-['Source_Code_Pro'] text-[10px] text-gray-400 uppercase tracking-widest\">
+                          Source: {story.source}
+                        </span>
+                        <a 
+                          href={story.sourceUrl}
+                          target=\"_blank\"
+                          rel=\"noopener noreferrer\"
+                          className=\"text-xs font-bold uppercase tracking-widest text-[#e05a1a] hover:underline\"
+                        >
+                          Read Full Report →
+                        </a>
+                      </div>
+                    </div>
                   </div>
-
-                  {/* Image */}
-                  <div className="w-full overflow-hidden mb-4" style={{ height: "220px" }}>
-                    <img
-                      src={story.image}
-                      alt={story.headline}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* Headline */}
-                  <h3
-                    className="font-display text-xl md:text-2xl font-bold uppercase leading-tight mb-3"
-                    style={{ fontFamily: "'Oswald', sans-serif" }}
-                  >
-                    {story.headline}
-                  </h3>
-
-                  {/* Summary */}
-                  <p className="font-body text-base leading-relaxed mb-4" style={{ color: "#2c2a25" }}>
-                    {story.summary}
-                  </p>
-
-                  {/* Why It Matters */}
-                  <div className="border-l-4 pl-4 mb-4" style={{ borderColor: "#e05a1a" }}>
-                    <p
-                      className="font-display text-xs font-semibold uppercase tracking-[0.15em] mb-2"
-                      style={{ fontFamily: "'Oswald', sans-serif", color: "#e05a1a" }}
-                    >
-                      Why It Matters
-                    </p>
-                    <p className="font-body text-[0.95rem] leading-relaxed" style={{ color: "#3d3a34" }}>
-                      {story.whyItMatters}
-                    </p>
-                  </div>
-
-                  {/* Source */}
-                  <a
-                    href={story.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-[0.7rem] tracking-wide uppercase hover:underline inline-flex items-center gap-1"
-                    style={{ color: "#78716c" }}
-                  >
-                    Source: {story.source} &#8599;
-                  </a>
-
-                  {index < stories.length - 1 && <Divider />}
                 </article>
               </AnimatedSection>
             ))}
           </div>
 
-          {/* Right Column — Sidebar (2/5) */}
-          <aside className="lg:col-span-2">
+          {/* Right Column: Sidebar */}
+          <aside className=\"lg:col-span-4 space-y-12\">
             {/* Quick Hits */}
-            <AnimatedSection delay={200}>
-              <div className="mb-8">
-                <h4
-                  className="font-display text-sm font-bold uppercase tracking-[0.15em] pb-2 mb-4 border-b-2"
-                  style={{ fontFamily: "'Oswald', sans-serif", borderColor: "#1a1a1a" }}
-                >
-                  Quick Hits
-                </h4>
-                <div className="space-y-4">
-                  {quickHits.map((hit, i) => (
-                    <div key={i} className="flex gap-3">
-                      <span className="text-lg flex-shrink-0">{hit.icon}</span>
-                      <p className="font-body text-[0.9rem] leading-relaxed" style={{ color: "#2c2a25" }}>
-                        {hit.text}{" "}
-                        <a
-                          href={hit.sourceUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-mono text-[0.65rem] tracking-wide uppercase hover:underline"
-                          style={{ color: "#e05a1a" }}
-                        >
-                          [Link] &#8599;
-                        </a>
+            <AnimatedSection className=\"bg-[#1a1a1a] text-white p-8\">
+              <h4 className=\"font-['Oswald'] text-2xl font-bold uppercase tracking-tight mb-8 border-b border-gray-700 pb-4\">
+                Quick Hits
+              </h4>
+              <div className=\"space-y-8\">
+                {quickHits.map((hit, i) => (
+                  <div key={i} className=\"group\">
+                    <div className=\"flex gap-4 mb-2\">
+                      <span className=\"text-xl\">{hit.icon}</span>
+                      <p className=\"text-sm text-gray-300 leading-relaxed group-hover:text-white transition-colors\">
+                        {hit.text}
                       </p>
                     </div>
-                  ))}
-                </div>
+                    <a 
+                      href={hit.sourceUrl}
+                      target=\"_blank\"
+                      rel=\"noopener noreferrer\"
+                      className=\"text-[10px] font-['Source_Code_Pro'] text-gray-500 uppercase tracking-widest hover:text-[#e05a1a]\"
+                    >
+                      View Source
+                    </a>
+                  </div>
+                ))}
               </div>
             </AnimatedSection>
 
             {/* Tip of the Day */}
-            <AnimatedSection delay={300}>
-              <div className="p-5 mb-8" style={{ backgroundColor: "#1a1a1a" }}>
-                <h4
-                  className="font-display text-sm font-bold uppercase tracking-[0.15em] mb-3"
-                  style={{ fontFamily: "'Oswald', sans-serif", color: "#e05a1a" }}
-                >
-                  Tip of the Day
-                </h4>
-                <p className="font-display text-lg font-semibold mb-2" style={{ fontFamily: "'Oswald', sans-serif", color: "#f5f0e8" }}>
-                  {tipOfTheDay.title}
-                </p>
-                <p className="font-body text-[0.9rem] leading-relaxed" style={{ color: "#c4bfb3" }}>
-                  {tipOfTheDay.text}
-                </p>
+            <AnimatedSection className=\"border-2 border-[#e05a1a] p-8\">
+              <div className=\"flex items-center gap-3 mb-6\">
+                <div className=\"w-8 h-8 bg-[#e05a1a] flex items-center justify-center text-white font-bold\">!</div>
+                <h4 className=\"font-['Oswald'] text-xl font-bold uppercase tracking-tight\">Tip of the Day</h4>
               </div>
+              <h5 className=\"font-bold text-lg mb-3\">{tipOfTheDay.title}</h5>
+              <p className=\"text-sm text-gray-600 leading-relaxed\">
+                {tipOfTheDay.text}
+              </p>
             </AnimatedSection>
 
             {/* Quote of the Day */}
-            <AnimatedSection delay={400}>
-              <div className="mb-8">
-                <h4
-                  className="font-display text-sm font-bold uppercase tracking-[0.15em] pb-2 mb-4 border-b-2"
-                  style={{ fontFamily: "'Oswald', sans-serif", borderColor: "#1a1a1a" }}
-                >
-                  Quote of the Day
-                </h4>
-                <blockquote className="border-l-4 pl-4" style={{ borderColor: "#e05a1a" }}>
-                  <p className="font-body text-[0.95rem] italic leading-relaxed mb-3" style={{ color: "#2c2a25" }}>
-                    &ldquo;{quoteOfTheDay.text}&rdquo;
-                  </p>
-                  <footer className="font-mono text-[0.7rem] tracking-wide uppercase" style={{ color: "#78716c" }}>
-                    — {quoteOfTheDay.author}, {quoteOfTheDay.title}
-                  </footer>
-                </blockquote>
+            <AnimatedSection className=\"bg-[#f5f0e8] border border-gray-200 p-8 relative\">
+              <span className=\"absolute top-4 left-4 text-6xl text-gray-200 font-serif leading-none\">\"</span>
+              <div className=\"relative z-10\">
+                <p className=\"text-lg italic text-gray-700 leading-relaxed mb-6\">
+                  {quoteOfTheDay.text}
+                </p>
+                <div>
+                  <p className=\"font-bold text-sm uppercase tracking-widest\">{quoteOfTheDay.author}</p>
+                  <p className=\"text-xs text-gray-500\">{quoteOfTheDay.title}</p>
+                </div>
               </div>
             </AnimatedSection>
 
             {/* Ride of the Day */}
-            <AnimatedSection delay={500}>
-              <div className="mb-8">
-                <h4
-                  className="font-display text-sm font-bold uppercase tracking-[0.15em] pb-2 mb-4 border-b-2"
-                  style={{ fontFamily: "'Oswald', sans-serif", borderColor: "#1a1a1a" }}
-                >
-                  Ride of the Day
-                </h4>
-                <div className="overflow-hidden mb-3" style={{ height: "180px" }}>
-                  <img
-                    src={rideOfTheDay.image}
-                    alt={rideOfTheDay.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h5
-                  className="font-display text-lg font-bold uppercase mb-2"
-                  style={{ fontFamily: "'Oswald', sans-serif" }}
-                >
-                  {rideOfTheDay.name}
-                </h5>
-                <p className="font-body text-[0.9rem] leading-relaxed" style={{ color: "#3d3a34" }}>
-                  {rideOfTheDay.description}
-                </p>
+            <AnimatedSection className=\"group\">
+              <h4 className=\"font-['Oswald'] text-2xl font-bold uppercase tracking-tight mb-6\">Ride of the Day</h4>
+              <div className=\"overflow-hidden bg-[#1a1a1a] mb-4\">
+                <img 
+                  src={rideOfTheDay.image} 
+                  alt={rideOfTheDay.name}
+                  className=\"w-full aspect-video object-cover opacity-90 group-hover:scale-105 transition-transform duration-700\"
+                />
               </div>
+              <h5 className=\"font-bold text-xl mb-2\">{rideOfTheDay.name}</h5>
+              <p className=\"text-sm text-gray-600 leading-relaxed\">
+                {rideOfTheDay.description}
+              </p>
             </AnimatedSection>
           </aside>
         </div>
-      </div>
+      </main>
 
       {/* Footer */}
-      <footer className="mt-12" style={{ backgroundColor: "#1a1a1a" }}>
-        <div className="container py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <span className="font-display text-sm font-bold uppercase tracking-tight" style={{ fontFamily: "'Oswald', sans-serif", color: "#f5f0e8" }}>
-                The Daily Briefing
-              </span>
-              <span className="font-mono text-[0.6rem] tracking-wide" style={{ color: "#78716c" }}>
-                Baywash Auto Repair
-              </span>
+      <footer className=\"bg-[#1a1a1a] text-white py-16 px-6 mt-24\">
+        <div className=\"max-w-7xl mx-auto\">
+          <div className=\"grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-b border-gray-800 pb-12\">
+            <div>
+              <h4 className=\"font-['Oswald'] text-xl font-bold uppercase mb-6\">About the Briefing</h4>
+              <p className=\"text-sm text-gray-400 leading-relaxed\">
+                Baywash Daily Briefing is a premium intelligence service for the Canadian automotive aftermarket. 
+                We provide daily updates on trade, technology, and labor trends that matter to your business.
+              </p>
             </div>
-            <span className="font-mono text-[0.6rem] tracking-wide" style={{ color: "#78716c" }}>
-              &copy; {new Date().getFullYear()} Baywash Auto Repair &middot; All rights reserved
-            </span>
+            <div>
+              <h4 className=\"font-['Oswald'] text-xl font-bold uppercase mb-6\">Quick Links</h4>
+              <ul className=\"text-sm text-gray-400 space-y-3\">
+                <li><Link href=\"/\" className=\"hover:text-[#e05a1a] transition-colors\">Today's Edition</Link></li>
+                <li><Link href=\"/archive\" className=\"hover:text-[#e05a1a] transition-colors\">Archive</Link></li>
+                <li><a href=\"#\" className=\"hover:text-[#e05a1a] transition-colors\">Shop Portal</a></li>
+                <li><a href=\"#\" className=\"hover:text-[#e05a1a] transition-colors\">Industry Reports</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className=\"font-['Oswald'] text-xl font-bold uppercase mb-6\">Connect</h4>
+              <p className=\"text-sm text-gray-400 mb-4\">Stay updated with the latest industry news.</p>
+              <div className=\"flex gap-4\">
+                <div className=\"w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer\">In</div>
+                <div className=\"w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer\">X</div>
+                <div className=\"w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer\">Fb</div>
+              </div>
+            </div>
+          </div>
+          <div className=\"flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-['Source_Code_Pro'] text-gray-500 uppercase tracking-[0.2em]\">
+            <p>© 2026 Baywash Daily Briefing. All rights reserved.</p>
+            <div className=\"flex gap-8\">
+              <a href=\"#\" className=\"hover:text-white transition-colors\">Privacy Policy</a>
+              <a href=\"#\" className=\"hover:text-white transition-colors\">Terms of Service</a>
+              <a href=\"#\" className=\"hover:text-white transition-colors\">Contact Support</a>
+            </div>
           </div>
         </div>
       </footer>
