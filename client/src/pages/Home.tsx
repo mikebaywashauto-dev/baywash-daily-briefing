@@ -1,4 +1,4 @@
-// 2026-04-19
+// 2026-04-22
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,16 +10,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 10;
-const BRIEFING_DATE = "April 19, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 11;
+const BRIEFING_DATE = "April 22, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bnyiADCDPxqvVNMH.jpeg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gzLKubkffWeSpSqq.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/alaVJlJJyuWowIKu.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NKVDkyxdWRJmzjLe.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SGRhjhcUgzUUPfLI.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YKVCcPWhETpVQxZp.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YKVCcPWhETpVQxZp.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZsWxaLdDsmAFGWVw.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LzutbZAIFBSwzKyP.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WIVvfyVBYlmRTiSL.jpg";
 
 // --- Data ---
 const stories = [
@@ -47,13 +47,13 @@ const stories = [
   },
   {
     id: 3,
-    tag: "MARKET",
+    tag: "TECHNOLOGY",
     tagColor: "#2563eb",
-    headline: "Canadian Auto Sales Contract in Q1 2026 — Consumers Holding Vehicles Longer Amid Trade Uncertainty",
-    summary: "The Canadian vehicle market continues to contract in early 2026, with year-to-date sales through February dropping by 3.2%. Trade policy uncertainty and the threat of tariffs are weighing heavily on consumer confidence, leading many Canadians to delay new vehicle purchases. Scotiabank Economics has revised its full-year forecast down to 1.81 million units. However, this slowdown in new car sales is creating a significant opportunity for the repair sector. With the average age of vehicles on Canadian roads remaining high, more owners are choosing to invest in maintenance and repairs to extend the life of their current vehicles rather than trading up in a volatile market.",
-    whyItMatters: "A cooling new car market is often a tailwind for independent repair shops. When people stop buying new, they start fixing what they have. This is the perfect time to double down on preventative maintenance programs and customer retention strategies. Position your shop as the 'life extension' expert for your customers' vehicles. By building trust now through transparent service and quality repairs, you can capture the increased demand for maintenance that comes when consumers are hesitant to take on new debt.",
-    source: "Focus2move / TD Economics",
-    sourceUrl: "https://www.focus2move.com/canada-auto-sales/",
+    headline: "EV Maintenance Becomes the 'New Normal' for Canadian Shops in 2026",
+    summary: "As of April 2026, EV and hybrid maintenance has officially transitioned from a niche service to a core requirement for Canadian independent shops. With a growing focus on specialized battery health checks and high-voltage system safety, shops are increasingly investing in specialized diagnostic tools and technician certification. Recent reports indicate that while EVs require less frequent mechanical maintenance, the complexity of their electronic systems and the need for precise thermal management service are creating high-value opportunities for prepared shops. Industry experts emphasize that 'policy clarity' and investment in shop infrastructure are the missing pieces to fully unlocking the potential of the EV aftermarket.",
+    whyItMatters: "The shift to electrification is no longer optional. Shops that have already integrated EV service into their workflow are seeing higher customer retention as early adopters look for reliable alternatives to dealership service. By positioning your shop as an EV-ready facility now, you are securing your place in the future of the Canadian auto care industry. Focus on battery diagnostics and high-voltage safety training to build trust with this growing segment of the market.",
+    source: "Motor.com / AIA Canada",
+    sourceUrl: "https://www.motor.com/2026/01/ev-technology-impact-auto-technicians/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "🔧",
-    text: "Independent shops are seeing higher average repair orders in 2026 as deferred maintenance from previous years finally hits the bays, according to the Auto Care Association.",
-    sourceUrl: "https://www.autocare.org/news/latest-news/detail/2026/04/17/repair-shops-navigating-tougher-consumer-environment",
+    text: "The 2026 Voice of the Technician survey reveals that tool costs and ongoing training are the top concerns for over 5,500 polled technicians across North America.",
+    sourceUrl: "https://www.autonews.com/retail/service-and-parts/an-voice-of-technician-survey-0402/",
   },
   {
-    icon: "⚡",
-    text: "EV and hybrid maintenance is becoming the 'new normal' for Canadian shops in 2026, with a growing focus on specialized battery health checks and high-voltage system safety.",
-    sourceUrl: "https://nfsautorepair.ca/looking-ahead-whats-next-for-auto-repair-and-fleet-services-in-2026/",
+    icon: "🏆",
+    text: "AIA Canada has announced the 2026 Industry Award winners, celebrating excellence in leadership and service within the Canadian auto care sector.",
+    sourceUrl: "https://www.aiacanada.com/news/celebrating-excellence-aia-canada-announces-2026-industry-award-winners/",
   },
   {
     icon: "⚖️",
-    text: "The deadline for the $50 million auto parts price-fixing class-action settlement in Canada is approaching at the end of April. Ensure your shop has filed its claim if eligible.",
-    sourceUrl: "https://dailyhive.com/canada/deadline-final-car-settlement",
+    text: "Manitoba's new 'Right to Repair' legislation receives strong backing from AIA Canada, promising to strengthen consumer choice and support independent repair businesses.",
+    sourceUrl: "https://www.repairerdrivennews.com/2026/03/20/aia-canada-backs-manitoba-right-to-repair-legislation/",
   },
   {
-    icon: "🤖",
-    text: "AI integration is redefining business confidence in the Canadian auto sector, with shops using AI for predictive maintenance scheduling and automated customer communications.",
+    icon: "📈",
+    text: "Canadian automotive businesses entered 2026 with renewed confidence, driven by AI integration for predictive maintenance and improved customer communication.",
     sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/market-trends/article/15818807/market-trends-canadian-businesses-entered-2026-with-confidence-ibm-reports",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Invest in Your Footprint for New Tech",
-  text: "As ADAS and EVs gain momentum, don't just wait for the work to arrive—prepare your space. Reassessing your shop footprint to accommodate calibration equipment and EV charging/service areas will help you get ahead of the curve. Investing in the proper tools and modern equipment now ensures your team isn't 'chasing' technology but leading it. Even small changes, like dedicated bays for complex electronic diagnostics, can significantly improve efficiency and signal to customers that your shop is ready for the future of automotive service.",
+  title: "Sharpen Your Tools, Sharpen Your Future",
+  text: "As vehicles become increasingly software-defined, your most important tool is your knowledge. Dedicate at least one hour a week for your team to review new technical bulletins or participate in online training modules. Staying ahead of the curve on diagnostic software and high-voltage safety isn't just about fixing cars—it's about fixing your shop's future in a rapidly evolving market.",
 };
 
 const quoteOfTheDay = {
-  text: "Investing in the proper tools, modern equipment and shop footprints to accommodate the technology will also help leaders get ahead of the curve rather than chase it.",
-  author: "Jason Herle",
-  title: "CEO, Fountain Tire & Chair, AIA Canada",
+  text: "The expectations of life depend upon diligence; the mechanic that would perfect his work must first sharpen his tools.",
+  author: "Confucius",
+  title: "Ancient Wisdom for Modern Technicians",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Superbird",
-  description: "The 1970 Plymouth Superbird was a high-performance, short-lived version of the Plymouth Road Runner, specifically designed for NASCAR racing. Its most striking features were the massive 'goalpost' rear wing and the aerodynamic nose cone, which added 19 inches to the car's length. Built to lure Richard Petty back to Plymouth, the Superbird was a homologation special, with nearly 2,000 units produced for the public. It was offered with three engine options, including the legendary 426 Hemi V8 producing 425 horsepower. Today, the Superbird is one of the most recognizable and sought-after muscle cars in history, representing the peak of the 'aero-car' era in American automotive design.",
+  name: "1969 Chevrolet Camaro Z/28",
+  description: "The 1969 Chevrolet Camaro Z/28 is the pinnacle of the first-generation Camaro and a true icon of the muscle car era. Designed for the SCCA Trans-Am racing series, it featured the legendary high-revving 302 cubic-inch V8 engine, officially rated at 290 horsepower but widely known to produce much more. With its aggressive styling, including the cowl-induction hood and signature stripes, the '69 Z/28 remains one of the most desirable and recognizable classic cars in the world, representing the perfect blend of American power and handling.",
   image: HOTROD_IMG,
 };
 
@@ -158,7 +158,7 @@ export default function Home() {
                 <span className=\"h-px w-12 bg-gray-300\"></span>
                 <span className=\"font-['Source_Code_Pro'] text-sm text-gray-500 uppercase tracking-widest\">{BRIEFING_DAY}, {BRIEFING_DATE}</span>
               </div>
-              <h2 className=\"font-['Oswald'] text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter uppercase\">
+              <h2 className=\"font-['Oswald'] text-6xl md:text-8xl font-bold leading-[0.9] uppercase\">
                 The Daily <br />
                 <span className=\"text-[#e05a1a]\">Briefing.</span>
               </h2>
