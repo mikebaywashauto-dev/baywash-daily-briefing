@@ -1,4 +1,4 @@
-// 2026-04-22
+// 2026-05-14
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,9 +10,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 11;
-const BRIEFING_DATE = "April 22, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 12;
+const BRIEFING_DATE = "May 14, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
 const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YKVCcPWhETpVQxZp.jpg";
@@ -25,76 +25,76 @@ const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_fil
 const stories = [
   {
     id: 1,
-    tag: "ADVOCACY",
+    tag: "TRADE",
     tagColor: "#e05a1a",
-    headline: "AIA Canada Elects New Board at 84th AGM — Focus Shifts to Right to Repair and Tech Shortage",
-    summary: "The Automotive Industries Association of Canada (AIA Canada) held its 84th Annual General Meeting on April 16, 2026, electing three new directors: Daryll O’Keefe (Fix Network), Sabrina Thring (Driven Brands), and Bryan Elwin (Mr. Lube + Tires). Jason Herle, CEO of Fountain Tire, has been appointed as the new Chair. The association, representing Canada's $43.9 billion auto care sector, is doubling down on its advocacy for the independent aftermarket. Key priorities for the new board include navigating the 'structural reset' of the industry caused by trade volatility and accelerating the push for Right to Repair legislation as vehicles become increasingly software-defined. The board also aims to address the persistent technician shortage, which remains a top concern for shops nationwide.",
-    whyItMatters: "For independent shop owners, AIA Canada is your primary voice in Ottawa. The appointment of Jason Herle as Chair brings a leader from one of Canada's largest service networks to the helm. This leadership shift signals a continued focus on ensuring independent shops have the data access and skilled labor needed to compete with dealerships. As the industry faces 'existential challenges' in 2026 from trade and technology, having a strong, unified advocacy group is critical for protecting the interests of the 26.6 million vehicles in the Canadian aftermarket.",
-    source: "AIA Canada",
-    sourceUrl: "https://www.aiacanada.com/news/aia-canada-announces-changes-to-its-board-of-directors-at-the-2026-annual-general-meeting/",
+    headline: "Canada's Auto Industry at 'Inflection Point' — USMCA Talks Likely to Stretch Past July 1 as Leaders Grow Cautiously Optimistic",
+    summary: "A new RBC report released this week declares Canada's auto industry is at a strategic crossroads, with its future hinging on securing tariff-free access to the United States. The report outlines four scenarios ranging from a best-case of two million units assembled annually by 2040 to a worst-case where Canadian assembly plants shutter entirely. Meanwhile, at the Ontario Auto Forum 2026 in Toronto on May 12, APMA CEO Flavio Volpe stated that Canada has the numbers on its side in the USMCA review — but cautioned that talks will likely stretch past the July 1 deadline. Despite the uncertainty, Canadian auto leaders are gaining confidence that the two countries will ultimately preserve the deeply integrated North American supply chain that has defined the industry for decades. Ottawa has already committed $1.5 billion in tariff relief through the Business Development Bank of Canada and the Regional Tariff Response Initiative to help suppliers manage immediate cost pressures from U.S. duties on steel, aluminum, and copper.",
+    whyItMatters: "For independent shop owners, the tariff saga is not just a manufacturing story — it directly affects your parts costs and supply reliability. With U.S. duties on steel, aluminum, and copper rippling through the supply chain, expect continued price volatility on components ranging from brake hardware to exhaust systems. The good news: Ottawa's $1.5B relief package signals the government is actively supporting the sector. Stay in close contact with your jobber about lead times and pricing changes, and consider locking in pricing on high-turn categories while the trade situation remains fluid. A resolution before year-end could stabilize costs significantly.",
+    source: "Automotive News Canada / Motor Illustrated",
+    sourceUrl: "https://www.autonews.com/manufacturing/automakers/anc-tariffs-canada-confident-deal-timeline-delay-0512/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "LABOUR",
+    tag: "PARTS SUPPLY",
     tagColor: "#dc2626",
-    headline: "Technician Shortage Reaches Critical Levels — 642,000 New Techs Needed Across North America by 2026",
-    summary: "New data released in April 2026 confirms that the automotive technician shortage is no longer a future threat—it is a present crisis. The TechForce Foundation predicts that demand for new vehicle technicians will be three times higher than the current supply through 2026. In Canada, Statistics Canada reports that vacancies have more than doubled in recent years, with over 11,000 open positions in mid-2022 and numbers continuing to climb in 2026. Shop owners are reporting that the shortage is having a 'high' to 'moderate' impact on their ability to take on new work, leading to longer lead times for customers and increased pressure on existing staff. Industry leaders are calling for a collective effort to raise the profile of the trades and explore government training grants to bridge the gap.",
-    whyItMatters: "If you're struggling to find and keep good techs, you're not alone—it's the #1 challenge facing the industry today. This shortage is driving up labor costs and forcing shops to rethink their business models. To stay competitive, shops must invest in 'boosting their bench' through better benefits, flexible schedules, and ongoing training. As Jason Herle noted, shops may also need to reassess fee structures to reflect the high level of skill required to service modern vehicles, enabling higher compensation for certified technicians and ensuring a more sustainable future for the trade.",
-    source: "Auto Service World / TechForce",
-    sourceUrl: "https://www.autoserviceworld.com/cars-2026-executive-outlook-jason-herle/",
+    headline: "First Brands Bankruptcy Sends Shockwaves Through Canadian Aftermarket — Raybestos, Centric, and StopTech Brands Dismantled",
+    summary: "The wind-down of First Brands Group — parent company of Raybestos, Centric Parts, and StopTech — is creating immediate and serious disruption for Canadian jobbers and repair shops. Hilco Global and SB360 have been engaged to liquidate the company's inventory, machinery, and equipment, confirming there is no restructuring path forward for key divisions including Brake Parts Inc. and Cardone Industries. These are not fringe brands: Raybestos and Centric carry deep recognition with Canadian technicians and are embedded in catalogue systems, warranty processes, and established purchasing patterns across the country. The removal of these lines forces shops to urgently re-evaluate their brake and remanufactured parts sourcing, validate cross-references, and retrain counter staff on replacement brands. Industry analysts warn that a poorly managed transition risks long-term customer defection for jobbers who fail to act decisively.",
+    whyItMatters: "If your shop relies on Raybestos, Centric, or StopTech for brake jobs, you need to act now. These brands are being liquidated — not acquired — meaning your current supplier relationships for these lines are ending. Contact your jobber immediately to understand their replacement strategy and which alternative brands they are transitioning to. This is also an opportunity: shops that proactively communicate the change to their customers, explain the quality of the replacement brands, and maintain fill rates will strengthen loyalty. Prioritize SKU-level analysis of your most-used brake parts and ensure your DMS is updated with new part numbers before the disruption hits your service lane.",
+    source: "Auto Service World / PR Newswire",
+    sourceUrl: "https://www.autoserviceworld.com/from-the-magazine-disruption-disinflation-and-structural-reset/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "TECHNOLOGY",
+    tag: "BUSINESS",
     tagColor: "#2563eb",
-    headline: "EV Maintenance Becomes the 'New Normal' for Canadian Shops in 2026",
-    summary: "As of April 2026, EV and hybrid maintenance has officially transitioned from a niche service to a core requirement for Canadian independent shops. With a growing focus on specialized battery health checks and high-voltage system safety, shops are increasingly investing in specialized diagnostic tools and technician certification. Recent reports indicate that while EVs require less frequent mechanical maintenance, the complexity of their electronic systems and the need for precise thermal management service are creating high-value opportunities for prepared shops. Industry experts emphasize that 'policy clarity' and investment in shop infrastructure are the missing pieces to fully unlocking the potential of the EV aftermarket.",
-    whyItMatters: "The shift to electrification is no longer optional. Shops that have already integrated EV service into their workflow are seeing higher customer retention as early adopters look for reliable alternatives to dealership service. By positioning your shop as an EV-ready facility now, you are securing your place in the future of the Canadian auto care industry. Focus on battery diagnostics and high-voltage safety training to build trust with this growing segment of the market.",
-    source: "Motor.com / AIA Canada",
-    sourceUrl: "https://www.motor.com/2026/01/ev-technology-impact-auto-technicians/",
+    headline: "Independent Shops Drifting Toward Older Vehicles — Industry Coach Warns of a 'Slow Erosion' of Profitability",
+    summary: "Murray Voth, president of RPM Training, delivered a stark warning at the AIA Canada National Conference: independent shops are quietly losing market share on newer vehicles, not because dealerships are stealing work, but because many shops have failed to keep pace with technology. Voth cited industry data showing that the average Canadian independent shop is increasingly servicing vehicles that are older, harder to diagnose, and owned by consumers under greater financial pressure. With approximately 60 per cent of independent shops employing between one and four people, the capital and time required for ongoing technology investment is a genuine barrier. The result is a cycle where shops appear busy but are working harder for lower margins on vehicles with deferred maintenance and complex sourcing challenges. Voth estimates there are billions of dollars in unperformed maintenance across Canada — a massive opportunity for shops willing to invest in communication, technology, and professional positioning.",
+    whyItMatters: "This story is a wake-up call. If your shop is 'always busy' but margins feel tight, check your vehicle mix. Are you seeing more 10-year-old cars and fewer late-model vehicles? That shift is a leading indicator of a profitability problem. The solution is not to turn away older vehicles — it is to invest in the diagnostic tools and training needed to service newer ones competitively. Start by auditing your last 90 days of ROs: what is the average model year of vehicles you serviced? If it is trending older, it is time to invest in ADAS calibration equipment, subscribe to a technical information service, and consider a manufacturer certification program to signal to newer-car owners that your shop is ready for their vehicle.",
+    source: "Auto Service World",
+    sourceUrl: "https://www.autoserviceworld.com/whats-pushing-independents-toward-older-cars-hurting-profit/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🔧",
-    text: "The 2026 Voice of the Technician survey reveals that tool costs and ongoing training are the top concerns for over 5,500 polled technicians across North America.",
-    sourceUrl: "https://www.autonews.com/retail/service-and-parts/an-voice-of-technician-survey-0402/",
+    icon: "🇨🇦",
+    text: "Ottawa's $6B 'Team Canada Strong' skilled trades initiative, announced April 28, targets youth unemployment and aims to recruit thousands of new apprentices into the trades — including automotive — over the next five years.",
+    sourceUrl: "https://budget.canada.ca/update-miseajour/2026/report-rapport/chap2-en.html",
   },
   {
-    icon: "🏆",
-    text: "AIA Canada has announced the 2026 Industry Award winners, celebrating excellence in leadership and service within the Canadian auto care sector.",
-    sourceUrl: "https://www.aiacanada.com/news/celebrating-excellence-aia-canada-announces-2026-industry-award-winners/",
+    icon: "⚠️",
+    text: "A growing black market for tire collection is emerging in Canada as disruptions to provincial tire recycling programs create gaps — shop owners should ensure their tire disposal practices are fully documented and compliant.",
+    sourceUrl: "https://www.autoserviceworld.com/warnings-of-growing-black-market-amid-tire-collection-disruptions/",
   },
   {
-    icon: "⚖️",
-    text: "Manitoba's new 'Right to Repair' legislation receives strong backing from AIA Canada, promising to strengthen consumer choice and support independent repair businesses.",
-    sourceUrl: "https://www.repairerdrivennews.com/2026/03/20/aia-canada-backs-manitoba-right-to-repair-legislation/",
+    icon: "📉",
+    text: "AutoCanada reported a 4.1% revenue decline in Q1 2026 driven by softer new vehicle sales and parts revenue — a signal that the broader market normalization is affecting all segments of the industry.",
+    sourceUrl: "https://www.newswire.ca/news-releases/autocanada-reports-first-quarter-2026-results-and-advances-strategic-initiatives-820303116.html",
   },
   {
-    icon: "📈",
-    text: "Canadian automotive businesses entered 2026 with renewed confidence, driven by AI integration for predictive maintenance and improved customer communication.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/market-trends/article/15818807/market-trends-canadian-businesses-entered-2026-with-confidence-ibm-reports",
+    icon: "🔬",
+    text: "The EV aftermarket is projected to grow significantly as regulatory changes enhance independent shop access to vehicle data and AI-powered diagnostics create new high-value service opportunities for prepared shops.",
+    sourceUrl: "https://finance.yahoo.com/sectors/technology/articles/electric-vehicle-aftermarket-global-business-151100304.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Sharpen Your Tools, Sharpen Your Future",
-  text: "As vehicles become increasingly software-defined, your most important tool is your knowledge. Dedicate at least one hour a week for your team to review new technical bulletins or participate in online training modules. Staying ahead of the curve on diagnostic software and high-voltage safety isn't just about fixing cars—it's about fixing your shop's future in a rapidly evolving market.",
+  title: "Audit Your Vehicle Mix Before It Audits You",
+  text: "Pull a report from your shop management system on the average model year of vehicles you serviced in the last 90 days. If that number is trending older — say, 2014 or earlier — your shop may be drifting into a lower-margin segment without realizing it. The fix is not to turn away older cars, but to actively market to newer-vehicle owners by investing in the certifications, tools, and online presence that signal your shop is ready for their late-model vehicle. One targeted Google Business Profile update highlighting your ADAS or EV capabilities can shift the mix meaningfully within a single quarter.",
 };
 
 const quoteOfTheDay = {
-  text: "The expectations of life depend upon diligence; the mechanic that would perfect his work must first sharpen his tools.",
-  author: "Confucius",
-  title: "Ancient Wisdom for Modern Technicians",
+  text: "The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails.",
+  author: "William Arthur Ward",
+  title: "A Reminder for Every Shop Owner Navigating 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Chevrolet Camaro Z/28",
-  description: "The 1969 Chevrolet Camaro Z/28 is the pinnacle of the first-generation Camaro and a true icon of the muscle car era. Designed for the SCCA Trans-Am racing series, it featured the legendary high-revving 302 cubic-inch V8 engine, officially rated at 290 horsepower but widely known to produce much more. With its aggressive styling, including the cowl-induction hood and signature stripes, the '69 Z/28 remains one of the most desirable and recognizable classic cars in the world, representing the perfect blend of American power and handling.",
+  name: "1970 Plymouth 'Cuda 440 Six Pack",
+  description: "The 1970 Plymouth 'Cuda 440 Six Pack is one of the most fearsome and collectible muscle cars ever produced. Powered by a 440 cubic-inch V8 fed by three Holley two-barrel carburetors — the legendary 'Six Pack' setup — it produced a factory-rated 390 horsepower, though real-world output was considerably higher. The 'Cuda's aggressive E-body styling, with its short deck, long hood, and bold graphics, made it an instant icon. Built in Canada at the Chrysler Windsor Assembly Plant, the 'Cuda represents a proud chapter in Canadian automotive manufacturing history and remains one of the most sought-after collector cars in North America today.",
   image: HOTROD_IMG,
 };
 
@@ -131,117 +131,116 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 
 export default function Home() {
   return (
-    <div className=\"min-h-screen bg-[#f5f0e8] text-[#1a1a1a] font-['Source_Sans_3'] selection:bg-[#e05a1a] selection:text-white\">
+    <div className="min-h-screen bg-[#f5f0e8] text-[#1a1a1a] font-['Source_Sans_3'] selection:bg-[#e05a1a] selection:text-white">
       {/* Top Navigation Bar */}
-      <nav className=\"sticky top-0 z-50 bg-[#1a1a1a] text-white py-3 px-6 shadow-xl\">
-        <div className=\"max-w-7xl mx-auto flex justify-between items-center\">
-          <div className=\"flex items-center gap-4\">
-            <span className=\"bg-[#e05a1a] text-white px-2 py-0.5 text-xs font-bold tracking-tighter uppercase\">Live</span>
-            <h1 className=\"font-['Oswald'] text-xl font-bold tracking-tight uppercase\">Baywash Daily Briefing</h1>
+      <nav className="sticky top-0 z-50 bg-[#1a1a1a] text-white py-3 px-6 shadow-xl">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <span className="bg-[#e05a1a] text-white px-2 py-0.5 text-xs font-bold tracking-tighter uppercase">Live</span>
+            <h1 className="font-['Oswald'] text-xl font-bold tracking-tight uppercase">Baywash Daily Briefing</h1>
           </div>
-          <div className=\"hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-gray-400\">
-            <Link href=\"/\" className=\"text-[#e05a1a] hover:text-white transition-colors\">Today's Edition</Link>
-            <Link href=\"/archive\" className=\"hover:text-white transition-colors\">Archive</Link>
-            <span className=\"text-gray-600\">|</span>
+          <div className="hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-gray-400">
+            <Link href="/" className="text-[#e05a1a] hover:text-white transition-colors">Today's Edition</Link>
+            <Link href="/archive" className="hover:text-white transition-colors">Archive</Link>
+            <span className="text-gray-600">|</span>
             <span>Shop Portal</span>
           </div>
         </div>
       </nav>
 
-      <main className=\"max-w-7xl mx-auto px-6 py-12\">
+      <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Header Section */}
-        <header className=\"border-b-4 border-[#1a1a1a] pb-8 mb-12\">
-          <div className=\"flex flex-col md:flex-row justify-between items-end gap-6\">
-            <div className=\"flex-1\">
-              <div className=\"flex items-center gap-3 mb-4\">
-                <span className=\"font-['Source_Code_Pro'] text-sm font-bold text-[#e05a1a]\">EDITION NO. {BRIEFING_NUMBER}</span>
-                <span className=\"h-px w-12 bg-gray-300\"></span>
-                <span className=\"font-['Source_Code_Pro'] text-sm text-gray-500 uppercase tracking-widest\">{BRIEFING_DAY}, {BRIEFING_DATE}</span>
+        <header className="border-b-4 border-[#1a1a1a] pb-8 mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="font-['Source_Code_Pro'] text-sm font-bold text-[#e05a1a]">EDITION NO. {BRIEFING_NUMBER}</span>
+                <span className="h-px w-12 bg-gray-300"></span>
+                <span className="font-['Source_Code_Pro'] text-sm text-gray-500 uppercase tracking-widest">{BRIEFING_DAY}, {BRIEFING_DATE}</span>
               </div>
-              <h2 className=\"font-['Oswald'] text-6xl md:text-8xl font-bold leading-[0.9] uppercase\">
+              <h2 className="font-['Oswald'] text-6xl md:text-8xl font-bold leading-[0.9] uppercase">
                 The Daily <br />
-                <span className=\"text-[#e05a1a]\">Briefing.</span>
+                <span className="text-[#e05a1a]">Briefing.</span>
               </h2>
             </div>
-            <div className=\"md:w-1/3 text-right\">
-              <p className=\"text-sm text-gray-600 leading-relaxed italic\">
-                \"The essential morning intelligence for the Canadian automotive professional. 
-                Curated daily for shop owners, technicians, and industry leaders.\"
+            <div className="md:w-1/3 text-right">
+              <p className="text-sm text-gray-600 leading-relaxed italic">
+                "The essential morning intelligence for the Canadian automotive professional. 
+                Curated daily for shop owners, technicians, and industry leaders."
               </p>
             </div>
           </div>
         </header>
 
         {/* Hero Section */}
-        <AnimatedSection className=\"mb-16\">
-          <div className=\"relative group overflow-hidden bg-[#1a1a1a]\">
+        <AnimatedSection className="mb-16">
+          <div className="relative group overflow-hidden bg-[#1a1a1a]">
             <img 
               src={HERO_BANNER} 
-              alt=\"Automotive Workshop\" 
-              className=\"w-full h-[500px] object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000\"
+              alt="Automotive Workshop" 
+              className="w-full h-[500px] object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
             />
-            <div className=\"absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent\"></div>
-            <div className=\"absolute bottom-0 left-0 p-8 md:p-12 max-w-3xl\">
-              <span className=\"inline-block bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4\">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent"></div>
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 max-w-3xl">
+              <span className="inline-block bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4">
                 Top Intelligence
               </span>
-              <h3 className=\"font-['Oswald'] text-4xl md:text-5xl text-white font-bold leading-tight uppercase mb-6\">
-                Navigating the 2026 Structural Reset: How Canadian Shops are Adapting to Trade and Tech Shifts
+              <h3 className="font-['Oswald'] text-4xl md:text-5xl text-white font-bold leading-tight uppercase mb-6">
+                Trade Turbulence, Parts Disruption & the Fight for Newer Cars: What Every Canadian Shop Must Know Today
               </h3>
-              <p className=\"text-gray-300 text-lg leading-relaxed\">
-                As the industry faces unprecedented trade volatility and rapid technological advancement, 
-                independent shops are finding new ways to thrive by focusing on life-extension services 
-                and advanced technician training.
+              <p className="text-gray-300 text-lg leading-relaxed">
+                From USMCA negotiations stretching into summer to the collapse of major brake brands and a quiet drift 
+                toward older vehicles — today's briefing covers the three forces reshaping the Canadian aftermarket right now.
               </p>
             </div>
           </div>
         </AnimatedSection>
 
         {/* Main Content Grid */}
-        <div className=\"grid grid-cols-1 lg:grid-cols-12 gap-12\">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Lead Stories */}
-          <div className=\"lg:col-span-8 space-y-16\">
+          <div className="lg:col-span-8 space-y-16">
             {stories.map((story, index) => (
               <AnimatedSection key={story.id} delay={index * 100}>
-                <article className=\"group\">
-                  <div className=\"flex flex-col md:flex-row gap-8\">
-                    <div className=\"md:w-1/3\">
-                      <div className=\"relative overflow-hidden aspect-[4/5]\">
+                <article className="group">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <div className="relative overflow-hidden aspect-[4/5]">
                         <img 
                           src={story.image} 
                           alt={story.headline}
-                          className=\"w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500\"
+                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         />
                         <div 
-                          className=\"absolute top-0 left-0 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-widest\"
+                          className="absolute top-0 left-0 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-widest"
                           style={{ backgroundColor: story.tagColor }}
                         >
                           {story.tag}
                         </div>
                       </div>
                     </div>
-                    <div className=\"md:w-2/3\">
-                      <h4 className=\"font-['Oswald'] text-3xl font-bold leading-tight uppercase mb-4 group-hover:text-[#e05a1a] transition-colors\">
+                    <div className="md:w-2/3">
+                      <h4 className="font-['Oswald'] text-3xl font-bold leading-tight uppercase mb-4 group-hover:text-[#e05a1a] transition-colors">
                         {story.headline}
                       </h4>
-                      <p className=\"text-gray-700 leading-relaxed mb-6\">
+                      <p className="text-gray-700 leading-relaxed mb-6">
                         {story.summary}
                       </p>
-                      <div className=\"bg-white/50 border-l-4 border-[#1a1a1a] p-6 mb-6\">
-                        <h5 className=\"font-bold text-xs uppercase tracking-widest mb-2\">Why it matters for your shop:</h5>
-                        <p className=\"text-sm text-gray-600 leading-relaxed\">
+                      <div className="bg-[#f0ebe0] border-l-4 border-[#e05a1a] p-4 mb-6">
+                        <h5 className="font-bold text-xs uppercase tracking-widest mb-2">Why it matters for your shop:</h5>
+                        <p className="text-sm text-gray-600 leading-relaxed">
                           {story.whyItMatters}
                         </p>
                       </div>
-                      <div className=\"flex items-center justify-between\">
-                        <span className=\"font-['Source_Code_Pro'] text-[10px] text-gray-400 uppercase tracking-widest\">
+                      <div className="flex items-center justify-between">
+                        <span className="font-['Source_Code_Pro'] text-[10px] text-gray-400 uppercase tracking-widest">
                           Source: {story.source}
                         </span>
                         <a 
                           href={story.sourceUrl}
-                          target=\"_blank\"
-                          rel=\"noopener noreferrer\"
-                          className=\"text-xs font-bold uppercase tracking-widest text-[#e05a1a] hover:underline\"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-bold uppercase tracking-widest text-[#e05a1a] hover:underline"
                         >
                           Read Full Report →
                         </a>
@@ -254,26 +253,26 @@ export default function Home() {
           </div>
 
           {/* Right Column: Sidebar */}
-          <aside className=\"lg:col-span-4 space-y-12\">
+          <aside className="lg:col-span-4 space-y-12">
             {/* Quick Hits */}
-            <AnimatedSection className=\"bg-[#1a1a1a] text-white p-8\">
-              <h4 className=\"font-['Oswald'] text-2xl font-bold uppercase tracking-tight mb-8 border-b border-gray-700 pb-4\">
+            <AnimatedSection className="bg-[#1a1a1a] text-white p-8">
+              <h4 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight mb-8 border-b border-gray-700 pb-4">
                 Quick Hits
               </h4>
-              <div className=\"space-y-8\">
+              <div className="space-y-8">
                 {quickHits.map((hit, i) => (
-                  <div key={i} className=\"group\">
-                    <div className=\"flex gap-4 mb-2\">
-                      <span className=\"text-xl\">{hit.icon}</span>
-                      <p className=\"text-sm text-gray-300 leading-relaxed group-hover:text-white transition-colors\">
+                  <div key={i} className="group">
+                    <div className="flex gap-4 mb-2">
+                      <span className="text-xl">{hit.icon}</span>
+                      <p className="text-sm text-gray-300 leading-relaxed group-hover:text-white transition-colors">
                         {hit.text}
                       </p>
                     </div>
                     <a 
                       href={hit.sourceUrl}
-                      target=\"_blank\"
-                      rel=\"noopener noreferrer\"
-                      className=\"text-[10px] font-['Source_Code_Pro'] text-gray-500 uppercase tracking-widest hover:text-[#e05a1a]\"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-['Source_Code_Pro'] text-gray-500 uppercase tracking-widest hover:text-[#e05a1a]"
                     >
                       View Source
                     </a>
@@ -283,43 +282,43 @@ export default function Home() {
             </AnimatedSection>
 
             {/* Tip of the Day */}
-            <AnimatedSection className=\"border-2 border-[#e05a1a] p-8\">
-              <div className=\"flex items-center gap-3 mb-6\">
-                <div className=\"w-8 h-8 bg-[#e05a1a] flex items-center justify-center text-white font-bold\">!</div>
-                <h4 className=\"font-['Oswald'] text-xl font-bold uppercase tracking-tight\">Tip of the Day</h4>
+            <AnimatedSection className="border-2 border-[#e05a1a] p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 bg-[#e05a1a] flex items-center justify-center text-white font-bold">!</div>
+                <h4 className="font-['Oswald'] text-xl font-bold uppercase tracking-tight">Tip of the Day</h4>
               </div>
-              <h5 className=\"font-bold text-lg mb-3\">{tipOfTheDay.title}</h5>
-              <p className=\"text-sm text-gray-600 leading-relaxed\">
+              <h5 className="font-bold text-lg mb-3">{tipOfTheDay.title}</h5>
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {tipOfTheDay.text}
               </p>
             </AnimatedSection>
 
             {/* Quote of the Day */}
-            <AnimatedSection className=\"bg-[#f5f0e8] border border-gray-200 p-8 relative\">
-              <span className=\"absolute top-4 left-4 text-6xl text-gray-200 font-serif leading-none\">\"</span>
-              <div className=\"relative z-10\">
-                <p className=\"text-lg italic text-gray-700 leading-relaxed mb-6\">
+            <AnimatedSection className="bg-[#f5f0e8] border border-gray-200 p-8 relative">
+              <span className="absolute top-4 left-4 text-6xl text-gray-200 font-serif leading-none">"</span>
+              <div className="relative z-10">
+                <p className="text-lg italic text-gray-700 leading-relaxed mb-6">
                   {quoteOfTheDay.text}
                 </p>
                 <div>
-                  <p className=\"font-bold text-sm uppercase tracking-widest\">{quoteOfTheDay.author}</p>
-                  <p className=\"text-xs text-gray-500\">{quoteOfTheDay.title}</p>
+                  <p className="font-bold text-sm uppercase tracking-widest">{quoteOfTheDay.author}</p>
+                  <p className="text-xs text-gray-500">{quoteOfTheDay.title}</p>
                 </div>
               </div>
             </AnimatedSection>
 
             {/* Ride of the Day */}
-            <AnimatedSection className=\"group\">
-              <h4 className=\"font-['Oswald'] text-2xl font-bold uppercase tracking-tight mb-6\">Ride of the Day</h4>
-              <div className=\"overflow-hidden bg-[#1a1a1a] mb-4\">
+            <AnimatedSection className="group">
+              <h4 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight mb-6">Ride of the Day</h4>
+              <div className="overflow-hidden bg-[#1a1a1a] mb-4">
                 <img 
                   src={rideOfTheDay.image} 
                   alt={rideOfTheDay.name}
-                  className=\"w-full aspect-video object-cover opacity-90 group-hover:scale-105 transition-transform duration-700\"
+                  className="w-full aspect-video object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <h5 className=\"font-bold text-xl mb-2\">{rideOfTheDay.name}</h5>
-              <p className=\"text-sm text-gray-600 leading-relaxed\">
+              <h5 className="font-bold text-xl mb-2">{rideOfTheDay.name}</h5>
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {rideOfTheDay.description}
               </p>
             </AnimatedSection>
@@ -328,41 +327,41 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className=\"bg-[#1a1a1a] text-white py-16 px-6 mt-24\">
-        <div className=\"max-w-7xl mx-auto\">
-          <div className=\"grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-b border-gray-800 pb-12\">
+      <footer className="bg-[#1a1a1a] text-white py-16 px-6 mt-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 border-b border-gray-800 pb-12">
             <div>
-              <h4 className=\"font-['Oswald'] text-xl font-bold uppercase mb-6\">About the Briefing</h4>
-              <p className=\"text-sm text-gray-400 leading-relaxed\">
+              <h4 className="font-['Oswald'] text-xl font-bold uppercase mb-6">About the Briefing</h4>
+              <p className="text-sm text-gray-400 leading-relaxed">
                 Baywash Daily Briefing is a premium intelligence service for the Canadian automotive aftermarket. 
                 We provide daily updates on trade, technology, and labor trends that matter to your business.
               </p>
             </div>
             <div>
-              <h4 className=\"font-['Oswald'] text-xl font-bold uppercase mb-6\">Quick Links</h4>
-              <ul className=\"text-sm text-gray-400 space-y-3\">
-                <li><Link href=\"/\" className=\"hover:text-[#e05a1a] transition-colors\">Today's Edition</Link></li>
-                <li><Link href=\"/archive\" className=\"hover:text-[#e05a1a] transition-colors\">Archive</Link></li>
-                <li><a href=\"#\" className=\"hover:text-[#e05a1a] transition-colors\">Shop Portal</a></li>
-                <li><a href=\"#\" className=\"hover:text-[#e05a1a] transition-colors\">Industry Reports</a></li>
+              <h4 className="font-['Oswald'] text-xl font-bold uppercase mb-6">Quick Links</h4>
+              <ul className="text-sm text-gray-400 space-y-3">
+                <li><Link href="/" className="hover:text-[#e05a1a] transition-colors">Today's Edition</Link></li>
+                <li><Link href="/archive" className="hover:text-[#e05a1a] transition-colors">Archive</Link></li>
+                <li><a href="#" className="hover:text-[#e05a1a] transition-colors">Shop Portal</a></li>
+                <li><a href="#" className="hover:text-[#e05a1a] transition-colors">Industry Reports</a></li>
               </ul>
             </div>
             <div>
-              <h4 className=\"font-['Oswald'] text-xl font-bold uppercase mb-6\">Connect</h4>
-              <p className=\"text-sm text-gray-400 mb-4\">Stay updated with the latest industry news.</p>
-              <div className=\"flex gap-4\">
-                <div className=\"w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer\">In</div>
-                <div className=\"w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer\">X</div>
-                <div className=\"w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer\">Fb</div>
+              <h4 className="font-['Oswald'] text-xl font-bold uppercase mb-6">Connect</h4>
+              <p className="text-sm text-gray-400 mb-4">Stay updated with the latest industry news.</p>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer">In</div>
+                <div className="w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer">X</div>
+                <div className="w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-[#e05a1a] transition-colors cursor-pointer">Fb</div>
               </div>
             </div>
           </div>
-          <div className=\"flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-['Source_Code_Pro'] text-gray-500 uppercase tracking-[0.2em]\">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-['Source_Code_Pro'] text-gray-500 uppercase tracking-[0.2em]">
             <p>© 2026 Baywash Daily Briefing. All rights reserved.</p>
-            <div className=\"flex gap-8\">
-              <a href=\"#\" className=\"hover:text-white transition-colors\">Privacy Policy</a>
-              <a href=\"#\" className=\"hover:text-white transition-colors\">Terms of Service</a>
-              <a href=\"#\" className=\"hover:text-white transition-colors\">Contact Support</a>
+            <div className="flex gap-8">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">Contact Support</a>
             </div>
           </div>
         </div>
