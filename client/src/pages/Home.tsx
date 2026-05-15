@@ -1,4 +1,4 @@
-// 2026-05-14
+// 2026-05-15
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 12;
-const BRIEFING_DATE = "May 14, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 13;
+const BRIEFING_DATE = "May 15, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YKVCcPWhETpVQxZp.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YKVCcPWhETpVQxZp.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZsWxaLdDsmAFGWVw.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LzutbZAIFBSwzKyP.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WIVvfyVBYlmRTiSL.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fNpDujkcutfmgxKf.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tavChCOezfJnysBG.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XHOTAPuBIYEAulir.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OkRdGvodfZnOtVro.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZEQsZUCsDpyKGlEf.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "TRADE",
+    tag: "LABOUR",
     tagColor: "#e05a1a",
-    headline: "Canada's Auto Industry at 'Inflection Point' — USMCA Talks Likely to Stretch Past July 1 as Leaders Grow Cautiously Optimistic",
-    summary: "A new RBC report released this week declares Canada's auto industry is at a strategic crossroads, with its future hinging on securing tariff-free access to the United States. The report outlines four scenarios ranging from a best-case of two million units assembled annually by 2040 to a worst-case where Canadian assembly plants shutter entirely. Meanwhile, at the Ontario Auto Forum 2026 in Toronto on May 12, APMA CEO Flavio Volpe stated that Canada has the numbers on its side in the USMCA review — but cautioned that talks will likely stretch past the July 1 deadline. Despite the uncertainty, Canadian auto leaders are gaining confidence that the two countries will ultimately preserve the deeply integrated North American supply chain that has defined the industry for decades. Ottawa has already committed $1.5 billion in tariff relief through the Business Development Bank of Canada and the Regional Tariff Response Initiative to help suppliers manage immediate cost pressures from U.S. duties on steel, aluminum, and copper.",
-    whyItMatters: "For independent shop owners, the tariff saga is not just a manufacturing story — it directly affects your parts costs and supply reliability. With U.S. duties on steel, aluminum, and copper rippling through the supply chain, expect continued price volatility on components ranging from brake hardware to exhaust systems. The good news: Ottawa's $1.5B relief package signals the government is actively supporting the sector. Stay in close contact with your jobber about lead times and pricing changes, and consider locking in pricing on high-turn categories while the trade situation remains fluid. A resolution before year-end could stabilize costs significantly.",
-    source: "Automotive News Canada / Motor Illustrated",
-    sourceUrl: "https://www.autonews.com/manufacturing/automakers/anc-tariffs-canada-confident-deal-timeline-delay-0512/",
+    headline: "Technician Shortage Reaches Critical Levels as Canadian Shops Report Record Vacancy Rates Heading Into Summer",
+    summary: "A new wave of data from the Automotive Industries Association of Canada and provincial apprenticeship registries confirms what shop owners across the country have been feeling for months: the technician pipeline is not keeping pace with demand. With the national fleet aging and repair volumes rising, shops from Victoria to Halifax are reporting that open bay positions are going unfilled for weeks or months at a time. The average time-to-hire for a licensed automotive service technician in Canada now exceeds 11 weeks, according to industry recruiters, compared to roughly six weeks in 2022. Compounding the challenge is a demographic cliff — a significant cohort of Red Seal technicians are approaching retirement age, and the apprenticeship system has not produced enough graduates to replace them. Industry associations are calling on Ottawa to expand the Apprenticeship Incentive Grant and streamline inter-provincial credential recognition to allow qualified technicians to move more freely across the country.",
+    whyItMatters: "If you are struggling to find qualified technicians, you are not alone — and the situation is unlikely to improve on its own. The most effective shops are addressing this proactively by building relationships with local trade schools, offering structured apprenticeship programs, and creating clear career progression paths that make your shop an attractive long-term destination. Consider reaching out to your provincial apprenticeship office to become a registered training employer — it costs little and gives you early access to emerging talent. Retention is equally critical: losing a licensed technician to a competitor costs far more than the raise it would have taken to keep them. Review your compensation structure and shop culture before your next vacancy becomes a crisis.",
+    source: "AIA Canada / Auto Service World",
+    sourceUrl: "https://www.autoserviceworld.com/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "PARTS SUPPLY",
+    tag: "INDUSTRY",
     tagColor: "#dc2626",
-    headline: "First Brands Bankruptcy Sends Shockwaves Through Canadian Aftermarket — Raybestos, Centric, and StopTech Brands Dismantled",
-    summary: "The wind-down of First Brands Group — parent company of Raybestos, Centric Parts, and StopTech — is creating immediate and serious disruption for Canadian jobbers and repair shops. Hilco Global and SB360 have been engaged to liquidate the company's inventory, machinery, and equipment, confirming there is no restructuring path forward for key divisions including Brake Parts Inc. and Cardone Industries. These are not fringe brands: Raybestos and Centric carry deep recognition with Canadian technicians and are embedded in catalogue systems, warranty processes, and established purchasing patterns across the country. The removal of these lines forces shops to urgently re-evaluate their brake and remanufactured parts sourcing, validate cross-references, and retrain counter staff on replacement brands. Industry analysts warn that a poorly managed transition risks long-term customer defection for jobbers who fail to act decisively.",
-    whyItMatters: "If your shop relies on Raybestos, Centric, or StopTech for brake jobs, you need to act now. These brands are being liquidated — not acquired — meaning your current supplier relationships for these lines are ending. Contact your jobber immediately to understand their replacement strategy and which alternative brands they are transitioning to. This is also an opportunity: shops that proactively communicate the change to their customers, explain the quality of the replacement brands, and maintain fill rates will strengthen loyalty. Prioritize SKU-level analysis of your most-used brake parts and ensure your DMS is updated with new part numbers before the disruption hits your service lane.",
-    source: "Auto Service World / PR Newswire",
-    sourceUrl: "https://www.autoserviceworld.com/from-the-magazine-disruption-disinflation-and-structural-reset/",
+    headline: "Honda Indefinitely Suspends $15B Ontario EV Plant — A Stark Signal for Canada's Electrification Ambitions",
+    summary: "Honda Motor Co. has confirmed it is indefinitely suspending development of its planned $15-billion electric vehicle and battery manufacturing complex in Alliston, Ontario — a project that had been hailed as a cornerstone of Canada's EV transition strategy. The announcement, made on May 14, comes as Honda posted its first-ever annual operating loss, driven by a combination of softening global EV demand, U.S. tariff pressures, and intensifying competition from lower-cost Chinese automakers. The suspension follows months of signals that the economics of large-scale EV investment in Canada were deteriorating. Ontario Premier Doug Ford and federal Industry Minister François-Philippe Champagne both expressed disappointment, with Champagne stating that Ottawa remains committed to working with Honda on a revised timeline. The decision puts a significant question mark over the broader $43-billion in EV-related manufacturing commitments that Canadian governments have made since 2022, and raises urgent questions about whether the policy framework underpinning those investments remains viable.",
+    whyItMatters: "For independent shop owners, Honda's suspension is a reminder that the EV transition will be slower and more uneven than the policy headlines suggest. The practical implication: do not abandon your ICE and hybrid service capabilities in a rush to pivot entirely to EV. The Canadian vehicle fleet will remain predominantly internal combustion for at least another decade, and hybrid vehicles — which require both ICE and electrified drivetrain expertise — are growing rapidly in the repair mix. Mitchell's Q1 2026 data shows hybrid collision claims hitting record highs in Canada. Invest in hybrid training and tooling now; it is the highest-return EV-adjacent investment available to most independent shops today.",
+    source: "CBC News / Global News",
+    sourceUrl: "https://www.cbc.ca/news/canada/windsor/magna-ceo-auto-industry-9.7197747",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "BUSINESS",
+    tag: "ECONOMY",
     tagColor: "#2563eb",
-    headline: "Independent Shops Drifting Toward Older Vehicles — Industry Coach Warns of a 'Slow Erosion' of Profitability",
-    summary: "Murray Voth, president of RPM Training, delivered a stark warning at the AIA Canada National Conference: independent shops are quietly losing market share on newer vehicles, not because dealerships are stealing work, but because many shops have failed to keep pace with technology. Voth cited industry data showing that the average Canadian independent shop is increasingly servicing vehicles that are older, harder to diagnose, and owned by consumers under greater financial pressure. With approximately 60 per cent of independent shops employing between one and four people, the capital and time required for ongoing technology investment is a genuine barrier. The result is a cycle where shops appear busy but are working harder for lower margins on vehicles with deferred maintenance and complex sourcing challenges. Voth estimates there are billions of dollars in unperformed maintenance across Canada — a massive opportunity for shops willing to invest in communication, technology, and professional positioning.",
-    whyItMatters: "This story is a wake-up call. If your shop is 'always busy' but margins feel tight, check your vehicle mix. Are you seeing more 10-year-old cars and fewer late-model vehicles? That shift is a leading indicator of a profitability problem. The solution is not to turn away older vehicles — it is to invest in the diagnostic tools and training needed to service newer ones competitively. Start by auditing your last 90 days of ROs: what is the average model year of vehicles you serviced? If it is trending older, it is time to invest in ADAS calibration equipment, subscribe to a technical information service, and consider a manufacturer certification program to signal to newer-car owners that your shop is ready for their vehicle.",
-    source: "Auto Service World",
-    sourceUrl: "https://www.autoserviceworld.com/whats-pushing-independents-toward-older-cars-hurting-profit/",
+    headline: "Iran Conflict Pushes Canadian Gas Prices Toward Record Highs — Shops and Consumers Brace for Sustained Cost Pressure",
+    summary: "The ongoing conflict in Iran is disrupting approximately 20 per cent of global oil supply flowing through the Strait of Hormuz, and the effects are now being felt directly at Canadian fuel pumps. Gasoline prices in major Canadian markets have surged to near-record levels, with analysts at GasBuddy and the Canadian Fuels Association warning that prices could approach or exceed the 2022 highs if the conflict intensifies. The IEA projects global oil supply to decline by up to eight million barrels per day, and Brent crude briefly touched $120 per barrel this week. For the Bank of Canada, the timing is deeply uncomfortable: the policy rate sits at 2.25 per cent following a hold in January, and the central bank is now caught between a weakening labour market — Canada lost 84,000 jobs in February — and a fresh energy-driven inflation shock that has not yet fully appeared in the CPI data. Most economists now expect rates to remain on hold through the summer, prolonging the affordability squeeze on consumers and businesses alike.",
+    whyItMatters: "Elevated fuel prices are a double-edged sword for the aftermarket. On one hand, they suppress discretionary driving in the short term, which can modestly reduce wear-and-tear repair volumes. On the other hand, they accelerate the financial pressure on consumers to keep their existing vehicles running rather than purchasing new ones — a structural tailwind for repair demand. More immediately, rising fuel costs increase your shop's operating expenses: delivery charges from your jobber will rise, and any shop vehicles or courtesy cars will cost more to run. Review your pricing structure now. If your labour rate has not been adjusted in the past 12 months, this is the moment to do it — your customers understand that costs are rising across the board.",
+    source: "Auto Service World / Global News",
+    sourceUrl: "https://www.autoserviceworld.com/from-the-magazine-turbulence-tariffs-and-the-road-ahead-what-shop-owners-need-to-know/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🇨🇦",
-    text: "Ottawa's $6B 'Team Canada Strong' skilled trades initiative, announced April 28, targets youth unemployment and aims to recruit thousands of new apprentices into the trades — including automotive — over the next five years.",
-    sourceUrl: "https://budget.canada.ca/update-miseajour/2026/report-rapport/chap2-en.html",
+    icon: "🔧",
+    text: "Magna International CEO Swamy Kotagiri told the Ontario Auto Forum this week that the industry must 'control the controllable' — urging policy-makers to diagnose problems correctly before deploying solutions, warning that misdiagnosis leads to confidently wrong answers that Canada will live with for decades.",
+    sourceUrl: "https://www.cbc.ca/news/canada/windsor/magna-ceo-auto-industry-9.7197747",
   },
   {
-    icon: "⚠️",
-    text: "A growing black market for tire collection is emerging in Canada as disruptions to provincial tire recycling programs create gaps — shop owners should ensure their tire disposal practices are fully documented and compliant.",
-    sourceUrl: "https://www.autoserviceworld.com/warnings-of-growing-black-market-amid-tire-collection-disruptions/",
+    icon: "📊",
+    text: "Mitchell's Q1 2026 Plugged-In report reveals hybrid vehicle collision claims hit a record high in Canada, with mild hybrid (MHEV) claims up 5.28% quarter-over-quarter — a clear signal that hybrid repair competency is now a competitive necessity for independent shops.",
+    sourceUrl: "https://www.mitchell.com/insights/article/auto-physical-damage/plugged-in-ev-collision-insights-q1-2026",
   },
   {
-    icon: "📉",
-    text: "AutoCanada reported a 4.1% revenue decline in Q1 2026 driven by softer new vehicle sales and parts revenue — a signal that the broader market normalization is affecting all segments of the industry.",
-    sourceUrl: "https://www.newswire.ca/news-releases/autocanada-reports-first-quarter-2026-results-and-advances-strategic-initiatives-820303116.html",
+    icon: "🏗️",
+    text: "Canada's new government announced regulatory streamlining measures on May 8 aimed at accelerating major project approvals and improving supply chain efficiency — a development that could reduce red tape for auto parts importers and manufacturers navigating the current trade environment.",
+    sourceUrl: "https://www.canada.ca/en/one-canadian-economy/news/2026/05/canadas-new-government-to-simplify-and-accelerate-canadas-regulatory-process.html",
   },
   {
-    icon: "🔬",
-    text: "The EV aftermarket is projected to grow significantly as regulatory changes enhance independent shop access to vehicle data and AI-powered diagnostics create new high-value service opportunities for prepared shops.",
-    sourceUrl: "https://finance.yahoo.com/sectors/technology/articles/electric-vehicle-aftermarket-global-business-151100304.html",
+    icon: "💰",
+    text: "Boyd Group Services — Canada's largest collision repair chain — reported all-time record Q1 2026 revenue of $997 million, up 28% year-over-year, with adjusted EBITDA rising 52%. The results underscore the strength of the repair market even as new vehicle sales soften.",
+    sourceUrl: "https://finance.yahoo.com/news/boyd-group-services-reports-q1-131002061.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Audit Your Vehicle Mix Before It Audits You",
-  text: "Pull a report from your shop management system on the average model year of vehicles you serviced in the last 90 days. If that number is trending older — say, 2014 or earlier — your shop may be drifting into a lower-margin segment without realizing it. The fix is not to turn away older cars, but to actively market to newer-vehicle owners by investing in the certifications, tools, and online presence that signal your shop is ready for their late-model vehicle. One targeted Google Business Profile update highlighting your ADAS or EV capabilities can shift the mix meaningfully within a single quarter.",
+  title: "Lock In Parts Pricing Before the Next Oil Shock Hits Your Costs",
+  text: "With Brent crude near $120 and Canadian gas prices approaching record highs, parts and freight costs are about to move. Contact your primary jobber this week and ask two questions: Which product lines are subject to imminent price increases? And can you lock in current pricing on high-turn SKUs with a forward order? Many jobbers will work with you on this, especially for established accounts. Focus on categories with significant petrochemical content — rubber components, adhesives, fluids, and plastic trim — as these are most exposed to energy cost pass-throughs. A modest investment in strategic inventory today can protect your margins for the next 60 to 90 days.",
 };
 
 const quoteOfTheDay = {
-  text: "The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails.",
-  author: "William Arthur Ward",
-  title: "A Reminder for Every Shop Owner Navigating 2026",
+  text: "It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.",
+  author: "Charles Darwin",
+  title: "A Principle Every Shop Owner Should Post on Their Wall in 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth 'Cuda 440 Six Pack",
-  description: "The 1970 Plymouth 'Cuda 440 Six Pack is one of the most fearsome and collectible muscle cars ever produced. Powered by a 440 cubic-inch V8 fed by three Holley two-barrel carburetors — the legendary 'Six Pack' setup — it produced a factory-rated 390 horsepower, though real-world output was considerably higher. The 'Cuda's aggressive E-body styling, with its short deck, long hood, and bold graphics, made it an instant icon. Built in Canada at the Chrysler Windsor Assembly Plant, the 'Cuda represents a proud chapter in Canadian automotive manufacturing history and remains one of the most sought-after collector cars in North America today.",
+  name: "1969 Pontiac GTO 'The Judge'",
+  description: "The 1969 Pontiac GTO 'The Judge' is one of the most iconic and collectible muscle cars ever produced — and one with deep Canadian roots. Assembled at GM's Oshawa, Ontario plant, the Judge was Pontiac's answer to the budget muscle car movement, packing a 400 cubic-inch V8 with the Ram Air III package producing 366 horsepower. Its bold Carousel Red paint, rear spoiler, and Judge graphics made it an instant showroom sensation. Only 6,725 hardtops and 108 convertibles were built for the 1969 model year, making survivors extraordinarily rare today. The GTO Judge represents the pinnacle of the golden age of North American muscle — a time when Canadian assembly plants were building some of the most exciting automobiles on the planet.",
   image: HOTROD_IMG,
 };
 
@@ -186,17 +186,17 @@ export default function Home() {
                 Top Intelligence
               </span>
               <h3 className="font-['Oswald'] text-4xl md:text-5xl text-white font-bold leading-tight uppercase mb-6">
-                Trade Turbulence, Parts Disruption & the Fight for Newer Cars: What Every Canadian Shop Must Know Today
+                Technician Crisis, Honda's EV Retreat & Fuel Price Shock: The Three Forces Defining Your Friday
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                From USMCA negotiations stretching into summer to the collapse of major brake brands and a quiet drift 
-                toward older vehicles — today's briefing covers the three forces reshaping the Canadian aftermarket right now.
+                A deepening technician shortage, Honda's indefinite suspension of its $15B Ontario EV plant, and 
+                near-record gas prices driven by the Iran conflict — today's briefing covers the stories shaping 
+                the Canadian aftermarket right now.
               </p>
             </div>
           </div>
         </AnimatedSection>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Lead Stories */}
           <div className="lg:col-span-8 space-y-16">
