@@ -24,9 +24,19 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Build React app
         run: npx vite build
+      - name: Debug — show structure
+        run: |
+          echo "=== repo root ==="
+          ls -la
+          echo "=== dist if it exists ==="
+          ls -la dist 2>/dev/null || echo "no ./dist"
+          echo "=== client/dist if it exists ==="
+          ls -la client/dist 2>/dev/null || echo "no ./client/dist"
+          echo "=== find all index.html ==="
+          find . -name "index.html" -not -path "./node_modules/*"
       - name: Deploy to main branch
         run: |
-          cd client/dist
+          cd dist
           git init
           git config user.email "deploy@baywashauto.com"
           git config user.name "Baywash Deploy Bot"
