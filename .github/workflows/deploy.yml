@@ -26,9 +26,7 @@ jobs:
         run: npx vite build
       - name: Deploy to main branch
         run: |
-          BUILT_DIR=$(find . -name "index.html" -not -path "./.git/*" -not -path "./node_modules/*" | head -1 | xargs dirname)
-          echo "Found built files at: $BUILT_DIR"
-          cd "$BUILT_DIR"
+          cd client/dist
           git init
           git config user.email "deploy@baywashauto.com"
           git config user.name "Baywash Deploy Bot"
