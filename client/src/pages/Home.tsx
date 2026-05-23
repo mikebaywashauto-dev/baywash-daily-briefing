@@ -1,4 +1,4 @@
-// 2026-05-15
+// 2026-05-23
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 13;
-const BRIEFING_DATE = "May 15, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 14;
+const BRIEFING_DATE = "May 23, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fNpDujkcutfmgxKf.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tavChCOezfJnysBG.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XHOTAPuBIYEAulir.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OkRdGvodfZnOtVro.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZEQsZUCsDpyKGlEf.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VMmgjdeDrOiSWKBH.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AYHWflZIwYAqhtMT.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mgoywCVRoukhBhOS.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/uWzMlLiVZZwBzYKg.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jVxgbUFzjqWLQvqI.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "LABOUR",
+    tag: "SUPPLY CHAIN",
     tagColor: "#e05a1a",
-    headline: "Technician Shortage Reaches Critical Levels as Canadian Shops Report Record Vacancy Rates Heading Into Summer",
-    summary: "A new wave of data from the Automotive Industries Association of Canada and provincial apprenticeship registries confirms what shop owners across the country have been feeling for months: the technician pipeline is not keeping pace with demand. With the national fleet aging and repair volumes rising, shops from Victoria to Halifax are reporting that open bay positions are going unfilled for weeks or months at a time. The average time-to-hire for a licensed automotive service technician in Canada now exceeds 11 weeks, according to industry recruiters, compared to roughly six weeks in 2022. Compounding the challenge is a demographic cliff — a significant cohort of Red Seal technicians are approaching retirement age, and the apprenticeship system has not produced enough graduates to replace them. Industry associations are calling on Ottawa to expand the Apprenticeship Incentive Grant and streamline inter-provincial credential recognition to allow qualified technicians to move more freely across the country.",
-    whyItMatters: "If you are struggling to find qualified technicians, you are not alone — and the situation is unlikely to improve on its own. The most effective shops are addressing this proactively by building relationships with local trade schools, offering structured apprenticeship programs, and creating clear career progression paths that make your shop an attractive long-term destination. Consider reaching out to your provincial apprenticeship office to become a registered training employer — it costs little and gives you early access to emerging talent. Retention is equally critical: losing a licensed technician to a competitor costs far more than the raise it would have taken to keep them. Review your compensation structure and shop culture before your next vacancy becomes a crisis.",
-    source: "AIA Canada / Auto Service World",
-    sourceUrl: "https://www.autoserviceworld.com/",
+    headline: "Synthetic Motor Oil Shortage Hits Canadian Shops as Strait of Hormuz Closure Chokes Group III Base Oil Supply",
+    summary: "The ongoing U.S.-Iran conflict has delivered a direct blow to Canadian automotive service operations: the closure of the Strait of Hormuz has severely disrupted global Group III base oil imports, the key feedstock for synthetic motor oil. Petroleum analyst Patrick de Haan of GasBuddy confirmed this week that Canada is already seeing price increases of 20 per cent or more on engine oils and lubricants, with availability issues emerging on manufacturer-specific synthetic blends. Nissan and Toyota have begun rationing synthetic oil supplies to their dealership networks in North America, while other OEMs and distributors are stockpiling inventory in anticipation of further tightening. McMaster University operations management professor Behrouz Bakhtiari warned that the full impact on Canadian shops will become evident within six to twelve months — and that consumers who delay oil changes or switch to lower-quality substitutes risk a wave of engine failures down the road. Statistics Canada data released this week confirmed that vehicle maintenance and repair costs climbed 4.2 per cent over the past year, with energy-driven inflation now running at 2.8 per cent nationally.",
+    whyItMatters: "This is the most immediate supply chain threat facing Canadian independent shops right now. If you have not already spoken to your jobber about synthetic oil inventory, do it today. Ask specifically about Group III-based full synthetic lines — these are the most exposed. Consider pre-ordering a 30-to-60-day supply of your highest-turn viscosity grades (0W-20, 5W-30) before distributors implement formal allocation. Equally important: communicate proactively with your customers. A brief explanation on your invoice or waiting room screen — noting that oil change pricing reflects a global supply disruption — will go a long way toward preserving trust when prices rise. Do not silently absorb the cost increase; your margins cannot sustain it, and your customers deserve transparency.",
+    source: "Global News / Automotive News",
+    sourceUrl: "https://globalnews.ca/news/11855210/motor-oil-market-canada-strait-of-hormuz/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "INDUSTRY",
+    tag: "TRADE",
     tagColor: "#dc2626",
-    headline: "Honda Indefinitely Suspends $15B Ontario EV Plant — A Stark Signal for Canada's Electrification Ambitions",
-    summary: "Honda Motor Co. has confirmed it is indefinitely suspending development of its planned $15-billion electric vehicle and battery manufacturing complex in Alliston, Ontario — a project that had been hailed as a cornerstone of Canada's EV transition strategy. The announcement, made on May 14, comes as Honda posted its first-ever annual operating loss, driven by a combination of softening global EV demand, U.S. tariff pressures, and intensifying competition from lower-cost Chinese automakers. The suspension follows months of signals that the economics of large-scale EV investment in Canada were deteriorating. Ontario Premier Doug Ford and federal Industry Minister François-Philippe Champagne both expressed disappointment, with Champagne stating that Ottawa remains committed to working with Honda on a revised timeline. The decision puts a significant question mark over the broader $43-billion in EV-related manufacturing commitments that Canadian governments have made since 2022, and raises urgent questions about whether the policy framework underpinning those investments remains viable.",
-    whyItMatters: "For independent shop owners, Honda's suspension is a reminder that the EV transition will be slower and more uneven than the policy headlines suggest. The practical implication: do not abandon your ICE and hybrid service capabilities in a rush to pivot entirely to EV. The Canadian vehicle fleet will remain predominantly internal combustion for at least another decade, and hybrid vehicles — which require both ICE and electrified drivetrain expertise — are growing rapidly in the repair mix. Mitchell's Q1 2026 data shows hybrid collision claims hitting record highs in Canada. Invest in hybrid training and tooling now; it is the highest-return EV-adjacent investment available to most independent shops today.",
-    source: "CBC News / Global News",
-    sourceUrl: "https://www.cbc.ca/news/canada/windsor/magna-ceo-auto-industry-9.7197747",
+    headline: "USMCA Review Reaches Critical Juncture — Canadian Auto Industry Warns July 1 Deadline May Slip as Tariff Uncertainty Deepens",
+    summary: "The scheduled July 1, 2026 review of the United States-Mexico-Canada Agreement is now in serious jeopardy, with key Canadian auto industry stakeholders warning this week that negotiations are unlikely to conclude on time. Auto suppliers and manufacturers gathered at the Ontario Auto Forum in Toronto confirmed that automakers have already absorbed an estimated $24 billion in assessed tariffs since the current trade conflict began, with the Center for Automotive Research projecting cumulative costs could reach far higher if the USMCA framework is not renewed or replaced. The United Auto Workers union added to the pressure by calling the current USMCA a 'free-trade disaster,' pushing for tougher U.S. manufacturing requirements that would further complicate cross-border parts flows. For Canadian shops, the most immediate consequence is parts pricing: the Richmond Fed's CFO Survey found that firms attribute close to 40 per cent of total unit cost growth in 2025 and 2026 to tariffs and tariff-related uncertainty. A 25 per cent Section 232 tariff on medium and heavy-duty truck parts — covering injectors, turbochargers, EGR systems, DPF assemblies, and transmissions — has pushed replacement costs for those components 20 to 30 per cent higher than pre-tariff levels.",
+    whyItMatters: "The USMCA uncertainty is not an abstract trade policy story — it is showing up on your parts invoices right now. If you service commercial vehicles, fleet trucks, or heavy-duty equipment, you are already paying 20 to 30 per cent more for the components that fail most often on high-mileage units. The practical response: review your parts sourcing strategy and ask your jobber to identify which lines carry the highest tariff exposure. Remanufactured and rebuilt components — where the core is domestic — offer a meaningful cost advantage in this environment. For light-duty shops, the pressure is less acute today but is building. Raise your labour rate if you have not done so in the past six months. The cost environment has changed structurally, and your pricing needs to reflect that reality.",
+    source: "Canadian Auto Dealer / FreightWaves / Automotive News",
+    sourceUrl: "https://canadianautodealer.ca/2026/05/truck-dealers-say-regulatory-mismatch-threatens-supply-chain/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "ECONOMY",
+    tag: "AFTERMARKET",
     tagColor: "#2563eb",
-    headline: "Iran Conflict Pushes Canadian Gas Prices Toward Record Highs — Shops and Consumers Brace for Sustained Cost Pressure",
-    summary: "The ongoing conflict in Iran is disrupting approximately 20 per cent of global oil supply flowing through the Strait of Hormuz, and the effects are now being felt directly at Canadian fuel pumps. Gasoline prices in major Canadian markets have surged to near-record levels, with analysts at GasBuddy and the Canadian Fuels Association warning that prices could approach or exceed the 2022 highs if the conflict intensifies. The IEA projects global oil supply to decline by up to eight million barrels per day, and Brent crude briefly touched $120 per barrel this week. For the Bank of Canada, the timing is deeply uncomfortable: the policy rate sits at 2.25 per cent following a hold in January, and the central bank is now caught between a weakening labour market — Canada lost 84,000 jobs in February — and a fresh energy-driven inflation shock that has not yet fully appeared in the CPI data. Most economists now expect rates to remain on hold through the summer, prolonging the affordability squeeze on consumers and businesses alike.",
-    whyItMatters: "Elevated fuel prices are a double-edged sword for the aftermarket. On one hand, they suppress discretionary driving in the short term, which can modestly reduce wear-and-tear repair volumes. On the other hand, they accelerate the financial pressure on consumers to keep their existing vehicles running rather than purchasing new ones — a structural tailwind for repair demand. More immediately, rising fuel costs increase your shop's operating expenses: delivery charges from your jobber will rise, and any shop vehicles or courtesy cars will cost more to run. Review your pricing structure now. If your labour rate has not been adjusted in the past 12 months, this is the moment to do it — your customers understand that costs are rising across the board.",
-    source: "Auto Service World / Global News",
-    sourceUrl: "https://www.autoserviceworld.com/from-the-magazine-turbulence-tariffs-and-the-road-ahead-what-shop-owners-need-to-know/",
+    headline: "FRAM and Hopkins Canada Collapse Into Bankruptcy — First Brands Failure Leaves Canadian Aftermarket Scrambling for Alternative Suppliers",
+    summary: "Two of the most recognizable names in the Canadian automotive aftermarket have ceased operations. FRAM Group (Canada) Inc. and Hopkins Canada Inc. — both subsidiaries of the troubled First Brands Group platform — made assignments for the general benefit of creditors in late April and early May 2026, following the collapse of a group-wide sale process. FRAM Canada, which operated as a Canadian sales and distribution entity for oil, air, cabin air, fuel, and transmission filters, reported total liabilities of approximately $4.9 million against assets of $4.5 million. Hopkins Canada, which operated a production plant in Blenheim, Ontario before converting it to a warehouse facility, reported liabilities of $6.6 million against assets of $6.3 million. First Brands Group had built a portfolio of more than 25 automotive brands through more than 15 acquisitions in under 15 years before filing for Chapter 11 in the U.S. Bankruptcy Court for the Southern District of Texas in September 2025. No bids were submitted for the Canadian entities during the accelerated marketing process, leaving TDB Restructuring as trustee in both bankruptcies.",
+    whyItMatters: "If FRAM filters are part of your regular parts mix, you need to act immediately. Confirm with your jobber whether your current FRAM inventory is the last of the Canadian distribution stock, and identify alternative filter lines now — not when your next order fails to arrive. Wix, Purolator, Motorcraft, and Mann-Filter are all strong alternatives with broad Canadian distribution. The Hopkins collapse is equally significant for shops that carry vehicle appearance, winter weather, and automotive accessories products under the Hopkins brand. Audit your current inventory and establish replacement supplier relationships before the gap becomes visible to your customers. The broader lesson from the First Brands failure is a reminder that acquisition-driven consolidation in the aftermarket carries real fragility — diversifying your supplier base is not just good practice, it is risk management.",
+    source: "Insolvency Insider Canada",
+    sourceUrl: "https://insolvencyinsider.ca/p/first-brands-canadian-aftermarket-units-collapse-into-bankruptcy",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🔧",
-    text: "Magna International CEO Swamy Kotagiri told the Ontario Auto Forum this week that the industry must 'control the controllable' — urging policy-makers to diagnose problems correctly before deploying solutions, warning that misdiagnosis leads to confidently wrong answers that Canada will live with for decades.",
-    sourceUrl: "https://www.cbc.ca/news/canada/windsor/magna-ceo-auto-industry-9.7197747",
+    icon: "🚛",
+    text: "Canada's truck dealers issued an urgent warning on Parliament Hill this week: a regulatory misalignment between Canadian and U.S. emissions standards could block the import of 2027-model-year medium and heavy-duty trucks. With approximately 30,000 Class 8 trucks sold annually in Canada — representing over $8 billion in economic activity — the Canadian Truck Dealers association says this is 'a yesterday problem' requiring an immediate federal regulatory fix.",
+    sourceUrl: "https://canadianautodealer.ca/2026/05/truck-dealers-say-regulatory-mismatch-threatens-supply-chain/",
   },
   {
     icon: "📊",
-    text: "Mitchell's Q1 2026 Plugged-In report reveals hybrid vehicle collision claims hit a record high in Canada, with mild hybrid (MHEV) claims up 5.28% quarter-over-quarter — a clear signal that hybrid repair competency is now a competitive necessity for independent shops.",
-    sourceUrl: "https://www.mitchell.com/insights/article/auto-physical-damage/plugged-in-ev-collision-insights-q1-2026",
+    text: "Canadian new vehicle sales held remarkably steady in Q1 2026, declining only 1 to 4 per cent year-over-year despite global trade upheaval and surging fuel prices. Standout performers included Chrysler (up 98% on Canadian-made minivan demand), Land Rover (up 67%), and Volkswagen (up 13% to its best-ever Q1). The resilience of the Canadian fleet signals continued strong repair demand through 2026.",
+    sourceUrl: "https://driving.ca/column/driving-by-numbers/best-worst-starts-canadian-auto-brands-2026-q1",
   },
   {
-    icon: "🏗️",
-    text: "Canada's new government announced regulatory streamlining measures on May 8 aimed at accelerating major project approvals and improving supply chain efficiency — a development that could reduce red tape for auto parts importers and manufacturers navigating the current trade environment.",
-    sourceUrl: "https://www.canada.ca/en/one-canadian-economy/news/2026/05/canadas-new-government-to-simplify-and-accelerate-canadas-regulatory-process.html",
+    icon: "⚡",
+    text: "Canada re-introduced electric vehicle rebates in mid-Q1 2026, contributing to a modest uptick in EV registrations. However, Honda's indefinite suspension of its $15-billion Ontario EV and battery plant — announced last week — continues to cast a long shadow over Canada's electrification ambitions, with analysts warning that the policy framework underpinning billions in EV investment commitments needs urgent reassessment.",
+    sourceUrl: "https://driving.ca/column/driving-by-numbers/best-worst-starts-canadian-auto-brands-2026-q1",
   },
   {
     icon: "💰",
-    text: "Boyd Group Services — Canada's largest collision repair chain — reported all-time record Q1 2026 revenue of $997 million, up 28% year-over-year, with adjusted EBITDA rising 52%. The results underscore the strength of the repair market even as new vehicle sales soften.",
-    sourceUrl: "https://finance.yahoo.com/news/boyd-group-services-reports-q1-131002061.html",
+    text: "Tariff-driven parts cost increases are now showing up clearly at the service counter. The Richmond Fed's CFO Survey found firms attribute close to 40% of total unit cost growth in 2025 and 2026 to tariffs and tariff-related uncertainty — and distributors are repricing preemptively, before physical shortages materialize. If your labour rate has not moved in the past six months, it needs to move now.",
+    sourceUrl: "https://finance.yahoo.com/economy/policy/articles/same-repair-same-truck-higher-165550893.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Lock In Parts Pricing Before the Next Oil Shock Hits Your Costs",
-  text: "With Brent crude near $120 and Canadian gas prices approaching record highs, parts and freight costs are about to move. Contact your primary jobber this week and ask two questions: Which product lines are subject to imminent price increases? And can you lock in current pricing on high-turn SKUs with a forward order? Many jobbers will work with you on this, especially for established accounts. Focus on categories with significant petrochemical content — rubber components, adhesives, fluids, and plastic trim — as these are most exposed to energy cost pass-throughs. A modest investment in strategic inventory today can protect your margins for the next 60 to 90 days.",
+  title: "Audit Your Filter Supplier Mix Before the FRAM Gap Hits Your Shelves",
+  text: "With FRAM Canada now in bankruptcy and Hopkins Canada wound down, this is the week to audit your filter inventory and supplier relationships. Pull your last 90 days of filter sales data and identify your top 20 SKUs by volume. For each one, confirm that your primary jobber has an alternative line available — Wix, Purolator, Motorcraft, and Mann-Filter all have strong Canadian distribution and broad vehicle coverage. Do not wait for a stockout to discover a gap. While you are at it, check your cabin air filter and fuel filter lines specifically — these are categories where FRAM had strong Canadian market penetration and where alternatives may require a cross-reference update in your shop management system.",
 };
 
 const quoteOfTheDay = {
-  text: "It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.",
-  author: "Charles Darwin",
-  title: "A Principle Every Shop Owner Should Post on Their Wall in 2026",
+  text: "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.",
+  author: "Winston Churchill",
+  title: "A Reminder for Every Shop Owner Navigating 2026's Headwinds",
 };
 
 const rideOfTheDay = {
-  name: "1969 Pontiac GTO 'The Judge'",
-  description: "The 1969 Pontiac GTO 'The Judge' is one of the most iconic and collectible muscle cars ever produced — and one with deep Canadian roots. Assembled at GM's Oshawa, Ontario plant, the Judge was Pontiac's answer to the budget muscle car movement, packing a 400 cubic-inch V8 with the Ram Air III package producing 366 horsepower. Its bold Carousel Red paint, rear spoiler, and Judge graphics made it an instant showroom sensation. Only 6,725 hardtops and 108 convertibles were built for the 1969 model year, making survivors extraordinarily rare today. The GTO Judge represents the pinnacle of the golden age of North American muscle — a time when Canadian assembly plants were building some of the most exciting automobiles on the planet.",
+  name: "1970 Plymouth Barracuda 'Cuda 440 Six Pack",
+  description: "The 1970 Plymouth Barracuda — particularly the fire-breathing 'Cuda variant — stands as one of the most coveted and collectible muscle cars ever produced in North America. Built on Chrysler's all-new E-body platform and assembled at the Hamtramck, Michigan plant with significant Canadian parts content, the 'Cuda 440 Six Pack packed a 440 cubic-inch V8 breathing through three two-barrel Holley carburetors, producing a factory-rated 390 horsepower — a figure widely understood to be conservative. With only 652 convertible 'Cudas built for the 1970 model year across all engine configurations, survivors in any state of preservation command extraordinary values at auction. The 1970 Barracuda represents the absolute pinnacle of the muscle car era — a moment when North American engineers and assembly workers were building some of the most viscerally exciting automobiles the world has ever seen.",
   image: HOTROD_IMG,
 };
 
@@ -185,13 +185,13 @@ export default function Home() {
               <span className="inline-block bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4">
                 Top Intelligence
               </span>
-              <h3 className="font-['Oswald'] text-4xl md:text-5xl text-white font-bold leading-tight uppercase mb-6">
-                Technician Crisis, Honda's EV Retreat & Fuel Price Shock: The Three Forces Defining Your Friday
+              <h3 className="font-['Oswald'] text-4xl md:text-5xl font-bold text-white leading-tight uppercase mb-4">
+                Motor Oil Shortage, USMCA Crisis & FRAM Collapse: The Three Forces Hitting Your Shop This Weekend
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                A deepening technician shortage, Honda's indefinite suspension of its $15B Ontario EV plant, and 
-                near-record gas prices driven by the Iran conflict — today's briefing covers the stories shaping 
-                the Canadian aftermarket right now.
+                Synthetic oil supply is tightening as the Strait of Hormuz closure bites, USMCA negotiations 
+                are stalling with a July 1 deadline looming, and FRAM Canada has gone bankrupt — today's 
+                briefing covers the stories demanding your attention right now.
               </p>
             </div>
           </div>
