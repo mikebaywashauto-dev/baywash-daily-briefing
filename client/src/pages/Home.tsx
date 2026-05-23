@@ -1,4 +1,4 @@
-// 2026-05-23 v2 — fresh stories
+// 2026-05-24
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,9 +10,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 14;
-const BRIEFING_DATE = "May 23, 2026";
-const BRIEFING_DAY = "Saturday";
+const BRIEFING_NUMBER = 15;
+const BRIEFING_DATE = "May 24, 2026";
+const BRIEFING_DAY = "Sunday";
 
 // Image URLs
 const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VMmgjdeDrOiSWKBH.jpg";
@@ -25,35 +25,35 @@ const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_fil
 const stories = [
   {
     id: 1,
-    tag: "TRADE",
-    tagColor: "#dc2626",
-    headline: "Canada Shut Out of First USMCA Talks as U.S. and Mexico Meet Alone in Mexico City — July 1 Deadline Now in Serious Doubt",
-    summary: "In a development that sent shockwaves through the Canadian auto industry this week, U.S. Trade Representative Jamieson Greer confirmed that the first formal round of USMCA renegotiation talks — scheduled for next week in Mexico City — will be held exclusively between the United States and Mexico, with Canada explicitly excluded from the table. Reuters reported the announcement on May 22, citing Greer's statement that the initial discussions would focus on automotive content rules and economic security provisions. The Globe and Mail reported the same day that Carney's government is walking a tightrope, with U.S. and Mexican officials proceeding without Canada while Canadian industry groups push Ottawa to accept tighter rules of origin in exchange for a seat at the table. The United Auto Workers union piled on by calling the current USMCA a 'free-trade disaster,' demanding tougher North American manufacturing requirements that could further complicate cross-border parts flows for Canadian suppliers. With the July 1 mandatory review deadline now just 39 days away and Canada sidelined from the opening round, analysts are openly questioning whether a renewed deal can be in place before the deadline — or whether Canada faces a period of prolonged tariff uncertainty that will continue to push parts prices higher.",
-    whyItMatters: "Being shut out of the opening round of USMCA talks is not just a diplomatic embarrassment — it is a direct signal to your parts invoices. Every week of USMCA uncertainty is another week that distributors reprice preemptively to protect their margins. If you have not already had a frank conversation with your jobber about which product lines carry the highest tariff exposure, do it before your next order. Remanufactured and rebuilt components with domestic cores offer a meaningful cost hedge right now. For shops servicing commercial fleets, the 25% Section 232 tariff on heavy-duty truck parts — injectors, turbos, EGR systems, DPF assemblies — is already adding 20 to 30% to replacement costs. Raise your labour rate if you have not done so in the past six months. The cost environment has structurally shifted.",
-    source: "Reuters / Globe and Mail / UAW",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/first-usmca-negotiations-focus-content-rules-economic-security-greer-says-2026-05-22/",
+    tag: "MARKET SHIFT",
+    tagColor: "#e05a1a",
+    headline: "Chinese EVs Are Coming to Canada — The Galaxy Geome EX2 Is the First, and It Could Reshape How Your Customers Think About Vehicles",
+    summary: "The first wave of Chinese electric vehicles is no longer a distant threat — it is arriving. Driving.ca this week published a first drive review of the 2026 Galaxy Geome EX2, a sub-compact all-electric crossover from Geely Auto Group that the reviewer calls 'the first Chinese EV that should come to Canada.' The Geome EX2 was the best-selling vehicle in China — electric or gasoline — in 2025. It sells for US$9,500 in China. Even at two or three times that price after shipping, duties, and Canadian compliance costs, it would represent the most affordable new EV in Canada by a wide margin — undercutting the Kia EV4, Fiat 500e, and Tesla Model 3 by tens of thousands of dollars. The EX2 features a 40.2 kWh CATL battery, 320 km of real-world range, a 14.6-inch infotainment screen, a 540-degree camera system, and L2 driver assistance — technology that would cost $50,000 or more on a Canadian-market vehicle. Geely is already shipping EVs to Canada under its Lotus brand, and BYD, Chery, and Zeekr are all in various stages of Canadian market entry. A companion review of the Radar RD6 PHEV — a midsize plug-in hybrid pickup from another Geely brand — showed 463 horsepower, 82 km of EV range, and 1,000 km of total range at a Philippine launch price equivalent to $36,167 Canadian, roughly half the cost of a comparable Ford Ranger PHEV.",
+    whyItMatters: "Chinese EVs entering the Canadian market is not just a new-car story — it is a service and repair story. These vehicles will need oil changes, tires, brakes, alignments, and eventually battery and drivetrain service. The question is whether independent shops will be positioned to capture that work. The most immediate action item: start tracking which Chinese brands are entering your market and get ahead of the scan tool and parts sourcing question now, before these vehicles are on your lifts. Geely-family vehicles (Volvo, Polestar, Lotus, Galaxy, Zeekr) share platform architecture — if you already service Volvo or Polestar, you have a head start. The reliability question is real and unresolved, but if Chinese EVs prove durable, they will represent a massive new service opportunity for shops that are ready.",
+    source: "Driving.ca",
+    sourceUrl: "https://driving.ca/reviews/2026-galaxy-geome-ex2-chinese-ev-review",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "INDUSTRY",
-    tagColor: "#e05a1a",
-    headline: "Stellantis Unveils FaSTLAne 2030 — 11 New North American Models, Seven Under US$40,000, and a 777-hp Ram Rumble Bee SRT",
-    summary: "Stellantis CEO Antonio Filosa used this week's Investor Day presentation at the company's Auburn Hills, Michigan headquarters to unveil FaSTLAne 2030, a sweeping five-year turnaround plan backed by €60 billion (approximately $96 billion Canadian) in global investment. For North America specifically, the plan calls for 11 all-new vehicles by 2030, with seven priced under US$40,000 and two under US$30,000 — a direct response to the affordability crisis squeezing new-vehicle buyers. Jeep, Ram, Peugeot, and Fiat will lead the investment, receiving 70% of brand and product spending. Chrysler and Dodge will also receive funding to 'increase brand distinctiveness.' The announcement arrived alongside the reveal of the 2027 Ram 1500 Rumble Bee family — three V8-powered muscle trucks topped by the 777-horsepower Rumble Bee SRT, which will be the fastest V8 production pickup ever built, with a 0-to-96 km/h time of 3.4 seconds and a top speed of 274 km/h. The base Rumble Bee arrives later in 2026 with a 395-hp 5.7-litre Hemi; the 392 and SRT variants follow in the first half of 2027. All three will be built in Saltillo, Mexico. Chrysler's Canadian sales surged 98% in Q1 2026 on the strength of its Canadian-made Pacifica and Grand Caravan minivans, underscoring the brand's unusual but effective Canada-first strategy.",
-    whyItMatters: "The Stellantis product blitz matters to your shop in two ways. First, the Ram Rumble Bee SRT's 777-hp supercharged 6.2-litre Hellcat engine is the same unit going into the 2027 Ram TRX — meaning a new wave of high-performance trucks will be hitting Canadian roads within 18 months. These vehicles will need specialized service: performance oil changes, brake inspections, alignment checks after track days, and eventually supercharger service. If you are not already familiar with Hellcat-family service procedures, now is the time to get your technicians trained. Second, Stellantis's commitment to seven new models under US$40,000 signals a meaningful push toward affordability — which should sustain new-vehicle sales volume and, by extension, the repair pipeline for the next decade.",
-    source: "Driving.ca / Automotive News / Stellantis",
-    sourceUrl: "https://driving.ca/auto-news/industry/stellantis-investment-strengthen-north-american-brands",
+    tag: "CONSUMER ECONOMY",
+    tagColor: "#dc2626",
+    headline: "Gas Prices Are Eating Canadian Household Budgets Alive — And Motor Vehicle Sales Just Dropped 0.5% as a Result",
+    summary: "New data released by Statistics Canada on Friday confirmed what many shop owners have been sensing at the service counter: surging gasoline prices are crowding out spending everywhere else. Canadian retail sales rose 0.9% in March 2026 — but that headline figure was almost entirely driven by a 12.4% surge in gasoline station revenues. In volume terms, gas station sales actually fell 1.9%, meaning Canadians are paying dramatically more for the same amount of fuel. Excluding gas, Canadian retail sales dropped 0.2% in March. Motor vehicle and parts dealer sales fell 0.5%. Core retail sales — excluding both gas and auto dealers — were down 0.1%, the first decline in three months. Bloomberg reported that CIBC senior economist Andrew Grantham warned 'higher gasoline prices may already be limiting sales in other areas, which will see inflation-adjusted consumer spending growth decelerate again in the second quarter.' An advance estimate for April shows a further 0.6% overall retail gain — but analysts expect the same gas-driven distortion to persist. The Bank of Canada is holding its key rate at 2.25% for the rest of 2026, according to Bloomberg economist surveys, balancing deflationary domestic pressure against energy-driven inflation running at 2.8% nationally.",
+    whyItMatters: "When gas prices consume a larger share of household budgets, consumers make tradeoffs — and one of the first things they defer is discretionary vehicle maintenance. Shops that rely heavily on customer-pay work for non-urgent services (cabin air filters, fluid flushes, wiper blades) may see a softening in that category over the next two quarters. The practical response is to focus on essential maintenance that customers cannot defer: oil changes, brake inspections, tire rotations, and safety-critical repairs. Communicate value clearly — a $150 brake inspection that catches a $400 problem early is a compelling story when household budgets are tight. Fleet and commercial accounts are more insulated from this pressure and worth prioritizing in your business development efforts right now.",
+    source: "Statistics Canada / Bloomberg / Canadian Mortgage Trends",
+    sourceUrl: "https://www.canadianmortgagetrends.com/2026/05/surging-gas-prices-mask-weak-consumer-spending-in-canada/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "EV & POLICY",
+    tag: "SALES DATA",
     tagColor: "#2563eb",
-    headline: "Pembina Institute Warns Canada Is Falling Behind the Global EV Race — And the Policy Window to Catch Up Is Closing Fast",
-    summary: "A major new report published this week by the Pembina Institute argues that Canada is at serious risk of being left behind in the global shift to electric vehicles — and that the window to attract the manufacturing investment needed to compete is closing. The report, authored by senior analyst Taylor Walker, notes that global EV sales are projected to reach 23 million units in 2026, representing nearly 30% of all new car sales worldwide. China is on track for 60% EV market share; Europe is the fastest-growing major market. Canada, by contrast, has been whipsawed by policy reversals: the federal EV rebate expired in 2024, the Electric Vehicle Availability Standard was paused in 2025 and repealed in 2026, and consumers delayed purchases while automakers questioned Canada's long-term direction. The good news: Statistics Canada data released this week shows a 75% year-over-year surge in EV sales in March 2026 alone, following the mid-Q1 reinstatement of consumer incentives. The Pembina report argues that Canada needs a durable Vehicle Emissions Standard of 40 g/mile by 2035 — strong enough to deliver the government's 75% EV sales target, flexible enough for automakers to comply cost-effectively, and credible enough to attract the long-term investment the sector needs. Without it, the report warns, Canada risks watching billions in EV manufacturing investment flow to jurisdictions with clearer policy signals.",
-    whyItMatters: "The EV policy debate may feel distant from the day-to-day reality of running a shop, but it is shaping the fleet you will be servicing in five years. A 75% EV sales target by 2035 means that within a decade, the majority of new vehicles entering your market will be electric. Shops that begin building EV service capacity now — Level 2 charging infrastructure, technician training on high-voltage systems, diagnostic tools for battery management systems — will be positioned to capture that work. Shops that wait will face a steep and expensive catch-up. The 75% surge in March EV sales is not a blip; it is a signal that consumer demand is real when incentives are in place. Plan your shop's EV readiness timeline accordingly.",
-    source: "Pembina Institute / Statistics Canada",
-    sourceUrl: "https://www.pembina.org/blog/canada-risks-being-left-behind-if-it-fails-align-global-auto-market",
+    headline: "JD Power: North American New-Vehicle Sales Surging in May 2026 — But 30% of Trade-Ins Are Underwater and Hybrid Share Hits 16%",
+    summary: "JD Power and GlobalData released their May 2026 North American sales forecast this week, projecting total new-vehicle sales of 1,490,900 units — a 5.8% year-over-year increase and the first positive retail comparison since September 2025. The seasonally adjusted annualized rate (SAAR) is expected to reach 16.3 million units, up 0.7 million from May 2025. The headline numbers are strong, but the underlying data tells a more complicated story. Average monthly finance payments have climbed 2.8% year-over-year to $810, even as average transaction prices are essentially flat at $46,023. The proportion of trade-ins carrying negative equity has reached 30.4% — up 2.9 percentage points year-over-year — meaning nearly one in three vehicle owners who try to trade in their car in May 2026 will owe more than it is worth. Manufacturers are responding by increasing incentive spending 20.7% year-over-year to an average of $3,297 per vehicle. The most significant structural shift in the data: hybrid share of retail sales has climbed to 16.3% — up 1.6 percentage points — while EV share has softened to 7.0% following the elimination of U.S. federal EV credits. Loan terms of 84 months or longer now account for 13.4% of all new-vehicle financing.",
+    whyItMatters: "The JD Power data has three direct implications for your shop. First, the surge in hybrid sales — now 16.3% of the retail mix — means hybrid service volume is growing fast. If your technicians are not current on hybrid battery, inverter, and regenerative braking service procedures, that is a skills gap worth addressing this summer. Second, the 30.4% negative equity rate on trade-ins signals that many of your customers are holding their current vehicles longer than planned — which is good for your repair pipeline. Vehicles that would normally be traded in at 80,000 km are now being kept to 120,000 km or beyond. Third, the 84-month loan term trend means more customers are financially stretched. Price transparency, clear estimates, and payment flexibility (financing options, deferred payment plans) will matter more in this environment than they did two years ago.",
+    source: "JD Power / GlobalData",
+    sourceUrl: "https://www.jdpower.com/business/press-releases/jd-power-globaldata-forecast-may-2026",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "🚗",
-    text: "Canadian new vehicle sales held remarkably steady in Q1 2026, declining only 1–4% year-over-year despite global trade upheaval and surging fuel prices. Chrysler surged 98% on Canadian-made minivan demand; Land Rover jumped 67%; Volkswagen posted its best-ever Q1 with a 13% gain. The resilience of the Canadian fleet signals continued strong repair demand through 2026.",
-    sourceUrl: "https://driving.ca/column/driving-by-numbers/best-worst-starts-canadian-auto-brands-2026-q1",
-  },
-  {
-    icon: "🔧",
-    text: "The average new vehicle price in Canada reached $49,275 in March 2026 — a 3.5% year-over-year increase — according to Cox Automotive. Higher sticker prices are pushing more consumers toward keeping their existing vehicles longer, which directly benefits independent repair shops. The repair pipeline for 2026 and 2027 looks strong.",
-    sourceUrl: "https://ca.sports.yahoo.com/news/automotive-industry-undergoing-great-reset-090000038.html",
-  },
-  {
-    icon: "⚡",
-    text: "Hybrids are officially back as the dominant powertrain story of 2026. With federal EV incentives reinstated in Canada and BEV charging anxiety still a barrier, AutoPacific's Paul Waatti notes: 'The market looks much more ready for hybrids than it does for an all-in EV push.' Expect hybrid service volume to grow significantly over the next 18 months.",
-    sourceUrl: "https://ca.sports.yahoo.com/news/automotive-industry-undergoing-great-reset-090000038.html",
+    text: "The 2026 Radar RD6 PHEV — a midsize plug-in hybrid pickup from Geely's Radar brand — packs 463 hp, 82 km of EV range, and 1,000 km of total range. Its Philippine launch price translates to roughly $36,167 CAD, compared to $71,363 CAD for the Ford Ranger PHEV in Australia. If Chinese PHEV trucks reach Canada, they will fundamentally disrupt the midsize truck segment.",
+    sourceUrl: "https://driving.ca/reviews/2026-radar-rd6-phev-pickup-chinese-brand",
   },
   {
     icon: "📊",
-    text: "Software-defined vehicles (SDVs) are beginning to reshape the repair landscape. Automakers are increasingly pushing over-the-air updates that address issues previously requiring a shop visit. For independent shops, this is both a threat and an opportunity — those who invest in OEM-level diagnostic access and scan tool subscriptions will retain the work that SDV updates cannot handle.",
-    sourceUrl: "https://ca.sports.yahoo.com/news/automotive-industry-undergoing-great-reset-090000038.html",
+    text: "Pfaff Automotive is opening Canada's first dual-brand Audi and Ducati dealership in Vaughan, Ontario in June 2026. The move signals continued premium market confidence even as mass-market affordability tightens. For independent shops near Vaughan, this is a reminder that the premium and performance service segment remains robust.",
+    sourceUrl: "https://canadianautodealer.ca/2024/12/pfaff-automotive-to-retail-audi-ducati-under-one-rooftop/",
+  },
+  {
+    icon: "⛽",
+    text: "The Bank of Canada is holding its key rate at 2.25% for the rest of 2026, according to Bloomberg economist surveys — balancing deflationary domestic pressure against energy-driven inflation running at 2.8% nationally. For shops carrying variable-rate equipment financing or lines of credit, this is a stable environment for the next two quarters.",
+    sourceUrl: "https://www.canadianmortgagetrends.com/2026/05/surging-gas-prices-mask-weak-consumer-spending-in-canada/",
+  },
+  {
+    icon: "🔋",
+    text: "EV incentive spending in the U.S. reached $10,308 per unit in May 2026 — more than three times the $2,973 average for non-EV vehicles — underscoring how dependent EV demand remains on manufacturer discounting. For Canadian shops, this is a signal that EV adoption will continue to be incentive-driven rather than organic, making policy stability the single biggest variable in EV service volume forecasts.",
+    sourceUrl: "https://www.jdpower.com/business/press-releases/jd-power-globaldata-forecast-may-2026",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Start Your EV Readiness Audit This Weekend",
-  text: "With Canadian EV sales up 75% year-over-year in March 2026 and the federal government targeting 75% EV sales by 2035, the question for your shop is no longer 'if' but 'when.' This weekend, take 30 minutes to answer three questions: (1) Do you have at least one technician with formal high-voltage safety training? (2) Does your shop have a Level 2 charging outlet you can use for customer vehicles? (3) Does your scan tool subscription cover the top five EV brands in your market — Tesla, Hyundai/Kia, GM, Ford, and Stellantis? If the answer to any of these is no, you have a concrete action item. The shops that begin building EV capacity in 2026 will own that market in 2028. The shops that wait until 2028 will be playing catch-up at a much higher cost.",
+  title: "Get Ahead of Chinese EV Service Before These Vehicles Hit Your Lifts",
+  text: "Chinese EVs are coming to Canada — and the first wave (Geely/Galaxy, BYD, Chery, Zeekr) will be on Canadian roads within 12 to 18 months. This weekend, take 20 minutes to do three things: (1) Check whether your current scan tool subscription covers Geely-family vehicles (Volvo, Polestar, Lotus share the same platform architecture). (2) Contact your tool supplier to ask about upcoming Chinese EV coverage updates — most major scan tool brands are already working on this. (3) Register your interest with your parts jobber for Chinese EV parts sourcing. The shops that build these supplier relationships now will have a significant advantage when Chinese EV owners start looking for independent service alternatives to dealerships that may not yet exist in their city.",
 };
 
 const quoteOfTheDay = {
-  text: "The secret of getting ahead is getting started.",
-  author: "Mark Twain",
-  title: "For Every Shop Owner Who Has Been Putting Off That EV Training",
+  text: "The best time to plant a tree was 20 years ago. The second best time is now.",
+  author: "Chinese Proverb",
+  title: "Apt for a Week When Chinese Automakers Are Planting Roots in Canada",
 };
 
 const rideOfTheDay = {
-  name: "2027 Ram 1500 Rumble Bee SRT — 777 Horsepower, Built in Mexico, Coming to a Canadian Road Near You",
-  description: "Revealed this week at Stellantis Investor Day, the 2027 Ram 1500 Rumble Bee SRT is the most powerful V8 production pickup truck ever built. Its supercharged 6.2-litre Hellcat engine produces 777 horsepower and 680 lb-ft of torque — the same unit going into the 2027 Ram TRX. A unique quad-cab/short-bed body configuration gives it a 13-inch shorter wheelbase than a standard Ram 1500, optimized for track performance. Top speed is targeted at 274 km/h, with 0-to-96 km/h in 3.4 seconds. All three Rumble Bee variants use an eight-speed automatic with metal paddle shifters and full-time 4WD with a front-axle disconnect for rear-wheel-drive fun. The base Rumble Bee (395-hp 5.7L Hemi) arrives later in 2026; the 392 and SRT follow in early 2027. Canadian pricing has not yet been announced.",
+  name: "1969 Chevrolet Camaro Z/28 — The Road-Racing Homologation Special That Defined a Generation",
+  description: "The 1969 Camaro Z/28 was not built for the street — it was built to homologate the 302 cubic-inch small-block V8 for the SCCA Trans-Am racing series. Chevrolet engineers mated a 327 block to a 283 crankshaft to produce the exact 302 cubic-inch displacement the rules required, then breathed through it with an 800 cfm Holley double-pumper on an aluminium high-rise intake. Factory-rated at 290 horsepower — a figure that fooled no one — the actual output was closer to 360 hp. The Z/28 came with front disc brakes, a Muncie close-ratio four-speed, a Positraction rear axle, and a suspension tuned for the track. Only 19,014 were built for 1969. Today, a numbers-matching Z/28 in excellent condition commands $150,000 or more at auction — a testament to what happens when engineers build a car with a single-minded purpose and no compromises.",
   image: HOTROD_IMG,
 };
 
@@ -186,10 +186,10 @@ export default function Home() {
                 Top Intelligence
               </span>
               <h3 className="font-['Oswald'] text-4xl md:text-5xl font-bold text-white leading-tight uppercase mb-4">
-                Canada Shut Out of USMCA Talks, Stellantis Drops 777-hp Muscle Truck, and the EV Policy Clock Is Ticking
+                Chinese EVs Land in Canada, Gas Prices Gut Consumer Spending, and One in Three Trade-Ins Is Underwater
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Three breaking stories from this week that every Canadian shop owner needs to read before Monday morning.
+                Three market-moving stories from this weekend that will shape what walks through your shop door over the next 18 months.
               </p>
             </div>
           </div>
