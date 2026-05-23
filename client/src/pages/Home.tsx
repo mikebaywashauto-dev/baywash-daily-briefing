@@ -1,4 +1,4 @@
-// 2026-05-24
+// 2026-05-26
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 15;
-const BRIEFING_DATE = "May 24, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 16;
+const BRIEFING_DATE = "May 26, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VMmgjdeDrOiSWKBH.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AYHWflZIwYAqhtMT.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mgoywCVRoukhBhOS.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/uWzMlLiVZZwBzYKg.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jVxgbUFzjqWLQvqI.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hgbHbVwzKfPCESWJ.png";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nNhvAhjGLvJdbLId.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PLheijdsKMeSYypq.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gVrPVQiYQyGGNqhw.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hDLcpMTOLgrhsHBQ.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "MARKET SHIFT",
+    tag: "RIGHT TO REPAIR",
     tagColor: "#e05a1a",
-    headline: "Chinese EVs Are Coming to Canada — The Galaxy Geome EX2 Is the First, and It Could Reshape How Your Customers Think About Vehicles",
-    summary: "The first wave of Chinese electric vehicles is no longer a distant threat — it is arriving. Driving.ca this week published a first drive review of the 2026 Galaxy Geome EX2, a sub-compact all-electric crossover from Geely Auto Group that the reviewer calls 'the first Chinese EV that should come to Canada.' The Geome EX2 was the best-selling vehicle in China — electric or gasoline — in 2025. It sells for US$9,500 in China. Even at two or three times that price after shipping, duties, and Canadian compliance costs, it would represent the most affordable new EV in Canada by a wide margin — undercutting the Kia EV4, Fiat 500e, and Tesla Model 3 by tens of thousands of dollars. The EX2 features a 40.2 kWh CATL battery, 320 km of real-world range, a 14.6-inch infotainment screen, a 540-degree camera system, and L2 driver assistance — technology that would cost $50,000 or more on a Canadian-market vehicle. Geely is already shipping EVs to Canada under its Lotus brand, and BYD, Chery, and Zeekr are all in various stages of Canadian market entry. A companion review of the Radar RD6 PHEV — a midsize plug-in hybrid pickup from another Geely brand — showed 463 horsepower, 82 km of EV range, and 1,000 km of total range at a Philippine launch price equivalent to $36,167 Canadian, roughly half the cost of a comparable Ford Ranger PHEV.",
-    whyItMatters: "Chinese EVs entering the Canadian market is not just a new-car story — it is a service and repair story. These vehicles will need oil changes, tires, brakes, alignments, and eventually battery and drivetrain service. The question is whether independent shops will be positioned to capture that work. The most immediate action item: start tracking which Chinese brands are entering your market and get ahead of the scan tool and parts sourcing question now, before these vehicles are on your lifts. Geely-family vehicles (Volvo, Polestar, Lotus, Galaxy, Zeekr) share platform architecture — if you already service Volvo or Polestar, you have a head start. The reliability question is real and unresolved, but if Chinese EVs prove durable, they will represent a massive new service opportunity for shops that are ready.",
-    source: "Driving.ca",
-    sourceUrl: "https://driving.ca/reviews/2026-galaxy-geome-ex2-chinese-ev-review",
+    headline: "The REPAIR Act Just Cleared a Major Hurdle in Washington — But the Fight for Full Vehicle Data Access Is Far From Over",
+    summary: "On May 21, 2026, the U.S. House Energy and Commerce Committee voted to pass H.R. 7389, the Motor Vehicle Modernization Act of 2026 — legislation that includes automotive right to repair provisions and now advances to a full House floor vote. The Auto Care Association called it 'an important step forward' while noting the language falls short of the full protections independent shops need. The bill includes provisions for heavy-duty trucking and new enforcement authority for the Federal Trade Commission. However, the legislation does not fully reflect the original REPAIR Act introduced by Rep. Neal Dunn (FL-02), which would have given vehicle owners and independent shops direct access to wirelessly transmitted repair and maintenance data. Rep. Dunn issued a statement the following day urging House leadership to advance the full REPAIR Act provisions to the floor separately, warning that the current language 'codifies a 2014 MOU that does nothing to expand consumer choice and instead hands automakers a costly repair monopoly.' MEMA Aftermarket Suppliers president Emily Poladian stated that without the full REPAIR Act, 155 million Americans will have significantly fewer choices to repair and maintain their vehicles — and that repair costs have already risen 48% since 2020. The CAR Coalition's Justin Rzepka added that the average vehicle owner is now paying $200 more per year as a direct result of restricted data access. The bill also includes the SEMA-backed ADAS Functionality and Integrity Act (Section 221), which directs NHTSA to study the impact of common vehicle modifications — including lifts, wraps, bumpers, and bike racks — on ADAS calibration, and to develop industry guidelines for modification tolerances. This provision is particularly significant for shops that perform suspension lifts, wheel and tire upgrades, and collision repairs on ADAS-equipped vehicles.",
+    whyItMatters: "This is the most significant right to repair development in years for Canadian and American independent shops — and it cuts both ways. The good news: the bill is moving. The bad news: the version that passed committee still does not give independent shops access to wirelessly transmitted OBD data, which is where the real repair monopoly lives on modern connected vehicles. For Canadian shops, the federal right to repair bill (Bill C-244) passed in 2023 but implementation has been slow and enforcement is essentially non-existent. The U.S. legislative battle matters because it sets the precedent that Canadian regulators and courts will follow. Practical action item for this week: audit which of your current repairs require OEM-only scan tools or dealer-only software access. Document those cases. That documentation is exactly what industry associations need to make the case for stronger enforcement of existing Canadian right to repair rules.",
+    source: "Auto Care Association / Rep. Neal Dunn / SEMA",
+    sourceUrl: "https://www.autocare.org/news/latest-news/details/2026/05/21/auto-care-association-provides-statement-on-today's-congressional-right-to-repair-action",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CONSUMER ECONOMY",
-    tagColor: "#dc2626",
-    headline: "Gas Prices Are Eating Canadian Household Budgets Alive — And Motor Vehicle Sales Just Dropped 0.5% as a Result",
-    summary: "New data released by Statistics Canada on Friday confirmed what many shop owners have been sensing at the service counter: surging gasoline prices are crowding out spending everywhere else. Canadian retail sales rose 0.9% in March 2026 — but that headline figure was almost entirely driven by a 12.4% surge in gasoline station revenues. In volume terms, gas station sales actually fell 1.9%, meaning Canadians are paying dramatically more for the same amount of fuel. Excluding gas, Canadian retail sales dropped 0.2% in March. Motor vehicle and parts dealer sales fell 0.5%. Core retail sales — excluding both gas and auto dealers — were down 0.1%, the first decline in three months. Bloomberg reported that CIBC senior economist Andrew Grantham warned 'higher gasoline prices may already be limiting sales in other areas, which will see inflation-adjusted consumer spending growth decelerate again in the second quarter.' An advance estimate for April shows a further 0.6% overall retail gain — but analysts expect the same gas-driven distortion to persist. The Bank of Canada is holding its key rate at 2.25% for the rest of 2026, according to Bloomberg economist surveys, balancing deflationary domestic pressure against energy-driven inflation running at 2.8% nationally.",
-    whyItMatters: "When gas prices consume a larger share of household budgets, consumers make tradeoffs — and one of the first things they defer is discretionary vehicle maintenance. Shops that rely heavily on customer-pay work for non-urgent services (cabin air filters, fluid flushes, wiper blades) may see a softening in that category over the next two quarters. The practical response is to focus on essential maintenance that customers cannot defer: oil changes, brake inspections, tire rotations, and safety-critical repairs. Communicate value clearly — a $150 brake inspection that catches a $400 problem early is a compelling story when household budgets are tight. Fleet and commercial accounts are more insulated from this pressure and worth prioritizing in your business development efforts right now.",
-    source: "Statistics Canada / Bloomberg / Canadian Mortgage Trends",
-    sourceUrl: "https://www.canadianmortgagetrends.com/2026/05/surging-gas-prices-mask-weak-consumer-spending-in-canada/",
+    tag: "USED VEHICLE MARKET",
+    tagColor: "#16a34a",
+    headline: "Canadian Used Vehicle Wholesale Prices Drop 0.32% — Trucks and SUVs Lead the Decline as GM Drops $63M Into Oshawa",
+    summary: "Canadian wholesale used-vehicle prices fell 0.32% in the week ending May 16, 2026, according to Canadian Black Book's latest Market Insights report — continuing a softening trend that has now persisted for six consecutive weeks. Truck and SUV segments led the decline, dropping 0.40%, while car segments fell 0.20%. Within the truck and SUV category, full-size van values dropped 1.77% and minivan prices declined 1.29% — the two segments most sensitive to commercial fleet cycling. Luxury car values recorded the largest car-segment decline at 0.52%, followed by sports cars at 0.41%. The average retail listing price for used vehicles reached $37,750 based on approximately 201,000 dealer listings across Canada. Auction sale rates ranged from 25.2% to 48.7%, averaging 36% — a figure that reflects continued seller resistance to lower prices and ongoing upstream channel competition for available inventory. In a separate development, General Motors confirmed a $63 million investment in its Oshawa Assembly plant — a move that signals continued commitment to Canadian truck production even as the plant operates at reduced capacity following the tariff-driven shift cut announced earlier this year. The investment is focused on tooling and equipment upgrades for the next generation of light- and heavy-duty pickups. Separately, Mazda delayed the launch of planned EVs by two years, and Subaru announced a $362 million write-down tied to postponing one of its Japanese-market EV programs — further evidence that the EV timeline is compressing across the industry.",
+    whyItMatters: "Falling wholesale used vehicle prices have a direct and immediate impact on your shop's customer base. When used vehicle values drop, two things happen: first, more customers choose to repair their existing vehicle rather than trade up, because the equity they expected to have has evaporated. Second, customers who do buy used vehicles are buying at lower price points — which often means older, higher-mileage vehicles with more deferred maintenance. Both dynamics are good for your service volume. The truck and SUV segment decline is particularly relevant for shops in markets where pickups dominate — a customer who bought a used F-150 or RAM 1500 at peak 2022 pricing and is now underwater on that loan is your most loyal service customer for the next three years. The GM Oshawa $63M investment is a signal that Canadian truck production is not going away — which matters for parts availability and technician training relevance.",
+    source: "Canadian Black Book / Canadian Auto Dealer / GM Authority",
+    sourceUrl: "https://canadianautodealer.ca/2026/05/canadian-used-vehicle-prices-fall-0-32-for-the-week/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "SALES DATA",
+    tag: "INFRASTRUCTURE",
     tagColor: "#2563eb",
-    headline: "JD Power: North American New-Vehicle Sales Surging in May 2026 — But 30% of Trade-Ins Are Underwater and Hybrid Share Hits 16%",
-    summary: "JD Power and GlobalData released their May 2026 North American sales forecast this week, projecting total new-vehicle sales of 1,490,900 units — a 5.8% year-over-year increase and the first positive retail comparison since September 2025. The seasonally adjusted annualized rate (SAAR) is expected to reach 16.3 million units, up 0.7 million from May 2025. The headline numbers are strong, but the underlying data tells a more complicated story. Average monthly finance payments have climbed 2.8% year-over-year to $810, even as average transaction prices are essentially flat at $46,023. The proportion of trade-ins carrying negative equity has reached 30.4% — up 2.9 percentage points year-over-year — meaning nearly one in three vehicle owners who try to trade in their car in May 2026 will owe more than it is worth. Manufacturers are responding by increasing incentive spending 20.7% year-over-year to an average of $3,297 per vehicle. The most significant structural shift in the data: hybrid share of retail sales has climbed to 16.3% — up 1.6 percentage points — while EV share has softened to 7.0% following the elimination of U.S. federal EV credits. Loan terms of 84 months or longer now account for 13.4% of all new-vehicle financing.",
-    whyItMatters: "The JD Power data has three direct implications for your shop. First, the surge in hybrid sales — now 16.3% of the retail mix — means hybrid service volume is growing fast. If your technicians are not current on hybrid battery, inverter, and regenerative braking service procedures, that is a skills gap worth addressing this summer. Second, the 30.4% negative equity rate on trade-ins signals that many of your customers are holding their current vehicles longer than planned — which is good for your repair pipeline. Vehicles that would normally be traded in at 80,000 km are now being kept to 120,000 km or beyond. Third, the 84-month loan term trend means more customers are financially stretched. Price transparency, clear estimates, and payment flexibility (financing options, deferred payment plans) will matter more in this environment than they did two years ago.",
-    source: "JD Power / GlobalData",
-    sourceUrl: "https://www.jdpower.com/business/press-releases/jd-power-globaldata-forecast-may-2026",
+    headline: "The $580 Billion BUILD America 250 Act Passes Committee — EV Road Fees, Autonomous Truck Rules, and $750M for Truck Parking Are All In",
+    summary: "The U.S. House Transportation and Infrastructure Committee approved H.R. 8870, the BUILD America 250 Act, on May 22, 2026 by a 62-2 vote following a 14-hour markup session. The bipartisan, five-year surface transportation reauthorization bill — the largest infrastructure investment in U.S. history — now advances to a full House floor vote. The bill invests $580 billion in roads, bridges, transit, rail, and highway safety programs. Key provisions with direct relevance to the automotive and trucking industry include: a new $130 annual fee for electric vehicles and $35 for plug-in hybrids to fund road repairs (rising $5 per year starting in 2029), representing the first new revenue stream for the Highway Trust Fund in over three decades; $750 million over five years for new truck parking construction; a first-ever national framework for autonomous commercial motor vehicles, directing the Department of Transportation to create performance-based safety requirements; a requirement that drivers and carriers hauling lithium-ion battery mega packs obtain a hazardous materials CDL endorsement; and the ADAS Functionality and Integrity Act provisions requiring NHTSA to study how common modifications affect ADAS calibration. The bill also includes the Household Goods Shipping Consumer Protection Act and an extension of the Safe Driver Apprenticeship Program for 18-to-20-year-old CDL candidates. The American Trucking Associations called it 'a bold infrastructure proposal' and specifically praised the EV fee provision, noting that 'electric vehicles have not paid their fair share into the Highway Trust Fund as a result of not paying the federal fuel tax.'",
+    whyItMatters: "The BUILD America 250 Act has three implications worth tracking for Canadian shop owners. First, the $130 EV road fee signals a political and fiscal shift in how governments on both sides of the border will fund road infrastructure as fuel tax revenue declines — expect Canada to follow with similar proposals within 18 months. Second, the autonomous commercial vehicle framework is the first federal attempt to regulate self-driving trucks — a technology that is already being tested on U.S. highways and will eventually affect the commercial fleet service market. Third, the lithium-ion battery hazmat CDL requirement is a signal that battery transport safety is becoming a regulatory priority — which has downstream implications for shops that handle battery pack removal and replacement on EVs and PHEVs. If you are not already tracking your state and provincial hazmat handling requirements for high-voltage battery work, now is the time to start.",
+    source: "House T&I Committee / The Trucker / ATA",
+    sourceUrl: "https://www.thetrucker.com/trucking-news/business/build-america-250-act-takes-a-step-forward",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🚗",
-    text: "The 2026 Radar RD6 PHEV — a midsize plug-in hybrid pickup from Geely's Radar brand — packs 463 hp, 82 km of EV range, and 1,000 km of total range. Its Philippine launch price translates to roughly $36,167 CAD, compared to $71,363 CAD for the Ford Ranger PHEV in Australia. If Chinese PHEV trucks reach Canada, they will fundamentally disrupt the midsize truck segment.",
-    sourceUrl: "https://driving.ca/reviews/2026-radar-rd6-phev-pickup-chinese-brand",
+    icon: "🔧",
+    text: "The SEMA-backed ADAS Functionality and Integrity Act — now embedded in the Motor Vehicle Modernization Act of 2026 — would require NHTSA to study how the 10 most common vehicle modifications (lifts, wraps, bumpers, bike racks, wheel/tire changes) affect ADAS calibration, and to publish industry guidelines. For shops that perform these modifications, this is the first step toward standardized recalibration protocols — and a potential new revenue stream.",
+    sourceUrl: "https://www.sema.org/news-media/enews/2026/21/semas-landmark-right-modify-bill-advances-house-floor",
   },
   {
-    icon: "📊",
-    text: "Pfaff Automotive is opening Canada's first dual-brand Audi and Ducati dealership in Vaughan, Ontario in June 2026. The move signals continued premium market confidence even as mass-market affordability tightens. For independent shops near Vaughan, this is a reminder that the premium and performance service segment remains robust.",
-    sourceUrl: "https://canadianautodealer.ca/2024/12/pfaff-automotive-to-retail-audi-ducati-under-one-rooftop/",
+    icon: "📉",
+    text: "Compact van wholesale values rose 1.46% last week — the strongest-performing segment in the Canadian used vehicle market — while full-size van values dropped 1.77%. This divergence reflects the ongoing shift from large commercial vans toward smaller urban delivery vehicles, driven by last-mile logistics demand. For shops with commercial fleet accounts, compact van service volume is a growth category worth targeting.",
+    sourceUrl: "https://canadianautodealer.ca/2026/05/canadian-used-vehicle-prices-fall-0-32-for-the-week/",
   },
   {
-    icon: "⛽",
-    text: "The Bank of Canada is holding its key rate at 2.25% for the rest of 2026, according to Bloomberg economist surveys — balancing deflationary domestic pressure against energy-driven inflation running at 2.8% nationally. For shops carrying variable-rate equipment financing or lines of credit, this is a stable environment for the next two quarters.",
-    sourceUrl: "https://www.canadianmortgagetrends.com/2026/05/surging-gas-prices-mask-weak-consumer-spending-in-canada/",
+    icon: "⚡",
+    text: "Zero-emission vehicle sales in Canada reached 21,574 units in March 2026 — 12.2% of overall sales and roughly double year-over-year levels — following the launch of the federal Electric Vehicle Affordability Plan. This is the fastest ZEV adoption rate Canada has ever recorded. For shops in urban markets, EV service volume is no longer a future consideration — it is a present-tense business planning variable.",
+    sourceUrl: "https://canadianautodealer.ca/2026/05/canadian-used-vehicle-prices-fall-0-32-for-the-week/",
   },
   {
-    icon: "🔋",
-    text: "EV incentive spending in the U.S. reached $10,308 per unit in May 2026 — more than three times the $2,973 average for non-EV vehicles — underscoring how dependent EV demand remains on manufacturer discounting. For Canadian shops, this is a signal that EV adoption will continue to be incentive-driven rather than organic, making policy stability the single biggest variable in EV service volume forecasts.",
-    sourceUrl: "https://www.jdpower.com/business/press-releases/jd-power-globaldata-forecast-may-2026",
+    icon: "🚛",
+    text: "The BUILD America 250 Act includes a 10% axle weight enforcement tolerance for dry bulk vehicles (the VARIANCE Act), and preempts lawsuits seeking to impose liability for failing to equip motor vehicles beyond NHTSA safety standards. For shops that service commercial trucks and heavy equipment, these provisions reduce regulatory uncertainty and may affect the specifications of vehicles you see on your lifts starting in the 2027 model year.",
+    sourceUrl: "https://www.thetrucker.com/trucking-news/business/build-america-250-act-takes-a-step-forward",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Get Ahead of Chinese EV Service Before These Vehicles Hit Your Lifts",
-  text: "Chinese EVs are coming to Canada — and the first wave (Geely/Galaxy, BYD, Chery, Zeekr) will be on Canadian roads within 12 to 18 months. This weekend, take 20 minutes to do three things: (1) Check whether your current scan tool subscription covers Geely-family vehicles (Volvo, Polestar, Lotus share the same platform architecture). (2) Contact your tool supplier to ask about upcoming Chinese EV coverage updates — most major scan tool brands are already working on this. (3) Register your interest with your parts jobber for Chinese EV parts sourcing. The shops that build these supplier relationships now will have a significant advantage when Chinese EV owners start looking for independent service alternatives to dealerships that may not yet exist in their city.",
+  title: "Document Every OEM Data Access Barrier You Hit This Week",
+  text: "The REPAIR Act fight in Washington is being won or lost on the strength of real-world documentation. Every time your shop hits a wall — a scan tool that requires a dealer subscription, a calibration procedure locked behind OEM software, a module that won't program without factory authorization — that is evidence. This week, start a simple log: vehicle year/make/model, the specific procedure blocked, and the tool or subscription required. Share it with your provincial automotive association. AIA Canada, SAAR, and CIAS are actively building the evidentiary record for the next phase of Canadian right to repair enforcement. Your documentation is not just good business practice — it is advocacy.",
 };
 
 const quoteOfTheDay = {
-  text: "The best time to plant a tree was 20 years ago. The second best time is now.",
-  author: "Chinese Proverb",
-  title: "Apt for a Week When Chinese Automakers Are Planting Roots in Canada",
+  text: "If you own it, you should be able to fix it.",
+  author: "Rep. Neal Dunn (FL-02)",
+  title: "Sponsor of the REPAIR Act, May 22, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Chevrolet Camaro Z/28 — The Road-Racing Homologation Special That Defined a Generation",
-  description: "The 1969 Camaro Z/28 was not built for the street — it was built to homologate the 302 cubic-inch small-block V8 for the SCCA Trans-Am racing series. Chevrolet engineers mated a 327 block to a 283 crankshaft to produce the exact 302 cubic-inch displacement the rules required, then breathed through it with an 800 cfm Holley double-pumper on an aluminium high-rise intake. Factory-rated at 290 horsepower — a figure that fooled no one — the actual output was closer to 360 hp. The Z/28 came with front disc brakes, a Muncie close-ratio four-speed, a Positraction rear axle, and a suspension tuned for the track. Only 19,014 were built for 1969. Today, a numbers-matching Z/28 in excellent condition commands $150,000 or more at auction — a testament to what happens when engineers build a car with a single-minded purpose and no compromises.",
+  name: "1970 Plymouth Hemi 'Cuda — The Most Valuable American Muscle Car Ever Built",
+  description: "The 1970 Plymouth Hemi 'Cuda is the rarest and most valuable American muscle car in existence. Of the 666 'Cudas built with the 426 Hemi in 1970, only 14 were convertibles — and a numbers-matching Hemi 'Cuda convertible in top condition has sold for more than $3.5 million at auction, making it the most expensive American muscle car ever to change hands publicly. The 426 Hemi produced 425 horsepower from the factory — a figure that was deliberately understated to keep insurance premiums manageable. Actual dyno output was closer to 500 hp. The 'Cuda's E-body platform was shared with the Dodge Challenger, but the Plymouth's shorter wheelbase and lighter curb weight gave it a handling edge that the Challenger could not match. The Hemi 'Cuda was built for one year only in this configuration — Chrysler's financial troubles in 1971 ended the era before it could be repeated. Today, every surviving example is a documented piece of American automotive history, and the few that come to market attract bidders from around the world.",
   image: HOTROD_IMG,
 };
 
@@ -186,10 +186,10 @@ export default function Home() {
                 Top Intelligence
               </span>
               <h3 className="font-['Oswald'] text-4xl md:text-5xl font-bold text-white leading-tight uppercase mb-4">
-                Chinese EVs Land in Canada, Gas Prices Gut Consumer Spending, and One in Three Trade-Ins Is Underwater
+                REPAIR Act Clears Committee, Used Vehicle Prices Slide, and a $580B Infrastructure Bill Reshapes the Road Ahead
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Three market-moving stories from this weekend that will shape what walks through your shop door over the next 18 months.
+                Three stories from Washington and the Canadian market that will land directly on your shop floor.
               </p>
             </div>
           </div>
