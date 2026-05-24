@@ -1,4 +1,4 @@
-// 2026-05-26
+// 2026-05-24
 /*
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 16;
-const BRIEFING_DATE = "May 26, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 17;
+const BRIEFING_DATE = "May 24, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hgbHbVwzKfPCESWJ.png";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nNhvAhjGLvJdbLId.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PLheijdsKMeSYypq.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gVrPVQiYQyGGNqhw.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hDLcpMTOLgrhsHBQ.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ktkaFkuadXHNxfra.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NGhTIwtClwSbdEif.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HfJhhUVXgzVIiamw.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/BpmuBNIffOHbOOWl.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gfsofVFxhapMuOmr.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "RIGHT TO REPAIR",
+    tag: "SUPPLY CHAIN",
     tagColor: "#e05a1a",
-    headline: "The REPAIR Act Just Cleared a Major Hurdle in Washington — But the Fight for Full Vehicle Data Access Is Far From Over",
-    summary: "On May 21, 2026, the U.S. House Energy and Commerce Committee voted to pass H.R. 7389, the Motor Vehicle Modernization Act of 2026 — legislation that includes automotive right to repair provisions and now advances to a full House floor vote. The Auto Care Association called it 'an important step forward' while noting the language falls short of the full protections independent shops need. The bill includes provisions for heavy-duty trucking and new enforcement authority for the Federal Trade Commission. However, the legislation does not fully reflect the original REPAIR Act introduced by Rep. Neal Dunn (FL-02), which would have given vehicle owners and independent shops direct access to wirelessly transmitted repair and maintenance data. Rep. Dunn issued a statement the following day urging House leadership to advance the full REPAIR Act provisions to the floor separately, warning that the current language 'codifies a 2014 MOU that does nothing to expand consumer choice and instead hands automakers a costly repair monopoly.' MEMA Aftermarket Suppliers president Emily Poladian stated that without the full REPAIR Act, 155 million Americans will have significantly fewer choices to repair and maintain their vehicles — and that repair costs have already risen 48% since 2020. The CAR Coalition's Justin Rzepka added that the average vehicle owner is now paying $200 more per year as a direct result of restricted data access. The bill also includes the SEMA-backed ADAS Functionality and Integrity Act (Section 221), which directs NHTSA to study the impact of common vehicle modifications — including lifts, wraps, bumpers, and bike racks — on ADAS calibration, and to develop industry guidelines for modification tolerances. This provision is particularly significant for shops that perform suspension lifts, wheel and tire upgrades, and collision repairs on ADAS-equipped vehicles.",
-    whyItMatters: "This is the most significant right to repair development in years for Canadian and American independent shops — and it cuts both ways. The good news: the bill is moving. The bad news: the version that passed committee still does not give independent shops access to wirelessly transmitted OBD data, which is where the real repair monopoly lives on modern connected vehicles. For Canadian shops, the federal right to repair bill (Bill C-244) passed in 2023 but implementation has been slow and enforcement is essentially non-existent. The U.S. legislative battle matters because it sets the precedent that Canadian regulators and courts will follow. Practical action item for this week: audit which of your current repairs require OEM-only scan tools or dealer-only software access. Document those cases. That documentation is exactly what industry associations need to make the case for stronger enforcement of existing Canadian right to repair rules.",
-    source: "Auto Care Association / Rep. Neal Dunn / SEMA",
-    sourceUrl: "https://www.autocare.org/news/latest-news/details/2026/05/21/auto-care-association-provides-statement-on-today's-congressional-right-to-repair-action",
+    headline: "Synthetic Motor Oil Shortage Hits Canadian Shops — Strait of Hormuz Disruption Drives 20%+ Price Hikes and Rationing at Major Suppliers",
+    summary: "The Strait of Hormuz closure, triggered by the ongoing Iran conflict that began February 28, 2026, has created a cascading supply chain crisis for the automotive service industry in Canada. Group III base oils — the primary feedstock for synthetic and semi-synthetic motor oils — are largely produced in Middle Eastern refineries and shipped through the Strait, and the disruption has now reached Canadian repair shops in the form of price increases of 20% or more on motor oils, with availability issues emerging on manufacturer-specific blends and low-viscosity grades. Patrick de Haan, petroleum analyst at GasBuddy, confirmed that AutoZone has already issued internal communications to store managers warning of price adjustments and availability challenges on select motor oils and lubricants that flow through the Strait. Toyota and Nissan have both issued bulletins to their dealer networks advising that 'a supplier-driven price adjustment is expected in the near term' and authorizing technicians to 'occasionally substitute heavier oil grades for certain service intervals' as a short-term measure to preserve dwindling supplies of low-viscosity synthetic grades like 0W-8 and 0W-16. Behrouz Bakhtiari, assistant professor of operations management at McMaster University, told Global News that Canada is 'absolutely vulnerable to higher price and lower availability of high-end motor oil,' and warned that the full impact on Canadian shops will become evident 'six months to a year from now.' Dr. Sohrab Zendehboudi of Memorial University noted that while major shortages of commonly-used grades are not expected immediately, the disruption will likely accelerate efforts to diversify supply sources, expand domestic re-refining capacity, and explore bio-based lubricant alternatives. Statistics Canada data released in April 2026 showed that vehicle maintenance and repair costs had already climbed 4.2% year-over-year before the current oil shortage began to bite — meaning the pressure on shop customers is compounding.",
+    whyItMatters: "This is a direct, immediate cost-of-business issue for every shop in Canada that performs oil changes — which is to say, every shop in Canada. The practical implications are threefold. First, your oil change pricing needs to be reviewed now, before your supplier invoices reflect the full increase. If you are locked into service package pricing that was set before the shortage, you are absorbing a margin hit that will compound over the next six months. Second, you need to audit your current oil inventory and determine your exposure on low-viscosity grades (0W-16, 0W-20) — these are the grades most likely to see availability constraints, and they are the grades required by the fastest-growing segment of your customer base: newer hybrids and fuel-efficient vehicles. Third, the substitution guidance from Toyota and Nissan creates a liability question: if you substitute a heavier grade without explicit customer consent and documentation, you are exposed. Create a written substitution consent form now, before you need it.",
+    source: "Global News / GasBuddy / McMaster University / Statistics Canada",
+    sourceUrl: "https://globalnews.ca/news/11855210/motor-oil-market-canada-strait-of-hormuz/",
     image: STORY1_IMG,
   },
   {
     id: 2,
     tag: "USED VEHICLE MARKET",
     tagColor: "#16a34a",
-    headline: "Canadian Used Vehicle Wholesale Prices Drop 0.32% — Trucks and SUVs Lead the Decline as GM Drops $63M Into Oshawa",
-    summary: "Canadian wholesale used-vehicle prices fell 0.32% in the week ending May 16, 2026, according to Canadian Black Book's latest Market Insights report — continuing a softening trend that has now persisted for six consecutive weeks. Truck and SUV segments led the decline, dropping 0.40%, while car segments fell 0.20%. Within the truck and SUV category, full-size van values dropped 1.77% and minivan prices declined 1.29% — the two segments most sensitive to commercial fleet cycling. Luxury car values recorded the largest car-segment decline at 0.52%, followed by sports cars at 0.41%. The average retail listing price for used vehicles reached $37,750 based on approximately 201,000 dealer listings across Canada. Auction sale rates ranged from 25.2% to 48.7%, averaging 36% — a figure that reflects continued seller resistance to lower prices and ongoing upstream channel competition for available inventory. In a separate development, General Motors confirmed a $63 million investment in its Oshawa Assembly plant — a move that signals continued commitment to Canadian truck production even as the plant operates at reduced capacity following the tariff-driven shift cut announced earlier this year. The investment is focused on tooling and equipment upgrades for the next generation of light- and heavy-duty pickups. Separately, Mazda delayed the launch of planned EVs by two years, and Subaru announced a $362 million write-down tied to postponing one of its Japanese-market EV programs — further evidence that the EV timeline is compressing across the industry.",
-    whyItMatters: "Falling wholesale used vehicle prices have a direct and immediate impact on your shop's customer base. When used vehicle values drop, two things happen: first, more customers choose to repair their existing vehicle rather than trade up, because the equity they expected to have has evaporated. Second, customers who do buy used vehicles are buying at lower price points — which often means older, higher-mileage vehicles with more deferred maintenance. Both dynamics are good for your service volume. The truck and SUV segment decline is particularly relevant for shops in markets where pickups dominate — a customer who bought a used F-150 or RAM 1500 at peak 2022 pricing and is now underwater on that loan is your most loyal service customer for the next three years. The GM Oshawa $63M investment is a signal that Canadian truck production is not going away — which matters for parts availability and technician training relevance.",
-    source: "Canadian Black Book / Canadian Auto Dealer / GM Authority",
+    headline: "Canadian Used Vehicle Prices Continue Softening — Tariff-Driven Repair Cost Surge Creates a New Service Opportunity as Customers Hold Their Vehicles Longer",
+    summary: "Canadian used vehicle wholesale prices have now declined for seven consecutive weeks, with the most recent Canadian Black Book data showing continued softening across truck and SUV segments — the categories that dominate repair volume in most Canadian independent shops. The sustained decline is being driven by a confluence of factors: tariff-driven new vehicle price increases have pushed more buyers into the used market, but the same tariffs have also increased the cost of parts and repairs, reducing the equity cushion that customers expected when they purchased used vehicles at elevated 2022-2023 prices. Automotive News reported on May 22 that repair shops and dealerships across North America have absorbed higher costs over the past year of tariffs, with customers now confronting 'bigger bills' for routine service. An independent repair garage owner in Ferndale, Michigan, told Automotive News that the tariff impact on his business has been significant and ongoing, with parts costs rising across virtually every category. The same dynamic is playing out in Canadian shops, where the combination of U.S. Section 232 tariffs on steel and aluminum, counter-tariffs on U.S. goods, and CUSMA-related uncertainty has created a complex parts-sourcing environment. Meanwhile, the average retail listing price for used vehicles in Canada remains elevated at approximately $37,750, reflecting the fact that while wholesale prices are softening, retail sellers are resisting price reductions. The gap between wholesale and retail is widening — a signal that auction sale rates are declining and that the market is in a transitional phase.",
+    whyItMatters: "Falling used vehicle values combined with rising repair costs create a specific customer psychology that is directly relevant to your service advisor conversations. Customers who are underwater on their vehicle — owing more than it is worth — are your most captive service customers. They cannot afford to trade out, and they cannot afford to let the vehicle deteriorate. But they are also under financial pressure, which means they will push back harder on repair estimates and are more likely to defer non-urgent work. The practical response is to segment your customer base by vehicle age and value, identify the customers most likely to be in this position, and develop a proactive maintenance communication strategy that emphasizes the cost of deferred maintenance versus the cost of a current repair. A customer who understands that a $400 repair today prevents a $2,000 repair in six months is a customer who authorizes the work. A customer who only hears '$400' is a customer who defers.",
+    source: "Canadian Black Book / Automotive News / Canadian Auto Dealer",
     sourceUrl: "https://canadianautodealer.ca/2026/05/canadian-used-vehicle-prices-fall-0-32-for-the-week/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "INFRASTRUCTURE",
+    tag: "TRADE POLICY",
     tagColor: "#2563eb",
-    headline: "The $580 Billion BUILD America 250 Act Passes Committee — EV Road Fees, Autonomous Truck Rules, and $750M for Truck Parking Are All In",
-    summary: "The U.S. House Transportation and Infrastructure Committee approved H.R. 8870, the BUILD America 250 Act, on May 22, 2026 by a 62-2 vote following a 14-hour markup session. The bipartisan, five-year surface transportation reauthorization bill — the largest infrastructure investment in U.S. history — now advances to a full House floor vote. The bill invests $580 billion in roads, bridges, transit, rail, and highway safety programs. Key provisions with direct relevance to the automotive and trucking industry include: a new $130 annual fee for electric vehicles and $35 for plug-in hybrids to fund road repairs (rising $5 per year starting in 2029), representing the first new revenue stream for the Highway Trust Fund in over three decades; $750 million over five years for new truck parking construction; a first-ever national framework for autonomous commercial motor vehicles, directing the Department of Transportation to create performance-based safety requirements; a requirement that drivers and carriers hauling lithium-ion battery mega packs obtain a hazardous materials CDL endorsement; and the ADAS Functionality and Integrity Act provisions requiring NHTSA to study how common modifications affect ADAS calibration. The bill also includes the Household Goods Shipping Consumer Protection Act and an extension of the Safe Driver Apprenticeship Program for 18-to-20-year-old CDL candidates. The American Trucking Associations called it 'a bold infrastructure proposal' and specifically praised the EV fee provision, noting that 'electric vehicles have not paid their fair share into the Highway Trust Fund as a result of not paying the federal fuel tax.'",
-    whyItMatters: "The BUILD America 250 Act has three implications worth tracking for Canadian shop owners. First, the $130 EV road fee signals a political and fiscal shift in how governments on both sides of the border will fund road infrastructure as fuel tax revenue declines — expect Canada to follow with similar proposals within 18 months. Second, the autonomous commercial vehicle framework is the first federal attempt to regulate self-driving trucks — a technology that is already being tested on U.S. highways and will eventually affect the commercial fleet service market. Third, the lithium-ion battery hazmat CDL requirement is a signal that battery transport safety is becoming a regulatory priority — which has downstream implications for shops that handle battery pack removal and replacement on EVs and PHEVs. If you are not already tracking your state and provincial hazmat handling requirements for high-voltage battery work, now is the time to start.",
-    source: "House T&I Committee / The Trucker / ATA",
-    sourceUrl: "https://www.thetrucker.com/trucking-news/business/build-america-250-act-takes-a-step-forward",
+    headline: "CUSMA Review Countdown: 38 Days to July 1 — Three Scenarios That Will Reshape Parts Sourcing, Tariff Exposure, and Shop Operating Costs for the Next Decade",
+    summary: "On July 1, 2026, Canada, the United States, and Mexico will begin the first mandatory joint review of the Canada-United States-Mexico Agreement (CUSMA/USMCA), and the outcome will have direct, material consequences for every Canadian automotive shop that sources parts from U.S. suppliers — which is to say, virtually every shop in the country. CPA Ontario published a detailed analysis on May 22 outlining three possible scenarios: extension with amendments (the base case), annual review limbo (the 'zombie USMCA'), and outright withdrawal. The base case — extension with amendments — is the scenario that major Canadian forecasters including the Bank of Canada and Scotiabank have built their 2026 economic outlooks on, and it projects Canadian GDP growth of 1.1% in 2026 under the assumption that CUSMA tariff exemptions remain intact. The U.S. Trade Representative has publicly stated that U.S.-Mexico talks are progressing faster than U.S.-Canada talks, and characterized Canada as 'doubling down on globalization when we're trying to correct for the problems of globalization.' Formal review talks between Washington and Ottawa have yet to officially launch as of this week. The automotive rules of origin provisions are among the most contested elements of the review: CUSMA currently requires 75% regional value content for passenger vehicles and light trucks, with additional labor value-content and steel-and-aluminum purchase requirements. U.S. manufacturers are pushing for higher thresholds, and any tightening will ripple through the Canadian parts supply chain. Separately, the U.S. Supreme Court's ruling on Section 122 tariffs and Trump's subsequent announcement of a new 15% global duty — with exemptions for vehicles and parts — has created additional complexity for shops that source from non-CUSMA suppliers.",
+    whyItMatters: "The CUSMA review is not an abstract trade policy issue — it is a parts-pricing event that will land directly on your shop floor. Here is the specific exposure: if CUSMA enters annual review limbo or if the U.S. moves toward withdrawal, the tariff exemptions that currently protect roughly 89% of Canadian exports from U.S. duties will be at risk. For shops, the most immediate impact would be on U.S.-sourced parts — filters, brakes, belts, sensors, and the thousands of other components that flow across the border daily under CUSMA preference. The canflow-global analysis published this week is particularly useful for shops that do their own parts ordering: if you are claiming CUSMA preference on recurring parts shipments, your documentation needs to be current and your supplier affidavits need to reflect the actual production process. CBSA has a four-year lookback window on origin claims, and any rule tightening in the review will trigger increased verification activity. The practical action item: call your primary parts distributor this week and ask them directly what their CUSMA exposure is and what their contingency plan is if the review produces tighter origin rules.",
+    source: "CPA Ontario / canflow-global / Bank of Canada / USTR",
+    sourceUrl: "https://www.cpaontario.ca/insights/blog/cusma-review-2026-scenarios",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🔧",
-    text: "The SEMA-backed ADAS Functionality and Integrity Act — now embedded in the Motor Vehicle Modernization Act of 2026 — would require NHTSA to study how the 10 most common vehicle modifications (lifts, wraps, bumpers, bike racks, wheel/tire changes) affect ADAS calibration, and to publish industry guidelines. For shops that perform these modifications, this is the first step toward standardized recalibration protocols — and a potential new revenue stream.",
-    sourceUrl: "https://www.sema.org/news-media/enews/2026/21/semas-landmark-right-modify-bill-advances-house-floor",
+    icon: "🛢️",
+    text: "AutoZone has issued internal communications to store managers warning of price adjustments and availability challenges on select motor oils that flow through the Strait of Hormuz. The bulletin specifically calls out 'challenges on select motor oils and lubes' and states that 'price adjustments are coming for most products.' If you have not already locked in oil pricing with your supplier, do it this week — the retail price increases are coming regardless of what your supplier has told you.",
+    sourceUrl: "https://globalnews.ca/news/11855210/motor-oil-market-canada-strait-of-hormuz/",
   },
   {
-    icon: "📉",
-    text: "Compact van wholesale values rose 1.46% last week — the strongest-performing segment in the Canadian used vehicle market — while full-size van values dropped 1.77%. This divergence reflects the ongoing shift from large commercial vans toward smaller urban delivery vehicles, driven by last-mile logistics demand. For shops with commercial fleet accounts, compact van service volume is a growth category worth targeting.",
-    sourceUrl: "https://canadianautodealer.ca/2026/05/canadian-used-vehicle-prices-fall-0-32-for-the-week/",
+    icon: "⚖️",
+    text: "The U.S. Supreme Court struck down the Section 122 tariff surcharge on May 7, 2026, in a 2-1 decision — but Trump immediately announced a replacement 15% global duty. Vehicles and auto parts were specifically exempted from the new 15% duty, meaning CUSMA-compliant parts continue to flow under existing tariff treatment. However, the legal and policy uncertainty around tariffs remains high, and shops that source from non-CUSMA suppliers (e.g., European or Asian specialty parts) should expect continued pricing volatility.",
+    sourceUrl: "https://www.pwc.com/ca/en/services/tax/publications/tax-insights/us-court-strike-down-section-122-tariffs-2026.html",
   },
   {
-    icon: "⚡",
-    text: "Zero-emission vehicle sales in Canada reached 21,574 units in March 2026 — 12.2% of overall sales and roughly double year-over-year levels — following the launch of the federal Electric Vehicle Affordability Plan. This is the fastest ZEV adoption rate Canada has ever recorded. For shops in urban markets, EV service volume is no longer a future consideration — it is a present-tense business planning variable.",
-    sourceUrl: "https://canadianautodealer.ca/2026/05/canadian-used-vehicle-prices-fall-0-32-for-the-week/",
+    icon: "🔋",
+    text: "A Midas franchisee in Barrie, Ontario — Anil Kumar — has built what he calls a 'wall of love' inside his shop: stacks of diapers, paper towels, and non-perishable food destined for the local food bank. The initiative has generated significant community goodwill and local media coverage. In a market where customer acquisition costs are rising and loyalty is harder to earn, community-facing initiatives like this are a measurable differentiator. Worth noting for any shop owner thinking about how to build local brand equity.",
+    sourceUrl: "https://www.tirebusiness.com/retail/tb-midas-barrie-charity-kumar/",
   },
   {
-    icon: "🚛",
-    text: "The BUILD America 250 Act includes a 10% axle weight enforcement tolerance for dry bulk vehicles (the VARIANCE Act), and preempts lawsuits seeking to impose liability for failing to equip motor vehicles beyond NHTSA safety standards. For shops that service commercial trucks and heavy equipment, these provisions reduce regulatory uncertainty and may affect the specifications of vehicles you see on your lifts starting in the 2027 model year.",
-    sourceUrl: "https://www.thetrucker.com/trucking-news/business/build-america-250-act-takes-a-step-forward",
+    icon: "🤖",
+    text: "Raise a Hood, an AI-powered tire and repair diagnostic platform, has launched a new model that matches customers — armed with a likely diagnosis from the AI — directly to area shops. The platform is designed to reduce the friction between a customer's first symptom search and their first service appointment. For independent shops, this represents both an opportunity (new customer acquisition channel) and a threat (customers arriving with AI-generated diagnoses that may or may not be accurate). Worth evaluating whether your shop is listed on the platform.",
+    sourceUrl: "https://www.tirebusiness.com/opinion/column/tb-detore-column-raise-a-hood-tire-diagnostic/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Document Every OEM Data Access Barrier You Hit This Week",
-  text: "The REPAIR Act fight in Washington is being won or lost on the strength of real-world documentation. Every time your shop hits a wall — a scan tool that requires a dealer subscription, a calibration procedure locked behind OEM software, a module that won't program without factory authorization — that is evidence. This week, start a simple log: vehicle year/make/model, the specific procedure blocked, and the tool or subscription required. Share it with your provincial automotive association. AIA Canada, SAAR, and CIAS are actively building the evidentiary record for the next phase of Canadian right to repair enforcement. Your documentation is not just good business practice — it is advocacy.",
+  title: "Lock In Your Oil Pricing and Review Your Oil Change Package Rates This Weekend",
+  text: "The synthetic motor oil shortage driven by the Strait of Hormuz disruption is not a future risk — it is a present-tense pricing event. Petroleum analyst Patrick de Haan has confirmed that price adjustments are already in motion at major distributors. If your shop offers oil change packages, service bundles, or pre-paid maintenance plans with fixed pricing, you are exposed to a margin squeeze that will compound over the next six months. This weekend's action item: call your primary oil supplier on Monday morning and ask for their current pricing on your top five oil grades, ask whether they have supply commitments they can lock in, and then review your service pricing accordingly. If you need to adjust your oil change pricing, do it proactively with a clear customer communication — 'due to global supply chain disruptions affecting synthetic oil production' — rather than reactively after your margins have been compressed.",
 };
 
 const quoteOfTheDay = {
-  text: "If you own it, you should be able to fix it.",
-  author: "Rep. Neal Dunn (FL-02)",
-  title: "Sponsor of the REPAIR Act, May 22, 2026",
+  text: "Canada is absolutely vulnerable to higher price and lower availability of high-end motor oil. Maintenance is going to become more expensive.",
+  author: "Behrouz Bakhtiari",
+  title: "Assistant Professor, Operations Management, McMaster University — May 19, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Hemi 'Cuda — The Most Valuable American Muscle Car Ever Built",
-  description: "The 1970 Plymouth Hemi 'Cuda is the rarest and most valuable American muscle car in existence. Of the 666 'Cudas built with the 426 Hemi in 1970, only 14 were convertibles — and a numbers-matching Hemi 'Cuda convertible in top condition has sold for more than $3.5 million at auction, making it the most expensive American muscle car ever to change hands publicly. The 426 Hemi produced 425 horsepower from the factory — a figure that was deliberately understated to keep insurance premiums manageable. Actual dyno output was closer to 500 hp. The 'Cuda's E-body platform was shared with the Dodge Challenger, but the Plymouth's shorter wheelbase and lighter curb weight gave it a handling edge that the Challenger could not match. The Hemi 'Cuda was built for one year only in this configuration — Chrysler's financial troubles in 1971 ended the era before it could be repeated. Today, every surviving example is a documented piece of American automotive history, and the few that come to market attract bidders from around the world.",
+  name: "1969 Dodge Charger Daytona — The Winged Warrior That Won NASCAR's Aero Wars",
+  description: "The 1969 Dodge Charger Daytona is one of the most audacious engineering decisions in American automotive history. Built for a single purpose — winning NASCAR's superspeedways — the Daytona was fitted with a pointed nose cone that extended 18 inches beyond the standard Charger body, and a towering rear wing that stood 23 inches above the decklid to keep the rear tires planted at speeds that no production car had ever reached. Only 503 street-legal Daytonas were built — the minimum required by NASCAR homologation rules — and the car became the first production vehicle to exceed 200 miles per hour in competition when Charlie Glotzbach ran 243.256 mph at Talladega in testing. The street version was available with either the 440 Magnum or the 426 Hemi, and both versions were deliberately underrated at the factory — the 426 Hemi was listed at 425 horsepower, but actual output was closer to 500 hp. Today, a numbers-matching Hemi Daytona in documented condition commands prices well above $500,000 at auction, and the handful of surviving examples in top condition are among the most sought-after American muscle cars in the world. The Daytona was built for one season only — NASCAR banned the aerodynamic wings for 1971 — making every surviving example a one-year-only piece of American racing history.",
   image: HOTROD_IMG,
 };
 
@@ -120,7 +120,7 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       } ${className}`}
     >
@@ -186,10 +186,10 @@ export default function Home() {
                 Top Intelligence
               </span>
               <h3 className="font-['Oswald'] text-4xl md:text-5xl font-bold text-white leading-tight uppercase mb-4">
-                REPAIR Act Clears Committee, Used Vehicle Prices Slide, and a $580B Infrastructure Bill Reshapes the Road Ahead
+                Motor Oil Shortage Hits Canadian Shops, Used Vehicle Values Keep Sliding, and the CUSMA Clock Is Ticking
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Three stories from Washington and the Canadian market that will land directly on your shop floor.
+                Three stories with direct, immediate consequences for your shop floor, your parts pricing, and your customer conversations.
               </p>
             </div>
           </div>
