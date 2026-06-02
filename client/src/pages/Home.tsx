@@ -9,16 +9,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 25;
-const BRIEFING_DATE = "June 1, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 26;
+const BRIEFING_DATE = "June 2, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ubWZPRtfQJvGSPoD.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jpFUxKzyDKNXnOST.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mtRGPBweOseaQbpd.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QNDjvfgycWHlaLgA.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SpMhLcDlNYORUcdE.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WLkBqJaXUTTOvKZj.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SzcvVayjJwfVUoeZ.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YrvdGsrmKjWCLDXr.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kPrjAtovONvKaJoV.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wFZZeosHAvpSwAxe.jpg";
 
 // --- Data ---
 const stories = [
@@ -26,74 +26,74 @@ const stories = [
     id: 1,
     tag: "TRADE POLICY",
     tagColor: "#e05a1a",
-    headline: "CUSMA July 1 Deadline — 30 Days Out, Canada Has No Formal Talks Scheduled While U.S. and Mexico Are Already on Round Two",
-    summary: "The July 1, 2026 CUSMA review deadline is now exactly 30 days away, and Canada's position has not materially changed: the U.S. and Mexico have completed their first bilateral negotiating round in Mexico City (May 28-29), have scheduled a second round for June 16-17 in Washington, and a third round for the week of July 20 in Mexico City — while no Canada-U.S. talks have been scheduled at all. Former Canadian Ambassador to the United States Kirsten Hillman, speaking in her first interview since leaving her post, told CTV Question Period on May 31 that she does not believe CUSMA will be scrapped — but she expects it to be 'modified.' Hillman said that 'wiping all of that away would be phenomenally disruptive' and that 'my money's on that agreement staying.' However, she acknowledged that the July 1 deadline is not a 'make-or-break date' — it is the point at which the three parties must decide to either renew CUSMA for 16 years or enter a cycle of annual reviews that could stretch until the agreement's 2036 expiry. The sharpest live threat is the U.S. demand for 82% North American content with 50% specifically from the United States — a demand that was tabled with Mexico and contains no Canada-specific provision. USTR Jamieson Greer has separately stated that U.S. tariffs on Canadian and Mexican goods will remain in place even after a revised CUSMA is agreed. Canada's counter-tariffs on U.S. steel, aluminum, and automobiles remain in force. The Export Practitioner summarized the situation as a 'split-screen review': Mexico is in active scheduled negotiations; Canada is in a 'defensive posture.'",
-    whyItMatters: "The CUSMA outcome will determine the cost structure of every part you order for the next decade. Here is the specific exposure for Canadian service shops: If the 82%/50% content rule is adopted, vehicles built in Canada that do not meet the threshold will face 25% tariffs when exported to the U.S. — which means OEMs will either restructure their Canadian supply chains or reduce Canadian production. Either outcome reduces the number of vehicles on Canadian roads that are serviced under OEM warranty programs, and increases the proportion of older, higher-mileage vehicles that need independent service. The 30-day window before July 1 is the period of maximum uncertainty. Parts suppliers are watching the talks closely before making pricing decisions for Q3. If you have the ability to lock in parts pricing or inventory for the summer, this week is the time to do it — before the July 1 outcome (or lack of outcome) creates a new wave of pricing volatility.",
-    source: "BNN Bloomberg / CTV Question Period / The Export Practitioner / Autoblog",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/politics/2026/05/31/scrapping-cusma-would-be-phenomenally-disruptive-hillman-on-future-of-the-deal/",
+    headline: "CUSMA July 1: The U.S. Could Walk Away Entirely — What That Actually Means for Canadian Auto Shops",
+    summary: "Most media coverage of the July 1 CUSMA review deadline describes it as a 'technical review' — a routine checkpoint. Toronto Sun columnist Brian Lilley published a detailed analysis on June 1 explaining why that framing is dangerously misleading. The actual treaty text is unambiguous: 'A Party may withdraw from this Agreement by providing written notice of withdrawal to the other Parties. A withdrawal shall take effect six months after a Party provides written notice to the other Parties.' If the United States triggers withdrawal on July 1, Canada and Mexico would have a free trade agreement with each other — but Canada's $419.7 billion in annual exports to the United States (2024 figure) would lose their preferential access by the end of 2026. The best-case scenario, Lilley argues, is that the Americans opt for annual reviews rather than a 16-year extension — which would add 'a deep amount of uncertainty to the Canadian economy' for the next decade. The Washington Trade & Tariff Letter (June 1) confirmed that the U.S. and Mexico have completed Round 1 (Mexico City, May 28-29), have Round 2 scheduled for June 16-17 in Washington, and Round 3 for the week of July 20 in Mexico City. Canada has no comparable public negotiating schedule. The sharpest new development from the Mexico City round: U.S. negotiators tabled a proposal to raise North American vehicle content to 82% (from 75%) with 50% specifically from the U.S. — and the proposed calculation would not count Canadian parts and vehicle content at all. USTR Greer has separately stated that U.S. tariffs on Canadian goods will remain in place even after a revised CUSMA is agreed.",
+    whyItMatters: "Here is the specific scenario every Canadian shop owner needs to understand: If the U.S. triggers withdrawal on July 1, Canada has until approximately January 1, 2027 before preferential access ends. In that six-month window, OEMs will begin making contingency decisions about Canadian production — and parts suppliers will begin repricing. The 82%/50% content proposal is equally significant: if Canadian content is excluded from the calculation entirely, vehicles built in Canada that use Canadian parts will face 25% tariffs when exported to the U.S. That makes Canadian-built vehicles more expensive in the U.S. market, which reduces OEM incentive to build in Canada, which reduces the number of new vehicles entering the Canadian fleet, which increases the age and mileage of the vehicles your customers are driving. Older, higher-mileage vehicles need more service. The service opportunity is real — but it comes with supply chain risk as parts for older vehicles become harder to source. The 29 days between today and July 1 are the most consequential period for Canadian automotive trade policy in a generation.",
+    source: "Toronto Sun / Washington Trade & Tariff Letter / CBT News / BNN Bloomberg",
+    sourceUrl: "https://torontosun.com/opinion/columnists/cusma-could-blow-up-usa-walks-away",
     image: STORY1_IMG,
   },
   {
     id: 2,
     tag: "SUPPLY CHAIN",
     tagColor: "#dc2626",
-    headline: "Shell's Pearl GTL — The World's Largest Group III Base Oil Producer — Is Offline for Over a Year. Lubricant Prices Already Up 10-35%, Shortage Hits Late June",
-    summary: "The synthetic motor oil shortage that has been building since the Strait of Hormuz disruption is now entering its most acute phase, according to new reporting from The Western Producer (May 26, 2026) citing ILMA CEO Holly Alfano. Shell's Pearl GTL facility in Qatar — the world's single largest producer of Group III base oil — has sustained significant damage in the Middle East conflict and will be offline for over a year. Pearl GTL alone represents a disproportionate share of global Group III supply. Combined with the closure of ADNOC (UAE) and BAPCO (Bahrain), three Persian Gulf producers that together supply 44% of U.S. Group III imports are now offline or severely curtailed. The South Korean safety valve — which normally supplies 30% of U.S. Group III — is also compromised: Korean refiners depend on Middle Eastern crude as feedstock, and are rerouting their limited crude supply to diesel and jet fuel production, which pays more than base oil manufacturing. The Group II safety valve is also effectively closed: with diesel margins at 40-year highs, refiners are rerouting Group II oils to the fuel sector. ILMA's conclusion: 74% of U.S. Group III imports are 'under direct stress' and 'conditions are not expected to fully resolve until at least mid-2027.' Alfano told The Western Producer that two independent analysts expect the supply crunch to come to a head in late June or early July as stored inventories dwindle. Prices for lubrication products have already increased 10 to 35% depending on the product, with some products already unavailable. Toyota and ExxonMobil have announced a shortage of ultra-thin 0W-8 and 0W-16 synthetic motor oils, with Toyota issuing an internal bulletin to North American dealers on approved substitutes.",
-    whyItMatters: "This story has moved from 'warning' to 'active crisis' in the past two weeks. The key new information today is that Shell's Pearl GTL — the world's largest Group III producer — is confirmed offline for over a year. This is not a temporary disruption; it is a structural supply gap that will persist through at least mid-2027. For your shop, the implications are now concrete: First, the shortage is no longer limited to exotic low-viscosity grades. It is affecting 5W-30 and 0W-20 — the two most common weights in Canadian service bays. Second, the Group II and Group III safety valves are both closed simultaneously — an unprecedented condition. Third, prices are already up 10-35% at the distributor level, and those increases will flow through to your cost of goods within weeks if they have not already. The action items from yesterday's Tip of the Day remain valid: call your distributor, check allocation, order to 120-day inventory if possible, and update your pricing now. If you have not done this yet, do it today.",
-    source: "The Western Producer / ILMA / GM Authority / Automotive News",
-    sourceUrl: "https://www.producer.com/news/lubricant-prices-on-the-rise-as-supplies-tighten/",
+    headline: "UAW Strikes American Axle/Dauch in Michigan — GM Has 2 Weeks of Silverado/Sierra Axle Inventory Before Production Halts",
+    summary: "The United Auto Workers launched a strike at midnight Monday at American Axle's Three Rivers, Michigan facility — now rebranded as Dauch Corp. following its acquisition of Dowlais — after contract negotiations failed to reach a new agreement by the deadline. UAW Local 2093 represents nearly 1,000 workers at the plant, which manufactures drive axles for the Chevrolet Silverado and GMC Sierra pickup trucks. The Silverado and Sierra are GM's top-selling vehicles, accounting for nearly one-third of the company's U.S. sales. According to two sources with direct knowledge of the matter cited by Reuters, GM has approximately two weeks of axle inventory on hand before truck production would be forced to halt. GM said it was 'closely monitoring the situation and assessing any potential impact.' Dauch stock fell approximately 6% on the news; GM shares were down about 2% in afternoon trading Monday. The UAW is pushing for wage increases after workers made significant concessions during the 2008 financial crisis — a strike that lasted 89 days and cost GM nearly $3 billion. Top wage earners at the Three Rivers plant currently make $22 per hour, down from as much as $29 per hour in 2008. Workers voted 98% in favour of authorizing a strike in early May. The labour dispute comes as American Axle/Dauch recently completed its acquisition of Dowlais and announced plans to rebrand as Dauch Corp. The Three Rivers plant is one of the most strategically critical single-point-of-failure facilities in GM's North American truck supply chain.",
+    whyItMatters: "The Silverado and Sierra are the most serviced vehicles in Canadian independent shops. A production halt at GM's truck plants — which would begin in approximately two weeks if the strike is not resolved — would have two direct effects on your business. First, new truck inventory would dry up, pushing customers toward the used market and keeping existing trucks on the road longer. That is a service opportunity. Second, GM OEM parts for Silverado and Sierra models could face allocation pressure as GM's supply chain teams prioritize parts for vehicles already in production. If you have Silverado or Sierra customers with upcoming scheduled maintenance, consider reaching out proactively to book their appointments now — before any parts availability issues develop. The 2008 American Axle strike lasted 89 days. If this strike follows a similar trajectory, the ripple effects on GM truck production and parts availability will be felt well into August.",
+    source: "Reuters / CBT News / Crain's Detroit / WSJ / UAW Local 2093",
+    sourceUrl: "https://wtvbam.com/2026/06/01/gm-supplier-strike-could-impact-truck-production/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "LABOUR",
+    tag: "INFRASTRUCTURE",
     tagColor: "#2563eb",
-    headline: "Unifor-Ford Talks Open June 22 — Windsor Braces for Double Pressure: CUSMA Uncertainty + Contract Negotiations at the Same Time",
-    summary: "Canada's Detroit Three contract negotiations will formally begin on June 22, 2026, when Unifor opens master bargaining with Ford Motor Company of Canada — the pattern-setter for subsequent talks with General Motors and Stellantis. The talks will involve approximately 5,000 Ford workers across Canadian facilities, the majority at the Oakville Assembly Complex, which is currently ramping up Super Duty production following its $464.5M federal-provincial restart funding. The negotiations are taking place against a backdrop of extraordinary trade uncertainty. Stellantis Canada President Trevor Longley told AM800 CKLW on May 29 that 'the reality is that Canadian business is predicated on access to the American market, as 90 per cent of what we do and build here at this plant [Windsor Assembly Plant] and what we were building in Brampton, and that's true really of the industry.' Longley said he expects 'complicated, long discussions' on CUSMA and Section 232 tariffs. Unifor Local 444 President James Stewart — who is also the Stellantis Bargaining Chair — said union members are entering negotiations 'determined to protect jobs and push for more production in Canadian plants,' and that 'wage cuts, pension cuts, and benefit cuts don't fix the problem.' Stewart also called on the federal government to use CUSMA negotiations as leverage: 'If they can't bargain a good CUSMA agreement, then don't bargain a deal at all.' The Windsor Assembly Plant currently builds 1,200-1,300 vehicles per day but has capacity for 1,500 — a gap that reflects the ongoing impact of tariff-driven demand uncertainty.",
-    whyItMatters: "The Unifor-Ford contract outcome will set the labour cost benchmark for the entire Canadian automotive manufacturing sector for the next three to four years. For service shop owners, this matters in two ways. First, the pattern agreement will determine the wage floor for skilled trades in the automotive sector — and those wages are a reference point for technician compensation at independent shops. If Unifor wins significant wage increases at Ford, it will put upward pressure on technician wages across the industry. Second, the contract talks are happening simultaneously with CUSMA negotiations, which means the outcome of each will influence the other. If CUSMA produces a bad result for Canadian manufacturing, Unifor will face pressure to make concessions on wages to preserve jobs — which would reduce upward pressure on technician wages. If CUSMA produces a good result, Unifor will push hard for gains. The June 22 start date is 21 days away. Watch for early signals from both sides about their opening positions.",
-    source: "AM800 CKLW / CTV News Windsor / WSWS / Unifor",
-    sourceUrl: "https://www.am800cklw.com/news/windsor-auto-industry-braces-for-tough-cusma-renegotiations/",
+    headline: "Gordie Howe Bridge Is Structurally Complete and Days From Opening — But Trump Is Blocking It Over Trade Demands",
+    summary: "The $4.7 billion Gordie Howe International Bridge spanning the Detroit River between Windsor, Ontario and Detroit, Michigan is structurally complete and within days of finishing all systems testing, according to two sources with direct knowledge of the construction progress cited by The Detroit News (May 30, 2026). The bridge and its customs plazas on both sides of the river are ready — but the opening is being held hostage by a political standoff with President Trump, who is demanding trade concessions or a share of toll revenue before authorizing the U.S. side to open. The Windsor-Detroit corridor handles approximately $50 billion in annual trade, the majority of which is automotive parts and finished vehicles moving between Canadian and American assembly plants. The Ambassador Bridge — the current single crossing — handles roughly $400 million in trade per day and has been operating at or near capacity for years. Mapping apps including Google Maps and Apple Maps have already begun routing motorists to the Gordie Howe Bridge as if it were open, creating confusion and safety concerns as drivers arrive at a bridge that is not yet accepting traffic. Windsor Mayor Drew Dilkens has publicly stated he would rather keep the bridge closed than accept a bad trade deal — a position that reflects the broader Canadian posture of using infrastructure leverage in CUSMA negotiations.",
+    whyItMatters: "The Gordie Howe Bridge is the most important piece of automotive supply chain infrastructure in North America that does not yet exist — and it is days away from existing. When it opens, it will double the crossing capacity between Windsor and Detroit, which is the single most critical chokepoint in the Canada-U.S. automotive parts supply chain. For Canadian shops, the bridge's opening will reduce the frequency of border delay-related parts shortages — a chronic problem that affects same-day and next-day parts orders from U.S. distributors. The political standoff over the opening is a live risk: if Trump uses the bridge as a bargaining chip in CUSMA negotiations, the opening could be delayed by weeks or months. Watch for any announcement from the White House or Transport Canada about the opening date — it will be a significant positive signal for parts availability across Ontario.",
+    source: "The Detroit News / CBC Windsor / CityNews Kitchener / Windsor Star",
+    sourceUrl: "https://www.detroitnews.com/story/news/politics/2026/05/30/gordie-howe-bridge-nearing-completion-when-will-it-open/90315425007/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🇨🇦",
-    text: "Former Ambassador Hillman said Canada still has 'the best deal with the U.S. compared to any other country' despite the trade war — because most Canadian goods still enter the U.S. tariff-free under CUSMA. The sectors that are not tariff-free are steel, aluminum, and autos. Those are also the three sectors most directly relevant to Canadian automotive shops. The gap between 'most goods' and 'your goods' is the entire story.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/politics/2026/05/31/scrapping-cusma-would-be-phenomenally-disruptive-hillman-on-future-of-the-deal/",
+    icon: "📋",
+    text: "The CUSMA treaty text is explicit: any party can withdraw with six months' notice, effective from the date of notice. If the U.S. triggers withdrawal on July 1, 2026, Canada's preferential access to the U.S. market ends on approximately January 1, 2027. The 'best-case' scenario, per Toronto Sun analysis, is annual reviews — which means CUSMA uncertainty continues until the agreement's 2036 expiry. There is no scenario in which July 1 produces a clean, stable outcome for Canada.",
+    sourceUrl: "https://torontosun.com/opinion/columnists/cusma-could-blow-up-usa-walks-away",
   },
   {
-    icon: "🛢️",
-    text: "The lubricant shortage is not limited to motor oil. Group III base oil is also the primary feedstock for automatic transmission fluid, power steering fluid, differential fluid, and hydraulic fluid. If you service automatic transmissions, rear differentials, or power steering systems, check your fluid inventory this week. The same supply disruption affecting motor oil will affect these fluids — and they are receiving far less media coverage, which means your competitors may not be acting yet.",
-    sourceUrl: "https://www.producer.com/news/lubricant-prices-on-the-rise-as-supplies-tighten/",
+    icon: "🔧",
+    text: "The UAW's 2008 strike against American Axle lasted 89 days and cost GM nearly $3 billion in lost production. If this strike follows a similar trajectory, GM truck production halts would begin in approximately two weeks and could last through August. The Chevrolet Silverado and GMC Sierra are the most serviced vehicles in Canadian independent shops. Proactively contact your Silverado/Sierra customers now to book upcoming maintenance before any parts availability issues develop.",
+    sourceUrl: "https://wtvbam.com/2026/06/01/gm-supplier-strike-could-impact-truck-production/",
+  },
+  {
+    icon: "🌉",
+    text: "Mapping apps are already routing motorists to the Gordie Howe Bridge as if it were open. CBC Windsor reported that Google Maps and Apple Maps are directing drivers to the bridge, which is not yet accepting traffic. This is creating safety concerns at the Windsor customs plaza. If you have customers or suppliers who cross the Windsor-Detroit border regularly, advise them to verify crossing availability before departing — the bridge is not open despite what their navigation app may say.",
+    sourceUrl: "https://www.cbtnews.com/trade-vehicle-content-requirements/",
   },
   {
     icon: "🏭",
-    text: "Stellantis Canada President Trevor Longley confirmed that the Windsor Assembly Plant has capacity to build 1,500 vehicles per day but is currently running at 1,200-1,300. That 200-300 vehicle/day gap represents the direct impact of tariff-driven demand uncertainty on Canadian production. The Brampton Assembly Plant — which has been idle since late 2024 — remains offline. Longley said he is 'looking for a free trade agreement and a good discussion around CUSMA and Section 232 tariffs' to unlock that potential.",
-    sourceUrl: "https://www.am800cklw.com/news/windsor-auto-industry-braces-for-tough-cusma-renegotiations/",
-  },
-  {
-    icon: "📊",
-    text: "Ford shares climbed to their highest level since January 2022 on May 29-30, up as much as 6.7% to $17.77 — nearly doubling from a 52-week low of $9.42 set in June 2025. The catalyst was the USMCA content demand news, which investors read as positive for Ford because Ford has the highest U.S. content of any Detroit Three automaker. GM fell 1.3% and Stellantis dropped 2.5% on the same news. The market is pricing in a scenario where the 82%/50% content rule benefits Ford at the expense of its competitors.",
-    sourceUrl: "https://eletric-vehicles.com/ford/ford-shares-climb-to-highest-level-since-january-2022/",
+    text: "The U.S. CUSMA proposal would exclude Canadian content from vehicle content calculations entirely — meaning a vehicle built in Windsor using 100% Canadian parts would have zero 'qualifying' content under the new U.S. formula. This is not a negotiating position; it is a tabled proposal that was discussed in the Mexico City round. The downstream effect: OEMs would have a structural incentive to source parts from the U.S. rather than Canada, regardless of cost or quality, to meet the 50% U.S.-origin threshold.",
+    sourceUrl: "https://www.cbtnews.com/trade-vehicle-content-requirements/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "The Lubricant Shortage Is Now Structural, Not Temporary — Update Your Supplier Agreements Before July 1",
-  text: "Shell's Pearl GTL — the world's largest Group III base oil producer — is confirmed offline for over a year. This is a structural supply gap, not a temporary disruption. Here is your updated action plan: First, contact your lubricant distributor today and ask specifically about Pearl GTL's impact on their supply chain. Second, ask for a written allocation commitment for Q3 (July-September) at current pricing — distributors are more likely to offer this now, before the June/July crunch hits. Third, if your distributor cannot offer an allocation commitment, start qualifying a second supplier immediately. Fourth, update your oil change menu pricing to reflect the new cost reality — a 10-35% increase in your cost of goods requires a corresponding adjustment to your retail price. Fifth, consider communicating the price change to your regular customers proactively, citing the global supply disruption. Customers who understand the reason for a price increase are far more likely to remain loyal than customers who feel blindsided.",
+  title: "The GM Truck Strike Clock Is Running — Contact Your Silverado/Sierra Customers This Week",
+  text: "GM has approximately two weeks of Silverado/Sierra axle inventory before production halts. Here is your action plan: First, pull a list of your Silverado and Sierra customers who have upcoming scheduled maintenance in the next 60 days. Second, call or text them this week to book their appointments now — frame it as proactive customer service, not urgency. Third, check your current inventory of common Silverado/Sierra wear items: brake pads, rotors, filters, belts, and fluids. Fourth, place a supplemental order with your parts distributor for these items this week, before any allocation pressure develops. Fifth, if the strike extends beyond two weeks and GM halts truck production, expect used Silverado/Sierra prices to rise — which means your customers will hold their trucks longer, creating more service work. The strike is a short-term supply risk and a medium-term service opportunity. Act on both.",
 };
 
 const quoteOfTheDay = {
-  text: "Wiping all of that away would be phenomenally disruptive. It's not good for America. My money's on that agreement staying — maybe being modified, but staying in place.",
-  author: "Kirsten Hillman",
-  title: "Former Canadian Ambassador to the United States — May 31, 2026",
+  text: "Most media won't tell you these details — they will tell you this is a technical review. But it is much more than that. On July 1, we could actually be told that the United States is walking away from CUSMA, and if they do that, it would take effect by the end of this year.",
+  author: "Brian Lilley",
+  title: "Toronto Sun Columnist — June 1, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Ford Mustang Boss 429 — The NASCAR Homologation Special That Ford Built to Beat Itself",
-  description: "The 1969 Ford Mustang Boss 429 exists because of a NASCAR rule: to race an engine at Daytona, Ford had to build at least 500 street cars with that engine installed. The 429 cubic inch 'semi-hemispherical' engine was Ford's most sophisticated production V8 — featuring a unique cylinder head design with canted valves, a forged steel crankshaft, and an aluminum intake manifold. The problem was that the engine was too wide to fit in the standard Mustang engine bay, so Ford contracted with Kar Kraft to perform a specialized conversion: widening the front shock towers, relocating the battery to the trunk, and modifying the front suspension to accommodate the massive engine. The result was a car that produced a conservatively rated 375 horsepower (actual output was closer to 500 hp) and could run the quarter mile in the low 13-second range. The Boss 429 was built for only two model years — 1969 and 1970 — with 859 units produced in 1969 and 499 in 1970. It is one of the rarest and most mechanically sophisticated Mustangs ever built, and it represents the moment when Ford's racing ambitions produced a street car that was genuinely extraordinary. On June 1, 2026 — with Ford's Oakville plant restarting and Unifor-Ford talks 21 days away — it seems fitting to celebrate the most ambitious Ford ever built in the muscle car era.",
+  name: "1970 Dodge Challenger R/T 440 Six Pack — The E-Body Mopar That Defined an Era",
+  description: "The 1970 Dodge Challenger was Chrysler's answer to the Ford Mustang and Chevrolet Camaro — a pony car built on the new E-body platform that was wider, longer, and more aggressively styled than anything Detroit had produced. The R/T (Road/Track) package with the 440 Six Pack engine — three two-barrel carburetors feeding a 440 cubic inch V8 — produced 390 horsepower and 490 lb-ft of torque. The Six Pack setup was Chrysler's answer to the Chevrolet 454 LS6 and Ford Boss 429: maximum displacement, maximum airflow, maximum torque. The Challenger R/T was available with the 440 Six Pack, the 440 Magnum, or the legendary 426 Hemi — making it one of the most engine-option-rich muscle cars ever built. The 1970 model year was the Challenger's debut and its finest hour: 76,935 units were built, and the car appeared in the film 'Vanishing Point' in 1971, cementing its place in American automotive mythology. The Plum Crazy Purple colour — officially called FC7 — was one of Chrysler's 'High Impact' colours introduced in 1970, designed to make the car impossible to ignore on the street. On a Monday morning when Canadian automotive trade policy is at its most uncertain in a generation, the Challenger R/T in Plum Crazy Purple is a reminder that sometimes the most powerful statement is simply showing up.",
   image: HOTROD_IMG,
 };
 
@@ -167,7 +167,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2">
-                {["TRADE", "SUPPLY", "LABOUR", "PARTS"].map((tag) => (
+                {["TRADE", "LABOUR", "SUPPLY", "INFRA"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -181,14 +181,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Windsor-Detroit border crossing at dawn showing Ambassador Bridge and Gordie Howe International Bridge"
+              alt="Gordie Howe International Bridge complete but empty at sunset"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">30 Days to Deadline</span>
+              <span className="bg-[#dc2626] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">29 Days to Deadline</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                CUSMA July 1 Deadline — Canada Still Has No Formal Talks Scheduled While U.S. and Mexico Are Already on Round Two
+                Gordie Howe Bridge Complete, GM Strike Begins, CUSMA Withdrawal Now On the Table — The Week That Changes Everything
               </h3>
             </div>
           </div>
