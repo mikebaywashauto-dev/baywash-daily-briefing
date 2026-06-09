@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 32;
-const BRIEFING_DATE = "June 8, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 33;
+const BRIEFING_DATE = "June 9, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CbQpRoIGzkKjoort.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xdiOcldEvomujBhA.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QXmRNDtCLnfWhMFG.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/DCdtbPtqSDWKAJHg.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/koVyTHMOOGvLiWdz.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SAGSHYYgNzbvpwxS.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/oyrEeKChQTUveRVV.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/cSFqwuIVQkMDjeZM.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dDvWwBsxckJqfNyt.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/BLGGYMkmzxlZFENU.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "TRADE",
+    tag: "BREAKING",
     tagColor: "#e05a1a",
-    headline: "CUSMA 23 Days Out — Canada Makes Detailed Proposals, LeBlanc Warns of 'Turbulence' After Greer Drops New 10% Tariff Hours After Meeting",
-    summary: "Canada submitted detailed trade proposals to the United States on June 3, and Trade Minister Dominic LeBlanc flew to Washington to meet USTR Jamieson Greer — the first formal bilateral Canada-U.S. trade meeting since the tariff war began. LeBlanc declared the talks 'unfrozen' and said he remains 'optimistic' but warned the road to a deal 'is sometimes not a straight line.' The warning proved prescient: hours after LeBlanc left Greer's office, the Trump administration announced new 10% 'forced labour' tariffs on 60 countries, including Canada. The tariffs are proposed under a Section 301 investigation claiming Canada fails to effectively enforce its own ban on forced-labour imports — citing just two shipments denied entry in six years. Critically, the tariffs apply only to non-CUSMA-compliant goods, meaning approximately 90% of Canadian exports to the U.S. would be exempt. Carney called the tariffs 'not a surprise' and said they 'will not have an impact on the vast majority of Canadian trade.' The tariffs cannot be imposed immediately — they require a public comment period and hearings in July. The July 1 CUSMA deadline now has a new dimension: if CUSMA is not renewed, the CUSMA exemption disappears, and the 10% forced labour tariff would apply to virtually all Canadian exports. The U.S.-Mexico Round 2 talks are scheduled for June 16-17 in Washington. Canada's status in those talks — participant or observer — will be the most important signal of whether July 1 is a managed transition or a crisis. Bank of Canada rate decision: Wednesday, June 11.",
-    whyItMatters: "The forced labour tariff announcement has three direct implications for Canadian shop owners. First, it is a reminder that the CUSMA exemption is the single most important protection for the Canadian automotive supply chain. If CUSMA lapses or is modified to exclude Canadian parts content, the 25% auto tariff and the new 10% forced labour tariff would stack — creating a 35% cost increase on virtually all Canadian-made parts sold into the U.S. market. Second, the announcement came hours after a meeting described as 'constructive' — which tells you that the U.S. is negotiating on multiple tracks simultaneously and that any positive signal from Washington can be reversed within hours. Third, the Bank of Canada rate decision on Wednesday is now more complex: the jobs report (87,800 new jobs in May) argues for holding or hiking; the tariff uncertainty argues for cutting. Watch for the Bank's language on the trade war's impact on the growth outlook.",
-    source: "CBC News / Mike Crawley / Global Affairs Canada / USTR / BNN Bloomberg",
-    sourceUrl: "https://www.cbc.ca/news/world/trump-tariffs-forced-labour-explained-9.7221691",
+    headline: "Gordie Howe Bridge Ribbon-Cutting THIS FRIDAY — Opens to Traffic June 15",
+    summary: "After 4+ months of Trump blocking the opening, the Gordie Howe International Bridge is finally set to open. Government sources confirmed Sunday night: ribbon-cutting ceremony Friday, June 13, with Governor Whitmer and Canadian officials attending, followed by public traffic opening Monday, June 15. The $5.7 billion, six-lane cable-stayed bridge connects Windsor and Detroit — the corridor through which $50 billion in annual trade flows, the majority of it automotive parts and finished vehicles. The Moroun family (owners of the competing Ambassador Bridge) is under House investigation for allegedly lobbying Trump to block the opening. DHS Secretary Mullin confirmed last week that customs and border protection staff are staffed and 'ready to go.' The bridge was expected to open in spring 2026 — spring ends June 20. The six-lane design and direct highway connections on both sides of the border will dramatically reduce crossing times compared to the Ambassador Bridge, which regularly backs up for hours during peak periods. The bridge's opening is the most significant positive development for the Windsor-Detroit automotive supply chain in years — and potentially a signal that the broader Canada-U.S. trade relationship is beginning to thaw.",
+    whyItMatters: "The Gordie Howe Bridge opening is directly relevant to every Canadian shop owner who sources parts through the Windsor-Detroit corridor. The Ambassador Bridge currently handles approximately $50 billion in annual automotive trade — and it regularly backs up for hours. The Gordie Howe Bridge's six lanes and direct highway connections will cut crossing times dramatically, which means faster parts delivery from U.S. distributors and less buffer inventory required. If you have customers who regularly cross to the U.S. for parts runs or deliveries, alert them now: the bridge opens June 15. The opening also has a symbolic dimension: it is the first concrete positive development in Canada-U.S. trade relations since the tariff war began, and it may signal that the broader CUSMA negotiation is moving toward resolution.",
+    source: "Global News / CBS Detroit / Fox 2 Detroit / WDBA",
+    sourceUrl: "https://globalnews.ca/news/11895621/gordie-howe-bridge-ribbon-cutting-date/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "INFRASTRUCTURE",
+    tag: "TRADE",
     tagColor: "#1d4ed8",
-    headline: "Gordie Howe Bridge — 114 Days Since Trump Blocked It, Michigan Democrats Demand Opening, DHS 'Ready to Go'",
-    summary: "It has been 114 days since President Trump vowed to block the Gordie Howe International Bridge from opening. Michigan Democratic Party Chair Curtis Hertel issued a public statement on June 5: 'It's been 114 days since Trump vowed to block the Gordie Howe Bridge from opening once completed, which came a day after he met with the billionaire owner of a competing bridge who's donated millions of dollars to his campaign. Now, the Gordie Howe Bridge is nearly finished and the Customs staff are ready to go, and it's well past time for Donald Trump and Republicans to quit playing political games and open this bridge, which is a game-changer for our economy. Every day that Trump keeps the bridge closed is a day that our economy suffers even more.' DHS Secretary Mullin confirmed to the Senate that customs and border protection staff are staffed and ready. The bridge is jointly owned by Michigan and Canada, with Canada financing the entire $5.7 billion project. Canada plans to recover the funding through toll revenue. Trump has demanded 'at least one half' of the asset, claiming the revenues 'will be astronomical.' He also cited Ontario's restrictions on U.S. alcohol products and Canadian dairy tariffs as reasons to block the opening. The bridge was expected to open in spring 2026 — spring ends June 20. The Windsor-Detroit corridor handles more than $50 billion in annual trade, the majority of which is automotive parts and finished vehicles. The Ambassador Bridge, which handles the bulk of that traffic, is privately owned by Matty Moroun's family — the billionaire Trump met with before announcing the blockade.",
-    whyItMatters: "The Gordie Howe Bridge is not just an infrastructure story — it is a direct supply chain risk for every Canadian automotive shop. The Windsor-Detroit corridor is the single most important automotive trade route in North America. Approximately $50 billion in automotive parts and finished vehicles cross this corridor annually. A disruption — even a partial one caused by congestion at the Ambassador Bridge — would create parts shortages within days. The bridge opening could become a bargaining chip in the LeBlanc-Greer CUSMA talks: Canada could offer concessions on dairy or alcohol in exchange for the bridge opening and a CUSMA renewal. Watch for any mention of the bridge in official communiqués from the June 16-17 U.S.-Mexico round. If Canada is included in those talks, the bridge could be on the table.",
-    source: "CBS Detroit / Paula Wethington / Michigan Democratic Party / WDBA / Fox 2 Detroit",
-    sourceUrl: "https://www.cbsnews.com/detroit/news/michigan-democrats-demand-trump-allow-gordie-howe-bridge-to-open/",
+    headline: "Carney's Trade Push Collides with Reality — CUSMA Is Canada's #1 Investment Pitch, 22 Days to July 1",
+    summary: "Reuters exclusive today: Canada's pitch to foreign investors is built almost entirely on CUSMA access to the U.S. market. Toyota lobbied Ottawa on USMCA 13 of 14 times this year. Honda raised it in 21 of 27 government contacts, citing 'the need to ensure protections for North America's integrated automobile industry and supplier network.' Toyota and Honda together account for over 75% of vehicles made in Canada. Sweden's Volvo Group urged Ottawa to 'maintain the USMCA as is.' South Korea's Kia warned changes could raise costs and cause job losses. A top Canadian government official told Reuters: 'That deal has been kind of a baseline of our investment attraction message.' The Reuters report also revealed that 85% of Canada-U.S. bilateral trade remains tariff-free under CUSMA — a figure that underscores how much is at stake if the agreement lapses or is fundamentally restructured. 22 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington — Canada is still not on the formal negotiating calendar. Trade Minister LeBlanc declared talks 'unfrozen' after his June 3 meeting with USTR Greer, but no formal bilateral negotiating track has been announced. The Bank of Canada holds its rate decision Wednesday, June 11.",
+    whyItMatters: "The Reuters report crystallizes what is at stake in the CUSMA negotiations for the Canadian automotive sector. Toyota and Honda — which together make more than 75% of vehicles built in Canada — have made CUSMA renewal their single most important government relations priority. Their investment decisions for the next decade depend on it. For Canadian shop owners, the implications are direct: if CUSMA lapses or is modified to exclude Canadian parts content, parts prices rise 15-25% within 90 days. If CUSMA renews cleanly, the supply chain stabilizes and parts prices remain roughly flat. The June 16-17 U.S.-Mexico Round 2 is the next critical data point: if Canada participates, a July 1 deal is possible. If Canada is excluded again, the most likely outcome is an annual review extension — meaning CUSMA uncertainty continues through 2027.",
+    source: "Reuters / David Ljunggren / Steve Scherer, June 9, 2026",
+    sourceUrl: "https://www.reuters.com/business/mark-carneys-trade-push-collides-with-reality-us-dependence-2026-06-09/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "ECONOMY",
-    tagColor: "#16a34a",
-    headline: "Canada Adds 87,800 Jobs in May — Best Month Since December 2024, But Economy Still 25,000 Jobs Below Year-End 2025",
-    summary: "Statistics Canada reported on June 6 that employment in Canada increased by a surprising 87,800 in May — the largest monthly gain since December 2024. Economists surveyed by Bloomberg had expected only 10,000 new jobs. The unemployment rate fell to 6.6% from 6.9% in April. The increase was driven by full-time work and was observed across industries. Ontario led all provinces, adding 42,000 jobs and bringing its unemployment rate to 7.0% — the lowest since September 2024. Construction led sector gains with 27,000 new jobs. Information, culture and recreation as well as transportation and warehousing added 19,000 jobs each. The loonie rallied approximately 0.1% against the U.S. dollar on the news. Canadian bond yields jumped — the two-year yield rose about 10 basis points to 2.907%, the biggest intraday jump since May 15. Swaps traders raised expectations of Bank of Canada rate hikes, now pricing more than 30 basis points of tightening by December. However, the report contains important caveats: employment is still almost 25,000 lower than it was at the end of 2025. Wholesale and retail trade shed 35,000 jobs in May — down 64,000 year-over-year. The labour force survey is notoriously volatile. Desjardins' Royce Mendes: 'Given the volatility in the labour force survey, it's difficult to have much confidence in the signaling power of today's reading. We continue to see downside risks for the Canadian economy both from fundamental weakness and trade negotiations.' The Bank of Canada holds its next rate meeting on Wednesday, June 11.",
-    whyItMatters: "The May jobs report has two direct implications for Canadian shop owners. First, 87,800 new jobs means 87,800 more Canadians with paycheques — and vehicles to maintain. Construction employment up 27,000 means more work trucks on the road. Transportation and warehousing up 19,000 means more commercial vehicles needing service. The employment rebound, if sustained, is good for your customer base. Second, the bond market reaction (yields jumping, rate hike expectations rising) suggests the Bank of Canada may hold or even raise rates on Wednesday rather than cut. Higher rates make vehicle financing more expensive, which further discourages new vehicle purchases and keeps existing vehicles on the road longer. Eight consecutive months of declining Canadian new vehicle sales is already the most powerful tailwind for independent service shops — the jobs report suggests that tailwind continues.",
-    source: "Statistics Canada / Bloomberg / Nojoud Al Mallees / Desjardins / Bank of Nova Scotia",
-    sourceUrl: "https://www.canadianmortgagetrends.com/2026/06/canadian-employment-up-87800-jobless-rate-falls-to-6-6/",
+    tag: "SUPPLY CHAIN",
+    tagColor: "#c0392b",
+    headline: "UAW Dauch Strike Day 9 — GM Has ~5 Days of Silverado/Sierra Axle Inventory, No Talks Scheduled",
+    summary: "The UAW strike at Dauch Corp's Three Rivers, Michigan plant enters its ninth day with no negotiations scheduled. The plant makes drive axles for the Chevrolet Silverado, GMC Sierra, and heavy-duty trucks — GM's most profitable vehicles. GM has been deploying approximately 250 salaried workers on production lines to extend its inventory buffer, but analysts estimate GM has roughly five days of axle supply remaining before production halts. Workers are seeking wage increases above $30 per hour (up from $22/hr) to recover concessions made in 2008 — in inflation-adjusted terms, their wages have been cut in half since then. UAW President Shawn Fain: 'These workers are determined, and they are fed up.' The UAW Spring 2026 Solidarity Magazine, published this weekend, features the Dauch strike prominently — signalling the union is dug in for a long fight. Nexteer workers (1,700 UAW members making steering gear for GM, Ford, and Stellantis in Saginaw) are still demanding to join the strike. If GM halts Silverado/Sierra production, the Oshawa Assembly Complex is directly in the supply chain. The 2008 American Axle strike lasted 89 days and cost GM nearly $3 billion.",
+    whyItMatters: "If GM halts Silverado/Sierra production this week, the ripple effects will reach Canadian shops within 30-60 days. Dealer service departments will prioritize warranty work on vehicles they have in inventory and stop taking appointments for vehicles they cannot sell. Independent shops become the only option for Silverado/Sierra owners. Call your top 20 GM truck customers today and book their next service appointment — before the dealer service departments start turning people away. Also: if you carry any GM OEM parts, check your inventory on Silverado/Sierra-specific items. Parts allocation programs typically follow production halts within two to three weeks.",
+    source: "Reuters / UAW Solidarity Magazine / Crain's Detroit, June 8-9, 2026",
+    sourceUrl: "https://www.reuters.com/legal/litigation/uaw-strike-against-gm-axle-supplier-continues-without-talks-union-official-says-2026-06-02/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🤝",
-    text: "CUSMA — 23 days to the July 1 deadline. Canada submitted detailed proposals June 3. LeBlanc declared talks 'unfrozen.' U.S.-Mexico Round 2 is June 16-17 in Washington — whether Canada participates or runs parallel talks will be the most important signal of the week. The 82%/50% U.S. content demand (which would exclude Canadian parts from vehicle content calculations entirely) remains on the table.",
-    sourceUrl: "https://www.cbc.ca/news/world/trump-tariffs-forced-labour-explained-9.7221691",
+    icon: "🌉",
+    text: "Gordie Howe Bridge opens June 15. Six lanes, direct highway connections Windsor-Detroit. The Ambassador Bridge will no longer be the only crossing for the $50B/year automotive trade corridor. Parts delivery times from U.S. distributors will improve significantly.",
+    sourceUrl: "https://globalnews.ca/news/11895621/gordie-howe-bridge-ribbon-cutting-date/",
   },
   {
-    icon: "🔧",
-    text: "UAW Dauch Strike Day 8 — GM has approximately six days of Silverado/Sierra axle inventory remaining. No negotiations scheduled. NLRB unfair labor practice charge filed June 6. Nexteer ratification vote pending — if it fails, GM faces simultaneous axle and steering gear disruptions. Oshawa Assembly Complex is in the direct supply chain. Call your top GM truck customers today.",
-    sourceUrl: "https://www.crainsdetroit.com/manufacturing-logistics/automotive/cdb-uaw-strike-dauch-20260601/",
+    icon: "🤝",
+    text: "CUSMA — 22 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington. Canada's inclusion or exclusion from those talks is the most important signal of the week. The 82%/50% U.S. content demand (which would exclude Canadian parts from vehicle content calculations entirely) remains on the table.",
+    sourceUrl: "https://www.reuters.com/business/mark-carneys-trade-push-collides-with-reality-us-dependence-2026-06-09/",
   },
   {
     icon: "🛢️",
-    text: "Motor oil shortage update: the DIFM channel (your shop) gets hit July-September 2026 — four to twelve weeks away. 0W-20 is the most at-risk grade. Shell's Pearl GTL (world's largest Group III producer) is offline for at least 12 months. Allocation programs are active. This weekend is the last realistic window to place supplemental orders before distributor allocation programs restrict ordering.",
+    text: "Motor oil shortage: peak supply constraint now Q4 2026 – Q1 2027. Wholesale full synthetic costs already up $7.00-$8.45/gal. 0W-20 remains the most at-risk grade. Shell's Pearl GTL (world's largest Group III producer) offline for 12+ months. This week is the last realistic window to place supplemental orders before allocation programs restrict ordering.",
     sourceUrl: "https://jobbersworld.com/2026/06/05/will-there-be-enough-motor-oil/",
   },
   {
-    icon: "⛽",
-    text: "Bank of Canada rate decision Wednesday, June 11. The May jobs report (+87,800, unemployment to 6.6%) argues for holding or hiking. Tariff uncertainty argues for cutting. Bond markets are pricing more than 30 basis points of tightening by December. Either outcome affects consumer credit availability and vehicle financing — higher rates mean fewer new vehicle purchases and more service work for your shop.",
+    icon: "🏦",
+    text: "Bank of Canada rate decision Wednesday, June 11. May jobs report (+87,800, unemployment to 6.6%) argues for holding or hiking. Bond markets pricing 30+ basis points of tightening by December. Higher rates mean fewer new vehicle purchases and more service work for your shop.",
     sourceUrl: "https://www.canadianmortgagetrends.com/2026/06/canadian-employment-up-87800-jobless-rate-falls-to-6-6/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "CUSMA Contingency Planning — Three Scenarios for Your Parts Sourcing Strategy",
-  text: "With 23 days to the July 1 CUSMA deadline, it is time to build a contingency plan. Three scenarios: Scenario 1 (Renewal) — CUSMA renews with minor modifications. The 25% auto tariff offset provisions remain. Your parts costs stay roughly stable. No action required beyond monitoring. Scenario 2 (Annual Review) — CUSMA enters a 12-month review period. The existing tariff structure continues but with annual uncertainty. Begin identifying alternative suppliers for your top 20 parts categories. Scenario 3 (Lapse) — CUSMA lapses or is modified to exclude Canadian content. The 25% auto tariff and the new 10% forced labour tariff stack to 35% on Canadian-made parts sold into the U.S. market. Parts prices rise 15-25% within 90 days. Action: this week, ask your top three parts suppliers which of their products are manufactured in Canada, the U.S., and Mexico. Understand your exposure before July 1.",
+  title: "Gordie Howe Bridge Opens June 15 — Update Your Parts Sourcing Strategy",
+  text: "The Gordie Howe Bridge opens to traffic on June 15. Here is how to take advantage of it. First, contact your U.S.-based parts distributors this week and ask if they have a Windsor-side distribution point or if they can offer faster delivery via the new crossing. The six-lane bridge with direct highway connections will cut crossing times from hours to minutes during peak periods. Second, if you currently hold extra buffer inventory because of Ambassador Bridge delays, you may be able to reduce that buffer once the new bridge is operating — freeing up working capital. Third, if you have technicians or drivers who make parts runs across the border, brief them on the new crossing: the Gordie Howe Bridge connects directly to Highway 401 on the Canadian side and I-75 on the U.S. side. Fourth, watch for whether the bridge opening is used as a bargaining chip in the CUSMA talks — if it is, it may signal that a broader trade deal is imminent.",
 };
 
 const quoteOfTheDay = {
-  text: "It's been 114 days since Trump vowed to block the Gordie Howe Bridge from opening. Every day that Trump keeps the bridge closed is a day that our economy suffers even more.",
-  author: "Curtis Hertel",
-  title: "Michigan Democratic Party Chair — CBS Detroit, June 5, 2026",
+  text: "For many of the Japanese companies investing here, one of the reasons for their investment is definitely the special access Canada has enjoyed over the long years.",
+  author: "Ishii Hideaki",
+  title: "Minister and Deputy Head of Mission, Japanese Embassy in Ottawa — Reuters, June 9, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Oldsmobile 442 W-30 — The Gentleman's Muscle Car That Was Actually a Street Brawler",
-  description: "The 1970 Oldsmobile 442 W-30 is one of the most underrated muscle cars of the golden era — and one of the most capable. While the Chevelle SS 454 and the Hemi 'Cuda grabbed the headlines, the 442 W-30 was quietly running quarter miles in the low 13s from the factory. The W-30 package added a force-air induction system (cold air through functional hood scoops), a hotter cam, special cylinder heads, a transistorized ignition, and a fibreglass hood to reduce weight. The 455 cubic inch Rocket V8 was rated at 370 hp — a deliberate understatement to keep insurance premiums manageable. Actual output was closer to 400 hp, with torque figures that made the car genuinely dangerous in the wet. The Sebring Yellow paint with black hood stripes and the W-30 badge on the front fenders was one of the most striking factory colour combinations of the muscle car era. Only 3,100 W-30 cars were built in 1970. Today, a documented W-30 in Sebring Yellow commands $80,000-$120,000 at auction — a fraction of what comparable Chevelles and Mopars bring, which makes it one of the most compelling values in the classic muscle car market. On a Sunday morning when the CUSMA deadline is 23 days away and the Gordie Howe Bridge is still closed, the 442 W-30 is a reminder that the most capable option is not always the most celebrated one — and that the best deals are often hiding in plain sight.",
+  name: "1970 Ford Torino Cobra 429 Super Cobra Jet — The NASCAR Muscle Car Nobody Talks About",
+  description: "The 1970 Ford Torino Cobra 429 SCJ is the muscle car that NASCAR built. Ford's 429 Super Cobra Jet was the street-legal version of the engine that dominated NASCAR superspeedways — the same basic architecture that powered Talladega and Daytona winners. The SCJ package added a 780 CFM Holley carburetor, drag pack oil cooler, and Traction-Lok differential. In Grabber Orange with the Cobra hood scoop and black stripe, it is one of the most visually aggressive muscle cars ever built. Factory-rated at 375 hp, actual output was closer to 425 hp with 450 lb-ft of torque. The Torino Cobra ran the quarter mile in the low 13s from the factory — quicker than most Chevelles and Mopars of the same era. Today, a documented 429 SCJ Torino Cobra in Grabber Orange trades for $85,000-$140,000 — still undervalued compared to the Chevelle SS 454 and Hemi Cuda that get all the attention. On a Monday morning when the Gordie Howe Bridge is finally opening and CUSMA has 22 days to go, the Torino Cobra is a reminder that the most capable option is not always the most celebrated one — and that the best deals are often hiding in plain sight.",
   image: HOTROD_IMG,
 };
 
@@ -120,7 +120,7 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ${
+      className={`transition-all duration-700 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       } ${className}`}
     >
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2">
-                {["CUSMA", "BRIDGE", "JOBS", "TARIFFS"].map((tag) => (
+                {["BRIDGE", "CUSMA", "GM STRIKE", "OIL"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Gordie Howe International Bridge spanning the Detroit River at golden hour — 114 days since Trump blocked its opening"
+              alt="Gordie Howe International Bridge ribbon-cutting ceremony — opens to traffic June 15, 2026"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">CUSMA Countdown</span>
+              <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Breaking</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                23 Days to July 1 — Canada Submits Proposals, Forced Labour Tariff Drops Hours After LeBlanc-Greer Meeting
+                Gordie Howe Bridge Opens June 15 — CUSMA 22 Days Out, GM Trucks Running on Empty
               </h3>
             </div>
           </div>
