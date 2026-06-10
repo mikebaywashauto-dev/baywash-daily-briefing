@@ -10,16 +10,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 33;
-const BRIEFING_DATE = "June 9, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 34;
+const BRIEFING_DATE = "June 10, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SAGSHYYgNzbvpwxS.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/oyrEeKChQTUveRVV.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/cSFqwuIVQkMDjeZM.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dDvWwBsxckJqfNyt.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/BLGGYMkmzxlZFENU.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/seEWcqDWAMxVBpOO.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XzDnVaofEBbinqBW.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GZIElQSaGxtQhbJo.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/DmkCfpkvbUMyMaPP.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WaAJeJnTXshweYOR.jpg";
 
 // --- Data ---
 const stories = [
@@ -27,33 +27,33 @@ const stories = [
     id: 1,
     tag: "BREAKING",
     tagColor: "#e05a1a",
-    headline: "Gordie Howe Bridge Ribbon-Cutting THIS FRIDAY — Opens to Traffic June 15",
-    summary: "After 4+ months of Trump blocking the opening, the Gordie Howe International Bridge is finally set to open. Government sources confirmed Sunday night: ribbon-cutting ceremony Friday, June 13, with Governor Whitmer and Canadian officials attending, followed by public traffic opening Monday, June 15. The $5.7 billion, six-lane cable-stayed bridge connects Windsor and Detroit — the corridor through which $50 billion in annual trade flows, the majority of it automotive parts and finished vehicles. The Moroun family (owners of the competing Ambassador Bridge) is under House investigation for allegedly lobbying Trump to block the opening. DHS Secretary Mullin confirmed last week that customs and border protection staff are staffed and 'ready to go.' The bridge was expected to open in spring 2026 — spring ends June 20. The six-lane design and direct highway connections on both sides of the border will dramatically reduce crossing times compared to the Ambassador Bridge, which regularly backs up for hours during peak periods. The bridge's opening is the most significant positive development for the Windsor-Detroit automotive supply chain in years — and potentially a signal that the broader Canada-U.S. trade relationship is beginning to thaw.",
-    whyItMatters: "The Gordie Howe Bridge opening is directly relevant to every Canadian shop owner who sources parts through the Windsor-Detroit corridor. The Ambassador Bridge currently handles approximately $50 billion in annual automotive trade — and it regularly backs up for hours. The Gordie Howe Bridge's six lanes and direct highway connections will cut crossing times dramatically, which means faster parts delivery from U.S. distributors and less buffer inventory required. If you have customers who regularly cross to the U.S. for parts runs or deliveries, alert them now: the bridge opens June 15. The opening also has a symbolic dimension: it is the first concrete positive development in Canada-U.S. trade relations since the tariff war began, and it may signal that the broader CUSMA negotiation is moving toward resolution.",
-    source: "Global News / CBS Detroit / Fox 2 Detroit / WDBA",
-    sourceUrl: "https://globalnews.ca/news/11895621/gordie-howe-bridge-ribbon-cutting-date/",
+    headline: "Gordie Howe Bridge Opens THIS SUNDAY — Carney Confirms Despite Trump's Threats",
+    summary: "Prime Minister Carney confirmed on Parliament Hill Tuesday: 'It's positive news. Obviously, the bridge will be open at the end of the week.' Traffic opens Sunday, June 15. The $6.4 billion, six-lane cable-stayed bridge ends 4+ months of Trump blocking the opening of the Windsor-Detroit corridor's second crossing. The Moroun family (owners of the competing Ambassador Bridge) sued to stop the opening and lobbied Trump directly — they are now under House investigation. Trump falsely claimed Canada owned both sides of the bridge and demanded a share of toll revenue or trade concessions before authorizing the U.S. side to open. DHS Secretary Mullin confirmed last week that customs and border protection staff are staffed and 'ready to go.' The bridge connects directly to Highway 401 on the Canadian side and I-75 on the U.S. side, eliminating the bottleneck that has plagued the Ambassador Bridge for decades. The Windsor-Detroit corridor handles $50 billion in annual trade — the majority of it automotive parts and finished vehicles. The bridge's opening is the most significant positive development for the Canadian automotive supply chain in years.",
+    whyItMatters: "The Gordie Howe Bridge opening is directly relevant to every Canadian shop owner who sources parts through the Windsor-Detroit corridor. The Ambassador Bridge currently handles approximately $50 billion in annual automotive trade — and it regularly backs up for hours. The Gordie Howe Bridge's six lanes and direct highway connections will cut crossing times dramatically, which means faster parts delivery from U.S. distributors and less buffer inventory required. If you have customers who regularly cross to the U.S. for parts runs or deliveries, alert them now: the bridge opens Sunday, June 15. The opening also has a symbolic dimension: it is the first concrete positive development in Canada-U.S. trade relations since the tariff war began, and it may signal that the broader CUSMA negotiation is moving toward resolution.",
+    source: "CTV News / CBC / Global News — June 10, 2026",
+    sourceUrl: "https://www.ctvnews.ca/canada/article/confirming-opening-of-gordie-howe-bridge-pm-carney-calls-it-positive-news/",
     image: STORY1_IMG,
   },
   {
     id: 2,
     tag: "TRADE",
     tagColor: "#1d4ed8",
-    headline: "Carney's Trade Push Collides with Reality — CUSMA Is Canada's #1 Investment Pitch, 22 Days to July 1",
-    summary: "Reuters exclusive today: Canada's pitch to foreign investors is built almost entirely on CUSMA access to the U.S. market. Toyota lobbied Ottawa on USMCA 13 of 14 times this year. Honda raised it in 21 of 27 government contacts, citing 'the need to ensure protections for North America's integrated automobile industry and supplier network.' Toyota and Honda together account for over 75% of vehicles made in Canada. Sweden's Volvo Group urged Ottawa to 'maintain the USMCA as is.' South Korea's Kia warned changes could raise costs and cause job losses. A top Canadian government official told Reuters: 'That deal has been kind of a baseline of our investment attraction message.' The Reuters report also revealed that 85% of Canada-U.S. bilateral trade remains tariff-free under CUSMA — a figure that underscores how much is at stake if the agreement lapses or is fundamentally restructured. 22 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington — Canada is still not on the formal negotiating calendar. Trade Minister LeBlanc declared talks 'unfrozen' after his June 3 meeting with USTR Greer, but no formal bilateral negotiating track has been announced. The Bank of Canada holds its rate decision Wednesday, June 11.",
-    whyItMatters: "The Reuters report crystallizes what is at stake in the CUSMA negotiations for the Canadian automotive sector. Toyota and Honda — which together make more than 75% of vehicles built in Canada — have made CUSMA renewal their single most important government relations priority. Their investment decisions for the next decade depend on it. For Canadian shop owners, the implications are direct: if CUSMA lapses or is modified to exclude Canadian parts content, parts prices rise 15-25% within 90 days. If CUSMA renews cleanly, the supply chain stabilizes and parts prices remain roughly flat. The June 16-17 U.S.-Mexico Round 2 is the next critical data point: if Canada participates, a July 1 deal is possible. If Canada is excluded again, the most likely outcome is an annual review extension — meaning CUSMA uncertainty continues through 2027.",
-    source: "Reuters / David Ljunggren / Steve Scherer, June 9, 2026",
-    sourceUrl: "https://www.reuters.com/business/mark-carneys-trade-push-collides-with-reality-us-dependence-2026-06-09/",
+    headline: "CVMA Calls on Carney to Scrap China EV Deal Before CUSMA Talks — 21 Days to July 1",
+    summary: "The Canadian Vehicle Manufacturers' Association (Ford, GM, Stellantis) is publicly demanding Ottawa cancel the 6.1% China EV tariff deal before CUSMA negotiations intensify. CVMA CEO Brian Kingston: 'It's not an option to diversify away from the United States.' The deal — which allows 49,000 Chinese-built EVs into Canada annually at 6.1% tariff (down from 100%) — has become the #1 irritant in LeBlanc-Greer talks. Tesla accounts for 12% of the quota before any Chinese brand has moved a single unit, because it manufactures the Model 3 at Gigafactory Shanghai. Trump publicly criticized the deal. BYD has applied for an import permit. Stellantis-Leapmotor Brampton assembly talks are ongoing despite opposition from Ontario Premier Doug Ford. The CVMA position is significant: these are the same companies (Ford, GM, Stellantis) whose Canadian plants produce the vehicles that generate the most CUSMA-protected trade. If they are willing to sacrifice the China EV deal to secure CUSMA renewal, it signals how high the stakes are. 21 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington.",
+    whyItMatters: "The CVMA's call to scrap the China EV deal is a direct signal of how the Canadian automotive industry is prioritizing CUSMA renewal above all else. For Canadian shop owners, the China EV deal matters in two ways. First, if BYD and other Chinese brands enter the Canadian market in volume, your service mix will change — Chinese EVs use different fluid specifications, different battery chemistry, and different diagnostic protocols. Second, if the China EV deal is scrapped as a CUSMA concession, it may accelerate the path to a deal that stabilizes parts prices. The June 16-17 U.S.-Mexico Round 2 is the next critical data point: watch for whether Canada is included and whether the China EV deal is on the table.",
+    source: "Global News / CVMA — June 10, 2026",
+    sourceUrl: "https://globalnews.ca/news/11896298/scrap-china-ev-deal-auto-group/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "SUPPLY CHAIN",
-    tagColor: "#c0392b",
-    headline: "UAW Dauch Strike Day 9 — GM Has ~5 Days of Silverado/Sierra Axle Inventory, No Talks Scheduled",
-    summary: "The UAW strike at Dauch Corp's Three Rivers, Michigan plant enters its ninth day with no negotiations scheduled. The plant makes drive axles for the Chevrolet Silverado, GMC Sierra, and heavy-duty trucks — GM's most profitable vehicles. GM has been deploying approximately 250 salaried workers on production lines to extend its inventory buffer, but analysts estimate GM has roughly five days of axle supply remaining before production halts. Workers are seeking wage increases above $30 per hour (up from $22/hr) to recover concessions made in 2008 — in inflation-adjusted terms, their wages have been cut in half since then. UAW President Shawn Fain: 'These workers are determined, and they are fed up.' The UAW Spring 2026 Solidarity Magazine, published this weekend, features the Dauch strike prominently — signalling the union is dug in for a long fight. Nexteer workers (1,700 UAW members making steering gear for GM, Ford, and Stellantis in Saginaw) are still demanding to join the strike. If GM halts Silverado/Sierra production, the Oshawa Assembly Complex is directly in the supply chain. The 2008 American Axle strike lasted 89 days and cost GM nearly $3 billion.",
-    whyItMatters: "If GM halts Silverado/Sierra production this week, the ripple effects will reach Canadian shops within 30-60 days. Dealer service departments will prioritize warranty work on vehicles they have in inventory and stop taking appointments for vehicles they cannot sell. Independent shops become the only option for Silverado/Sierra owners. Call your top 20 GM truck customers today and book their next service appointment — before the dealer service departments start turning people away. Also: if you carry any GM OEM parts, check your inventory on Silverado/Sierra-specific items. Parts allocation programs typically follow production halts within two to three weeks.",
-    source: "Reuters / UAW Solidarity Magazine / Crain's Detroit, June 8-9, 2026",
-    sourceUrl: "https://www.reuters.com/legal/litigation/uaw-strike-against-gm-axle-supplier-continues-without-talks-union-official-says-2026-06-02/",
+    tag: "TRADE",
+    tagColor: "#7c3aed",
+    headline: "USMCA Confirmed to Miss July 1 Deadline — Annual Reviews Begin, Uncertainty Extends to 2027",
+    summary: "Bloomberg and the Claims Journal confirmed Tuesday: all three countries will miss the July 1 renewal deadline. The deal remains in force until 2036 but enters rolling annual reviews — creating indefinite uncertainty for every business in the North American automotive supply chain. USTR Greer: 'I don't think we're going to renew it outright.' Side deals (not treaty changes) are the most likely near-term outcome. The most dangerous scenario: the U.S. triggers a six-month withdrawal notice on July 1, effective January 1, 2027 — which would end CUSMA entirely and expose all Canadian exports to the full 25% auto tariff plus the 10% forced labour tariff (35% combined). The UAW Dauch strike enters Week 2 with no deal and no talks scheduled. GM has approximately four days of Silverado/Sierra axle inventory remaining. Bank of Canada rate decision tomorrow, June 11 — economists expect a hold at 2.25% but language on inflation vs. growth trade-off will be closely watched.",
+    whyItMatters: "The confirmation that CUSMA will miss the July 1 deadline means the uncertainty that has been weighing on parts prices and inventory decisions since January is not going away in three weeks. Annual reviews mean every year brings a new round of uncertainty. For Canadian shop owners, the practical implication is: do not make long-term parts sourcing commitments based on current tariff rates. Maintain flexibility. The most important number to watch is not the July 1 deadline but whether the U.S. files a withdrawal notice. If they do not, the deal continues in annual review mode and the status quo holds. If they do, you have six months to prepare for a 35% tariff environment.",
+    source: "Bloomberg / Claims Journal / Reuters — June 10, 2026",
+    sourceUrl: "https://www.reuters.com/legal/litigation/strike-gm-axle-supplier-continues-2026-06-08/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge opens June 15. Six lanes, direct highway connections Windsor-Detroit. The Ambassador Bridge will no longer be the only crossing for the $50B/year automotive trade corridor. Parts delivery times from U.S. distributors will improve significantly.",
-    sourceUrl: "https://globalnews.ca/news/11895621/gordie-howe-bridge-ribbon-cutting-date/",
+    text: "Gordie Howe Bridge opens Sunday, June 15. Six lanes, direct Highway 401 (Canada) and I-75 (U.S.) connections. The Ambassador Bridge will no longer be the only crossing for the $50B/year automotive trade corridor. Parts delivery times from U.S. distributors will improve significantly.",
+    sourceUrl: "https://www.ctvnews.ca/canada/article/confirming-opening-of-gordie-howe-bridge-pm-carney-calls-it-positive-news/",
   },
   {
     icon: "🤝",
-    text: "CUSMA — 22 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington. Canada's inclusion or exclusion from those talks is the most important signal of the week. The 82%/50% U.S. content demand (which would exclude Canadian parts from vehicle content calculations entirely) remains on the table.",
-    sourceUrl: "https://www.reuters.com/business/mark-carneys-trade-push-collides-with-reality-us-dependence-2026-06-09/",
+    text: "CUSMA — 21 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington. Canada's inclusion or exclusion from those talks is the most important signal of the week. The 82%/50% U.S. content demand (which would exclude Canadian parts from vehicle content calculations entirely) remains on the table.",
+    sourceUrl: "https://globalnews.ca/news/11896298/scrap-china-ev-deal-auto-group/",
   },
   {
-    icon: "🛢️",
-    text: "Motor oil shortage: peak supply constraint now Q4 2026 – Q1 2027. Wholesale full synthetic costs already up $7.00-$8.45/gal. 0W-20 remains the most at-risk grade. Shell's Pearl GTL (world's largest Group III producer) offline for 12+ months. This week is the last realistic window to place supplemental orders before allocation programs restrict ordering.",
-    sourceUrl: "https://jobbersworld.com/2026/06/05/will-there-be-enough-motor-oil/",
+    icon: "🚛",
+    text: "UAW Dauch strike Day 10 — GM has ~4 days of Silverado/Sierra axle inventory. No talks scheduled. If GM halts production, Oshawa Assembly Complex is directly in the supply chain. Call your top 20 GM truck customers today and book their next service appointment.",
+    sourceUrl: "https://www.reuters.com/legal/litigation/strike-gm-axle-supplier-continues-2026-06-08/",
   },
   {
     icon: "🏦",
-    text: "Bank of Canada rate decision Wednesday, June 11. May jobs report (+87,800, unemployment to 6.6%) argues for holding or hiking. Bond markets pricing 30+ basis points of tightening by December. Higher rates mean fewer new vehicle purchases and more service work for your shop.",
-    sourceUrl: "https://www.canadianmortgagetrends.com/2026/06/canadian-employment-up-87800-jobless-rate-falls-to-6-6/",
+    text: "Bank of Canada rate decision TODAY, June 11. May jobs report (+87,800, unemployment to 6.6%) argues for holding at 2.25%. Bond markets pricing 30+ basis points of tightening by December. Higher rates mean fewer new vehicle purchases and more service work for your shop.",
+    sourceUrl: "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Gordie Howe Bridge Opens June 15 — Update Your Parts Sourcing Strategy",
-  text: "The Gordie Howe Bridge opens to traffic on June 15. Here is how to take advantage of it. First, contact your U.S.-based parts distributors this week and ask if they have a Windsor-side distribution point or if they can offer faster delivery via the new crossing. The six-lane bridge with direct highway connections will cut crossing times from hours to minutes during peak periods. Second, if you currently hold extra buffer inventory because of Ambassador Bridge delays, you may be able to reduce that buffer once the new bridge is operating — freeing up working capital. Third, if you have technicians or drivers who make parts runs across the border, brief them on the new crossing: the Gordie Howe Bridge connects directly to Highway 401 on the Canadian side and I-75 on the U.S. side. Fourth, watch for whether the bridge opening is used as a bargaining chip in the CUSMA talks — if it is, it may signal that a broader trade deal is imminent.",
+  title: "Gordie Howe Bridge Opens Sunday — Update Your Parts Sourcing Strategy Now",
+  text: "The Gordie Howe Bridge opens to traffic on Sunday, June 15. Here is how to take advantage of it immediately. First, contact your U.S.-based parts distributors this week and ask if they have a Windsor-side distribution point or can offer faster delivery via the new crossing. The six-lane bridge with direct highway connections will cut crossing times from hours to minutes during peak periods. Second, if you currently hold extra buffer inventory because of Ambassador Bridge delays, you may be able to reduce that buffer once the new bridge is operating — freeing up working capital. Third, if you have technicians or drivers who make parts runs across the border, brief them on the new crossing: the Gordie Howe Bridge connects directly to Highway 401 on the Canadian side and I-75 on the U.S. side. Fourth, the bridge opening may signal that the broader CUSMA negotiation is moving toward resolution — watch the June 16-17 U.S.-Mexico Round 2 talks for Canada's inclusion.",
 };
 
 const quoteOfTheDay = {
-  text: "For many of the Japanese companies investing here, one of the reasons for their investment is definitely the special access Canada has enjoyed over the long years.",
-  author: "Ishii Hideaki",
-  title: "Minister and Deputy Head of Mission, Japanese Embassy in Ottawa — Reuters, June 9, 2026",
+  text: "It's not an option to diversify away from the United States. We need to get CUSMA right.",
+  author: "Brian Kingston",
+  title: "CEO, Canadian Vehicle Manufacturers' Association — June 10, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Ford Torino Cobra 429 Super Cobra Jet — The NASCAR Muscle Car Nobody Talks About",
-  description: "The 1970 Ford Torino Cobra 429 SCJ is the muscle car that NASCAR built. Ford's 429 Super Cobra Jet was the street-legal version of the engine that dominated NASCAR superspeedways — the same basic architecture that powered Talladega and Daytona winners. The SCJ package added a 780 CFM Holley carburetor, drag pack oil cooler, and Traction-Lok differential. In Grabber Orange with the Cobra hood scoop and black stripe, it is one of the most visually aggressive muscle cars ever built. Factory-rated at 375 hp, actual output was closer to 425 hp with 450 lb-ft of torque. The Torino Cobra ran the quarter mile in the low 13s from the factory — quicker than most Chevelles and Mopars of the same era. Today, a documented 429 SCJ Torino Cobra in Grabber Orange trades for $85,000-$140,000 — still undervalued compared to the Chevelle SS 454 and Hemi Cuda that get all the attention. On a Monday morning when the Gordie Howe Bridge is finally opening and CUSMA has 22 days to go, the Torino Cobra is a reminder that the most capable option is not always the most celebrated one — and that the best deals are often hiding in plain sight.",
+  name: "1969 Pontiac Firebird Trans Am Ram Air IV — The Rarest First-Gen",
+  description: "The 1969 Pontiac Firebird Trans Am Ram Air IV is the rarest and most desirable first-generation Trans Am ever built. Only 55 were produced with the Ram Air IV engine — a high-revving, solid-lifter 400 cubic inch V8 rated at 345 hp (actually closer to 370). The Ram Air IV was Pontiac's most exotic street engine, featuring round-port heads, a radical camshaft, and a functional hood scoop that fed cold air directly to the carburetor. In Cameo White with the blue racing stripes and rear spoiler, it is one of the most visually striking muscle cars of the era. The Trans Am name was licensed from the SCCA Trans-Am racing series — Pontiac had to pay $5 per car to use it. Today, a documented Ram Air IV Trans Am trades for $350,000-$500,000 at major auctions. The standard Ram Air III car is $150,000-$250,000. On a Tuesday when the Gordie Howe Bridge is finally opening and CUSMA has 21 days to go, the Trans Am is a reminder that the rarest and most capable option is not always the loudest — and that the best investments are often the ones that took the longest to be recognized.",
   image: HOTROD_IMG,
 };
 
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2">
-                {["BRIDGE", "CUSMA", "GM STRIKE", "OIL"].map((tag) => (
+                {["BRIDGE", "CUSMA", "CVMA", "GM STRIKE"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Gordie Howe International Bridge ribbon-cutting ceremony — opens to traffic June 15, 2026"
+              alt="Gordie Howe International Bridge opening Sunday June 15, 2026 — Windsor-Detroit automotive corridor"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
               <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Breaking</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Gordie Howe Bridge Opens June 15 — CUSMA 22 Days Out, GM Trucks Running on Empty
+                Gordie Howe Bridge Opens Sunday — CVMA Demands China EV Deal Scrapped, CUSMA 21 Days Out
               </h3>
             </div>
           </div>
