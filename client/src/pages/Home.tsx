@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 34;
-const BRIEFING_DATE = "June 10, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 35;
+const BRIEFING_DATE = "June 11, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/seEWcqDWAMxVBpOO.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XzDnVaofEBbinqBW.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GZIElQSaGxtQhbJo.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/DmkCfpkvbUMyMaPP.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WaAJeJnTXshweYOR.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dVgmNqxAtYWxBHKO.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TSTuzgPJiZlwYjiy.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TNlNksYTAtfipkXC.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TLkfaWKuJaNNOolp.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PmkeNvfNcENNzIyR.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "BREAKING",
-    tagColor: "#e05a1a",
-    headline: "Gordie Howe Bridge Opens THIS SUNDAY — Carney Confirms Despite Trump's Threats",
-    summary: "Prime Minister Carney confirmed on Parliament Hill Tuesday: 'It's positive news. Obviously, the bridge will be open at the end of the week.' Traffic opens Sunday, June 15. The $6.4 billion, six-lane cable-stayed bridge ends 4+ months of Trump blocking the opening of the Windsor-Detroit corridor's second crossing. The Moroun family (owners of the competing Ambassador Bridge) sued to stop the opening and lobbied Trump directly — they are now under House investigation. Trump falsely claimed Canada owned both sides of the bridge and demanded a share of toll revenue or trade concessions before authorizing the U.S. side to open. DHS Secretary Mullin confirmed last week that customs and border protection staff are staffed and 'ready to go.' The bridge connects directly to Highway 401 on the Canadian side and I-75 on the U.S. side, eliminating the bottleneck that has plagued the Ambassador Bridge for decades. The Windsor-Detroit corridor handles $50 billion in annual trade — the majority of it automotive parts and finished vehicles. The bridge's opening is the most significant positive development for the Canadian automotive supply chain in years.",
-    whyItMatters: "The Gordie Howe Bridge opening is directly relevant to every Canadian shop owner who sources parts through the Windsor-Detroit corridor. The Ambassador Bridge currently handles approximately $50 billion in annual automotive trade — and it regularly backs up for hours. The Gordie Howe Bridge's six lanes and direct highway connections will cut crossing times dramatically, which means faster parts delivery from U.S. distributors and less buffer inventory required. If you have customers who regularly cross to the U.S. for parts runs or deliveries, alert them now: the bridge opens Sunday, June 15. The opening also has a symbolic dimension: it is the first concrete positive development in Canada-U.S. trade relations since the tariff war began, and it may signal that the broader CUSMA negotiation is moving toward resolution.",
-    source: "CTV News / CBC / Global News — June 10, 2026",
-    sourceUrl: "https://www.ctvnews.ca/canada/article/confirming-opening-of-gordie-howe-bridge-pm-carney-calls-it-positive-news/",
+    tag: "CUSMA",
+    tagColor: "#1d4ed8",
+    headline: "Trump: 'I'm Not Looking to Renew' CUSMA — Trade Lawyers Say Don't Panic, 20 Days to July 1",
+    summary: "President Trump told reporters in the Oval Office on June 10: 'I don't know if I'm going to renew it.' The statement rattled markets briefly before trade lawyers and former ambassadors urged calm. William Pellerin (McMillan LLP): 'Trump likes to up the ante as a negotiating tactic.' Former Ambassador Mark Warner: 'The deal remains in force until 2036 unless a withdrawal notice is filed — and no one has filed one.' The critical distinction: Trump's statement is a negotiating position, not a legal act. CUSMA requires six months' notice to withdraw, meaning a July 1 withdrawal notice would end the deal on January 1, 2027. No such notice has been filed. Trade Minister LeBlanc declared talks 'unfrozen' after his June 3 Washington meeting with USTR Greer. U.S.-Mexico Round 2 is June 16-17 in Washington — Canada's inclusion or exclusion from those talks is the most important signal of the week. Bank of Canada held rates at 2.25% today as expected. The rate hold is positive for the auto service sector: consumers holding vehicles longer means more service work.",
+    whyItMatters: "Trump's 'I'm not looking to renew' statement is consistent with his negotiating style — he said the same thing about NATO, NAFTA, and the WTO before ultimately keeping or modifying them. The legal reality is that CUSMA remains in force until 2036 unless a withdrawal notice is filed. The practical reality is that uncertainty itself is a cost: parts prices remain elevated, OEMs are reluctant to commit to new Canadian investments, and shops face unpredictable fluid and parts cost trajectories. The Bank of Canada's hold at 2.25% is the right call given the uncertainty — it keeps borrowing costs stable for shop owners carrying inventory or equipment financing. Watch June 16-17 for whether Canada is included in U.S.-Mexico Round 2 talks.",
+    source: "CBC / Global News / Reuters — June 10-11, 2026",
+    sourceUrl: "https://www.cbc.ca/news/politics/trump-cusma-usmca-trade-renew-9.7230164",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "TRADE",
-    tagColor: "#1d4ed8",
-    headline: "CVMA Calls on Carney to Scrap China EV Deal Before CUSMA Talks — 21 Days to July 1",
-    summary: "The Canadian Vehicle Manufacturers' Association (Ford, GM, Stellantis) is publicly demanding Ottawa cancel the 6.1% China EV tariff deal before CUSMA negotiations intensify. CVMA CEO Brian Kingston: 'It's not an option to diversify away from the United States.' The deal — which allows 49,000 Chinese-built EVs into Canada annually at 6.1% tariff (down from 100%) — has become the #1 irritant in LeBlanc-Greer talks. Tesla accounts for 12% of the quota before any Chinese brand has moved a single unit, because it manufactures the Model 3 at Gigafactory Shanghai. Trump publicly criticized the deal. BYD has applied for an import permit. Stellantis-Leapmotor Brampton assembly talks are ongoing despite opposition from Ontario Premier Doug Ford. The CVMA position is significant: these are the same companies (Ford, GM, Stellantis) whose Canadian plants produce the vehicles that generate the most CUSMA-protected trade. If they are willing to sacrifice the China EV deal to secure CUSMA renewal, it signals how high the stakes are. 21 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington.",
-    whyItMatters: "The CVMA's call to scrap the China EV deal is a direct signal of how the Canadian automotive industry is prioritizing CUSMA renewal above all else. For Canadian shop owners, the China EV deal matters in two ways. First, if BYD and other Chinese brands enter the Canadian market in volume, your service mix will change — Chinese EVs use different fluid specifications, different battery chemistry, and different diagnostic protocols. Second, if the China EV deal is scrapped as a CUSMA concession, it may accelerate the path to a deal that stabilizes parts prices. The June 16-17 U.S.-Mexico Round 2 is the next critical data point: watch for whether Canada is included and whether the China EV deal is on the table.",
-    source: "Global News / CVMA — June 10, 2026",
-    sourceUrl: "https://globalnews.ca/news/11896298/scrap-china-ev-deal-auto-group/",
+    tag: "LABOUR",
+    tagColor: "#16a34a",
+    headline: "UAW Dauch Strike SETTLED — GM Silverado/Sierra Axle Supply Crisis Over, $30/hr by 2030",
+    summary: "UAW President Shawn Fain announced a tentative deal with Dauch Corp (formerly American Axle) on June 10, ending the 10-day strike at the Three Rivers, Michigan plant. The deal: top wage rises from $22/hr to $30/hr by 2030 — a 36% increase over four years — plus improved healthcare and additional vacation time. Workers at UAW Local 2093 will vote to ratify the contract. The strike will continue until ratification is complete. GM's Silverado and Sierra axle supply crisis is resolved: the Three Rivers plant will resume full production upon ratification. GM had approximately 4-5 days of axle inventory remaining when the deal was announced. The Oshawa Assembly Complex, which is in the direct supply chain, will not face a production halt. The settlement is significant beyond GM: it sets a wage benchmark of $30/hr by 2030 that will be cited in Unifor-Ford contract talks opening June 22. Dauch spokesperson: 'We appreciate the efforts of both the UAW and Dauch labor negotiations teams to find common ground.'",
+    whyItMatters: "The Dauch settlement has two direct implications for Canadian shop owners. First, the immediate supply chain risk to Silverado and Sierra production is resolved — if you were planning to call your GM truck customers about booking service before a production halt, the urgency has passed, but the call is still worth making. Second, the $30/hr by 2030 wage benchmark will be cited in Unifor-Ford talks starting June 22. Unifor has been asking for comparable wage recovery for Canadian auto workers. If Unifor achieves a similar deal, it will increase OEM production costs in Canada — which eventually flows through to parts pricing. The settlement also demonstrates that UAW President Shawn Fain's aggressive bargaining strategy continues to deliver results, which will embolden Unifor's negotiating position.",
+    source: "Reuters / Automotive World — June 11, 2026",
+    sourceUrl: "https://www.reuters.com/business/autos-transportation/uaw-president-deal-reached-with-axle-supplier-dauch-corp-after-10-day-strike-2026-06-11/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "TRADE",
-    tagColor: "#7c3aed",
-    headline: "USMCA Confirmed to Miss July 1 Deadline — Annual Reviews Begin, Uncertainty Extends to 2027",
-    summary: "Bloomberg and the Claims Journal confirmed Tuesday: all three countries will miss the July 1 renewal deadline. The deal remains in force until 2036 but enters rolling annual reviews — creating indefinite uncertainty for every business in the North American automotive supply chain. USTR Greer: 'I don't think we're going to renew it outright.' Side deals (not treaty changes) are the most likely near-term outcome. The most dangerous scenario: the U.S. triggers a six-month withdrawal notice on July 1, effective January 1, 2027 — which would end CUSMA entirely and expose all Canadian exports to the full 25% auto tariff plus the 10% forced labour tariff (35% combined). The UAW Dauch strike enters Week 2 with no deal and no talks scheduled. GM has approximately four days of Silverado/Sierra axle inventory remaining. Bank of Canada rate decision tomorrow, June 11 — economists expect a hold at 2.25% but language on inflation vs. growth trade-off will be closely watched.",
-    whyItMatters: "The confirmation that CUSMA will miss the July 1 deadline means the uncertainty that has been weighing on parts prices and inventory decisions since January is not going away in three weeks. Annual reviews mean every year brings a new round of uncertainty. For Canadian shop owners, the practical implication is: do not make long-term parts sourcing commitments based on current tariff rates. Maintain flexibility. The most important number to watch is not the July 1 deadline but whether the U.S. files a withdrawal notice. If they do not, the deal continues in annual review mode and the status quo holds. If they do, you have six months to prepare for a 35% tariff environment.",
-    source: "Bloomberg / Claims Journal / Reuters — June 10, 2026",
-    sourceUrl: "https://www.reuters.com/legal/litigation/strike-gm-axle-supplier-continues-2026-06-08/",
+    tag: "RECALL",
+    tagColor: "#dc2626",
+    headline: "Honda Canada Recalls 130,000 Vehicles — Rear Subframe Corrosion, Salt-Belt Provinces Most at Risk",
+    summary: "Honda Canada Inc. announced a safety recall on June 10 affecting more than 130,000 Honda and Acura vehicles from 2014 to 2023. The affected models are the Acura MDX (2014-2020), Honda Passport (2019-2023), Honda Pilot (2016-2022), and Honda Ridgeline (2017-2023). The defect: rear subframes were manufactured with improper coating specifications, causing paint to peel. In areas where de-icing salt is heavily used — Ontario, Quebec, Atlantic Canada — the exposed metal corrodes prematurely. As corrosion progresses, material thinning and driving vibrations can cause the mounting area to fracture and fail, negatively affecting vehicle handling, stability, and braking performance. Honda is simultaneously recalling more than 880,000 vehicles in the United States for the same defect. No injuries or deaths have been reported. Honda will contact registered owners by mail starting in July. Dealers will inspect the rear subframe and install a reinforcement kit or replace affected components. The new components feature improved pre-paint treatment and increased coating thickness. To check if a vehicle is affected: 1-888-946-6329 or Honda.ca/recalls or Acura.ca/recalls.",
+    whyItMatters: "This recall is a direct service opportunity for every Canadian shop that services Honda and Acura vehicles. The affected models — Pilot, Passport, Ridgeline, and MDX — are among the most common vehicles in Canadian service bays, particularly in Ontario and Quebec where salt use is heaviest. Honda will contact owners by mail in July, but proactive shops can get ahead of the recall by identifying affected vehicles in their customer database now. Run a VIN check on every 2014-2023 Honda Pilot, Passport, Ridgeline, and Acura MDX in your customer list and reach out before the dealer letters arrive. Recall work is paid at OEM labour rates — but independent shops can capture the inspection and any non-recall-related work (brake service, fluid changes, tire rotation) that comes with bringing the vehicle in. The 880,000-unit U.S. recall means parts and reinforcement kits will be in high demand — contact your Honda parts distributor this week to understand availability timelines.",
+    source: "CTV News / AM800 / Honda Canada — June 10, 2026",
+    sourceUrl: "https://www.am800cklw.com/news/honda-canada-recall-affects-more-than-130000-vehicles/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🌉",
-    text: "Gordie Howe Bridge opens Sunday, June 15. Six lanes, direct Highway 401 (Canada) and I-75 (U.S.) connections. The Ambassador Bridge will no longer be the only crossing for the $50B/year automotive trade corridor. Parts delivery times from U.S. distributors will improve significantly.",
-    sourceUrl: "https://www.ctvnews.ca/canada/article/confirming-opening-of-gordie-howe-bridge-pm-carney-calls-it-positive-news/",
-  },
-  {
-    icon: "🤝",
-    text: "CUSMA — 21 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington. Canada's inclusion or exclusion from those talks is the most important signal of the week. The 82%/50% U.S. content demand (which would exclude Canadian parts from vehicle content calculations entirely) remains on the table.",
-    sourceUrl: "https://globalnews.ca/news/11896298/scrap-china-ev-deal-auto-group/",
-  },
-  {
-    icon: "🚛",
-    text: "UAW Dauch strike Day 10 — GM has ~4 days of Silverado/Sierra axle inventory. No talks scheduled. If GM halts production, Oshawa Assembly Complex is directly in the supply chain. Call your top 20 GM truck customers today and book their next service appointment.",
-    sourceUrl: "https://www.reuters.com/legal/litigation/strike-gm-axle-supplier-continues-2026-06-08/",
+    icon: "📈",
+    text: "U.S. CPI hit 4.2% annually in May — the highest in three years. Energy prices up 23.5% year-over-year driven by the Iran war and Strait of Hormuz closure. Trump: 'I love the inflation. The numbers were great.' Fed expected to hold rates at June 17 meeting. Higher U.S. inflation means higher parts prices for Canadian shops sourcing from U.S. distributors.",
+    sourceUrl: "https://www.cnbc.com/2026/06/10/cpi-inflation-report-may-2026.html",
   },
   {
     icon: "🏦",
-    text: "Bank of Canada rate decision TODAY, June 11. May jobs report (+87,800, unemployment to 6.6%) argues for holding at 2.25%. Bond markets pricing 30+ basis points of tightening by December. Higher rates mean fewer new vehicle purchases and more service work for your shop.",
+    text: "Bank of Canada held rates at 2.25% today as expected. May jobs report (+87,800 jobs, unemployment to 6.6%) gave the Bank room to hold. Bond markets pricing 30+ basis points of tightening by December. Rate stability is positive for shop owners carrying equipment financing or inventory lines of credit.",
     sourceUrl: "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/",
+  },
+  {
+    icon: "🌉",
+    text: "Gordie Howe Bridge opens to traffic THIS SUNDAY, June 15. Ribbon-cutting ceremony Friday, June 13. Six lanes, direct Highway 401 (Canada) and I-75 (U.S.) connections. The $50B/year Windsor-Detroit automotive trade corridor finally gets its second crossing. Parts delivery times from U.S. distributors will improve significantly.",
+    sourceUrl: "https://globalnews.ca/news/11895621/gordie-howe-bridge-ribbon-cutting-date/",
+  },
+  {
+    icon: "🤝",
+    text: "CUSMA — 20 days to July 1. U.S.-Mexico Round 2 is June 16-17 in Washington. Canada's inclusion or exclusion from those talks is the most important signal of the week. Trump's 'not looking to renew' statement is a negotiating position, not a legal act. No withdrawal notice has been filed.",
+    sourceUrl: "https://www.cbc.ca/news/politics/trump-cusma-usmca-trade-renew-9.7230164",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Gordie Howe Bridge Opens Sunday — Update Your Parts Sourcing Strategy Now",
-  text: "The Gordie Howe Bridge opens to traffic on Sunday, June 15. Here is how to take advantage of it immediately. First, contact your U.S.-based parts distributors this week and ask if they have a Windsor-side distribution point or can offer faster delivery via the new crossing. The six-lane bridge with direct highway connections will cut crossing times from hours to minutes during peak periods. Second, if you currently hold extra buffer inventory because of Ambassador Bridge delays, you may be able to reduce that buffer once the new bridge is operating — freeing up working capital. Third, if you have technicians or drivers who make parts runs across the border, brief them on the new crossing: the Gordie Howe Bridge connects directly to Highway 401 on the Canadian side and I-75 on the U.S. side. Fourth, the bridge opening may signal that the broader CUSMA negotiation is moving toward resolution — watch the June 16-17 U.S.-Mexico Round 2 talks for Canada's inclusion.",
+  title: "Honda Recall: Run Your Customer Database Now, Before the Dealer Letters Arrive in July",
+  text: "Honda Canada will mail recall letters to registered owners of affected vehicles starting in July. That gives you a 3-4 week window to get ahead of the dealer network. Here is what to do this week. First, pull every 2014-2023 Honda Pilot, 2019-2023 Honda Passport, 2017-2023 Honda Ridgeline, and 2014-2020 Acura MDX from your customer database. Second, run each VIN through Honda.ca/recalls or the Transport Canada recall database to confirm which are affected. Third, call or text those customers before the dealer letter arrives: 'We noticed your [year/model] is part of a Honda safety recall for rear subframe corrosion. We can inspect it for you and take care of any other service while it's in.' Fourth, when the vehicle comes in, perform a full inspection — brake service, fluid changes, tire rotation, and any deferred maintenance are all billable alongside the recall inspection. Fifth, contact your Honda parts distributor this week to understand reinforcement kit availability — the 880,000-unit U.S. recall means parts will be in high demand.",
 };
 
 const quoteOfTheDay = {
-  text: "It's not an option to diversify away from the United States. We need to get CUSMA right.",
-  author: "Brian Kingston",
-  title: "CEO, Canadian Vehicle Manufacturers' Association — June 10, 2026",
+  text: "I don't know if I'm going to renew it. I'm not looking to renew it.",
+  author: "President Donald Trump",
+  title: "On CUSMA — Oval Office, June 10, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Pontiac Firebird Trans Am Ram Air IV — The Rarest First-Gen",
-  description: "The 1969 Pontiac Firebird Trans Am Ram Air IV is the rarest and most desirable first-generation Trans Am ever built. Only 55 were produced with the Ram Air IV engine — a high-revving, solid-lifter 400 cubic inch V8 rated at 345 hp (actually closer to 370). The Ram Air IV was Pontiac's most exotic street engine, featuring round-port heads, a radical camshaft, and a functional hood scoop that fed cold air directly to the carburetor. In Cameo White with the blue racing stripes and rear spoiler, it is one of the most visually striking muscle cars of the era. The Trans Am name was licensed from the SCCA Trans-Am racing series — Pontiac had to pay $5 per car to use it. Today, a documented Ram Air IV Trans Am trades for $350,000-$500,000 at major auctions. The standard Ram Air III car is $150,000-$250,000. On a Tuesday when the Gordie Howe Bridge is finally opening and CUSMA has 21 days to go, the Trans Am is a reminder that the rarest and most capable option is not always the loudest — and that the best investments are often the ones that took the longest to be recognized.",
+  name: "1970 Buick GSX Stage 1 — The Gentleman's Brawler",
+  description: "The 1970 Buick GSX Stage 1 is the most underrated muscle car of the golden era. While everyone was watching Chevelles and Mopars, Buick quietly built the fastest production car in America. The Stage 1 455 cubic inch V8 produced 360 hp factory-rated — but the real number was closer to 400 hp and a tire-shredding 510 lb-ft of torque. That torque figure was the highest of any production car in 1970. Available only in Saturn Yellow or Apollo White with black stripes, the GSX was a visual statement as bold as its performance. Only 678 Stage 1 cars were built in 1970. The GSX ran the quarter mile in 13.38 seconds at 105.5 mph — faster than a Chevelle SS 454 LS6 in contemporary testing. Today, a documented Stage 1 GSX trades for $150,000-$250,000 at major auctions. On a Wednesday when Trump says he's 'not looking to renew' CUSMA, the UAW just won a 36% wage increase, and Honda is recalling 130,000 Canadian vehicles, the GSX is a reminder that the most powerful option is not always the most obvious one — and that the best results often come from the competitor nobody was watching.",
   image: HOTROD_IMG,
 };
 
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2">
-                {["BRIDGE", "CUSMA", "CVMA", "GM STRIKE"].map((tag) => (
+                {["CUSMA", "UAW DEAL", "HONDA RECALL", "BRIDGE"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Gordie Howe International Bridge opening Sunday June 15, 2026 — Windsor-Detroit automotive corridor"
+              alt="Honda Pilot on hoist in Canadian service bay — rear subframe recall June 2026"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Breaking</span>
+              <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Today's Edition</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Gordie Howe Bridge Opens Sunday — CVMA Demands China EV Deal Scrapped, CUSMA 21 Days Out
+                Trump: "Not Looking to Renew" CUSMA — UAW Dauch Strike Settled — Honda Recalls 130,000 Canadian Vehicles
               </h3>
             </div>
           </div>
