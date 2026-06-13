@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 36;
-const BRIEFING_DATE = "June 12, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 37;
+const BRIEFING_DATE = "June 13, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AkietiEmnUbYBywU.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YraSjxpOqcrYqobB.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YSAPIjQnWrDGXaOb.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JKOHFiCjjcRhrKDM.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XIXeaQtHaWTOkciR.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/eCLZCdVqrbVcyJSr.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NlxVeZMjnqiZssYm.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fHcsXrMTXRhrpotI.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ePHUOGJgVoYpmuBH.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NenLKNclfryiiAyS.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "BRIDGE",
-    tagColor: "#7c3aed",
-    headline: "Gordie Howe Bridge Opening DELAYED AGAIN — No New Date Set, 'Outstanding Issues' Unresolved",
-    summary: "The Windsor-Detroit Bridge Authority (WDBA) announced Thursday that Canada and the United States have agreed to postpone both the June 13 ribbon-cutting ceremony and the June 15 traffic opening. 'Canada and the United States have agreed to delay the opening of the bridge, taking the necessary time to resolve any outstanding issues,' said WDBA Interim CEO Chuck Andary. No new opening date has been announced. The bridge is structurally complete after eight years of construction. Former Michigan Governor Jim Blanchard, who has worked on the project for decades, called it 'the most important infrastructure project in North America.' Michigan Chamber of Commerce President Jim Holcomb noted that roughly one-third of all U.S.-Canada trade traffic moves through the Detroit-Windsor crossing. Former Governor John Engler: 'It's been delayed too long. If it's ready to go, let's get it open. Let's get the traffic moving.' The bridge is jointly owned by Michigan and Canada — Canada covered construction costs and will be repaid through future toll revenue. Trump has been demanding trade concessions or a share of toll revenue before authorizing the U.S. side to open. The WDBA has not specified what 'outstanding issues' remain.",
-    whyItMatters: "The Gordie Howe Bridge delay is now directly tied to CUSMA negotiations. The bridge is a bargaining chip — Trump is using it as leverage, and Canada is not willing to give up toll revenue or trade concessions to open it on Trump's terms. For Canadian shop owners, the delay means the anticipated improvement in parts delivery times from U.S. distributors via the Windsor-Detroit corridor is on hold. The Ambassador Bridge (owned by the Moroun family, which is under House investigation for allegedly lobbying Trump to block the Gordie Howe opening) remains the only crossing. The delay also signals that the 'outstanding issues' in CUSMA talks are not resolved — the bridge and the trade deal are now linked. Watch for whether a new opening date is announced alongside any CUSMA framework agreement.",
-    source: "WILX News 10 / WDBA — June 11, 2026",
-    sourceUrl: "https://www.wilx.com/2026/06/11/opening-gordie-howe-international-bridge-delayed/",
+    tag: "TARIFFS",
+    tagColor: "#b91c1c",
+    headline: "Japan's Six Automakers Face $40B+ Tariff Hit — Honda Posts First Annual Loss in 70 Years",
+    summary: "Japan's six largest automakers — Toyota, Honda, Nissan, Subaru, Mazda, and Mitsubishi — absorbed an estimated $27.6 billion in costs tied to U.S. tariffs, shifting EV policies, and regulatory changes during the fiscal year ending March 31, 2026. Industry forecasts project an additional $14.4 billion in costs through March 2027, bringing the total impact to over $40 billion. Tariffs drove the largest share of those costs, totalling roughly $15.2 billion for the fiscal year. Toyota alone expects tariff-related costs to reach $17.2 billion through March 2027. Honda recorded $9.1 billion in EV-related write-downs after scaling back its EV plans and cancelling certain programs — contributing to the company's first annual loss since going public nearly 70 years ago. Nissan anticipates nearly $3.1 billion in tariff expenses and has retooled its Canton, Mississippi plant from EV production to truck manufacturing. Subaru's failure to launch its first in-house EV cost the automaker $361 million in impairments. Executives across the industry say future investment decisions now depend on political and regulatory developments rather than traditional manufacturing considerations. New trade barriers have disrupted the integrated U.S.-Canada-Mexico supply chains that Japanese automakers built their North American strategies around — intensifying pressure to relocate production to the United States.",
+    whyItMatters: "Honda's Alliston, Ontario plant is directly embedded in the supply chain affected by these losses. When Honda posts its first loss in 70 years and begins retooling production toward U.S. facilities, Alliston's long-term output is at risk. For Canadian shop owners, the immediate signal is this: the OEMs absorbing the largest tariff hits are the ones most likely to shift production south, which means Canadian assembly jobs — and the parts ecosystems built around them — face structural pressure. The secondary effect is parts pricing. As Japanese OEMs absorb $40B+ in costs, they will look to recover margin wherever possible, including through parts pricing to dealers and independent distributors. Honda, Toyota, and Subaru parts are among the most common in Canadian service bays. Watch for quiet price increases on OEM parts over the next two quarters. This is a long-term story — but it is moving faster than most shop owners realize.",
+    source: "CBT News / Automotive Manufacturing Solutions — June 12, 2026",
+    sourceUrl: "https://www.cbtnews.com/japanese-automakers-face-28b-hit-from-u-s/",
     image: STORY1_IMG,
   },
   {
     id: 2,
     tag: "CUSMA",
     tagColor: "#1d4ed8",
-    headline: "Trump Confirms USMCA Will NOT Be Renewed — Annual Reviews Begin July 1, Magna CEO Warns of Investment Freeze",
-    summary: "Autoline Daily confirmed Thursday that Trump has stated the U.S. will not renew USMCA at the July 1 milestone. Annual reviews begin. USTR Greer: 'I don't think we're going to renew it outright.' The deal remains in force until 2036 unless a withdrawal notice is filed — but the annual review process creates indefinite uncertainty. Magna International CEO Swami Kotagiri: 'We want stability and visibility. When automakers and suppliers don't have stability, they don't invest.' Dana Incorporated and Eaton Corporation announced a mobility merger this week — a direct response to supply chain consolidation pressure driven by tariff uncertainty. The merger creates a $15B powertrain and drivetrain supplier that is better positioned to absorb tariff shocks. U.S.-Mexico Round 2 talks are June 16-17 in Washington — Canada's inclusion or exclusion is the most important signal of the coming week. 19 days to July 1.",
-    whyItMatters: "Annual reviews beginning July 1 means the CUSMA uncertainty that has been driving elevated parts prices and suppressed new vehicle sales does not resolve on July 1 — it becomes permanent until a full renegotiation is completed. For Canadian shop owners, this is actually a medium-term positive: consumers who were waiting to see if tariffs would ease before buying a new vehicle will continue to hold their existing vehicles longer, driving more service work. The Dana-Eaton merger is a signal that the supply chain is consolidating around scale — smaller distributors will face margin pressure, which may eventually flow through to parts availability and pricing at the shop level. Watch June 16-17 for whether Canada is included in U.S.-Mexico Round 2 talks.",
-    source: "Autoline Daily / Mac's Motor City Garage — June 12, 2026",
-    sourceUrl: "https://www.autoline.tv/daily/ad-4316-trump-kills-canada-ev-sales-recovering-faster-than-expected-china-has-a-capacity-problem/",
+    headline: "CUSMA Transparency Crisis — Driving.ca's David Booth: 'The Liberals Are Keeping Us In The Dark'",
+    summary: "Driving.ca automotive journalist David Booth published a pointed analysis this week arguing that Canada's auto industry executives cannot get a straight answer from the Carney government on its CUSMA negotiating position. The core complaint: there is no unified tariff remission program, no clear communication of what Canada is willing to trade, and — critically — not a single person on Prime Minister Carney's economic advisory council with direct auto assembly experience. Booth notes that the 82%/50% North American content threshold being discussed is technically achievable for most Canadian-assembled vehicles, but the wording of how that content is calculated matters enormously. Canada's negotiators may be trading away the wrong chips without understanding the downstream consequences for assembly plants in Alliston, Cambridge, Ingersoll, and Windsor. With 18 days to the July 1 CUSMA annual review milestone, the U.S.-Mexico Round 2 talks scheduled for June 16-17 in Washington are the most important near-term signal. Canada's inclusion or exclusion from those talks will reveal whether Ottawa is being treated as a full partner or a secondary concern in the renegotiation.",
+    whyItMatters: "The transparency crisis Booth describes is not just a political story — it is a business planning problem for every Canadian shop owner. When the OEMs and Tier 1 suppliers cannot get a clear answer on what Canada's negotiating position is, they cannot make investment decisions. When investment decisions stall, production schedules become uncertain. When production schedules become uncertain, parts availability becomes unpredictable. The absence of auto assembly expertise on Carney's advisory council is a structural gap that matters: the people advising the PM on trade strategy may not fully understand that a 2% change in content calculation methodology can determine whether a vehicle qualifies for tariff-free treatment or faces a 25% surcharge. For shop owners, the practical implication is to continue planning for tariff-elevated parts prices through at least Q3 2026. The July 1 milestone is not a resolution — it is the beginning of a longer review process. Do not wait for certainty before adjusting your parts procurement strategy.",
+    source: "Driving.ca / David Booth — June 2026",
+    sourceUrl: "https://driving.ca/auto-news/news/the-liberals-are-keeping-us-in-the-dark-on-cusma",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "RECALL",
-    tagColor: "#dc2626",
-    headline: "Ford Recalls 548,000 Expedition SUVs — Chrome Console Trim Peels Into Razor Edges, Lacerations Reported",
-    summary: "Ford Motor Company filed a safety recall covering 548,000 Ford Expedition SUVs from model years 2018 through 2024. The defect: chrome trim on the center console bubbles, peels, and separates from the substrate, creating sharp metallic edges. Ford has received reports of lacerations requiring stitches. The affected trim is supplied by Xin Point and Forvia. No fix is currently available — Ford will notify owners when replacement parts are ready, and dealers will replace the center console trim at no charge. In a separate but positive development, Novelis confirmed on June 10 that it has restarted production at its Oswego, New York aluminum plant — the facility that supplies aluminum body panels for the Ford F-150. The plant was offline for months following two fires. The restart removes a key supply constraint on F-150 production and is expected to improve F-150 availability at Canadian dealers over the coming months.",
-    whyItMatters: "The Ford Expedition recall is a direct service opportunity for every Canadian shop that services Ford SUVs. The 2018-2024 Expedition is one of the most common full-size SUVs in Canadian service bays, particularly in Ontario and Alberta. Run your customer database now for 2018-2024 Ford Expeditions and reach out before Ford's owner notification letters arrive. When the vehicle comes in for the recall inspection, perform a full inspection — brake service, fluid changes, tire rotation, and any deferred maintenance are all billable alongside the recall work. The Novelis Oswego restart is good news for F-150 availability — if you have customers on a waitlist for a new F-150, the supply picture is improving. The F-150 is the best-selling vehicle in Canada and the most common vehicle in Canadian service bays.",
-    source: "Ford Motor Company / Reuters — June 10-12, 2026",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/novelis-restarts-production-new-york-plant-key-ford-trucks-2026-06-10/",
+    tag: "PARTS",
+    tagColor: "#047857",
+    headline: "Salvage Yards Burning — The Hidden Parts Crisis Threatening Affordable Repairs",
+    summary: "Automotive journalist Lauren Fix, writing for CBT News, has raised the alarm on a trend that deserves far more attention than it is receiving: record numbers of salvage yard fires across North America are destroying the recycled parts supply that helps keep vehicle repairs affordable. Every major salvage yard fire destroys inventory — engines, transmissions, suspension components, body panels, wheels, electronics, wiring harnesses, airbags, and sensors — that helps reduce repair costs for millions of drivers. Industry groups have reported record numbers of fires at recycling facilities in recent years. The explanation most frequently offered is lithium-ion batteries from EVs, hybrids, e-bikes, and power tools. But Fix raises a harder question: how many of these fires have been conclusively linked to batteries? How many remain under investigation? How many are classified as 'undetermined'? The concern is not one fire — it is a pattern. As recycled parts inventory shrinks, repair shops lose access to affordable alternatives to expensive new OEM components. The result: higher repair costs, higher insurance claims, higher premiums, and longer repair times. Independent shops that rely on recycled parts to compete with dealership service departments on price are directly exposed.",
+    whyItMatters: "For Canadian independent shop owners, the salvage yard fire trend is a direct competitive threat. The ability to source quality recycled parts — a used transmission, a replacement body panel, a recycled electronic module — is one of the key ways independent shops provide value that dealerships cannot easily match on price. As salvage yard inventory shrinks due to fires, the competitive advantage of offering recycled parts narrows. The customer who was choosing your shop over the dealer because you could source a used part at half the price of new may no longer have that option. The practical response: build relationships with your regional salvage yards now, before inventory tightens further. Ask about their fire suppression protocols and EV battery handling procedures. Consider stocking a small inventory of high-demand recycled parts for your most common vehicle makes. And when a customer asks why recycled parts are harder to find, you now have the answer.",
+    source: "CBT News / Lauren Fix — June 12, 2026",
+    sourceUrl: "https://www.cbtnews.com/americas-savage-yards-are-burning/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge opening delayed indefinitely — no new date set. WDBA cites 'outstanding issues' between Canada and the U.S. The bridge is structurally complete. Trump is demanding trade concessions or toll revenue. The Ambassador Bridge remains the only Windsor-Detroit crossing.",
+    text: "Gordie Howe Bridge — still no new opening date. The WDBA confirmed this week that 'outstanding issues' between Canada and the U.S. remain unresolved. The bridge is structurally complete. Trump is using it as leverage in CUSMA talks. The Ambassador Bridge remains the only Windsor-Detroit crossing for parts and vehicle shipments.",
     sourceUrl: "https://www.wilx.com/2026/06/11/opening-gordie-howe-international-bridge-delayed/",
   },
   {
     icon: "🤝",
-    text: "CUSMA — 19 days to July 1. Annual reviews confirmed to begin. U.S.-Mexico Round 2: June 16-17 in Washington. Canada's inclusion or exclusion from those talks is the most important signal of the coming week. No withdrawal notice has been filed — CUSMA remains in force until 2036.",
-    sourceUrl: "https://www.autoline.tv/daily/ad-4316-trump-kills-canada-ev-sales-recovering-faster-than-expected-china-has-a-capacity-problem/",
-  },
-  {
-    icon: "🛢️",
-    text: "Motor oil shortage update: Novelis Oswego aluminum plant restarted June 10 — unrelated to motor oil but signals supply chain recovery is possible. Motor oil shortage remains on track for peak constraint July-September 2026. 0W-20 and 5W-30 most at risk. Place supplemental orders this week.",
-    sourceUrl: "https://jobbersworld.com/2026/06/05/will-there-be-enough-motor-oil/",
+    text: "CUSMA — 18 days to July 1. U.S.-Mexico Round 2 talks: June 16-17 in Washington. Canada's inclusion or exclusion from those talks is the single most important signal of the coming week. Trump confirmed the U.S. will not renew USMCA outright — annual reviews begin July 1. CUSMA remains in force until 2036 unless a withdrawal notice is filed.",
+    sourceUrl: "https://www.cbtnews.com/trump-says-u-s-wont-renew-usmca/",
   },
   {
     icon: "🔧",
-    text: "UAW Dauch tentative agreement ratification vote expected this weekend. Upon ratification, Three Rivers plant resumes full axle production for Silverado and Sierra. GM's supply crisis is over. Unifor-Ford contract talks open June 22 — the $30/hr by 2030 UAW benchmark will be cited.",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/uaw-president-deal-reached-with-axle-supplier-dauch-corp-after-10-day-strike-2026-06-11/",
+    text: "UAW Dauch ratification vote expected this weekend. Upon ratification, Three Rivers plant resumes full axle production for Silverado and Sierra. GM's supply crisis resolves. Unifor-Ford contract talks open June 22 — the $30/hr by 2030 UAW benchmark will be cited at the table. Canadian shop owners should watch for any Unifor action that could affect parts supply.",
+    sourceUrl: "https://www.cbtnews.com/uaw-reaches-tentative-agreement-ending-strike/",
+  },
+  {
+    icon: "🛢️",
+    text: "Motor oil shortage watch: 0W-20 and 5W-30 remain at risk for peak constraint July-September 2026. Novelis Oswego aluminum plant restarted June 10 — a positive supply chain signal, but unrelated to lubricants. Place supplemental motor oil orders this week before summer demand peaks. Base oil supply from Gulf Coast refiners remains tight.",
+    sourceUrl: "https://jobbersworld.com/2026/06/05/will-there-be-enough-motor-oil/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Ford Expedition Recall: Run Your Database Now — No Fix Available Yet, But the Customer Call Is Worth Making",
-  text: "Ford's 548,000-unit Expedition recall has no fix available yet — Ford will notify owners when replacement parts are ready. That means there is a window to get ahead of the dealer letters. Here is what to do this week. First, pull every 2018-2024 Ford Expedition from your customer database. Second, run each VIN through Transport Canada's recall database (tc.canada.ca/en/road-transportation/motor-vehicle-safety/defect-investigations-recalls) to confirm which are affected. Third, call or text those customers: 'We noticed your [year] Ford Expedition is part of a Ford safety recall for the center console trim. We can inspect it for you and take care of any other service while it's in — and we'll let you know as soon as the replacement parts are available.' Fourth, when the vehicle comes in, perform a full inspection — brake service, fluid changes, tire rotation, and any deferred maintenance are all billable. Fifth, note the vehicle in your system for follow-up when Ford releases the replacement parts — you want to be the first call when parts arrive.",
+  title: "Build Your Salvage Yard Relationships Now — Before Inventory Gets Any Tighter",
+  text: "The salvage yard fire trend Lauren Fix described in CBT News is not a future problem — it is happening now, and Canadian yards are not immune. Here is what to do this weekend. First, identify the two or three salvage yards you use most frequently and call them Monday morning. Ask specifically: what is their current inventory level for your top five vehicle makes? Are they experiencing any supply gaps due to recent fires or reduced intake? Second, ask about their EV and hybrid battery handling protocols. Yards that are not properly managing lithium-ion batteries are the ones most at risk for fires — and the ones most likely to lose inventory you depend on. Third, consider pre-purchasing a small stock of high-demand recycled parts for your most common repairs — used transmissions, alternators, and starter motors for your top three vehicle makes. The carrying cost is low; the competitive advantage of having the part when a customer needs it is high. Fourth, when you source a recycled part that saves a customer $400 over new OEM pricing, tell them. That is a story worth telling — it builds loyalty and differentiates your shop from the dealer down the street.",
 };
 
 const quoteOfTheDay = {
-  text: "We want stability and visibility. When automakers and suppliers don't have stability, they don't invest.",
-  author: "Swami Kotagiri",
-  title: "CEO, Magna International — June 2026",
+  text: "The concern isn't one fire. The concern is a pattern — and the cost of these fires doesn't disappear when the flames are extinguished.",
+  author: "Lauren Fix",
+  title: "Automotive Journalist, CBT News — June 12, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Pontiac GTO Judge Ram Air IV — Here Comes the Judge",
-  description: "The 1970 Pontiac GTO Judge with the Ram Air IV engine is one of the rarest and most coveted muscle cars ever built. While the standard Judge came with the Ram Air III (366 hp), the Ram Air IV option added a high-revving, solid-lifter 400 cubic inch V8 producing 370 hp factory-rated — with a real-world output closer to 400 hp. The Ram Air IV was a hand-assembled engine, each one individually blueprinted at the Pontiac factory. Only 767 Ram Air IV Judges were built in 1970 across all body styles. The Judge package added the iconic rear spoiler, side stripes, and 'The Judge' decals — available in Orbit Orange, Carousel Red, Bermuda Blue, and other vivid colours. A documented Ram Air IV Judge in top condition trades for $200,000-$350,000 at major auctions today. On a Friday when the Gordie Howe Bridge opening is delayed again, CUSMA annual reviews are confirmed, and Ford is recalling half a million Expeditions, the Judge is a reminder that the most powerful option is not always the most obvious one — and that in uncertain times, the cars (and shops) with the most substance under the hood are the ones that endure.",
+  name: "1969 Chevrolet Camaro COPO 427 — The Factory Drag Racer That Broke GM's Rules",
+  description: "In 1969, General Motors had a corporate policy banning engines larger than 400 cubic inches in mid-size and pony cars — a rule designed to keep insurance costs manageable and avoid regulatory scrutiny. Vince Piggins, a Chevrolet performance engineer, found a loophole: the Central Office Production Order (COPO) system, designed for fleet and special-order vehicles, could be used to slip big-block engines past the corporate ban. The result was the COPO 427 Camaro — a factory-built drag racer that came with a 427 cubic inch L72 V8 producing 425 horsepower, a Muncie four-speed or Turbo-Hydramatic 400 automatic, and a 4.10:1 Positraction rear axle. Only approximately 1,015 COPO Camaros were built in 1969 across all variants. This example wears Fathom Green — one of the most striking colours of the muscle car era — with a black vinyl top and the distinctive cowl induction hood that fed cool air directly to the carburetor. The COPO Camaro ran the quarter mile in the low 13-second range stock, and with basic tuning, into the 11s. Today, a documented COPO 427 Camaro in top condition commands $200,000 to $400,000 at major auctions. On a Saturday when Japan's automakers are absorbing $40 billion in tariff losses and Canada's trade negotiators are keeping the industry in the dark, the COPO Camaro is a reminder that the best solutions are often found by people who know the rules well enough to work around them — and that the cars built with real substance under the hood are the ones that endure.",
   image: HOTROD_IMG,
 };
 
@@ -167,8 +167,8 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col items-end gap-2">
-              <div className="flex gap-2">
-                {["BRIDGE DELAY", "CUSMA", "FORD RECALL", "NOVELIS"].map((tag) => (
+              <div className="flex gap-2 flex-wrap justify-end">
+                {["TARIFFS", "CUSMA", "PARTS CRISIS", "COPO 427"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Gordie Howe International Bridge at sunset — opening delayed June 2026"
+              alt="Canadian automotive service bay — Baywash Daily Briefing Edition No. 37"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
               <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Today's Edition</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Gordie Howe Bridge Delayed Again — CUSMA Annual Reviews Confirmed — Ford Recalls 548,000 Expeditions
+                Japan's $40B Tariff Hit — CUSMA Transparency Crisis — Salvage Yards Burning
               </h3>
             </div>
           </div>
