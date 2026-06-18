@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 41;
-const BRIEFING_DATE = "June 17, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 42;
+const BRIEFING_DATE = "June 18, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/siuWOubNaYNRSsKa.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LamJauvGoPFjhiJZ.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XkyuwmHIOQuyqrDd.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EXWrWaOFEfvcxIMa.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TYtVOjmiEuPCuNtl.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SDoRktnOvnXGdXmV.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/optSsdTmsfSLiHcJ.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/yQLoeptYquKwmepV.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ELxlDnsBfxJJvWyj.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/puhHBsSyClZLbIES.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "G7 / HOT MIC",
-    tagColor: "#1d4ed8",
-    headline: "Hot Mic at G7: Carney Leans In, Tells Trump About Chinese EV Cap — Trump: 'That's Good. I Like That.'",
-    summary: "The defining moment of the G7 summit for Canada came not from a formal bilateral meeting — there was none — but from a hot microphone at the leaders' working luncheon in Évian-les-Bains. Prime Minister Mark Carney can be seen on camera leaning toward U.S. President Donald Trump, who is seated at the table. A microphone in the room picks up the exchange. Carney: 'Less than three per cent of our market, 49,000 cars... a cap, a hard line... I thought you'd actually like that.' Trump: 'That's good. I like that.' The exchange refers to Canada's January 2026 deal with China allowing 49,000 Chinese EVs annually into Canada at a 6.1 per cent tariff — down from the 100 per cent tariff imposed in 2024. The deal was negotiated in exchange for China suspending retaliatory tariffs on Canadian canola. The U.S. had previously criticized the deal, with Transportation Secretary Sean Duffy saying Canada would 'regret' it. Trump's 'I like that' is a significant de-escalation of one of the most contentious Canada-U.S. irritants heading into the CUSMA review. Carney told reporters Wednesday that he had 'seven or eight discussions' with Trump over 36 hours — on the economy, artificial intelligence, Ukraine, and the U.S.-Iran peace deal. He also said he got Trump a birthday present and that Trump 'likes it a lot.' No formal bilateral meeting was scheduled, but Carney said: 'There's no message in that.' Canada-U.S. Trade Minister Dominic LeBlanc and Chief Negotiator Janice Charette met with U.S. Trade Representative Jamieson Greer on the G7 sidelines Tuesday. LeBlanc: 'It's not a one-way conversation.' The G7 summit concludes today. Canada returns home with no formal deal, but with Trump's verbal approval of the Chinese EV cap — a meaningful de-escalation of one of the biggest irritants in the bilateral relationship.",
-    whyItMatters: "For Canadian shop owners, the hot mic moment is the most significant Canada-U.S. trade signal since the tariff war began. Here is why it matters: the Chinese EV issue was one of the top items on the U.S. list of trade irritants — and Carney appears to have defused it in a 30-second conversation at a luncheon table. Trump's 'I like that' does not resolve the 25% auto tariff, the CUSMA review, or the Gordie Howe Bridge impasse. But it removes one major irritant from the negotiating table and signals that the two leaders are capable of finding common ground on specific issues. The practical implication: if Canada can resolve the Chinese EV irritant, the digital services tax, and one or two other items on the U.S. list, a package deal that includes tariff relief on autos becomes more achievable. The hot mic moment also matters because it shows Carney's strategy — informal, personal, persistent engagement with Trump rather than formal bilateral meetings — is producing results. He had seven or eight conversations with Trump in 36 hours. That is more substantive contact than any formal bilateral would have produced.",
-    source: "CBC News / Radio Canada International — June 16, 2026",
-    sourceUrl: "https://ici.radio-canada.ca/rci/en/news/2262073/hot-mic-moment-at-g7-catches-carney-trump-talking-about-chinese-evs",
+    tag: "CUSMA / TRUMP",
+    tagColor: "#b91c1c",
+    headline: "Trump Says He'd 'Rather Not' Have CUSMA — Prefers It 'Terminated' — But He Can't Kill It Alone",
+    summary: "The most alarming headline of the week came not from a negotiating table but from a tarmac. Speaking to reporters at Paris Orly Airport as he boarded Air Force One after the G7 summit, U.S. President Donald Trump said: 'I would rather not have the agreement, but I may sign it' and 'I view it as possibly expiring immediately.' He also said he only signed CUSMA in his first term to escape NAFTA, which had no U.S. withdrawal mechanism. 'We do better without that agreement,' Trump said. But here is the legal reality that trade lawyers are repeating this morning: CUSMA cannot be unilaterally terminated. Any country must give six months written notice to withdraw. CUSMA runs until 2036. July 1 is a mandatory review window — not an expiry date. Christopher Sands, director of Johns Hopkins University's Center for Canadian Studies, described July 1 as 'like the moment in a poker game where the players lay their cards on the table.' Each country indicates whether they want to renew for 16 years, withdraw entirely, or neither. Withdrawal is the only unilateral option — and it requires six months notice. The practical outcome if no renewal is agreed on July 1: CUSMA enters annual rolling reviews for up to 10 years. It stays in place. The trade deal continues. Official Canada-U.S. talks have not even formally started. U.S.-Mexico Round 2 talks are already underway. Canada is still waiting for its first formal negotiating session with Washington. U.S. Trade Representative Jamieson Greer has said there are 'pillars' of CUSMA that work well and that he would be open to two separate bilateral agreements. Canada-U.S. Trade Minister Dominic LeBlanc met Greer on the G7 sidelines Tuesday and said talks are 'not a one-way conversation.' The next step: Canada needs to get to the formal negotiating table before July 1.",
+    whyItMatters: "Trump's 'terminated' comment is the most significant CUSMA signal since the tariff war began — but it is important to understand what it actually means. Trump cannot terminate CUSMA alone. He would need to give six months notice, which would take the U.S. to January 2027 at the earliest. Congress would likely push back. U.S. agriculture groups, auto manufacturers, and retailers are all lobbying hard for CUSMA renewal. The more likely scenario: July 1 passes without a renewal agreement, CUSMA enters annual reviews, and negotiations continue through 2026 and into 2027. For Canadian shop owners, the practical implication is this: the 25% auto tariff stays in place regardless of what happens on July 1. CUSMA renewal does not automatically remove the Section 232 sectoral tariffs on autos, steel, and aluminum — those are separate. What matters is whether Canada can negotiate a package deal that includes tariff relief as part of a broader CUSMA renewal. That negotiation has not formally started. Watch for LeBlanc to announce a formal negotiating session with Greer in the next two weeks.",
+    source: "Global News / Canadian Press — June 17, 2026",
+    sourceUrl: "https://globalnews.ca/news/11910284/donald-trump-cusma-terminated/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "UNIFOR / LABOUR",
-    tagColor: "#b91c1c",
-    headline: "Unifor Calls It 'The Most Consequential Bargaining of Our Lifetimes' — Ford Talks Open Sunday in Toronto",
-    summary: "On Sunday, June 22, Unifor and Ford Motor Company will sit down in downtown Toronto to begin contract negotiations. The current Unifor contract with the Detroit Three — Ford, General Motors, and Stellantis — expires at 11:59 p.m. on September 20, 2026. Unifor has selected Ford as its primary bargaining target, following the union's pattern bargaining model: reach a deal with Ford, then use it as the template for GM and Stellantis. Unifor President Lana Payne has called these 'the most consequential bargaining talks of our lifetimes.' Automotive News columnist Grace Macaluso described the talks as 'Canada's Detroit 3 talks facing the toughest test in decades.' The backdrop is unprecedented: the 25% U.S. auto tariff, Honda's suspension of its $15 billion EV value chain investment, Stellantis's closure of its Brampton Assembly plant (Chrysler 300, Dodge Charger), and deep uncertainty over GM Canada's Oshawa Assembly future. Unifor's bargaining priorities are expected to include: production commitments for Canadian plants, job security guarantees tied to EV transition timelines, cost-of-living adjustments linked to tariff-driven inflation, and a demand that Ford commit to keeping Windsor Assembly (Bronco Sport, Lincoln Corsair) operating through the contract period. Windsor Assembly is the most vulnerable Ford plant in Canada — it builds vehicles that compete directly with U.S.-assembled alternatives, and the 25% tariff on Canadian-assembled vehicles exported to the U.S. has made its economics precarious. Unifor represents approximately 18,000 workers at Ford, GM, and Stellantis plants across Canada. A work stoppage at Windsor Assembly would affect parts availability within days for shops that rely on Bronco Sport or Lincoln Corsair parts.",
-    whyItMatters: "The Unifor-Ford talks are directly relevant to Canadian shop owners for two reasons. First, a work stoppage at any Canadian assembly plant would immediately affect parts availability and lead times. Windsor Assembly builds the Bronco Sport and Lincoln Corsair — if it goes down, those parts get scarce fast. Second, the contract outcome will signal whether the Detroit Three are committed to Canadian production or are quietly planning to shift more work to U.S. plants. If Ford agrees to production commitments for Windsor and Oakville, that is a positive signal for the Canadian auto supply chain. If Ford refuses or hedges, it signals that Canadian production is being wound down — which has long-term implications for parts availability, shop economics, and the broader Canadian auto ecosystem. The talks also matter because Unifor's demands will put the 25% auto tariff on the public record as a direct threat to Canadian jobs. That political pressure may help LeBlanc's case in CUSMA negotiations. Watch for Unifor's opening demands on June 22 — they will tell you a great deal about how the union assesses the health of Canadian auto production.",
-    source: "Detroit Free Press / Jamie LaReau — June 16, 2026",
-    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/06/16/unifor-and-ford-head-to-bargaining-and-heres-what-the-union-wants/90563013007/",
+    tag: "CRITICAL MINERALS / G7",
+    tagColor: "#1d4ed8",
+    headline: "Canada Leaves G7 with $5B in Critical Minerals Deals — 13 New Partnerships with 8 Countries — The Auto Sector Connection",
+    summary: "The real G7 deliverable for Canada was not the CUSMA hot mic — it was the critical minerals haul. Canada secured 13 new partnerships and initiatives through the Critical Minerals Resilience and Production Alliance, unlocking more than $5 billion in capital investment across the Canadian critical minerals value chain. The key deals: German company RCT Solutions will partner with Canada's Sio Silica for a high-purity silica project and solar manufacturing hub in Manitoba; Japanese Sumitomo Corporation will partner with Canada's Ucore Rare Metals to supply rare earths for magnet makers across Japan and North America; Italian Eni is investing in Nouveau Monde Graphite's Matawinie Mine in Quebec; French Schneider Electric will partner with Torngat Metals for rare earths in Quebec; Japanese Hanwa will partner with KAP Minerals for phosphate and rare earths in Ontario. France, Germany, Italy, and Korea will stockpile Canadian critical minerals. Canada also announced its first EU SAFE initiative procurement — Montréal's Marconi Technologies will build ORION tactical radios for Poland's Cyber Command. And Canada launched negotiations to buy Italian M-346 advanced jet trainer aircraft from Leonardo. Carney held bilateral meetings with Germany, India, Italy, Korea, Ukraine, the UAE, and the EU. Carney's quote: 'Canada is showing up — not only with the strength of our values, but with the value of our strength.' The critical minerals deals are directly relevant to the auto sector: EV battery supply chains depend on lithium, graphite, rare earths, and phosphate — all of which Canada is now positioning to supply to European and Japanese partners. This is Canada's long game: if the U.S. relationship deteriorates, Canada will have alternative buyers for its critical minerals.",
+    whyItMatters: "The critical minerals deals matter to Canadian shop owners for two reasons. First, they signal that Canada is building leverage for the CUSMA negotiations. The more countries that depend on Canadian critical minerals, the more pressure there is on the U.S. to keep Canada as a partner rather than an adversary. Second, the EV battery supply chain is directly relevant to the future of Canadian auto production. Honda's $15B EV value chain investment — currently suspended — depends on Canadian graphite, lithium, and rare earths. If Canada can secure European and Japanese buyers for these minerals, it creates the economic case for Honda, Toyota, and others to restart their Canadian EV investments. The Sumitomo-Ucore deal is particularly significant: Sumitomo is a major supplier to Toyota, and rare earths are essential for EV motors. If Canadian rare earths flow to Japanese automakers, that strengthens the case for Japanese automakers to maintain and expand Canadian production. Watch for Minister Joly's Japan visit this week — she is meeting Honda and Toyota executives. The critical minerals deals from G7 will be the backdrop for those conversations.",
+    source: "Prime Minister's Office / Newswire — June 17, 2026",
+    sourceUrl: "https://www.newswire.ca/news-releases/prime-minister-carney-secures-new-partnerships-in-defence-and-critical-minerals-at-the-2026-g7-leaders-summit-867582340.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CUSMA / TRADE",
+    tag: "UNIFOR / LABOUR",
     tagColor: "#d97706",
-    headline: "The 12 Trade Irritants: What the U.S. Actually Wants from Canada — The Full List, Explained",
-    summary: "The Toronto Star's Ottawa Bureau Chief Tonda MacCharles has obtained details of nearly a dozen Canada-U.S. trade irritants at the heart of the CUSMA talks — the most comprehensive public accounting yet of what the U.S. is actually demanding from Canada. The U.S. list, as reported by The Star, includes: (1) Chinese EV imports — partially addressed by the hot mic moment at G7; (2) Canada's Digital Services Tax — a 3% levy on revenues from Canadian users of large digital platforms, which the U.S. views as targeting American tech companies; (3) Canadian dairy supply management — the U.S. has complained about this since CUSMA was first negotiated; (4) Canadian softwood lumber — a decades-long dispute over countervailing duties; (5) Canadian streaming and cultural content rules — U.S. objection to Canadian content requirements under the Online Streaming Act; (6) Canadian pharmaceutical pricing — the U.S. objects to Canada's Patented Medicine Prices Review Board; (7) Canadian steel and aluminum export volumes — the U.S. wants caps on Canadian metals exports; (8) Canadian data localization rules — U.S. tech companies object to requirements to store Canadian data in Canada; (9) Canadian agricultural subsidies — disputes over supply management and support programs; (10) Canada's foreign investment review process — the U.S. objects to ISED's ability to block U.S. acquisitions on national security grounds; (11) Canadian telecom foreign ownership rules — the U.S. wants more access to the Canadian telecom market; (12) Defence spending and continental security — the U.S. wants Canada to increase NATO defence spending and make commitments on critical minerals and continental security. For the auto sector specifically, items 1 (Chinese EVs), 7 (steel and aluminum), and 12 (critical minerals) are most directly relevant. The digital services tax (item 2) is also relevant because it affects the cost structure of digital platforms that Canadian shops use for parts ordering, marketing, and customer management.",
-    whyItMatters: "This list is the most important document in the CUSMA negotiations for Canadian shop owners to understand. Here is the key insight: most of these irritants are not about the auto sector. Dairy, softwood lumber, streaming rules, pharmaceutical pricing, telecom — these are entirely separate from automotive trade. But they are all on the same negotiating table. This means Canada may be asked to make concessions in areas unrelated to autos in order to get relief on the 25% auto tariff. That is the nature of package deals. The practical implication: the CUSMA outcome is not just about whether Canada 'wins' on autos. It is about whether Canada can assemble a package of concessions across multiple sectors that is acceptable to the U.S. — and whether that package includes enough auto tariff relief to matter to Canadian manufacturers and shops. The digital services tax is worth watching closely. If Canada agrees to suspend or repeal it, that would be a significant concession to U.S. tech companies — but it might be the price of getting auto tariff relief. LeBlanc's job over the next two weeks is to figure out which items on this list Canada can trade away, and which ones it cannot. The auto tariff is the prize. Everything else is the price.",
-    source: "Toronto Star / Tonda MacCharles — June 16, 2026",
-    sourceUrl: "https://www.thestar.com/politics/federal/these-are-the-canadaus-trade-irritants-at-the-heart-of-high-stakes-talks-sources/article_d92faf7c-b502-49e9-8942-1f324a98fffe.html",
+    headline: "Unifor: 'If We Can't Resolve the Tariff Situation, It Will Have Massive Long-Term Implications' — Ford Talks Open Monday",
+    summary: "Unifor National President Lana Payne gave the most direct public statement yet about the stakes of the 2026 contract talks in an interview with The Canadian Press published Thursday morning. 'This is the most consequential round of auto bargaining that we have done in our history,' she said. She compared it to the 2008-2009 financial crisis — when Chrysler and General Motors nearly collapsed and required billions in federal and provincial bailouts — and said this is 'on a much larger scale.' The reason: 'If we're unable to resolve the tariff situation and find a path forward here through the CUSMA review, it will have massive long-term implications for the Canadian auto industry.' Talks between Unifor and Ford Motor Company open Monday, June 22 in downtown Toronto. The current collective agreement covering nearly 19,000 workers at Ford, GM, and Stellantis expires at 11:59 p.m. on September 20. Unifor selected Ford as its primary bargaining target — as it did three years ago — because Ford is the 'most stable employer' of the three. Ford's Windsor engine plants 'haven't missed a beat' under the tariff regime, and Ford has an ongoing $5 billion Canadian investment commitment. The 25% tariff on all cars and trucks not built in the U.S. remains in place. CUSMA-compliant auto parts are currently exempt. Payne: 'Bargaining is one thing that is inside our control.' The union is not waiting for CUSMA to be resolved — it is using the contract to force production commitments regardless of the trade outcome. Key demands expected: production commitments for Windsor Assembly (Bronco Sport, Lincoln Corsair) and Oakville (retooling for EVs), job security guarantees tied to EV transition timelines, and cost-of-living adjustments linked to tariff-driven inflation.",
+    whyItMatters: "Payne's 'massive long-term implications' statement is the most direct public acknowledgment yet that the Canadian auto sector is in genuine existential danger — not just facing a difficult negotiating environment. For shop owners, the Unifor-Ford talks are a leading indicator of the health of Canadian auto production. If Ford agrees to production commitments for Windsor Assembly and Oakville, that is a positive signal for the Canadian auto supply chain. If Ford hedges or refuses, it signals that Canadian production is being wound down — which has long-term implications for parts availability, shop economics, and the broader Canadian auto ecosystem. The contract talks also matter because they will put the 25% auto tariff on the public record as a direct threat to Canadian jobs. That political pressure may help LeBlanc's case in CUSMA negotiations. Watch for Unifor's opening demands on Monday, June 22 — they will tell you a great deal about how the union assesses the health of Canadian auto production. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
+    source: "Canadian Press / Yahoo Finance Canada — June 18, 2026",
+    sourceUrl: "https://ca.finance.yahoo.com/news/detroit-three-union-set-open-080010971.html",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🇫🇷",
-    text: "G7 summit concludes today in Évian-les-Bains. Six joint statements issued: Ukraine support, U.S.-Iran ceasefire endorsement, developing country financing reform, cancer research collaboration, Ebola response, and migrant smuggling. No joint communiqué — France issued individual statements. Carney also announced new sanctions on Russia targeting Moscow's shadow fleet, energy revenues, and defence industry.",
-    sourceUrl: "https://www.chroniclejournal.com/news/national/carney-says-he-had-several-talks-with-trump-during-g7-despite-no-official-meeting/article_cce8a634-98cb-5172-bc39-7ec8899e2341.html",
-  },
-  {
-    icon: "🚗",
-    text: "Canada's Used Car Week 2026 is underway in Toronto today — the industry's annual gathering for dealers, remarketing professionals, and auction executives. Tariff impacts on used vehicle pricing and inventory are expected to dominate discussion. Used vehicle values have risen 8-12% in 2026 as new vehicle production uncertainty reduces supply. For shop owners: used vehicle customers are spending more on maintenance to extend vehicle life.",
-    sourceUrl: "https://www.instagram.com/p/DZp97THE2Nm/",
-  },
-  {
-    icon: "🔧",
-    text: "Unifor-Ford contract talks open Sunday, June 22 in downtown Toronto. Current contract expires September 20 at 11:59 p.m. Unifor selected Ford as primary target. Key demands expected: production commitments for Windsor Assembly and Oakville, job security guarantees, tariff-related cost-of-living provisions. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
-    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/06/16/unifor-and-ford-head-to-bargaining-and-heres-what-the-union-wants/90563013007/",
+    icon: "🇯🇵",
+    text: "Industry Minister Joly is in Japan today and tomorrow meeting Honda and Toyota executives. Honda and Toyota together represent 77% of Canadian auto assembly. Joly's pitch: Canada's critical minerals, stable investment environment, and skilled workforce. Honda's $15B EV value chain investment is currently suspended. Toyota's Cambridge and Woodstock plants are operating but under uncertainty. The G7 critical minerals deals — particularly the Sumitomo-Ucore rare earths partnership — will be the backdrop for these conversations.",
+    sourceUrl: "https://www.instagram.com/reel/DZs2-TNCiHM/",
   },
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge — still no opening date. The Star's Andrew Phillips column today: 'Sorry, Mark Carney, Shakedown in Windsor is a true crime drama where Donald Trump holds a bridge, and a nation, hostage.' Canada paid $5.7 billion USD including the U.S. port of entry. Trump's team is demanding renegotiation of the operating agreement. The Ambassador Bridge remains the only Windsor-Detroit crossing. The G7 summit ends today with no resolution.",
-    sourceUrl: "https://www.thestar.com/",
+    text: "Gordie Howe Bridge — still no opening date. The Toronto Sun's letters section today: 'How is the transportation of Canadian auto goods across the spanking new Gordie Howe bridge going to help us in U.S. trade when we are importing Chinese EVs?' The bridge was finished in December 2025. Canada paid $5.7 billion USD including the U.S. port of entry. Trump's team is demanding renegotiation of the operating agreement. The Ambassador Bridge remains the only Windsor-Detroit crossing. Every day of delay costs the corridor.",
+    sourceUrl: "https://torontosun.com/opinion/letters/letters-to-the-editor-june-18-2026",
+  },
+  {
+    icon: "📋",
+    text: "CUSMA July 1 explainer: July 1 is NOT an expiry date. CUSMA runs to 2036. July 1 is the start of a mandatory review window. If no 16-year renewal is agreed, CUSMA enters annual rolling reviews for up to 10 years — it stays in place. Any country must give 6 months written notice to withdraw. Trump cannot terminate CUSMA alone. The 25% auto tariff is a separate Section 232 measure — it exists independently of CUSMA and will not be automatically removed by CUSMA renewal.",
+    sourceUrl: "https://winnipeg.citynews.ca/2026/06/17/what-you-need-to-know-as-the-deadline-for-formally-extending-cusma-approaches/",
+  },
+  {
+    icon: "🔧",
+    text: "Used vehicle values up 8-12% in 2026 as new vehicle production uncertainty reduces supply. Canada's Used Car Week 2026 wrapped in Toronto yesterday. Key takeaway from dealers: customers are spending more on maintenance to extend vehicle life. Average repair order values at independent shops are up 15-20% year-over-year. The tariff environment is driving customers to keep vehicles longer — which is good for service revenue but increases demand for older parts and creates supply chain pressure.",
+    sourceUrl: "https://www.instagram.com/p/DZp97THE2Nm/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "The Hot Mic Lesson: Informal Beats Formal in High-Stakes Negotiations",
-  text: "Carney had seven or eight conversations with Trump in 36 hours — and got a 'I like that' on the Chinese EV cap — without a single formal bilateral meeting. The lesson for shop owners negotiating with suppliers, landlords, or OEM reps: informal, persistent, personal engagement often produces better results than formal meetings. The formal meeting creates pressure and positions. The informal conversation creates rapport and possibilities. When you need something from a difficult counterpart, find the working luncheon equivalent — the trade show floor, the parts counter, the industry dinner — and have the conversation there.",
+  title: "The Empty Table: Canada-U.S. Formal Talks Haven't Started — What That Means for Your Shop",
+  text: "The most important fact in today's briefing is not Trump's 'terminated' comment — it is that formal Canada-U.S. CUSMA negotiations have not started. U.S.-Mexico Round 2 talks are already underway. Canada is still waiting. That empty negotiating table means the 25% auto tariff will be in place for at least several more months regardless of what happens on July 1. Plan your parts procurement, pricing strategy, and customer communication accordingly. The tariff is not going away in July.",
 };
 
 const quoteOfTheDay = {
-  text: "I had seven or eight discussions with President Trump over the course of the last 36 hours.",
-  author: "Prime Minister Mark Carney",
-  title: "Press conference, G7 Summit, Évian-les-Bains, France — June 17, 2026",
+  text: "If we're unable to resolve the tariff situation and find a path forward here through the CUSMA review, it will have massive long-term implications for the Canadian auto industry.",
+  author: "Lana Payne, Unifor National President",
+  title: "Interview with The Canadian Press — June 18, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1967 Shelby GT500 — 428 Cobra Jet, Brittany Blue",
-  description: "The 1967 Shelby GT500 was Carroll Shelby's answer to a question nobody had asked: what if a Mustang fastback had a 428 cubic inch Cobra Jet V8 producing 355 horsepower — officially — and considerably more in reality? Ford's marketing department had insisted on the conservative horsepower rating to keep insurance companies from panicking. The actual output was closer to 400 horsepower. Brittany Blue with white Le Mans racing stripes was one of the signature Shelby colour combinations — a nod to the Le Mans racing heritage that Shelby had built with the GT40 program. The GT500 was the big-block alternative to the GT350's small-block formula. Where the GT350 was a driver's car, the GT500 was a statement. It said: I have more power than I need, and I am comfortable with that. The 1967 GT500 is now worth $150,000 to $250,000 in original condition. On a day when Canada is negotiating trade deals in the French Alps, Unifor is preparing to open the most consequential contract talks in decades, and a finished bridge sits empty on the Detroit River, the GT500 is the right car for the moment: more power than the situation requires, and completely unapologetic about it.",
+  name: "1970 Chevrolet Chevelle SS 454 LS6 — Cranberry Red, Ontario-Plated",
+  description: "The 1970 Chevrolet Chevelle SS 454 with the LS6 engine option is widely regarded as the most powerful production muscle car ever built in the muscle car era. The LS6 produced 450 horsepower and 500 lb-ft of torque — officially. Chevrolet's engineers, constrained by insurance industry pressure, almost certainly underrated it. The actual output was closer to 500 horsepower. The 454 cubic inch big-block V8 was so large that it barely fit under the Chevelle's hood. The LS6 option cost $263 in 1970 — about $2,100 in today's money. For that, you got a car that would run the quarter mile in the low 13s. Today, an LS6 Chevelle in original condition is worth $150,000 to $300,000. On a day when Trump says he'd 'rather not' have CUSMA, when Canada's negotiating table is still empty, and when Unifor is warning of 'massive long-term implications,' the LS6 Chevelle is the right car for the moment: built in an era when North American auto manufacturing was the envy of the world, powered by an engine so large it barely fit, and worth more today than anyone imagined in 1970. The Ontario plate is a reminder that Canadian roads and Canadian shops kept these cars alive.",
   image: HOTROD_IMG,
 };
 
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["G7 HOT MIC", "UNIFOR / FORD", "12 IRRITANTS", "SHELBY GT500"].map((tag) => (
+                {["TRUMP / CUSMA", "$5B MINERALS", "UNIFOR MONDAY", "CHEVELLE SS 454"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="G7 Évian Working Luncheon — Baywash Daily Briefing Edition No. 41"
+              alt="Trump at Paris Orly Airport — Baywash Daily Briefing Edition No. 42"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#e05a1a] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">G7 Final Day</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Breaking</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Hot Mic Moment Defines G7 — Carney Gets Trump's "I Like That" on Chinese EVs — Unifor Talks Open Sunday
+                Trump: "I'd Rather Not Have CUSMA" — Canada Leaves G7 with $5B Minerals Deals — Unifor Talks Open Monday
               </h3>
             </div>
           </div>
