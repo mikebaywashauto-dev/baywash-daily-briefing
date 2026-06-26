@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 49;
-const BRIEFING_DATE = "June 25, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 50;
+const BRIEFING_DATE = "June 26, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NHZDWTIlzrAsuNNr.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/guxRRVBNuqEZtUJm.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wXVJTyRxlrMyOapf.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dHzGSqZEFVzpAjAb.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/viMYWXuNdyQYppJl.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kzFzKUhEFYGUwmVE.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FDEOHyaEKuvOYdLL.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QMdBfssJkhpvTfTO.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/csQsiwDOUxCPBBjB.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iojPMcOZBoSFOxmL.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "GORDIE HOWE BRIDGE / MICHIGAN SENATE",
+    tag: "CUSMA / CARNEY / PARLIAMENT",
     tagColor: "#b91c1c",
-    headline: "Gordie Howe Bridge Now a Michigan Senate Race Issue — McMorrow: \"Open This Damn Bridge\" — Moroun Donor Angle Goes National",
-    summary: "Democratic Michigan Senate candidate Mallory McMorrow launched a $400,000+ TV and digital ad campaign in the Detroit market on June 24, accusing President Trump of keeping the Gordie Howe International Bridge closed to benefit a major political donor. Standing in front of the closed bridge, McMorrow says: 'Donald Trump won't open it. I'm Mallory McMorrow and I have one message for the president: open this damn bridge.' The ad references Matthew Moroun, whose family owns the privately held Ambassador Bridge between Detroit and Windsor. Federal campaign finance records confirm Matthew Moroun donated US$1 million to Trump's super PAC earlier this year. The bridge was slated for a ribbon-cutting on June 12 — abruptly postponed after officials cited 'outstanding issues.' Canada financed the bridge's construction at close to US$4.4 billion, including the U.S. port of entry. The project was negotiated by former Republican Governor Rick Snyder and has been under construction since 2018. Republican Senate hopeful Mike Rogers has also used the bridge in his messaging, saying he would open it if elected. The winner of the Democratic primary faces Rogers in the general election. The primary is in August. The bridge has now moved from a Canada-U.S. trade dispute to a U.S. domestic political liability for Trump — with $400,000 in ad spend in the Detroit market in the first week alone.",
-    whyItMatters: "The Gordie Howe Bridge becoming a Michigan Senate race issue is the most significant development in the bridge story since the June 12 cancellation. Here is why it matters to your shop: (1) Political pressure on Trump to resolve the bridge delay has now increased dramatically. A $400,000 ad campaign in the Detroit market, with more planned, means the Moroun donor angle is now part of the mainstream U.S. political conversation — not just Canadian trade coverage. (2) The bridge delay has direct practical consequences for the Windsor-Essex region. The Ambassador Bridge carries approximately $400 million in cross-border trade every day. Every truck, every parts shipment, and every worker crossing the border is subject to Ambassador Bridge congestion and Moroun toll pricing. The Gordie Howe Bridge would have added capacity, redundancy, and dedicated commercial lanes. (3) The political dynamics have shifted: Trump now has a domestic political reason to open the bridge — to neutralize McMorrow's ad and take the issue away from Democrats. Watch for a bridge opening announcement before the Michigan primary in August. (4) For shops in Windsor-Essex: the bridge opening, when it comes, will reduce cross-border parts delivery times and congestion costs. It is worth tracking the Michigan Senate race as a leading indicator of when the bridge will open.",
-    source: "Globe and Mail / Associated Press — June 24, 2026",
-    sourceUrl: "https://www.theglobeandmail.com/world/us-politics/article-trump-gordie-howe-bridge-closed-delay-help-donor-michigan-senate/",
+    headline: "Carney: \"A Breakthrough Will Happen Between Me and Trump\" — But He Didn't Raise CUSMA in Wednesday's Call — 5 Days to July 1",
+    summary: "Prime Minister Mark Carney held a press conference Thursday following the conclusion of the spring sitting of Parliament — 19 bills in 14 weeks, including the Bail and Sentencing Reform Act, the Combatting Hate Act, and the Canada Groceries and Essentials Benefit Act. On CUSMA, Carney said: 'What I have seen with the president is that you're not close to make a deal, and then you make a deal.' He explicitly said the breakthrough will be at the 'leadership level' — meaning a Carney-Trump summit, not a negotiator deal. But Conservative leader Pierre Poilievre landed a devastating hit: Carney spoke with Trump on Wednesday and did not raise CUSMA. Poilievre: 'The aluminum, steel, auto, and lumber workers are desperate for their jobs and their paycheques, and Mr. Carney has a long telephone conversation with the president and doesn't even bring it up.' Canada and Mexico have both formally requested 16-year renewal. The U.S. has not responded. Mexico and the U.S. have had two rounds of formal bilateral talks. Canada and the U.S. have had zero formal bilateral sessions. The first trilateral virtual meeting is July 1 — 5 days away. Carney's spring session accomplishments were substantial: NATO 2% target met for the first time since the fall of the Berlin Wall, 11,000 affordable homes committed, Darlington nuclear construction started, fuel excise tax suspended saving up to 10 cents per litre until Labour Day. But on CUSMA — nothing to show yet. U.S. Ambassador Hoekstra told CTV News on Wednesday: 'We're not anywhere close on a new CUSMA framework.' BNN Bloomberg: Carney responded directly — 'We're not going to sign a bad deal.'",
+    whyItMatters: "Carney's 'breakthrough at the top' framing is the most important signal for Canadian shop owners heading into the July 1 CUSMA review. Here is the practical breakdown: (1) Carney is betting that a direct Carney-Trump summit — not a negotiator deal — is the path to CUSMA renewal and tariff relief. This is consistent with how Trump operates: he prefers personal deals with leaders he respects, not bureaucratic negotiations. The G7 hot mic moment ('That's good. I like that.') is the evidence Carney is relying on. (2) The fact that Carney did not raise CUSMA in Wednesday's call with Trump is either a strategic choice (saving it for the summit) or a significant missed opportunity. Poilievre's attack will stick if there is no deal by July 1. (3) The July 1 meeting is virtual and trilateral — it is the beginning of the process, not the end. The 25% auto tariff will not be removed on July 1. Plan accordingly. (4) The 'not going to sign a bad deal' line is important: Carney is signalling that Canada will not capitulate on dairy supply management, digital services tax, or cultural content rules just to get CUSMA renewed. The auto tariff relief will be part of a broader package — not a standalone deal. (5) For shops: the tariff environment will remain uncertain through at least Q3 2026. The best hedge is diversified parts sourcing and strong supplier relationships on both sides of the border.",
+    source: "PM.gc.ca / BNN Bloomberg / National Post — June 25, 2026",
+    sourceUrl: "https://www.pm.gc.ca/en/news/speeches/2026/06/25/prime-minister-carney-delivers-remarks-following-conclusion-spring-sitting",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CUSMA / AGRICULTURE / JULY 1",
+    tag: "POLESTAR / CONNECTED VEHICLE RULE / GEELY",
     tagColor: "#7c3aed",
-    headline: "U.S. Agriculture Lobby Says CUSMA Will Survive — But the Trade Law Numbers Reveal What Termination Would Actually Cost: $80–$160B/Year in Auto Production Losses",
-    summary: "CBC News June 25 morning lead: U.S. agriculture industry insiders at a Washington conference organized by the Center for Strategic and International Studies are confident CUSMA will survive Trump's threats. Darci Vetter, vice-president of Driscoll's and former Obama USTR chief agricultural negotiator: 'I'm actually quite confident and very optimistic that at the end of this, we will still have a USMCA.' John Bode, president and CEO of the U.S. Corn Refiners Association: 'The evidence is so compelling that this agreement is to the benefit of North Americans.' Gregg Doud, former Trump first-term chief agricultural negotiator and now president of the National Milk Producers Federation, called CUSMA the 'gold standard' for trade agreements. Vetter: 'I think it could be a bumpy ride. I don't think we should underestimate the extent to which the president himself questions trade relationships.' Meanwhile, the JD Supra trade law analysis published June 24 by Braumiller Law Group puts hard numbers on what CUSMA termination would actually mean: $80–$160 billion per year loss in North American auto production value. A typical auto part crosses the U.S.-Canada or U.S.-Mexico border 6–8 times before final assembly. High-complexity components such as engines, transmissions, and wiring harnesses: 8–12 crossings. Some vehicles involve 30+ cross-border movements when counting sub-components and tier-2/tier-3 suppliers. Importers would face 20–40% higher compliance overhead and 5–15% higher freight costs on cross-border lanes. The total Canada-U.S.-Mexico trade relationship: approximately $2 trillion annually — larger than U.S.-EU trade. Canada-U.S. two-way trade in 2025: $719 billion. The agriculture lobby's confidence is the real signal: U.S. corn, dairy, and fruit producers need Canada and Mexico more than Trump needs the leverage.",
-    whyItMatters: "The agriculture lobby's confidence in CUSMA survival is the most important signal for Canadian shop owners this week. Here is the practical breakdown: (1) The U.S. agriculture sector — corn, dairy, fruit, soy, meat — exports heavily to Canada and Mexico. These are politically powerful industries in the Midwest and Great Plains states that Trump needs for the 2026 midterms and 2028. They are lobbying hard for CUSMA renewal. (2) The $80–$160 billion per year auto production loss estimate from the JD Supra analysis is the best public quantification of what CUSMA termination would cost. For context: Canada's entire auto sector generates approximately $17 billion in GDP annually. A CUSMA termination scenario would be catastrophic — not just for Canada, but for U.S. auto production as well. (3) The 6–8 border crossings per auto part is the key number to understand. The 25% tariff is not applied once — it compounds with every crossing. A wiring harness that crosses the border 10 times before final assembly accumulates tariff exposure at every crossing. This is why the effective tariff rate on Canadian vehicles is 12–13% — comparable to Japan and South Korea — even though the nominal rate is 25%. (4) The July 1 meeting is 6 days away. The most likely outcome remains zombie CUSMA — annual rolling reviews with the 25% tariff in place. The agriculture lobby's confidence means CUSMA will not be terminated. But it does not mean the 25% auto tariff will be removed. Plan accordingly.",
-    source: "CBC News / JD Supra — June 25, 2026",
-    sourceUrl: "https://www.cbc.ca/news/world/trump-trade-tariffs-usmca-cusma-agriculture-9.7247959",
+    headline: "Polestar Banned from the U.S. Market Starting 2027 — Chinese Technology Rule — Geely Owns Volvo Too, But Volvo Got a Waiver",
+    summary: "Electric vehicle maker Polestar is being forced out of the American market due to its ties to China, following a decision by the U.S. Commerce Department's Bureau of Industry and Security, the company announced Thursday. The Commerce Department denied Polestar authorization to sell vehicles starting with the 2027 model year, under a regulation known as the Connected Vehicle Rule — instituted in the final days of the Biden administration and upheld by the Trump administration. The rule cites national security concerns to ban 'connected vehicle manufacturers owned by, controlled by, or subject to the jurisdiction or direction of China or Russia, and vehicles using their covered software.' Polestar is majority-owned by Geely, a Chinese automaker, and its chairman Li Shufu. Geely also owns Volvo — which was granted a waiver in May. Polestar was not. None of Polestar's U.S. vehicles are built in China: the Polestar 3 is built in a Volvo plant in Charleston, South Carolina; the Polestar 4 is built in South Korea. Polestar will continue to sell existing stock of the Polestar 3 and 4 in the U.S. and will continue to support customers. But the company said it will focus future sales growth in Europe, where it already had 80% of its sales. Polestar retailers are 'absolutely devastated.' Dealerships that remain with the brand will largely become service points for existing customers only, with franchise investments handled on a case-by-case basis. Polestar Canada is not directly affected by the U.S. ban — but the brand's global viability is now in question.",
+    whyItMatters: "The Polestar ban has three direct implications for Canadian shop owners: (1) The Connected Vehicle Rule is the most important regulatory development in the EV market that most Canadian shop owners have not heard of. It bans connected vehicles from companies owned or controlled by China — regardless of where the vehicle is built. A Polestar built in South Carolina is still banned because Geely owns Polestar. This is the regulatory framework that will determine whether BYD, Chery, Geely, and Shanghai Launch — the four Chinese OEMs that Industry Minister Joly invited to build in Canada — can ever export their Canadian-assembled vehicles to the U.S. The answer, under the current rule, is no. (2) The Volvo waiver vs. Polestar denial is the key distinction to understand. Volvo has a longer history of independence from Geely, a more established U.S. dealer network, and a stronger case for waiver. Polestar was newer, smaller, and more dependent on Geely's supply chain. The lesson: Chinese ownership is disqualifying unless you can demonstrate operational independence. BYD, Chery, and Geely cannot make that case. (3) For shops that currently service Polestar vehicles: the brand will remain in Canada and will need service. Polestar's service network in Canada is thin — there are fewer than 20 Polestar retailers in the country. Independent shops with EV diagnostic capability and a willingness to work with Polestar owners will have a service opportunity as the brand's dealer network contracts.",
+    source: "CNN / Automotive News — June 25, 2026",
+    sourceUrl: "https://www.cnn.com/2026/06/25/business/polestar-us-ban",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "UNIFOR LOCAL 195 / WINDSOR / LOCKOUT",
+    tag: "TARIFF RATE QUOTAS / STEEL / JUNE 28",
     tagColor: "#1d4ed8",
-    headline: "Titan Tool & Die Windsor: 11-Month Lockout — Company Now Cutting Retiree Health Benefits and Pensions — Unifor: \"A Disgraceful New Low\"",
-    summary: "Unifor is condemning Titan Tool & Die in Windsor for terminating healthcare benefits and ending a supplemental monthly pension benefit program for current retirees and surviving spouses, as the company's dispute with Unifor Local 195 members nears eleven months. Members of Unifor Local 195 have been locked out since August 11, 2025. Unifor National President Lana Payne: 'Going after the most vulnerable people in this dispute, retirees and their surviving spouses, is a disgraceful new low for Titan Tool & Die's owners. Retirees spent decades building Titan into a successful Canadian company Windsor was proud of. Instead of paying monies lawfully owed to workers, Titan is cutting off health care and reducing pension benefits of the most vulnerable. No company in this country should be allowed to treat people this way.' Unifor Local 195 President Emile Nabbout: 'Our locked-out members and our retirees will never be intimidated. We will be on that picket line until Titan Tool & Die pays every dollar it owes.' At the same time, Titan Tool & Die has filed for yet another injunction against the union, continuing to use the legal system to dismantle Unifor members' picketing and solidarity actions. Titan has not paid a single penny in severance or termination pay owed to locked-out workers. The cuts affect former employees and surviving spouses who relied on benefits earned through decades of service. This is happening in Windsor — the same city where the Gordie Howe Bridge sits closed, where Stellantis Brampton is idle, and where Unifor-Ford talks are now in Day 4.",
-    whyItMatters: "The Titan Tool & Die lockout is the most acute local labour story in Canadian auto manufacturing today, and it has direct relevance to every shop owner in the Windsor-Essex region. Here is why it matters: (1) Titan Tool & Die is a Windsor-based auto parts manufacturer. Unifor Local 195 represents workers in the Windsor area across multiple employers — including auto parts suppliers that supply components to the OEM plants in the region. A nearly 11-month lockout depletes the local skilled trades workforce and creates instability in the supply chain. (2) The decision to cut retiree health benefits and pension supplements is legally aggressive and practically devastating for the workers affected. These are people who spent 30–40 years building the company. The cuts are designed to pressure the union to settle on the company's terms. (3) The injunction filing is the third or fourth such filing by Titan — a pattern of using the legal system to suppress picketing. Unifor's legal team is fighting each one. The cost of the legal battle is borne by the union and its members. (4) The broader context: this lockout is happening simultaneously with Unifor-Ford bargaining in Toronto (Day 4), the July 1 CUSMA review, and the Gordie Howe Bridge closure. Windsor's auto sector is under simultaneous pressure from every direction. The Titan Tool & Die situation is a microcosm of the larger crisis — and it is the workers and retirees who are paying the price.",
-    source: "Unifor Canada — June 24, 2026",
-    sourceUrl: "https://www.unifor.org/news/all-news/titan-tool-die-takes-egregious-step-cutting-retiree-health-care-benefits-and-monthly",
+    headline: "Canada's Steel Tariff-Rate Quotas Reset June 28 — What Shop Owners Need to Know Before Monday",
+    summary: "Canada's steel and aluminum tariff-rate quota (TRQ) periods reset on June 28, 2026 — this Saturday. The Blakes tariff timeline (updated June 22, 2026) confirms the current state of Canada-U.S. tariffs heading into the July 1 CUSMA review. The 25% Canadian retaliatory tariff on U.S. steel and aluminum remains in place. CUSMA-compliant goods remain exempt from the 10% temporary U.S. surcharge that has been in place since February 24, 2026, following the U.S. Supreme Court's decision striking down the IEEPA tariffs. The June 8 U.S. metal tariff adjustment reduced agricultural machinery and HVAC equipment tariffs from 25% to 15% — but auto-related steel and aluminum tariffs remain at 25%. For steel products from non-FTA countries: the tariff-rate quota is set at 20% of 2024 levels, with over-quota volumes facing a 50% surtax. For non-CUSMA FTA partners: 75% of 2024 levels. The CUSMA carve-out remains in place — Canadian steel and aluminum exports to the U.S. are subject to the 25% Section 232 tariff, but CUSMA-compliant auto parts remain exempt from the 10% temporary surcharge. The Willson International advisory published this week is the most actionable piece of trade compliance news for Canadian auto businesses: any U.S.-sourced steel tools, lifts, or equipment ordered before June 28 may have different tariff treatment than orders placed after the quota reset. Additionally, Canada's provisional 10% safeguard tariff on canned vegetables (effective June 19) is a signal that Canada is continuing to use trade remedies proactively — not just reactively.",
+    whyItMatters: "The June 28 TRQ reset has three practical implications for Canadian shop owners: (1) If you are planning to purchase U.S.-sourced steel equipment — lifts, alignment racks, tire changers, or any steel-intensive shop equipment — place your order before Saturday June 28 if possible. The TRQ reset means the quota allocation for the new period starts fresh, and early orders in the new period may face different processing times at the border. (2) The 25% Canadian retaliatory tariff on U.S. steel and aluminum remains in place — and it applies to steel tools and equipment, not just raw steel. A U.S.-made two-post lift that costs $8,000 USD has a $2,000 tariff on top. Factor this into your capital equipment budget for Q3 2026. (3) The CUSMA-compliant auto parts exemption from the 10% temporary surcharge is the most important tariff relief for shops that source OEM parts from U.S. distributors. As long as the parts are CUSMA-compliant (North American content rules met), the 10% surcharge does not apply. Verify CUSMA compliance with your parts distributor — do not assume it. The Blakes tariff timeline is the best free public resource for tracking the current state of Canada-U.S. tariffs. Bookmark it.",
+    source: "Blakes Tariff Timeline / Willson International — June 22–25, 2026",
+    sourceUrl: "https://www.blakes.com/insights/us-canada-tariffs-timeline-of-key-dates-and-documents/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🌉",
-    text: "Michigan Democratic Senate candidate Mallory McMorrow launched a $400,000+ TV and digital ad campaign accusing Trump of keeping the Gordie Howe Bridge closed to benefit Matthew Moroun, who gave $1M to Trump's super PAC. Republican Mike Rogers is also using the bridge in his messaging. The Michigan primary is in August — Trump now has a domestic political reason to open the bridge before then.",
-    sourceUrl: "https://www.theglobeandmail.com/world/us-politics/article-trump-gordie-howe-bridge-closed-delay-help-donor-michigan-senate/",
-  },
-  {
-    icon: "🌽",
-    text: "U.S. agriculture lobby at a Washington CSIS conference: 'I'm quite confident CUSMA will survive.' Former Trump first-term chief ag negotiator Gregg Doud called CUSMA the 'gold standard' for trade agreements. The agriculture sector's confidence is the real signal — U.S. corn, dairy, and fruit producers need Canada and Mexico more than Trump needs the leverage.",
-    sourceUrl: "https://www.cbc.ca/news/world/trump-trade-tariffs-usmca-cusma-agriculture-9.7247959",
-  },
-  {
     icon: "🤝",
-    text: "Unifor-Ford bargaining is now in Day 4 in downtown Toronto. The July 10 tentative deal target is 15 days away. Ford has not yet publicly responded to Unifor's production commitment demand. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days. GM and Stellantis follow whatever Ford agrees to.",
-    sourceUrl: "https://www.aol.com/articles/canadian-autoworkers-union-unifor-sets-191024000.html",
+    text: "Carney's spring sitting delivered 19 bills in 14 weeks: NATO 2% met, Darlington nuclear started, fuel excise tax suspended (saves up to 10 cents/L until Labour Day), 11,000 affordable homes committed. On CUSMA: zero formal Canada-U.S. bilateral sessions. The July 1 meeting is virtual and trilateral. The 25% auto tariff is not going away July 1.",
+    sourceUrl: "https://www.pm.gc.ca/en/news/speeches/2026/06/25/prime-minister-carney-delivers-remarks-following-conclusion-spring-sitting",
   },
   {
-    icon: "⚙️",
-    text: "Titan Tool & Die Windsor has now cut retiree health benefits and pension supplements after 11 months of locking out Unifor Local 195 members. The company has also filed another injunction against the union. Titan has not paid a single penny in severance or termination pay owed to locked-out workers. Lana Payne: 'A disgraceful new low.'",
-    sourceUrl: "https://www.unifor.org/news/all-news/titan-tool-die-takes-egregious-step-cutting-retiree-health-care-benefits-and-monthly",
+    icon: "🚗",
+    text: "Polestar Canada is not directly affected by the U.S. ban — but the brand's global viability is now in question. Fewer than 20 Polestar retailers in Canada. Independent shops with EV diagnostic capability will have a service opportunity as the brand's dealer network contracts. The Connected Vehicle Rule is the regulatory framework that blocks BYD, Chery, and Geely from exporting Canadian-assembled EVs to the U.S.",
+    sourceUrl: "https://www.cnn.com/2026/06/25/business/polestar-us-ban",
+  },
+  {
+    icon: "📋",
+    text: "Unifor-Ford bargaining is now in Day 5 in downtown Toronto. The July 10 tentative deal target is 14 days away. Ford has not yet publicly responded to Unifor's production commitment demand. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
+    sourceUrl: "https://www.thestar.com/business/ford-autoworkers-union-to-meet-today-to-kick-off-contract-talks/article_ee263814-d00b-587f-917a-81cf10a689b7.html",
+  },
+  {
+    icon: "🌉",
+    text: "Gordie Howe Bridge: Michigan Democratic Senate candidate Mallory McMorrow's $400,000+ ad campaign is now running in the Detroit market. Republican Mike Rogers is also using the bridge in his messaging. Michigan primary is in August. Trump now has a domestic political reason to open the bridge before then. Watch for an announcement.",
+    sourceUrl: "https://www.theglobeandmail.com/world/us-politics/article-trump-gordie-howe-bridge-closed-delay-help-donor-michigan-senate/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "The Bridge Opening Is Now a Political Event — Watch the Michigan Primary Calendar",
-  text: "The Gordie Howe Bridge is now a $400,000 ad campaign issue in the Michigan Senate race. Trump has a domestic political reason to open the bridge before the August Michigan primary. Here is what to watch: (1) If Trump opens the bridge before August, it neutralizes McMorrow's ad and takes the issue away from Democrats. (2) For Windsor-Essex shops: the bridge opening will reduce cross-border parts delivery times and congestion costs. (3) Track the Michigan Senate race as a leading indicator — when the political pressure peaks, the bridge opens. (4) In the meantime, factor Ambassador Bridge congestion into your parts delivery estimates for U.S.-sourced components.",
+  title: "The Connected Vehicle Rule Is the Regulatory Wall Between Chinese EVs and the U.S. Market",
+  text: "The Polestar ban clarifies the regulatory framework: the U.S. Connected Vehicle Rule bans vehicles from Chinese-owned companies — regardless of where the vehicle is built. A BYD assembled in Ontario is still a Chinese-owned vehicle under the rule. This means the four Chinese OEMs Joly invited to build in Canada (BYD, Chery, Geely, Shanghai Launch) cannot export their Canadian-assembled vehicles to the U.S. under the current rule. For shop owners: Chinese EVs will be a Canada-only market for the foreseeable future. Service them if they arrive — but do not expect them to be a North American platform.",
 };
 
 const quoteOfTheDay = {
-  text: "I'm Mallory McMorrow and I have one message for the president: open this damn bridge.",
-  author: "Mallory McMorrow",
-  title: "Michigan Democratic Senate Candidate — Campaign Ad, June 24, 2026",
+  text: "We're not going to sign a bad deal.",
+  author: "Prime Minister Mark Carney",
+  title: "Press Conference, Ottawa — June 25, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Buick GSX Stage 1 — Saturn Yellow, Black Stripes, Ontario-Plated",
-  description: "The 1970 Buick GSX Stage 1 is the most underrated muscle car of the era — and one of the most powerful. Buick's 455 cubic inch Stage 1 engine produced 360 horsepower officially, but independent testing consistently showed 400+ horsepower at the crank. The 0-60 time of 5.5 seconds made it faster than a 1970 Chevelle SS 454 LS6 in real-world testing. Saturn Yellow with black hood stripes and a black interior is the definitive GSX colour combination — aggressive, purposeful, and unmistakably 1970. Buick built only 678 GSX Stage 1 cars in 1970, making it one of the rarest muscle cars of the era. The Ontario plate on this example means it survived the salt seasons — a remarkable achievement for a car that was built to be driven hard. The GSX was Buick's answer to the Chevelle SS, the Pontiac GTO, and the Oldsmobile 442 — all built on the same A-body platform, all competing for the same buyer. Buick's version had the largest engine, the most torque, and the least recognition. Today, a documented 1970 GSX Stage 1 in Saturn Yellow with an Ontario plate is worth between $120,000 and $200,000 depending on condition and matching numbers. It is the muscle car that the people who know, know about. Everyone else drives past it looking for the Chevelle.",
+  name: "1970 Pontiac Firebird Trans Am — Carousel Red, Ram Air, Ontario-Plated",
+  description: "The 1970 Pontiac Firebird Trans Am is the car that defined the Firebird nameplate. The first year of the second-generation body — longer, lower, wider than the original — with the shaker hood scoop, rear spoiler, and the blue Firebird decal on the hood. The Ram Air 400 cubic inch engine produced 345 horsepower officially, with the Ram Air III option, or 370 horsepower with the Ram Air IV. The Trans Am was Pontiac's answer to the Mustang Boss 302 and the Camaro Z/28 — a road-racing-oriented pony car with genuine performance credentials. In Carousel Red with a black interior and Ontario plate, this is a car that was built to be driven. The 1970 Trans Am is one of the most photographed muscle cars of the era — the shaker scoop, the rear wing, and the blue bird on the hood are instantly recognizable. Only 3,196 Trans Ams were built in 1970 — making it one of the rarer muscle cars of the era. A documented 1970 Trans Am Ram Air IV in Carousel Red with an Ontario plate is worth between $80,000 and $150,000 depending on condition and matching numbers. It is the car that Burt Reynolds would have driven if he had been born in Ontario.",
   image: HOTROD_IMG,
 };
 
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["GORDIE HOWE BRIDGE", "CUSMA 6 DAYS", "UNIFOR-FORD DAY 4", "BUICK GSX"].map((tag) => (
+                {["CUSMA 5 DAYS", "POLESTAR BANNED", "UNIFOR-FORD DAY 5", "TRANS AM"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Gordie Howe Bridge Closed / Unifor Local 195 Lockout Windsor — Baywash Daily Briefing Edition No. 49"
+              alt="Carney CUSMA 5 Days — The Deal Will Happen at the Top — Baywash Daily Briefing Edition No. 50"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Thursday Edition</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Friday Edition — No. 50</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Bridge Closed, Workers Locked Out, CUSMA 6 Days Away — Windsor Is Ground Zero
+                Carney: "The Deal Will Happen at the Top" — Polestar Banned — 5 Days to July 1
               </h3>
             </div>
           </div>
