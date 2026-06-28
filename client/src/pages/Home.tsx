@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 51;
-const BRIEFING_DATE = "June 27, 2026";
-const BRIEFING_DAY = "Saturday";
+const BRIEFING_NUMBER = 52;
+const BRIEFING_DATE = "June 28, 2026";
+const BRIEFING_DAY = "Sunday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HRPpbMqXEhMoQCKT.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OevDEhNMUWZCcGWJ.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PYoMkDqbMrJBUgNK.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qzcAYXvJsaqJptEv.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JVmrhLWaoWcHggwn.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JCfdbbqffKKgDxAA.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LQHVrJgcsABtbXDS.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aDaTpCBzAoNmYGRE.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/squqCXbZtpidBfSH.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ahLAipLqOvrmRLBx.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CHINESE EVS / BYD / CHERY / GEELY",
-    tagColor: "#b91c1c",
-    headline: "Chinese EV Makers Are Using Canada as a \"Bridgehead\" for the U.S. — BYD, Chery, Geely, Lotus, Changan All Moving In — And the U.S. Is Watching",
-    summary: "The most comprehensive picture yet of the Chinese EV invasion of Canada emerged this week from Seoul Economic Daily (June 27) and CTV News (June 25). BYD is opening 6 Canadian stores and has begun Transport Canada certification for two passenger car models — the Seal (sedan) and the Atto 3 (compact SUV). Chery held its first Canadian dealer meeting two weeks after Carney's January 2026 announcement and is targeting a Q4 2026 launch. Lotus (Geely-owned) is opening 6 Canadian stores. Changan — a state-owned Chinese automaker — has a dedicated Canada team and is actively recruiting dealers. The Chinese OEMs are not coming to Canada because they love the market. Canada's unfavourable exchange rate and smaller population make it 'one of the least profitable markets for manufacturers to sell into globally,' per industry analysts. They are coming because Canada is a practice run for the U.S. market — and because Canadian dealers with U.S. outlet connections are a direct pipeline for learning North American retail. The Alliance for Automotive Innovation has warned the U.S. government: 'A Canada-China EV trade agreement could open a back door to the U.S. market, creating economic and national security risks.' The U.S. Connected Vehicle Rule — which blocked Polestar from the U.S. market this week — applies to any vehicle with Chinese software or hardware, regardless of where it is assembled. A BYD built in Ontario is still a Chinese-owned vehicle under the rule. For Canadian shop owners: Chinese EVs will be in Canadian driveways by Q4 2026. Service readiness is not optional.",
-    whyItMatters: "The Chinese EV arrival in Canada has five direct implications for Canadian shop owners: (1) BYD, Chery, and Geely are not Tesla. Their service models are not yet established in Canada. Early adopters will need service — and the OEM dealer networks will be thin. Independent shops with EV diagnostic capability (particularly battery management system access and high-voltage safety training) will have a first-mover advantage. (2) BYD's Flash Charging network is being built in Canada right now — 1,500 kW chargers, -30°C capable, 250 km in 5 minutes. The charging infrastructure is arriving before the vehicles. (3) The U.S. Connected Vehicle Rule means Chinese EVs will be a Canada-only market for the foreseeable future. They will not be exported to the U.S. This limits their resale value and their long-term market penetration — but it does not stop them from arriving in Canadian driveways in 2026. (4) Industry Minister Joly's 'four conditions' (majority Canadian JV, Canadian parts, Canadian labour, data security) are designed to extract manufacturing investment from Chinese OEMs — not to keep them out. The government wants them to build here. (5) The practical question for your shop: which Chinese EV brands are most likely to succeed in Canada? BYD is the best-capitalized and most aggressive. Chery has the most dealer momentum. Geely (via Lotus) has the premium positioning. Plan your training and tooling investments accordingly.",
-    source: "CTV News / Seoul Economic Daily — June 25–27, 2026",
-    sourceUrl: "https://www.ctvnews.ca/business/autos/article/chinas-carmakers-rush-to-canada-as-a-practice-run-for-us-sales/",
+    tag: "CUSMA / JULY 1 / JULY 24 TARIFF CLIFF",
+    tagColor: "#1d4ed8",
+    headline: "The July 1 CUSMA Review: What Actually Happens Tomorrow — And the July 24 Tariff Cliff Nobody Is Talking About",
+    summary: "Tomorrow's July 1 meeting is a virtual trilateral Free Trade Commission review — not a signing ceremony. The legal mechanics, per the Blakes tariff timeline and Brookings Institution analysis: three outcomes are possible. (1) All three parties confirm in writing that they wish to extend CUSMA for another 16 years — the outcome Canada and Mexico want, and the one Trump has signalled he does not. (2) No written confirmation is provided — CUSMA enters annual rolling reviews until 2036, the 'zombie CUSMA' scenario that KPMG's Joy Nott warned about last week. (3) Any party gives 6 months written notice of withdrawal — CUSMA terminates July 1, 2036. The most likely outcome is annual rolling reviews. Canada and the U.S. have had zero formal bilateral negotiating sessions. U.S. Ambassador Hoekstra said last week: 'We're not anywhere close on a new CUSMA framework.' But the bigger tariff cliff is July 24: the Section 122 temporary 10% surcharge — imposed February 24 after the U.S. Supreme Court struck down IEEPA tariffs — expires by statute in 150 days. Congress has not extended it. On July 24, the Trump administration must replace it with a new tariff regime. RBC's John Stackhouse at the Brookings roundtable: 'Beyond the July 1 trigger, the current regime of Section 122 tariffs will expire on July 24, when we should expect the Trump administration to create another regime.' The most likely replacement is some form of 'market access' price — perhaps in the 5% range — with exemptions for CUSMA-compliant goods. The 25% auto tariff (Section 232) is not affected by either July 1 or July 24. It remains in place indefinitely under the Trade Expansion Act of 1962. The Section 232 auto tariff is the one that is 'biting' — and it will not be resolved by the July 1 meeting.",
+    whyItMatters: "Three things to watch this week: (1) The July 1 trilateral meeting outcome — watch for a joint statement. If all three parties issue a statement confirming 'productive discussions,' that is a signal toward 16-year renewal. If the statement is vague or absent, zombie CUSMA is the default. (2) The July 24 Section 122 expiry — this is the tariff that applies to all global imports, including CUSMA-compliant goods that are not auto parts. If the replacement regime is higher than 10%, costs for Canadian businesses importing U.S. goods will rise. If it is lower, costs fall. Watch for a White House proclamation between July 1 and July 24. (3) The 25% auto tariff (Section 232) — this is the one that matters most for your shop. It will not be resolved by July 1 or July 24. Plan for it to remain through at least Q3 2026. The practical implication: any U.S.-sourced parts, tools, or equipment you order after July 1 will still face the same tariff environment as today. Nothing changes at midnight tonight.",
+    source: "Blakes Tariff Timeline / Brookings Institution / RBC — June 22–28, 2026",
+    sourceUrl: "https://www.blakes.com/insights/us-canada-tariffs-timeline-of-key-dates-and-documents/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "DEALERSHIP CONSOLIDATION / KERRIGAN / RETAIL",
-    tagColor: "#7c3aed",
-    headline: "Dealership Buy-Sells Jump 21% in Q1 2026 — Consolidation Hits Another Record — What It Means for Independent Shops",
-    summary: "Dealership buy-sell activity accelerated sharply in the first quarter of 2026, extending an unprecedented run of consolidation across automotive retail, according to Kerrigan Advisors' First Quarter 2026 Blue Sky Report, published this week. Dealership transactions increased 21% year over year in Q1 2026 — the highest quarterly increase in the modern era of automotive retail consolidation. The CBT News weekly roundup (June 27) flagged the report as the most significant retail automotive story of the week. The consolidation wave is being driven by three forces: (1) Large dealer groups are acquiring smaller ones at record pace, using tariff uncertainty as leverage to negotiate lower prices from sellers who fear a prolonged downturn. (2) Private equity is entering the Canadian and U.S. dealer market at scale, attracted by the cash flow characteristics of dealer service departments. (3) The tariff environment has accelerated the exit of smaller, single-point dealers who lack the capital reserves to weather a prolonged 25% auto tariff. In parallel: CarGurus will require all dealers to disclose all applicable fees on used-vehicle listings starting July 14 — expanding its all-in pricing initiative as fee transparency becomes an increasingly important industry standard. Slate Auto (Bezos-backed) debuted a $24,950 all-electric pickup — one of the cheapest new vehicles in America — signalling that the affordability gap in the EV market is being addressed from below, not above. UAW and automakers are clashing over AI and robotics in U.S. factories — a preview of what Unifor will face in future rounds of Detroit Three bargaining.",
-    whyItMatters: "The 21% jump in dealership buy-sells has three direct implications for Canadian independent shop owners: (1) The dealerships that are buying and selling are also expanding their service departments. Large dealer groups invest heavily in express service, quick-lube, and tire operations — the same revenue streams that independent shops depend on. The competitive pressure from dealer service centres is intensifying at the same time that parts costs are rising and Chinese EVs are introducing new service complexity. (2) The CarGurus fee disclosure requirement (July 14) is a signal that the used-car market is moving toward all-in pricing transparency. This is good for consumers — but it also means that shops that rely on opaque pricing for service work will face increasing pressure to be transparent about labour rates and parts markups. The trend is toward price transparency across the automotive retail ecosystem. (3) The Slate Auto $24,950 EV pickup is the most important affordability signal in the EV market this year. If Bezos-backed Slate can deliver a $24,950 EV pickup, the affordability barrier to EV adoption is falling faster than most Canadian shop owners expect. Plan your EV service training and tooling investments for a 3-5 year horizon, not a 10-year horizon.",
-    source: "CBT News Weekly Roundup / Kerrigan Advisors — June 27, 2026",
-    sourceUrl: "https://www.cbtnews.com/weekly-roundup-uaw-automakers-clash-over-ai-and-robotics-dealership-buy-sells-jump-21-cargurus-to-require-fee-disclosures/",
+    tag: "GORDIE HOWE BRIDGE / MOROUN / TOLL REVENUE",
+    tagColor: "#b91c1c",
+    headline: "Gordie Howe Bridge: Lutnick Wants a Bigger Cut of the Tolls — \"Sooner or Later, It Will Open\" — Michigan Primary Pressure Grows",
+    summary: "The BNN Bloomberg interview with Windsor Essex Chamber of Commerce CEO Ryan Donally (June 26) confirmed what had been suspected: the U.S. is now explicitly demanding a larger share of the Gordie Howe Bridge toll revenue than the existing agreement provides. Canada agreed to give Michigan half ownership and half the toll revenue after construction costs are recovered — a deal negotiated between the Windsor-Detroit Bridge Authority, the State of Michigan, and the Government of Canada. Commerce Secretary Howard Lutnick wants more. The Windsor Star's Randy Essex — who broke the Moroun donor story last week — confirmed that Lutnick 'felt cut out' of the June 12 ribbon-cutting negotiations that Governor Whitmer had arranged with Trump's Chief of Staff Susie Wiles. Lutnick again urged Trump to halt the opening. Former Michigan Governor and U.S. Ambassador to Canada James Blanchard: 'Sooner or later, it will open. If Trump wants money, he should get it from the Morouns.' The bridge is now a factor in the CUSMA review — the Maro Group (Canadian auto parts industry group) says it is 'a factor but not key to the outcome.' The Michigan primary is in August. Democratic candidate Mallory McMorrow's $400,000+ TV and digital ad campaign is running in the Detroit market. Republican Senate hopeful Mike Rogers is also using the bridge in his messaging. Trump now has a domestic political reason to open the bridge before the Michigan primary. The bridge cost Canada $6.4 billion — 100% Canadian-funded including the U.S. port of entry. Every day of delay costs the Windsor-Detroit corridor — the busiest trade corridor in North America — in congestion, delays, and lost economic activity.",
+    whyItMatters: "The Gordie Howe Bridge is the most concrete example of how U.S. domestic politics is affecting Canadian automotive infrastructure. For Windsor-area shop owners: when the bridge opens, the Windsor-Detroit corridor will see a surge in cross-border traffic and trade. Parts delivery times from Michigan suppliers will improve. Cross-border customer traffic will increase. The bridge will also reduce congestion on the Ambassador Bridge — which currently handles all Windsor-Detroit commercial traffic. For shop owners outside Windsor: the bridge opening will be a signal that the U.S.-Canada relationship is stabilizing. It will likely coincide with — or follow — a CUSMA framework agreement. Watch the Michigan primary calendar: the primary is in August. Trump has a political incentive to open the bridge before then. If the bridge opens in July, it is a strong signal that a broader CUSMA deal is close.",
+    source: "BNN Bloomberg / Windsor Star / Windsor Essex Chamber of Commerce — June 26–28, 2026",
+    sourceUrl: "https://www.bnnbloomberg.ca/video/shows/the-close/2026/06/26/us-eyes-larger-share-of-gordie-howe-bridge-tolls/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "EDITION NO. 50 MILESTONE / RETROSPECTIVE",
-    tagColor: "#1d4ed8",
-    headline: "Edition No. 50: The 10 Stories That Defined the First 50 Editions — And What Comes Next",
-    summary: "The Baywash Daily Briefing launched in April 2026 with Edition No. 1. Fifty editions in, the dominant story arc is clear: the 25% U.S. auto tariff imposed February 1, 2025 has triggered a cascade of consequences that is reshaping the Canadian automotive industry in real time. The 10 stories that defined the first 50 editions: (1) Honda suspends $15B EV investment — Alliston's future in question. (2) Stellantis Brampton idle — 6,590 Unifor members affected. (3) GM CAMI (Ingersoll) ends BrightDrop production. (4) Canada accounts for 45% of all tariff-related market share losses among U.S. trading partners. (5) The Gordie Howe Bridge held hostage — $6.4B Canadian investment, no opening date, Moroun donor connection. (6) The G7 hot mic — Carney gets Trump's 'That's good. I like that.' on the Chinese EV cap. (7) CVMA to Ottawa: scrap the China EV deal — 'There is no Canadian auto sector without the U.S.' (8) Unifor-Ford bargaining opens — 'Most consequential talks of our lifetimes.' (9) Chinese EVs arrive — BYD, Chery, Geely, Lotus, Changan all moving into Canada. (10) RBC 'Steering Through Uncertainty': four scenarios to 2040 — current trajectory is 'Off-Ramp.' What comes next: July 1 CUSMA trilateral meeting (4 days), Unifor-Ford July 10 deadline (13 days), September 20 contract expiry (85 days). The story is not over — it is accelerating.",
-    whyItMatters: "The first 50 editions of the Baywash Daily Briefing have tracked the most consequential period in Canadian automotive history since the 2008-2009 financial crisis. Here is the state of play for Canadian shop owners as of June 27, 2026: (1) The 25% U.S. auto tariff is not going away July 1. The CUSMA trilateral meeting is the beginning of a process, not the end. Plan for the tariff to remain through at least Q3 2026 — and possibly through 2027. (2) Unifor-Ford bargaining will set the pattern for GM and Stellantis. A strong Ford deal with production commitments is the best-case scenario for Canadian auto workers. A work stoppage would affect parts availability within days. (3) Chinese EVs will be in Canadian driveways by Q4 2026. Service readiness is not optional. (4) The Gordie Howe Bridge will likely open before the Michigan primary in August. When it does, the Windsor-Detroit corridor will see a surge in cross-border traffic and trade. (5) The dealership consolidation wave is accelerating. Independent shops need to differentiate on service quality, EV capability, and customer relationships — not on price. The shops that invest in training and tooling now will be the ones that survive the next five years.",
-    source: "Baywash Daily Briefing Archive — Editions 1–50, April–June 2026",
-    sourceUrl: "https://baywash-daily-briefing.pages.dev",
+    tag: "USED WHOLESALE / CANADIAN BLACK BOOK / MARKET DATA",
+    tagColor: "#7c3aed",
+    headline: "Used Wholesale Prices Falling Faster Than Normal — -0.35% Last Week — Customers Will Hold Onto Older Vehicles Longer",
+    summary: "Canadian Black Book Market Insights for the week ending June 20, 2026: used wholesale prices fell 0.35% — steeper than the previous week's 0.29% drop and well above the historical average of 0.19% for the same period. Mid-size cars led the decline at -1.45%. Compact cars fell -0.85%. Full-size pickups fell -0.22%. The average asking price on dealer lots: $36,900 (14-day moving average). 169,000 vehicles available. Auction sale rates averaged 43.2% — sellers are maintaining firm floor prices but buyers are not meeting them. The practical context: new vehicle prices remain elevated due to the 25% auto tariff. Used vehicles are softening because consumers are caught between expensive new vehicles and softening used values — and many are choosing to hold onto their current vehicle rather than trade up or down. This is the most important market signal for Canadian shop owners this week. When used values fall and new prices remain high, consumers hold onto their current vehicles longer — and bring them to shops for maintenance and repair rather than trading them in. The repair-versus-replace calculation is shifting in favour of repair. This is a tailwind for independent shops.",
+    whyItMatters: "The used wholesale price decline has three direct implications for Canadian shop owners: (1) More customers will hold onto their current vehicles longer. The repair-versus-replace calculation is shifting in favour of repair. Customers who might have traded in a 5-year-old vehicle last year are now keeping it and maintaining it. This is a tailwind for maintenance and repair work — oil changes, brakes, tires, suspension, and fluid services. (2) The average asking price on dealer lots is $36,900. A customer who is looking at a $36,900 used vehicle is also looking at a $500–$1,500 repair bill on their current vehicle. In most cases, the repair is the better financial decision. Your job is to help them see that clearly. (3) Auction sale rates at 43.2% mean that dealers are not moving inventory at their floor prices. This will eventually force price reductions — which will bring used values down further. The softening trend is likely to continue through Q3 2026. Plan your service marketing around the 'repair and keep' message.",
+    source: "Canadian Black Book Market Insights — Week Ending June 20, 2026",
+    sourceUrl: "https://www.canadianblackbook.com/market-insights",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🇨🇳",
-    text: "BYD has begun Transport Canada certification for the Seal sedan and Atto 3 SUV. Chery's first Canadian dealer meeting happened two weeks after Carney's January announcement. Lotus (Geely) is opening 6 Canadian stores. Changan has a dedicated Canada team. All four are using Canada as a practice run for the U.S. market — which the Connected Vehicle Rule currently blocks them from.",
-    sourceUrl: "https://www.ctvnews.ca/business/autos/article/chinas-carmakers-rush-to-canada-as-a-practice-run-for-us-sales/",
+    icon: "📅",
+    text: "July 1 CUSMA trilateral virtual meeting is TOMORROW. Three outcomes: 16-year renewal (unlikely), zombie CUSMA annual rolling reviews (most likely), or 6-month withdrawal notice (legally possible but politically catastrophic). Canada and the U.S. have had zero formal bilateral sessions. The 25% auto tariff is not affected by the outcome.",
+    sourceUrl: "https://www.cp24.com/news/canada/2026/06/20/canada-to-meet-with-us-and-mexico-on-july-1-for-cusma-review/",
   },
   {
-    icon: "🤝",
-    text: "Unifor-Ford bargaining is now in Day 6 in downtown Toronto. The July 10 tentative deal target is 13 days away. Ford has not yet publicly responded to Unifor's production commitment demand for Windsor Assembly and Oakville. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-launches-negotiations-ford-motor-company",
+    icon: "⚠️",
+    text: "July 24 Section 122 tariff cliff: the temporary 10% surcharge on global imports (imposed February 24 after the Supreme Court struck down IEEPA tariffs) expires by statute in 150 days. Congress has not extended it. The Trump administration must replace it with a new regime by July 24. Watch for a White House proclamation between July 1 and July 24.",
+    sourceUrl: "https://www.blakes.com/insights/us-canada-tariffs-timeline-of-key-dates-and-documents/",
   },
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge: Michigan Democratic Senate candidate Mallory McMorrow's $400,000+ TV/digital ad campaign is running in the Detroit market. Republican Mike Rogers is also using the bridge. Michigan primary is in August. Trump now has a domestic political reason to open the bridge before then. The bridge cost Canada $6.4B — 100% Canadian-funded including the U.S. port of entry.",
-    sourceUrl: "https://www.thestar.com/business/gordie-howe-international-bridge-delay-becomes-flashpoint-in-michigan-senate-race-could-it-force-trumps-hand/article_6c3de7be-e470-4011-9c67-8e6f84785b26.html",
+    text: "Gordie Howe Bridge: Commerce Secretary Lutnick wants a larger share of toll revenue than the existing agreement provides. Former Michigan Governor Blanchard: 'Sooner or later, it will open.' Michigan primary is in August. Trump has a domestic political incentive to open the bridge before then. McMorrow's $400K+ ad campaign is running in the Detroit market.",
+    sourceUrl: "https://www.bnnbloomberg.ca/video/shows/the-close/2026/06/26/us-eyes-larger-share-of-gordie-howe-bridge-tolls/",
   },
   {
-    icon: "📅",
-    text: "July 1 CUSMA trilateral meeting is 4 days away. Canada and the U.S. have had zero formal bilateral negotiating sessions. U.S. Ambassador Hoekstra: 'We're not anywhere close on a new CUSMA framework.' The July 1 meeting is virtual and trilateral — it is the beginning of the process, not the end. The 25% auto tariff will not be removed on July 1.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/06/20/canada-to-meet-with-us-and-mexico-on-july-1-for-cusma-review/",
+    icon: "🤝",
+    text: "Unifor-Ford bargaining is now in Day 7 in downtown Toronto. The July 10 tentative deal target is 12 days away. Ford has not yet publicly responded to Unifor's production commitment demand for Windsor Assembly and Oakville. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
+    sourceUrl: "https://www.unifor.org/news/all-news/unifor-launches-negotiations-ford-motor-company",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Chinese EVs Are Coming to Your Shop — Whether You're Ready or Not",
-  text: "BYD, Chery, and Geely will have vehicles in Canadian driveways by Q4 2026. Their service networks will be thin. Independent shops with EV diagnostic capability, high-voltage safety training, and a willingness to work on unfamiliar platforms will have a first-mover advantage. Start now: identify which Chinese EV brands are most likely to succeed in your market, research their service requirements, and contact your tool supplier about diagnostic compatibility. The shops that prepare now will be the ones that capture the Chinese EV service market in 2027.",
+  title: "July 1 Changes Nothing for Your Shop — Here's What Actually Matters",
+  text: "The July 1 CUSMA review will not remove the 25% auto tariff. The Section 232 auto tariff is a separate legal instrument (Trade Expansion Act of 1962) and is not part of CUSMA. Whatever happens tomorrow — 16-year renewal, zombie CUSMA, or withdrawal notice — the 25% tariff on vehicles and the tariff on non-CUSMA-compliant auto parts remain in place. The tariff that matters most to your shop will not be resolved by the July 1 meeting. Plan accordingly.",
 };
 
 const quoteOfTheDay = {
-  text: "We cannot sit idly by and hope for the situation to get better. Our job is to get the best possible deal for our members now.",
-  author: "John D'Agnolo",
-  title: "Unifor Chairperson, Ford Master Bargaining Committee — June 22, 2026",
+  text: "Beyond the July 1 trigger, the current regime of Section 122 tariffs will expire on July 24, when we should expect the Trump administration to create another regime.",
+  author: "John Stackhouse",
+  title: "RBC Senior Vice-President — Brookings Institution Roundtable, June 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Superbird — Tor-Red, 440 Six Pack, Ontario-Plated",
-  description: "The 1970 Plymouth Superbird is the most aerodynamically extreme production car ever built for the street. Plymouth built it for one reason: to homologate it for NASCAR, where Richard Petty needed a car that could beat the Ford Talladega and Mercury Spoiler on the superspeedways. The result was a car with a 23-inch rear wing standing 24 inches above the trunk lid, a pointed nose cone extending 19 inches beyond the front bumper, and a flush-mounted rear window. The wing was not decorative — at speed, it generated significant downforce. The 440 Six Pack (three two-barrel carburetors) produced 390 horsepower officially, with the 426 Hemi option producing 425 horsepower. Plymouth built 1,920 Superbirds for the 1970 model year — enough to satisfy NASCAR's homologation requirement of one car per dealer. Many dealers were baffled by the car and could not sell them. Some were converted back to standard Road Runner spec. The ones that survived in original condition are among the most valuable muscle cars in existence. A documented 1970 Superbird with the 440 Six Pack in Tor-Red with an Ontario plate is worth between $250,000 and $500,000 depending on condition and matching numbers. The Hemi version has sold for over $1 million at auction. It is the most impractical car Plymouth ever built for the street — and the most magnificent.",
+  name: "1969 Dodge Charger Daytona — Bright White, 440 Magnum, Ontario-Plated",
+  description: "The 1969 Dodge Charger Daytona is the most aerodynamically extreme production car of the muscle car era — built for one reason: to win at Daytona and Talladega. Dodge needed a car that could exceed 200 mph on the superspeedways to beat Ford's Torino Talladega. The result was a car with a pointed fibreglass nose cone extending 18 inches beyond the standard Charger front bumper, flush-mounted headlights, and a massive rear wing standing 23 inches above the trunk lid on two vertical stabilizers. The wing was not decorative — at speed, it generated significant downforce and allowed the rear spoiler to be adjusted for different track configurations. The 440 Magnum produced 375 horsepower officially. The 426 Hemi option produced 425 horsepower. Dodge built 503 Daytonas for the 1969 model year — enough to satisfy NASCAR's homologation requirement. Many dealers could not sell them. Some were converted back to standard Charger spec. Richard Petty drove a Daytona to victory at Talladega in 1969 at 188.901 mph — a record that stood for years. The ones that survived in original condition are among the most valuable muscle cars in existence. A documented 1969 Daytona with the 440 Magnum in Bright White with an Ontario plate is worth between $200,000 and $400,000 depending on condition and matching numbers. The Hemi version has sold for over $1.5 million at auction. It is the car that proved aerodynamics mattered — and that Chrysler engineers could out-think Ford when they had to.",
   image: HOTROD_IMG,
 };
 
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["CHINESE EVS INVADE", "BUY-SELLS +21%", "EDITION 50 MILESTONE", "SUPERBIRD"].map((tag) => (
+                {["CUSMA EVE", "JULY 24 CLIFF", "BRIDGE TOLL FIGHT", "DAYTONA"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Chinese EVs Use Canada as Bridgehead for U.S. Market — Baywash Daily Briefing Edition No. 51"
+              alt="CUSMA Eve: July 1 Countdown and Gordie Howe Bridge Still Closed — Baywash Daily Briefing Edition No. 52"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Saturday Edition — No. 51</span>
+              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Sunday Edition — No. 52 — CUSMA Eve</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Chinese EVs Use Canada as a Bridgehead — BYD, Chery, Geely, Lotus, Changan All Moving In
+                July 1 Is Tomorrow — What Actually Happens — And the July 24 Tariff Cliff Nobody Is Talking About
               </h3>
             </div>
           </div>
