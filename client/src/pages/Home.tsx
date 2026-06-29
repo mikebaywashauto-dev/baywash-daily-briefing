@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 52;
-const BRIEFING_DATE = "June 28, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 53;
+const BRIEFING_DATE = "June 29, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JCfdbbqffKKgDxAA.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LQHVrJgcsABtbXDS.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aDaTpCBzAoNmYGRE.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/squqCXbZtpidBfSH.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ahLAipLqOvrmRLBx.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/udAEIZJlTBHIyJkx.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jtvbErvwktCMNNGC.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PbVhxbZdXLhqbFXv.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YHfPKrAUHDlkMXUC.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ehletuZXxcAQfHBa.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CUSMA / JULY 1 / JULY 24 TARIFF CLIFF",
+    tag: "CUSMA REVIEW DAY / JULY 1 / ZOMBIE CUSMA",
     tagColor: "#1d4ed8",
-    headline: "The July 1 CUSMA Review: What Actually Happens Tomorrow — And the July 24 Tariff Cliff Nobody Is Talking About",
-    summary: "Tomorrow's July 1 meeting is a virtual trilateral Free Trade Commission review — not a signing ceremony. The legal mechanics, per the Blakes tariff timeline and Brookings Institution analysis: three outcomes are possible. (1) All three parties confirm in writing that they wish to extend CUSMA for another 16 years — the outcome Canada and Mexico want, and the one Trump has signalled he does not. (2) No written confirmation is provided — CUSMA enters annual rolling reviews until 2036, the 'zombie CUSMA' scenario that KPMG's Joy Nott warned about last week. (3) Any party gives 6 months written notice of withdrawal — CUSMA terminates July 1, 2036. The most likely outcome is annual rolling reviews. Canada and the U.S. have had zero formal bilateral negotiating sessions. U.S. Ambassador Hoekstra said last week: 'We're not anywhere close on a new CUSMA framework.' But the bigger tariff cliff is July 24: the Section 122 temporary 10% surcharge — imposed February 24 after the U.S. Supreme Court struck down IEEPA tariffs — expires by statute in 150 days. Congress has not extended it. On July 24, the Trump administration must replace it with a new tariff regime. RBC's John Stackhouse at the Brookings roundtable: 'Beyond the July 1 trigger, the current regime of Section 122 tariffs will expire on July 24, when we should expect the Trump administration to create another regime.' The most likely replacement is some form of 'market access' price — perhaps in the 5% range — with exemptions for CUSMA-compliant goods. The 25% auto tariff (Section 232) is not affected by either July 1 or July 24. It remains in place indefinitely under the Trade Expansion Act of 1962. The Section 232 auto tariff is the one that is 'biting' — and it will not be resolved by the July 1 meeting.",
-    whyItMatters: "Three things to watch this week: (1) The July 1 trilateral meeting outcome — watch for a joint statement. If all three parties issue a statement confirming 'productive discussions,' that is a signal toward 16-year renewal. If the statement is vague or absent, zombie CUSMA is the default. (2) The July 24 Section 122 expiry — this is the tariff that applies to all global imports, including CUSMA-compliant goods that are not auto parts. If the replacement regime is higher than 10%, costs for Canadian businesses importing U.S. goods will rise. If it is lower, costs fall. Watch for a White House proclamation between July 1 and July 24. (3) The 25% auto tariff (Section 232) — this is the one that matters most for your shop. It will not be resolved by July 1 or July 24. Plan for it to remain through at least Q3 2026. The practical implication: any U.S.-sourced parts, tools, or equipment you order after July 1 will still face the same tariff environment as today. Nothing changes at midnight tonight.",
-    source: "Blakes Tariff Timeline / Brookings Institution / RBC — June 22–28, 2026",
-    sourceUrl: "https://www.blakes.com/insights/us-canada-tariffs-timeline-of-key-dates-and-documents/",
+    headline: "CUSMA Review Day Is Here — \"A Checkpoint, Not a Cliff\" — Premier Ford on Third U.S. Trip — Unifor: \"Hold the Line, Don't Lose Your Nerve\"",
+    summary: "The July 1 trilateral virtual Free Trade Commission meeting is today. Canada, the United States, and Mexico are meeting virtually to conduct the first formal review of CUSMA since it came into force in 2020. The meeting is not a signing ceremony — it is the beginning of a process that could take months or years. Ontario Chamber of Commerce CEO Daniel Tisch: 'We look at next week with some anxiety, but also hope, because the deal will continue. This is a checkpoint, not a cliff.' Unifor President Lana Payne: 'My advice has been, stay calm, hold the line, don't lose your nerve.' Canadian Manufacturers and Exporters CEO Dennis Darby: 'It's the effect of uncertainty — companies are sitting on their hands in both countries.' Ontario Premier Doug Ford is on his third U.S. trip of June — attending the Western Governors' Association conference in Salt Lake City, Utah today and tomorrow. Ford's strategy: build relationships with U.S. governors who have economic stakes in the Canada-U.S. relationship. U.S. Ambassador Pete Hoekstra told CTV News last week: 'We're not anywhere close on a new CUSMA framework.' The most likely outcome of today's meeting: annual rolling reviews — the 'zombie CUSMA' scenario that KPMG's Joy Nott warned about. Canada and the U.S. have had zero formal bilateral negotiating sessions. U.S.-Mexico bilateral talks have already had two rounds. Canada is still waiting for its first formal session with the U.S. Prime Minister Carney said last Thursday that the breakthrough will happen at the 'leadership level' — meaning a Carney-Trump summit. But Carney spoke with Trump on Wednesday and did not raise CUSMA. Poilievre: 'The aluminum, steel, auto, and lumber workers are desperate for their jobs and their paycheques, and Mr. Carney has a long telephone conversation with the president and doesn't even bring it up.'",
+    whyItMatters: "The 25% auto tariff (Section 232) is not affected by today's CUSMA review meeting. It is a separate legal instrument under the Trade Expansion Act of 1962 and will not be resolved by the July 1 meeting. Whatever happens today — 16-year renewal, zombie CUSMA, or withdrawal notice — the tariff on vehicles and non-CUSMA-compliant auto parts remains in place. The tariff that matters most to your shop will not change today. Plan accordingly. The next critical date is July 24 — when the Section 122 temporary 10% surcharge expires and must be replaced by a new tariff regime. Watch for a White House proclamation between now and July 24. The Unifor-Ford July 10 deadline is 11 days away — that is the most immediately consequential date for Canadian auto workers and the Windsor-area supply chain.",
+    source: "CBC News / Ontario Chamber of Commerce / Unifor — June 29, 2026",
+    sourceUrl: "https://www.cbc.ca/news/canada/toronto/cusma-talks-checkpoint-businesses-unions-9.7250899",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "GORDIE HOWE BRIDGE / MOROUN / TOLL REVENUE",
+    tag: "GORDIE HOWE BRIDGE / NPR / MICHIGAN SENATE",
     tagColor: "#b91c1c",
-    headline: "Gordie Howe Bridge: Lutnick Wants a Bigger Cut of the Tolls — \"Sooner or Later, It Will Open\" — Michigan Primary Pressure Grows",
-    summary: "The BNN Bloomberg interview with Windsor Essex Chamber of Commerce CEO Ryan Donally (June 26) confirmed what had been suspected: the U.S. is now explicitly demanding a larger share of the Gordie Howe Bridge toll revenue than the existing agreement provides. Canada agreed to give Michigan half ownership and half the toll revenue after construction costs are recovered — a deal negotiated between the Windsor-Detroit Bridge Authority, the State of Michigan, and the Government of Canada. Commerce Secretary Howard Lutnick wants more. The Windsor Star's Randy Essex — who broke the Moroun donor story last week — confirmed that Lutnick 'felt cut out' of the June 12 ribbon-cutting negotiations that Governor Whitmer had arranged with Trump's Chief of Staff Susie Wiles. Lutnick again urged Trump to halt the opening. Former Michigan Governor and U.S. Ambassador to Canada James Blanchard: 'Sooner or later, it will open. If Trump wants money, he should get it from the Morouns.' The bridge is now a factor in the CUSMA review — the Maro Group (Canadian auto parts industry group) says it is 'a factor but not key to the outcome.' The Michigan primary is in August. Democratic candidate Mallory McMorrow's $400,000+ TV and digital ad campaign is running in the Detroit market. Republican Senate hopeful Mike Rogers is also using the bridge in his messaging. Trump now has a domestic political reason to open the bridge before the Michigan primary. The bridge cost Canada $6.4 billion — 100% Canadian-funded including the U.S. port of entry. Every day of delay costs the Windsor-Detroit corridor — the busiest trade corridor in North America — in congestion, delays, and lost economic activity.",
-    whyItMatters: "The Gordie Howe Bridge is the most concrete example of how U.S. domestic politics is affecting Canadian automotive infrastructure. For Windsor-area shop owners: when the bridge opens, the Windsor-Detroit corridor will see a surge in cross-border traffic and trade. Parts delivery times from Michigan suppliers will improve. Cross-border customer traffic will increase. The bridge will also reduce congestion on the Ambassador Bridge — which currently handles all Windsor-Detroit commercial traffic. For shop owners outside Windsor: the bridge opening will be a signal that the U.S.-Canada relationship is stabilizing. It will likely coincide with — or follow — a CUSMA framework agreement. Watch the Michigan primary calendar: the primary is in August. Trump has a political incentive to open the bridge before then. If the bridge opens in July, it is a strong signal that a broader CUSMA deal is close.",
-    source: "BNN Bloomberg / Windsor Star / Windsor Essex Chamber of Commerce — June 26–28, 2026",
-    sourceUrl: "https://www.bnnbloomberg.ca/video/shows/the-close/2026/06/26/us-eyes-larger-share-of-gordie-howe-bridge-tolls/",
+    headline: "NPR Takes the Gordie Howe Bridge Story National in the U.S. — \"A Bridge to Canada May Be Blocked by the Trump Administration\" — Pentagon Also Suspending 86-Year-Old Canada-U.S. Defense Board",
+    summary: "NPR's Don Gonyea visited Windsor and Detroit this week for a 9-minute radio documentary on the Gordie Howe Bridge that aired nationally on Sunday. Canadian Trucking Alliance President Stephen Laskowski: 'I was heading out. My wife said, your phone's ringing... it said, don't bother going.' The NPR piece is significant because it takes the Moroun donor story — Matthew Moroun's $1 million contribution to a Trump-aligned super PAC in January 2026, and his subsequent meeting with Commerce Secretary Howard Lutnick — to a U.S. national audience for the first time. The story is no longer just a Canada-U.S. trade dispute. It is now a U.S. domestic political story about a billionaire donor using political contributions to protect a monopoly. War on the Rocks (June 29) added a national security dimension: 'The opening of the gleaming new bridge between Detroit and Windsor has been long delayed in the tense run-up to the continental trade deal review.' But War on the Rocks also reported that the Pentagon has unilaterally suspended the 86-year-old Permanent Joint Board on Defense — the oldest Canada-U.S. defense institution, established in 1940 by Roosevelt and King. The suspension of the PJBD is not widely reported in Canadian media but is deeply alarming to defence analysts. War on the Rocks: 'Just when Washington needs to expand its defense industrial base, the Trump administration is undermining the political foundations needed to do so with its closest allies.' The bridge delay and the PJBD suspension are part of the same pattern: the Trump administration is using every lever of the Canada-U.S. relationship as a bargaining chip. Former Michigan Governor Blanchard: 'Sooner or later, it will open. If Trump wants money, he should get it from the Morouns.' The Michigan primary is in August. Democratic candidate Mallory McMorrow's $400,000+ TV and digital ad campaign is running in the Detroit market. Trump has a domestic political incentive to open the bridge before then.",
+    whyItMatters: "The NPR documentary and the War on the Rocks analysis are significant for one reason: they signal that the Gordie Howe Bridge delay has moved from a bilateral trade dispute to a U.S. domestic political liability for Trump. When NPR covers a story, it reaches the educated, politically engaged U.S. audience that includes the donors, policy advisors, and media figures who influence Trump's decisions. The Moroun donor angle is now in the U.S. national conversation. The Michigan primary pressure is real — Trump has a political incentive to open the bridge before August. For Windsor-area shop owners: when the bridge opens, the corridor will see a surge in cross-border traffic, parts deliveries will improve, and cross-border customer traffic will increase. Watch for an opening announcement in the next 4–6 weeks. For shop owners outside Windsor: the bridge opening will be a signal that the U.S.-Canada relationship is stabilizing. It will likely coincide with — or follow — a CUSMA framework agreement.",
+    source: "NPR / War on the Rocks / Windsor Star — June 28–29, 2026",
+    sourceUrl: "https://www.wrkf.org/npr-news/2026-06-28/a-bridge-to-canada-may-be-blocked-by-the-trump-administration",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "USED WHOLESALE / CANADIAN BLACK BOOK / MARKET DATA",
+    tag: "BANK OF CANADA / RATE HOLD / MARKET DATA",
     tagColor: "#7c3aed",
-    headline: "Used Wholesale Prices Falling Faster Than Normal — -0.35% Last Week — Customers Will Hold Onto Older Vehicles Longer",
-    summary: "Canadian Black Book Market Insights for the week ending June 20, 2026: used wholesale prices fell 0.35% — steeper than the previous week's 0.29% drop and well above the historical average of 0.19% for the same period. Mid-size cars led the decline at -1.45%. Compact cars fell -0.85%. Full-size pickups fell -0.22%. The average asking price on dealer lots: $36,900 (14-day moving average). 169,000 vehicles available. Auction sale rates averaged 43.2% — sellers are maintaining firm floor prices but buyers are not meeting them. The practical context: new vehicle prices remain elevated due to the 25% auto tariff. Used vehicles are softening because consumers are caught between expensive new vehicles and softening used values — and many are choosing to hold onto their current vehicle rather than trade up or down. This is the most important market signal for Canadian shop owners this week. When used values fall and new prices remain high, consumers hold onto their current vehicles longer — and bring them to shops for maintenance and repair rather than trading them in. The repair-versus-replace calculation is shifting in favour of repair. This is a tailwind for independent shops.",
-    whyItMatters: "The used wholesale price decline has three direct implications for Canadian shop owners: (1) More customers will hold onto their current vehicles longer. The repair-versus-replace calculation is shifting in favour of repair. Customers who might have traded in a 5-year-old vehicle last year are now keeping it and maintaining it. This is a tailwind for maintenance and repair work — oil changes, brakes, tires, suspension, and fluid services. (2) The average asking price on dealer lots is $36,900. A customer who is looking at a $36,900 used vehicle is also looking at a $500–$1,500 repair bill on their current vehicle. In most cases, the repair is the better financial decision. Your job is to help them see that clearly. (3) Auction sale rates at 43.2% mean that dealers are not moving inventory at their floor prices. This will eventually force price reductions — which will bring used values down further. The softening trend is likely to continue through Q3 2026. Plan your service marketing around the 'repair and keep' message.",
-    source: "Canadian Black Book Market Insights — Week Ending June 20, 2026",
-    sourceUrl: "https://www.canadianblackbook.com/market-insights",
+    headline: "Bank of Canada Rate Hold #5 — 2.25% — What It Means for Shop Owners — June Auto Sales Due Wednesday",
+    summary: "The Bank of Canada held its overnight policy rate at 2.25% for the fifth consecutive time on June 10, 2026. The next rate decision is July 15. RBC Economics: Canada's economy likely started Q2 on a stronger footing — GDP growth picking up in Q2, core inflation subdued. RBC: 'We continue to expect no change in interest rates from the central bank in 2026.' The Bank of Canada is caught in a stagflation dilemma: weak economic growth (caused by tariff uncertainty and reduced business investment) combined with elevated inflation (caused by tariffs on imported goods). Cutting rates would stimulate growth but risk an inflation spike. Raising rates would control inflation but further weaken growth. Holding at 2.25% is the least-bad option. The GDP data for May 2026 is due Wednesday — this will be the most important economic data point of the week. If GDP growth is positive, the Bank of Canada has more room to hold. If GDP contracts, pressure for a rate cut will increase. June auto sales results are also due Wednesday from the major OEMs. Watch for: Honda Canada (Alliston production impact), Toyota Canada (Woodstock RAV4 retool status), Stellantis Canada (Brampton idle impact on Chrysler/Dodge/Jeep sales), GM Canada (CAMI idle impact on BrightDrop), Ford Canada (Super Duty Oakville launch impact). The 25% auto tariff has inflated new vehicle prices by an estimated $5,000–$15,000 depending on model. This is pushing consumers into used vehicles and repair shops. Rate stability at 2.25% means financing costs for used vehicle purchases and shop equipment loans remain predictable.",
+    whyItMatters: "Rate stability at 2.25% has three direct implications for Canadian shop owners: (1) Borrowing costs for shop equipment, lifts, diagnostic tools, and facility upgrades remain predictable. If you have been delaying a capital purchase, the financing environment is as stable as it has been in two years. (2) Customers financing used vehicle purchases face predictable monthly payments. The used vehicle market is softening (Canadian Black Book: -0.35% last week) — which means more customers are choosing to repair and keep rather than buy new or used. This is a tailwind for maintenance and repair work. (3) The Bank of Canada's hold signals that the economy is not in freefall — but it is not growing strongly either. Consumer confidence is fragile. Customers are making careful spending decisions. Your shop's value proposition — repair and keep versus replace — has never been more relevant. The June auto sales data due Wednesday will tell you how many new vehicles are actually moving in your market. If sales are down, more customers are keeping their current vehicles. That means more work for you.",
+    source: "Bank of Canada / RBC Economics / Statistics Canada — June 2026",
+    sourceUrl: "https://www.bankofcanada.ca/rates/interest-rates/canadian-interest-rates/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "July 1 CUSMA trilateral virtual meeting is TOMORROW. Three outcomes: 16-year renewal (unlikely), zombie CUSMA annual rolling reviews (most likely), or 6-month withdrawal notice (legally possible but politically catastrophic). Canada and the U.S. have had zero formal bilateral sessions. The 25% auto tariff is not affected by the outcome.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/06/20/canada-to-meet-with-us-and-mexico-on-july-1-for-cusma-review/",
-  },
-  {
-    icon: "⚠️",
-    text: "July 24 Section 122 tariff cliff: the temporary 10% surcharge on global imports (imposed February 24 after the Supreme Court struck down IEEPA tariffs) expires by statute in 150 days. Congress has not extended it. The Trump administration must replace it with a new regime by July 24. Watch for a White House proclamation between July 1 and July 24.",
-    sourceUrl: "https://www.blakes.com/insights/us-canada-tariffs-timeline-of-key-dates-and-documents/",
+    text: "CUSMA Review Day: The July 1 trilateral virtual meeting is today. Most likely outcome: zombie CUSMA annual rolling reviews. Canada and the U.S. have had zero formal bilateral sessions. The 25% auto tariff is not affected by the outcome. Nothing changes at midnight tonight for your shop.",
+    sourceUrl: "https://www.cbc.ca/news/canada/toronto/cusma-talks-checkpoint-businesses-unions-9.7250899",
   },
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge: Commerce Secretary Lutnick wants a larger share of toll revenue than the existing agreement provides. Former Michigan Governor Blanchard: 'Sooner or later, it will open.' Michigan primary is in August. Trump has a domestic political incentive to open the bridge before then. McMorrow's $400K+ ad campaign is running in the Detroit market.",
-    sourceUrl: "https://www.bnnbloomberg.ca/video/shows/the-close/2026/06/26/us-eyes-larger-share-of-gordie-howe-bridge-tolls/",
+    text: "NPR took the Gordie Howe Bridge story national in the U.S. on Sunday — the Moroun donor angle is now in the U.S. national conversation. War on the Rocks also reported the Pentagon unilaterally suspended the 86-year-old Permanent Joint Board on Defense. The bridge delay and the PJBD suspension are part of the same pattern.",
+    sourceUrl: "https://www.wrkf.org/npr-news/2026-06-28/a-bridge-to-canada-may-be-blocked-by-the-trump-administration",
   },
   {
     icon: "🤝",
-    text: "Unifor-Ford bargaining is now in Day 7 in downtown Toronto. The July 10 tentative deal target is 12 days away. Ford has not yet publicly responded to Unifor's production commitment demand for Windsor Assembly and Oakville. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
+    text: "Unifor-Ford bargaining is now in Day 8 in downtown Toronto. The July 10 tentative deal target is 11 days away. Ford has not yet publicly responded to Unifor's production commitment demand for Windsor Assembly and Oakville. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
     sourceUrl: "https://www.unifor.org/news/all-news/unifor-launches-negotiations-ford-motor-company",
+  },
+  {
+    icon: "📊",
+    text: "June auto sales data due Wednesday from all major OEMs. Watch for: Honda Canada (Alliston production impact), Toyota Canada (Woodstock RAV4 retool), Stellantis Canada (Brampton idle), GM Canada (CAMI idle), Ford Canada (Super Duty Oakville launch). The 25% tariff has inflated new vehicle prices by $5,000–$15,000 depending on model.",
+    sourceUrl: "https://www.bankofcanada.ca/rates/interest-rates/canadian-interest-rates/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "July 1 Changes Nothing for Your Shop — Here's What Actually Matters",
-  text: "The July 1 CUSMA review will not remove the 25% auto tariff. The Section 232 auto tariff is a separate legal instrument (Trade Expansion Act of 1962) and is not part of CUSMA. Whatever happens tomorrow — 16-year renewal, zombie CUSMA, or withdrawal notice — the 25% tariff on vehicles and the tariff on non-CUSMA-compliant auto parts remain in place. The tariff that matters most to your shop will not be resolved by the July 1 meeting. Plan accordingly.",
+  title: "CUSMA Review Day Changes Nothing for Your Shop — Here's What Actually Matters This Week",
+  text: "The July 1 CUSMA review will not remove the 25% auto tariff. The Section 232 auto tariff is a separate legal instrument and is not part of CUSMA. Whatever happens today — 16-year renewal, zombie CUSMA, or withdrawal notice — the 25% tariff on vehicles and non-CUSMA-compliant parts remains in place. The dates that actually matter this week: July 10 (Unifor-Ford deadline) and July 24 (Section 122 tariff expiry). Watch for a White House proclamation between now and July 24 on what replaces the Section 122 surcharge.",
 };
 
 const quoteOfTheDay = {
-  text: "Beyond the July 1 trigger, the current regime of Section 122 tariffs will expire on July 24, when we should expect the Trump administration to create another regime.",
-  author: "John Stackhouse",
-  title: "RBC Senior Vice-President — Brookings Institution Roundtable, June 2026",
+  text: "My advice has been, stay calm, hold the line, don't lose your nerve.",
+  author: "Lana Payne",
+  title: "Unifor National President — on CUSMA Review Day, June 29, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Dodge Charger Daytona — Bright White, 440 Magnum, Ontario-Plated",
-  description: "The 1969 Dodge Charger Daytona is the most aerodynamically extreme production car of the muscle car era — built for one reason: to win at Daytona and Talladega. Dodge needed a car that could exceed 200 mph on the superspeedways to beat Ford's Torino Talladega. The result was a car with a pointed fibreglass nose cone extending 18 inches beyond the standard Charger front bumper, flush-mounted headlights, and a massive rear wing standing 23 inches above the trunk lid on two vertical stabilizers. The wing was not decorative — at speed, it generated significant downforce and allowed the rear spoiler to be adjusted for different track configurations. The 440 Magnum produced 375 horsepower officially. The 426 Hemi option produced 425 horsepower. Dodge built 503 Daytonas for the 1969 model year — enough to satisfy NASCAR's homologation requirement. Many dealers could not sell them. Some were converted back to standard Charger spec. Richard Petty drove a Daytona to victory at Talladega in 1969 at 188.901 mph — a record that stood for years. The ones that survived in original condition are among the most valuable muscle cars in existence. A documented 1969 Daytona with the 440 Magnum in Bright White with an Ontario plate is worth between $200,000 and $400,000 depending on condition and matching numbers. The Hemi version has sold for over $1.5 million at auction. It is the car that proved aerodynamics mattered — and that Chrysler engineers could out-think Ford when they had to.",
+  name: "1969 Pontiac GTO Judge — Carousel Red, Ram Air IV, Ontario-Plated",
+  description: "The 1969 Pontiac GTO Judge was built to answer a simple question: what happens when Pontiac engineers stop worrying about being reasonable? The Judge was introduced in January 1969 as a response to the Plymouth Road Runner — a stripped-down, high-performance muscle car that proved you didn't need luxury to go fast. Pontiac's answer was the Judge: a GTO with the Ram Air III or Ram Air IV engine, a rear spoiler, side stripes, and a name borrowed from a Laugh-In catchphrase. The Ram Air IV produced 370 horsepower officially — but dyno testing consistently showed 400 or more at the flywheel. The Carousel Red paint was the signature Judge colour in 1969, though the car was available in any GTO colour. The Judge was not subtle. The rear spoiler was functional. The stripes were loud. The name was printed on the front fenders. Pontiac sold 6,725 Judges in 1969 — a significant number, but still a fraction of total GTO production. The Ram Air IV cars are the most sought-after, with documented examples selling for $80,000–$120,000 depending on condition. An Ontario-plated Carousel Red Ram Air IV Judge is the kind of car that stops traffic at a show — and stops hearts on a highway. Here comes the Judge.",
   image: HOTROD_IMG,
 };
 
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["CUSMA EVE", "JULY 24 CLIFF", "BRIDGE TOLL FIGHT", "DAYTONA"].map((tag) => (
+                {["CUSMA REVIEW DAY", "BRIDGE GOES NATIONAL", "RATE HOLD #5", "GTO JUDGE"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="CUSMA Eve: July 1 Countdown and Gordie Howe Bridge Still Closed — Baywash Daily Briefing Edition No. 52"
+              alt="CUSMA Review Day: July 1 Countdown and Gordie Howe Bridge Goes National on NPR — Baywash Daily Briefing Edition No. 53"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Sunday Edition — No. 52 — CUSMA Eve</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Monday Edition — No. 53 — CUSMA Review Day</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                July 1 Is Tomorrow — What Actually Happens — And the July 24 Tariff Cliff Nobody Is Talking About
+                CUSMA Review Day Is Here — "A Checkpoint, Not a Cliff" — NPR Takes the Bridge Story National
               </h3>
             </div>
           </div>
