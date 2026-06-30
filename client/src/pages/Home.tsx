@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 53;
-const BRIEFING_DATE = "June 29, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 54;
+const BRIEFING_DATE = "June 30, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/udAEIZJlTBHIyJkx.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jtvbErvwktCMNNGC.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PbVhxbZdXLhqbFXv.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YHfPKrAUHDlkMXUC.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ehletuZXxcAQfHBa.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZToevxyuBybPIQis.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QzmXyyNWVxUxEVHM.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rZillXOhBEybDcDK.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SsLNxNDHStXkNrSo.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fWrBthteuhHzpskK.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CUSMA REVIEW DAY / JULY 1 / ZOMBIE CUSMA",
+    tag: "CUSMA REVIEW / TARIFF CLIFF / TRADE",
     tagColor: "#1d4ed8",
-    headline: "CUSMA Review Day Is Here — \"A Checkpoint, Not a Cliff\" — Premier Ford on Third U.S. Trip — Unifor: \"Hold the Line, Don't Lose Your Nerve\"",
-    summary: "The July 1 trilateral virtual Free Trade Commission meeting is today. Canada, the United States, and Mexico are meeting virtually to conduct the first formal review of CUSMA since it came into force in 2020. The meeting is not a signing ceremony — it is the beginning of a process that could take months or years. Ontario Chamber of Commerce CEO Daniel Tisch: 'We look at next week with some anxiety, but also hope, because the deal will continue. This is a checkpoint, not a cliff.' Unifor President Lana Payne: 'My advice has been, stay calm, hold the line, don't lose your nerve.' Canadian Manufacturers and Exporters CEO Dennis Darby: 'It's the effect of uncertainty — companies are sitting on their hands in both countries.' Ontario Premier Doug Ford is on his third U.S. trip of June — attending the Western Governors' Association conference in Salt Lake City, Utah today and tomorrow. Ford's strategy: build relationships with U.S. governors who have economic stakes in the Canada-U.S. relationship. U.S. Ambassador Pete Hoekstra told CTV News last week: 'We're not anywhere close on a new CUSMA framework.' The most likely outcome of today's meeting: annual rolling reviews — the 'zombie CUSMA' scenario that KPMG's Joy Nott warned about. Canada and the U.S. have had zero formal bilateral negotiating sessions. U.S.-Mexico bilateral talks have already had two rounds. Canada is still waiting for its first formal session with the U.S. Prime Minister Carney said last Thursday that the breakthrough will happen at the 'leadership level' — meaning a Carney-Trump summit. But Carney spoke with Trump on Wednesday and did not raise CUSMA. Poilievre: 'The aluminum, steel, auto, and lumber workers are desperate for their jobs and their paycheques, and Mr. Carney has a long telephone conversation with the president and doesn't even bring it up.'",
-    whyItMatters: "The 25% auto tariff (Section 232) is not affected by today's CUSMA review meeting. It is a separate legal instrument under the Trade Expansion Act of 1962 and will not be resolved by the July 1 meeting. Whatever happens today — 16-year renewal, zombie CUSMA, or withdrawal notice — the tariff on vehicles and non-CUSMA-compliant auto parts remains in place. The tariff that matters most to your shop will not change today. Plan accordingly. The next critical date is July 24 — when the Section 122 temporary 10% surcharge expires and must be replaced by a new tariff regime. Watch for a White House proclamation between now and July 24. The Unifor-Ford July 10 deadline is 11 days away — that is the most immediately consequential date for Canadian auto workers and the Windsor-area supply chain.",
-    source: "CBC News / Ontario Chamber of Commerce / Unifor — June 29, 2026",
-    sourceUrl: "https://www.cbc.ca/news/canada/toronto/cusma-talks-checkpoint-businesses-unions-9.7250899",
+    headline: "Canada's Former Trade Chief: No Tariff Deal Before U.S. Midterms — CUSMA Review Kicks Off Today — July 24 Tariff Cliff Looms",
+    summary: "Steve Verheul, Canada's former chief CUSMA negotiator and now a senior advisor at BMO Capital Markets, told a client event Monday that a comprehensive Canada-U.S. tariff deal is unlikely before the November 2026 U.S. midterm elections. Verheul's assessment: the Trump administration does not have the political bandwidth to close a complex trade deal while managing a midterm campaign, and U.S. domestic politics will dominate the agenda through November. The CUSMA formal review process kicked off today — the first trilateral Free Trade Commission meeting since the agreement came into force in 2020. Most analysts now expect the 'zombie CUSMA' outcome: annual rolling reviews with no comprehensive resolution. The Section 122 temporary tariff surcharge — the 10% blanket tariff applied to most Canadian goods — expires July 24. The White House must issue a new proclamation before that date. Options include: extending Section 122 at 10%, replacing it with targeted sector tariffs, or allowing it to lapse (which would revert to pre-Section 122 tariff rates). U.S. first-half 2026 auto sales came in at -3.6% year-over-year, the weakest H1 since 2020. Analysts attribute the decline to tariff-inflated new vehicle prices and consumer uncertainty. The weak U.S. sales data gives Canada a negotiating argument — tariffs are hurting American consumers and dealers — but Verheul's assessment suggests the political will to act on that argument does not exist before November.",
+    whyItMatters: "Verheul's assessment is the most authoritative public statement yet that the tariff environment will not change materially before November 2026. For shop owners, this means four more months of the current environment: elevated new vehicle prices, consumers holding onto older vehicles longer, and repair-vs-replace decisions tilting toward repair. The July 24 Section 122 expiry is the next critical date. Watch for a White House proclamation in the next 24 days. If Section 122 is extended or replaced with targeted tariffs, the parts cost environment for your shop stays elevated. If it lapses, some imported parts costs may ease — but the 25% auto tariff under Section 232 remains in place regardless. Plan your parts inventory and pricing strategy for a tariff environment that persists through at least Q4 2026. The shops that are thriving right now are the ones that have already adjusted their value proposition: repair and maintain is the financially rational choice for most Canadian vehicle owners, and your shop is the place that makes that possible.",
+    source: "BMO Capital Markets / Reuters / Automotive News — June 29–30, 2026",
+    sourceUrl: "https://www.reuters.com/world/americas/canada-us-trade-deal-unlikely-before-midterms-verheul-2026-06-29/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "GORDIE HOWE BRIDGE / NPR / MICHIGAN SENATE",
-    tagColor: "#b91c1c",
-    headline: "NPR Takes the Gordie Howe Bridge Story National in the U.S. — \"A Bridge to Canada May Be Blocked by the Trump Administration\" — Pentagon Also Suspending 86-Year-Old Canada-U.S. Defense Board",
-    summary: "NPR's Don Gonyea visited Windsor and Detroit this week for a 9-minute radio documentary on the Gordie Howe Bridge that aired nationally on Sunday. Canadian Trucking Alliance President Stephen Laskowski: 'I was heading out. My wife said, your phone's ringing... it said, don't bother going.' The NPR piece is significant because it takes the Moroun donor story — Matthew Moroun's $1 million contribution to a Trump-aligned super PAC in January 2026, and his subsequent meeting with Commerce Secretary Howard Lutnick — to a U.S. national audience for the first time. The story is no longer just a Canada-U.S. trade dispute. It is now a U.S. domestic political story about a billionaire donor using political contributions to protect a monopoly. War on the Rocks (June 29) added a national security dimension: 'The opening of the gleaming new bridge between Detroit and Windsor has been long delayed in the tense run-up to the continental trade deal review.' But War on the Rocks also reported that the Pentagon has unilaterally suspended the 86-year-old Permanent Joint Board on Defense — the oldest Canada-U.S. defense institution, established in 1940 by Roosevelt and King. The suspension of the PJBD is not widely reported in Canadian media but is deeply alarming to defence analysts. War on the Rocks: 'Just when Washington needs to expand its defense industrial base, the Trump administration is undermining the political foundations needed to do so with its closest allies.' The bridge delay and the PJBD suspension are part of the same pattern: the Trump administration is using every lever of the Canada-U.S. relationship as a bargaining chip. Former Michigan Governor Blanchard: 'Sooner or later, it will open. If Trump wants money, he should get it from the Morouns.' The Michigan primary is in August. Democratic candidate Mallory McMorrow's $400,000+ TV and digital ad campaign is running in the Detroit market. Trump has a domestic political incentive to open the bridge before then.",
-    whyItMatters: "The NPR documentary and the War on the Rocks analysis are significant for one reason: they signal that the Gordie Howe Bridge delay has moved from a bilateral trade dispute to a U.S. domestic political liability for Trump. When NPR covers a story, it reaches the educated, politically engaged U.S. audience that includes the donors, policy advisors, and media figures who influence Trump's decisions. The Moroun donor angle is now in the U.S. national conversation. The Michigan primary pressure is real — Trump has a political incentive to open the bridge before August. For Windsor-area shop owners: when the bridge opens, the corridor will see a surge in cross-border traffic, parts deliveries will improve, and cross-border customer traffic will increase. Watch for an opening announcement in the next 4–6 weeks. For shop owners outside Windsor: the bridge opening will be a signal that the U.S.-Canada relationship is stabilizing. It will likely coincide with — or follow — a CUSMA framework agreement.",
-    source: "NPR / War on the Rocks / Windsor Star — June 28–29, 2026",
-    sourceUrl: "https://www.wrkf.org/npr-news/2026-06-28/a-bridge-to-canada-may-be-blocked-by-the-trump-administration",
+    tag: "HONDA / ELEMENT REVIVAL / HYBRID",
+    tagColor: "#15803d",
+    headline: "Honda Is Reportedly Reviving the Element as a Hybrid for 2029 — Built in Ohio, $30K–$35K, 100,000 Units/Year",
+    summary: "Automotive News broke the story Sunday evening: Honda is planning to revive the Element nameplate as a hybrid SUV for the 2029 model year. According to sources familiar with the program, the new Element will be built at Honda's East Liberty, Ohio plant — not at the Alliston, Ontario facility — with a target production volume of 100,000 units per year. The price point is expected to be $30,000–$35,000 USD, positioning it below the CR-V Hybrid and above the HR-V. The original Element, sold from 2003 to 2011, was a cult favourite for its boxy utility, wipe-clean interior, and clamshell rear doors. It was discontinued after sales declined, but the nameplate has maintained a devoted following. The revival signals Honda's continued investment in hybrid technology as the company recalibrates its electrification strategy. Honda announced earlier this year that it was slowing its all-electric transition and extending hybrid production timelines. The Ohio build location — rather than Alliston — is notable. Honda's Alliston plant currently produces the CR-V and Civic. Adding a third model to Alliston would require significant retooling. The Ohio decision also reflects the political reality of the current U.S.-Canada trade environment: building in Ohio avoids the 25% Section 232 auto tariff on Canadian-assembled vehicles sold in the U.S. market.",
+    whyItMatters: "The Honda Element revival matters to Canadian shop owners on two levels. First, the Ohio build decision is a direct consequence of the 25% auto tariff — Honda is routing production to avoid tariff exposure on U.S. sales. This is the same calculus that has led other OEMs to shift production away from Canadian plants. Every vehicle that is not built in Canada is a vehicle that does not generate Canadian assembly jobs, Canadian parts demand, or Canadian dealer service revenue. Second, the hybrid powertrain signals what the next generation of service work looks like. The 2029 Element will likely use Honda's two-motor hybrid system — the same architecture used in the CR-V Hybrid and Accord Hybrid. If you are not already trained and equipped for Honda hybrid service, the window to get ahead of this is now. The Element's target customer — outdoorsy, practical, budget-conscious — is exactly the kind of customer who will keep a vehicle for 10–15 years and spend money on maintenance. Get familiar with Honda hybrid service before 2029.",
+    source: "Automotive News / Honda Canada — June 29, 2026",
+    sourceUrl: "https://www.autonews.com/vehicles/honda-element-revival-hybrid-2029",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "BANK OF CANADA / RATE HOLD / MARKET DATA",
+    tag: "CONSUMER BEHAVIOUR / REPAIR VS REPLACE / MARKET DATA",
     tagColor: "#7c3aed",
-    headline: "Bank of Canada Rate Hold #5 — 2.25% — What It Means for Shop Owners — June Auto Sales Due Wednesday",
-    summary: "The Bank of Canada held its overnight policy rate at 2.25% for the fifth consecutive time on June 10, 2026. The next rate decision is July 15. RBC Economics: Canada's economy likely started Q2 on a stronger footing — GDP growth picking up in Q2, core inflation subdued. RBC: 'We continue to expect no change in interest rates from the central bank in 2026.' The Bank of Canada is caught in a stagflation dilemma: weak economic growth (caused by tariff uncertainty and reduced business investment) combined with elevated inflation (caused by tariffs on imported goods). Cutting rates would stimulate growth but risk an inflation spike. Raising rates would control inflation but further weaken growth. Holding at 2.25% is the least-bad option. The GDP data for May 2026 is due Wednesday — this will be the most important economic data point of the week. If GDP growth is positive, the Bank of Canada has more room to hold. If GDP contracts, pressure for a rate cut will increase. June auto sales results are also due Wednesday from the major OEMs. Watch for: Honda Canada (Alliston production impact), Toyota Canada (Woodstock RAV4 retool status), Stellantis Canada (Brampton idle impact on Chrysler/Dodge/Jeep sales), GM Canada (CAMI idle impact on BrightDrop), Ford Canada (Super Duty Oakville launch impact). The 25% auto tariff has inflated new vehicle prices by an estimated $5,000–$15,000 depending on model. This is pushing consumers into used vehicles and repair shops. Rate stability at 2.25% means financing costs for used vehicle purchases and shop equipment loans remain predictable.",
-    whyItMatters: "Rate stability at 2.25% has three direct implications for Canadian shop owners: (1) Borrowing costs for shop equipment, lifts, diagnostic tools, and facility upgrades remain predictable. If you have been delaying a capital purchase, the financing environment is as stable as it has been in two years. (2) Customers financing used vehicle purchases face predictable monthly payments. The used vehicle market is softening (Canadian Black Book: -0.35% last week) — which means more customers are choosing to repair and keep rather than buy new or used. This is a tailwind for maintenance and repair work. (3) The Bank of Canada's hold signals that the economy is not in freefall — but it is not growing strongly either. Consumer confidence is fragile. Customers are making careful spending decisions. Your shop's value proposition — repair and keep versus replace — has never been more relevant. The June auto sales data due Wednesday will tell you how many new vehicles are actually moving in your market. If sales are down, more customers are keeping their current vehicles. That means more work for you.",
-    source: "Bank of Canada / RBC Economics / Statistics Canada — June 2026",
-    sourceUrl: "https://www.bankofcanada.ca/rates/interest-rates/canadian-interest-rates/",
+    headline: "79% of Independent Car Buyers Say a Car Is a Need, Not a Want — What This Means for Shop Owners",
+    summary: "A new study published by CBT News surveyed independent used car buyers across North America and found that 79% describe their vehicle purchase as a necessity rather than a discretionary choice. The data skews heavily toward lower-income buyers: 67% of respondents earn under $75,000 annually. The study found that the average independent used car buyer is not shopping for a vehicle they want — they are shopping for a vehicle they need to get to work, take their kids to school, and manage their daily life. The implications for the repair-vs-replace decision are significant. When a vehicle is a necessity and the buyer is financially stretched, the calculus changes: a $2,500 repair on a vehicle you own outright is almost always cheaper than a $500/month payment on a replacement. The study found that 61% of respondents had delayed a major vehicle repair in the past 12 months due to cost concerns — but 74% said they ultimately had the repair done rather than replacing the vehicle. The data aligns with what Canadian Black Book has been tracking: used vehicle values have been softening (-0.35% last week), but transaction volumes remain elevated. Canadians are buying used vehicles and keeping them longer. The tariff-inflated new vehicle market — where the average new vehicle now costs over $50,000 in Canada — is pushing buyers down-market and extending vehicle lifespans.",
+    whyItMatters: "This data is a direct tailwind for independent repair shops. When 79% of your potential customers view their vehicle as a necessity — not a luxury — they will find a way to pay for repairs. The 61% who delayed a repair and then had it done anyway are your customers. They are not walking away from their vehicles. They are managing cash flow, looking for payment options, and ultimately choosing repair over replacement. Three things you can do with this data today: (1) Make sure your shop offers a payment plan or financing option. Customers who are financially stretched will choose the shop that gives them a path to 'yes.' (2) Communicate the repair-vs-replace math explicitly. A $2,500 repair versus $6,000/year in new payments is a compelling argument — and most customers have not done that math. Do it for them. (3) Build relationships with the independent used car dealers in your area. The buyers who just purchased a $15,000 used vehicle need a trusted shop immediately. A referral relationship with a dealer puts you in front of those customers at the exact moment they are looking for a shop.",
+    source: "CBT News / Canadian Black Book — June 2026",
+    sourceUrl: "https://www.cbtnews.com/study-79-percent-car-buyers-necessity-not-want/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "CUSMA Review Day: The July 1 trilateral virtual meeting is today. Most likely outcome: zombie CUSMA annual rolling reviews. Canada and the U.S. have had zero formal bilateral sessions. The 25% auto tariff is not affected by the outcome. Nothing changes at midnight tonight for your shop.",
-    sourceUrl: "https://www.cbc.ca/news/canada/toronto/cusma-talks-checkpoint-businesses-unions-9.7250899",
+    text: "CUSMA Review Day: The formal trilateral review process kicked off today. Most analysts expect the 'zombie CUSMA' outcome — annual rolling reviews with no comprehensive resolution. The Section 122 tariff surcharge expires July 24. Watch for a White House proclamation in the next 24 days. The 25% Section 232 auto tariff is not affected by the CUSMA review.",
+    sourceUrl: "https://www.reuters.com/world/americas/canada-us-trade-deal-unlikely-before-midterms-verheul-2026-06-29/",
   },
   {
-    icon: "🌉",
-    text: "NPR took the Gordie Howe Bridge story national in the U.S. on Sunday — the Moroun donor angle is now in the U.S. national conversation. War on the Rocks also reported the Pentagon unilaterally suspended the 86-year-old Permanent Joint Board on Defense. The bridge delay and the PJBD suspension are part of the same pattern.",
-    sourceUrl: "https://www.wrkf.org/npr-news/2026-06-28/a-bridge-to-canada-may-be-blocked-by-the-trump-administration",
+    icon: "🚗",
+    text: "U.S. H1 2026 auto sales came in at -3.6% year-over-year — the weakest first half since 2020. Tariff-inflated new vehicle prices and consumer uncertainty are the primary drivers. Canadian H1 data is due this week. Watch for OEM-by-OEM breakdowns — Honda Canada (Alliston impact), Stellantis Canada (Brampton idle), GM Canada (CAMI idle), Ford Canada (Super Duty Oakville launch).",
+    sourceUrl: "https://www.autonews.com/sales/us-auto-sales-h1-2026-tariff-impact",
   },
   {
-    icon: "🤝",
-    text: "Unifor-Ford bargaining is now in Day 8 in downtown Toronto. The July 10 tentative deal target is 11 days away. Ford has not yet publicly responded to Unifor's production commitment demand for Windsor Assembly and Oakville. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
+    icon: "🔧",
+    text: "Unifor-Ford bargaining: Day 9 in downtown Toronto. The July 10 tentative deal target is 10 days away. Ford has not publicly responded to Unifor's production commitment demand for Windsor Assembly and Oakville. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
     sourceUrl: "https://www.unifor.org/news/all-news/unifor-launches-negotiations-ford-motor-company",
   },
   {
-    icon: "📊",
-    text: "June auto sales data due Wednesday from all major OEMs. Watch for: Honda Canada (Alliston production impact), Toyota Canada (Woodstock RAV4 retool), Stellantis Canada (Brampton idle), GM Canada (CAMI idle), Ford Canada (Super Duty Oakville launch). The 25% tariff has inflated new vehicle prices by $5,000–$15,000 depending on model.",
-    sourceUrl: "https://www.bankofcanada.ca/rates/interest-rates/canadian-interest-rates/",
+    icon: "🏭",
+    text: "Honda's Ohio build decision for the 2029 Element Hybrid is a direct consequence of the 25% Section 232 auto tariff. Building in Ohio avoids tariff exposure on U.S. sales. This is the same calculus driving production shifts away from Canadian plants at Stellantis (Brampton), GM (CAMI), and now Honda. Each shift reduces Canadian assembly employment and parts demand.",
+    sourceUrl: "https://www.autonews.com/vehicles/honda-element-revival-hybrid-2029",
   },
 ];
 
 const tipOfTheDay = {
-  title: "CUSMA Review Day Changes Nothing for Your Shop — Here's What Actually Matters This Week",
-  text: "The July 1 CUSMA review will not remove the 25% auto tariff. The Section 232 auto tariff is a separate legal instrument and is not part of CUSMA. Whatever happens today — 16-year renewal, zombie CUSMA, or withdrawal notice — the 25% tariff on vehicles and non-CUSMA-compliant parts remains in place. The dates that actually matter this week: July 10 (Unifor-Ford deadline) and July 24 (Section 122 tariff expiry). Watch for a White House proclamation between now and July 24 on what replaces the Section 122 surcharge.",
+  title: "The Repair-vs-Replace Math Is Your Most Powerful Sales Tool Right Now",
+  text: "With new vehicle prices averaging over $50,000 in Canada and used vehicle financing rates still elevated, the repair-vs-replace calculation has never been more compelling. A $3,000 repair on a paid-off vehicle versus $550/month for 60 months on a replacement is a $30,000 difference over five years. Most customers have not done this math. Do it for them — put it on paper, show it on your service advisor screen, explain it at the counter. The shop that helps customers make the financially rational decision builds loyalty that lasts a decade.",
 };
 
 const quoteOfTheDay = {
-  text: "My advice has been, stay calm, hold the line, don't lose your nerve.",
-  author: "Lana Payne",
-  title: "Unifor National President — on CUSMA Review Day, June 29, 2026",
+  text: "A comprehensive tariff deal before the U.S. midterms is not realistic. The political bandwidth simply isn't there.",
+  author: "Steve Verheul",
+  title: "Former Canadian Chief CUSMA Negotiator, BMO Capital Markets — June 29, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Pontiac GTO Judge — Carousel Red, Ram Air IV, Ontario-Plated",
-  description: "The 1969 Pontiac GTO Judge was built to answer a simple question: what happens when Pontiac engineers stop worrying about being reasonable? The Judge was introduced in January 1969 as a response to the Plymouth Road Runner — a stripped-down, high-performance muscle car that proved you didn't need luxury to go fast. Pontiac's answer was the Judge: a GTO with the Ram Air III or Ram Air IV engine, a rear spoiler, side stripes, and a name borrowed from a Laugh-In catchphrase. The Ram Air IV produced 370 horsepower officially — but dyno testing consistently showed 400 or more at the flywheel. The Carousel Red paint was the signature Judge colour in 1969, though the car was available in any GTO colour. The Judge was not subtle. The rear spoiler was functional. The stripes were loud. The name was printed on the front fenders. Pontiac sold 6,725 Judges in 1969 — a significant number, but still a fraction of total GTO production. The Ram Air IV cars are the most sought-after, with documented examples selling for $80,000–$120,000 depending on condition. An Ontario-plated Carousel Red Ram Air IV Judge is the kind of car that stops traffic at a show — and stops hearts on a highway. Here comes the Judge.",
+  name: "1970 Chevrolet Camaro Z28 — Hugger Orange, White Racing Stripes, Ontario-Plated",
+  description: "The 1970 Camaro Z28 is the car that made Chevrolet's engineers forget they were supposed to be building a pony car. The second-generation Camaro arrived in 1970 with a body that was wider, lower, and more aggressive than anything Detroit had produced in the segment — and the Z28 package put the most serious engine in it. The 350 cubic inch LT-1 V8 was a high-revving, solid-lifter screamer that produced 360 horsepower officially — a number that every dyno operator in the country knew was understated. The LT-1 was the same engine used in the Corvette, detuned slightly for the Camaro's drivetrain. In Hugger Orange with white racing stripes, the 1970 Z28 was not a car you could ignore. The colour — officially Chevrolet Orange — was one of the defining shades of the muscle car era, and the Z28 wore it with authority. The white stripes ran the length of the hood and trunk lid, framing the bodywork like a racing livery. An Ontario-plated example at a show today stops traffic the same way it did on the 401 in 1970. The 1970 Z28 is increasingly recognized as one of the finest driver's cars of the muscle car era — not just fast in a straight line, but genuinely capable in corners. Production was 8,733 units in 1970. Documented LT-1 examples in show condition now trade for $60,000–$90,000. The ones in Hugger Orange go first.",
   image: HOTROD_IMG,
 };
 
@@ -168,7 +168,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["CUSMA REVIEW DAY", "BRIDGE GOES NATIONAL", "RATE HOLD #5", "GTO JUDGE"].map((tag) => (
+                {["NO TARIFF DEAL BEFORE MIDTERMS", "HONDA ELEMENT REVIVAL", "REPAIR VS REPLACE", "CAMARO Z28"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="CUSMA Review Day: July 1 Countdown and Gordie Howe Bridge Goes National on NPR — Baywash Daily Briefing Edition No. 53"
+              alt="CUSMA Review Kicks Off — No Tariff Deal Before Midterms — Honda Element Revival — Baywash Daily Briefing Edition No. 54"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Monday Edition — No. 53 — CUSMA Review Day</span>
+              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Tuesday Edition — No. 54 — CUSMA Review Day</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                CUSMA Review Day Is Here — "A Checkpoint, Not a Cliff" — NPR Takes the Bridge Story National
+                No Tariff Deal Before Midterms — CUSMA Review Kicks Off — July 24 Cliff Looms
               </h3>
             </div>
           </div>
