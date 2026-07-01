@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 54;
-const BRIEFING_DATE = "June 30, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 55;
+const BRIEFING_DATE = "July 1, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZToevxyuBybPIQis.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QzmXyyNWVxUxEVHM.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rZillXOhBEybDcDK.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SsLNxNDHStXkNrSo.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fWrBthteuhHzpskK.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/cdQoErkpjlHxqmFR.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ClobnlzJJGVJdCYW.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/DqsNmYMAlDXSdSDL.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rVeEXzxgzuhTCvcB.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/clEUiuIvXnnCrchQ.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CUSMA REVIEW / TARIFF CLIFF / TRADE",
-    tagColor: "#1d4ed8",
-    headline: "Canada's Former Trade Chief: No Tariff Deal Before U.S. Midterms — CUSMA Review Kicks Off Today — July 24 Tariff Cliff Looms",
-    summary: "Steve Verheul, Canada's former chief CUSMA negotiator and now a senior advisor at BMO Capital Markets, told a client event Monday that a comprehensive Canada-U.S. tariff deal is unlikely before the November 2026 U.S. midterm elections. Verheul's assessment: the Trump administration does not have the political bandwidth to close a complex trade deal while managing a midterm campaign, and U.S. domestic politics will dominate the agenda through November. The CUSMA formal review process kicked off today — the first trilateral Free Trade Commission meeting since the agreement came into force in 2020. Most analysts now expect the 'zombie CUSMA' outcome: annual rolling reviews with no comprehensive resolution. The Section 122 temporary tariff surcharge — the 10% blanket tariff applied to most Canadian goods — expires July 24. The White House must issue a new proclamation before that date. Options include: extending Section 122 at 10%, replacing it with targeted sector tariffs, or allowing it to lapse (which would revert to pre-Section 122 tariff rates). U.S. first-half 2026 auto sales came in at -3.6% year-over-year, the weakest H1 since 2020. Analysts attribute the decline to tariff-inflated new vehicle prices and consumer uncertainty. The weak U.S. sales data gives Canada a negotiating argument — tariffs are hurting American consumers and dealers — but Verheul's assessment suggests the political will to act on that argument does not exist before November.",
-    whyItMatters: "Verheul's assessment is the most authoritative public statement yet that the tariff environment will not change materially before November 2026. For shop owners, this means four more months of the current environment: elevated new vehicle prices, consumers holding onto older vehicles longer, and repair-vs-replace decisions tilting toward repair. The July 24 Section 122 expiry is the next critical date. Watch for a White House proclamation in the next 24 days. If Section 122 is extended or replaced with targeted tariffs, the parts cost environment for your shop stays elevated. If it lapses, some imported parts costs may ease — but the 25% auto tariff under Section 232 remains in place regardless. Plan your parts inventory and pricing strategy for a tariff environment that persists through at least Q4 2026. The shops that are thriving right now are the ones that have already adjusted their value proposition: repair and maintain is the financially rational choice for most Canadian vehicle owners, and your shop is the place that makes that possible.",
-    source: "BMO Capital Markets / Reuters / Automotive News — June 29–30, 2026",
-    sourceUrl: "https://www.reuters.com/world/americas/canada-us-trade-deal-unlikely-before-midterms-verheul-2026-06-29/",
+    tag: "CUSMA SUNSET / 10-YEAR CLOCK / CANADA DAY",
+    tagColor: "#b91c1c",
+    headline: "BREAKING: U.S. Triggers CUSMA Sunset Clause — 10-Year Countdown to 2036 Expiry Begins Today — Canada Day",
+    summary: "On Canada Day 2026, the Trump administration formally declined to extend CUSMA for 16 years, activating the agreement's sunset clause and starting a 10-year countdown to the trade pact's expiry on July 1, 2036. U.S. Trade Representative Jamieson Greer met virtually with Canadian Trade Minister Dominic LeBlanc and Mexican officials on Wednesday to conduct the mandatory review. The U.S. declaration was expected — Trump has repeatedly said he does not want to renew CUSMA, the deal he negotiated in his first term and once called 'a colossal victory.' The sunset mechanism, which was considered controversial when it was enacted in 2020, now gives the U.S. maximum leverage: annual review sessions will run for the next 10 years, and if no agreement is reached, CUSMA expires on July 1, 2036. CUSMA does not disappear today. The agreement remains in force until 2036. The 25% auto tariffs under Section 232 are not affected by the sunset declaration — they are a separate legal instrument. Canada and Mexico have both publicly declared they want the full 16-year extension. Prime Minister Carney said he was not expecting 'any drama' at the meeting and called it 'a constructive exchange.' Canada's chief negotiator Janice Charette and LeBlanc participated in the virtual meeting. The U.S. has scheduled a third round of formal negotiations with Mexico for the week of July 20. No formal negotiating sessions between the U.S. and Canada have been scheduled. The U.S. is demanding 50% U.S.-specific content in all North American-built vehicles — a threshold that would lift total required regional content to 82%. A Mexican official described discussions over a universal 15% global auto tariff, with a preferential rate for Mexico and Canada if they accept tighter rules of origin.",
+    whyItMatters: "The 10-year countdown is a negotiating strategy, not a death sentence for North American trade. CUSMA remains in force. Your shop's parts supply chain, your customers' vehicles, and the Canadian automotive industry are not immediately affected by today's declaration. What today does is confirm the medium-term environment: tariff uncertainty will persist for years, not months. The U.S. has maximum leverage to extract concessions from Canada and Mexico over the next decade. For shop owners, the practical implication is the same as it has been since April: plan for a sustained tariff environment. Parts costs will remain elevated. New vehicle prices will stay high. Customers will keep their vehicles longer. The shops that build durable customer relationships — not just transactional repair visits — will be the ones that thrive in a decade-long period of trade uncertainty. The next critical date is July 10: the Unifor-Ford tentative deal deadline. That is the most immediately consequential date for Canadian auto workers and the Windsor-area supply chain.",
+    source: "Reuters / CBC News / Global Affairs Canada — July 1, 2026",
+    sourceUrl: "https://www.reuters.com/world/americas/us-declaration-exit-usmca-start-decade-long-countdown-pact-2026-06-30/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "HONDA / ELEMENT REVIVAL / HYBRID",
+    tag: "HONDA ALLISTON / EV PRODUCTION / CANADA DAY",
     tagColor: "#15803d",
-    headline: "Honda Is Reportedly Reviving the Element as a Hybrid for 2029 — Built in Ohio, $30K–$35K, 100,000 Units/Year",
-    summary: "Automotive News broke the story Sunday evening: Honda is planning to revive the Element nameplate as a hybrid SUV for the 2029 model year. According to sources familiar with the program, the new Element will be built at Honda's East Liberty, Ohio plant — not at the Alliston, Ontario facility — with a target production volume of 100,000 units per year. The price point is expected to be $30,000–$35,000 USD, positioning it below the CR-V Hybrid and above the HR-V. The original Element, sold from 2003 to 2011, was a cult favourite for its boxy utility, wipe-clean interior, and clamshell rear doors. It was discontinued after sales declined, but the nameplate has maintained a devoted following. The revival signals Honda's continued investment in hybrid technology as the company recalibrates its electrification strategy. Honda announced earlier this year that it was slowing its all-electric transition and extending hybrid production timelines. The Ohio build location — rather than Alliston — is notable. Honda's Alliston plant currently produces the CR-V and Civic. Adding a third model to Alliston would require significant retooling. The Ohio decision also reflects the political reality of the current U.S.-Canada trade environment: building in Ohio avoids the 25% Section 232 auto tariff on Canadian-assembled vehicles sold in the U.S. market.",
-    whyItMatters: "The Honda Element revival matters to Canadian shop owners on two levels. First, the Ohio build decision is a direct consequence of the 25% auto tariff — Honda is routing production to avoid tariff exposure on U.S. sales. This is the same calculus that has led other OEMs to shift production away from Canadian plants. Every vehicle that is not built in Canada is a vehicle that does not generate Canadian assembly jobs, Canadian parts demand, or Canadian dealer service revenue. Second, the hybrid powertrain signals what the next generation of service work looks like. The 2029 Element will likely use Honda's two-motor hybrid system — the same architecture used in the CR-V Hybrid and Accord Hybrid. If you are not already trained and equipped for Honda hybrid service, the window to get ahead of this is now. The Element's target customer — outdoorsy, practical, budget-conscious — is exactly the kind of customer who will keep a vehicle for 10–15 years and spend money on maintenance. Get familiar with Honda hybrid service before 2029.",
-    source: "Automotive News / Honda Canada — June 29, 2026",
-    sourceUrl: "https://www.autonews.com/vehicles/honda-element-revival-hybrid-2029",
+    headline: "Honda Alliston Begins EV Production Today — 1,000 New Jobs — Canada's EV Market Hits 25% of New Vehicle Sales in H1 2026",
+    summary: "In a rare piece of good news on Canada Day, Honda's Alliston, Ontario plant began electric vehicle production today, creating 1,000 new jobs. The Alliston facility — which currently produces the CR-V and Civic — has been retooled to add EV production as part of Honda's $15 billion Canadian EV supply chain investment announced in 2023. The timing is significant: Honda is beginning EV production in Canada on the same day the U.S. triggers the CUSMA sunset clause, signalling that Honda's long-term commitment to Canadian manufacturing is not contingent on the current trade environment. The Alliston EV launch coincides with new data showing Canada's EV market surpassed 25% of all new vehicle sales in the first half of 2026 — three years ahead of federal targets. Quebec led at 35% EV share, followed by British Columbia at 31%. Ontario is tracking at approximately 22%. The federal EV rebate program — offering up to $5,000 off eligible vehicles — and the expansion of public charging infrastructure to over 25,000 stations nationally have driven adoption. Canadian Vehicle Manufacturers' Association CEO Brian Kingston: 'Canada is positioned to become a leader in the North American EV market. From critical mineral mining to battery manufacturing, we have the complete supply chain.' The 25% EV market share milestone is a double signal: it confirms that Canadian consumers are adopting EVs faster than expected, and it means the service and maintenance profile of the Canadian vehicle fleet is shifting faster than most shop owners have planned for.",
+    whyItMatters: "Honda's Alliston EV production launch and the 25% EV market share milestone are the most important long-term signals for Canadian shop owners in months. Here is what they mean for your business: EVs require significantly different service than ICE vehicles. Battery management, high-voltage systems, regenerative braking, and software diagnostics are not skills that transfer automatically from traditional mechanical training. The shops that are investing in EV training and equipment now — before the service volume arrives — will have a 3–5 year head start on the shops that wait. The 25% market share figure means that roughly 1 in 4 new vehicles sold in Canada in H1 2026 was electric. In 5 years, that number will likely be 40–50%. The vehicles sold today will be in your service bays in 3–7 years. If you are not already EV-capable, the time to invest is now — not when the vehicles show up at your door. Check with your provincial automotive training authority about EV certification programs. Honda Canada's dealer network will be the first to see Alliston EV service volume — but independent shops that are certified and equipped will capture a growing share of out-of-warranty EV service.",
+    source: "Honda Canada / Canada24h / CVMA — July 1, 2026",
+    sourceUrl: "https://canada24h.com/archives/64008",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CONSUMER BEHAVIOUR / REPAIR VS REPLACE / MARKET DATA",
+    tag: "ONTARIO / AUTO INSURANCE / SABS REFORM",
     tagColor: "#7c3aed",
-    headline: "79% of Independent Car Buyers Say a Car Is a Need, Not a Want — What This Means for Shop Owners",
-    summary: "A new study published by CBT News surveyed independent used car buyers across North America and found that 79% describe their vehicle purchase as a necessity rather than a discretionary choice. The data skews heavily toward lower-income buyers: 67% of respondents earn under $75,000 annually. The study found that the average independent used car buyer is not shopping for a vehicle they want — they are shopping for a vehicle they need to get to work, take their kids to school, and manage their daily life. The implications for the repair-vs-replace decision are significant. When a vehicle is a necessity and the buyer is financially stretched, the calculus changes: a $2,500 repair on a vehicle you own outright is almost always cheaper than a $500/month payment on a replacement. The study found that 61% of respondents had delayed a major vehicle repair in the past 12 months due to cost concerns — but 74% said they ultimately had the repair done rather than replacing the vehicle. The data aligns with what Canadian Black Book has been tracking: used vehicle values have been softening (-0.35% last week), but transaction volumes remain elevated. Canadians are buying used vehicles and keeping them longer. The tariff-inflated new vehicle market — where the average new vehicle now costs over $50,000 in Canada — is pushing buyers down-market and extending vehicle lifespans.",
-    whyItMatters: "This data is a direct tailwind for independent repair shops. When 79% of your potential customers view their vehicle as a necessity — not a luxury — they will find a way to pay for repairs. The 61% who delayed a repair and then had it done anyway are your customers. They are not walking away from their vehicles. They are managing cash flow, looking for payment options, and ultimately choosing repair over replacement. Three things you can do with this data today: (1) Make sure your shop offers a payment plan or financing option. Customers who are financially stretched will choose the shop that gives them a path to 'yes.' (2) Communicate the repair-vs-replace math explicitly. A $2,500 repair versus $6,000/year in new payments is a compelling argument — and most customers have not done that math. Do it for them. (3) Build relationships with the independent used car dealers in your area. The buyers who just purchased a $15,000 used vehicle need a trusted shop immediately. A referral relationship with a dealer puts you in front of those customers at the exact moment they are looking for a shop.",
-    source: "CBT News / Canadian Black Book — June 2026",
-    sourceUrl: "https://www.cbtnews.com/study-79-percent-car-buyers-necessity-not-want/",
+    headline: "Ontario Auto Insurance SABS Reform Takes Effect Today — Most Accident Benefits Now Optional — What Shop Owners Need to Know",
+    summary: "Effective July 1, 2026, Ontario's Statutory Accident Benefits Schedule (SABS) has been significantly reformed. Under the new rules, medical, rehabilitation, and attendant care benefits remain mandatory — but all other accident benefits coverage is now optional, giving consumers more flexibility to choose coverage that fits their needs and budgets. The Financial Services Regulatory Authority of Ontario (FSRA) has updated all related policy forms, including the OAP 1 (Ontario Automobile Policy Owner's Policy), the OAF 4 (Ontario Application for Automobile Insurance Garage Form), and the new OPCF 47R (Optional accident benefits coverage and priority of payment). The reform is the most significant change to Ontario auto insurance in over a decade. Insurers, agents, and brokers have been required to complete the '2026 Ontario Auto Reform: Introduction to Accident Benefits Changes' training course. The practical effect for consumers: lower-cost policies are now available, but they may provide significantly less protection in the event of an accident. Consumer advocates have warned that many drivers — particularly lower-income drivers who choose the cheapest available policy — may not fully understand what coverage they have waived. For shop owners operating garage policies (OAP 4), the OEF 47R endorsement for optional accident benefits coverage has been updated and is now in effect.",
+    whyItMatters: "The Ontario SABS reform has three direct implications for shop owners. First, if your shop operates a garage policy (OAP 4) — covering customer vehicles in your care, custody, and control — your insurer should have already updated your policy forms to reflect the new OPCF/OEF 47R endorsements. If you have not received updated policy documents, contact your broker today. Do not assume your coverage is current without confirmation. Second, the reform creates a new customer service opportunity. Many of your customers will be confused about what their auto insurance now covers — particularly around accident benefits. A shop that can explain the practical implications of the SABS changes (for example, what happens to their income replacement benefit if they are injured in an accident with a vehicle that has reduced coverage) builds trust and differentiates itself from competitors. Third, watch for an increase in uninsured or underinsured motorist claims as some drivers inadvertently reduce their coverage to save money on premiums. If a customer's vehicle is damaged in an accident and their coverage is inadequate, they may be unable to afford repairs. This is a collections risk for your shop — ensure your payment policies are clear before beginning work.",
+    source: "FSRA Ontario / Financial Services Regulatory Authority — July 1, 2026",
+    sourceUrl: "https://www.fsrao.ca/industry/auto-insurance/changes-statutory-accident-benefits-coverage-ontario-july-1-2026",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "📅",
-    text: "CUSMA Review Day: The formal trilateral review process kicked off today. Most analysts expect the 'zombie CUSMA' outcome — annual rolling reviews with no comprehensive resolution. The Section 122 tariff surcharge expires July 24. Watch for a White House proclamation in the next 24 days. The 25% Section 232 auto tariff is not affected by the CUSMA review.",
-    sourceUrl: "https://www.reuters.com/world/americas/canada-us-trade-deal-unlikely-before-midterms-verheul-2026-06-29/",
-  },
-  {
-    icon: "🚗",
-    text: "U.S. H1 2026 auto sales came in at -3.6% year-over-year — the weakest first half since 2020. Tariff-inflated new vehicle prices and consumer uncertainty are the primary drivers. Canadian H1 data is due this week. Watch for OEM-by-OEM breakdowns — Honda Canada (Alliston impact), Stellantis Canada (Brampton idle), GM Canada (CAMI idle), Ford Canada (Super Duty Oakville launch).",
-    sourceUrl: "https://www.autonews.com/sales/us-auto-sales-h1-2026-tariff-impact",
+    icon: "🇨🇦",
+    text: "Happy Canada Day — and what a Canada Day it is. The U.S. triggered the CUSMA sunset clause this morning. CUSMA does not expire today — it remains in force until 2036. Annual reviews will now run until a new deal is reached or the pact expires. The 25% auto tariff is not affected. Canada's trade relationship with the U.S. is intact — but under a 10-year countdown clock.",
+    sourceUrl: "https://www.reuters.com/world/americas/us-declaration-exit-usmca-start-decade-long-countdown-pact-2026-06-30/",
   },
   {
     icon: "🔧",
-    text: "Unifor-Ford bargaining: Day 9 in downtown Toronto. The July 10 tentative deal target is 10 days away. Ford has not publicly responded to Unifor's production commitment demand for Windsor Assembly and Oakville. A work stoppage at Windsor Assembly would affect Bronco Sport and Lincoln Corsair parts availability within days.",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-launches-negotiations-ford-motor-company",
+    text: "Unifor-Ford bargaining: Day 10 in downtown Toronto. The July 10 tentative deal target is 9 days away. Unifor has demanded production commitments for Windsor Assembly (Bronco Sport, Lincoln Corsair) and Oakville (Super Duty). Ford has not publicly responded. A work stoppage at Windsor Assembly would affect parts availability within days. Watch for a framework agreement announcement this week.",
+    sourceUrl: "https://www.unifor.org/news/all-news/unifor-opens-negotiations-ford",
   },
   {
-    icon: "🏭",
-    text: "Honda's Ohio build decision for the 2029 Element Hybrid is a direct consequence of the 25% Section 232 auto tariff. Building in Ohio avoids tariff exposure on U.S. sales. This is the same calculus driving production shifts away from Canadian plants at Stellantis (Brampton), GM (CAMI), and now Honda. Each shift reduces Canadian assembly employment and parts demand.",
-    sourceUrl: "https://www.autonews.com/vehicles/honda-element-revival-hybrid-2029",
+    icon: "📊",
+    text: "Canada's EV market hit 25% of new vehicle sales in H1 2026 — three years ahead of federal targets. Quebec: 35%. BC: 31%. Ontario: ~22%. The federal $5,000 EV rebate and 25,000+ public charging stations are driving adoption. This is the most important long-term signal for shop owners: 1 in 4 new vehicles sold today will be in your service bay as an EV in 3–7 years.",
+    sourceUrl: "https://canada24h.com/archives/64008",
+  },
+  {
+    icon: "📅",
+    text: "Section 122 tariff surcharge expires July 24 — 23 days from today. The White House must issue a new proclamation before that date. Options: extend Section 122 at 10%, replace with targeted sector tariffs, or allow it to lapse. Watch for a White House proclamation this week. The 25% Section 232 auto tariff is not affected by Section 122's expiry.",
+    sourceUrl: "https://www.cbc.ca/news/politics/cusma-usmca-july-1-canada-us-mexico-trade-trump-tariffs-9.7253789",
   },
 ];
 
 const tipOfTheDay = {
-  title: "The Repair-vs-Replace Math Is Your Most Powerful Sales Tool Right Now",
-  text: "With new vehicle prices averaging over $50,000 in Canada and used vehicle financing rates still elevated, the repair-vs-replace calculation has never been more compelling. A $3,000 repair on a paid-off vehicle versus $550/month for 60 months on a replacement is a $30,000 difference over five years. Most customers have not done this math. Do it for them — put it on paper, show it on your service advisor screen, explain it at the counter. The shop that helps customers make the financially rational decision builds loyalty that lasts a decade.",
+  title: "EV Service Readiness: The 3-Year Window Is Now",
+  text: "Canada's EV market just hit 25% of new vehicle sales. Honda Alliston started EV production today. The vehicles being sold right now will arrive in independent service bays in 3–5 years. The shops that invest in EV training, high-voltage safety certification, and diagnostic equipment today will have a 3–5 year head start on competitors. Contact your provincial automotive training authority about EV certification. The window to get ahead of this is open — but it won't stay open forever.",
 };
 
 const quoteOfTheDay = {
-  text: "A comprehensive tariff deal before the U.S. midterms is not realistic. The political bandwidth simply isn't there.",
-  author: "Steve Verheul",
-  title: "Former Canadian Chief CUSMA Negotiator, BMO Capital Markets — June 29, 2026",
+  text: "Trade does not stop tomorrow. That is the most important thing to understand. CUSMA remains in force. The clock has started, but the deal is still standing.",
+  author: "Ryan Williams",
+  title: "Business Council of Quebec — on the CUSMA Sunset Declaration, July 1, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Chevrolet Camaro Z28 — Hugger Orange, White Racing Stripes, Ontario-Plated",
-  description: "The 1970 Camaro Z28 is the car that made Chevrolet's engineers forget they were supposed to be building a pony car. The second-generation Camaro arrived in 1970 with a body that was wider, lower, and more aggressive than anything Detroit had produced in the segment — and the Z28 package put the most serious engine in it. The 350 cubic inch LT-1 V8 was a high-revving, solid-lifter screamer that produced 360 horsepower officially — a number that every dyno operator in the country knew was understated. The LT-1 was the same engine used in the Corvette, detuned slightly for the Camaro's drivetrain. In Hugger Orange with white racing stripes, the 1970 Z28 was not a car you could ignore. The colour — officially Chevrolet Orange — was one of the defining shades of the muscle car era, and the Z28 wore it with authority. The white stripes ran the length of the hood and trunk lid, framing the bodywork like a racing livery. An Ontario-plated example at a show today stops traffic the same way it did on the 401 in 1970. The 1970 Z28 is increasingly recognized as one of the finest driver's cars of the muscle car era — not just fast in a straight line, but genuinely capable in corners. Production was 8,733 units in 1970. Documented LT-1 examples in show condition now trade for $60,000–$90,000. The ones in Hugger Orange go first.",
+  name: "1967 Ford Mustang Fastback GT — Candy Apple Red, White Racing Stripes, Ontario-Plated",
+  description: "There is no more fitting Ride of the Day for Canada Day 2026 than a 1967 Ford Mustang Fastback in Candy Apple Red — a car that was built in North America, sold across North America, and is still running on Ontario roads nearly 60 years later. The 1967 Mustang was the first major redesign of the original pony car, and the fastback body style — with its long, sloping roofline and aggressive rear quarters — is widely considered the most beautiful Mustang ever made. The GT package added the 390 cubic inch FE V8 in 1967, producing 320 horsepower and enough torque to make the rear tires a consumable item. The Mustang fastback was the car that Steve McQueen drove in Bullitt — though that film used a 1968 model, the 1967 is the purer design. In Candy Apple Red with white racing stripes and an Ontario plate, a 1967 Mustang fastback is a rolling declaration of what North American automotive manufacturing can produce when it is at its best. On a day when the future of North American trade is uncertain, the 1967 Mustang is a reminder that the relationship between Canada and the United States — built on shared roads, shared culture, and shared manufacturing — is older and deeper than any trade agreement. Documented GT fastbacks in show condition trade for $70,000–$100,000. The ones in Candy Apple Red go first.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +168,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["NO TARIFF DEAL BEFORE MIDTERMS", "HONDA ELEMENT REVIVAL", "REPAIR VS REPLACE", "CAMARO Z28"].map((tag) => (
+                {["CUSMA SUNSET TRIGGERED", "HONDA ALLISTON EV", "ONTARIO SABS REFORM", "MUSTANG FASTBACK"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Canada Day Edition</p>
             </div>
           </div>
         </header>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="CUSMA Review Kicks Off — No Tariff Deal Before Midterms — Honda Element Revival — Baywash Daily Briefing Edition No. 54"
+              alt="CUSMA Sunset Clause Triggered on Canada Day — 10-Year Countdown to 2036 — Honda Alliston EV Production Begins — Baywash Daily Briefing Edition No. 55"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Tuesday Edition — No. 54 — CUSMA Review Day</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Canada Day Edition — No. 55 — CUSMA Sunset Triggered</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                No Tariff Deal Before Midterms — CUSMA Review Kicks Off — July 24 Cliff Looms
+                U.S. Triggers CUSMA Sunset — 10-Year Clock Starts Today — Honda Alliston Begins EV Production
               </h3>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — Canada Day Special</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
