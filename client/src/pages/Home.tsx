@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 56;
-const BRIEFING_DATE = "July 2, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 57;
+const BRIEFING_DATE = "July 3, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zllohzgyRaBNxpXy.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fIOJAuwNjaUunaeE.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/uAHNliYGQAMiXHQT.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jmaBTUbbsvtUbGdv.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZNuNHmmNQuMbKbjk.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jaoQtMrmUoDDFjQn.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rjgPuZuQkhXuZPSs.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CYskGbvIULcktsrG.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EZCMKLnOuvjtueYv.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ECheIEjDjBqnBfiD.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CUSMA DAY-AFTER / U.S. DEMANDS / NO TALKS SCHEDULED",
+    tag: "UNIFOR / FORD / DAY 12 / 7 DAYS TO DEADLINE",
     tagColor: "#b91c1c",
-    headline: "Day After CUSMA Sunset: U.S. Says 'Canada Is In a Different Position' — No Canada-U.S. Negotiating Dates Set — Mexico Has Round 3 on July 20",
-    summary: "The day after the U.S. triggered the CUSMA sunset clause, the picture for Canada is coming into sharper focus — and it is not encouraging. A senior Trump administration official who briefed reporters on Wednesday drew a pointed distinction between Mexico and Canada. 'Mexico, although we have many challenges in our relationship, including on trade, they do understand the administration's tariff policies. In many ways they've been constructive in this,' said the official. 'Canada is in a different position,' the official added, accusing Ottawa of not addressing 'many of the non-tariff barriers and trade challenges' that the U.S. has raised. The contrast is stark: Mexico has a third formal round of negotiations with the U.S. scheduled for the week of July 20. Canada has no negotiating dates scheduled at all. U.S. Trade Representative Jamieson Greer 'keeps an open line' to Canadian Trade Minister Dominic LeBlanc, but no formal sessions are on the calendar. The U.S. has cited three specific grievances against Canada: (1) Canada's January 2026 deal with China reducing tariffs on Chinese EVs to 6.1% for 49,000 vehicles annually — a deal that U.S. officials say undermines CUSMA's rules of origin, designed to keep non-market economies from using Canada as a backdoor into North America; (2) Canada's failure to enforce its forced-labour import ban — the USTR concluded in June that Canada has formally barred only 2 suspect shipments since 2020, compared to more than 6,300 the U.S. denied in 2024 alone; (3) Canada's dairy supply management system, which the U.S. argues creates a loophole in CUSMA's dairy provisions. The U.S. is also proposing a 10% tariff on Canadian goods not covered by CUSMA, with hearings beginning July 7. Canada's effective tariff rate on autos — even with the 25% Section 232 tariff — is approximately 10–12%, comparable to what Europe accepted after agreeing to blanket tariffs, according to University of Toronto economist Joseph Steinberg. Canada's exports to the U.S. fell 5.8% in 2025. The Bank of Canada projects GDP will finish 2026 roughly 1.5% lower than its pre-tariff trajectory. Canada's economy grew just 0.7% in 2026 per Deloitte's summer outlook.",
-    whyItMatters: "The 'Canada is in a different position' comment from a senior U.S. official is the most important sentence to come out of the CUSMA review — and it was buried in the day-after coverage. It means Canada is not just behind Mexico in the negotiating queue — Canada is in a different category entirely. Mexico is having substantive talks with the U.S. about rules of origin, auto content, and tariff rates. Canada is not. No dates are scheduled. The practical implication for shop owners: the tariff environment is not going to change in the near term. The 25% Section 232 auto tariff, the tariffs on steel and aluminum, and the elevated parts costs are not going away before the U.S. midterms in November 2026 at the earliest — and more likely not until 2027. Plan your business accordingly. The shops that are building customer loyalty, investing in efficiency, and managing their parts costs proactively will be the ones that survive and thrive in a sustained tariff environment. The shops that are waiting for the tariffs to go away are going to be waiting for a long time.",
-    source: "CBC News / The Hub / APCO Worldwide — July 1–2, 2026",
-    sourceUrl: "https://www.cbc.ca/news/world/cusma-usmca-trump-extension-renewal-9.7255204",
+    headline: "Unifor-Ford Bargaining Day 12 — 7 Days to July 10 Deadline — Windsor Assembly and Oakville Production Commitments the Core Demand — Pattern Sets Template for GM and Stellantis",
+    summary: "Unifor's bargaining committee is back at the table with Ford Motor Company today — Day 12 of negotiations, with the July 10 strike deadline now 7 days away. The union is bargaining for more than 5,000 auto workers at Ford's Canadian operations: Windsor Assembly (Bronco Sport, Lincoln Corsair) and Oakville Assembly (Ford Super Duty trucks). Unifor president Lana Payne confirmed on July 2 that the union was 'at the table with Ford Motor Company today working to secure a tentative agreement for more than 5,000 auto members before the July 10 deadline.' The core of Unifor's demands is production security — explicit, contractual commitments from Ford to maintain and expand Canadian production in the context of the 25% auto tariff, the CUSMA sunset, and the broader North American trade uncertainty. Ford CEO Jim Farley has publicly stated he wants a 'level playing field' with Toyota and GM imports as CUSMA trade talks continue — a signal that Ford is under real competitive pressure from Japanese and Korean OEMs whose vehicles, built in the U.S., are not subject to the 25% Canadian auto tariff in the same way. The union is also seeking wage increases to offset inflation — Canada's CPI was 3.2% in May 2026 — and improvements to the pension and benefits package. The pattern in Detroit Three bargaining is for the lead company (Ford in 2026) to set the template that GM and Stellantis then follow. A tentative agreement, if reached, would be subject to ratification by Unifor members — a process that typically takes 5–7 days. The final push in Detroit Three bargaining typically happens in the last 3–4 days before the deadline. With 7 days remaining, the next 72–96 hours are the most critical. Watch for a framework announcement over the weekend.",
+    whyItMatters: "The Unifor-Ford outcome sets the wage and benefits pattern for all Detroit Three Canadian operations in 2026. Here is what you need to know for your shop: First, if Unifor wins significant wage increases — which is likely given CPI at 3.2% and the union's leverage — it creates upward pressure on wages across the Ontario automotive ecosystem, including independent shops. If you are not already benchmarking your technician compensation against the local market, do it this weekend. Second, a work stoppage at Windsor Assembly would affect parts availability within days. The Bronco Sport and Lincoln Corsair share platforms and components with other Ford vehicles. If you service Ford vehicles, consider building a 30-day buffer of common Ford wear parts before July 10. Third, the production commitments Unifor extracts from Ford will signal how committed Ford is to Canadian manufacturing in the tariff era. Strong Windsor and Oakville commitments are a positive signal for the Canadian auto supply chain. Weak or hedged language signals a longer-term shift of production to the U.S. The outcome of these negotiations will be one of the most important data points for the Canadian auto industry in 2026.",
+    source: "Unifor Canada / CBC News / Threads (CNBC) — July 2–3, 2026",
+    sourceUrl: "https://refdesk.ca/blog/unifor-ford-detroit-three-auto-bargaining-july-10-2026-deadline-canadian-autoworkers-cusma-tariffs-guide",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "SECTION 122 / TARIFF EXPIRY / SECTION 301 INCOMING",
-    tagColor: "#b45309",
-    headline: "Section 122 Tariff Expires July 24 — 22 Days — U.S. Replacing It With Section 301 Forced-Labour Tariffs of 10–12.5% — What Changes and What Doesn't",
-    summary: "The 10% Section 122 tariff — the White House's legal workaround after the Supreme Court struck down the IEEPA reciprocal tariffs in February — expires on July 24, 2026. That is 22 days from today. The Section 122 tariff was imposed under the Trade Act of 1974 and is limited to 150 days, which is why it expires on July 24. When it expires, the tariff does not simply disappear. The U.S. Trade Representative has already proposed replacement tariffs of 10–12.5% under Section 301 of the Trade Act, targeting 60 economies on forced-labour grounds. These Section 301 tariffs are designed to be the permanent replacement for the Section 122 tariff wall. The USTR concluded in June that Canada is 'failing to effectively enforce' its forced-labour import ban — a finding that makes Canada a direct target for the Section 301 forced-labour tariffs. The Section 301 hearings begin July 7. The timeline is tight: the USTR needs to complete the hearing process and publish final rates before July 24 for the tariff wall to remain seamless. APCO Worldwide trade analysts say the administration's next move is 'not a retreat but a shift to a more durable Section 301 tariff architecture.' The 25% Section 232 auto tariff is not affected by any of this — it operates on a separate legal track and is not expiring. For Canadian auto parts exporters and importers, the practical question is whether the Section 301 tariff rate will be higher or lower than the current 10% Section 122 rate. The proposed range is 10–12.5%. The USTR has indicated it may adjust rates for individual countries based on pre-negotiation. Canada's forced-labour enforcement record — 2 shipments formally barred since 2020 versus 6,300 by the U.S. in 2024 alone — gives the U.S. maximum justification to apply the full 12.5% rate to Canada.",
-    whyItMatters: "The Section 122 expiry on July 24 is the most immediately consequential tariff date for Canadian shop owners — more immediate than the CUSMA 10-year countdown. Here is what you need to know: The 10% tariff on Canadian goods not covered by CUSMA is not going away. It is being replaced by a Section 301 forced-labour tariff of 10–12.5%. The rate may go up slightly. The legal basis is changing from a temporary emergency measure to a more permanent trade enforcement tool. For your shop, the practical impact is the same: imported parts, tools, and equipment from the U.S. or routed through the U.S. tariff system will continue to carry elevated costs. The July 7 USTR hearings are worth watching — if Canada makes a credible commitment to improve its forced-labour enforcement, it may negotiate a lower rate. But given the current state of Canada-U.S. relations, that is not the base case. Budget for 10–12.5% tariff costs on non-CUSMA goods through at least the end of 2026.",
-    source: "APCO Worldwide / Holland & Knight / Flexport — June–July 2026",
-    sourceUrl: "https://apcoworldwide.com/blog/qa-july-is-a-big-month-for-trade-whats-coming-next/",
+    tag: "U.S. AUTO SALES / JUNE 2026 / +7.8% YOY / HEV SURGE",
+    tagColor: "#1d4ed8",
+    headline: "U.S. Auto Sales June 2026: Up 7.8% Year-Over-Year to 1.37 Million Units — HEV Demand Surges on High Gas Prices — SAAR at 16.1 Million — Average Transaction Price Holds at $50,000",
+    summary: "U.S. new vehicle sales in June 2026 totaled approximately 1,366,093 units, up 7.8% year-over-year, according to preliminary figures compiled by MarkLines as of July 2. June had 25 selling days versus 24 in June 2025, which accounts for roughly 4% of the gain on a raw basis — but even on a daily selling rate basis, Cox Automotive estimates June sales increased 2.9% year-over-year. The seasonally adjusted annual rate (SAAR) finished near 16.1 million, roughly in line with March, April, and May — an unusual period of consistency given recent volatility and high energy prices. The standout trend in June was hybrid electric vehicle (HEV) demand. With U.S. gasoline prices elevated — averaging above $4.00/gallon nationally — consumers are gravitating toward HEVs as the practical middle ground between pure EVs and traditional ICE vehicles. Cox Automotive's mid-year review notes that the average new vehicle transaction price remains consistently at or around $50,000. The firm's research, developed in consultation with NIADA, found that 79% of independent dealership buyers are 'driven by necessity, not aspiration' — they are buying because they have to, not because they want to. This is the same dynamic driving repair-vs-replace decisions at the shop level. Citi raised its U.S. light vehicle sales forecast for 2026 following the June result. The second quarter totaled 4.2 million units. The first half of 2026 is tracking ahead of most pre-tariff forecasts, despite the 25% auto tariff, elevated vehicle prices, and economic headwinds. The resilience of U.S. auto demand is one of the more surprising data points of 2026.",
+    whyItMatters: "The U.S. June sales number matters to Canadian shop owners for three reasons. First, strong U.S. sales mean OEMs are not cutting production — which means parts supply remains relatively stable. A collapsing U.S. market would trigger production cuts that would ripple through the supply chain and create parts shortages. That is not happening. Second, the HEV surge is the most important trend in the North American auto market right now. Hybrids are the fastest-growing segment, and they are coming to your service bays. If you are not already investing in hybrid service training and equipment, you are falling behind. The Honda CR-V dethroned the Ford F-150 and Toyota RAV4 as Canada's top-selling vehicle in June — supply shortages helped, but the CR-V's hybrid variant is a major driver of that result. Third, the 'necessity not aspiration' dynamic that Cox identifies for U.S. buyers is even more pronounced in Canada, where used vehicle values are declining and household debt is at record levels. Your customers are keeping their vehicles longer and spending more on maintenance and repair. That is a direct tailwind for your service business.",
+    source: "MarkLines / Cox Automotive / Citi Research — July 2, 2026",
+    sourceUrl: "https://www.coxautoinc.com/insights/cox-automotive-forecast-june-2026-u-s-auto-sales-forecast/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "UNIFOR / FORD / BARGAINING DAY 11 / 8 DAYS TO DEADLINE",
+    tag: "CHINA EVs / CANADA / CUSMA FLASHPOINT / 49,000 UNITS",
     tagColor: "#15803d",
-    headline: "Unifor-Ford Bargaining: Day 11 — 8 Days to July 10 Deadline — Windsor Assembly and Oakville Production Commitments at the Heart of Talks",
-    summary: "Unifor's bargaining team was at the table with Ford Motor Company on Canada Day — Day 10 of negotiations — and is back today for Day 11. The July 10 strike deadline is 8 days away. The union is bargaining for more than 5,000 auto workers at Ford's Canadian operations, including Windsor Assembly (Bronco Sport, Lincoln Corsair) and Oakville Assembly (Ford Super Duty trucks). The core of Unifor's demands is production security: explicit commitments from Ford to maintain and expand Canadian production in the context of the 25% auto tariff, the CUSMA sunset, and the broader North American trade uncertainty. Unifor president Lana Payne has called these the 'most consequential' auto negotiations in the union's history. The union is also seeking wage increases to offset inflation — Canada's CPI was 3.2% in May 2026 — and improvements to the pension and benefits package. Ford has not publicly responded to specific demands. The pattern in Detroit Three bargaining is typically for the lead company — Ford in 2026 — to set the template that GM and Stellantis then follow. A work stoppage at Windsor Assembly would immediately affect production of the Bronco Sport and Lincoln Corsair, both of which are sold in the U.S. market. Under the 25% auto tariff, a work stoppage at Windsor would not provide Ford with a tariff-free alternative — U.S.-built vehicles face the same market dynamics. The economic pressure on both sides to reach a deal before July 10 is significant. A tentative agreement, if reached, would be subject to ratification by Unifor members. The ratification vote typically takes 5–7 days after a tentative agreement is announced. Watch for a framework agreement announcement in the next 72 hours — the final push in Detroit Three bargaining typically happens in the last 3–4 days before the deadline.",
-    whyItMatters: "The Unifor-Ford outcome will set the wage and benefits pattern for all Detroit Three Canadian operations in 2026. Here is why it matters to your shop: First, if Unifor wins significant wage increases, it creates upward pressure on wages across the Ontario automotive ecosystem — including independent shops. Your technicians will be watching what Unifor members get. If you are not already benchmarking your compensation against the local market, now is the time. Second, a work stoppage at Windsor Assembly would affect parts availability within days. The Bronco Sport and Lincoln Corsair share platforms and components with other Ford vehicles. If you service Ford vehicles, monitor the bargaining closely and consider whether to build a small buffer of common Ford parts before July 10. Third, the production commitments Unifor extracts from Ford will signal how committed Ford is to Canadian manufacturing in the tariff era. If Ford makes strong commitments to Windsor and Oakville, it is a positive signal for the Canadian auto supply chain. If Ford hedges or offers weak language, it may signal a longer-term shift of production to the U.S.",
-    source: "Unifor Canada / CBC News / refdesk.ca — July 1–2, 2026",
-    sourceUrl: "https://refdesk.ca/blog/unifor-ford-detroit-three-auto-bargaining-july-10-2026-deadline-canadian-autoworkers-cusma-tariffs-guide",
+    headline: "China's Carmakers Rush to Canada as a 'Practice Run' for U.S. Sales — 49,000 Chinese EVs Approved Annually at 6.1% Tariff — 20 Canadian Dealers in China for BYD/JLR-Chery Unveilings — U.S. Calls It a CUSMA Backdoor",
+    summary: "Automotive News and Reuters reported on July 2 that China's automakers are treating Canada as a 'practice run' for eventual entry into the U.S. market. Canada approved imports of 49,000 Chinese electric vehicles annually at a preferential tariff rate of 6.1%, rising to 70,000 vehicles over five years — a deal struck by the Trudeau government in January 2026 that has become one of the three core U.S. grievances against Canada in the CUSMA review. Approximately 20 Canadian car dealers travelled to China for the unveiling of the Freelander 8 — a luxury SUV built by a joint venture between Jaguar Land Rover and Chery Automobile — signalling that Canadian dealer networks are actively courting Chinese brands. BYD, the world's largest EV manufacturer by volume, is also in discussions with Canadian dealers. The U.S. has cited Canada's China EV deal as evidence that Canada is allowing Chinese manufacturers to use Canada as a backdoor into the North American market, circumventing CUSMA's rules of origin, which were specifically designed to keep non-market economies from gaining preferential access to North American consumers. The U.S. imposes 100% tariffs on Chinese EVs. Canada's 6.1% tariff is, by comparison, essentially a welcome mat. The strategic logic for Chinese automakers is clear: establish brand recognition, dealer networks, and service infrastructure in Canada, then use that foothold to eventually enter the U.S. market if and when the tariff environment changes. For Canadian shop owners, the arrival of Chinese EVs in volume — BYD, Chery, Geely, and others — represents both an opportunity and a challenge.",
+    whyItMatters: "The China EV story has two dimensions for your shop. The first is the CUSMA dimension: Canada's China EV deal is one of the three specific grievances the U.S. has against Canada in the CUSMA review. It is a direct reason why Canada is 'in a different position' than Mexico in the negotiations. If Canada does not address this — and it is politically very difficult to reverse a signed trade deal with China — it gives the U.S. justification to maintain or increase tariffs on Canadian goods. The second dimension is the service opportunity. Chinese EVs are coming to Canada in volume. BYD, Chery, and Geely vehicles are sophisticated, well-built machines — but they are new brands in the Canadian market, with limited dealer service infrastructure. Independent shops that invest in EV service training and equipment now will be positioned to capture Chinese EV service work as the fleet grows. The 49,000 units per year approved under the Canada-China EV deal will be on Ontario roads within 18 months. Some of those vehicles will need service. The shops that are ready will get the work.",
+    source: "Automotive News / Reuters — July 2, 2026",
+    sourceUrl: "https://europe.autonews.com/canada/anc-china-sees-canada-practice-run-reteurs/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "🇺🇸",
-    text: "U.S. USTR hearings on Section 301 forced-labour tariffs begin July 7 — 5 days from today. Canada is specifically named as a target after the USTR found Canada 'failing to effectively enforce' its forced-labour import ban. The proposed rate is 10–12.5%. These tariffs would replace the expiring Section 122 tariff on July 24. Watch for a White House proclamation this week.",
+    text: "U.S. Independence Day tomorrow — July 4. U.S. government offices closed, markets closed, no new tariff announcements expected. The USTR Section 301 forced-labour tariff hearings resume Monday, July 7 — 4 days from today. Canada is a named target for 10–12.5% tariffs replacing the expiring Section 122 tariff on July 24.",
     sourceUrl: "https://apcoworldwide.com/blog/qa-july-is-a-big-month-for-trade-whats-coming-next/",
   },
   {
+    icon: "🚗",
+    text: "Honda CR-V dethroned the Ford F-150 and Toyota RAV4 as Canada's top-selling vehicle in June 2026, according to Automotive News. Supply shortages at Toyota (model changeover) and Ford helped, but the CR-V's hybrid variant is a major driver. The CR-V Hybrid is now the default choice for Canadian buyers in the compact SUV segment. If you service Honda vehicles, expect more hybrid work.",
+    sourceUrl: "https://europe.autonews.com/canada/anc-china-sees-canada-practice-run-reteurs/",
+  },
+  {
     icon: "📉",
-    text: "Canadian wholesale vehicle values declined 0.35% in the week ending June 27, with nearly half of all segments showing changes of more than $100, according to Canadian Black Book. The decline has been 'slightly steeper' in recent weeks. Used vehicle prices remain elevated vs. 2024 but are softening. This is a tailwind for repair-vs-replace decisions — customers are less likely to trade in when used vehicle values are declining.",
-    sourceUrl: "https://www.autoremarketing.com/arcanada/decline-in-canadian-wholesale-vehicle-values-gets-slightly-steeper/",
+    text: "Canadian wholesale vehicle values declined 0.35% in the week ending June 27, per Canadian Black Book — the decline has been 'slightly steeper' in recent weeks. Used vehicle prices remain elevated vs. 2024 but are softening. Auto loans are lengthening — 84-month terms are becoming common, raising negative equity concerns for dealers and lenders. Longer loans = customers keeping vehicles longer = more service work for shops.",
+    sourceUrl: "https://www.autoremarketing.com/arcanada/",
   },
   {
-    icon: "🏭",
-    text: "AutoCanada expanded its collision repair footprint to Thunder Bay, Ontario, acquiring Mascarin Collision Centre — the dealer group's first collision repair presence in the city. AutoCanada has been aggressively building its collision repair business across Ontario and Alberta. The consolidation of collision repair into dealer group networks is a long-term competitive pressure on independent collision shops.",
-    sourceUrl: "https://www.autoremarketing.com/arcanada/autocanada-expands-collision-repair-business-to-thunder-bay/",
-  },
-  {
-    icon: "🏛️",
-    text: "Canada's GDP is projected to grow just 0.7% in 2026, per Deloitte's summer outlook — the weakest growth in decades outside of the COVID recession. The Bank of Canada projects GDP will finish 2026 roughly 1.5% lower than its pre-tariff trajectory. Youth unemployment is at 13.4%. Household debt is the highest in the G7. The economic environment for discretionary spending — including automotive service — is under pressure.",
-    sourceUrl: "https://thehub.ca/2026/07/01/cusma-renewal-deadline-passed-u-s-tariffs-remain-what-it-means-for-canada-and-its-economy/",
+    icon: "🔧",
+    text: "Ford recalled 741,195 SUVs and pickups in the U.S. over a rollaway risk — a parking brake issue affecting certain F-150, Expedition, and Navigator models. Canadian recall details pending from Transport Canada. If you service Ford trucks, watch for the Transport Canada recall notice. Recall work is a direct revenue opportunity for shops authorized to perform warranty and recall repairs.",
+    sourceUrl: "https://www.marklines.com/en/news/347074",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build a 30-Day Parts Buffer Before July 10",
-  text: "With the Unifor-Ford deadline 8 days away and Section 122 expiring July 24, the next 3 weeks carry real supply chain risk. Consider building a 30-day buffer of your highest-velocity Ford parts — filters, brakes, belts, common wear items — before July 10. A work stoppage at Windsor Assembly would not immediately affect parts supply, but it would signal broader supply chain stress. The cost of carrying an extra 30 days of common parts is modest compared to the cost of a parts shortage.",
+  title: "Benchmark Your Technician Wages This Weekend",
+  text: "With Unifor-Ford bargaining entering its final week and a likely wage increase coming for 5,000+ Ontario auto workers, now is the time to benchmark your technician compensation against the local market. Pull your current wage rates, compare them to the Unifor pattern (likely 3–4% in Year 1), and decide now whether you will proactively adjust or wait for technicians to ask. Proactive adjustments cost less in goodwill than reactive ones.",
 };
 
 const quoteOfTheDay = {
-  text: "Canada is in a different position. They have not addressed many of the non-tariff barriers and trade challenges that we have raised.",
-  author: "Senior Trump Administration Official",
-  title: "Briefing reporters on the CUSMA review outcome — July 1, 2026 (speaking on condition of anonymity)",
+  text: "We want a level playing field. Toyota and GM are building vehicles in the United States. We're building in Canada. The tariff environment has to be addressed in these negotiations.",
+  author: "Ford CEO Jim Farley",
+  title: "On CUSMA trade talks and Canadian production — July 2, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Pontiac GTO Judge — Carousel Red, 'The Judge' Decals, Ontario-Plated",
-  description: "On a day when Canada is being told it is 'in a different position' in trade negotiations, the Ride of the Day is a car that never apologized for what it was: the 1969 Pontiac GTO Judge. The Judge was Pontiac's answer to the critics who said the GTO had gone soft — too comfortable, too refined, not enough muscle. So Pontiac stripped it back, added the Ram Air III 400 cubic inch V8 producing 366 horsepower, bolted on a rear spoiler, painted it in colours that made your eyes hurt, and called it The Judge. The name came from a Laugh-In sketch — 'Here come de judge' — and it stuck. The Judge was never subtle. Carousel Red with black stripes and the psychedelic 'The Judge' decal on the front fender is the definitive spec. It is a car that says exactly what it is, without qualification. In a week when Canada is being told to get in line and wait its turn, there is something satisfying about a car that never waited for anyone's permission. Documented Judge hardtops in Carousel Red with the Ram Air III engine trade for $85,000–$120,000 at auction. The ones with the original window sticker go first.",
+  name: "1969 Dodge Charger R/T — Hemi Orange, Black R/T Stripes, Black Vinyl Roof, Ontario-Plated",
+  description: "On the eve of U.S. Independence Day, the Ride of the Day is the most American car ever built in a Canadian shop owner's driveway: the 1969 Dodge Charger R/T. The '69 Charger is the car that defined an era. The fastback roofline, the hidden headlights, the full-width taillights — it was a car designed to look like it was moving at 120 miles an hour standing still. The R/T (Road and Track) package meant the 440 Magnum V8 as standard equipment — 375 horsepower, 480 lb-ft of torque, a four-barrel carburetor, and a sound that you felt in your chest before you heard it with your ears. Hemi Orange with black stripes and a black vinyl roof is the definitive spec. The 440 Magnum was the practical choice — the 426 Hemi was the legendary choice, but the 440 was the one you could actually drive every day without rebuilding the carburetors every 3,000 miles. Ontario-plated '69 Charger R/Ts with documented history trade for $90,000–$140,000 at auction. The ones with the Hemi go for more. Happy Independence Day to our American friends — and happy Friday to every shop owner who made it through another week in the tariff era.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +168,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["CANADA IN DIFFERENT POSITION", "SECTION 122 EXPIRY", "UNIFOR-FORD DAY 11", "GTO JUDGE"].map((tag) => (
+                {["UNIFOR-FORD DAY 12", "U.S. SALES +7.8%", "CHINA EVs IN CANADA", "CHARGER R/T"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Day After CUSMA Sunset</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Eve of U.S. Independence Day</p>
             </div>
           </div>
         </header>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canada in a different position — No Canada-U.S. talks scheduled — Unifor-Ford Day 11 — Section 122 expires July 24 — Baywash Daily Briefing Edition No. 56"
+              alt="Unifor-Ford Day 12 — U.S. Auto Sales +7.8% — China EVs in Canada — Baywash Daily Briefing Edition No. 57"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Day After CUSMA Sunset — Edition No. 56 — July 2, 2026</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 57 — Friday, July 3, 2026 — Eve of U.S. Independence Day</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                'Canada Is In a Different Position' — No Talks Scheduled — Section 122 Expires in 22 Days
+                Unifor-Ford Day 12 — 7 Days to Deadline — U.S. Sales +7.8% — China EVs Rush to Canada
               </h3>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — The Judge</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — Charger R/T</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
