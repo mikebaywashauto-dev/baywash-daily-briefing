@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 57;
-const BRIEFING_DATE = "July 3, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 58;
+const BRIEFING_DATE = "July 4, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jaoQtMrmUoDDFjQn.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rjgPuZuQkhXuZPSs.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CYskGbvIULcktsrG.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EZCMKLnOuvjtueYv.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ECheIEjDjBqnBfiD.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bfGIXSedFEDkMDnC.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NdRxAkITXPqwLkJU.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IEQJFijwpZUIuGCM.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/UFHeyjqhrKPeHCpk.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZmAGNnWoRIGqUyuw.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "UNIFOR / FORD / DAY 12 / 7 DAYS TO DEADLINE",
-    tagColor: "#b91c1c",
-    headline: "Unifor-Ford Bargaining Day 12 — 7 Days to July 10 Deadline — Windsor Assembly and Oakville Production Commitments the Core Demand — Pattern Sets Template for GM and Stellantis",
-    summary: "Unifor's bargaining committee is back at the table with Ford Motor Company today — Day 12 of negotiations, with the July 10 strike deadline now 7 days away. The union is bargaining for more than 5,000 auto workers at Ford's Canadian operations: Windsor Assembly (Bronco Sport, Lincoln Corsair) and Oakville Assembly (Ford Super Duty trucks). Unifor president Lana Payne confirmed on July 2 that the union was 'at the table with Ford Motor Company today working to secure a tentative agreement for more than 5,000 auto members before the July 10 deadline.' The core of Unifor's demands is production security — explicit, contractual commitments from Ford to maintain and expand Canadian production in the context of the 25% auto tariff, the CUSMA sunset, and the broader North American trade uncertainty. Ford CEO Jim Farley has publicly stated he wants a 'level playing field' with Toyota and GM imports as CUSMA trade talks continue — a signal that Ford is under real competitive pressure from Japanese and Korean OEMs whose vehicles, built in the U.S., are not subject to the 25% Canadian auto tariff in the same way. The union is also seeking wage increases to offset inflation — Canada's CPI was 3.2% in May 2026 — and improvements to the pension and benefits package. The pattern in Detroit Three bargaining is for the lead company (Ford in 2026) to set the template that GM and Stellantis then follow. A tentative agreement, if reached, would be subject to ratification by Unifor members — a process that typically takes 5–7 days. The final push in Detroit Three bargaining typically happens in the last 3–4 days before the deadline. With 7 days remaining, the next 72–96 hours are the most critical. Watch for a framework announcement over the weekend.",
-    whyItMatters: "The Unifor-Ford outcome sets the wage and benefits pattern for all Detroit Three Canadian operations in 2026. Here is what you need to know for your shop: First, if Unifor wins significant wage increases — which is likely given CPI at 3.2% and the union's leverage — it creates upward pressure on wages across the Ontario automotive ecosystem, including independent shops. If you are not already benchmarking your technician compensation against the local market, do it this weekend. Second, a work stoppage at Windsor Assembly would affect parts availability within days. The Bronco Sport and Lincoln Corsair share platforms and components with other Ford vehicles. If you service Ford vehicles, consider building a 30-day buffer of common Ford wear parts before July 10. Third, the production commitments Unifor extracts from Ford will signal how committed Ford is to Canadian manufacturing in the tariff era. Strong Windsor and Oakville commitments are a positive signal for the Canadian auto supply chain. Weak or hedged language signals a longer-term shift of production to the U.S. The outcome of these negotiations will be one of the most important data points for the Canadian auto industry in 2026.",
-    source: "Unifor Canada / CBC News / Threads (CNBC) — July 2–3, 2026",
-    sourceUrl: "https://refdesk.ca/blog/unifor-ford-detroit-three-auto-bargaining-july-10-2026-deadline-canadian-autoworkers-cusma-tariffs-guide",
+    tag: "CANADIAN AUTO SALES / JUNE 2026 / +1.9% YOY / H1 DOWN 2.6%",
+    tagColor: "#1d4ed8",
+    headline: "Canadian Auto Sales June 2026: Up 1.9% to 182,000 Units — But H1 2026 Down 2.6% — Honda CR-V Dethrones F-150 and RAV4 — SAAR 1.84 Million — Tariff Impact Visible in First-Half Numbers",
+    summary: "DesRosiers Automotive Consultants reported on July 3 that Canadian new vehicle sales in June 2026 totalled an estimated 182,000 units, up 1.9% from 178,000 units in June 2025. The headline gain looks positive, but context matters: June 2026 had one extra selling day compared to June 2025, which accounts for roughly 4% of the raw year-over-year comparison. On a daily selling rate basis, June 2026 was essentially flat with June 2025 — a sign that the underlying market remains under pressure. The seasonally adjusted annual rate (SAAR) for June came in at 1.84 million, up from 1.78 million in the prior year. The more telling number is the first-half total: Canadian vehicle sales for H1 2026 are down 2.6% compared to H1 2025. The 25% auto tariff, elevated vehicle prices, high household debt, and consumer uncertainty are all visible in that number. The standout story of June was the Honda CR-V dethroning the Ford F-150 and Toyota RAV4 as Canada's best-selling vehicle. Two factors drove this: Toyota is navigating a disruptive model changeover that has constrained RAV4 supply, and Ford's F-150 sales have been affected by tariff uncertainty and buyer hesitation. The CR-V Hybrid is the key driver of Honda's June result — it is the right vehicle at the right time, combining SUV practicality with hybrid fuel economy at a price point that Canadian buyers can justify. The broader market trend is clear: SUVs and crossovers now account for approximately 46% of Canadian new vehicle sales, trucks 28%, and traditional cars 26%. Hybrid vehicles are the fastest-growing segment, up approximately 28% year-over-year in June.",
+    whyItMatters: "The H1 2026 decline of 2.6% is the most important number in this report for shop owners. Fewer new vehicle sales means more Canadians are keeping their existing vehicles longer — which is a direct tailwind for your service bay. The average age of vehicles on Canadian roads is now over 12 years, and rising. Every month that a customer delays buying a new vehicle is another month of maintenance and repair work for your shop. The Honda CR-V Hybrid result is also a signal: hybrids are coming to your service bays in volume. If you are not already trained and equipped to service hybrid drivetrains — battery systems, regenerative braking, high-voltage safety protocols — you are falling behind the market. The CR-V Hybrid uses Honda's two-motor hybrid system (i-MMD), which is different from Toyota's THS-II. Both are in your market. The shops that invest in hybrid training now will capture the service work as the fleet ages.",
+    source: "DesRosiers Automotive Consultants / MarkLines — July 3–4, 2026",
+    sourceUrl: "https://www.marklines.com/en/news/347156",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "U.S. AUTO SALES / JUNE 2026 / +7.8% YOY / HEV SURGE",
-    tagColor: "#1d4ed8",
-    headline: "U.S. Auto Sales June 2026: Up 7.8% Year-Over-Year to 1.37 Million Units — HEV Demand Surges on High Gas Prices — SAAR at 16.1 Million — Average Transaction Price Holds at $50,000",
-    summary: "U.S. new vehicle sales in June 2026 totaled approximately 1,366,093 units, up 7.8% year-over-year, according to preliminary figures compiled by MarkLines as of July 2. June had 25 selling days versus 24 in June 2025, which accounts for roughly 4% of the gain on a raw basis — but even on a daily selling rate basis, Cox Automotive estimates June sales increased 2.9% year-over-year. The seasonally adjusted annual rate (SAAR) finished near 16.1 million, roughly in line with March, April, and May — an unusual period of consistency given recent volatility and high energy prices. The standout trend in June was hybrid electric vehicle (HEV) demand. With U.S. gasoline prices elevated — averaging above $4.00/gallon nationally — consumers are gravitating toward HEVs as the practical middle ground between pure EVs and traditional ICE vehicles. Cox Automotive's mid-year review notes that the average new vehicle transaction price remains consistently at or around $50,000. The firm's research, developed in consultation with NIADA, found that 79% of independent dealership buyers are 'driven by necessity, not aspiration' — they are buying because they have to, not because they want to. This is the same dynamic driving repair-vs-replace decisions at the shop level. Citi raised its U.S. light vehicle sales forecast for 2026 following the June result. The second quarter totaled 4.2 million units. The first half of 2026 is tracking ahead of most pre-tariff forecasts, despite the 25% auto tariff, elevated vehicle prices, and economic headwinds. The resilience of U.S. auto demand is one of the more surprising data points of 2026.",
-    whyItMatters: "The U.S. June sales number matters to Canadian shop owners for three reasons. First, strong U.S. sales mean OEMs are not cutting production — which means parts supply remains relatively stable. A collapsing U.S. market would trigger production cuts that would ripple through the supply chain and create parts shortages. That is not happening. Second, the HEV surge is the most important trend in the North American auto market right now. Hybrids are the fastest-growing segment, and they are coming to your service bays. If you are not already investing in hybrid service training and equipment, you are falling behind. The Honda CR-V dethroned the Ford F-150 and Toyota RAV4 as Canada's top-selling vehicle in June — supply shortages helped, but the CR-V's hybrid variant is a major driver of that result. Third, the 'necessity not aspiration' dynamic that Cox identifies for U.S. buyers is even more pronounced in Canada, where used vehicle values are declining and household debt is at record levels. Your customers are keeping their vehicles longer and spending more on maintenance and repair. That is a direct tailwind for your service business.",
-    source: "MarkLines / Cox Automotive / Citi Research — July 2, 2026",
-    sourceUrl: "https://www.coxautoinc.com/insights/cox-automotive-forecast-june-2026-u-s-auto-sales-forecast/",
+    tag: "SLATE AUTO / CANADA / TARIFF CASUALTY / US$24,950 TRUCK",
+    tagColor: "#b91c1c",
+    headline: "Slate Auto Refuses to Sell Its US$24,950 Bare-Bones EV Pickup in Canada — 25% Tariff + Exchange Rate Pushes Price to CDN$40,000+ — A Concrete Example of How the Tariff Wall Is Reshaping the Canadian Market",
+    summary: "Slate Auto, the Indiana-based electric vehicle startup backed by Amazon founder Jeff Bezos, confirmed this week that it has no plans to sell its bare-bones electric pickup truck in Canada. 'We do not have plans to sell vehicles in Canada,' company spokesperson Jeff Jablansky told Automotive News Canada. No further explanation was offered, but the math tells the story. Slate's all-electric compact pickup starts at US$24,950 — a price point that has generated significant buzz in the U.S. market as the first genuinely affordable electric truck. The truck is minimalist by design: roll-up windows, no infotainment screen, no chrome, a flat bed, and a boxy shape. A 63 kWh battery provides an estimated 328 kilometres of range. Slate also offers the truck in squareback SUV form for US$29,950 and a fastback SUV for US$31,950. The problem for Canada is straightforward: Slate plans to build its vehicles in Indiana. Under Canada's retaliatory tariff framework, U.S.-built vehicles face a 25% surtax when imported into Canada. Add the unfavourable Canadian dollar exchange rate — the loonie is trading at approximately 0.73 USD — and Slate's US$24,950 truck becomes a CDN$42,000+ proposition in Canada. For comparison, Chevrolet Canada is currently offering the Bolt EV for just over CDN$35,000 after rebates. Slate would be uncompetitive at CDN$42,000 with no infotainment and roll-up windows. The company is right to stay out of the Canadian market under current conditions. This is not a business decision — it is a tariff decision. Slate's absence from Canada is a direct, concrete, dollar-figure consequence of the 25% retaliatory tariff on U.S.-built vehicles.",
+    whyItMatters: "The Slate story is the clearest illustration yet of how the 25% Canadian retaliatory tariff on U.S.-built vehicles is reshaping the Canadian auto market. This is not an abstract trade policy discussion — it is a US$24,950 truck that Canadians cannot buy because the tariff makes it unaffordable. For your shop, the Slate story has two implications. First, the tariff wall is keeping U.S.-built vehicles out of Canada. That means fewer new vehicles entering the Canadian fleet from U.S. manufacturers who build in the U.S. rather than Canada or Mexico. Fewer new vehicles in the fleet means more pressure on existing vehicles — more maintenance, more repair, more service work for independent shops. Second, the gap in the affordable EV truck market that Slate is not filling will eventually be filled by someone else — likely a Chinese manufacturer. BYD, Chery, and Geely are all preparing Canadian launches. The first Chinese EV trucks could arrive in Canada within 18–24 months. The shops that are ready to service them will capture that work.",
+    source: "Driving.ca / Automotive News Canada — June 30 – July 3, 2026",
+    sourceUrl: "https://driving.ca/auto-news/news/slate-truck-not-available-in-canada",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CHINA EVs / CANADA / CUSMA FLASHPOINT / 49,000 UNITS",
+    tag: "CANADA GAZETTE / REMISSION ORDER / EXTENDED TO JUNE 2027 / AUTO PARTS RELIEF",
     tagColor: "#15803d",
-    headline: "China's Carmakers Rush to Canada as a 'Practice Run' for U.S. Sales — 49,000 Chinese EVs Approved Annually at 6.1% Tariff — 20 Canadian Dealers in China for BYD/JLR-Chery Unveilings — U.S. Calls It a CUSMA Backdoor",
-    summary: "Automotive News and Reuters reported on July 2 that China's automakers are treating Canada as a 'practice run' for eventual entry into the U.S. market. Canada approved imports of 49,000 Chinese electric vehicles annually at a preferential tariff rate of 6.1%, rising to 70,000 vehicles over five years — a deal struck by the Trudeau government in January 2026 that has become one of the three core U.S. grievances against Canada in the CUSMA review. Approximately 20 Canadian car dealers travelled to China for the unveiling of the Freelander 8 — a luxury SUV built by a joint venture between Jaguar Land Rover and Chery Automobile — signalling that Canadian dealer networks are actively courting Chinese brands. BYD, the world's largest EV manufacturer by volume, is also in discussions with Canadian dealers. The U.S. has cited Canada's China EV deal as evidence that Canada is allowing Chinese manufacturers to use Canada as a backdoor into the North American market, circumventing CUSMA's rules of origin, which were specifically designed to keep non-market economies from gaining preferential access to North American consumers. The U.S. imposes 100% tariffs on Chinese EVs. Canada's 6.1% tariff is, by comparison, essentially a welcome mat. The strategic logic for Chinese automakers is clear: establish brand recognition, dealer networks, and service infrastructure in Canada, then use that foothold to eventually enter the U.S. market if and when the tariff environment changes. For Canadian shop owners, the arrival of Chinese EVs in volume — BYD, Chery, Geely, and others — represents both an opportunity and a challenge.",
-    whyItMatters: "The China EV story has two dimensions for your shop. The first is the CUSMA dimension: Canada's China EV deal is one of the three specific grievances the U.S. has against Canada in the CUSMA review. It is a direct reason why Canada is 'in a different position' than Mexico in the negotiations. If Canada does not address this — and it is politically very difficult to reverse a signed trade deal with China — it gives the U.S. justification to maintain or increase tariffs on Canadian goods. The second dimension is the service opportunity. Chinese EVs are coming to Canada in volume. BYD, Chery, and Geely vehicles are sophisticated, well-built machines — but they are new brands in the Canadian market, with limited dealer service infrastructure. Independent shops that invest in EV service training and equipment now will be positioned to capture Chinese EV service work as the fleet grows. The 49,000 units per year approved under the Canada-China EV deal will be on Ontario roads within 18 months. Some of those vehicles will need service. The shops that are ready will get the work.",
-    source: "Automotive News / Reuters — July 2, 2026",
-    sourceUrl: "https://europe.autonews.com/canada/anc-china-sees-canada-practice-run-reteurs/",
+    headline: "Canada Extends Steel and Aluminum Remission Order to June 30, 2027 — Auto and Aerospace Parts Inputs Exempted — Fourth Tranche of Products Added — Steel Producers Association Unhappy",
+    summary: "The federal government published Order SOR/2026-154 in the July 1, 2026 edition of the Canada Gazette, extending the United States Surtax Remission Order (2025) for another year to June 30, 2027. The extension covers horizontal relief for aluminum and steel goods used in the manufacturing of motor vehicles, aerospace products, and their related parts — a direct benefit to Canadian auto parts manufacturers and, indirectly, to the shops that buy those parts. The Steel Derivative Goods Surtax Order was also amended simultaneously (SOR/2026-155), extending the exemption for auto and aerospace inputs from July 1, 2026 to July 1, 2027. The remission order was originally created to provide relief to Canadian importers who rely on U.S.-sourced steel and aluminum inputs that cannot be sourced domestically. Without the remission, those importers would pay Canada's retaliatory surtax on their U.S.-sourced inputs — effectively taxing Canadian manufacturers for using American raw materials in their Canadian production. The fourth tranche of remission requests has also been processed, adding a substantial number of new products to the schedules. The Canadian Steel Producers Association has publicly objected to the extensions, arguing that the remission program undermines the protective effect of Canada's retaliatory tariffs and gives U.S. steel producers continued access to the Canadian market. The government's position is that the remission is necessary to protect Canadian manufacturers who have no domestic alternative for certain steel and aluminum inputs. The practical effect for the auto sector is that Canadian auto parts manufacturers — and the shops that buy their parts — continue to receive tariff relief on steel and aluminum inputs through June 2027.",
+    whyItMatters: "The remission order extension is good news for your parts supply chain, but it comes with a deadline. Here is what you need to know. First, the relief expires June 30, 2027 — not indefinitely. If the government does not extend it again, Canadian auto parts manufacturers will face higher input costs starting July 1, 2027, which will flow through to parts prices. Mark that date. Second, the extension signals that the government recognizes the Canadian auto manufacturing sector cannot absorb the full cost of retaliatory tariffs on its own inputs without significant damage. This is a pragmatic acknowledgement that the tariff war has costs on both sides of the border. Third, the steel producers association's objection is a political signal: there is domestic pressure to let the remission expire and force manufacturers to source Canadian steel. If that pressure wins out in 2027, parts prices will rise. For your shop, the practical action is to review your parts sourcing and understand which of your suppliers are benefiting from the remission order. Parts made with U.S.-sourced steel and aluminum inputs are currently priced with the remission factored in. If the remission expires in June 2027, those prices will likely increase.",
+    source: "Canada Gazette / McMillan LLP / Willson International — July 1–3, 2026",
+    sourceUrl: "https://mcmillan.ca/insights/following-july-1st-review-cusma-remains-in-effect-until-2036-on-going-negotiations-as-part-of-annual-reviews-to-agree-on-north-american-free-trade-will-continue/",
     image: STORY3_IMG,
   },
 ];
@@ -61,40 +61,40 @@ const stories = [
 const quickHits = [
   {
     icon: "🇺🇸",
-    text: "U.S. Independence Day tomorrow — July 4. U.S. government offices closed, markets closed, no new tariff announcements expected. The USTR Section 301 forced-labour tariff hearings resume Monday, July 7 — 4 days from today. Canada is a named target for 10–12.5% tariffs replacing the expiring Section 122 tariff on July 24.",
+    text: "Happy Independence Day to our American friends and neighbours. U.S. markets are closed today. U.S. government offices are closed. No new tariff announcements are expected. The USTR Section 301 forced-labour tariff hearings — at which Canada is a named target for 10–12.5% tariffs replacing the expiring Section 122 tariff on July 24 — resume Monday, July 7. Three days from today.",
     sourceUrl: "https://apcoworldwide.com/blog/qa-july-is-a-big-month-for-trade-whats-coming-next/",
   },
   {
+    icon: "🔧",
+    text: "Unifor-Ford bargaining: Day 13 — 6 days to the July 10 deadline. No announcement of a tentative agreement as of press time. The final push in Detroit Three bargaining typically happens in the last 72–96 hours before the deadline. Watch for a framework announcement Sunday or Monday. If you service Ford vehicles, the 30-day parts buffer recommendation from Edition No. 57 still stands.",
+    sourceUrl: "https://refdesk.ca/blog/unifor-ford-detroit-three-auto-bargaining-july-10-2026-deadline-canadian-autoworkers-cusma-tariffs-guide",
+  },
+  {
     icon: "🚗",
-    text: "Honda CR-V dethroned the Ford F-150 and Toyota RAV4 as Canada's top-selling vehicle in June 2026, according to Automotive News. Supply shortages at Toyota (model changeover) and Ford helped, but the CR-V's hybrid variant is a major driver. The CR-V Hybrid is now the default choice for Canadian buyers in the compact SUV segment. If you service Honda vehicles, expect more hybrid work.",
-    sourceUrl: "https://europe.autonews.com/canada/anc-china-sees-canada-practice-run-reteurs/",
+    text: "Geely is shipping the first batch of Lotus EVs to Canada, according to a Facebook post from the Guangdong Today account. Three Chinese automakers — BYD, Chery, and Geely — are preparing Canadian EV launches. The first shipments could arrive in Canada within weeks. Lotus is the premium entry point; BYD and Chery will follow at mass-market price points. Chinese EVs are coming to your service bays.",
+    sourceUrl: "https://www.facebook.com/guangdongtoday/posts/china-canada-opens-a-narrow-door-for-chinese-evsbut-with-conditions-in-mid-june-/1498407552328281/",
   },
   {
     icon: "📉",
-    text: "Canadian wholesale vehicle values declined 0.35% in the week ending June 27, per Canadian Black Book — the decline has been 'slightly steeper' in recent weeks. Used vehicle prices remain elevated vs. 2024 but are softening. Auto loans are lengthening — 84-month terms are becoming common, raising negative equity concerns for dealers and lenders. Longer loans = customers keeping vehicles longer = more service work for shops.",
-    sourceUrl: "https://www.autoremarketing.com/arcanada/",
-  },
-  {
-    icon: "🔧",
-    text: "Ford recalled 741,195 SUVs and pickups in the U.S. over a rollaway risk — a parking brake issue affecting certain F-150, Expedition, and Navigator models. Canadian recall details pending from Transport Canada. If you service Ford trucks, watch for the Transport Canada recall notice. Recall work is a direct revenue opportunity for shops authorized to perform warranty and recall repairs.",
-    sourceUrl: "https://www.marklines.com/en/news/347074",
+    text: "Auto loans are lengthening across Canada. 84-month (7-year) terms are becoming common at Canadian dealerships, raising concerns about negative equity — buyers owing more on their vehicle than it is worth. Longer loans mean customers keep vehicles longer, which means more maintenance and repair work for independent shops. The average Canadian auto loan term is now 72 months, up from 60 months in 2020.",
+    sourceUrl: "https://www.autonews.com/retail/anc-canadian-auto-news-week-june-29-2026/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Benchmark Your Technician Wages This Weekend",
-  text: "With Unifor-Ford bargaining entering its final week and a likely wage increase coming for 5,000+ Ontario auto workers, now is the time to benchmark your technician compensation against the local market. Pull your current wage rates, compare them to the Unifor pattern (likely 3–4% in Year 1), and decide now whether you will proactively adjust or wait for technicians to ask. Proactive adjustments cost less in goodwill than reactive ones.",
+  title: "Mark June 30, 2027 in Your Calendar — Remission Order Expiry",
+  text: "The steel and aluminum remission order that keeps auto parts prices from rising expires June 30, 2027. That is 12 months from now. Talk to your parts suppliers this month about which of their products rely on U.S.-sourced steel and aluminum inputs covered by the remission. If the order is not extended, those parts prices will rise in July 2027. Knowing your exposure now gives you 12 months to plan.",
 };
 
 const quoteOfTheDay = {
-  text: "We want a level playing field. Toyota and GM are building vehicles in the United States. We're building in Canada. The tariff environment has to be addressed in these negotiations.",
-  author: "Ford CEO Jim Farley",
-  title: "On CUSMA trade talks and Canadian production — July 2, 2026",
+  text: "We do not have plans to sell vehicles in Canada.",
+  author: "Jeff Jablansky, Slate Auto Spokesperson",
+  title: "On why the US$24,950 EV pickup will not come to Canada — June 30, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Dodge Charger R/T — Hemi Orange, Black R/T Stripes, Black Vinyl Roof, Ontario-Plated",
-  description: "On the eve of U.S. Independence Day, the Ride of the Day is the most American car ever built in a Canadian shop owner's driveway: the 1969 Dodge Charger R/T. The '69 Charger is the car that defined an era. The fastback roofline, the hidden headlights, the full-width taillights — it was a car designed to look like it was moving at 120 miles an hour standing still. The R/T (Road and Track) package meant the 440 Magnum V8 as standard equipment — 375 horsepower, 480 lb-ft of torque, a four-barrel carburetor, and a sound that you felt in your chest before you heard it with your ears. Hemi Orange with black stripes and a black vinyl roof is the definitive spec. The 440 Magnum was the practical choice — the 426 Hemi was the legendary choice, but the 440 was the one you could actually drive every day without rebuilding the carburetors every 3,000 miles. Ontario-plated '69 Charger R/Ts with documented history trade for $90,000–$140,000 at auction. The ones with the Hemi go for more. Happy Independence Day to our American friends — and happy Friday to every shop owner who made it through another week in the tariff era.",
+  name: "1971 Plymouth 'Cuda 440 Six Pack — Plum Crazy Purple, Black Hockey Stick Stripes, Ontario-Plated",
+  description: "On U.S. Independence Day, the Ride of the Day is the most American car ever owned by a Canadian: the 1971 Plymouth 'Cuda 440 Six Pack in Plum Crazy Purple. The 'Cuda is the car that defined the muscle car era — a Hamtramck, Michigan-built machine that found its way into Canadian driveways and has never left. The 440 Six Pack engine is one of the great powerplants of the muscle car era: three two-barrel Holley carburetors mounted on an Edelbrock intake manifold, 390 horsepower, 490 lb-ft of torque, and a sound that announces itself two blocks before the car arrives. Plum Crazy Purple — officially Violet — is the most memorable factory colour of the era. It is not subtle. It is not trying to be. Black hockey stick stripes along the lower body, a black shaker hood scoop, and an Ontario licence plate. The 'Cuda was built in America and sold in Canada at a time when the two countries shared a free trade agreement in automobiles — the 1965 Auto Pact, the predecessor to CUSMA. Today, on Independence Day 2026, that free trade agreement is under its most serious threat in 60 years. The 'Cuda is a reminder of what the Canada-U.S. automotive relationship built. Happy Independence Day.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +168,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["UNIFOR-FORD DAY 12", "U.S. SALES +7.8%", "CHINA EVs IN CANADA", "CHARGER R/T"].map((tag) => (
+                {["CANADA SALES H1 -2.6%", "SLATE TARIFF CASUALTY", "REMISSION EXTENDED", "PLUM CRAZY 'CUDA"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Eve of U.S. Independence Day</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — U.S. Independence Day Edition</p>
             </div>
           </div>
         </header>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Unifor-Ford Day 12 — U.S. Auto Sales +7.8% — China EVs in Canada — Baywash Daily Briefing Edition No. 57"
+              alt="Canadian Auto Sales June 2026 — Slate Auto Tariff Casualty — Remission Order Extended — Baywash Daily Briefing Edition No. 58"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 57 — Friday, July 3, 2026 — Eve of U.S. Independence Day</span>
+              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 58 — Saturday, July 4, 2026 — U.S. Independence Day</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Unifor-Ford Day 12 — 7 Days to Deadline — U.S. Sales +7.8% — China EVs Rush to Canada
+                Canada H1 Sales Down 2.6% — Slate Tariff Casualty — Remission Extended to 2027
               </h3>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — Charger R/T</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — 'Cuda 440 Six Pack</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
