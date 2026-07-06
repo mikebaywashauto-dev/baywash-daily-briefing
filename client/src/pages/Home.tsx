@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 59;
-const BRIEFING_DATE = "July 5, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 60;
+const BRIEFING_DATE = "July 6, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CbsMFmbvpIPbYQBO.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NfwidUDYJKOuXkbL.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IUkvfUmecPOhaJgz.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TYSPBTOOxHdpfUPO.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LZtmrWCOtEbPyXri.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lvnvUUudHAcyJPPU.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YXWRPKSZcsPxDhKh.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iYHFMYaWnaFUPgAX.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ncrJFypkTPRBerVT.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kRqxNZkKLeVWhoUX.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "BYD / CANADA / 20 DEALERSHIPS / NORTH AMERICA FOOTHOLD",
-    tagColor: "#b91c1c",
-    headline: "BYD Plans 20 Canadian Dealerships Within One Year — Nikkei Asia: Canada Is BYD's North American Beachhead — Detroit Three Issue Joint Warning on Cyber Risks — Carney Breaks With U.S. on Chinese EV Tariffs",
-    summary: "BYD, the world's largest electric vehicle manufacturer by sales volume, is moving into Canada with speed and scale that has caught the Canadian automotive industry off guard. According to Nikkei Asia (July 2, 2026), BYD is reportedly planning to establish a dealer network of 20 locations across Canada within one year — a rollout pace that would rival established brands. The move follows Canada's decision in mid-June to open a narrow door for Chinese EVs: 49,000 vehicles annually at a 6.1% tariff, rising to 70,000 vehicles over five years. BYD is not alone. Chery and Geely — the latter of which owns Lotus and Volvo — are also preparing Canadian launches. Geely has already shipped the first batch of Lotus EVs to Canada. Nikkei Asia's analysis frames Canada as BYD's 'North American beachhead' — a market where the company can establish brand recognition, service infrastructure, and regulatory compliance experience before the inevitable push into the United States. The Canada-China EV arrangement is precisely what U.S. trade officials warned about: a potential backdoor for Chinese vehicles into the North American market. Prime Minister Carney has made a deliberate strategic choice to diverge from the U.S. position on Chinese EV tariffs, betting that Canadian consumers benefit from lower-cost EV options and that Canada can manage the national security concerns separately. The Detroit Three — Ford, General Motors, and Stellantis — issued a joint statement this week calling the entry of Chinese EVs into Canada a move that 'undermines' the domestic auto industry and opens Canadians to 'cyber risks' from China's data collection capabilities. The statement specifically cited BYD's connected vehicle technology and the potential for Chinese government access to Canadian driver data.",
-    whyItMatters: "BYD is coming to your market. Twenty dealerships in one year means BYD vehicles will be on Ontario roads within 12 months. Here is what your shop needs to know. BYD uses its own proprietary battery technology — the Blade Battery, a lithium iron phosphate (LFP) chemistry — and its own e-Platform 3.0 architecture. It is not compatible with Toyota's THS-II, Honda's i-MMD, or any existing North American EV platform. BYD's Han sedan uses an 85.4 kWh Blade Battery. The Atto 3 uses a 60.5 kWh Blade Battery. The Seal uses a 61.4 or 82.5 kWh Blade Battery. All use BYD's own 800V fast-charging architecture. The shops that invest in BYD-specific training and tooling now — before the vehicles arrive in volume — will capture the out-of-warranty service work that BYD dealers cannot handle at scale. The Detroit Three's cyber risk warning is also a signal: connected vehicle data from Chinese EVs is a live regulatory issue. Watch for Transport Canada to issue guidance on connected vehicle data requirements in the next 6–12 months. That guidance will affect which Chinese EV models can be sold in Canada and what telematics systems must be disabled or modified.",
-    source: "Nikkei Asia / Guangdong Today / Bradenton Herald — July 2–5, 2026",
-    sourceUrl: "https://asia.nikkei.com/spotlight/comment/byd-spots-north-america-foothold-amid-us-canada-tariff-discord",
+    tag: "GM CANADA / H1 2026 / 148,640 VEHICLES / EV +30%",
+    tagColor: "#1d4ed8",
+    headline: "GM Canada Finishes H1 2026 as Canada's Best-Selling Automaker — 148,640 Vehicles, 15.4% Market Share — EV Sales Up 30% YoY — GM Canada President: CUSMA 'Very Important' for Auto Industry",
+    summary: "General Motors Canada has finished the first half of 2026 as Canada's best-selling automaker, with 148,640 vehicle deliveries across Chevrolet, Buick, GMC and Cadillac — a 15.4% market share that leads all manufacturers. The results, announced July 2, were driven by growing electric vehicle sales and sustained SUV demand. GM Canada's EV sales grew more than 30% year-over-year, with gains recorded even in Alberta — historically the province with the lowest EV uptake in Canada. Speaking at the Calgary Stampede on Sunday, Jack Uppal, president and managing director of GM Canada, told Global News that CUSMA is 'very important' for the auto industry. 'CUSMA protects the North American industry against other global players and makes it stronger,' Uppal said. He acknowledged that GM has been monitoring tariffs closely but said the company has so far been able to protect its go-to-market price points. 'We are in an environment that is quite uncertain from a geopolitical perspective; we've got tariff noise, but at the heart of it is affordability,' Uppal said. 'So that's where I would really respond to those challenges. We have to double down and really focus on ensuring that we're delivering value across our product portfolio to our customers to dampen the noise that nobody can really change.' Uppal said he believes the uncertainty surrounding CUSMA will 'sort itself out' as talks continue. GM Canada's H1 performance is notable given that the company has shifted significant production to the United States in recent years. Key Canadian production assets include the Chevrolet Equinox EV at the CAMI Assembly plant in Ingersoll, Ontario, the Chevrolet Silverado at Oshawa Assembly, and the BrightDrop electric delivery van at Ingersoll.",
+    whyItMatters: "GM Canada's H1 results are a direct signal for your service bay. 148,640 new GM vehicles on Canadian roads in the first six months of 2026 means a growing population of GM vehicles requiring service. The EV sales surge — up 30% YoY — is particularly relevant. GM's Ultium platform (used in the Equinox EV, Blazer EV, Sierra EV, and Silverado EV) is a proprietary architecture that requires specific tooling and training. If you are not already certified for Ultium platform service, the H1 2026 numbers are your business case for investing in that training now. The CAMI plant in Ingersoll is producing Equinox EVs at scale — these vehicles are already in Ontario driveways and will be coming to your bays. GM's Ultium Drive system uses a different high-voltage architecture than the Chevrolet Bolt EV (which used LG Energy Solution cells). Ultium uses GM-proprietary pouch cells in a modular pack. The diagnostic and repair procedures are different. Contact your provincial apprenticeship board about GM Ultium certification. The 30% EV growth in Alberta — the province most resistant to EV adoption — is also a signal that the EV service market is broader than urban Ontario and BC. If you are in Alberta, Saskatchewan, or Manitoba, the EV service opportunity is arriving faster than the provincial sales data suggested two years ago.",
+    source: "Globe and Mail / Global News — July 2–5, 2026",
+    sourceUrl: "https://globalnews.ca/news/11953828/general-motors-cusma-auto-industry/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "GORDIE HOWE BRIDGE / CLOSED / AMBASSADOR BRIDGE / MOROUN FAMILY",
-    tagColor: "#1d4ed8",
-    headline: "Gordie Howe Bridge Remains Closed — U.S. Ambassador Denies Donations Delayed Opening — Moroun Family Donated US$1M to Trump Super PAC — Canada Paid Full Cost of Bridge — Windsor-Detroit Corridor Handles $350M/Day in Trade",
-    summary: "The Gordie Howe International Bridge — the new cable-stayed crossing between Windsor, Ontario and Detroit, Michigan — remains closed to traffic despite Canada having paid the entire construction cost of the project. U.S. Ambassador Pete Hoekstra denied on July 4 that a US$1-million donation from billionaire Matthew Moroun — whose family owns the competing Ambassador Bridge — to Trump's MAGA Inc. super PAC was behind the delay. 'Absolutely not,' Hoekstra told Global News. The New York Times reported that Matthew Moroun met with U.S. Commerce Secretary Howard Lutnick hours before Trump posted in February that he could block the bridge's opening unless the U.S. was 'compensated.' A planned ribbon-cutting ceremony last month was cancelled at the request of the Americans. Prime Minister Carney said there were 'technical aspects' being worked through between Canada and the U.S. Hoekstra's position is that Americans are 'contributing significantly more than half of the revenue that will pay back however Canada financed this' — a reference to the fact that the bridge will be repaid through tolls, and that the Ambassador Bridge, which is 100% American-owned, generates the bulk of Windsor-Detroit crossing revenue. The Gordie Howe Bridge, when open, will be the largest international border crossing in North America. The Windsor-Detroit corridor is the most important automotive trade corridor in the world — approximately $350 million in goods cross the border daily, the majority of which are auto parts, finished vehicles, and automotive inputs. The Ambassador Bridge, built in 1929, is a single-span suspension bridge that is operating at or near capacity. The Gordie Howe Bridge is a six-lane cable-stayed crossing designed to handle modern truck traffic and provide redundancy for the corridor.",
-    whyItMatters: "The Gordie Howe Bridge story matters to your shop because the Windsor-Detroit corridor is the spine of the Canadian automotive supply chain. Every auto part that crosses the border from Michigan to Ontario — and there are millions of them every day — crosses either the Ambassador Bridge or the Blue Water Bridge at Sarnia. The Gordie Howe Bridge was supposed to add capacity and redundancy to that corridor. It is still closed. The practical risk for your shop is supply chain disruption. If the Ambassador Bridge is closed for any reason — weather, accident, labour action, or political decision — the Canadian auto parts supply chain is immediately under stress. The Gordie Howe Bridge was supposed to be the insurance policy against that scenario. It is not yet available. The political dimension of the delay — the Moroun family's donations to Trump's super PAC, the Commerce Secretary meeting, the Trump post about compensation — is a reminder that the Canada-U.S. automotive relationship is now subject to political risk at a level that was unimaginable five years ago. The bridge delay is a concrete, physical manifestation of that risk. It is not abstract trade policy. It is a closed bridge.",
-    source: "Global News / New York Times — July 3–4, 2026",
-    sourceUrl: "https://globalnews.ca/news/11952021/pete-hoekstra-interview-canada/",
+    tag: "CUSMA / ANNUAL REVIEW / NO DATES SET / CANADA VS MEXICO",
+    tagColor: "#b91c1c",
+    headline: "Canada Seeks Clarity on CUSMA Annual Review Structure — LeBlanc: 'No More Predictability' — No Canada-U.S. Negotiating Dates Set — Mexico Gets July 20 Round — Canada Gets Nothing",
+    summary: "Days after the Trump administration formally declined to extend CUSMA for 16 years and instead triggered an annual review process, Canada's Trade Minister Dominic LeBlanc said significant uncertainty remains about what comes next. 'We don't have any more predictability about the annual review process because this is somewhat uncharted territory. It's not typical for this kind of agreement,' LeBlanc told reporters on July 5. LeBlanc said he asked U.S. Trade Representative Jamieson Greer how he intended to structure discussions as part of the annual review — and received no answer. 'There wasn't an answer at the meeting. It was agreed that we would continue the conversation over the coming weeks,' LeBlanc said of the July 1 meeting. The contrast with Mexico is stark. Mexican Economy Secretary Marcelo Ebrard confirmed that Mexico expects to host a U.S. delegation during the week of July 20 as part of its own bilateral negotiations with the U.S. Canada has not announced a date for a similar meeting. The U.S. decision set in motion a renewable annual review process that could last up to 10 years. At the end of that period, the agreement would expire if no path forward is found to extend it beyond its 2036 expiry date. CUSMA has largely shielded Canada and Mexico from most of the tariffs imposed by the Trump administration — a broad exemption remains in place for goods that comply with the agreement. That protection is not complete: Canada and Mexico are each pursuing bilateral agreements with the United States alongside the three-country negotiations. From Canada's perspective, the bilateral talks could help reduce U.S. tariffs that fall outside CUSMA's protections, including those on steel, aluminum and softwood lumber. Trump has said publicly that he is 'not looking to renew' CUSMA and that he would even prefer to see it 'terminated.' U.S. Ambassador Hoekstra has confirmed that 'all options are on the table,' including termination with six months' formal notice.",
+    whyItMatters: "The CUSMA annual review story is the most important long-term structural issue for your shop. Here is what 'no dates set for Canada' means in practical terms. Mexico is at the table with the U.S. on July 20. Canada is not. That asymmetry is not accidental — it reflects the U.S. position that Canada has more to answer for than Mexico on three specific grievances: the China EV deal, forced-labour enforcement failures, and dairy market access. Until Canada addresses those grievances to U.S. satisfaction, Canada will not get a bilateral negotiating date. The practical implication for your shop is that the tariff environment will not improve before November 2026 at the earliest — and may get worse. The Section 122 tariff expires July 24, but it is being replaced by Section 301 forced-labour tariffs of 10–12.5% (hearings tomorrow, July 7). The 25% auto tariff remains in place. CUSMA-compliant goods are exempt from most tariffs, but the definition of 'CUSMA-compliant' is being tested in every product category. The uncertainty itself is the problem. Purolator's most recent survey found that trade uncertainty is proving more disruptive to Canadian supply chains than the tariffs themselves — because uncertainty about future tariff levels is causing companies to hold excess inventory, delay investment decisions, and avoid long-term supplier commitments. Your shop is experiencing this directly in parts pricing volatility and lead time uncertainty.",
+    source: "Truck News / Canadian Press / Yahoo Finance — July 5, 2026",
+    sourceUrl: "https://www.trucknews.com/transportation/canada-seeks-clarity-after-us-opts-for-annual-usmca-review/1003217912/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "UNIFOR / FORD / DAY 14 / 5 DAYS TO JULY 10 DEADLINE",
+    tag: "USTR / SECTION 301 / FORCED LABOUR / HEARINGS TODAY",
     tagColor: "#15803d",
-    headline: "Unifor-Ford Bargaining Day 14 — 5 Days to July 10 Deadline — Final Push Begins This Week — Windsor Assembly and Oakville Production Security at the Core — Watch for Framework Announcement Monday or Tuesday",
-    summary: "Unifor and Ford Motor Company of Canada are in the final stretch of their 2026 collective bargaining round, with five days remaining before the July 10 strike deadline. As of Sunday, July 5, no tentative agreement has been announced. Unifor Canada confirmed on July 1 that the bargaining team was at the table on Canada Day, working to secure a deal for more than 5,000 auto members. The pattern in Detroit Three bargaining is well-established: the final framework typically emerges in the last 72–96 hours before the deadline, often after a 24-hour extension. That means the critical window is Monday, July 6 through Wednesday, July 8. The core issues in the 2026 round are production security and wages. Unifor's primary demand is a binding commitment from Ford to maintain production at Windsor Assembly (Bronco Sport, Lincoln Corsair) and Oakville Assembly (Super Duty trucks) through the life of the agreement. The wage demand is approximately 3.2% annually, in line with Canada's CPI. Ford's position is complicated by the tariff environment: the company is paying 25% on vehicles imported from the U.S. and faces uncertainty about CUSMA's future. Ford CEO Jim Farley has publicly called for a 'level playing field' with Toyota and Honda, which import vehicles from Japan and Canada respectively without the 25% surtax. The Unifor Local 707 (Oakville Assembly) has already scheduled its 72nd anniversary picnic for July 12 at Canada's Wonderland — a signal that members are planning ahead and expect a deal to be in place before the deadline.",
-    whyItMatters: "The Unifor-Ford deadline is five days away. Here is your action checklist for this week. First, if you service Ford vehicles — F-150, F-250, F-350, Bronco Sport, Lincoln Corsair, Mustang — maintain a 30-day parts buffer through July 10. A strike at Windsor Assembly or Oakville would not immediately affect parts supply, but it would signal broader production disruption and could trigger parts hoarding by dealers. Second, watch for a tentative agreement announcement Monday or Tuesday (July 6–7). If a framework is announced, the strike risk drops to near zero and the parts buffer recommendation can be relaxed. Third, if no framework is announced by Wednesday, July 8, the strike risk rises sharply. At that point, consider extending the parts buffer to 45 days for high-volume Ford parts. Fourth, note that a Ford strike in Canada does not affect Ford's U.S. plants — the UAW contract is separate. The Canadian strike risk is specific to Windsor Assembly and Oakville Assembly. Parts made at those plants — Bronco Sport body panels, Super Duty frames — would be the first to be affected.",
-    source: "Unifor Canada / Unifor Local 707 — July 1–5, 2026",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-ford-bargaining-update",
+    headline: "USTR Section 301 Forced Labour Tariff Hearings Begin Today — Canada Named Target — 10–12.5% Tariff Proposed — Replaces Section 122 on July 24 — 60 Economies Targeted — Written Comments Closed Yesterday",
+    summary: "The U.S. Trade Representative's public hearings on proposed Section 301 forced-labour tariffs begin today, July 7, in Washington, D.C. Written comments closed yesterday, July 6, and Canada submitted its formal response arguing against inclusion. The USTR has proposed tariffs of 10% or 12.5% on goods from 60 economies it has accused of failing to enact or enforce laws against forced labour. Canada is a named target. The U.S. government's specific grievance against Canada: the United States barred 6,300 shipments of goods made with forced labour in fiscal year 2025, while Canada barred only 2. The U.S. position is that Canada's Customs Act and the Fighting Against Forced Labour and Child Labour in Supply Chains Act are inadequately enforced. The Section 301 forced-labour tariffs are designed to replace the Section 122 tariff — a 10% surcharge on Canadian goods that expires July 24 — with a more durable legal mechanism. Section 122 was a temporary emergency tariff that required periodic renewal. Section 301 is a permanent trade remedy that does not expire. The proposed rate for Canada is 10% — the same as Section 122. However, the USTR has proposed 12.5% for some economies, and the final rate for Canada will be determined after the hearings. The hearings today will hear testimony from industry groups, NGOs, and government representatives. Canada's delegation is expected to argue that Canada's forced-labour enforcement record has improved significantly in 2026 and that the proposed tariff is disproportionate. The EU, Japan, South Korea, Malaysia, and dozens of other economies are also named targets. The hearing is expected to last two days.",
+    whyItMatters: "The Section 301 hearings today are the most immediate tariff risk on your calendar. Here is the timeline and what it means for your shop. July 7 (today): USTR hearings begin. July 24: Section 122 tariff expires. Between July 7 and July 24, the USTR will publish its final determination on Section 301 rates and scope. If Canada is included at 10%, the tariff environment is essentially unchanged from today — Section 301 replaces Section 122 at the same rate. If Canada is included at 12.5%, the tariff on non-CUSMA-compliant Canadian goods rises by 2.5 percentage points. If Canada is excluded from Section 301 (the best-case scenario), there is a brief window between July 24 and the next tariff action where some goods may face lower tariffs. The key word is 'non-CUSMA-compliant.' CUSMA-compliant goods — vehicles and parts that meet the agreement's rules of origin — are exempt from Section 301. The risk is for goods with Chinese content that do not qualify for CUSMA treatment. Auto parts with Chinese-made components (batteries, semiconductors, rare earth magnets) are the most exposed category. If your shop sources parts from suppliers who use Chinese inputs, ask your supplier about their CUSMA compliance status before July 24.",
+    source: "USTR / Peacock Tariff Consulting / Facebook/TheStarOnline — July 5–6, 2026",
+    sourceUrl: "https://www.peacocktariffconsulting.com/eu-cuts-to-zero/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "⚖️",
-    text: "USTR Section 301 forced-labour tariff hearings resume TOMORROW — Monday, July 7. Canada is a named target for 10–12.5% tariffs that would replace the expiring Section 122 tariff on July 24. The hearings will determine the scope and rate of the replacement tariff. If Canada is included at 12.5%, it would be on top of the existing 25% auto tariff — a combined 37.5% on non-CUSMA-compliant Canadian goods. Watch for the hearing transcript to be published by USTR by end of day Monday.",
-    sourceUrl: "https://apcoworldwide.com/blog/qa-july-is-a-big-month-for-trade-whats-coming-next/",
+    icon: "🤝",
+    text: "Unifor-Ford Day 15 — 4 days to July 10 deadline. No tentative agreement announced Monday morning. The final framework typically emerges in the last 72–96 hours before the deadline. Watch for an announcement today or tomorrow (July 6–7). If no framework by Wednesday July 8, strike risk rises sharply. Maintain 30-day Ford parts buffer through July 10.",
+    sourceUrl: "https://www.unifor.org/news/all-news",
   },
   {
-    icon: "🚫",
-    text: "Polestar has been denied U.S. authorization under the Connected Vehicle Rule, which restricts cars with Chinese-linked technology over national security concerns. Polestar is Swedish-branded but Geely-owned — the same Geely that is entering Canada with Lotus EVs. The U.S. Commerce Department's decision is a preview of the regulatory scrutiny that Chinese-linked EVs will face in North America. Transport Canada has not yet issued equivalent guidance, but it is watching the U.S. decision closely.",
-    sourceUrl: "https://www.instagram.com/reel/DaV8YqKAWKA/",
+    icon: "🌉",
+    text: "Gordie Howe Bridge: Truck News reports carriers are still awaiting the opening. The Windsor-Detroit corridor handles $350M/day in trade. The bridge remains closed. The Moroun family's US$1M donation to Trump's MAGA Inc. super PAC and the subsequent Trump post about blocking the bridge remain unresolved. U.S. Ambassador Hoekstra: 'All options are on the table' on CUSMA termination — same language used about the bridge.",
+    sourceUrl: "https://www.trucknews.com/transportation/carriers-await-gordie-howe-bridge-opening-as-launch-delayed/1003216612/",
   },
   {
-    icon: "🛢️",
-    text: "Alberta pipeline to the West Coast: PM Carney's government is proposing a new pipeline to reduce Canada's dependence on the U.S. market for energy exports. Internal PMO polls show a majority of Canadians support the project. The pipeline is not directly automotive, but it is a signal of Canada's strategic direction: diversify away from the U.S. market. For shop owners, the pipeline debate is a proxy for the broader question of how Canada responds to CUSMA uncertainty.",
-    sourceUrl: "https://globalnews.ca/news/11952104/alberta-new-pipeline-hurdles-remain/",
+    icon: "📦",
+    text: "Purolator survey: 'Trade uncertainty proving more disruptive than tariffs.' Canadian supply chains are holding excess inventory and delaying investment because they cannot predict tariff levels 3–6 months out. This is the hidden cost of the CUSMA annual review process — not the tariffs themselves, but the uncertainty about what the tariffs will be. For your shop, this means parts pricing volatility will continue through at least Q3 2026.",
+    sourceUrl: "https://www.trucknews.com/supply-chain/trade-uncertainty-proving-more-disruptive-than-tariffs-purolator-finds/1003217108/",
   },
   {
-    icon: "📊",
-    text: "Chinese automakers overtook Japanese brands in Europe for the first time in May 2026, driven by BYD, PHEVs, and cost advantages despite EV tariffs — according to OICA data published July 3. This is the trajectory for Canada: Chinese brands are gaining market share in every market where they are allowed to compete. The 49,000-vehicle annual quota in Canada is a controlled entry, but the direction is clear. The question is not whether Chinese EVs will be on Canadian roads — they will. The question is when and in what volume.",
-    sourceUrl: "https://oica.net/07-03-2026-oicas-5-major-news-items-summarized/",
+    icon: "🇪🇺",
+    text: "EU-U.S. Turnberry trade deal: The EU eliminated its 10% tariff on U.S. passenger vehicles as of July 1 — the same day CUSMA's sunset clause was triggered. U.S.-built vehicles now enter the EU duty-free. This is relevant because it may divert some U.S. production capacity toward Europe and away from Canada. Watch for Ford and GM to announce European allocation increases for U.S.-built models in Q3 2026.",
+    sourceUrl: "https://www.peacocktariffconsulting.com/eu-cuts-to-zero/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "BYD Is Coming — Start Your Training Now, Not When the First BYD Arrives at Your Bay",
-  text: "BYD's Blade Battery (LFP chemistry) is fundamentally different from NMC batteries used by most North American EVs. High-voltage safety protocols, battery management system diagnostics, and thermal management procedures are all BYD-specific. The shops that complete BYD EV training before the first Canadian dealerships open will be positioned to capture out-of-warranty service work from day one. Contact your provincial apprenticeship board about EV high-voltage safety certification — it is the foundation for any Chinese EV service work.",
+  title: "Ask Your Parts Supplier About CUSMA Compliance Before July 24",
+  text: "The Section 301 forced-labour tariff hearings begin today. The final determination will be published before July 24 — the day Section 122 expires. If your parts supplier sources components from China (batteries, semiconductors, rare earth magnets), ask them now whether their products qualify for CUSMA treatment. CUSMA-compliant parts are exempt from Section 301. Non-compliant parts may face a 10–12.5% tariff increase on July 24. You need to know before the deadline, not after.",
 };
 
 const quoteOfTheDay = {
-  text: "Canada is the perfect beachhead for what many industry experts view as the inevitable invasion of Chinese cars into the United States.",
-  author: "Nikkei Asia",
-  title: "On BYD's Canada strategy — July 2, 2026",
+  text: "We don't have any more predictability about the annual review process because this is somewhat uncharted territory. It's not typical for this kind of agreement.",
+  author: "Dominic LeBlanc",
+  title: "Canada-U.S. Trade Minister — July 5, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1966 Chevrolet Corvette Stingray — Nassau Blue, White Stinger Stripe, 427 Big Block, 425 hp, Ontario-Plated",
-  description: "Sunday morning at a Canadian car show, and the 1966 Corvette Stingray in Nassau Blue is the car that stops traffic. The C2 Stingray is the most beautiful production car ever built in North America — a Bill Mitchell design that has aged better than anything that came before or after it. Nassau Blue with a white stinger stripe down the hood is the specification that wins best in show. The 427 cubic inch big block V8 with 425 horsepower and side exhaust pipes is the engine that defines the era. Chrome knock-off wheels, a removable hardtop, and an Ontario licence plate. The '66 Corvette was built at the St. Louis assembly plant — not in Canada — but it found its way into Canadian driveways and has never left. Today, a documented Nassau Blue 427 Stingray with Ontario history trades at $80,000–$120,000 at auction. On a Sunday morning in July, with the dew still on the grass and the show field filling up, the '66 Stingray is the reason people get up early. It is the car that reminds you why you got into this business.",
+  name: "1969 Chevrolet Camaro Z/28 — Fathom Green, White Racing Stripes, DZ 302 V8, 290 hp, Ontario-Plated",
+  description: "Monday morning, and the 1969 Camaro Z/28 in Fathom Green is the car that gets you through the week. The Z/28 was built for one purpose: to win the SCCA Trans-Am Series. Chevrolet had to build 1,000 road cars to homologate the racing version, and the result was one of the most focused performance cars of the muscle car era. The DZ 302 V8 — 302 cubic inches, 290 horsepower from the factory, closer to 360 in reality — was a high-revving, solid-lifter engine that sounded like nothing else on the road. Fathom Green is a rare 1969-only colour, a deep forest green that photographs differently in every light. White racing stripes down the hood and trunk lid, a cowl induction hood, and Muncie 4-speed close-ratio gearbox. Ontario-plated, documented, show-quality restoration: $65,000–$95,000 at auction. The Z/28 is the Monday morning car — the car that reminds you that the week ahead is worth showing up for. The shop is open. The bays are full. The trade war is complicated. The Z/28 is not. Fire it up.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +168,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["BYD 20 DEALERSHIPS", "GORDIE HOWE CLOSED", "UNIFOR-FORD 5 DAYS", "'66 CORVETTE"].map((tag) => (
+                {["GM CANADA H1 #1", "CUSMA NO DATES", "SECTION 301 TODAY", "'69 Z/28"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
             </div>
           </div>
         </header>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="BYD Canada 20 Dealerships — Gordie Howe Bridge Closed — Unifor Ford 5 Days — Baywash Daily Briefing Edition No. 59"
+              alt="GM Canada H1 2026 Best-Selling Automaker — CUSMA No Dates Set — Section 301 Hearings Today — Baywash Daily Briefing Edition No. 60"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 59 — Sunday, July 5, 2026</span>
+              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 60 — Monday, July 6, 2026</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                BYD Plans 20 Canadian Dealerships — Gordie Howe Bridge Still Closed — Unifor-Ford: 5 Days
+                GM Canada #1 in H1 — CUSMA: No Dates Set for Canada — Section 301 Hearings Begin Today
               </h3>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '66 Corvette Stingray</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Camaro Z/28</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
