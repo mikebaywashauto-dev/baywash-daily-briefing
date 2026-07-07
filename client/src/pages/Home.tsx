@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 60;
-const BRIEFING_DATE = "July 6, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 61;
+const BRIEFING_DATE = "July 7, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lvnvUUudHAcyJPPU.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YXWRPKSZcsPxDhKh.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iYHFMYaWnaFUPgAX.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ncrJFypkTPRBerVT.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kRqxNZkKLeVWhoUX.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JDmyBIpDjhPvmfsp.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SOQcYdsUCehYvanI.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LxOwMvBYjPEWalPf.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lhjIWbKWlTDJvCXq.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XCfsgmtyNjNyVqtz.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "GM CANADA / H1 2026 / 148,640 VEHICLES / EV +30%",
-    tagColor: "#1d4ed8",
-    headline: "GM Canada Finishes H1 2026 as Canada's Best-Selling Automaker — 148,640 Vehicles, 15.4% Market Share — EV Sales Up 30% YoY — GM Canada President: CUSMA 'Very Important' for Auto Industry",
-    summary: "General Motors Canada has finished the first half of 2026 as Canada's best-selling automaker, with 148,640 vehicle deliveries across Chevrolet, Buick, GMC and Cadillac — a 15.4% market share that leads all manufacturers. The results, announced July 2, were driven by growing electric vehicle sales and sustained SUV demand. GM Canada's EV sales grew more than 30% year-over-year, with gains recorded even in Alberta — historically the province with the lowest EV uptake in Canada. Speaking at the Calgary Stampede on Sunday, Jack Uppal, president and managing director of GM Canada, told Global News that CUSMA is 'very important' for the auto industry. 'CUSMA protects the North American industry against other global players and makes it stronger,' Uppal said. He acknowledged that GM has been monitoring tariffs closely but said the company has so far been able to protect its go-to-market price points. 'We are in an environment that is quite uncertain from a geopolitical perspective; we've got tariff noise, but at the heart of it is affordability,' Uppal said. 'So that's where I would really respond to those challenges. We have to double down and really focus on ensuring that we're delivering value across our product portfolio to our customers to dampen the noise that nobody can really change.' Uppal said he believes the uncertainty surrounding CUSMA will 'sort itself out' as talks continue. GM Canada's H1 performance is notable given that the company has shifted significant production to the United States in recent years. Key Canadian production assets include the Chevrolet Equinox EV at the CAMI Assembly plant in Ingersoll, Ontario, the Chevrolet Silverado at Oshawa Assembly, and the BrightDrop electric delivery van at Ingersoll.",
-    whyItMatters: "GM Canada's H1 results are a direct signal for your service bay. 148,640 new GM vehicles on Canadian roads in the first six months of 2026 means a growing population of GM vehicles requiring service. The EV sales surge — up 30% YoY — is particularly relevant. GM's Ultium platform (used in the Equinox EV, Blazer EV, Sierra EV, and Silverado EV) is a proprietary architecture that requires specific tooling and training. If you are not already certified for Ultium platform service, the H1 2026 numbers are your business case for investing in that training now. The CAMI plant in Ingersoll is producing Equinox EVs at scale — these vehicles are already in Ontario driveways and will be coming to your bays. GM's Ultium Drive system uses a different high-voltage architecture than the Chevrolet Bolt EV (which used LG Energy Solution cells). Ultium uses GM-proprietary pouch cells in a modular pack. The diagnostic and repair procedures are different. Contact your provincial apprenticeship board about GM Ultium certification. The 30% EV growth in Alberta — the province most resistant to EV adoption — is also a signal that the EV service market is broader than urban Ontario and BC. If you are in Alberta, Saskatchewan, or Manitoba, the EV service opportunity is arriving faster than the provincial sales data suggested two years ago.",
-    source: "Globe and Mail / Global News — July 2–5, 2026",
-    sourceUrl: "https://globalnews.ca/news/11953828/general-motors-cusma-auto-industry/",
+    tag: "UNIFOR / FORD / CRITICAL WEEK / 3 DAYS TO JULY 10",
+    tagColor: "#b91c1c",
+    headline: "Unifor-Ford Enters 'Critical Week' — Lana Payne: Talks 'Challenging and Frustrating' — 3 Days to July 10 Deadline — Windsor Assembly and Oakville Production Security at the Core — Framework Expected Today or Tomorrow",
+    summary: "The union representing Canadian autoworkers says it is in a critical week as it seeks to hammer out a new three-year deal with Ford Motor Co. ahead of the July 10 deadline. Unifor National President Lana Payne, in a video update posted Monday, said negotiations have at times been 'challenging and frustrating,' but confirmed the union remains committed to reaching a deal. 'There's lots of work ahead in the coming days, and we will remain committed to making progress for our members,' Payne said. Unifor represents roughly 5,000 workers at Ford Canada across two key plants: Windsor Assembly (Bronco Sport, Lincoln Corsair) and Oakville Assembly (Ford Super Duty). The July 10 deadline is self-imposed by Unifor — it is not a legal strike deadline, but it is the date by which Payne has said the union needs a tentative agreement to begin ratification and then move on to pattern bargaining with General Motors and Stellantis. Ford has said 'stability and flexibility are key' as it contends with rising costs, new competitors, and shifting product demand. The company has said it hopes its long-standing relationship with the union serves as a foundation for talks. The core issues in dispute are production commitments for Windsor Assembly and Oakville, wage increases that keep pace with inflation, and job security provisions that protect Canadian workers from production shifts to U.S. plants. The 25% U.S. auto tariff has complicated the talks: Ford wants flexibility to shift production between Canadian and U.S. plants depending on tariff conditions, while Unifor wants contractual guarantees that Canadian production volumes will be maintained regardless of tariff outcomes. A framework agreement is expected to emerge today (July 7) or tomorrow (July 8). If no framework by Wednesday, strike risk rises sharply. The pattern agreement with Ford will set the template for GM and Stellantis negotiations, which follow immediately after.",
+    whyItMatters: "The Unifor-Ford deadline is the most immediate supply chain risk on your calendar. Here is the practical guidance for your shop. If a tentative agreement is reached today or tomorrow (July 7–8), the Ford parts supply chain is secure through ratification and beyond. If no agreement by July 10, Unifor can call a strike with 48 hours' notice — meaning Windsor and Oakville could go dark as early as July 12. Windsor Assembly builds the Bronco Sport and Lincoln Corsair. Oakville builds the Ford Super Duty. A strike at either plant would affect parts availability for those models within 30 days. The broader supply chain risk is the Tier 1 and Tier 2 suppliers who feed both plants — a strike at Windsor or Oakville triggers layoffs at dozens of Ontario parts suppliers within 72 hours. If you service Ford vehicles heavily, maintain a 30-day buffer on high-turnover Ford parts (filters, brakes, belts, sensors) through July 12. If a deal is reached, you can draw down that buffer over the following 30 days. The cost of holding 30 days of extra Ford parts inventory is far lower than the cost of turning away Ford service customers during a parts shortage.",
+    source: "Yahoo Finance / The Canadian Press — July 7, 2026",
+    sourceUrl: "https://ca.finance.yahoo.com/news/talks-ford-enter-critical-week-055930131.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CUSMA / ANNUAL REVIEW / NO DATES SET / CANADA VS MEXICO",
-    tagColor: "#b91c1c",
-    headline: "Canada Seeks Clarity on CUSMA Annual Review Structure — LeBlanc: 'No More Predictability' — No Canada-U.S. Negotiating Dates Set — Mexico Gets July 20 Round — Canada Gets Nothing",
-    summary: "Days after the Trump administration formally declined to extend CUSMA for 16 years and instead triggered an annual review process, Canada's Trade Minister Dominic LeBlanc said significant uncertainty remains about what comes next. 'We don't have any more predictability about the annual review process because this is somewhat uncharted territory. It's not typical for this kind of agreement,' LeBlanc told reporters on July 5. LeBlanc said he asked U.S. Trade Representative Jamieson Greer how he intended to structure discussions as part of the annual review — and received no answer. 'There wasn't an answer at the meeting. It was agreed that we would continue the conversation over the coming weeks,' LeBlanc said of the July 1 meeting. The contrast with Mexico is stark. Mexican Economy Secretary Marcelo Ebrard confirmed that Mexico expects to host a U.S. delegation during the week of July 20 as part of its own bilateral negotiations with the U.S. Canada has not announced a date for a similar meeting. The U.S. decision set in motion a renewable annual review process that could last up to 10 years. At the end of that period, the agreement would expire if no path forward is found to extend it beyond its 2036 expiry date. CUSMA has largely shielded Canada and Mexico from most of the tariffs imposed by the Trump administration — a broad exemption remains in place for goods that comply with the agreement. That protection is not complete: Canada and Mexico are each pursuing bilateral agreements with the United States alongside the three-country negotiations. From Canada's perspective, the bilateral talks could help reduce U.S. tariffs that fall outside CUSMA's protections, including those on steel, aluminum and softwood lumber. Trump has said publicly that he is 'not looking to renew' CUSMA and that he would even prefer to see it 'terminated.' U.S. Ambassador Hoekstra has confirmed that 'all options are on the table,' including termination with six months' formal notice.",
-    whyItMatters: "The CUSMA annual review story is the most important long-term structural issue for your shop. Here is what 'no dates set for Canada' means in practical terms. Mexico is at the table with the U.S. on July 20. Canada is not. That asymmetry is not accidental — it reflects the U.S. position that Canada has more to answer for than Mexico on three specific grievances: the China EV deal, forced-labour enforcement failures, and dairy market access. Until Canada addresses those grievances to U.S. satisfaction, Canada will not get a bilateral negotiating date. The practical implication for your shop is that the tariff environment will not improve before November 2026 at the earliest — and may get worse. The Section 122 tariff expires July 24, but it is being replaced by Section 301 forced-labour tariffs of 10–12.5% (hearings tomorrow, July 7). The 25% auto tariff remains in place. CUSMA-compliant goods are exempt from most tariffs, but the definition of 'CUSMA-compliant' is being tested in every product category. The uncertainty itself is the problem. Purolator's most recent survey found that trade uncertainty is proving more disruptive to Canadian supply chains than the tariffs themselves — because uncertainty about future tariff levels is causing companies to hold excess inventory, delay investment decisions, and avoid long-term supplier commitments. Your shop is experiencing this directly in parts pricing volatility and lead time uncertainty.",
-    source: "Truck News / Canadian Press / Yahoo Finance — July 5, 2026",
-    sourceUrl: "https://www.trucknews.com/transportation/canada-seeks-clarity-after-us-opts-for-annual-usmca-review/1003217912/",
+    tag: "CANADA ACT / SECTION 301 / ONTARIO LCBO / U.S. ALCOHOL BAN",
+    tagColor: "#1d4ed8",
+    headline: "Republican Introduces 'CANADA Act' to Investigate Ontario and Quebec Booze Bans Under Section 301 — 63% Drop in U.S. Spirits Exports to Canada in 2025 — Ontario Premier Doug Ford: 'Once That Deal's Done' — But CUSMA Was Not Renewed",
+    summary: "A Republican congresswoman for New York said Monday she is introducing legislation to compel the U.S. Trade Representative to conduct an investigation into Canadian provinces that are not purchasing American alcohol. Rep. Claudia Tenney (R-N.Y.) said she would introduce the Combating Attacks on our National Alcoholic Drinks by Allies Act — or CANADA Act — in the U.S. House of Representatives to prompt an investigation under Section 301 of the Trade Act of 1974. 'Canadian provinces cannot be allowed to hold American wineries, breweries and distilleries hostage and attempt to ransom them,' Tenney said. If the investigation found unfair trade practices, the United States could respond with tariffs or other import restrictions. Several Canadian provincial liquor boards stopped purchasing American alcohol last year in response to U.S. President Donald Trump's tariffs and threats of annexation. While Saskatchewan and Alberta have returned American booze to the shelves, major purchasing provinces like Ontario and Quebec have not resumed stocking U.S. alcohol. Ontario Premier Doug Ford told reporters in Washington last month he would welcome back American alcohol once CUSMA is renewed. 'I just want to get this deal done,' he said. 'I can assure you once that deal's done, I'm going to be sitting down and bringing all the booze back on shelves in Ontario.' However, the United States last week said it was not going to renew CUSMA — it triggered the annual review process instead. Ontario's condition for restoring U.S. alcohol has therefore not been met. The Distilled Spirits Council of the United States has said retaliatory bans in Canada led to a 63 per cent decline in U.S. spirits exports to that market in 2025. USTR Greer and other members of the Trump administration have repeatedly pointed to the provincial alcohol bans as unfair and as an 'active impediment' to CUSMA renegotiation. The CANADA Act has the backing of WineAmerica, the American Craft Spirits Association, and the Wine Institute.",
+    whyItMatters: "The CANADA Act is a new trade irritant that directly affects the CUSMA negotiating environment — and therefore your shop's tariff outlook. Here is why it matters. The U.S. now has three active or pending Section 301 investigations that name Canada as a target: the forced-labour investigation (hearings this week), the CANADA Act alcohol investigation (just introduced), and the ongoing China EV deal grievance. Each investigation is a potential tariff action. Each tariff action is a potential cost increase for your shop. The alcohol ban story is directly connected to the CUSMA annual review timeline. Ontario Premier Doug Ford has tied the return of U.S. alcohol to CUSMA renewal — but CUSMA was not renewed. The U.S. is now using the alcohol ban as leverage in CUSMA negotiations. The practical implication: the CUSMA annual review will not produce a deal quickly. Ontario and Quebec will not restore U.S. alcohol until there is a deal. The U.S. will not offer Canada a bilateral negotiating date until the alcohol ban is lifted. This is a circular stalemate that benefits no one — including your shop, which needs tariff certainty to plan parts purchasing and pricing. The Section 301 alcohol investigation, if launched, would take 12–18 months to complete. The tariff environment will remain uncertain through at least mid-2027.",
+    source: "Kelowna Daily Courier / The Canadian Press — July 6, 2026",
+    sourceUrl: "https://www.kelownadailycourier.ca/news/national_news/article_f4a4d5e2-cd2c-512b-b8a8-8b77fd5f79a2.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "USTR / SECTION 301 / FORCED LABOUR / HEARINGS TODAY",
+    tag: "SECTION 301 / FORCED LABOUR / DAY 2 / 16 COUNTRIES TESTIFYING",
     tagColor: "#15803d",
-    headline: "USTR Section 301 Forced Labour Tariff Hearings Begin Today — Canada Named Target — 10–12.5% Tariff Proposed — Replaces Section 122 on July 24 — 60 Economies Targeted — Written Comments Closed Yesterday",
-    summary: "The U.S. Trade Representative's public hearings on proposed Section 301 forced-labour tariffs begin today, July 7, in Washington, D.C. Written comments closed yesterday, July 6, and Canada submitted its formal response arguing against inclusion. The USTR has proposed tariffs of 10% or 12.5% on goods from 60 economies it has accused of failing to enact or enforce laws against forced labour. Canada is a named target. The U.S. government's specific grievance against Canada: the United States barred 6,300 shipments of goods made with forced labour in fiscal year 2025, while Canada barred only 2. The U.S. position is that Canada's Customs Act and the Fighting Against Forced Labour and Child Labour in Supply Chains Act are inadequately enforced. The Section 301 forced-labour tariffs are designed to replace the Section 122 tariff — a 10% surcharge on Canadian goods that expires July 24 — with a more durable legal mechanism. Section 122 was a temporary emergency tariff that required periodic renewal. Section 301 is a permanent trade remedy that does not expire. The proposed rate for Canada is 10% — the same as Section 122. However, the USTR has proposed 12.5% for some economies, and the final rate for Canada will be determined after the hearings. The hearings today will hear testimony from industry groups, NGOs, and government representatives. Canada's delegation is expected to argue that Canada's forced-labour enforcement record has improved significantly in 2026 and that the proposed tariff is disproportionate. The EU, Japan, South Korea, Malaysia, and dozens of other economies are also named targets. The hearing is expected to last two days.",
-    whyItMatters: "The Section 301 hearings today are the most immediate tariff risk on your calendar. Here is the timeline and what it means for your shop. July 7 (today): USTR hearings begin. July 24: Section 122 tariff expires. Between July 7 and July 24, the USTR will publish its final determination on Section 301 rates and scope. If Canada is included at 10%, the tariff environment is essentially unchanged from today — Section 301 replaces Section 122 at the same rate. If Canada is included at 12.5%, the tariff on non-CUSMA-compliant Canadian goods rises by 2.5 percentage points. If Canada is excluded from Section 301 (the best-case scenario), there is a brief window between July 24 and the next tariff action where some goods may face lower tariffs. The key word is 'non-CUSMA-compliant.' CUSMA-compliant goods — vehicles and parts that meet the agreement's rules of origin — are exempt from Section 301. The risk is for goods with Chinese content that do not qualify for CUSMA treatment. Auto parts with Chinese-made components (batteries, semiconductors, rare earth magnets) are the most exposed category. If your shop sources parts from suppliers who use Chinese inputs, ask your supplier about their CUSMA compliance status before July 24.",
-    source: "USTR / Peacock Tariff Consulting / Facebook/TheStarOnline — July 5–6, 2026",
-    sourceUrl: "https://www.peacocktariffconsulting.com/eu-cuts-to-zero/",
+    headline: "Section 301 Forced Labour Hearings Day 2 — 16 Countries Defending Records at USTR — Former USTR Official Confirms 'Both' Motivations: Forced Labour AND Tariff Rebuilding — Canada's Position: 'Significant Improvement in 2026' — Final Determination Before July 24",
+    summary: "The U.S. Trade Representative's public hearings on proposed Section 301 forced-labour tariffs continued Tuesday in Washington, D.C. Officials from 16 countries are testifying over three days (July 7–9), defending their domestic records on forced labour enforcement. Foreign governments are broadly rejecting U.S. claims that they are not taking sufficient steps to root out products made with forced labour from their supply chains. Kazakhstan noted it has banned forced labour internally and is considering additional measures. Uruguay's government stressed it is advancing legislation to prohibit imports of goods made with forced labour. Cambodia noted it was required to crack down on forced labour imports as part of a trade pact signed with the U.S. last year. Chile's agricultural trade group argued the country already has a law on the books prohibiting imports made with forced labour. A former USTR official familiar with the administration's thinking confirmed to Politico's Morning Trade that the Section 301 investigations are driven by 'both' motivations: a genuine commitment to ending forced labour, and a desire to rebuild tariffs struck down by the Supreme Court in February. 'It truly is both,' said the official, granted anonymity. 'USTR Greer is committed to ending forced labour and protecting workers.' Democratic lawmakers and foreign officials have expressed concern that the investigations are 'an attempt to remanufacture the tariffs struck down in February's ruling, with little regard for the trade facts.' Canada submitted its formal written response before the July 6 deadline, arguing that its forced-labour enforcement record has improved significantly in 2026 and that the proposed tariff is disproportionate. The final determination on Section 301 rates and scope will be published before July 24 — the date Section 122 expires.",
+    whyItMatters: "The Section 301 hearings are the most important tariff event of the week for your shop's cost structure. Here is the timeline and what each outcome means. If Canada is excluded from Section 301 (best case): between July 24 and the next tariff action, some non-CUSMA-compliant goods may face lower tariffs. This is unlikely given the political dynamics. If Canada is included at 10% (most likely): the tariff environment is essentially unchanged from today — Section 301 replaces Section 122 at the same rate. Parts pricing stays flat. If Canada is included at 12.5% (worst case): a 2.5-point increase on non-CUSMA-compliant goods. Parts with Chinese content (batteries, semiconductors, rare earth magnets) are the most exposed. The key action for your shop before July 24: ask your parts suppliers about CUSMA compliance status for any parts sourced from suppliers who use Chinese inputs. CUSMA-compliant parts are exempt from Section 301. Non-compliant parts face the full tariff. You need to know your exposure before the deadline. The 'both motivations' confirmation from the former USTR official is significant — it means Section 301 is not going away even if the forced-labour enforcement record improves. The tariff wall is being rebuilt on a more durable legal foundation than Section 122. Plan accordingly.",
+    source: "Politico Morning Trade / USTR — July 6–7, 2026",
+    sourceUrl: "https://www.politico.com/newsletters/weekly-trade/2026/07/06/nations-push-back-on-forced-labor-findings-00987477",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🤝",
-    text: "Unifor-Ford Day 15 — 4 days to July 10 deadline. No tentative agreement announced Monday morning. The final framework typically emerges in the last 72–96 hours before the deadline. Watch for an announcement today or tomorrow (July 6–7). If no framework by Wednesday July 8, strike risk rises sharply. Maintain 30-day Ford parts buffer through July 10.",
-    sourceUrl: "https://www.unifor.org/news/all-news",
+    icon: "🏦",
+    text: "Bank of Canada rate decision: July 15 — 8 days away. Markets pricing BoC at 2.25% through July 2026 — no change expected. Prime rate steady at 4.45%. Fixed mortgage rates may rise slightly if bond yields increase. The BoC is watching the tariff impact on GDP closely — a surprise cut is possible if the tariff drag is larger than expected. For your shop: auto loan rates are tied to prime. A rate hold means customer financing costs stay flat.",
+    sourceUrl: "https://www.nesto.ca/mortgage-basics/mortgage-rates-forecast-canada/",
   },
   {
-    icon: "🌉",
-    text: "Gordie Howe Bridge: Truck News reports carriers are still awaiting the opening. The Windsor-Detroit corridor handles $350M/day in trade. The bridge remains closed. The Moroun family's US$1M donation to Trump's MAGA Inc. super PAC and the subsequent Trump post about blocking the bridge remain unresolved. U.S. Ambassador Hoekstra: 'All options are on the table' on CUSMA termination — same language used about the bridge.",
-    sourceUrl: "https://www.trucknews.com/transportation/carriers-await-gordie-howe-bridge-opening-as-launch-delayed/1003216612/",
+    icon: "🗣️",
+    text: "Ontario's Washington representative David Paterson: Canadian officials are experiencing 'chaotic ad hockery' from the U.S. on CUSMA annual review structure. CTV News (July 7): 'The uncertainty over annual CUSMA review negotiations is the biggest challenge.' No bilateral negotiating dates set for Canada. Mexico has July 20. Canada has nothing. The asymmetry is intentional — and it will persist until Canada addresses the three U.S. grievances: China EV deal, forced-labour enforcement, dairy.",
+    sourceUrl: "https://www.youtube.com/watch?v=7NMRleUn4lQ",
   },
   {
-    icon: "📦",
-    text: "Purolator survey: 'Trade uncertainty proving more disruptive than tariffs.' Canadian supply chains are holding excess inventory and delaying investment because they cannot predict tariff levels 3–6 months out. This is the hidden cost of the CUSMA annual review process — not the tariffs themselves, but the uncertainty about what the tariffs will be. For your shop, this means parts pricing volatility will continue through at least Q3 2026.",
-    sourceUrl: "https://www.trucknews.com/supply-chain/trade-uncertainty-proving-more-disruptive-than-tariffs-purolator-finds/1003217108/",
-  },
-  {
-    icon: "🇪🇺",
-    text: "EU-U.S. Turnberry trade deal: The EU eliminated its 10% tariff on U.S. passenger vehicles as of July 1 — the same day CUSMA's sunset clause was triggered. U.S.-built vehicles now enter the EU duty-free. This is relevant because it may divert some U.S. production capacity toward Europe and away from Canada. Watch for Ford and GM to announce European allocation increases for U.S.-built models in Q3 2026.",
+    icon: "📅",
+    text: "Section 122 expiry countdown: 17 days (July 24). Section 301 final determination expected by July 21–23. CUSMA-compliant goods are exempt. Non-compliant goods face 10–12.5%. Ask your parts supplier about compliance status this week — not next week. The window to adjust your parts sourcing before the deadline is closing.",
     sourceUrl: "https://www.peacocktariffconsulting.com/eu-cuts-to-zero/",
+  },
+  {
+    icon: "🍺",
+    text: "Ontario LCBO still not stocking U.S. alcohol. Ontario Premier Doug Ford's condition: CUSMA renewal. But CUSMA was not renewed — annual review triggered instead. The CANADA Act Section 301 investigation, if launched, takes 12–18 months. The stalemate benefits no one. For your shop: this is a proxy indicator of the CUSMA negotiating environment. When U.S. alcohol returns to Ontario shelves, it signals a deal is close. Watch the LCBO shelves as a leading indicator.",
+    sourceUrl: "https://www.kelownadailycourier.ca/news/national_news/article_f4a4d5e2-cd2c-512b-b8a8-8b77fd5f79a2.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Ask Your Parts Supplier About CUSMA Compliance Before July 24",
-  text: "The Section 301 forced-labour tariff hearings begin today. The final determination will be published before July 24 — the day Section 122 expires. If your parts supplier sources components from China (batteries, semiconductors, rare earth magnets), ask them now whether their products qualify for CUSMA treatment. CUSMA-compliant parts are exempt from Section 301. Non-compliant parts may face a 10–12.5% tariff increase on July 24. You need to know before the deadline, not after.",
+  title: "Build Your 30-Day Ford Parts Buffer Before July 12 — Not July 10",
+  text: "If Unifor-Ford talks fail and a strike is called on July 10, Windsor Assembly and Oakville could go dark by July 12 with 48 hours' notice. The parts shortage won't be immediate — dealers and distributors hold 2–4 weeks of inventory. But by week 3 of a strike, high-turnover Ford parts (oil filters, brake pads, air filters, sensors) will be on allocation. Build your buffer now. The cost of holding 30 days of extra Ford parts is far lower than turning away Ford service customers during a shortage.",
 };
 
 const quoteOfTheDay = {
-  text: "We don't have any more predictability about the annual review process because this is somewhat uncharted territory. It's not typical for this kind of agreement.",
-  author: "Dominic LeBlanc",
-  title: "Canada-U.S. Trade Minister — July 5, 2026",
+  text: "There's lots of work ahead in the coming days, and we will remain committed to making progress for our members.",
+  author: "Lana Payne",
+  title: "Unifor National President — July 7, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Chevrolet Camaro Z/28 — Fathom Green, White Racing Stripes, DZ 302 V8, 290 hp, Ontario-Plated",
-  description: "Monday morning, and the 1969 Camaro Z/28 in Fathom Green is the car that gets you through the week. The Z/28 was built for one purpose: to win the SCCA Trans-Am Series. Chevrolet had to build 1,000 road cars to homologate the racing version, and the result was one of the most focused performance cars of the muscle car era. The DZ 302 V8 — 302 cubic inches, 290 horsepower from the factory, closer to 360 in reality — was a high-revving, solid-lifter engine that sounded like nothing else on the road. Fathom Green is a rare 1969-only colour, a deep forest green that photographs differently in every light. White racing stripes down the hood and trunk lid, a cowl induction hood, and Muncie 4-speed close-ratio gearbox. Ontario-plated, documented, show-quality restoration: $65,000–$95,000 at auction. The Z/28 is the Monday morning car — the car that reminds you that the week ahead is worth showing up for. The shop is open. The bays are full. The trade war is complicated. The Z/28 is not. Fire it up.",
+  name: "1970 Plymouth Barracuda 'Cuda — Vitamin C Orange, Black Hockey Stick Stripes, 440 Six Pack, 390 hp, Ontario-Plated",
+  description: "Tuesday morning, and the 1970 Plymouth 'Cuda in Vitamin C Orange is the car that gets you through the hard part of the week. The 'Cuda was built for one purpose: to be the most aggressive thing on the road. Vitamin C Orange is a 1970-only colour — a vivid, almost fluorescent orange that looks like it was mixed by someone who had never heard the word 'subtle.' Black hockey stick stripes along the lower body, a shaker hood scoop that feeds cold air directly to the 440 cubic inch big block, and three two-barrel Holley carburetors that together are known as the Six Pack. Factory rating: 390 horsepower. Actual output: closer to 450. The 'Cuda was built at the Hamtramck, Michigan assembly plant — sold in Canada under the 1965 Auto Pact. Ontario-plated, documented, numbers-matching 440 Six Pack 'Cuda: $150,000–$250,000 at auction. The 'Cuda is the Tuesday car — aggressive, purposeful, doesn't waste time. Three days to the Unifor-Ford deadline. The Section 301 hearings are running. The CANADA Act is on the floor. The 'Cuda doesn't care about any of it. It just wants to run.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +168,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["GM CANADA H1 #1", "CUSMA NO DATES", "SECTION 301 TODAY", "'69 Z/28"].map((tag) => (
+                {["UNIFOR-FORD 3 DAYS", "CANADA ACT", "SECTION 301 DAY 2", "'70 'CUDA"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="GM Canada H1 2026 Best-Selling Automaker — CUSMA No Dates Set — Section 301 Hearings Today — Baywash Daily Briefing Edition No. 60"
+              alt="Unifor-Ford Critical Week — CANADA Act Introduced — Section 301 Day 2 — Baywash Daily Briefing Edition No. 61"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 60 — Monday, July 6, 2026</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 61 — Tuesday, July 7, 2026</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                GM Canada #1 in H1 — CUSMA: No Dates Set for Canada — Section 301 Hearings Begin Today
+                Unifor-Ford 'Critical Week' — CANADA Act Targets Ontario Booze Ban — Section 301 Day 2: 16 Nations Defend Records
               </h3>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Camaro Z/28</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth 'Cuda 440 Six Pack</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
