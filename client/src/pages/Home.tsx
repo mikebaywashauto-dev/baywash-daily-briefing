@@ -10,91 +10,91 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 69;
-const BRIEFING_DATE = "July 15, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 70;
+const BRIEFING_DATE = "July 16, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YkrrhxczzMZjGEhu.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LqXaDYdiTeLPPEUm.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/uIToaldIwnEDwJyW.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jwpBEBgNrDAIwONz.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FGiBfOyUNtdqNJCK.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wJwFbWWonHAYSfeT.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gqSPNgISYFeGzhyl.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SUUAZwirvhKEeAeg.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LamFtmkPDKtyYlkL.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KFpbXDlEprXwfxLE.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "BANK OF CANADA / JULY 15 / 6TH CONSECUTIVE HOLD / 2.25%",
-    tagColor: "#1d4ed8",
-    headline: "Bank of Canada Holds at 2.25% — 6th Consecutive Hold — MPR Released Today — Oxford Economics: Economy in a 'Pickle' — CUSMA Uncertainty + Iran Conflict Complicate Outlook — Prime Rate Stays at 4.45%",
-    summary: "The Bank of Canada announced its overnight rate decision on Wednesday, July 15, holding at 2.25 per cent for the sixth consecutive meeting — exactly as every major economist had forecast. The Bank also released its July Monetary Policy Report today, providing a full update on the economic outlook. Oxford Economics director of Canada economics Tony Stillo described the Bank's governing council as being in a 'pickle' — facing competing pressures from elevated inflation driven by energy prices and a sluggish economy weakened by CUSMA uncertainty and the collapse of the U.S.-Iran interim peace agreement. Headline inflation accelerated to 3.2 per cent in May due to surging gas prices, but core inflation measures — which the Bank watches more closely — remained relatively stable. TD Economics economist Maria Solovieva noted that the Bank's main concern will be whether the energy price shock has fed into other goods and services. Oxford Economics recently downgraded its 2027 real GDP growth forecast for Canada to 1.6 per cent, but still expects the economy to grow by 0.7 per cent in 2026. A Reuters poll of economists conducted July 10 found that the Bank of Canada will hold its overnight rate at 2.25 per cent and keep it there 'well into next year' as price pressures remain largely contained. The C.D. Howe Institute's Monetary Policy Council recommended on July 9 that the Bank maintain the overnight rate at 2.25 per cent for the next six months, then increase to 2.5 per cent by July 2027. Economists no longer expect any CUSMA deal to lower U.S.-Canada tariffs before late 2026 at the earliest, which will continue to weaken economic growth and prolong uncertainty for steel, aluminum, lumber, and auto sectors.",
-    whyItMatters: "A hold at 2.25 per cent is the best outcome for your shop's customers. Prime rate stays at 4.45 per cent. Auto loan rates stay flat. Customers who are on the fence about a major repair — an engine, a transmission, a full suspension rebuild — are not facing higher borrowing costs. The hold also means your shop's line of credit rate does not move. If you are carrying inventory debt or a parts account with a floating rate, your cost of capital stays the same. The risk scenario — a rate cut — would be good for borrowers but would signal that the Bank sees the economy weakening faster than expected. A rate hike would signal inflation is getting out of control. Neither scenario is on the table today. The practical implication for your service advisors: customers asking about financing large repairs can be told that rates are stable and are expected to stay stable through the end of 2026. That is a genuine selling point for deferred maintenance work. The Bank's next rate decision is September 10, 2026.",
-    source: "Bank of Canada / Financial Post / Reuters — July 15, 2026",
-    sourceUrl: "https://www.bankofcanada.ca/2026/07/fad-announcement-release-mpr-2026-07-15/",
+    tag: "SECTION 301 / FORCED LABOUR TARIFFS / FINAL DETERMINATION JULY 21–23 / CANADA 10% PROPOSED",
+    tagColor: "#b91c1c",
+    headline: "Section 301 Forced Labour Tariff Final Determination Arrives July 21–23 — Canada Faces 10% Proposed Rate — CUSMA-Compliant Goods Exempt — Ask Your Suppliers This Week",
+    summary: "The U.S. Trade Representative's office is expected to publish its final determination on Section 301 forced labour tariffs between July 21 and July 23 — just days before the Section 122 tariff surcharge expires on July 24. The USTR proposed a two-tier tariff structure on June 3: a 10 per cent additional duty on imports from 15 economies that have partial plans to address forced labour, including Canada, the European Union, the United Kingdom, and Mexico; and a 12.5 per cent additional duty on the remaining 45 countries investigated, including China, India, Japan, South Korea, and Vietnam. The critical exemptions for Canadian automotive businesses are: goods already subject to Section 232 national security tariffs — which covers autos, steel, aluminum, and copper — and Canadian and Mexican products that comply with CUSMA rules of origin. Prime Minister Mark Carney stated that Canada shares the U.S. objective of eliminating forced labour and that most Canadian exporters will remain protected by the CUSMA-based exemptions. MLT Aikins, the national law firm, published a detailed analysis on July 15 confirming that CUSMA-compliant goods are exempt from the proposed Section 301 tariffs. The firm noted that the practical effect of the tariffs is to elevate forced labour due diligence from an ethical aspiration to a commercial necessity. Canada's domestic parallel regime — the Fighting Against Forced Labour and Child Labour in Supply Chains Act — has been in force since January 1, 2024, and requires most reporting entities to file an annual supply chain report by May 31 each year. The Section 301 final determination will be published before July 24, when it takes effect alongside the expiry of the Section 122 surcharge.",
+    whyItMatters: "The Section 301 final determination arrives in five days. Here is what it means for your shop. If your parts suppliers are CUSMA-compliant — meaning their goods meet the rules-of-origin requirements under the Canada-U.S.-Mexico Agreement — those parts are exempt from the proposed 10 per cent Section 301 tariff. That is the good news. The risk is non-CUSMA parts: parts that contain significant Chinese content, parts sourced from non-CUSMA suppliers, or parts where the supplier has not verified CUSMA compliance. Those parts could face a 10 per cent additional tariff on top of whatever existing duties apply. The practical action for your shop this week is straightforward: contact your top three parts suppliers and ask them two questions. First, are your parts CUSMA-compliant? Second, do any of your parts contain Chinese-sourced components that are not covered by CUSMA origin rules? If a supplier cannot answer those questions, that is a supply chain risk you need to manage before July 24. The Section 122 tariff expires July 24 — but the Section 301 tariff takes effect the same day. The tariff wall is not coming down. It is being rebuilt on a more durable legal foundation.",
+    source: "MLT Aikins / USTR / EcoVadis — July 14–15, 2026",
+    sourceUrl: "https://www.mltaikins.com/insights/what-new-proposed-u-s-forced-labour-tariffs-mean-for-canadian-employers/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "U.S. SENATE / CHINESE VEHICLE BAN / CONNECTED VEHICLE SECURITY ACT / VOTE TODAY",
-    tagColor: "#b91c1c",
-    headline: "U.S. Senate Commerce Committee Votes Today on Permanent Chinese Vehicle Ban — Connected Vehicle Security Act of 2026 — BYD Blocked From U.S. But Targeting 20 Canadian Dealerships — Bill Ford: 'We Can't Expect to Keep Them Out Forever'",
-    summary: "The U.S. Senate Commerce Committee is voting today, July 15, on the Connected Vehicle Security Act of 2026 — bipartisan legislation introduced by Senator Bernie Moreno (R-Ohio) and Senator Elissa Slotkin (D-Michigan) that would permanently codify restrictions preventing Chinese automakers from selling connected passenger vehicles in the U.S. market. The bill would impose software and vehicle restrictions effective 2027 and hardware restrictions effective 2030. It would also establish a 15 per cent Chinese ownership threshold as a trigger for national security review — a provision that could affect Mercedes-Benz, which has approximately 20 per cent Chinese ownership through BAIC. Ford Motor Company, General Motors, and the UAW all support the legislation. Bill Ford, Ford's executive chairman, said at an Axios event in Washington on Tuesday: 'We have to go toe-to-toe with China. We can't expect to keep them out forever, and we have to be able to beat them at their own game.' Polestar has already been forced out of the U.S. market under the existing Biden-era rule that the bill would codify. BYD is currently planning 20 Canadian dealerships within the next 12 months — the Canadian market is being used as a North American beachhead precisely because Chinese vehicles are blocked from the U.S. Chery and Geely (Lotus) are also preparing Canadian dealer launches. Canada's 6.1 per cent tariff on Chinese EVs — compared to the U.S. rate of 102.5 per cent — makes Canada the only viable entry point for Chinese automakers into the North American market.",
-    whyItMatters: "The Senate vote today is directly relevant to your shop's future service mix. Here is the logic: Chinese automakers are blocked from the U.S. market by tariffs and now potentially by law. Canada has a 6.1 per cent tariff on Chinese EVs — a fraction of the U.S. rate. BYD is opening 20 Canadian dealerships. Chery and Geely are following. Within 18 to 24 months, Chinese-branded EVs will be on Ontario roads. The question for your shop is not whether they are coming — they are. The question is whether you will be ready to service them when the warranty expires. BYD uses Blade Battery technology — lithium iron phosphate chemistry — which is incompatible with any existing North American EV platform. The diagnostic tools, the high-voltage safety training, and the battery management system knowledge required to service a BYD are different from what you need for a GM Ultium or a Ford Lithium-Ion pack. Shops that invest in Chinese EV training now will capture out-of-warranty service work from day one. Shops that wait will be turning away customers. The Senate vote today determines whether the U.S. market stays closed — but it has no effect on Canada. The Chinese EVs are coming here regardless.",
-    source: "CBT News / WSJ / Ford Motor Company — July 11–15, 2026",
-    sourceUrl: "https://www.cbtnews.com/senate-bill-blocking-chinese-automakers",
+    tag: "EV CHARGING / Q2 2026 / UTILIZATION 9.5% / BUILDOUT OUTPACES DEMAND",
+    tagColor: "#15803d",
+    headline: "EV Charging Buildout Outpaces Demand in Canada — Q2 2026 Utilization Falls to 9.5% — 390 New Ports Added — Infrastructure Ahead of Adoption Curve — Ontario 21 New Stations",
+    summary: "Canada's public EV fast-charging network continued to expand in the second quarter of 2026, with operators adding capacity faster than drivers are using it, according to Paren's Canadian EV Fast Charging Q2 2026 report published July 14. The report found 390 new public DC fast-charging ports opened across 99 stations between April and June — a 30 per cent increase over the same period in 2025. Quebec led the country with 44 new stations, followed by Ontario with 21 and British Columbia with 18. Tesla remained the largest single deployer, adding 98 new ports during the quarter, although established networks including Circuit Électrique, ChargePoint, On the Run, and Flo accounted for much of the remaining growth. Despite the continued buildout, national utilization fell to 9.5 per cent from 11.3 per cent in the first quarter as charging infrastructure grew faster than demand. Paren attributed the decline largely to the rapid addition of new charging ports, which typically require time to reach higher usage levels, combined with weaker EV sales following reductions to purchase incentives in 2025. Reliability remained stable: Canada's national reliability score improved slightly to 91.2, with British Columbia and Ontario both posting scores above 90. British Columbia recorded the country's highest utilization rate at 12.4 per cent, ahead of Ontario at 11.2 per cent. Pricing remained relatively stable nationwide. British Columbia continued to offer the lowest average fast-charging rates at approximately $0.42 per kWh, while Alberta remained the highest at about $0.67 per kWh. EV infrastructure consultant Scott Sharabura noted that charging investment decisions are made years before stations open, allowing network expansion to continue despite short-term fluctuations in EV demand.",
+    whyItMatters: "A 9.5 per cent utilization rate on public EV charging infrastructure tells you something important about the current state of EV adoption in Canada: the infrastructure is being built ahead of the demand curve. That is actually good news for independent shops. Here is why. When EV adoption reaches critical mass — and it will, given that 25 per cent of new vehicles sold in Canada in H1 2026 were electric — the charging infrastructure will already be in place. The adoption curve will accelerate faster than it would if infrastructure were the bottleneck. For your shop, the practical implication is a 12 to 18 month window to invest in EV service capability before the wave hits. The vehicles being sold today will come off warranty in three to five years. The shops that have trained technicians, high-voltage safety certification, and the right diagnostic tools in place when those vehicles come off warranty will capture that service work. The shops that wait will be turning customers away. The 9.5 per cent utilization number also tells you something about where the EV service opportunity is concentrated: Ontario at 11.2 per cent and BC at 12.4 per cent are the two highest-utilization provinces. If your shop is in Ontario, the EV service opportunity is closer than the national average suggests.",
+    source: "Canadian Auto Dealer / Paren Q2 2026 Report — July 14, 2026",
+    sourceUrl: "https://canadianautodealer.ca/2026/07/ev-charging-buildout-outpaces-demand-in-canada/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "RIGHT TO REPAIR / FTC / JOHN DEERE / BILL C-244 / INDEPENDENT SHOPS",
-    tagColor: "#15803d",
-    headline: "FTC Right-to-Repair Settlement with John Deere Sets Precedent — Deere Must Provide Diagnostic Tools to Equipment Owners — Canada's Bill C-244 Already In Force — OEM Automotive Diagnostic Access Is the Next Frontier — Independent Shops Benefit",
-    summary: "The U.S. Federal Trade Commission announced a settlement with John Deere requiring the agricultural equipment manufacturer to provide diagnostic and repair tools directly to equipment owners and independent repair shops — a landmark right-to-repair ruling that sets a significant precedent for the automotive sector. The settlement requires Deere to make available the same diagnostic software, repair manuals, and technical service information that it provides to its authorized dealer network. The right-to-repair movement has been working to reverse decades of OEM restrictions that required consumers and independent shops to use only authorized dealers for repairs and diagnostics. In Canada, Bill C-244 — the right to repair legislation — received Royal Assent in 2024 and is now in force. The legislation requires manufacturers to provide independent repair facilities with access to the same diagnostic and repair information available to authorized dealers. The automotive sector has been slower to comply than the agricultural sector, with OEM resistance centred on cybersecurity concerns and the complexity of connected vehicle systems. Kevin O'Reilly, right-to-repair advocate and board member with the Repair Association, told Eco-Logic Radio this week that the John Deere settlement 'changes the conversation' and creates a template for automotive right-to-repair enforcement. The FTC settlement is a U.S. ruling and does not directly apply in Canada — but it establishes the regulatory direction of travel and strengthens the hand of Canadian right-to-repair advocates pushing for automotive compliance with Bill C-244.",
-    whyItMatters: "The John Deere settlement matters to your shop for one reason: it establishes that regulators on both sides of the border are willing to force OEMs to open up their diagnostic ecosystems to independent shops. Bill C-244 is already law in Canada. The question is enforcement. The automotive OEMs — particularly the German brands and the Japanese brands — have been slow to comply with the spirit of right-to-repair legislation, providing access to some information while restricting the most valuable diagnostic data. The John Deere settlement creates a template: the FTC required Deere to provide the same tools to independents that it provides to dealers. If that standard is applied to automotive OEMs in Canada under Bill C-244, your shop gains access to the same diagnostic software that the dealer down the street uses. That is a significant competitive advantage. The practical step for your shop today: document every instance where you have been unable to complete a repair because an OEM restricted diagnostic access. That documentation is the evidence base for a right-to-repair complaint under Bill C-244. The more complaints regulators receive, the faster enforcement moves. You have a right to repair. Use it.",
-    source: "Spectrum Local News / Eco-Logic Radio / CBT News — July 9–15, 2026",
-    sourceUrl: "https://spectrumlocalnews.com/nc/coastal/news",
+    tag: "STELLANTIS / BRAMPTON IDLE / WINDSOR IDLE / UNIFOR BARGAINING BEGINS AFTER FORD RATIFICATION",
+    tagColor: "#7c3aed",
+    headline: "Stellantis Brampton and Windsor Still Idle — Unifor Bargaining Begins After Ford Ratification July 17–19 — 15% Wage Pattern Is the Floor — Build 30-Day Stellantis Parts Buffer in August",
+    summary: "Both Stellantis assembly plants in Ontario remain idle as Unifor prepares to open bargaining with the automaker following the Ford ratification vote scheduled for July 17 to 19. The Brampton Assembly Plant — which built the Chrysler 300, Dodge Charger, and Dodge Challenger before those models were discontinued — has been idle since Stellantis froze work on the next-generation Jeep Compass in early 2026, citing trade-related uncertainty. The Windsor Assembly Plant, which builds the Chrysler Pacifica minivan, has paused production twice in 2026 due to tariff uncertainty. Stellantis has not declared either plant surplus and has not announced a product commitment for Brampton. The Globe and Mail reported in June that the fate of both shuttered plants could lie in the renewal of the U.S. trade deal. Unifor president Lana Payne has said that securing production commitments for both plants is a priority for the upcoming bargaining round. The Unifor-Ford tentative agreement — which covers 5,150 workers at Windsor Assembly and Oakville Assembly and includes a 15 per cent general wage increase over three years — sets the pattern that GM and Stellantis will be expected to match. Unifor's Auto Talks hub confirms that bargaining with GM and Stellantis begins after the Ford ratification vote. With 6,500 auto manufacturing jobs lost in Canada since February 2025, Unifor is under significant pressure to secure both production commitments and wage parity in the next round of negotiations.",
+    whyItMatters: "The Stellantis situation is the most consequential unresolved issue in Canadian auto manufacturing right now. Brampton has been idle for months with no product commitment. Windsor has been running intermittently. Unifor bargaining begins this weekend after the Ford ratification vote. The 15 per cent wage pattern from the Ford deal is now the floor — Stellantis will be expected to match it. The production commitment demand is harder: Unifor wants contractual guarantees that Brampton and Windsor will build specific vehicles for the life of the contract. Stellantis has been reluctant to make those commitments given CUSMA uncertainty. Here is the practical implication for your shop. If Unifor and Stellantis reach a deal with production commitments, Brampton and Windsor restart — and Stellantis parts supply stabilizes. If they do not reach a deal, strike risk is real. The practical action: begin building a 30-day Stellantis parts buffer in the first week of August, after the Ford ratification result is known and Stellantis bargaining begins. Focus on Pacifica, Ram 1500, and Jeep Grand Cherokee parts — the highest-volume Stellantis vehicles in Ontario service bays. The Unifor-Stellantis deadline will likely be set for late August or early September.",
+    source: "Globe and Mail / Unifor Auto Talks Hub / CBC Windsor — June–July 2026",
+    sourceUrl: "https://autotalks.uniforautohub.ca/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🏦",
-    text: "Bank of Canada HOLDS at 2.25% — 6th consecutive hold confirmed today. Prime rate stays at 4.45%. Auto loan rates flat. Next decision: September 10, 2026. C.D. Howe recommends hold through January 2027. A hold is the best scenario for customer financing affordability.",
-    sourceUrl: "https://www.bankofcanada.ca/2026/07/fad-announcement-release-mpr-2026-07-15/",
-  },
-  {
     icon: "🗳️",
-    text: "Ford ratification vote: July 17–19 — this weekend. Watch Unifor social media channels for results. A yes vote makes the 15% wage deal official. A no vote returns the parties to the table — strike risk increases. 54% preliminary survey endorsement. GM and Stellantis bargaining begins after Ford ratification.",
-    sourceUrl: "https://www.autonews.com/manufacturing/automakers/anc-unifor-ford-tentative-agreement-0711/",
-  },
-  {
-    icon: "🌉",
-    text: "Gordie Howe Bridge opens July 27 — 12 days. Call your Michigan and Ohio parts suppliers this week: will they route commercial shipments through the new bridge? Dedicated truck lanes and modern customs facility mean faster transit times than the Ambassador Bridge for commercial traffic.",
-    sourceUrl: "https://www.canada.ca/en/housing-infrastructure-communities/news/2026/07/the-gordie-howe-international-bridge-will-open-on-july-27th-strengthening-trade-connectivity-and-economic-development.html",
+    text: "Ford ratification vote: July 17–19 — this weekend. 54% preliminary survey endorsement. 15% wage increase over 3 years. Windsor Assembly and Oakville secured. Results released after final vote July 19. A yes vote makes the deal official. A no vote returns parties to the table — strike risk increases. Watch Unifor social media for results.",
+    sourceUrl: "https://www.cbc.ca/news/canada/windsor/ratification-vote-set-for-later-this-week-after-unifor-ford-reach-tentative-3-year-deal-9.7267816",
   },
   {
     icon: "⚖️",
-    text: "Section 122 tariff expiry: July 24 — 9 days. Section 301 forced labour final determination: July 21–23. CUSMA-compliant goods exemption demanded by 1,500+ submissions — decision pending. Ask your top 3 parts suppliers about CUSMA compliance status this week. Non-compliant parts with Chinese content are most exposed.",
-    sourceUrl: "https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/july/ustr-wants-to-revise-usmca-automotive-rules-of-origin",
+    text: "Section 301 forced labour tariff final determination: July 21–23. Section 122 expiry: July 24. CUSMA-compliant goods are exempt from Section 301. Ask your top 3 parts suppliers about CUSMA compliance status this week. Non-CUSMA parts with Chinese content are most exposed to the 10% proposed tariff.",
+    sourceUrl: "https://www.mltaikins.com/insights/what-new-proposed-u-s-forced-labour-tariffs-mean-for-canadian-employers/",
+  },
+  {
+    icon: "🌉",
+    text: "Gordie Howe Bridge opens July 27 — 11 days. Pedestrian and cyclist path opens August 5. Windsor-Detroit corridor: $350M/day. Call your Michigan and Ohio parts suppliers this week: will they route commercial shipments through the new bridge? Modern customs facility means faster transit times than the Ambassador Bridge for commercial traffic.",
+    sourceUrl: "https://www.canada.ca/en/housing-infrastructure-communities/news/2026/07/the-gordie-howe-international-bridge-will-open-on-july-27th-strengthening-trade-connectivity-and-economic-development.html",
+  },
+  {
+    icon: "🔋",
+    text: "EV charging utilization fell to 9.5% in Q2 2026 as infrastructure grew faster than demand. Ontario: 21 new stations, 11.2% utilization. BC: 18 new stations, 12.4% utilization. Infrastructure is being built ahead of the adoption curve — your 12–18 month window to invest in EV service capability is open now.",
+    sourceUrl: "https://canadianautodealer.ca/2026/07/ev-charging-buildout-outpaces-demand-in-canada/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Document Every OEM Diagnostic Restriction — It's Your Right-to-Repair Evidence",
-  text: "Bill C-244 is law in Canada. Every time an OEM restricts your access to diagnostic data, software, or repair information that it provides to its authorized dealers, document it: the date, the vehicle, the OEM, and the specific information withheld. That documentation is the evidence base for a right-to-repair complaint. The John Deere FTC settlement shows that regulators will act when they have evidence. Build your file now.",
+  title: "Ask Your Top 3 Suppliers About CUSMA Compliance Before July 24",
+  text: "The Section 301 forced labour tariff final determination arrives July 21–23. CUSMA-compliant parts are exempt. Non-CUSMA parts with Chinese content face a 10% additional tariff. Contact your top three parts suppliers this week and ask: are your parts CUSMA-compliant? Do any contain Chinese-sourced components not covered by CUSMA rules of origin? If a supplier cannot answer, that is a supply chain risk you need to manage before July 24.",
 };
 
 const quoteOfTheDay = {
-  text: "We have to go toe-to-toe with China. We can't expect to keep them out forever, and we have to be able to beat them at their own game.",
-  author: "Bill Ford",
-  title: "Executive Chairman, Ford Motor Company — Axios Event, Washington D.C. — July 14, 2026",
+  text: "Most Canadian exporters will remain protected by the CUSMA-based exemptions.",
+  author: "Prime Minister Mark Carney",
+  title: "Statement on Section 301 Forced Labour Tariff Proposal — July 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Buick GSX Stage 1 — Saturn Yellow, 455 Cubic Inch V8, 360 hp, Ontario-Plated",
-  description: "The forgotten muscle car. In 1970, Buick built the GSX as its answer to the Chevelle SS 454 and the Pontiac GTO Judge — and built it better than either. The Stage 1 package added a 455 cubic inch V8 producing 360 horsepower from the factory, but the actual output was closer to 400 horsepower. The torque figure — 510 lb-ft at 2,800 rpm — was the highest of any production muscle car in 1970. Saturn Yellow with black hood stripes and 'GSX' badges on the front fenders. Rallye wheels with Goodyear Polyglas GT tires. Only 678 Stage 1 cars were built in 1970, making it one of the rarest muscle cars of the era. Buick sold the GSX in Canada through its Canadian dealer network — built in Flint, Michigan, sold in Ontario, driven on the same roads as the Chevelles and GTOs it was built to beat. The Bank of Canada held rates today for the sixth consecutive time. The GSX Stage 1 does not hold anything. It goes. Value: $80,000 to $150,000 at auction depending on condition and documentation. A numbers-matching Saturn Yellow Stage 1 with documentation has sold for over $200,000.",
+  name: "1970 Plymouth Barracuda 'Cuda 426 Hemi Convertible — Tor-Red, 426 Hemi V8, 425 hp, Ontario-Plated",
+  description: "The most powerful muscle car Plymouth ever built. In 1970, Plymouth offered the 426 Hemi in the new E-body Barracuda — a combination so extreme that only 284 convertibles were built with the Hemi engine that year. The 426 cubic inch semi-hemispherical combustion chamber V8 produced 425 horsepower from the factory — a number that was deliberately understated for insurance purposes. Actual output was closer to 500 horsepower. Tor-Red with black hockey stick stripes on the lower body. Black convertible top down. Chrome Rallye wheels with Goodyear Polyglas GT raised white letter tires. Ontario licence plate reads HEMI CUDA. The 426 Hemi was built at the Chrysler engine plant in Marysville, Michigan. The Barracuda was assembled at the Hamtramck Assembly Plant in Detroit. Sold in Canada through Plymouth dealers under the 1965 Auto Pact — the same trade agreement that CUSMA replaced in 1994. A documented numbers-matching 1970 Hemi 'Cuda convertible in Tor-Red has sold for over $3.5 million at auction. This is not a car. It is a monument. Value: $500,000 to $3.5 million depending on documentation and provenance.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +168,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["BOC HOLDS 2.25%", "SENATE: CHINESE CAR BAN VOTE", "FTC: RIGHT TO REPAIR", "'70 BUICK GSX STAGE 1"].map((tag) => (
+                {["SECTION 301: 8 DAYS", "FORD VOTE: JULY 17–19", "GORDIE HOWE: 11 DAYS", "'70 HEMI 'CUDA"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
             </div>
           </div>
         </header>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Bank of Canada Holds 2.25% — Senate Chinese Vehicle Ban Vote — FTC Right to Repair — Baywash Daily Briefing Edition No. 69"
+              alt="Section 301 Tariff 8 Days — Gordie Howe Bridge Opens July 27 — Ford Ratification Vote July 17–19 — Baywash Daily Briefing Edition No. 70"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#1d4ed8] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 69 — Wednesday, July 15, 2026 — Bank of Canada Decision Day</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 70 — Thursday, July 16, 2026 — 8 Days to Section 301 / 11 Days to Gordie Howe Bridge</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Bank of Canada Holds at 2.25% — Senate Votes on Chinese Car Ban — FTC Right-to-Repair Precedent
+                Section 301 Final Determination July 21–23 — Ford Vote This Weekend — Gordie Howe Bridge Opens July 27
               </h3>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Buick GSX Stage 1</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth Hemi 'Cuda Convertible</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
