@@ -1,4 +1,4 @@
-/*
+/**
  * BAYWASH DAILY BRIEFING — Home.tsx
  * DESIGN: Industrial Broadsheet
  * - Asymmetric newspaper grid: 60/40 split
@@ -10,59 +10,59 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 70;
-const BRIEFING_DATE = "July 16, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 71;
+const BRIEFING_DATE = "July 17, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wJwFbWWonHAYSfeT.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gqSPNgISYFeGzhyl.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SUUAZwirvhKEeAeg.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LamFtmkPDKtyYlkL.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KFpbXDlEprXwfxLE.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VieFfnskVCbRhnKc.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lncEfMJxcFMUddar.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rDZJFqaGjacPBdYo.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/UvTUucxMsQYWcPYB.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ToDTWmTnoKYmiYjX.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SECTION 301 / FORCED LABOUR TARIFFS / FINAL DETERMINATION JULY 21–23 / CANADA 10% PROPOSED",
+    tag: "SECTION 122 / EXPIRES JULY 24 / SECTION 301 TAKES OVER / 7 DAYS",
     tagColor: "#b91c1c",
-    headline: "Section 301 Forced Labour Tariff Final Determination Arrives July 21–23 — Canada Faces 10% Proposed Rate — CUSMA-Compliant Goods Exempt — Ask Your Suppliers This Week",
-    summary: "The U.S. Trade Representative's office is expected to publish its final determination on Section 301 forced labour tariffs between July 21 and July 23 — just days before the Section 122 tariff surcharge expires on July 24. The USTR proposed a two-tier tariff structure on June 3: a 10 per cent additional duty on imports from 15 economies that have partial plans to address forced labour, including Canada, the European Union, the United Kingdom, and Mexico; and a 12.5 per cent additional duty on the remaining 45 countries investigated, including China, India, Japan, South Korea, and Vietnam. The critical exemptions for Canadian automotive businesses are: goods already subject to Section 232 national security tariffs — which covers autos, steel, aluminum, and copper — and Canadian and Mexican products that comply with CUSMA rules of origin. Prime Minister Mark Carney stated that Canada shares the U.S. objective of eliminating forced labour and that most Canadian exporters will remain protected by the CUSMA-based exemptions. MLT Aikins, the national law firm, published a detailed analysis on July 15 confirming that CUSMA-compliant goods are exempt from the proposed Section 301 tariffs. The firm noted that the practical effect of the tariffs is to elevate forced labour due diligence from an ethical aspiration to a commercial necessity. Canada's domestic parallel regime — the Fighting Against Forced Labour and Child Labour in Supply Chains Act — has been in force since January 1, 2024, and requires most reporting entities to file an annual supply chain report by May 31 each year. The Section 301 final determination will be published before July 24, when it takes effect alongside the expiry of the Section 122 surcharge.",
-    whyItMatters: "The Section 301 final determination arrives in five days. Here is what it means for your shop. If your parts suppliers are CUSMA-compliant — meaning their goods meet the rules-of-origin requirements under the Canada-U.S.-Mexico Agreement — those parts are exempt from the proposed 10 per cent Section 301 tariff. That is the good news. The risk is non-CUSMA parts: parts that contain significant Chinese content, parts sourced from non-CUSMA suppliers, or parts where the supplier has not verified CUSMA compliance. Those parts could face a 10 per cent additional tariff on top of whatever existing duties apply. The practical action for your shop this week is straightforward: contact your top three parts suppliers and ask them two questions. First, are your parts CUSMA-compliant? Second, do any of your parts contain Chinese-sourced components that are not covered by CUSMA origin rules? If a supplier cannot answer those questions, that is a supply chain risk you need to manage before July 24. The Section 122 tariff expires July 24 — but the Section 301 tariff takes effect the same day. The tariff wall is not coming down. It is being rebuilt on a more durable legal foundation.",
-    source: "MLT Aikins / USTR / EcoVadis — July 14–15, 2026",
-    sourceUrl: "https://www.mltaikins.com/insights/what-new-proposed-u-s-forced-labour-tariffs-mean-for-canadian-employers/",
+    headline: "Trump Racing to Rebuild Tariff Wall — Section 122 Expires July 24 — Section 301 Forced Labour Tariffs Take Over — 'They're Going to Raise the Tariff Wall Again'",
+    summary: "The Trump administration is racing to replace its expiring Section 122 tariffs with more durable Section 301 levies before the July 24 deadline, according to a detailed Associated Press analysis published July 16. Section 122 of the Trade Act of 1974 authorizes the president to impose tariffs for only 150 days — Trump's expire on July 24. Congress is unlikely to extend them given voter discontent over the high cost of living ahead of the November 3 midterm elections. The administration turned to Section 301 — the same legal authority used to impose tariffs on China in Trump's first term — to replace the expiring Section 122 levies. The USTR proposed a two-tier structure: a 10 per cent additional duty on 16 countries including Canada, the EU, the UK, and Mexico; and 12.5 per cent on the remaining 44 countries including China, India, Japan, and Vietnam. Section 301 tariffs expire after four years but can be renewed, making them far more durable than Section 122. Trade lawyer Ryan Majerus of King & Spalding, a former trade official in both the Trump and Biden administrations: 'They're going to raise the tariff wall again.' Tariff revenue peaked at US$31.4 billion in October 2025, then plummeted after the Supreme Court struck down the IEEPA tariffs in February 2026. June 2026 saw a US$25.6 billion tariff revenue loss as refund cheques outpaced new collections. A second Section 301 investigation into alleged overproduction by 16 countries — including Canada — is still pending and is expected to propose additional tariffs after the November midterms. CUSMA-compliant goods remain exempt from the proposed Section 301 forced labour tariffs.",
+    whyItMatters: "The tariff wall is not coming down on July 24. It is being rebuilt on a more durable legal foundation. Here is what that means for your shop. Section 122 was always a temporary measure — it was only authorized for 150 days. Section 301 tariffs can last four years and be renewed indefinitely. The practical effect is that the 10 per cent tariff environment on non-CUSMA goods is becoming permanent, not temporary. The exemption that matters most for Canadian automotive businesses is the CUSMA rules-of-origin exemption: parts that comply with CUSMA origin requirements are exempt from the proposed Section 301 forced labour tariffs. That exemption covers the vast majority of Canadian-made and Canadian-sourced parts. The risk is non-CUSMA parts — parts with significant Chinese content, parts sourced from non-CUSMA suppliers, or parts where the supplier has not verified CUSMA compliance. Those parts face a 10 per cent additional tariff starting July 24. The second Section 301 investigation into overproduction is the one to watch after the midterms. If that investigation results in additional tariffs, the cumulative effect on non-CUSMA parts could be significant. The practical action this week: contact your top three parts suppliers and ask about CUSMA compliance before July 24.",
+    source: "BNN Bloomberg / Associated Press — July 16, 2026",
+    sourceUrl: "https://www.bnnbloomberg.ca/tariffs/2026/07/16/trump-administration-races-the-clock-to-rebuild-us-tariff-wall-knocked-down-by-supreme-court/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "EV CHARGING / Q2 2026 / UTILIZATION 9.5% / BUILDOUT OUTPACES DEMAND",
-    tagColor: "#15803d",
-    headline: "EV Charging Buildout Outpaces Demand in Canada — Q2 2026 Utilization Falls to 9.5% — 390 New Ports Added — Infrastructure Ahead of Adoption Curve — Ontario 21 New Stations",
-    summary: "Canada's public EV fast-charging network continued to expand in the second quarter of 2026, with operators adding capacity faster than drivers are using it, according to Paren's Canadian EV Fast Charging Q2 2026 report published July 14. The report found 390 new public DC fast-charging ports opened across 99 stations between April and June — a 30 per cent increase over the same period in 2025. Quebec led the country with 44 new stations, followed by Ontario with 21 and British Columbia with 18. Tesla remained the largest single deployer, adding 98 new ports during the quarter, although established networks including Circuit Électrique, ChargePoint, On the Run, and Flo accounted for much of the remaining growth. Despite the continued buildout, national utilization fell to 9.5 per cent from 11.3 per cent in the first quarter as charging infrastructure grew faster than demand. Paren attributed the decline largely to the rapid addition of new charging ports, which typically require time to reach higher usage levels, combined with weaker EV sales following reductions to purchase incentives in 2025. Reliability remained stable: Canada's national reliability score improved slightly to 91.2, with British Columbia and Ontario both posting scores above 90. British Columbia recorded the country's highest utilization rate at 12.4 per cent, ahead of Ontario at 11.2 per cent. Pricing remained relatively stable nationwide. British Columbia continued to offer the lowest average fast-charging rates at approximately $0.42 per kWh, while Alberta remained the highest at about $0.67 per kWh. EV infrastructure consultant Scott Sharabura noted that charging investment decisions are made years before stations open, allowing network expansion to continue despite short-term fluctuations in EV demand.",
-    whyItMatters: "A 9.5 per cent utilization rate on public EV charging infrastructure tells you something important about the current state of EV adoption in Canada: the infrastructure is being built ahead of the demand curve. That is actually good news for independent shops. Here is why. When EV adoption reaches critical mass — and it will, given that 25 per cent of new vehicles sold in Canada in H1 2026 were electric — the charging infrastructure will already be in place. The adoption curve will accelerate faster than it would if infrastructure were the bottleneck. For your shop, the practical implication is a 12 to 18 month window to invest in EV service capability before the wave hits. The vehicles being sold today will come off warranty in three to five years. The shops that have trained technicians, high-voltage safety certification, and the right diagnostic tools in place when those vehicles come off warranty will capture that service work. The shops that wait will be turning customers away. The 9.5 per cent utilization number also tells you something about where the EV service opportunity is concentrated: Ontario at 11.2 per cent and BC at 12.4 per cent are the two highest-utilization provinces. If your shop is in Ontario, the EV service opportunity is closer than the national average suggests.",
-    source: "Canadian Auto Dealer / Paren Q2 2026 Report — July 14, 2026",
-    sourceUrl: "https://canadianautodealer.ca/2026/07/ev-charging-buildout-outpaces-demand-in-canada/",
+    tag: "CUSMA / U.S. WON'T GIVE CANADA CREDIT / GREER ASPEN / NO NEGOTIATIONS SCHEDULED",
+    tagColor: "#1d4ed8",
+    headline: "U.S. Won't Give Canada Credit for Concessions — USTR Greer at Aspen: 'That's Just Good Practice on Their Part' — No Canada-U.S. Negotiations Scheduled — Mexico Has Formal Talks July 20",
+    summary: "The United States Trade Representative Jamieson Greer said Wednesday at the Aspen Security Forum that the Trump administration will not give Canada credit for dropping its digital services tax and rolling back its Online Streaming Act — two major concessions Ottawa made to try to restart trade talks. 'That's just good practice on their part,' Greer said. 'They don't really get credit for doing something bad and then undoing it.' Prime Minister Mark Carney dropped the digital services tax in June 2025, hours before payments from tech giants would have been due, in a bid to resume suspended trade talks. The effort briefly steadied the Canada-U.S. relationship, and a limited deal on some sector-specific tariffs appeared imminent last October — but the U.S. froze talks again after Trump was angered by an Ontario-funded ad quoting former president Ronald Reagan criticizing tariffs. Greer said he is in weekly contact with his Canadian counterparts but 'we just haven't seen a lot of movement.' He said that if Trump and Carney reach a personal understanding, 'I'm sure we can put together something that makes sense to get us over the hump.' He added: 'We're always going to trade some with Canada, just because they're there.' Mexico, by contrast, has formal CUSMA negotiations underway, with a U.S.-Mexico round scheduled for July 20 in Mexico City. Canada has no negotiating dates set. Greer repeated the Trump administration's claim that Canada and China were the only countries to retaliate after Trump imposed sweeping tariffs — a claim that Canada disputes. The sector-specific duties on autos, steel, and aluminum remain in place and Trump has shown no willingness to shift his stance.",
+    whyItMatters: "USTR Greer's statement at Aspen is the clearest signal yet that Canada is not going to get a trade deal before the November 2026 midterm elections. The U.S. is not giving Canada credit for the concessions it has already made. Mexico has formal negotiations underway. Canada does not. The auto tariffs — 25 per cent on non-CUSMA vehicles, 25 per cent on non-CUSMA auto parts — are not going anywhere before November at the earliest. The practical implication for your shop is straightforward: plan your parts sourcing and pricing strategy around a 25 per cent tariff environment through at least the end of 2026. The one piece of good news in Greer's statement is that he spoke optimistically about a future agreement and said the talks need to happen at the highest levels. That suggests a Carney-Trump summit is the most likely path to a deal — and those conversations are happening, even if slowly. But 'slowly' means your shop needs to operate as if the tariffs are permanent, not temporary.",
+    source: "BNN Bloomberg / Canadian Press — July 16, 2026",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/politics/2026/07/16/canadas-concessions-have-meant-little-to-trump-administration-us-trade-czar/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "STELLANTIS / BRAMPTON IDLE / WINDSOR IDLE / UNIFOR BARGAINING BEGINS AFTER FORD RATIFICATION",
-    tagColor: "#7c3aed",
-    headline: "Stellantis Brampton and Windsor Still Idle — Unifor Bargaining Begins After Ford Ratification July 17–19 — 15% Wage Pattern Is the Floor — Build 30-Day Stellantis Parts Buffer in August",
-    summary: "Both Stellantis assembly plants in Ontario remain idle as Unifor prepares to open bargaining with the automaker following the Ford ratification vote scheduled for July 17 to 19. The Brampton Assembly Plant — which built the Chrysler 300, Dodge Charger, and Dodge Challenger before those models were discontinued — has been idle since Stellantis froze work on the next-generation Jeep Compass in early 2026, citing trade-related uncertainty. The Windsor Assembly Plant, which builds the Chrysler Pacifica minivan, has paused production twice in 2026 due to tariff uncertainty. Stellantis has not declared either plant surplus and has not announced a product commitment for Brampton. The Globe and Mail reported in June that the fate of both shuttered plants could lie in the renewal of the U.S. trade deal. Unifor president Lana Payne has said that securing production commitments for both plants is a priority for the upcoming bargaining round. The Unifor-Ford tentative agreement — which covers 5,150 workers at Windsor Assembly and Oakville Assembly and includes a 15 per cent general wage increase over three years — sets the pattern that GM and Stellantis will be expected to match. Unifor's Auto Talks hub confirms that bargaining with GM and Stellantis begins after the Ford ratification vote. With 6,500 auto manufacturing jobs lost in Canada since February 2025, Unifor is under significant pressure to secure both production commitments and wage parity in the next round of negotiations.",
-    whyItMatters: "The Stellantis situation is the most consequential unresolved issue in Canadian auto manufacturing right now. Brampton has been idle for months with no product commitment. Windsor has been running intermittently. Unifor bargaining begins this weekend after the Ford ratification vote. The 15 per cent wage pattern from the Ford deal is now the floor — Stellantis will be expected to match it. The production commitment demand is harder: Unifor wants contractual guarantees that Brampton and Windsor will build specific vehicles for the life of the contract. Stellantis has been reluctant to make those commitments given CUSMA uncertainty. Here is the practical implication for your shop. If Unifor and Stellantis reach a deal with production commitments, Brampton and Windsor restart — and Stellantis parts supply stabilizes. If they do not reach a deal, strike risk is real. The practical action: begin building a 30-day Stellantis parts buffer in the first week of August, after the Ford ratification result is known and Stellantis bargaining begins. Focus on Pacifica, Ram 1500, and Jeep Grand Cherokee parts — the highest-volume Stellantis vehicles in Ontario service bays. The Unifor-Stellantis deadline will likely be set for late August or early September.",
-    source: "Globe and Mail / Unifor Auto Talks Hub / CBC Windsor — June–July 2026",
-    sourceUrl: "https://autotalks.uniforautohub.ca/",
+    tag: "UNIFOR-FORD / RATIFICATION VOTE DAY 1 / JULY 17–19 / 54% PRELIMINARY ENDORSEMENT",
+    tagColor: "#15803d",
+    headline: "Unifor-Ford Ratification Vote Begins Today — July 17–19 — 54% Preliminary Endorsement — Oakville Workers Laid Off 3 Years — Results Released After Final Vote July 19",
+    summary: "Unifor members at Ford Canada began voting today on the tentative three-year collective agreement reached Saturday night, July 11. Ratification meetings are scheduled for July 17, 18, and 19, with results released following the final vote on July 19. The agreement covers 5,150 workers across Windsor Assembly, Oakville Assembly, and Ford's Windsor engine plants. A preliminary member survey showed 54 per cent support — a narrow majority that mirrors the 54 per cent vote in the 2023 ratification, which also saw a majority rejection in Oakville and an outright rejection by skilled trades across Ford's entire Canadian operation. The tentative agreement includes a 15 per cent general wage increase over three years and production commitments for Windsor Assembly (Bronco Sport, continuing) and Oakville Assembly (Super Duty, beginning in approximately five months, contingent on a $465 million federal government investment). Oakville workers have been laid off for almost three years — since the scuttled electric vehicle retooling announced in the 2023 contract. The Unifor bargaining committee released only a 'Highlights' summary of the agreement before the vote, not the full contract — an unusual practice that drew criticism from rank-and-file members. If ratified, the agreement sets the 15 per cent wage pattern that GM and Stellantis will be expected to match in the next round of bargaining, which begins after the Ford ratification result. If rejected, the parties return to the table and strike risk increases significantly.",
+    whyItMatters: "The Ford ratification vote this weekend is the most consequential labour event in Canadian auto manufacturing right now. Here is what each outcome means for your shop. If the deal is ratified: Windsor Assembly and Oakville Assembly are secure. Ford parts supply stabilizes. The 15 per cent wage pattern is set. GM and Stellantis bargaining begins next week. Begin drawing down your Ford parts buffer over 30 days. If the deal is rejected: the parties return to the table. Strike risk increases. Windsor Assembly could go dark within 48 hours of a strike notice. Maintain your 30-day Ford parts buffer and consider extending it to 45 days. The 54 per cent preliminary endorsement is a narrow majority — the same margin as 2023, when Oakville rejected the deal. The critical question is whether Oakville workers, laid off for almost three years, will accept a deal that promises Super Duty production in 'approximately five months' contingent on a federal government investment. Watch Unifor's social media channels for results on July 19. The result will be announced publicly after the final vote.",
+    source: "CBC Windsor / Automotive News Canada / WSWS — July 12–17, 2026",
+    sourceUrl: "https://www.cbc.ca/news/canada/windsor/ratification-vote-set-for-later-this-week-after-unifor-ford-reach-tentative-3-year-deal-9.7267816",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🗳️",
-    text: "Ford ratification vote: July 17–19 — this weekend. 54% preliminary survey endorsement. 15% wage increase over 3 years. Windsor Assembly and Oakville secured. Results released after final vote July 19. A yes vote makes the deal official. A no vote returns parties to the table — strike risk increases. Watch Unifor social media for results.",
-    sourceUrl: "https://www.cbc.ca/news/canada/windsor/ratification-vote-set-for-later-this-week-after-unifor-ford-reach-tentative-3-year-deal-9.7267816",
+    icon: "🌉",
+    text: "Gordie Howe Bridge opens July 27 — 10 days. Trade war could cut annual traffic by 500,000 vehicles vs. pre-tariff projections (Detroit News, July 15). Windsor-Detroit corridor: $350M/day. Call your Michigan and Ohio parts suppliers this week: will they route commercial shipments through the new bridge? Modern customs facility means faster transit times for commercial traffic.",
+    sourceUrl: "https://www.detroitnews.com/story/business/2026/07/15/trump-trade-war-with-canada-could-stifle-gordie-howe-bridge-traffic/90868707007/",
   },
   {
     icon: "⚖️",
@@ -70,31 +70,31 @@ const quickHits = [
     sourceUrl: "https://www.mltaikins.com/insights/what-new-proposed-u-s-forced-labour-tariffs-mean-for-canadian-employers/",
   },
   {
-    icon: "🌉",
-    text: "Gordie Howe Bridge opens July 27 — 11 days. Pedestrian and cyclist path opens August 5. Windsor-Detroit corridor: $350M/day. Call your Michigan and Ohio parts suppliers this week: will they route commercial shipments through the new bridge? Modern customs facility means faster transit times than the Ambassador Bridge for commercial traffic.",
-    sourceUrl: "https://www.canada.ca/en/housing-infrastructure-communities/news/2026/07/the-gordie-howe-international-bridge-will-open-on-july-27th-strengthening-trade-connectivity-and-economic-development.html",
+    icon: "🗳️",
+    text: "Ford ratification vote: July 17–19. Results released July 19. 54% preliminary survey endorsement. 15% wage increase over 3 years. Windsor Assembly and Oakville secured. A yes vote sets the GM/Stellantis pattern. A no vote returns parties to the table — strike risk increases. Watch Unifor social media for results Sunday evening.",
+    sourceUrl: "https://www.autonews.com/manufacturing/automakers/anc-unifor-ford-tentative-agreement-0711/",
   },
   {
-    icon: "🔋",
-    text: "EV charging utilization fell to 9.5% in Q2 2026 as infrastructure grew faster than demand. Ontario: 21 new stations, 11.2% utilization. BC: 18 new stations, 12.4% utilization. Infrastructure is being built ahead of the adoption curve — your 12–18 month window to invest in EV service capability is open now.",
-    sourceUrl: "https://canadianautodealer.ca/2026/07/ev-charging-buildout-outpaces-demand-in-canada/",
+    icon: "🏭",
+    text: "Stellantis Brampton and Windsor still idle. Unifor bargaining begins after Ford ratification result July 19. 15% wage pattern from Ford deal is the floor. Production commitments for Brampton (no current product) and Windsor (Pacifica) are the core demand. Begin building 30-day Stellantis parts buffer in first week of August.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/",
   },
 ];
 
 const tipOfTheDay = {
   title: "Ask Your Top 3 Suppliers About CUSMA Compliance Before July 24",
-  text: "The Section 301 forced labour tariff final determination arrives July 21–23. CUSMA-compliant parts are exempt. Non-CUSMA parts with Chinese content face a 10% additional tariff. Contact your top three parts suppliers this week and ask: are your parts CUSMA-compliant? Do any contain Chinese-sourced components not covered by CUSMA rules of origin? If a supplier cannot answer, that is a supply chain risk you need to manage before July 24.",
+  text: "Section 301 forced labour tariffs take effect July 24 — the same day Section 122 expires. CUSMA-compliant parts are exempt. Non-CUSMA parts with Chinese content face a 10% additional tariff. Contact your top three parts suppliers this week and ask: are your parts CUSMA-compliant? Do any contain Chinese-sourced components not covered by CUSMA rules of origin? If a supplier cannot answer, that is a supply chain risk you need to manage before July 24.",
 };
 
 const quoteOfTheDay = {
-  text: "Most Canadian exporters will remain protected by the CUSMA-based exemptions.",
-  author: "Prime Minister Mark Carney",
-  title: "Statement on Section 301 Forced Labour Tariff Proposal — July 2026",
+  text: "They're going to raise the tariff wall again.",
+  author: "Ryan Majerus",
+  title: "Trade Lawyer, King & Spalding — Former U.S. Trade Official — July 16, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Barracuda 'Cuda 426 Hemi Convertible — Tor-Red, 426 Hemi V8, 425 hp, Ontario-Plated",
-  description: "The most powerful muscle car Plymouth ever built. In 1970, Plymouth offered the 426 Hemi in the new E-body Barracuda — a combination so extreme that only 284 convertibles were built with the Hemi engine that year. The 426 cubic inch semi-hemispherical combustion chamber V8 produced 425 horsepower from the factory — a number that was deliberately understated for insurance purposes. Actual output was closer to 500 horsepower. Tor-Red with black hockey stick stripes on the lower body. Black convertible top down. Chrome Rallye wheels with Goodyear Polyglas GT raised white letter tires. Ontario licence plate reads HEMI CUDA. The 426 Hemi was built at the Chrysler engine plant in Marysville, Michigan. The Barracuda was assembled at the Hamtramck Assembly Plant in Detroit. Sold in Canada through Plymouth dealers under the 1965 Auto Pact — the same trade agreement that CUSMA replaced in 1994. A documented numbers-matching 1970 Hemi 'Cuda convertible in Tor-Red has sold for over $3.5 million at auction. This is not a car. It is a monument. Value: $500,000 to $3.5 million depending on documentation and provenance.",
+  name: "1970 Dodge Challenger T/A 340 Six Pack — Plum Crazy Purple, 340 V8, 290 hp, Ontario-Plated",
+  description: "The Trans Am racing homologation car. In 1970, Dodge built the Challenger T/A to meet SCCA Trans-American Sedan Championship homologation requirements — a minimum of 2,500 street cars had to be built for every race car entered. Only 2,399 were produced, making it one of the rarest Challengers ever built. The 340 cubic inch V8 breathed through three two-barrel Holley carburetors on an Edelbrock intake manifold — the same Six Pack setup used on the 440 in the Road Runner and Super Bee. Factory-rated at 290 horsepower, actual output was closer to 360. Flat black fibreglass hood scoop. Rear spoiler. Side exhaust pipes. Plum Crazy Purple — a colour so vivid it was almost offensive. Ontario licence plate reads 71 SIXPAK. Parked on a rural Ontario highway at golden hour, hood open, three Holley carbs gleaming in the afternoon light. Only 2,399 built. $60,000 to $120,000 at auction depending on documentation. The T/A never won a Trans-Am race — but it looked like it could.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +168,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SECTION 301: 8 DAYS", "FORD VOTE: JULY 17–19", "GORDIE HOWE: 11 DAYS", "'70 HEMI 'CUDA"].map((tag) => (
+                {["SECTION 122: 7 DAYS", "FORD VOTE: TODAY", "GORDIE HOWE: 10 DAYS", "'70 CHALLENGER T/A"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
             </div>
           </div>
         </header>
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Section 301 Tariff 8 Days — Gordie Howe Bridge Opens July 27 — Ford Ratification Vote July 17–19 — Baywash Daily Briefing Edition No. 70"
+              alt="Section 122 Expires July 24 — 7 Days — Greer Aspen No Credit for Canada — Unifor-Ford Ratification Vote Day 1 — Baywash Daily Briefing Edition No. 71"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 70 — Thursday, July 16, 2026 — 8 Days to Section 301 / 11 Days to Gordie Howe Bridge</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 71 — Friday, July 17, 2026 — 7 Days to Section 122 Expiry / Ford Vote Today</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Section 301 Final Determination July 21–23 — Ford Vote This Weekend — Gordie Howe Bridge Opens July 27
+                Tariff Wall Being Rebuilt — Greer: No Credit for Canada — Ford Ratification Vote Begins Today
               </h3>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth Hemi 'Cuda Convertible</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Dodge Challenger T/A 340 Six Pack</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
