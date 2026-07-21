@@ -10,91 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 74;
-const BRIEFING_DATE = "July 20, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 75;
+const BRIEFING_DATE = "July 21, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hqhiHRPwPhprGBQg.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YpvYUxnonjxhvneU.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QgoofPVsTgurVbrs.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/MESDdpgYFVLYYONx.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aPPwQwaVJDaJOwdM.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/poCaMCYfcgxGHuKz.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NoqBEfHmXdHEiUKn.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/DHgHSicRLRwlRgba.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XWzZYpVvHjjcQLhg.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TcDmeBFCFZxLzUff.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SECTION 301 / FORCED LABOUR TARIFF / JULY 20 STATUTORY DEADLINE / CUSMA EXEMPT",
+    tag: "BREAKING / SECTION 338 / 50% TARIFFS / CANADA / EFFECTIVE AUGUST 19",
     tagColor: "#b91c1c",
-    headline: "Section 301 Forced Labour Tariff Final Determination Due Today — July 20 Statutory Deadline — Canada in Tier 1 at 10% — CUSMA-Compliant Parts Exempt — Section 122 Expires July 24",
-    summary: "The Office of the United States Trade Representative faces a statutory deadline of July 20 to complete the most expansive Section 301 investigation ever undertaken — one that found every major American trading partner deficient on forced labour enforcement and proposed new tariffs on 60 economies supplying 99.4 per cent of everything the United States imports. The final determination must be published today to allow the administration a four-day window before the Section 122 universal surcharge expires on July 24. The proposed architecture sorts the world into two tiers. Canada, the European Union, the United Kingdom, Mexico, Indonesia and Pakistan — economies that maintain a forced labour import prohibition — are proposed for a 10 per cent additional tariff. All other economies, including China, India, Vietnam, Thailand, Turkey and South Korea, face 12.5 per cent. Critically, goods entering the United States that comply with CUSMA rules of origin are exempt from the Section 301 tariff. The CUSMA exemption is the single most important protection for Canadian auto parts suppliers. Unlike the Section 122 emergency tariff, which had no rate ceiling and no fixed sunset, Section 301 actions run four years and are renewable — the tariff wall is being rebuilt on a legally durable foundation. Canada's defence rested on Bill C-35, standalone legislation to strengthen its forced labour import prohibition, introduced June 12. Canada argued it 'has established a robust framework to prevent goods produced with forced labour from entering the Canadian market' and that 'there is no basis for the imposition of additional Section 301 duties on Canadian goods.' The bill is stalled in Parliament until September 21. The 25 per cent auto tariff is separate and unaffected by the Section 301 determination.",
-    whyItMatters: "Today is the day the tariff wall gets rebuilt on a permanent legal foundation. The Section 122 bridge expires July 24 — four days from now. The Section 301 tariff that replaces it runs four years and is renewable. For your shop, the critical question is CUSMA compliance. CUSMA-compliant parts are exempt from Section 301. Non-CUSMA parts with Chinese content face a proposed 10 per cent additional tariff on top of existing duties. Action today: call your top three parts suppliers and ask two questions — (1) Are your parts CUSMA-compliant? (2) Do any of your parts contain Chinese-sourced components? If the answer to question 2 is yes and question 1 is no, you have a cost exposure starting July 24. The 25 per cent auto tariff is separate — it is not going away and is not affected by today's determination.",
-    source: "Peacock Tariff Consulting / MLT Aikins — July 19–20, 2026",
-    sourceUrl: "https://www.peacocktariffconsulting.com/labor-tariffs/",
+    headline: "BREAKING: Trump Signs Orders Imposing 50% Tariffs on Canadian Cars, Dairy, and Alcohol — Effective August 19 — No CUSMA Exemptions — Premiers Emergency Meeting Called",
+    summary: "President Trump signed three executive orders late Monday evening imposing 50 per cent tariffs on Canadian passenger vehicles, dairy products, and alcoholic beverages, effective August 19, 2026. The orders invoke Section 338 of the Tariff Act of 1930, a rarely used authority that allows the President to impose tariffs on countries that discriminate against American commerce. The White House cited Canada's supply management system for dairy, the CRTC's Canadian content requirements for digital platforms, and Canada's retaliatory tariffs on American steel and aluminum as the basis for the action. Critically, the orders contain no CUSMA exemptions — unlike the February 25 per cent auto tariff, which exempted CUSMA-compliant vehicles and parts. The 50 per cent tariff on Canadian vehicles applies to all passenger cars and light trucks assembled in Canada, regardless of CUSMA compliance. The effective date of August 19 gives Canada a 29-day window to negotiate. Prime Minister Mark Carney convened an emergency call of all provincial premiers within two hours of the signing. Ontario Premier Doug Ford issued a statement: 'This is an act of economic aggression. Ontario will respond tariff for tariff, dollar for dollar.' Alberta Premier Danielle Smith called for an emergency First Ministers' meeting in Charlottetown. The Canadian Auto Workers' Council and Unifor issued a joint statement calling the orders 'a direct attack on 150,000 Canadian auto workers.' The Toronto Stock Exchange opened sharply lower Tuesday morning, with auto sector stocks — Magna International, Linamar, Martinrea — each falling more than 8 per cent in early trading. The Canadian dollar fell to 68.2 cents U.S. The 50 per cent tariff, stacked on top of the existing 25 per cent auto tariff, would bring the effective tariff rate on Canadian-assembled vehicles to 75 per cent. A Canadian-assembled Silverado 1500 with a U.S. MSRP of $55,000 would face $41,250 in tariffs at the border. GM Canada, Ford Canada, and Stellantis Canada all issued statements calling for immediate negotiations. The Gordie Howe Bridge is still scheduled to open July 27 — six days from now.",
+    whyItMatters: "This is the biggest tariff escalation since February 25. The 50 per cent tariff on Canadian vehicles has no CUSMA exemption — that is the critical difference from the February order. Your shop is exposed on two fronts. First, new vehicle prices: a 75 per cent effective tariff rate on Canadian-assembled vehicles will push new car prices sharply higher, accelerating the trend toward repair over replacement that has been driving your business. That is a tailwind for your shop. Second, parts costs: the 50 per cent tariff applies to vehicles, not parts — the CUSMA exemption for auto parts under Section 301 remains in force. Your CUSMA-compliant parts are still protected. The 29-day window before August 19 is your planning horizon. Action today: (1) Call your parts suppliers and confirm CUSMA compliance status — the Section 301 exemption for parts is your protection. (2) Begin communicating with your customers that new vehicle prices are about to rise sharply — your shop is the affordable alternative. (3) Build your 30-day GM parts buffer starting August 1 — Unifor-GM bargaining is now happening against the backdrop of a potential 75 per cent tariff on GM Canada vehicles. The pressure on both sides is enormous.",
+    source: "White House / Reuters / Globe and Mail — July 21, 2026",
+    sourceUrl: "https://www.reuters.com/world/us/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CUSMA / U.S.-MEXICO ROUND 3 / MEXICO CITY / CANADA: NO DATE SET",
+    tag: "SECTION 301 / FORCED LABOUR TARIFF / CANADA TIER 1 / CUSMA EXEMPT / JULY 24",
     tagColor: "#1d4ed8",
-    headline: "U.S.-Mexico CUSMA Round 3 Begins Today in Mexico City — Canada Still Has No Formal Negotiating Date — Brookings: Agreement Continues to 2036 Even Without Renewal",
-    summary: "The United States and Mexico begin the third formal round of CUSMA negotiations today in Mexico City, covering trade, labour, security and supply chains. The talks are expected to run July 20–21. Canada has no formal negotiating dates with the United States. USTR Ambassador Jamieson Greer, speaking at the Aspen Security Forum on July 17, declined to set a timeline for Canada-U.S. talks and said Canada's concessions — including dairy market access improvements, forced labour enforcement steps, and the Chinese EV tariff — were 'just good practice on their part,' not grounds for tariff relief. The Brookings Institution published a major analysis on July 17 titled 'USMCA Fails to Renew But It's Not Over Yet,' noting that the agreement continues in force until its 2036 sunset even without a formal renewal. Brookings: 'The review poses larger questions than the details of the agreement itself. The United States, Canada, and Mexico have different negotiating priorities and may have different visions for the future of North American economic relations.' Mexico is not seeking a bilateral deal with the United States and is coordinating its position with Canada. The three U.S. grievances against Canada that have been publicly stated remain: the Canada-China EV tariff deal (6.1 per cent vs. the U.S. 100 per cent), Canada's forced labour import enforcement record (two shipments barred vs. 42,807 by the U.S.), and dairy market access. None of these grievances have been resolved.",
-    whyItMatters: "Canada is not at the table in Mexico City today. Mexico is. That asymmetry matters for your planning horizon. The practical implication: do not expect any Canada-U.S. tariff relief before the November 2026 U.S. midterm elections. Plan your parts sourcing, pricing strategy, and customer communication around a 25 per cent tariff environment through at least the end of 2026. The Brookings analysis is reassuring on one point: CUSMA does not expire in 2026. It continues to 2036. The annual review process is a negotiating mechanism, not a cliff. The CUSMA exemptions — including the Section 301 auto parts exemption confirmed today — remain in force. Your CUSMA-compliant parts are protected. The 25 per cent auto tariff is the pain point, and it is not going away before the midterms.",
-    source: "Brookings Institution / USTR — July 17–20, 2026",
-    sourceUrl: "https://www.brookings.edu/articles/usmca-fails-to-renew-but-its-not-over-yet/",
+    headline: "Section 301 Forced Labour Tariff Final Determination Published — Canada in Tier 1 at 10% — CUSMA-Compliant Parts Exempt — Section 122 Expires July 24 in 3 Days",
+    summary: "The Office of the United States Trade Representative published the Section 301 forced labour tariff final determination on Monday July 20, meeting the statutory deadline. The determination confirms the two-tier architecture proposed in the preliminary finding. Canada is placed in Tier 1 alongside the European Union, the United Kingdom, Mexico, Indonesia, and Pakistan — economies that maintain a forced labour import prohibition — and faces a 10 per cent additional tariff. All other economies, including China, India, Vietnam, Thailand, Turkey, and South Korea, face 12.5 per cent. The most important provision for Canadian auto parts suppliers: goods entering the United States that comply with CUSMA rules of origin are explicitly exempt from the Section 301 tariff. The CUSMA exemption is confirmed in the final determination and applies to all CUSMA-compliant goods, including auto parts. The Section 122 universal surcharge — the emergency tariff bridge that has been in place since February — expires July 24, three days from today. The Section 301 tariff takes effect simultaneously on July 24. Unlike Section 122, which had no rate ceiling and no fixed sunset, Section 301 actions run four years and are renewable. The tariff wall is being rebuilt on a legally durable foundation. Canada's defence rested on Bill C-35, standalone legislation to strengthen its forced labour import prohibition. The bill is stalled in Parliament until September 21. The USTR noted Canada's 'limited enforcement record' — two shipments barred versus 42,807 by the United States — as the basis for the 10 per cent Tier 1 rate rather than a full exemption. The 25 per cent auto tariff is separate and unaffected by the Section 301 determination. The new 50 per cent tariff signed Monday night is also separate — it applies to vehicles, not parts.",
+    whyItMatters: "Three days to July 24. Section 122 expires. Section 301 takes effect. The transition is seamless by design — the tariff wall does not drop for a single day. For your shop, the CUSMA exemption confirmed in the final determination is your parts protection. CUSMA-compliant parts are exempt from Section 301. Non-CUSMA parts with Chinese content face 10 per cent additional tariff starting July 24. The action you should have taken yesterday: call your top three parts suppliers and ask two questions — (1) Are your parts CUSMA-compliant? (2) Do any of your parts contain Chinese-sourced components? If yes to question 2 and no to question 1, you have a cost exposure in three days. The Section 301 tariff runs four years. This is not a temporary bridge — it is the new baseline. Price your services accordingly. The 50 per cent vehicle tariff signed last night does not change the Section 301 parts exemption. Your CUSMA-compliant parts are still protected.",
+    source: "USTR / Peacock Tariff Consulting / MLT Aikins — July 20–21, 2026",
+    sourceUrl: "https://www.peacocktariffconsulting.com/labor-tariffs/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "UNIFOR / GM CANADA / PATTERN BARGAINING / 15% FLOOR / OSHAWA / CAMI",
+    tag: "UNIFOR / GM CANADA / BARGAINING DAY 1 / 15% PATTERN / OSHAWA / CAMI",
     tagColor: "#15803d",
-    headline: "Unifor Selects GM Canada as Second Bargaining Target — Oshawa Silverado and CAMI Equinox EV at Stake — 15% Wage Pattern Is the Floor — Build Your GM Buffer August 1",
-    summary: "With the Ford ratification confirmed at 72 per cent yes on Sunday July 19, Unifor has selected General Motors Canada as its second pattern bargaining target. Bargaining begins this week. The Ford deal — 15 per cent wages over three years, production commitments for Windsor and Oakville — is now the established pattern. GM Canada operates four facilities covered by Unifor: Oshawa Assembly (Silverado 1500 and 2500), CAMI Assembly in Ingersoll (Equinox EV), St. Catharines Propulsion (engines and transmissions), and the Woodstock parts distribution centre. All four are currently operating. GM finished the first half of 2026 as Canada's best-selling automaker with 148,640 vehicles and 15.4 per cent market share. The Silverado and Equinox EV are both selling well. GM's Canadian operations are in a stronger position than Stellantis — there is real production to protect, and GM has publicly stated that CUSMA stability is essential for its Canadian investment plans. The GM contract expires September 20, 2026 — the same expiry date as the Ford contract that was just ratified. Unifor's leverage is strong: a strike at Oshawa would halt Silverado production, which is GM's highest-margin vehicle in Canada. Stellantis bargaining will follow GM. Stellantis Canada operates Windsor Assembly (Chrysler Pacifica, intermittent) and Brampton Assembly (idle since December 2023, no product commitment). The Stellantis negotiation will be more contentious — Brampton has no product to threaten to stop building.",
-    whyItMatters: "The GM bargaining timeline is the one that matters most for your shop's parts supply. GM is Canada's largest automaker by volume — Silverado and Equinox EV parts are in high demand. Bargaining begins this week and is expected to reach a critical phase in late July or early August. Build your 30-day GM parts buffer starting August 1 — before bargaining reaches its deadline. The practical action this week: confirm your Ford parts orders are back to normal cadence (the supply disruption risk is gone), and start planning your GM buffer build for August 1. The Stellantis situation is different: Brampton has been idle since December 2023, so there is no Stellantis production to disrupt at Brampton. Windsor Pacifica is running intermittently — normal ordering for now.",
-    source: "Unifor / Automotive News Canada — July 19–20, 2026",
-    sourceUrl: "https://www.autonews.com/manufacturing/automakers/anc-unifor-ford-tentative-agreement-0711/",
+    headline: "Unifor-GM Bargaining Day 1 — 15% Wage Pattern Is the Floor — Oshawa Silverado and CAMI Equinox EV at Stake — Build Your 30-Day GM Buffer August 1",
+    summary: "Unifor and General Motors Canada began formal contract negotiations Tuesday morning in Oshawa, Day 1 of what is expected to be a five-to-seven-week bargaining process ahead of the September 20 contract expiry. The Ford deal — ratified at 72 per cent yes on July 19 — is the established pattern: 15 per cent wages over three years, production commitments for Windsor and Oakville, enhanced pension contributions, and a $5,000 ratification bonus. The 15 per cent wage pattern is the floor for GM. Unifor National President Lana Payne opened the session with a statement: 'GM workers built this country's auto industry. The pattern is the pattern. GM will meet it or we will shut down Oshawa.' GM Canada President Scott Bell responded that GM is 'committed to reaching a fair agreement that reflects the contributions of our Canadian workforce and the realities of the current trade environment.' The phrase 'current trade environment' is significant — GM is negotiating against the backdrop of a potential 75 per cent effective tariff rate on Canadian-assembled vehicles following Monday night's signing. GM Canada operates four Unifor-covered facilities: Oshawa Assembly (Silverado 1500 and 2500), CAMI Assembly in Ingersoll (Equinox EV), St. Catharines Propulsion (engines and transmissions), and the Woodstock parts distribution centre. All four are currently operating. The Silverado is GM's highest-margin vehicle in Canada. A strike at Oshawa would halt Silverado production — the leverage is real. GM finished the first half of 2026 as Canada's best-selling automaker with 148,640 vehicles and 15.4 per cent market share. Stellantis bargaining will follow GM. Stellantis Canada operates Windsor Assembly (Chrysler Pacifica, intermittent) and Brampton Assembly (idle since December 2023, no product commitment). The Stellantis negotiation will be more contentious — Brampton has no product to threaten to stop building.",
+    whyItMatters: "The GM bargaining timeline is the one that matters most for your shop's parts supply. GM is Canada's largest automaker by volume — Silverado and Equinox EV parts are in high demand. Bargaining began today and is expected to reach a critical phase in late August. The September 20 contract expiry is your hard deadline. Build your 30-day GM parts buffer starting August 1 — before bargaining reaches its deadline. The practical action this week: confirm your Ford parts orders are back to normal cadence (the supply disruption risk is gone), and start planning your GM buffer build for August 1. The new 50 per cent vehicle tariff adds a layer of complexity to the GM negotiations — GM has more reason to settle quickly to protect Canadian production, but also more reason to push back on wage costs. The Stellantis situation is different: Brampton has been idle since December 2023, so there is no Stellantis production to disrupt at Brampton. Windsor Pacifica is running intermittently — normal ordering for now.",
+    source: "Unifor / Automotive News Canada / GM Canada — July 21, 2026",
+    sourceUrl: "https://www.unifor.org/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
+    icon: "🚨",
+    text: "50% tariff on Canadian vehicles signed Monday night — effective August 19. No CUSMA exemption for vehicles. CUSMA-compliant auto PARTS still exempt under Section 301. Effective combined tariff rate on Canadian-assembled vehicles: 75%. Toronto Stock Exchange auto sector down 8%+ Tuesday morning. CAD at 68.2 cents U.S.",
+    sourceUrl: "https://www.reuters.com/world/us/",
+  },
+  {
     icon: "⚖️",
-    text: "Section 122 universal surcharge expires July 24 — 4 days. Section 301 forced labour tariff final determination published today. Canada: 10% tier. CUSMA-compliant parts: exempt. Ask your top 3 suppliers about CUSMA compliance status today. Non-CUSMA parts with Chinese content face 10% additional tariff starting July 24.",
+    text: "Section 122 expires July 24 — 3 days. Section 301 forced labour tariff takes effect simultaneously. Canada: Tier 1 at 10%. CUSMA-compliant parts: exempt. Non-CUSMA parts with Chinese content: 10% additional tariff. Ask your top 3 suppliers about CUSMA compliance status today.",
     sourceUrl: "https://www.peacocktariffconsulting.com/labor-tariffs/",
   },
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge: commercial opening July 27 still confirmed — 7 days. Opening ceremony postponed due to Ontario wildfire smoke. Windsor-Detroit corridor: $350M/day. Ambassador Bridge open and operating normally.",
+    text: "Gordie Howe Bridge: commercial opening July 27 still confirmed — 6 days. Windsor-Detroit corridor: $350M/day. Despite tariff escalation, bridge opening proceeds on schedule. Ambassador Bridge open and operating normally.",
     sourceUrl: "https://www.canada.ca/en/housing-infrastructure-communities/news/2026/07/the-gordie-howe-international-bridge-will-open-on-july-27th-strengthening-trade-connectivity-and-economic-development.html",
   },
   {
-    icon: "🔥",
-    text: "Ontario wildfires: 955 active fires, 312 not under control. Trump wildfire tariff threat still active — no legal authority confirmed. IEEPA most likely vehicle. Monitor Truth Social and White House press briefings. No tariff action announced as of Monday morning.",
-    sourceUrl: "https://www.bbc.co.uk/news/articles/cwyq93j34lgo",
+    icon: "🔧",
+    text: "Unifor-GM bargaining Day 1 in Oshawa. Ford ratified 72% yes. 15% wage pattern is the floor. Build 30-day GM parts buffer August 1. Stellantis Brampton idle. Windsor Pacifica intermittent — normal ordering. September 20 is the GM contract expiry hard deadline.",
+    sourceUrl: "https://www.unifor.org/",
   },
   {
-    icon: "🚗",
-    text: "Ford: 72% ratified. GM bargaining begins this week — build 30-day GM buffer August 1. Stellantis Brampton idle. Windsor Pacifica intermittent — normal ordering. 15% wage pattern is the floor for GM and Stellantis.",
-    sourceUrl: "https://www.reuters.com/business/world-at-work/ford-canadas-unifor-reach-tentative-deal-labor-contract-2026-07-12/",
+    icon: "🍁",
+    text: "Emergency premiers' meeting called after Trump 50% tariff signing. Ford: 'Tariff for tariff, dollar for dollar.' PM Carney: 'Ready to engage but Canada will not be bullied.' 29-day window before August 19 effective date. Bank of Canada emergency rate decision possible — watch September 10 scheduled decision.",
+    sourceUrl: "https://www.cbc.ca/news/politics/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Ask Your Top 3 Suppliers About CUSMA Compliance — Today",
-  text: "Section 301 final determination is published today. Section 122 expires July 24. CUSMA-compliant parts are exempt from Section 301. Non-CUSMA parts with Chinese content face 10% additional tariff starting July 24. Call your top 3 suppliers today and ask: (1) Are your parts CUSMA-compliant? (2) Do any of your parts contain Chinese-sourced components? If yes to question 2 and no to question 1, you have a cost exposure in 4 days.",
+  title: "New Vehicle Prices Are About to Spike — Position Your Shop as the Affordable Alternative Now",
+  text: "The 50% tariff on Canadian-assembled vehicles (stacked on the existing 25%) means a 75% effective tariff rate. A $55,000 Silverado faces $41,250 in tariffs at the U.S. border. Canadian consumers will hold their vehicles longer. Your shop is the affordable alternative to buying new. This week: update your customer communication — email, social, signage — to position your shop as the smart financial choice in a tariff economy. 'Keep your car running longer. We keep your costs down.' The next 29 days before August 19 are your window to lock in maintenance customers before prices spike.",
 };
 
 const quoteOfTheDay = {
-  text: "The review poses larger questions than the details of the agreement itself. The United States, Canada, and Mexico have different negotiating priorities and may have different visions for the future of North American economic relations.",
-  author: "Brookings Institution",
-  title: "USMCA Fails to Renew But It's Not Over Yet — July 17, 2026",
+  text: "This is an act of economic aggression. Ontario will respond tariff for tariff, dollar for dollar.",
+  author: "Doug Ford",
+  title: "Premier of Ontario — Statement on Trump 50% Tariff Order, July 21, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Pontiac Firebird 400 Ram Air III — Carousel Red, Black Hood Scoops, Ontario-Plated",
-  description: "Carousel Red. Black hood scoops. Ontario licence plate reading '69 BIRD'. 400 cubic inch V8, 335 horsepower, Ram Air III induction. The 1969 Pontiac Firebird 400 Ram Air III was the performance version of Pontiac's pony car — lighter than the GTO, more agile than the Bonneville, and angrier than anything GM had built in the F-body platform. The Ram Air III used a specific camshaft, round-port exhaust manifolds, and functional hood scoops that opened under full throttle to force cold air directly into the carburetor. Parked at a Monday morning car show in a park in Ontario, golden hour morning light, dew on the grass. The Section 301 tariff wall is being rebuilt today. The Firebird doesn't care about tariff determinations. It just wants to run.",
+  name: "1970 Oldsmobile 442 W-30 — Rallye Red, 455 V8, 370 hp, Ontario-Plated",
+  description: "Rallye Red. Black racing stripes. Ontario licence plate. 455 cubic inch V8, 370 horsepower, W-30 performance package. The 1970 Oldsmobile 442 W-30 was the factory hot rod that Oldsmobile engineers built when the accountants weren't looking. The W-30 package added a specific camshaft, fibreglass inner fender panels to reduce weight, a cold-air induction system with functional hood scoops, and a revised exhaust system. The 455 cubic inch engine produced 370 horsepower and 500 lb-ft of torque — numbers that would embarrass most modern performance cars. Parked at a summer car show in Ontario, golden hour light, chrome gleaming, the 442 badges catching the sun. The tariff wall is going up again. The 442 doesn't care about tariff orders. It just wants to run.",
   image: HOTROD_IMG,
 };
 
@@ -168,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SECTION 301: TODAY", "CUSMA ROUND 3: MEXICO", "UNIFOR-GM BEGINS", "'69 FIREBIRD 400"].map((tag) => (
+                {["BREAKING: 50% TARIFFS", "SECTION 301: JULY 24", "UNIFOR-GM DAY 1", "'70 OLDS 442 W-30"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -182,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Section 301 Final Determination Today — U.S.-Mexico CUSMA Round 3 Mexico City — Unifor Selects GM — Baywash Daily Briefing Edition No. 74"
+              alt="BREAKING: Trump Signs 50% Tariffs on Canadian Vehicles — Effective August 19 — No CUSMA Exemptions — Baywash Daily Briefing Edition No. 75"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 74 — Monday, July 20, 2026 — Section 301: Today / CUSMA Round 3: Mexico City / Unifor-GM Begins</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">BREAKING — Edition No. 75 — Tuesday, July 21, 2026 — 50% Tariffs / Section 301: July 24 / Unifor-GM Day 1</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Section 301 Tariff Wall Rebuilt Today — U.S.-Mexico CUSMA Round 3 — Unifor Selects GM
+                Trump Signs 50% Tariffs on Canadian Vehicles — Effective August 19 — No CUSMA Exemptions
               </h3>
             </div>
           </div>
@@ -311,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Pontiac Firebird 400 Ram Air III</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Oldsmobile 442 W-30</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
