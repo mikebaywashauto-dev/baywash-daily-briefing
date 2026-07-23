@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 76;
-const BRIEFING_DATE = "July 22, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 77;
+const BRIEFING_DATE = "July 23, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SksCiwOerGOXBlbm.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/matDCcrNlRMtnOwR.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CGCSZbcvHdNInWlL.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/vXGOMyIkschOeHTg.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QoqtqTWGiDuNBTta.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/APXeNgbPhsTPRDsj.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qLaPOYLqCRxAKNtF.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EBHSCkvsQVQHGoBa.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VgWJyCfGOuerkiEm.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nedzIqWyJkGHchtZ.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CORRECTION / SECTION 338 / AUTOS EXEMPT / CEMENT HOCKEY STICKS DAIRY ALCOHOL / AUG 19",
+    tag: "SECTION 122 EXPIRES TOMORROW / SECTION 301 UNCERTAIN / GREER: STAY TUNED / POSSIBLE TARIFF GAP / CUSMA PARTS STILL PROTECTED",
     tagColor: "#b91c1c",
-    headline: "Section 338 Correction: Canadian Cars and Auto Parts Are Exempt — The 50% Tariff Hits Cement, Hockey Sticks, Alcohol, and Dairy — Carney-Trump Call — First Ministers' Meeting July 24",
-    summary: "Legal analysis published Tuesday by Husch Blackwell, Dentons, and KPMG confirms that the Section 338 proclamations signed by President Trump on July 20 do not impose new tariffs on Canadian passenger vehicles or auto parts. Both categories are explicitly excluded from the Section 338 annexes because they are already subject to Section 232 duties — the existing 25 per cent auto tariff remains the operative instrument for vehicles and parts. The motor vehicles proclamation, despite its name, applies to an unrelated cross-sector basket of Canadian goods: Portland cement, hockey sticks, furniture, jewelry, diamonds, fine art, leather goods, cotton textiles, electronics, and industrial machinery — over 550 HTS code subheadings in total. The alcoholic beverages proclamation covers Canadian whisky, beer, wine, and spirits. The dairy proclamation covers cheese, milk products, whey, and casein. The Section 338 tariffs apply to all covered goods regardless of CUSMA compliance — unlike Section 301, there is no CUSMA exemption. The tariffs have no predetermined expiration date and remain in force unless reversed by a subsequent presidential action. Prime Minister Carney spoke with President Trump on Tuesday morning. The two leaders agreed to 'intensify negotiations in the coming weeks.' Carney told reporters: 'We have a situation where the American tariffs, the 338 tariffs, will come into effect in 29 days, and we will look at all options in terms of how we would respond if they do come into effect.' Trade Minister Dominic LeBlanc convened the Canada-U.S. Advisory Council Tuesday afternoon. A First Ministers' meeting is scheduled in Charlottetown on Thursday July 24 — the same day Section 122 expires and Section 301 takes effect.",
-    whyItMatters: "The headline from yesterday was alarming but the legal analysis tells a different story for your shop. Canadian cars and auto parts are NOT covered by Section 338 — they were already under Section 232 and are explicitly carved out. The 25 per cent auto tariff on vehicles remains unchanged. Your CUSMA-compliant parts remain protected under Section 301 (effective July 24). What IS going up 50 per cent on August 19: cement (affects body shop construction and renovation costs), alcohol (affects your Friday staff party budget), dairy (affects the cheese on your lunch sandwich), and 550+ other HTS codes that are largely irrelevant to your daily operations. The practical action today: stop worrying about a new 50 per cent auto tariff — it does not exist. Focus on the real exposures: (1) Section 301 takes effect July 24 — confirm your parts suppliers' CUSMA compliance status. (2) Build your 30-day GM parts buffer August 1 — Unifor-GM bargaining starts August 10. (3) Watch the Charlottetown First Ministers' meeting Thursday for any retaliation announcements that could affect cross-border parts logistics.",
-    source: "Husch Blackwell / Dentons / KPMG / National Post — July 21–22, 2026",
-    sourceUrl: "https://www.internationaltradeinsights.com/2026/07/president-trump-imposes-50-tariffs-on-certain-canadian-products-under-section-338-of-the-tariff-act/",
+    headline: "Section 122 Expires Tomorrow July 24 — USTR Greer Coy on Section 301 Replacement — 'Stay Tuned, You're Going to Be Busy' — Possible Tariff Gap or New Section 122 Re-Issue — CUSMA Parts Still Protected",
+    summary: "USTR Ambassador Jamieson Greer testified before the Senate Finance Committee Wednesday and refused to confirm that Section 301 will be ready to replace Section 122 when it expires tomorrow at 12:01 a.m. ET on July 24. Section 122 of the Trade Act of 1974 is the 150-day emergency authority that has underpinned the 10 per cent universal surcharge on Canadian goods since February 24. It expires by statute on July 24 — it cannot be extended. The Section 301 forced labour investigation, which was expected to serve as the replacement authority, has not yet produced a final published determination from USTR. Greer told reporters after the hearing: 'We're not focused on a particular timeline. We're focused on fulfilling the legal and statutory requirements.' When asked whether the administration would re-issue a new Section 122 proclamation to bridge any gap, Greer was equally evasive: 'You all are just going to have to stay tuned. You're going to be busy the next few days, probably.' Senate Finance Committee Chairman Mike Crapo asked Greer for a realistic timeline to finish CUSMA negotiations, and Greer confirmed the entire CUSMA update is unlikely in 2026 — rules of origin, labour standards, and environmental provisions are pushed to 2027. After the hearing, Greer flew to Mexico City for bilateral CUSMA talks with President Claudia Sheinbaum and Economy Secretary Marcelo Ebrard. The Section 338 tariffs on $20 billion in Canadian goods — which Greer called 'a small handful' relative to the $380 billion total Canada-U.S. trade — remain on track for August 19.",
+    whyItMatters: "This is the most important tariff story of the week for your shop and it is not being covered clearly anywhere. Here is what you need to know. Section 122 expires tomorrow. Section 301 may not be ready to replace it. That means there are three possible outcomes on July 24: (1) Section 301 takes effect as expected — the 10% rate continues, CUSMA parts remain exempt, nothing changes for you operationally. (2) A brief tariff gap — the 10% surcharge drops to zero for a day or two while USTR finalizes Section 301. If this happens, do not change your parts ordering strategy — it will be temporary and any gap will be closed quickly. (3) A new Section 122 proclamation is issued to bridge the gap — the 10% rate continues under a new emergency authority. In all three scenarios, your CUSMA-compliant parts remain protected. The key action: do NOT make bulk parts purchases based on a potential one-day tariff gap — the administration will close it. Do NOT change your supplier relationships based on uncertainty. Watch for a USTR announcement Thursday morning. The First Ministers' meeting in Charlottetown today is the political parallel track — Carney meets all premiers face-to-face for the first time since Section 338 was announced.",
+    source: "Politico / International Trade Today / USTR Senate Finance Testimony — July 22, 2026",
+    sourceUrl: "https://www.politico.com/news/2026/07/22/trump-trade-fallout-canada-tariffs-01008078",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "SECTION 301 / SECTION 122 / JULY 24 / 2 DAYS / CUSMA EXEMPT / 4-YEAR FOUNDATION",
+    tag: "CHARLOTTETOWN / FIRST MINISTERS TODAY / CARNEY MEETS PREMIERS / UNITED FRONT / DIVIDED ON TACTICS / FORD VS SMITH",
     tagColor: "#1d4ed8",
-    headline: "Section 301 Forced Labour Tariff Takes Effect July 24 — 2 Days — Section 122 Expires Simultaneously — CUSMA-Compliant Parts Still Exempt — Four-Year Legal Foundation",
-    summary: "The transition from Section 122 to Section 301 occurs in two days, on July 24. The Section 122 universal surcharge — the emergency tariff bridge imposed at 10 per cent on February 24, 2026 for 150 days — expires at the end of July 24. The Section 301 forced labour tariff, finalized in the USTR determination published July 20, takes effect simultaneously. The rate for Canada is unchanged at 10 per cent. The transition is seamless by design — the tariff wall does not drop for a single day. KPMG confirmed in its analysis: 'The 10% import duty imposed effective February 24, 2026, for 150 days, under Section 122 of the Trade Act of 1974, expires on July 24, 2026.' The critical protection for Canadian auto parts suppliers remains in force: goods entering the United States that comply with CUSMA rules of origin are explicitly exempt from the Section 301 tariff. Non-CUSMA parts with Chinese content face 10 per cent additional tariff starting July 24. The fundamental difference between Section 122 and Section 301 is durability. Section 122 was an emergency authority with no rate ceiling and no fixed sunset — it could have been raised or extended at any time. Section 301 actions run four years and are renewable, providing a legally durable and predictable tariff baseline. Canada's Bill C-35, the standalone legislation to strengthen its forced labour import prohibition that was Canada's primary defence in the Section 301 proceeding, remains stalled in Parliament until September 21. The USTR cited Canada's 'limited enforcement record' — two shipments barred versus 42,807 by the United States — as the basis for the 10 per cent Tier 1 rate rather than a full exemption.",
-    whyItMatters: "Two days to July 24. The tariff rate does not change — 10 per cent in, 10 per cent out. But the legal foundation changes completely. Section 122 was temporary and unpredictable. Section 301 runs four years. This is the new baseline for your parts cost planning. The action you need to have completed by Thursday: call your top three parts suppliers and confirm CUSMA compliance status. CUSMA-compliant parts are exempt from Section 301 — that exemption is your protection. Non-CUSMA parts with Chinese content face 10 per cent additional tariff starting Thursday. If you have not had this conversation with your suppliers yet, you have 48 hours. The Section 338 tariff signed Monday does not affect parts — it is a separate instrument covering different goods. Your parts exposure on July 24 is Section 301, and the CUSMA exemption protects you if your suppliers are compliant.",
-    source: "USTR / KPMG / Peacock Tariff Consulting — July 20–22, 2026",
-    sourceUrl: "https://kpmg.com/us/en/taxnewsflash/news/2026/07/united-states-50-percent-tariffs-canada-imports.html",
+    headline: "Carney Meets All Premiers Face-to-Face in Charlottetown Today — United Against Section 338 — Divided on Tactics — Ford Wants Energy Leverage, Smith and Moe Say No — 27 Days to August 19",
+    summary: "Prime Minister Mark Carney arrives in Charlottetown, Prince Edward Island today for a face-to-face First Ministers' meeting with all 13 provincial and territorial premiers — the first since Section 338 was announced Monday. The Council of the Federation meeting, which began Tuesday, was upended by the tariff announcement. The premiers closed their two-day session Wednesday with a united public front against the Section 338 tariffs, but significant tactical disagreements emerged on how to respond. Ontario Premier Doug Ford called for Canada to use its energy exports as leverage: 'We are an energy powerhouse and we could dismantle the U.S. if we wanted to.' British Columbia Premier David Eby floated cutting off access to minerals: 'There's not this middle road where you attack British Columbians on one hand and the other hand you're digging up metals, minerals and bringing them south of the border.' Alberta Premier Danielle Smith flatly rejected energy leverage: 'That's not going to happen.' Saskatchewan Premier Scott Moe was 'positive and bullish' but 'not entirely confident' a deal will be reached before August 19. Manitoba Premier Wab Kinew summarized the mood: 'Nothing unites like a common opponent and there's no more popular opponent in Canada right now than Donald Trump.' Industry Minister Melanie Joly, speaking from the U.K., said Canada could counter tariff impacts by selling more steel and aluminum to Europe. USTR Greer told the Senate Finance Committee Wednesday that CUSMA rules of origin talks are 'unlikely to be finished in 2026' — the full update is pushed to 2027. Greer flew to Mexico City after the hearing for bilateral CUSMA talks with President Sheinbaum.",
+    whyItMatters: "The Charlottetown meeting today is the political decision point. Carney has 27 days before Section 338 tariffs take effect on August 19. The premiers are united in opposition but divided on tactics — and the energy leverage debate is the fault line. Ford's position (use oil and potash as a weapon) versus Smith's position (protect Alberta's energy sector from retaliation) reflects the fundamental tension in Canada's response strategy. For your shop: the outcome of today's meeting will signal whether Canada moves toward retaliatory tariffs that could affect cross-border parts logistics, or toward a negotiated framework. Watch for a joint communiqué this afternoon. The critical number remains August 19 — 27 days. CUSMA-compliant parts remain protected regardless of which tariff authority is in effect on July 24. Build your GM parts buffer August 1. Unifor-GM bargaining starts August 10.",
+    source: "CBC News / Global News / Politico — July 22–23, 2026",
+    sourceUrl: "https://www.cbc.ca/news/politics/charlottetown-premiers-meeting-day-two-9.7279213",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "GORDIE HOWE BRIDGE / JOINT CEREMONY CANCELLED / CANADA CELEBRATES JULY 24 / OPENS JULY 27",
+    tag: "GORDIE HOWE BRIDGE / CANADIAN CEREMONY TODAY / OPENS JULY 27 / 4 DAYS / WINDSOR-DETROIT $350M/DAY",
     tagColor: "#15803d",
-    headline: "Canada Cancels Joint Gordie Howe Bridge Ceremony with U.S. After Section 338 Tariffs — Canada-Only Celebration July 24 — Bridge Still Opens July 27 — Windsor-Detroit Corridor Intact",
-    summary: "Canada has cancelled the planned joint U.S.-Canada ribbon-cutting ceremony for the Gordie Howe International Bridge in response to the Section 338 tariff proclamations signed Monday. Federal Infrastructure Minister Gregor Robertson's office confirmed Tuesday: 'In light of trade action threatened by the United States earlier this week, it would be inappropriate to proceed with a celebratory event between the two countries.' Canada will instead hold a Canadian-only celebration on July 24 — the same day as the First Ministers' meeting in Charlottetown. The bridge will still open to commercial traffic on July 27 as planned. The Canada-Michigan Crossing Agreement and the recently negotiated Agreement in Principle between Canada and the United States remain unchanged. This is the second disruption to the bridge opening ceremonies: in June, a similar event was delayed at the request of the United States. The Gordie Howe International Bridge is a cable-stayed span across the Detroit River connecting Windsor, Ontario, to Detroit, Michigan. The Windsor-Detroit corridor handles approximately $350 million in daily trade — roughly 30 per cent of all Canada-U.S. goods trade. The bridge will add a second crossing to the Ambassador Bridge, which currently handles the majority of that traffic. The commercial opening on July 27 will allow trucks and commercial vehicles to begin using the new crossing, reducing congestion at the Ambassador Bridge and providing redundancy for the corridor. Local dignitaries including Windsor's mayor and the area's former longtime NDP MP had been invited to the original joint ceremony.",
-    whyItMatters: "The bridge opens July 27 regardless of the ceremony cancellation — that is the number that matters for your shop's parts supply chain. The Windsor-Detroit corridor is the artery through which the majority of Canadian auto parts cross into the United States and U.S. parts come into Canada. Adding a second crossing reduces the single-point-of-failure risk that has made the Ambassador Bridge a choke point during disruptions. For your shop: the Gordie Howe Bridge opening is a net positive for parts supply reliability. More crossing capacity means less congestion, faster clearance times, and reduced vulnerability to blockades or incidents at the Ambassador Bridge. The ceremony cancellation is a diplomatic signal, not an operational change. Watch the Charlottetown First Ministers' meeting on Thursday — if Canada announces retaliatory tariffs in response to Section 338, the cross-border parts logistics picture could change quickly. The bridge opening on July 27 is five days away. Unifor-GM bargaining starts August 10 — build your GM buffer starting August 1.",
-    source: "CBC News / Global News / Infrastructure Canada — July 21–22, 2026",
-    sourceUrl: "https://www.cbc.ca/news/canada/windsor/windsor-gordie-howe-bridge-ribbon-cutting-9.7278519",
+    headline: "Gordie Howe Bridge Canadian Ceremony Today — Opens to Traffic July 27 in 4 Days — Political Tensions Raise Questions But Commercial Opening Confirmed — Windsor-Detroit Corridor: $350M/Day",
+    summary: "The Canadian-only ceremony for the Gordie Howe International Bridge takes place today in Windsor, Ontario, with local dignitaries and the Windsor mayor in attendance. The joint U.S.-Canada ribbon-cutting was cancelled last week after the Section 338 tariff proclamations. The bridge remains on schedule to open to commercial and passenger traffic on July 27 — four days from today. WXYZ Detroit reported Thursday morning that 'political tensions between the US and Canada are raising questions' about the opening, but Infrastructure Canada and the Windsor-Detroit Bridge Authority have confirmed the July 27 commercial opening date is unchanged. The Canada-Michigan Crossing Agreement and the revenue-sharing arrangement with the United States remain in force. The Gordie Howe International Bridge is a cable-stayed span across the Detroit River connecting Windsor, Ontario, to Detroit, Michigan. The Windsor-Detroit corridor handles approximately $350 million in daily trade — roughly 30 per cent of all Canada-U.S. goods trade. The bridge adds a second crossing to the Ambassador Bridge, which currently handles the majority of that traffic. The commercial opening on July 27 will allow trucks and commercial vehicles to begin using the new crossing immediately, reducing congestion at the Ambassador Bridge and providing redundancy for the corridor. This is the second-busiest land border crossing in North America.",
+    whyItMatters: "Four days to July 27. The Gordie Howe Bridge opening is the single most positive infrastructure development for Canadian auto parts supply chains in a decade. The Windsor-Detroit corridor is the artery through which the majority of Canadian auto parts cross into the United States and U.S. parts come into Canada. The Ambassador Bridge has been the single point of failure — a blockade in February 2022 demonstrated exactly how vulnerable the corridor is. Adding a second crossing means more capacity, faster clearance times, and redundancy. For your shop: this is a net positive regardless of the tariff environment. The political tensions are real but they have not changed the commercial opening date. The Canadian ceremony today is a diplomatic signal — the bridge opens Monday. Watch the Charlottetown First Ministers' meeting outcome this afternoon for any retaliation announcements that could affect cross-border logistics. Unifor-GM bargaining starts August 10 — build your GM buffer August 1.",
+    source: "CBC News / Detroit Free Press / WXYZ Detroit / Infrastructure Canada — July 22–23, 2026",
+    sourceUrl: "https://www.freep.com/story/news/politics/2026/07/22/gordie-howe-bridge-detroit-canada-opening-ceremony-tariffs/91006114007/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "✅",
-    text: "CORRECTION: Section 338 does NOT cover Canadian cars or auto parts — both explicitly excluded (already under Section 232). The 50% tariff hits cement, hockey sticks, alcohol, dairy, and 550+ other HTS codes. Your parts costs are not directly affected by Section 338.",
-    sourceUrl: "https://www.internationaltradeinsights.com/2026/07/president-trump-imposes-50-tariffs-on-certain-canadian-products-under-section-338-of-the-tariff-act/",
-  },
-  {
-    icon: "⚖️",
-    text: "Section 122 expires July 24 — 2 days. Section 301 takes effect simultaneously. Rate unchanged at 10%. CUSMA-compliant parts: exempt. Non-CUSMA parts with Chinese content: 10% additional tariff. Confirm your suppliers' CUSMA compliance status today.",
-    sourceUrl: "https://kpmg.com/us/en/taxnewsflash/news/2026/07/united-states-50-percent-tariffs-canada-imports.html",
-  },
-  {
-    icon: "🌉",
-    text: "Gordie Howe Bridge: joint ceremony cancelled after Section 338 tariffs. Canada-only celebration July 24. Bridge STILL opens July 27 — 5 days. Windsor-Detroit corridor: $350M/day. Canada-Michigan Crossing Agreement unchanged.",
-    sourceUrl: "https://www.cbc.ca/news/canada/windsor/windsor-gordie-howe-bridge-ribbon-cutting-9.7278519",
-  },
-  {
-    icon: "🔧",
-    text: "Unifor-GM bargaining starts August 10 in Toronto — NOT this week. Ford deal: 3% annual pay increases over 3 years. CAMI (Equinox EV) currently idle. Build 30-day GM parts buffer August 1 — before bargaining reaches critical phase. September 20 contract expiry.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/07/21/unifor-names-general-motors-as-next-us-automaker-for-contract-talks/",
+    icon: "⚠️",
+    text: "Section 122 expires TOMORROW July 24 at 12:01 a.m. ET. Section 301 replacement may not be ready — USTR Greer refused to confirm timeline. Possible brief tariff gap OR new Section 122 re-issue. Do NOT change your parts ordering strategy based on a potential one-day gap. CUSMA parts remain protected in all scenarios.",
+    sourceUrl: "https://www.politico.com/news/2026/07/22/trump-trade-fallout-canada-tariffs-01008078",
   },
   {
     icon: "🍁",
-    text: "First Ministers' meeting in Charlottetown Thursday July 24 — same day Section 122 expires and Section 301 takes effect. PM Carney spoke with Trump Tuesday — agreed to 'intensify negotiations.' Bank of Canada held at 2.25% July 15. Next decision: September 10.",
-    sourceUrl: "https://nationalpost.com/news/politics/carney-wont-rule-out-retaliation-to-latest-tariff-threat",
+    text: "First Ministers' meeting TODAY in Charlottetown — Carney meets all 13 premiers face-to-face. 27 days to Section 338 (August 19). Ford wants energy leverage. Smith/Moe say no. Watch for joint communiqué this afternoon — any retaliation announcement could affect cross-border parts logistics.",
+    sourceUrl: "https://www.cbc.ca/news/politics/charlottetown-premiers-meeting-day-two-9.7279213",
+  },
+  {
+    icon: "🌉",
+    text: "Gordie Howe Bridge Canadian ceremony TODAY in Windsor. Opens to commercial traffic July 27 — 4 days. Windsor-Detroit corridor: $350M/day. Second crossing adds redundancy to Ambassador Bridge. Commercial opening confirmed despite political tensions.",
+    sourceUrl: "https://www.freep.com/story/news/politics/2026/07/22/gordie-howe-bridge-detroit-canada-opening-ceremony-tariffs/91006114007/",
+  },
+  {
+    icon: "🔧",
+    text: "Unifor-GM bargaining starts August 10 in Toronto. Ford deal ratified: 3% annual pay increases, 74% approval. CAMI (Ingersoll, Equinox EV) currently idle. Build 30-day GM parts buffer August 1 — before bargaining reaches critical phase. September 20 contract expiry.",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/07/21/unifor-names-general-motors-as-next-us-automaker-for-contract-talks/",
+  },
+  {
+    icon: "📋",
+    text: "USTR Greer: CUSMA rules of origin talks 'unlikely to be finished in 2026' — full CUSMA update pushed to 2027. Greer flew to Mexico City after Senate hearing for bilateral CUSMA talks. Section 338: $20B of $380B total Canada-U.S. trade — Greer: 'a small handful of goods.'",
+    sourceUrl: "https://internationaltradetoday.com/article/2026/07/22/ustr-usmca-rules-of-origin-talks-cant-be-finished-in-26-2607220008",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Confirm CUSMA Compliance With Your Top 3 Suppliers Before Thursday — Section 301 Takes Effect July 24",
-  text: "Section 301 takes effect in 2 days. CUSMA-compliant parts are exempt. Non-CUSMA parts with Chinese content face 10% additional tariff starting July 24. If you have not called your top three suppliers to confirm CUSMA compliance status, do it today. Ask two questions: (1) Are your parts CUSMA-compliant? (2) Do any of your parts contain Chinese-sourced components? If yes to question 2 and no to question 1, you have a cost exposure in 48 hours. The Section 338 tariff does not affect your parts — that is the good news. Section 301 is the real transition happening Thursday.",
+  title: "Section 122 Expires Tomorrow — Don't Panic, Don't Bulk-Buy — Watch for USTR Announcement Thursday Morning",
+  text: "Section 122 expires tomorrow and the replacement may not be ready. Here is what NOT to do: do not bulk-buy parts today based on a potential one-day tariff gap. The administration will close any gap quickly — either Section 301 takes effect as expected, or a new Section 122 proclamation bridges the gap. CUSMA-compliant parts are protected in all three scenarios. Here is what TO do: (1) Watch for a USTR announcement Thursday morning — it will clarify which authority is in effect on July 24. (2) Watch the Charlottetown First Ministers' meeting communiqué this afternoon — any Canadian retaliation announcement is more consequential for your parts supply chain than the Section 122/301 transition. (3) Start building your GM parts buffer August 1 — Unifor-GM bargaining starts August 10. The tariff transition tomorrow is a legal mechanism change, not a cost change. Your CUSMA-compliant parts remain protected.",
 };
 
 const quoteOfTheDay = {
-  text: "We have a situation where the American tariffs, the 338 tariffs, will come into effect in 29 days, and we will look at all options in terms of how we would respond if they do come into effect.",
-  author: "Mark Carney",
-  title: "Prime Minister of Canada — Ottawa, July 22, 2026",
+  text: "You all are just going to have to stay tuned. You're going to be busy the next few days, probably.",
+  author: "Jamieson Greer",
+  title: "U.S. Trade Representative — after Senate Finance Committee hearing, July 22, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Dodge Charger R/T 440 Magnum — B5 Blue, Black Stripes, Ontario-Plated",
-  description: "B5 Blue. Black racing stripes. Ontario licence plate. 440 cubic inch Magnum V8, 375 horsepower, 480 lb-ft of torque. The 1969 Dodge Charger R/T was the apex of Mopar's muscle car era — the fastback roofline, the hidden headlights, the full-width taillamp, and the Coke-bottle body lines made it the most recognizable muscle car of its generation. The 440 Magnum was the street engine of choice: more tractable than the 426 Hemi, more powerful than anything the competition offered. Parked at a summer car show in Ontario, golden hour light, B5 Blue paint glowing in the setting sun, chrome gleaming. The tariff wall is being rebuilt on a permanent foundation. The Charger doesn't care about Section 301 or Section 338. It just wants to run.",
+  name: "1970 Plymouth 'Cuda 440 Six Pack — Vitamin C Orange, Black Shaker Hood Scoop, Ontario-Plated",
+  description: "Vitamin C Orange. Black shaker hood scoop. Black racing stripes. Ontario licence plate. 440 cubic inch Six Pack — three two-barrel Holley carburetors, 390 horsepower, 490 lb-ft of torque. The 1970 Plymouth Barracuda was the most aggressive expression of the E-body platform — lower, wider, and meaner than anything Chrysler had built before. The 440 Six Pack was the street weapon of choice: the 426 Hemi got the headlines, but the Six Pack got the wins on the street. The shaker hood scoop — mounted directly to the air cleaner, poking through a hole in the hood — shook with every blip of the throttle, a mechanical taunt to everything beside it at a stoplight. Parked at a summer car show in Ontario, golden hour light, Vitamin C paint glowing like a traffic cone on fire, the massive shaker scoop dominating the hood. USTR Greer says stay tuned. The 'Cuda doesn't wait.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["S.338: AUTOS EXEMPT", "S.301: JULY 24", "GORDIE HOWE: JULY 27", "'69 CHARGER R/T"].map((tag) => (
+                {["S.122 EXPIRES TOMORROW", "S.301: UNCERTAIN", "GORDIE HOWE: JULY 27", "'70 'CUDA 440 SIX PACK"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Section 338 Correction: Autos Exempt — Section 301 July 24 — Gordie Howe Bridge Opens July 27 — Baywash Daily Briefing Edition No. 76"
+              alt="Section 122 Expires Tomorrow — USTR Greer Stay Tuned — Charlottetown First Ministers Today — Gordie Howe Bridge Opens July 27 — Baywash Daily Briefing Edition No. 77"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 76 — Wednesday, July 22, 2026 — S.338 Autos Exempt / S.301: July 24 / Gordie Howe: July 27</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 77 — Thursday, July 23, 2026 — S.122 Expires Tomorrow / Greer: Stay Tuned / Charlottetown Today / Gordie Howe: July 27</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Section 338 Correction: Cars and Auto Parts Exempt — Section 301 Takes Effect Thursday — Gordie Howe Bridge Opens July 27
+                Section 122 Expires Tomorrow — USTR Greer Coy on Section 301 Replacement — Charlottetown First Ministers Today — Gordie Howe Bridge Opens July 27
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Dodge Charger R/T 440</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth 'Cuda 440 Six Pack</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
