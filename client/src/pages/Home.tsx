@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 81;
-const BRIEFING_DATE = "July 27, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 82;
+const BRIEFING_DATE = "July 28, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CtWThoGBvfCCKSvZ.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/vWRzwBggUQzKGyZZ.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wwoUstogPgzoTPAz.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fBgwqyKheboNIvRN.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QpTlYsnONGJuTSMA.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jgipvoJwetGiIwUW.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HhHjarvoUkQMkrkT.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jaahRNiBYEqeZrFk.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GsZzvNGcpOipWoTq.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wssESVtERzBajWWi.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "BRIDGE IS OPEN / FIRST CROSSING COMPLETE / I-75 TO HWY 401 / $350M/DAY CORRIDOR / 60+ YEARS IN THE MAKING",
-    tagColor: "#15803d",
-    headline: "Gordie Howe Bridge Is Open — First Commercial Trucks Cross the Detroit River — First New Border Crossing Between Michigan and Ontario in More Than 60 Years",
-    summary: "The Gordie Howe International Bridge opened at noon today — Monday July 27, 2026 — marking the first new border crossing between Michigan and Ontario in more than 60 years. The six-lane cable-stayed bridge connects Interstate 75 in Detroit directly to Highway 401 in Windsor, creating the first highway-to-highway commercial crossing on the Detroit River. Commercial trucks and passenger vehicles began crossing at noon. Toll rates: $8.60 USD per axle for commercial trucks and larger vehicles. Infrastructure Minister Gregor Robertson: 'Today, we are here to celebrate more than a bridge. We are here to celebrate big opportunities for workers, businesses and communities on both sides of the Detroit River.' A truck driver who spoke to Local 4 News: 'You're going to have more opportunity to cross over the bridge without the traffic, without the waiting so long at the bridge with the border patrol.' The opening came despite a week of political noise: Trump posted on Truth Social Friday that the original deal 'no longer stands,' then Saturday posted an air filter meme. The bridge opened regardless. The 2012 Canada-Michigan agreement stands. The Ambassador Bridge continues to operate — the corridor now has redundancy for the first time since 1929. Windsor-Detroit corridor: $350 million per day. Pedestrian and bicycle access opens August 5.",
-    whyItMatters: "The bridge is open. This is the most significant supply chain infrastructure improvement for Ontario auto shops in a decade. The new I-75 to Hwy 401 direct connection means your Michigan supplier parts orders can now route via the Gordie Howe Bridge instead of the Ambassador Bridge. The new crossing is designed for commercial trucks and will reduce congestion and wait times. For your shop: if you service GM vehicles, the Gordie Howe Bridge is now an option for your parts orders. The Conservative committee investigation into the revenue deal is July 29 — 2 days. That is a political story that will generate noise but will not affect the commercial operation of the bridge. Build your 30-day GM parts buffer August 1 — 5 days. Unifor-GM bargaining starts August 10 — 14 days. Section 338 takes effect August 19 — 23 days. Autos and auto parts remain exempt from Section 338.",
-    source: "ClickOnDetroit / WDIV / MLive — July 27, 2026",
-    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/27/gordie-howe-international-bridge-set-to-open-monday-after-years-of-construction/",
+    tag: "SECTION 338 / THREE PROCLAMATIONS / MOTOR VEHICLES $19.3B / DAIRY $97M / ALCOHOL $1B / AUTOS & PARTS EXEMPT / 22 DAYS",
+    tagColor: "#b91c1c",
+    headline: "Section 338 Deep Dive: Three Proclamations — Motor Vehicles Proclamation Covers 439 HTS Codes and $19.3 Billion in Canadian Exports — Autos and Auto Parts Confirmed Exempt — CUSMA Does Not Protect Against Section 338 — 22 Days",
+    summary: "White & Case and BLG published the most detailed legal analysis yet of Section 338 today. Trump signed three separate proclamations on July 20, not one. The Motor Vehicles Proclamation is the largest: it covers 439 HTSUS subheadings across a wide variety of agricultural and manufactured products and represents $19.3 billion USD in 2024 Canadian imports to the United States. The Dairy Proclamation covers 52 HTSUS subheadings ($97.2 million in 2024 imports). The Alcoholic Beverages Proclamation covers 63 HTSUS subheadings including wood and paper products and hockey equipment ($1 billion in 2024 imports). Total exposure: approximately US$20 billion, or roughly 5 per cent of all Canadian exports to the United States. Critical confirmation: products already covered by Section 232 tariffs are explicitly exempt from Section 338. This means autos and auto parts are confirmed exempt — no products on any of the three tariff lists appear to be covered by Section 232 actions. Critical warning: CUSMA/USMCA origin does NOT exempt goods from Section 338. This is the key difference from IEEPA tariffs — the CUSMA shield that has protected the majority of Canadian exports since March 2025 does not apply to Section 338. Legal experts note the 30-day delay (July 20 to August 19) is legally required under Section 338. Ryan Majerus, former USTR official: 'The fact that it's delayed 30 days makes me think it's a negotiating tactic, it seems like leverage.' BLG notes Section 338 has never before been used to impose tariffs in its near-century on the statute books — there are no implementing regulations and no judicial precedents.",
+    whyItMatters: "The Motor Vehicles Proclamation is the one to watch — it covers 439 HTS codes and $19.3 billion in Canadian exports. Review your non-auto parts orders against the HTS code list. Your auto and auto parts supply chain remains fully protected under Section 232 — confirmed by White & Case and BLG. The CUSMA shield does not apply to Section 338 — this is the most important compliance update of the week. If you have suppliers shipping non-auto goods under CUSMA preference, those goods are NOT protected from Section 338. Get written confirmation from your suppliers on HTS classifications. 22 days to August 19. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days.",
+    source: "White & Case / BLG / Torres Trade Law — July 27-28, 2026",
+    sourceUrl: "https://www.jdsupra.com/legalnews/trump-administration-imposes-50-tariffs-1119263/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "SECTION 338 / 23 DAYS / CUSMA GOODS PARTIALLY HIT / C$28B AFFECTED / AUTOS & PARTS EXEMPT / CARNEY-TRUMP INTENSIFY TALKS",
-    tagColor: "#b91c1c",
-    headline: "Section 338 — 23 Days — Critical Update: Tariffs Would Hit Some CUSMA-Protected Goods — C$28 Billion in Canadian Exports at Risk — Autos and Auto Parts Remain Exempt — Carney and Trump Agree to Intensify Talks",
-    summary: "A critical clarification on Section 338: the 50 per cent tariffs scheduled for August 19 would hit goods previously protected by CUSMA, not just non-CUSMA goods. This is the most important update for Canadian businesses this week. Desjardins Economics estimates Section 338 would affect approximately C$28 billion ($19.8 billion USD) in annual Canadian exports — roughly 5 per cent of all Canadian shipments to the United States. Products covered: liquor, dairy products, cement, honey, hockey sticks, and some wood products. Products explicitly excluded: energy, potash, fish, and critical minerals. Autos and auto parts remain exempt from Section 338 — they are covered by Section 232, which is a separate and parallel tariff framework. PM Carney: 'If these tariffs, or other measures come into force, there's a full range of things that we can do.' Carney said retaliating immediately would be 'counterproductive' while talks continue. Carney and Trump agreed to 'intensify' trade discussions. Ontario Premier Doug Ford: Canada should 'be on offense' and keep 'everything on the table,' including a possible surcharge on electricity exports to the United States. BC Premier David Eby: 'There is not a chance in hell that U.S. alcohol is going back on the shelf in British Columbia.' Carney suggested the August 19 deadline may be part of Washington's negotiating strategy: 'Normally there's a deadline. Normally there's an outsized tariff associated with that deadline.'",
-    whyItMatters: "The Section 338 CUSMA clarification is the most important tariff update in weeks. The previous assumption was that CUSMA-compliant goods were fully protected from Section 338. They are not — the tariff would hit liquor, dairy, cement, honey, and wood products regardless of CUSMA status. The good news for your shop: autos and auto parts remain fully exempt from Section 338 under Section 232. Your parts supply chain is protected. The 23-day countdown to August 19 is the pressure valve. Carney and Trump have agreed to intensify talks — there is a non-trivial chance that a deal is reached before August 19. If no deal: Canada retaliates. Ford's electricity surcharge threat is significant — Ontario exports approximately 4,000 MW of electricity to Michigan, New York, and other U.S. states. A surcharge would hit U.S. consumers directly. Build your GM parts buffer August 1 — 5 days. Unifor-GM bargaining starts August 10 — 14 days.",
-    source: "Yahoo Finance / Benzinga / Desjardins Economics — July 26, 2026",
-    sourceUrl: "https://finance.yahoo.com/economy/policy/articles/mark-carney-warns-canada-full-220013422.html",
+    tag: "GORDIE HOWE BRIDGE / FIRST FULL DAY / GORDIE'S GRANDSON FIRST TO CROSS / TRUCKING COMPANIES USING IT / PEDESTRIAN ACCESS AUG 5",
+    tagColor: "#15803d",
+    headline: "Gordie Howe Bridge — First Full Day of Commercial Operation — Gordie Howe's Grandson Was the First Person to Cross — Trucking Companies Are Using It — Conservative Committee Tomorrow",
+    summary: "The Gordie Howe International Bridge completed its first full day of commercial operation today — Tuesday July 28, 2026. Gordie Howe's grandson was the first person to cross the bridge from Windsor to Detroit when it opened at noon yesterday. Trucking companies are using the new crossing and say disputes over toll revenue from the bridge 'will soon be in the past.' The new I-75 to Hwy 401 direct highway-to-highway connection is reducing congestion at the Ambassador Bridge. The Canada tariff fight is handing Democrats a cudgel in Michigan midterm races — U.S. political pressure from the Michigan side is building. The Conservative committee investigating the Gordie Howe Bridge revenue deal meets tomorrow — July 29. The deal: Canada gives the U.S. 50 per cent of net revenues (after operating costs, not debt repayment) for 15 years — approximately $21 million per year. Pedestrian and bicycle access opens August 5 — 8 days.",
+    whyItMatters: "The bridge is open and trucking companies are using it. This is the supply chain infrastructure story of the year for Ontario auto shops. The new I-75 to Hwy 401 direct connection is now available for your Michigan supplier parts orders. The Conservative committee investigation tomorrow is a political story — it will generate noise but will not affect commercial operations. The bridge is open. Use it. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days. Section 338 takes effect August 19 — 22 days. Autos and auto parts remain exempt from Section 338 under Section 232.",
+    source: "Montreal CityNews / CBC / WXYZ Detroit — July 27-28, 2026",
+    sourceUrl: "https://montreal.citynews.ca/video/2026/07/27/family-of-the-hockey-great-first-to-cross-as-gordie-howe-bridge-opens-to-traffic/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "UNIFOR-GM BARGAINING AUG 10 / 14 DAYS / BUILD GM BUFFER AUG 1 / 5 DAYS / FORD PATTERN 3% / SEPT 20 EXPIRY",
-    tagColor: "#15803d",
-    headline: "Unifor-GM Bargaining Starts August 10 — 14 Days — Build Your 30-Day GM Parts Buffer August 1 — 5 Days — Gordie Howe Bridge Now Open for Parts Orders From Michigan Suppliers",
-    summary: "Unifor-GM bargaining opens in Toronto on August 10 — 14 days from today. The Ford pattern is set: the Ford deal ratified this month at 74 per cent approval established 3 per cent annual wage increases as the floor. GM will be expected to match or beat the Ford pattern. The key plants at stake: the Oshawa Assembly Complex (Silverado pickup trucks) and CAMI Assembly in Ingersoll (Equinox EV). CAMI is currently idle. The Oshawa Silverado is GM's highest-margin North American truck — it is the plant GM cannot afford to lose. The September 20 contract expiry is the hard deadline. Unifor has historically used the threat of strike action at the highest-margin plant to extract concessions. The Gordie Howe Bridge opened today — a new commercial crossing that adds supply chain redundancy for GM parts flowing from Michigan suppliers. The new I-75 to Hwy 401 direct connection means your Michigan supplier parts orders can now route via the Gordie Howe Bridge. Section 301 is in effect at 10 per cent for non-CUSMA parts. CUSMA-compliant parts remain exempt. Section 338 takes effect August 19 — 23 days — autos and auto parts remain exempt under Section 232.",
-    whyItMatters: "The GM buffer window is August 1 — 5 days from today. That is the date to build your 30-day supply of GM parts before bargaining reaches its critical phase. If Unifor and GM reach an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability across Ontario. The Ford pattern at 3 per cent annual increases is the baseline — GM will likely face demands above that given the tariff environment and the political pressure on GM to invest in Canadian production. For your shop: if you service GM vehicles, build your buffer August 1. The Gordie Howe Bridge is now open — consider routing your first GM parts order via the new crossing to test the process. Section 338 takes effect August 19 — 23 days — but autos and auto parts remain exempt.",
-    source: "BNN Bloomberg / Unifor / Automotive News Canada — July 2026",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/07/21/unifor-names-general-motors-as-next-us-automaker-for-contract-talks/",
+    tag: "ANGUS REID POLL / 78% SUPPORT COUNTER-TARIFFS / CANADA REMOVED CUSMA RETALIATORY TARIFFS / CONSERVATIVE COMMITTEE TOMORROW / 22 DAYS",
+    tagColor: "#1d4ed8",
+    headline: "Angus Reid: 78% of Canadians Support Counter-Tariffs on U.S. — Canada Removed CUSMA-Covered Retaliatory Tariffs to Restart Talks — Conservative Committee on Gordie Howe Bridge Revenue Deal Tomorrow — 22 Days to August 19",
+    summary: "A new Angus Reid Institute poll released July 27 confirms that 78 per cent of Canadians support imposing counter-tariffs on the United States in response to Section 338. The poll was released one day after Canada removed its retaliatory tariffs on CUSMA-covered U.S. goods — roughly 90 per cent of U.S. imports by coverage — to match U.S. exemptions and restart trade talks. Canada retained retaliatory tariffs on steel, aluminum, and autos. Ontario's trade representative in Washington said Canadians should not expect 'one big deal' with finality — the process will be incremental. The Conservative committee investigating the Gordie Howe Bridge revenue deal meets tomorrow — July 29. The deal: Canada gives the U.S. 50 per cent of net revenues (after operating costs, not debt repayment) for 15 years — approximately $21 million per year. Liberals are ahead in polls ahead of three byelections. WestJet is offering customers free booking changes ahead of a possible strike. Section 338 takes effect August 19 — 22 days. Autos and auto parts remain exempt under Section 232.",
+    whyItMatters: "The Angus Reid poll is significant: 78 per cent of Canadians support counter-tariffs. That is political cover for Carney to retaliate if Section 338 takes effect August 19. Canada removing CUSMA-covered retaliatory tariffs was a concession to restart talks — it signals Canada wants a deal before August 19. The Conservative committee tomorrow will generate noise about the Gordie Howe Bridge revenue deal but will not affect commercial operations. For your shop: 22 days to August 19. Autos and auto parts remain exempt. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days.",
+    source: "Angus Reid Institute / CTV News / BLG — July 27-28, 2026",
+    sourceUrl: "https://www.ctvnews.ca/vancouver/video/2026/07/28/canadian-want-counter-tariffs-on-us-poll-shows/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
+    icon: "⚖️",
+    text: "Section 338 is THREE proclamations: (1) Motor Vehicles — 439 HTS codes, $19.3B; (2) Dairy — 52 HTS codes, $97M; (3) Alcoholic Beverages — 63 HTS codes, $1B. Total: ~US$20B, ~5% of Canadian exports. CUSMA does NOT protect against Section 338. Autos & parts: CONFIRMED EXEMPT (Section 232). 22 days to August 19.",
+    sourceUrl: "https://www.jdsupra.com/legalnews/trump-administration-imposes-50-tariffs-1119263/",
+  },
+  {
     icon: "🌉",
-    text: "Gordie Howe Bridge is OPEN. First commercial trucks crossing at noon today. I-75 Detroit to Hwy 401 Windsor — first new border crossing in 60+ years. Toll: $8.60 USD/axle for commercial trucks. Pedestrian/bicycle access: August 5.",
-    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/27/gordie-howe-international-bridge-set-to-open-monday-after-years-of-construction/",
+    text: "Gordie Howe Bridge — First full day of commercial operation. Gordie Howe's grandson was the first to cross. Trucking companies are using it. Conservative committee investigating revenue deal: TOMORROW July 29. Pedestrian/bicycle access: August 5.",
+    sourceUrl: "https://montreal.citynews.ca/video/2026/07/27/family-of-the-hockey-great-first-to-cross-as-gordie-howe-bridge-opens-to-traffic/",
   },
   {
-    icon: "🚨",
-    text: "Section 338 CUSMA update: tariffs would hit some CUSMA-protected goods. C$28B in Canadian exports affected. Covered: liquor, dairy, cement, honey, hockey sticks, wood. Excluded: energy, potash, fish, critical minerals. Autos & parts: EXEMPT (Section 232). 23 days to August 19.",
-    sourceUrl: "https://finance.yahoo.com/economy/policy/articles/mark-carney-warns-canada-full-220013422.html",
-  },
-  {
-    icon: "⚡",
-    text: "Ford: electricity export surcharge 'on the table.' Ontario exports ~4,000 MW to Michigan, New York, and other U.S. states. Eby: no U.S. alcohol back on BC shelves. Carney-Trump agreed to 'intensify' talks. Carney: August 19 deadline is a negotiating tactic.",
-    sourceUrl: "https://finance.yahoo.com/economy/policy/articles/mark-carney-warns-canada-full-220013422.html",
+    icon: "📊",
+    text: "Angus Reid poll: 78% of Canadians support counter-tariffs on U.S. Canada removed CUSMA-covered retaliatory tariffs to restart talks — kept steel, aluminum, auto tariffs. Ontario trade rep in Washington: no 'one big deal' coming. Liberals ahead in polls ahead of 3 byelections.",
+    sourceUrl: "https://www.ctvnews.ca/vancouver/video/2026/07/28/canadian-want-counter-tariffs-on-us-poll-shows/",
   },
   {
     icon: "🔧",
-    text: "Build your 30-day GM parts buffer August 1 — 5 days. Unifor-GM bargaining starts August 10 — 14 days. Ford pattern: 3% annual increases, 74% ratification. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry.",
+    text: "Build your 30-day GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days. Ford pattern: 3% annual increases, 74% ratification. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry.",
     sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/07/21/unifor-names-general-motors-as-next-us-automaker-for-contract-talks/",
   },
   {
-    icon: "🇨🇦",
-    text: "Conservative committee investigating Gordie Howe Bridge revenue deal — July 29 — 2 days. Alberta separation petition: 223,000 verified signatures, referendum vote required. Section 301 at 10%, CUSMA exempt, holding. CUSMA full renegotiation pushed to 2027.",
-    sourceUrl: "https://calgary.citynews.ca/2026/07/24/election-officials-validate-petition-alberta-separation/",
+    icon: "✈️",
+    text: "WestJet offering free booking changes ahead of possible strike. Section 301 at 10%, CUSMA exempt, holding. Alberta separation petition: 223,000 verified signatures, referendum vote required. CUSMA full renegotiation pushed to 2027.",
+    sourceUrl: "https://montreal.citynews.ca/video/2026/07/24/westjet-offers-customers-free-booking-changes-ahead-of-possible-strike/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build Your GM Buffer August 1 — 5 Days — The Bridge Is Open, Use It",
-  text: "The Gordie Howe Bridge opened at noon today. The new I-75 to Hwy 401 direct connection is now available for your Michigan supplier parts orders. Today's action: if you service GM vehicles, plan your 30-day parts buffer order for August 1 — 5 days from today. Unifor-GM bargaining starts August 10 — 14 days. If bargaining reaches an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability across Ontario. The buffer window is August 1. Do not wait. Section 338 takes effect August 19 — 23 days. Autos and auto parts remain exempt from Section 338 (they are under Section 232). Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant parts remain exempt. Toll for commercial trucks on the Gordie Howe Bridge: $8.60 USD per axle.",
+  title: "Section 338 HTS Code Review — Do It Today — 22 Days",
+  text: "The Motor Vehicles Proclamation covers 439 HTSUS subheadings — and it covers far more than just vehicles. It covers a wide variety of agricultural and manufactured products. Today's action: pull the HTS codes for your top 10 non-auto parts suppliers and cross-reference against the Section 338 Motor Vehicles Proclamation list. If any of your non-auto parts orders are on the list, they are NOT protected by CUSMA — Section 338 overrides CUSMA preference. Your auto and auto parts orders remain fully exempt under Section 232. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days. The Gordie Howe Bridge is open — use it for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks.",
 };
 
 const quoteOfTheDay = {
-  text: "Today, we are here to celebrate more than a bridge. We are here to celebrate big opportunities for workers, businesses and communities on both sides of the Detroit River.",
-  author: "Gregor Robertson",
-  title: "Canada's Housing and Infrastructure Minister — Gordie Howe Bridge opening, July 27, 2026",
+  text: "The fact that it's delayed 30 days makes me think it's a negotiating tactic, it seems like leverage.",
+  author: "Ryan Majerus",
+  title: "Former U.S. Trade Representative's Office official — on Section 338's 30-day delay to August 19, July 28, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 Plymouth Hemi 'Cuda — Citron Yella, Black Billboards, Ontario-Plated",
-  description: "Citron Yella — a brilliant lemon yellow that glows like a traffic light. Black billboard stripes running the full length of the lower body. Hemi 'Cuda badging on the front fenders. Shaker hood scoop. Chrome bumpers. Ontario licence plate. 426 cubic inch Hemi V8, 425 horsepower (factory-rated, widely believed to be conservative). The 1971 Plymouth Hemi 'Cuda is the rarest and most valuable American muscle car ever built. Only 107 Hemi 'Cudas were produced in 1971 — the last year of the original muscle car era before insurance rates and emissions regulations ended the golden age. A numbers-matching 1971 Hemi 'Cuda in Citron Yella sold at Barrett-Jackson for $3.5 million. The 426 Hemi engine was the most powerful production V8 of the muscle car era — a hemispherical combustion chamber design that produced prodigious torque from idle. The Gordie Howe Bridge opened today. The Hemi 'Cuda has been waiting 60 years for this crossing.",
+  name: "1969 Ford Mustang Boss 429 — Raven Black, Argent Silver Hood Stripes, Ontario-Plated",
+  description: "Raven Black — a deep, light-absorbing black that makes every panel look like it was poured from a mold. Argent Silver hood stripes running the full length of the hood. Boss 429 badging on the front fenders. The hood is open — and the reason is obvious: the 429 cubic inch Boss V8 barely fits. Ford had to completely redesign the front suspension geometry to accommodate the massive semi-hemispherical engine. Ontario licence plate. 429 cubic inch Boss V8, 375 horsepower factory-rated — widely believed to be a significant understatement to keep insurance rates manageable. The Boss 429 was built for one reason: to homologate the 429 engine for NASCAR competition. Ford needed to build 500 street cars to qualify the engine for racing. They built 859 in 1969. The result was the most exotic engine ever installed in a production Mustang — a hand-assembled, high-revving, free-breathing V8 that required Kar Kraft to cut the shock towers and move the battery to the trunk just to make it fit. The Boss 429 is the engineer's Mustang. The Boss 429 approves of the new bridge.",
   image: HOTROD_IMG,
 };
 
