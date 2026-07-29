@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 82;
-const BRIEFING_DATE = "July 28, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 83;
+const BRIEFING_DATE = "July 29, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jgipvoJwetGiIwUW.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HhHjarvoUkQMkrkT.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jaahRNiBYEqeZrFk.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GsZzvNGcpOipWoTq.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wssESVtERzBajWWi.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/utLgGwATbXhukswT.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JEbxgZJpCJRfaiGO.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/UpLozaOfuDWjPHek.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VgjaptrmZXeYAomb.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RZtLYpZgCjNzibBb.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SECTION 338 / THREE PROCLAMATIONS / MOTOR VEHICLES $19.3B / DAIRY $97M / ALCOHOL $1B / AUTOS & PARTS EXEMPT / 22 DAYS",
+    tag: "TRUMP: 'I DON'T CARE' ABOUT CUSMA / LEBLANC IN WASHINGTON / 21 DAYS / AUTOS & PARTS EXEMPT / SECTION 338 LEVERAGE TACTIC",
     tagColor: "#b91c1c",
-    headline: "Section 338 Deep Dive: Three Proclamations — Motor Vehicles Proclamation Covers 439 HTS Codes and $19.3 Billion in Canadian Exports — Autos and Auto Parts Confirmed Exempt — CUSMA Does Not Protect Against Section 338 — 22 Days",
-    summary: "White & Case and BLG published the most detailed legal analysis yet of Section 338 today. Trump signed three separate proclamations on July 20, not one. The Motor Vehicles Proclamation is the largest: it covers 439 HTSUS subheadings across a wide variety of agricultural and manufactured products and represents $19.3 billion USD in 2024 Canadian imports to the United States. The Dairy Proclamation covers 52 HTSUS subheadings ($97.2 million in 2024 imports). The Alcoholic Beverages Proclamation covers 63 HTSUS subheadings including wood and paper products and hockey equipment ($1 billion in 2024 imports). Total exposure: approximately US$20 billion, or roughly 5 per cent of all Canadian exports to the United States. Critical confirmation: products already covered by Section 232 tariffs are explicitly exempt from Section 338. This means autos and auto parts are confirmed exempt — no products on any of the three tariff lists appear to be covered by Section 232 actions. Critical warning: CUSMA/USMCA origin does NOT exempt goods from Section 338. This is the key difference from IEEPA tariffs — the CUSMA shield that has protected the majority of Canadian exports since March 2025 does not apply to Section 338. Legal experts note the 30-day delay (July 20 to August 19) is legally required under Section 338. Ryan Majerus, former USTR official: 'The fact that it's delayed 30 days makes me think it's a negotiating tactic, it seems like leverage.' BLG notes Section 338 has never before been used to impose tariffs in its near-century on the statute books — there are no implementing regulations and no judicial precedents.",
-    whyItMatters: "The Motor Vehicles Proclamation is the one to watch — it covers 439 HTS codes and $19.3 billion in Canadian exports. Review your non-auto parts orders against the HTS code list. Your auto and auto parts supply chain remains fully protected under Section 232 — confirmed by White & Case and BLG. The CUSMA shield does not apply to Section 338 — this is the most important compliance update of the week. If you have suppliers shipping non-auto goods under CUSMA preference, those goods are NOT protected from Section 338. Get written confirmation from your suppliers on HTS classifications. 22 days to August 19. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days.",
-    source: "White & Case / BLG / Torres Trade Law — July 27-28, 2026",
-    sourceUrl: "https://www.jdsupra.com/legalnews/trump-administration-imposes-50-tariffs-1119263/",
+    headline: "Trump: 'I Don't Care' About CUSMA — 'Mexico and Canada Need Us, We Don't Need Them' — LeBlanc Arrives in Washington With Chief Negotiator Charette — 21 Days to Section 338",
+    summary: "U.S. President Donald Trump said Tuesday morning on Fox & Friends that he does not care about updating the North American trade agreement. Asked if he would update CUSMA, Trump said: 'I don't care. I mean I don't really want to. I'd rather be independent. Mexico and Canada need us, we don't need them. The deal is important for them. It's not important for us.' Trump opted not to renew CUSMA on July 1, triggering a decade-long wind-down unless revisions are agreed. He cited Toyota's $3.6 billion Texas plant investment as proof his tariff strategy is working. Canada-U.S. Trade Minister Dominic LeBlanc arrived in Washington Tuesday with Canada's chief trade negotiator Janice Charette. LeBlanc's office did not specify who they are meeting or how long they will be in Washington. The United Steelworkers and International Association of Machinists — which represent workers in both the U.S. and Canada — jointly urged USTR Greer to reconsider tariffs on Canadian goods and forge a cooperative relationship to confront China's unfair trade practices. The Canadian Chamber of Commerce Business Data Lab warned Tuesday that the biggest economic cost may not be the tariffs themselves but the investment that has been halted. Patrick Gill, vice-president of the Business Data Lab: 'With all this uncertainty, it's really starting to affect our long-term competitiveness.' Angus Reid: 43 per cent of Canadians are now confident Carney can deliver a good deal with the U.S. — down from 51 per cent in April. 75 per cent of Canadians do not think Trump will stick to any deal.",
+    whyItMatters: "Trump's 'I don't care' comment is the most important signal of the week. It confirms that CUSMA renewal is not a priority for the White House. Canada is in Washington trying to negotiate a deal that the other side says it doesn't need. The 21-day countdown to Section 338 (August 19) is the real pressure valve. Autos and auto parts remain exempt from Section 338 under Section 232 — your parts supply chain is protected. The investment freeze is the hidden cost — if your shop has been delaying equipment purchases or expansion decisions because of tariff uncertainty, you are not alone. Build your GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days.",
+    source: "Reuters / CTV News / Canadian Chamber of Commerce — July 28-29, 2026",
+    sourceUrl: "https://www.reuters.com/world/americas/trump-says-he-does-not-care-about-usmca-us-canada-plan-trade-talks-2026-07-28/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "GORDIE HOWE BRIDGE / FIRST FULL DAY / GORDIE'S GRANDSON FIRST TO CROSS / TRUCKING COMPANIES USING IT / PEDESTRIAN ACCESS AUG 5",
+    tag: "TRUMP AT GM PROVING GROUND MICHIGAN / SIGNED A CORVETTE / MARY BARRA / 1000+ SUPPORTERS / MICHIGAN PRIMARY AUG 4",
     tagColor: "#15803d",
-    headline: "Gordie Howe Bridge — First Full Day of Commercial Operation — Gordie Howe's Grandson Was the First Person to Cross — Trucking Companies Are Using It — Conservative Committee Tomorrow",
-    summary: "The Gordie Howe International Bridge completed its first full day of commercial operation today — Tuesday July 28, 2026. Gordie Howe's grandson was the first person to cross the bridge from Windsor to Detroit when it opened at noon yesterday. Trucking companies are using the new crossing and say disputes over toll revenue from the bridge 'will soon be in the past.' The new I-75 to Hwy 401 direct highway-to-highway connection is reducing congestion at the Ambassador Bridge. The Canada tariff fight is handing Democrats a cudgel in Michigan midterm races — U.S. political pressure from the Michigan side is building. The Conservative committee investigating the Gordie Howe Bridge revenue deal meets tomorrow — July 29. The deal: Canada gives the U.S. 50 per cent of net revenues (after operating costs, not debt repayment) for 15 years — approximately $21 million per year. Pedestrian and bicycle access opens August 5 — 8 days.",
-    whyItMatters: "The bridge is open and trucking companies are using it. This is the supply chain infrastructure story of the year for Ontario auto shops. The new I-75 to Hwy 401 direct connection is now available for your Michigan supplier parts orders. The Conservative committee investigation tomorrow is a political story — it will generate noise but will not affect commercial operations. The bridge is open. Use it. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days. Section 338 takes effect August 19 — 22 days. Autos and auto parts remain exempt from Section 338 under Section 232.",
-    source: "Montreal CityNews / CBC / WXYZ Detroit — July 27-28, 2026",
-    sourceUrl: "https://montreal.citynews.ca/video/2026/07/27/family-of-the-hockey-great-first-to-cross-as-gordie-howe-bridge-opens-to-traffic/",
+    headline: "Trump at GM Milford Proving Ground Monday — Signed a Corvette — Mary Barra Introduced Him — 'We Have the Hottest Car Business' — Michigan Primary August 4 — 6 Days",
+    summary: "President Trump visited the General Motors Milford Proving Ground in Oakland County, Michigan on Monday July 27 — the same day the Gordie Howe Bridge opened. More than 1,000 supporters attended. GM CEO Mary Barra introduced Trump on stage. Trump signed a Chevrolet Corvette during the visit. Trump defended his tariff policies and said they are bringing manufacturing back to the United States. He cited Toyota's $3.6 billion Texas plant investment as proof: 'We have the hottest car business. We're right now building more car plants than at any time in our history.' Trump said automakers 'have no tariffs if they build their product here.' Six protesters briefly disrupted the event over data center development in Michigan before being escorted out. Michigan primary is August 4 — 6 days. The Canada tariff fight is handing Democrats a cudgel in Michigan midterm races — U.S. political pressure from the Michigan side is building. Michigan Governor Gretchen Whitmer posted about the Gordie Howe Bridge: 'The Gordie Howe bridge is proof that when we work together, we can get hard things done.'",
+    whyItMatters: "Trump chose to hold his Michigan rally at the GM Proving Ground on the same day the Gordie Howe Bridge opened. The symbolism is deliberate: Trump is claiming credit for the auto investment story while Canada is celebrating the bridge. The Michigan primary is August 4 — 6 days. The Canada tariff fight is a live political issue in Michigan. Whitmer is positioning herself as pro-bridge, pro-Canada cooperation — a direct contrast to Trump. For your shop: Trump's 'build it here' message means the tariff pressure on Canadian-assembled vehicles is not going away. Autos and auto parts remain exempt from Section 338 under Section 232. Build your GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days.",
+    source: "MLive / AP / Michigan Governor's Office — July 27-28, 2026",
+    sourceUrl: "https://www.mlive.com/politics/2026/07/our-favorite-25-photos-from-president-trumps-visit-to-gm-proving-grounds.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "ANGUS REID POLL / 78% SUPPORT COUNTER-TARIFFS / CANADA REMOVED CUSMA RETALIATORY TARIFFS / CONSERVATIVE COMMITTEE TOMORROW / 22 DAYS",
+    tag: "CONSERVATIVE COMMITTEE / GORDIE HOWE BRIDGE REVENUE DEAL / MOSTLY ADMINISTRATIVE / BRIDGE OPERATING / PEDESTRIAN ACCESS AUG 5",
     tagColor: "#1d4ed8",
-    headline: "Angus Reid: 78% of Canadians Support Counter-Tariffs on U.S. — Canada Removed CUSMA-Covered Retaliatory Tariffs to Restart Talks — Conservative Committee on Gordie Howe Bridge Revenue Deal Tomorrow — 22 Days to August 19",
-    summary: "A new Angus Reid Institute poll released July 27 confirms that 78 per cent of Canadians support imposing counter-tariffs on the United States in response to Section 338. The poll was released one day after Canada removed its retaliatory tariffs on CUSMA-covered U.S. goods — roughly 90 per cent of U.S. imports by coverage — to match U.S. exemptions and restart trade talks. Canada retained retaliatory tariffs on steel, aluminum, and autos. Ontario's trade representative in Washington said Canadians should not expect 'one big deal' with finality — the process will be incremental. The Conservative committee investigating the Gordie Howe Bridge revenue deal meets tomorrow — July 29. The deal: Canada gives the U.S. 50 per cent of net revenues (after operating costs, not debt repayment) for 15 years — approximately $21 million per year. Liberals are ahead in polls ahead of three byelections. WestJet is offering customers free booking changes ahead of a possible strike. Section 338 takes effect August 19 — 22 days. Autos and auto parts remain exempt under Section 232.",
-    whyItMatters: "The Angus Reid poll is significant: 78 per cent of Canadians support counter-tariffs. That is political cover for Carney to retaliate if Section 338 takes effect August 19. Canada removing CUSMA-covered retaliatory tariffs was a concession to restart talks — it signals Canada wants a deal before August 19. The Conservative committee tomorrow will generate noise about the Gordie Howe Bridge revenue deal but will not affect commercial operations. For your shop: 22 days to August 19. Autos and auto parts remain exempt. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days.",
-    source: "Angus Reid Institute / CTV News / BLG — July 27-28, 2026",
-    sourceUrl: "https://www.ctvnews.ca/vancouver/video/2026/07/28/canadian-want-counter-tariffs-on-us-poll-shows/",
+    headline: "Conservative Committee on Gordie Howe Bridge Revenue Deal — Mostly Administrative Today — Discussing Scope of Investigation — Bridge Operating Normally — Pedestrian Access August 5 — 7 Days",
+    summary: "The Conservative-led House Government Operations Committee convened an emergency meeting today — Wednesday July 29 — to investigate the Gordie Howe Bridge revenue deal. Conservative MP Kelly McCauley organized the meeting. The meeting was mostly administrative: the committee discussed the scope of the investigation and set up a schedule for witnesses. No bombshells were expected or delivered today. The deal under investigation: Canada agreed to give the United States 50 per cent of net revenues from the bridge (after operating costs, not debt repayment) for 15 years — approximately $21 million per year. PM Carney acknowledged last week that he 'should have been clearer' about the deal. The bridge is open and operating normally regardless of the committee investigation. Commercial trucks and passenger vehicles are using the new I-75 to Hwy 401 direct crossing. Pedestrian and bicycle access opens August 5 — 7 days. Michigan Governor Gretchen Whitmer: 'The Gordie Howe bridge is proof that when we work together, we can get hard things done.'",
+    whyItMatters: "The committee investigation is a political story. It will generate noise over the next several weeks but will not affect the commercial operation of the bridge. The bridge is open. Use it. The revenue deal is a 15-year arrangement worth approximately $21 million per year to the U.S. — a small price for a $350 million per day corridor. For your shop: the Gordie Howe Bridge is now available for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks. Pedestrian/bicycle access opens August 5 — 7 days. Build your GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days. Section 338 takes effect August 19 — 21 days. Autos and auto parts remain exempt.",
+    source: "Canadian Press / Lethbridge News Now / Penticton Herald — July 29, 2026",
+    sourceUrl: "https://lethbridgenewsnow.com/2026/07/29/in-the-news-today-gordie-howe-bridge-deal-debate-westjet-strike-lost-ring-returned/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "⚖️",
-    text: "Section 338 is THREE proclamations: (1) Motor Vehicles — 439 HTS codes, $19.3B; (2) Dairy — 52 HTS codes, $97M; (3) Alcoholic Beverages — 63 HTS codes, $1B. Total: ~US$20B, ~5% of Canadian exports. CUSMA does NOT protect against Section 338. Autos & parts: CONFIRMED EXEMPT (Section 232). 22 days to August 19.",
-    sourceUrl: "https://www.jdsupra.com/legalnews/trump-administration-imposes-50-tariffs-1119263/",
+    icon: "🚨",
+    text: "Trump: 'I don't care' about CUSMA. 'Mexico and Canada need us, we don't need them.' LeBlanc in Washington with chief negotiator Charette. Angus Reid: 43% of Canadians confident Carney can get a good deal (down from 51% in April). 75% don't think Trump will stick to any deal. 21 days to August 19.",
+    sourceUrl: "https://www.reuters.com/world/americas/trump-says-he-does-not-care-about-usmca-us-canada-plan-trade-talks-2026-07-28/",
+  },
+  {
+    icon: "🚗",
+    text: "Trump at GM Milford Proving Ground Monday — signed a Corvette. Mary Barra introduced him. 1,000+ supporters. 'We have the hottest car business. We're right now building more car plants than at any time in our history.' Michigan primary August 4 — 6 days.",
+    sourceUrl: "https://www.mlive.com/politics/2026/07/our-favorite-25-photos-from-president-trumps-visit-to-gm-proving-grounds.html",
   },
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge — First full day of commercial operation. Gordie Howe's grandson was the first to cross. Trucking companies are using it. Conservative committee investigating revenue deal: TOMORROW July 29. Pedestrian/bicycle access: August 5.",
-    sourceUrl: "https://montreal.citynews.ca/video/2026/07/27/family-of-the-hockey-great-first-to-cross-as-gordie-howe-bridge-opens-to-traffic/",
-  },
-  {
-    icon: "📊",
-    text: "Angus Reid poll: 78% of Canadians support counter-tariffs on U.S. Canada removed CUSMA-covered retaliatory tariffs to restart talks — kept steel, aluminum, auto tariffs. Ontario trade rep in Washington: no 'one big deal' coming. Liberals ahead in polls ahead of 3 byelections.",
-    sourceUrl: "https://www.ctvnews.ca/vancouver/video/2026/07/28/canadian-want-counter-tariffs-on-us-poll-shows/",
+    text: "Gordie Howe Bridge: Conservative committee meeting today — mostly administrative, scope of investigation. Bridge operating normally. Pedestrian/bicycle access August 5 — 7 days. Michigan Governor Whitmer: 'Proof that when we work together, we can get hard things done.'",
+    sourceUrl: "https://lethbridgenewsnow.com/2026/07/29/in-the-news-today-gordie-howe-bridge-deal-debate-westjet-strike-lost-ring-returned/",
   },
   {
     icon: "🔧",
-    text: "Build your 30-day GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days. Ford pattern: 3% annual increases, 74% ratification. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry.",
+    text: "Build your 30-day GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days. Ford pattern: 3% annual increases, 74% ratification. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry.",
     sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/07/21/unifor-names-general-motors-as-next-us-automaker-for-contract-talks/",
   },
   {
-    icon: "✈️",
-    text: "WestJet offering free booking changes ahead of possible strike. Section 301 at 10%, CUSMA exempt, holding. Alberta separation petition: 223,000 verified signatures, referendum vote required. CUSMA full renegotiation pushed to 2027.",
-    sourceUrl: "https://montreal.citynews.ca/video/2026/07/24/westjet-offers-customers-free-booking-changes-ahead-of-possible-strike/",
+    icon: "🛢️",
+    text: "Canadian oil exports to U.S. INCREASED in May 2026 despite trade turmoil. WestJet offering free booking changes ahead of possible strike. Section 301 at 10%, CUSMA exempt, holding. Canadian Chamber of Commerce: investment freeze is the hidden cost of tariff uncertainty.",
+    sourceUrl: "https://www.industrialinfo.com/news/article/despite-trade-turmoil-canadian-oil-exports-increased-in-may--360713",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Section 338 HTS Code Review — Do It Today — 22 Days",
-  text: "The Motor Vehicles Proclamation covers 439 HTSUS subheadings — and it covers far more than just vehicles. It covers a wide variety of agricultural and manufactured products. Today's action: pull the HTS codes for your top 10 non-auto parts suppliers and cross-reference against the Section 338 Motor Vehicles Proclamation list. If any of your non-auto parts orders are on the list, they are NOT protected by CUSMA — Section 338 overrides CUSMA preference. Your auto and auto parts orders remain fully exempt under Section 232. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt. Build your GM parts buffer August 1 — 4 days. Unifor-GM bargaining starts August 10 — 13 days. The Gordie Howe Bridge is open — use it for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks.",
+  title: "Build Your GM Buffer August 1 — 3 Days — Don't Wait for the Talks to Resolve",
+  text: "LeBlanc is in Washington. Trump says he doesn't care about CUSMA. The 21-day countdown to Section 338 (August 19) is the real pressure valve. Today's action: if you service GM vehicles, place your 30-day parts buffer order on August 1 — 3 days from today. Do not wait for the trade talks to resolve. They may not resolve before August 19. Unifor-GM bargaining starts August 10 — 12 days. If bargaining reaches an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability. Autos and auto parts remain exempt from Section 338 under Section 232 — your parts supply chain is protected from the August 19 tariffs. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt. The Gordie Howe Bridge is open — use it for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks.",
 };
 
 const quoteOfTheDay = {
-  text: "The fact that it's delayed 30 days makes me think it's a negotiating tactic, it seems like leverage.",
-  author: "Ryan Majerus",
-  title: "Former U.S. Trade Representative's Office official — on Section 338's 30-day delay to August 19, July 28, 2026",
+  text: "I don't care. I mean I don't really want to. I'd rather be independent. Mexico and Canada need us, we don't need them. The deal is important for them. It's not important for us.",
+  author: "Donald Trump",
+  title: "U.S. President — Fox & Friends, on whether he would update CUSMA, July 28, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Ford Mustang Boss 429 — Raven Black, Argent Silver Hood Stripes, Ontario-Plated",
-  description: "Raven Black — a deep, light-absorbing black that makes every panel look like it was poured from a mold. Argent Silver hood stripes running the full length of the hood. Boss 429 badging on the front fenders. The hood is open — and the reason is obvious: the 429 cubic inch Boss V8 barely fits. Ford had to completely redesign the front suspension geometry to accommodate the massive semi-hemispherical engine. Ontario licence plate. 429 cubic inch Boss V8, 375 horsepower factory-rated — widely believed to be a significant understatement to keep insurance rates manageable. The Boss 429 was built for one reason: to homologate the 429 engine for NASCAR competition. Ford needed to build 500 street cars to qualify the engine for racing. They built 859 in 1969. The result was the most exotic engine ever installed in a production Mustang — a hand-assembled, high-revving, free-breathing V8 that required Kar Kraft to cut the shock towers and move the battery to the trunk just to make it fit. The Boss 429 is the engineer's Mustang. The Boss 429 approves of the new bridge.",
+  name: "1970 Chevrolet Corvette Stingray LT1 — Bridgehampton Blue, White Stinger Stripe, Ontario-Plated",
+  description: "Bridgehampton Blue — a deep, rich medium blue with a slight metallic shimmer named after the Bridgehampton race circuit in New York. White Stinger stripe running from the nose back over the hood and down the rear deck. T-top roof panels removed, showing the open cockpit. Chrome side pipes. Ontario licence plate. 350 cubic inch LT1 V8, 370 horsepower — the highest-output small-block Chevrolet ever installed in a production car at the time. The LT1 was the performance engine for buyers who wanted the Corvette's soul without the complexity of the big-block. Solid lifters, 11:1 compression, Holley four-barrel carburetor. The 1970 Corvette Stingray is the most refined expression of the C3 generation — the year the body was restyled with flared fenders, an egg-crate grille, and the iconic Stingray script. Trump signed a Corvette at the GM Proving Ground on Monday. This one is Ontario-plated. The Stingray does not care about CUSMA either.",
   image: HOTROD_IMG,
 };
 
