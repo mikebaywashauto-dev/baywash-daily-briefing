@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 83;
-const BRIEFING_DATE = "July 29, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 84;
+const BRIEFING_DATE = "July 30, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/utLgGwATbXhukswT.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JEbxgZJpCJRfaiGO.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/UpLozaOfuDWjPHek.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VgjaptrmZXeYAomb.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RZtLYpZgCjNzibBb.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KUFeUeTpWNpPXtzf.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KIYuACtlIxNzyrUu.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mDMNNYkugSGgGscc.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/neMYEYBiJJjKxTML.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/irYcWpbCElOQqrPa.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "TRUMP: 'I DON'T CARE' ABOUT CUSMA / LEBLANC IN WASHINGTON / 21 DAYS / AUTOS & PARTS EXEMPT / SECTION 338 LEVERAGE TACTIC",
+    tag: "LEBLANC MEETS GREER IN WASHINGTON / 'AGREED TO REMAIN IN CLOSE CONTACT' / SECTION 338 LEGAL CHALLENGE LIKELY / 20 DAYS / AUTOS & PARTS EXEMPT",
     tagColor: "#b91c1c",
-    headline: "Trump: 'I Don't Care' About CUSMA — 'Mexico and Canada Need Us, We Don't Need Them' — LeBlanc Arrives in Washington With Chief Negotiator Charette — 21 Days to Section 338",
-    summary: "U.S. President Donald Trump said Tuesday morning on Fox & Friends that he does not care about updating the North American trade agreement. Asked if he would update CUSMA, Trump said: 'I don't care. I mean I don't really want to. I'd rather be independent. Mexico and Canada need us, we don't need them. The deal is important for them. It's not important for us.' Trump opted not to renew CUSMA on July 1, triggering a decade-long wind-down unless revisions are agreed. He cited Toyota's $3.6 billion Texas plant investment as proof his tariff strategy is working. Canada-U.S. Trade Minister Dominic LeBlanc arrived in Washington Tuesday with Canada's chief trade negotiator Janice Charette. LeBlanc's office did not specify who they are meeting or how long they will be in Washington. The United Steelworkers and International Association of Machinists — which represent workers in both the U.S. and Canada — jointly urged USTR Greer to reconsider tariffs on Canadian goods and forge a cooperative relationship to confront China's unfair trade practices. The Canadian Chamber of Commerce Business Data Lab warned Tuesday that the biggest economic cost may not be the tariffs themselves but the investment that has been halted. Patrick Gill, vice-president of the Business Data Lab: 'With all this uncertainty, it's really starting to affect our long-term competitiveness.' Angus Reid: 43 per cent of Canadians are now confident Carney can deliver a good deal with the U.S. — down from 51 per cent in April. 75 per cent of Canadians do not think Trump will stick to any deal.",
-    whyItMatters: "Trump's 'I don't care' comment is the most important signal of the week. It confirms that CUSMA renewal is not a priority for the White House. Canada is in Washington trying to negotiate a deal that the other side says it doesn't need. The 21-day countdown to Section 338 (August 19) is the real pressure valve. Autos and auto parts remain exempt from Section 338 under Section 232 — your parts supply chain is protected. The investment freeze is the hidden cost — if your shop has been delaying equipment purchases or expansion decisions because of tariff uncertainty, you are not alone. Build your GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days.",
-    source: "Reuters / CTV News / Canadian Chamber of Commerce — July 28-29, 2026",
-    sourceUrl: "https://www.reuters.com/world/americas/trump-says-he-does-not-care-about-usmca-us-canada-plan-trade-talks-2026-07-28/",
+    headline: "LeBlanc Meets USTR Greer in Washington — 'Agreed to Remain in Close Contact' — Legal Challenge to Section 338 'Likely' — ITC Made No Recommendations — 20 Days to August 19",
+    summary: "Canada-U.S. Trade Minister Dominic LeBlanc and chief negotiator Janice Charette met with USTR Jamieson Greer in Washington Wednesday. LeBlanc posted after the meeting: 'We agreed to remain in close contact and continue working together.' That is diplomatic language for: nothing was resolved. LeBlanc is spending a second day in Washington Thursday. LeBlanc attended a Canada-U.S. Friendship Day Blue Jays vs. Nationals baseball game Tuesday wearing a Washington Nationals jersey — an Expos-themed hat included with the tickets. 'My father was a lifelong Montreal Expos fan and every spring break, I looked forward to watching the Expos' spring training games in Florida with him,' LeBlanc wrote. National Post reported Thursday that a legal challenge to Section 338 is 'likely' and may succeed more than Section 301 litigation. The key legal vulnerability: Section 338 requires the International Trade Commission (ITC) to monitor global trade and advise the White House. The ITC made no recommendations in this case. Cato Institute's Clark Packard: 'A legal challenge is going to happen. I think it's more likely to succeed than Section 301 litigation.' Customs lawyer Carrie Owens (Kelley Drye): 'It does not state the president can only act after an ITC report or recommendation.' Andrew Hale (Advancing American Freedom): 'Is it just more TACO — Trump Always Chickens Out? Or is it just a threat to get the Canadians to do what he wants them to?' Trade experts say the 30-day delay is a negotiating tactic. But the legal challenge, if filed, may not be resolved before August 19.",
+    whyItMatters: "'We agreed to remain in close contact' is the most important phrase of the week. It means LeBlanc and Greer met, shook hands, and resolved nothing. Canada has 20 days to August 19. A legal challenge is likely but may not stop the tariffs in time. The ITC vulnerability is real — but courts move slowly. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. Build your GM parts buffer TOMORROW — August 1. Do not wait for the legal challenge or the talks to resolve. Unifor-GM bargaining starts August 10 — 11 days. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt.",
+    source: "TSN / National Post / Cato Institute — July 29-30, 2026",
+    sourceUrl: "https://www.tsn.ca/mlb/article/sporting-a-washington-jersey-leblanc-attends-friendship-day-baseball-game-in-dc/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "TRUMP AT GM PROVING GROUND MICHIGAN / SIGNED A CORVETTE / MARY BARRA / 1000+ SUPPORTERS / MICHIGAN PRIMARY AUG 4",
+    tag: "CARNEY RULES OUT ENERGY LEVERAGE / 'BEING A RELIABLE SUPPLIER IS IMPORTANT' / RED DEER WITH SMITH / FORD WANTED ENERGY WEAPON",
     tagColor: "#15803d",
-    headline: "Trump at GM Milford Proving Ground Monday — Signed a Corvette — Mary Barra Introduced Him — 'We Have the Hottest Car Business' — Michigan Primary August 4 — 6 Days",
-    summary: "President Trump visited the General Motors Milford Proving Ground in Oakland County, Michigan on Monday July 27 — the same day the Gordie Howe Bridge opened. More than 1,000 supporters attended. GM CEO Mary Barra introduced Trump on stage. Trump signed a Chevrolet Corvette during the visit. Trump defended his tariff policies and said they are bringing manufacturing back to the United States. He cited Toyota's $3.6 billion Texas plant investment as proof: 'We have the hottest car business. We're right now building more car plants than at any time in our history.' Trump said automakers 'have no tariffs if they build their product here.' Six protesters briefly disrupted the event over data center development in Michigan before being escorted out. Michigan primary is August 4 — 6 days. The Canada tariff fight is handing Democrats a cudgel in Michigan midterm races — U.S. political pressure from the Michigan side is building. Michigan Governor Gretchen Whitmer posted about the Gordie Howe Bridge: 'The Gordie Howe bridge is proof that when we work together, we can get hard things done.'",
-    whyItMatters: "Trump chose to hold his Michigan rally at the GM Proving Ground on the same day the Gordie Howe Bridge opened. The symbolism is deliberate: Trump is claiming credit for the auto investment story while Canada is celebrating the bridge. The Michigan primary is August 4 — 6 days. The Canada tariff fight is a live political issue in Michigan. Whitmer is positioning herself as pro-bridge, pro-Canada cooperation — a direct contrast to Trump. For your shop: Trump's 'build it here' message means the tariff pressure on Canadian-assembled vehicles is not going away. Autos and auto parts remain exempt from Section 338 under Section 232. Build your GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days.",
-    source: "MLive / AP / Michigan Governor's Office — July 27-28, 2026",
-    sourceUrl: "https://www.mlive.com/politics/2026/07/our-favorite-25-photos-from-president-trumps-visit-to-gm-proving-grounds.html",
+    headline: "Carney Rules Out Energy as Leverage in Trade Talks — 'Being a Reliable Supplier Is Important' — Red Deer With Premier Smith — Ford Had Called for Energy Weapon",
+    summary: "Prime Minister Mark Carney pushed back Wednesday on calls to use Canada's energy exports as leverage in trade negotiations with the United States. Speaking alongside Alberta Premier Danielle Smith in Red Deer, Carney said: 'Being a reliable supplier is important. Suppliers of critical commodities like energy should think long and hard before cutting off customers.' Ontario Premier Doug Ford had said last week that Canada could 'dismantle' the United States if Ottawa and the provinces agreed to use energy exports as leverage against Washington's latest threatened tariffs. Carney rejected the characterization of energy and critical minerals as 'leverage' in negotiations. 'We have many things we can do. The first and foremost is to work towards an agreement. That's what we're going to do. But there's other things we could do if we needed to address the situation,' Carney said. USTR Greer has said Section 338 is a response to: (1) provincial bans on U.S. liquor, (2) Canada's supply managed dairy system, (3) quotas on certain U.S. vehicles. Canada removed CUSMA-covered retaliatory tariffs to restart talks — kept steel, aluminum, and auto tariffs in place. 20 days to Section 338 (August 19). Autos and auto parts: EXEMPT under Section 232.",
+    whyItMatters: "Carney's 'reliable supplier' framing is a deliberate signal to Alberta and to Washington: Canada will not use energy as a weapon. This is the right call for the long-term relationship but it removes Canada's most powerful leverage card. Ford's 'dismantle' rhetoric was never going to happen — Carney is managing expectations. For your shop: the trade talks are proceeding on Canada's terms, which means patience and process. The 20-day countdown to Section 338 (August 19) is real. Autos and auto parts remain exempt. Build your GM parts buffer TOMORROW — August 1. Unifor-GM bargaining starts August 10 — 11 days.",
+    source: "Canadian Press / SaskNow / The Deep Dive — July 29-30, 2026",
+    sourceUrl: "https://sasknow.com/2026/07/29/being-a-reliable-supplier-is-important-carney-on-using-energy-in-u-s-trade-talks/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CONSERVATIVE COMMITTEE / GORDIE HOWE BRIDGE REVENUE DEAL / MOSTLY ADMINISTRATIVE / BRIDGE OPERATING / PEDESTRIAN ACCESS AUG 5",
+    tag: "WESTJET STRIKE CLOCK TICKING / 4400 CUPE FLIGHT ATTENDANTS / 99.4% STRIKE VOTE / AUG 2 DEADLINE / FEDERAL MEDIATORS INVOLVED",
     tagColor: "#1d4ed8",
-    headline: "Conservative Committee on Gordie Howe Bridge Revenue Deal — Mostly Administrative Today — Discussing Scope of Investigation — Bridge Operating Normally — Pedestrian Access August 5 — 7 Days",
-    summary: "The Conservative-led House Government Operations Committee convened an emergency meeting today — Wednesday July 29 — to investigate the Gordie Howe Bridge revenue deal. Conservative MP Kelly McCauley organized the meeting. The meeting was mostly administrative: the committee discussed the scope of the investigation and set up a schedule for witnesses. No bombshells were expected or delivered today. The deal under investigation: Canada agreed to give the United States 50 per cent of net revenues from the bridge (after operating costs, not debt repayment) for 15 years — approximately $21 million per year. PM Carney acknowledged last week that he 'should have been clearer' about the deal. The bridge is open and operating normally regardless of the committee investigation. Commercial trucks and passenger vehicles are using the new I-75 to Hwy 401 direct crossing. Pedestrian and bicycle access opens August 5 — 7 days. Michigan Governor Gretchen Whitmer: 'The Gordie Howe bridge is proof that when we work together, we can get hard things done.'",
-    whyItMatters: "The committee investigation is a political story. It will generate noise over the next several weeks but will not affect the commercial operation of the bridge. The bridge is open. Use it. The revenue deal is a 15-year arrangement worth approximately $21 million per year to the U.S. — a small price for a $350 million per day corridor. For your shop: the Gordie Howe Bridge is now available for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks. Pedestrian/bicycle access opens August 5 — 7 days. Build your GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days. Section 338 takes effect August 19 — 21 days. Autos and auto parts remain exempt.",
-    source: "Canadian Press / Lethbridge News Now / Penticton Herald — July 29, 2026",
-    sourceUrl: "https://lethbridgenewsnow.com/2026/07/29/in-the-news-today-gordie-howe-bridge-deal-debate-westjet-strike-lost-ring-returned/",
+    headline: "WestJet Strike Clock Ticking — 4,400 CUPE Flight Attendants Voted 99.4% in Favour — August 2 Deadline — Today Is First Day for 72-Hour Strike Notice — Federal Mediators Still Involved",
+    summary: "WestJet, Canada's second-largest airline, is preparing to wind down operations ahead of a possible flight attendant strike or lockout as early as August 2. The CUPE WestJet Component — representing 4,400 flight attendants — voted 99.4 per cent in favour of a strike in mid-July. Today — Thursday July 30 — is the first day the union can legally give 72-hour strike notice, which would put the earliest possible strike or lockout at August 2. WestJet has not announced flight cancellations but has offered to waive cancellation or change fees for passengers travelling between July 30 and August 4. Federal mediators remain involved. Transport Minister Steven MacKinnon: 'My understanding is that those talks are progressing. We're hopeful that they reach a negotiated agreement.' The key issue: flight attendants claim approximately 35 hours per month are unpaid — boarding, deplaning, ground delays. WestJet CEO Alexis von Hoensbroech: 'Under our current contract, flight attendants are being paid for every hour worked.' The union: 'The best way to avoid a strike is for WestJet to do the right thing and end the practice of unpaid work.' WestJet last experienced a major labour dispute in summer 2024 when unionized mechanics struck over the Canada Day long weekend.",
+    whyItMatters: "This is not a tariff story but it is a summer travel disruption story. If WestJet flight attendants strike August 2, thousands of Canadians will be stranded during the August long weekend — including your customers and suppliers. If you or your staff are flying WestJet between July 30 and August 4, check your booking now and consider changing to Air Canada. WestJet is waiving change fees. The Air Canada precedent from 2025 is instructive: binding arbitration eventually settled the dispute, but it took weeks. For your shop: this is a reminder that labour disruption risk is elevated across Canada right now — WestJet, Unifor-GM (August 10), and the broader tariff uncertainty are all converging in August.",
+    source: "CBC News / Vancouver CityNews — July 29-30, 2026",
+    sourceUrl: "https://www.cbc.ca/news/business/westjet-winddown-strike-9.7289209",
     image: STORY3_IMG,
   },
 ];
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "🚨",
-    text: "Trump: 'I don't care' about CUSMA. 'Mexico and Canada need us, we don't need them.' LeBlanc in Washington with chief negotiator Charette. Angus Reid: 43% of Canadians confident Carney can get a good deal (down from 51% in April). 75% don't think Trump will stick to any deal. 21 days to August 19.",
-    sourceUrl: "https://www.reuters.com/world/americas/trump-says-he-does-not-care-about-usmca-us-canada-plan-trade-talks-2026-07-28/",
+    text: "LeBlanc met USTR Greer Wednesday. Post-meeting: 'We agreed to remain in close contact and continue working together.' That is diplomatic language for nothing was resolved. LeBlanc is spending a second day in Washington Thursday. 20 days to August 19. Autos and parts: EXEMPT.",
+    sourceUrl: "https://www.tsn.ca/mlb/article/sporting-a-washington-jersey-leblanc-attends-friendship-day-baseball-game-in-dc/",
   },
   {
-    icon: "🚗",
-    text: "Trump at GM Milford Proving Ground Monday — signed a Corvette. Mary Barra introduced him. 1,000+ supporters. 'We have the hottest car business. We're right now building more car plants than at any time in our history.' Michigan primary August 4 — 6 days.",
-    sourceUrl: "https://www.mlive.com/politics/2026/07/our-favorite-25-photos-from-president-trumps-visit-to-gm-proving-grounds.html",
+    icon: "⚖️",
+    text: "National Post: Section 338 legal challenge 'likely' — ITC made no recommendations, making it legally vulnerable. Cato Institute: 'A legal challenge is going to happen. I think it's more likely to succeed than Section 301 litigation.' But courts move slowly — may not stop August 19.",
+    sourceUrl: "https://nationalpost.com/news/were-a-pawn-in-a-larger-game-a-legal-challenge-is-likely-on-trumps-new-tariffs-it-may-be-too-late",
   },
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge: Conservative committee meeting today — mostly administrative, scope of investigation. Bridge operating normally. Pedestrian/bicycle access August 5 — 7 days. Michigan Governor Whitmer: 'Proof that when we work together, we can get hard things done.'",
-    sourceUrl: "https://lethbridgenewsnow.com/2026/07/29/in-the-news-today-gordie-howe-bridge-deal-debate-westjet-strike-lost-ring-returned/",
+    text: "Gordie Howe Bridge operating normally — first full week of commercial operation. Pedestrian/bicycle access opens August 5 — 6 days. Toll: $8.60 USD per axle for commercial trucks. Windsor-Detroit corridor: $350M/day.",
+    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/27/gordie-howe-international-bridge-set-to-open-monday-after-years-of-construction/",
   },
   {
     icon: "🔧",
-    text: "Build your 30-day GM parts buffer August 1 — 3 days. Unifor-GM bargaining starts August 10 — 12 days. Ford pattern: 3% annual increases, 74% ratification. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry.",
+    text: "BUILD YOUR GM BUFFER TOMORROW — August 1. Unifor-GM bargaining starts August 10 — 11 days. Ford pattern: 3% annual increases, 74% ratification. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry.",
     sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/07/21/unifor-names-general-motors-as-next-us-automaker-for-contract-talks/",
   },
   {
-    icon: "🛢️",
-    text: "Canadian oil exports to U.S. INCREASED in May 2026 despite trade turmoil. WestJet offering free booking changes ahead of possible strike. Section 301 at 10%, CUSMA exempt, holding. Canadian Chamber of Commerce: investment freeze is the hidden cost of tariff uncertainty.",
-    sourceUrl: "https://www.industrialinfo.com/news/article/despite-trade-turmoil-canadian-oil-exports-increased-in-may--360713",
+    icon: "✈️",
+    text: "WestJet: today is the first day the union can give 72-hour strike notice. August 2 deadline. WestJet waiving change fees for July 30–August 4. Federal mediators involved. If you're flying WestJet this long weekend, check your booking now.",
+    sourceUrl: "https://www.cbc.ca/news/business/westjet-winddown-strike-9.7289209",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build Your GM Buffer August 1 — 3 Days — Don't Wait for the Talks to Resolve",
-  text: "LeBlanc is in Washington. Trump says he doesn't care about CUSMA. The 21-day countdown to Section 338 (August 19) is the real pressure valve. Today's action: if you service GM vehicles, place your 30-day parts buffer order on August 1 — 3 days from today. Do not wait for the trade talks to resolve. They may not resolve before August 19. Unifor-GM bargaining starts August 10 — 12 days. If bargaining reaches an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability. Autos and auto parts remain exempt from Section 338 under Section 232 — your parts supply chain is protected from the August 19 tariffs. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt. The Gordie Howe Bridge is open — use it for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks.",
+  title: "Build Your GM Buffer TOMORROW — August 1 — LeBlanc Met Greer and Resolved Nothing",
+  text: "LeBlanc met USTR Greer in Washington and they 'agreed to remain in close contact.' That is diplomatic language for: nothing was resolved. You have 20 days to August 19. A legal challenge to Section 338 is likely but may not stop the tariffs in time. Today's action: if you service GM vehicles, place your 30-day parts buffer order TOMORROW — August 1. Do not wait for the legal challenge or the trade talks to resolve. Unifor-GM bargaining starts August 10 — 11 days. If bargaining reaches an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability. Autos and auto parts remain exempt from Section 338 under Section 232 — your parts supply chain is protected from the August 19 tariffs. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt. The Gordie Howe Bridge is open — use it for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks. Pedestrian/bicycle access opens August 5 — 6 days.",
 };
 
 const quoteOfTheDay = {
-  text: "I don't care. I mean I don't really want to. I'd rather be independent. Mexico and Canada need us, we don't need them. The deal is important for them. It's not important for us.",
-  author: "Donald Trump",
-  title: "U.S. President — Fox & Friends, on whether he would update CUSMA, July 28, 2026",
+  text: "We agreed to remain in close contact and continue working together.",
+  author: "Trade Minister Dominic LeBlanc",
+  title: "After meeting USTR Greer in Washington — July 29, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Chevrolet Corvette Stingray LT1 — Bridgehampton Blue, White Stinger Stripe, Ontario-Plated",
-  description: "Bridgehampton Blue — a deep, rich medium blue with a slight metallic shimmer named after the Bridgehampton race circuit in New York. White Stinger stripe running from the nose back over the hood and down the rear deck. T-top roof panels removed, showing the open cockpit. Chrome side pipes. Ontario licence plate. 350 cubic inch LT1 V8, 370 horsepower — the highest-output small-block Chevrolet ever installed in a production car at the time. The LT1 was the performance engine for buyers who wanted the Corvette's soul without the complexity of the big-block. Solid lifters, 11:1 compression, Holley four-barrel carburetor. The 1970 Corvette Stingray is the most refined expression of the C3 generation — the year the body was restyled with flared fenders, an egg-crate grille, and the iconic Stingray script. Trump signed a Corvette at the GM Proving Ground on Monday. This one is Ontario-plated. The Stingray does not care about CUSMA either.",
+  name: "1971 AMC Javelin AMX 401 — Trans-Am Red, White Racing Stripes, Ontario-Plated",
+  description: "Trans-Am Red — a deep, vivid red that commands attention on the street and on the track. Broad white racing stripes running the full length of the hood and roof. AMX 401 badging on the front fenders. The 401 cubic inch V8 producing 330 horsepower — AMC's largest engine, available only in the Javelin AMX in 1971. Ontario licence plate on the rear. The Javelin AMX was AMC's answer to the Mustang, Camaro, and Challenger — built by a company with a fraction of the resources of the Big Three, competing above its weight class in Trans-Am racing. Mark Donohue drove a Javelin to the 1971 Trans-Am championship. AMC was the scrappy underdog of the muscle car era — outgunned, outspent, and underestimated. It won anyway. Canada's position in these trade talks. LeBlanc met Greer and 'agreed to remain in close contact.' The Javelin AMX does not agree to remain in close contact. It goes.",
   image: HOTROD_IMG,
 };
 
