@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 84;
-const BRIEFING_DATE = "July 30, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 85;
+const BRIEFING_DATE = "July 31, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KUFeUeTpWNpPXtzf.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KIYuACtlIxNzyrUu.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mDMNNYkugSGgGscc.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/neMYEYBiJJjKxTML.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/irYcWpbCElOQqrPa.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aLoICTmLLCgvPOsy.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PCngkXyeYFhlhtHe.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jIzWRvmekzzgxghG.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tLvpbRBDbbodpvWy.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AtOpCZTRkTJVRHem.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "LEBLANC MEETS GREER IN WASHINGTON / 'AGREED TO REMAIN IN CLOSE CONTACT' / SECTION 338 LEGAL CHALLENGE LIKELY / 20 DAYS / AUTOS & PARTS EXEMPT",
+    tag: "WESTJET STRIKE & LOCKOUT NOTICES ISSUED / 72-HOUR NOTICE / STRIKE POSSIBLE SUNDAY AUG 2 / 4,400 CUPE FLIGHT ATTENDANTS / LONG WEEKEND AT RISK",
     tagColor: "#b91c1c",
-    headline: "LeBlanc Meets USTR Greer in Washington — 'Agreed to Remain in Close Contact' — Legal Challenge to Section 338 'Likely' — ITC Made No Recommendations — 20 Days to August 19",
-    summary: "Canada-U.S. Trade Minister Dominic LeBlanc and chief negotiator Janice Charette met with USTR Jamieson Greer in Washington Wednesday. LeBlanc posted after the meeting: 'We agreed to remain in close contact and continue working together.' That is diplomatic language for: nothing was resolved. LeBlanc is spending a second day in Washington Thursday. LeBlanc attended a Canada-U.S. Friendship Day Blue Jays vs. Nationals baseball game Tuesday wearing a Washington Nationals jersey — an Expos-themed hat included with the tickets. 'My father was a lifelong Montreal Expos fan and every spring break, I looked forward to watching the Expos' spring training games in Florida with him,' LeBlanc wrote. National Post reported Thursday that a legal challenge to Section 338 is 'likely' and may succeed more than Section 301 litigation. The key legal vulnerability: Section 338 requires the International Trade Commission (ITC) to monitor global trade and advise the White House. The ITC made no recommendations in this case. Cato Institute's Clark Packard: 'A legal challenge is going to happen. I think it's more likely to succeed than Section 301 litigation.' Customs lawyer Carrie Owens (Kelley Drye): 'It does not state the president can only act after an ITC report or recommendation.' Andrew Hale (Advancing American Freedom): 'Is it just more TACO — Trump Always Chickens Out? Or is it just a threat to get the Canadians to do what he wants them to?' Trade experts say the 30-day delay is a negotiating tactic. But the legal challenge, if filed, may not be resolved before August 19.",
-    whyItMatters: "'We agreed to remain in close contact' is the most important phrase of the week. It means LeBlanc and Greer met, shook hands, and resolved nothing. Canada has 20 days to August 19. A legal challenge is likely but may not stop the tariffs in time. The ITC vulnerability is real — but courts move slowly. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. Build your GM parts buffer TOMORROW — August 1. Do not wait for the legal challenge or the talks to resolve. Unifor-GM bargaining starts August 10 — 11 days. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt.",
-    source: "TSN / National Post / Cato Institute — July 29-30, 2026",
-    sourceUrl: "https://www.tsn.ca/mlb/article/sporting-a-washington-jersey-leblanc-attends-friendship-day-baseball-game-in-dc/",
+    headline: "WestJet Strike & Lockout — Both Sides Issued Notices Thursday — Strike or Lockout Possible Sunday August 2 at 12:01 a.m. MT — August Long Weekend at Risk",
+    summary: "CUPE Local 8125 issued a 72-hour strike notice Thursday morning July 30. WestJet responded immediately with a lockout notice — both sides issued notices simultaneously. A strike or lockout is possible as early as Sunday August 2 at 12:01 a.m. MT (2:01 a.m. ET). This is Canada's August long weekend — Civic Holiday Monday August 4. WestJet CEO Alexis von Hoensbroech: 'The decision to issue a lockout notice, in response to the actions taken by the union, was not one that was made lightly. We sincerely regret the inconvenience and uncertainty this continues to cause for our guests.' CUPE president Alia Hussain: 'There's still time to avoid a strike.' WestJet says no flights cancelled yet and is still operating normally. Federal mediators remain involved. The federal government could invoke Section 107 of the Canada Labour Code to order workers back — but that requires a cabinet decision. The key issue: approximately 35 hours per month of unpaid work — boarding, deplaning, ground delays. WestJet is waiving cancellation and change fees for passengers travelling July 30 through August 4. WestJet last experienced a major labour dispute in summer 2024 when unionized mechanics struck over the Canada Day long weekend.",
+    whyItMatters: "Both sides issued notices simultaneously — that is an escalation, not a negotiation. WestJet issuing a lockout notice in response to a strike notice is a hardball move. If a work stoppage begins Sunday August 2, thousands of Canadians will be stranded during the August long weekend. If you or your staff are flying WestJet between now and August 4, change to Air Canada today — WestJet is waiving fees. For your shop: this is a reminder that labour disruption risk is elevated across Canada right now. WestJet, Unifor-GM (bargaining opened July 30), and the Section 338 tariff countdown (19 days to August 19) are all converging in August. Autos and auto parts remain exempt from Section 338 under Section 232.",
+    source: "Global News / CBC News — July 30, 2026",
+    sourceUrl: "https://globalnews.ca/news/12002659/westjet-flight-attendants-strike-notice/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CARNEY RULES OUT ENERGY LEVERAGE / 'BEING A RELIABLE SUPPLIER IS IMPORTANT' / RED DEER WITH SMITH / FORD WANTED ENERGY WEAPON",
+    tag: "TRADE ANALYSTS: PREMIERS MUST GIVE CARNEY LATITUDE / USTR GREER: 'INTERIM' DEAL BY END OF 2026 / CUSMA RULES OF ORIGIN PUSHED TO 2027 / 19 DAYS",
     tagColor: "#15803d",
-    headline: "Carney Rules Out Energy as Leverage in Trade Talks — 'Being a Reliable Supplier Is Important' — Red Deer With Premier Smith — Ford Had Called for Energy Weapon",
-    summary: "Prime Minister Mark Carney pushed back Wednesday on calls to use Canada's energy exports as leverage in trade negotiations with the United States. Speaking alongside Alberta Premier Danielle Smith in Red Deer, Carney said: 'Being a reliable supplier is important. Suppliers of critical commodities like energy should think long and hard before cutting off customers.' Ontario Premier Doug Ford had said last week that Canada could 'dismantle' the United States if Ottawa and the provinces agreed to use energy exports as leverage against Washington's latest threatened tariffs. Carney rejected the characterization of energy and critical minerals as 'leverage' in negotiations. 'We have many things we can do. The first and foremost is to work towards an agreement. That's what we're going to do. But there's other things we could do if we needed to address the situation,' Carney said. USTR Greer has said Section 338 is a response to: (1) provincial bans on U.S. liquor, (2) Canada's supply managed dairy system, (3) quotas on certain U.S. vehicles. Canada removed CUSMA-covered retaliatory tariffs to restart talks — kept steel, aluminum, and auto tariffs in place. 20 days to Section 338 (August 19). Autos and auto parts: EXEMPT under Section 232.",
-    whyItMatters: "Carney's 'reliable supplier' framing is a deliberate signal to Alberta and to Washington: Canada will not use energy as a weapon. This is the right call for the long-term relationship but it removes Canada's most powerful leverage card. Ford's 'dismantle' rhetoric was never going to happen — Carney is managing expectations. For your shop: the trade talks are proceeding on Canada's terms, which means patience and process. The 20-day countdown to Section 338 (August 19) is real. Autos and auto parts remain exempt. Build your GM parts buffer TOMORROW — August 1. Unifor-GM bargaining starts August 10 — 11 days.",
-    source: "Canadian Press / SaskNow / The Deep Dive — July 29-30, 2026",
-    sourceUrl: "https://sasknow.com/2026/07/29/being-a-reliable-supplier-is-important-carney-on-using-energy-in-u-s-trade-talks/",
+    headline: "Trade Analysts: Premiers Must Give Carney Latitude to Negotiate Hard — USTR Greer: 'Interim' Deal by End of 2026 — CUSMA Rules of Origin Pushed to 2027 — 19 Days to August 19",
+    summary: "National Post published a major analysis Friday morning: trade analysts say Canada's premiers must give the federal government 'political licence' to make difficult decisions in negotiations with Washington. Matthew Holmes (Canadian Chamber of Commerce): 'The premiers are going to have to give the federal government the political licence and the social licence to make some of those difficult decisions when it comes down to negotiating.' Maryscott Greenwood (former U.S. diplomat, Ottawa Street Strategy): 'It's about leverage, and it's about being willing to exercise leverage.' Trade lawyer Mark Warner (Maaw Law) was blunt: 'I just wonder what Mark Carney's agenda is. It's kind of like he doesn't want to have an agreement, to me.' Warner: 'It doesn't seem to me that what the government is doing is in any way conducive to having a real negotiation.' USTR Greer told U.S. senators last week that he hopes to have 'interim' agreements with Mexico and Canada separately by the end of 2026. Broader CUSMA rules of origin issues — which require engagement with U.S. Congress — are pushed to 2027. Angus Reid: 43% of Canadians confident Carney can deliver a good deal (down from 53% in spring). 75% don't think Trump will stick to any deal. Holmes: 'There is a little bit of a game of chicken that starts to be played, and that's dangerous because you know they're driving a much bigger truck.'",
+    whyItMatters: "The 'interim deal by end of 2026' framing from Greer is the most important new information this week. It means: no comprehensive CUSMA renegotiation before August 19. The Section 338 tariffs are leverage for a narrow interim deal — not a full reset. For your shop: 19 days to August 19. Autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt. Build your GM buffer TODAY — August 1 is tomorrow. Unifor-GM bargaining opened July 30 — Day 2 today.",
+    source: "National Post / Yahoo Canada — July 31, 2026",
+    sourceUrl: "https://ca.news.yahoo.com/premiers-leeway-feds-negotiate-hard-080046910.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "WESTJET STRIKE CLOCK TICKING / 4400 CUPE FLIGHT ATTENDANTS / 99.4% STRIKE VOTE / AUG 2 DEADLINE / FEDERAL MEDIATORS INVOLVED",
+    tag: "UNIFOR-GM BARGAINING DAY 2 — TORONTO / FORD PATTERN: 3% ANNUAL / OSHAWA SILVERADO + CAMI EQUINOX EV AT STAKE / CONTRACT EXPIRES SEPT 20",
     tagColor: "#1d4ed8",
-    headline: "WestJet Strike Clock Ticking — 4,400 CUPE Flight Attendants Voted 99.4% in Favour — August 2 Deadline — Today Is First Day for 72-Hour Strike Notice — Federal Mediators Still Involved",
-    summary: "WestJet, Canada's second-largest airline, is preparing to wind down operations ahead of a possible flight attendant strike or lockout as early as August 2. The CUPE WestJet Component — representing 4,400 flight attendants — voted 99.4 per cent in favour of a strike in mid-July. Today — Thursday July 30 — is the first day the union can legally give 72-hour strike notice, which would put the earliest possible strike or lockout at August 2. WestJet has not announced flight cancellations but has offered to waive cancellation or change fees for passengers travelling between July 30 and August 4. Federal mediators remain involved. Transport Minister Steven MacKinnon: 'My understanding is that those talks are progressing. We're hopeful that they reach a negotiated agreement.' The key issue: flight attendants claim approximately 35 hours per month are unpaid — boarding, deplaning, ground delays. WestJet CEO Alexis von Hoensbroech: 'Under our current contract, flight attendants are being paid for every hour worked.' The union: 'The best way to avoid a strike is for WestJet to do the right thing and end the practice of unpaid work.' WestJet last experienced a major labour dispute in summer 2024 when unionized mechanics struck over the Canada Day long weekend.",
-    whyItMatters: "This is not a tariff story but it is a summer travel disruption story. If WestJet flight attendants strike August 2, thousands of Canadians will be stranded during the August long weekend — including your customers and suppliers. If you or your staff are flying WestJet between July 30 and August 4, check your booking now and consider changing to Air Canada. WestJet is waiving change fees. The Air Canada precedent from 2025 is instructive: binding arbitration eventually settled the dispute, but it took weeks. For your shop: this is a reminder that labour disruption risk is elevated across Canada right now — WestJet, Unifor-GM (August 10), and the broader tariff uncertainty are all converging in August.",
-    source: "CBC News / Vancouver CityNews — July 29-30, 2026",
-    sourceUrl: "https://www.cbc.ca/news/business/westjet-winddown-strike-9.7289209",
+    headline: "Unifor-GM Bargaining Day 2 in Toronto — Ford Pattern Is the Floor: 3% Annual Increases — Oshawa Silverado and CAMI Equinox EV at Stake — Contract Expires September 20",
+    summary: "Unifor and General Motors opened contract talks Thursday July 30 at a hotel in downtown Toronto — the same hotel where Unifor reached its Ford Canada deal earlier this month. Day 2 of bargaining is underway today, Friday July 31. The three-year Ford agreement will serve as the template for GM talks: 3% annual wage increase in each year of the contract, signing bonuses, and better pension and health benefits. Ford also committed to a $500-million investment in the Essex Engine Plant in Windsor. Unifor National President Lana Payne called the Ford deal 'a strong agreement that delivers real gains and much-needed stability despite unprecedented challenges facing Canadian autoworkers and the entire industry.' The Ford agreement also guaranteed job security and stabilization at Ford Canada plants. At GM, the stakes are: Oshawa Assembly (Silverado full-size pickup) and CAMI Assembly in Ingersoll (Equinox EV). The current GM contract expires at 11:59 p.m. on September 20, 2026. After a GM deal is reached, Unifor moves to Stellantis. The 74% ratification vote on the Ford deal was strong — Payne will use that mandate as leverage at GM.",
+    whyItMatters: "The Ford pattern is the floor, not the ceiling. GM will be asked to match or exceed it. The $500M Essex Engine Plant investment was a Ford-specific commitment — GM will face pressure to announce comparable Canadian investment. For your shop: Oshawa Silverado and CAMI Equinox EV parts availability is stable through September 20. If bargaining reaches an impasse in late August or early September, a work stoppage would immediately affect GM parts availability. Build your 30-day GM buffer TODAY — August 1 is tomorrow. Unifor-GM bargaining opened July 30 — 51 days to September 20 contract expiry.",
+    source: "Windsor News Today / Sarnia News Today — July 30, 2026",
+    sourceUrl: "https://windsornewstoday.ca/windsor/news/2026/07/30/unifor-opens-collective-bargaining-with-general-motors",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🚨",
-    text: "LeBlanc met USTR Greer Wednesday. Post-meeting: 'We agreed to remain in close contact and continue working together.' That is diplomatic language for nothing was resolved. LeBlanc is spending a second day in Washington Thursday. 20 days to August 19. Autos and parts: EXEMPT.",
-    sourceUrl: "https://www.tsn.ca/mlb/article/sporting-a-washington-jersey-leblanc-attends-friendship-day-baseball-game-in-dc/",
-  },
-  {
-    icon: "⚖️",
-    text: "National Post: Section 338 legal challenge 'likely' — ITC made no recommendations, making it legally vulnerable. Cato Institute: 'A legal challenge is going to happen. I think it's more likely to succeed than Section 301 litigation.' But courts move slowly — may not stop August 19.",
-    sourceUrl: "https://nationalpost.com/news/were-a-pawn-in-a-larger-game-a-legal-challenge-is-likely-on-trumps-new-tariffs-it-may-be-too-late",
-  },
-  {
-    icon: "🌉",
-    text: "Gordie Howe Bridge operating normally — first full week of commercial operation. Pedestrian/bicycle access opens August 5 — 6 days. Toll: $8.60 USD per axle for commercial trucks. Windsor-Detroit corridor: $350M/day.",
-    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/27/gordie-howe-international-bridge-set-to-open-monday-after-years-of-construction/",
+    icon: "✈️",
+    text: "WestJet: BOTH sides issued notices Thursday — CUPE 72-hour strike notice AND WestJet lockout notice. Strike or lockout possible Sunday August 2 at 12:01 a.m. MT. August long weekend at risk. WestJet waiving change fees July 30–August 4. Change to Air Canada now if you're flying this weekend.",
+    sourceUrl: "https://globalnews.ca/news/12002659/westjet-flight-attendants-strike-notice/",
   },
   {
     icon: "🔧",
-    text: "BUILD YOUR GM BUFFER TOMORROW — August 1. Unifor-GM bargaining starts August 10 — 11 days. Ford pattern: 3% annual increases, 74% ratification. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/07/21/unifor-names-general-motors-as-next-us-automaker-for-contract-talks/",
+    text: "BUILD YOUR GM BUFFER TODAY — August 1 is tomorrow. Unifor-GM bargaining opened July 30 — Day 2 today. Ford pattern: 3% annual increases, $500M Essex Engine Plant. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry — 51 days.",
+    sourceUrl: "https://windsornewstoday.ca/windsor/news/2026/07/30/unifor-opens-collective-bargaining-with-general-motors",
   },
   {
-    icon: "✈️",
-    text: "WestJet: today is the first day the union can give 72-hour strike notice. August 2 deadline. WestJet waiving change fees for July 30–August 4. Federal mediators involved. If you're flying WestJet this long weekend, check your booking now.",
-    sourceUrl: "https://www.cbc.ca/news/business/westjet-winddown-strike-9.7289209",
+    icon: "🌉",
+    text: "Gordie Howe Bridge — first full week of commercial operation. Pedestrian/bicycle access opens August 5 — 5 days. Toll: $8.60 USD per axle for commercial trucks. Windsor-Detroit corridor: $350M/day. Conservative committee investigation continues.",
+    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/27/gordie-howe-international-bridge-set-to-open-monday-after-years-of-construction/",
+  },
+  {
+    icon: "⚖️",
+    text: "Section 338 legal challenge still 'likely' — ITC made no recommendations, making it legally vulnerable. Georgetown/Balsillie analysis: flat 50% across unrelated goods 'offsets nothing in particular.' But courts move slowly — may not stop August 19. 19 days.",
+    sourceUrl: "https://nationalpost.com/news/were-a-pawn-in-a-larger-game-a-legal-challenge-is-likely-on-trumps-new-tariffs-it-may-be-too-late",
+  },
+  {
+    icon: "🚗",
+    text: "Section 301 at 10%, CUSMA-compliant auto parts EXEMPT. Section 338 (August 19): autos and auto parts EXEMPT under Section 232. Your parts supply chain is protected. The risk is Unifor-GM bargaining, not the tariffs.",
+    sourceUrl: "https://ca.news.yahoo.com/premiers-leeway-feds-negotiate-hard-080046910.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build Your GM Buffer TOMORROW — August 1 — LeBlanc Met Greer and Resolved Nothing",
-  text: "LeBlanc met USTR Greer in Washington and they 'agreed to remain in close contact.' That is diplomatic language for: nothing was resolved. You have 20 days to August 19. A legal challenge to Section 338 is likely but may not stop the tariffs in time. Today's action: if you service GM vehicles, place your 30-day parts buffer order TOMORROW — August 1. Do not wait for the legal challenge or the trade talks to resolve. Unifor-GM bargaining starts August 10 — 11 days. If bargaining reaches an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability. Autos and auto parts remain exempt from Section 338 under Section 232 — your parts supply chain is protected from the August 19 tariffs. Section 301 is in effect at 10 per cent for non-CUSMA parts — CUSMA-compliant auto parts remain exempt. The Gordie Howe Bridge is open — use it for your Michigan supplier parts orders. Toll: $8.60 USD per axle for commercial trucks. Pedestrian/bicycle access opens August 5 — 6 days.",
+  title: "Build Your GM Buffer TODAY — August 1 Is Tomorrow — WestJet Strike Risk Is Real — Change Your Flights Now",
+  text: "Two action items for today, Friday July 31. First: if you service GM vehicles, place your 30-day parts buffer order today. August 1 is tomorrow — that was the target date. Unifor-GM bargaining opened July 30 and is now in Day 2. The Ford pattern (3% annual, $500M Essex Engine Plant) is the floor. If bargaining reaches an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability. Do not wait. Second: if you or your staff are flying WestJet between now and August 4, change to Air Canada today. WestJet is waiving change fees. Both sides issued notices Thursday — CUPE strike notice and WestJet lockout notice simultaneously. A work stoppage is possible Sunday August 2 at 12:01 a.m. MT. This is the August long weekend. The federal government could invoke Section 107 of the Canada Labour Code but that requires a cabinet decision. Do not assume the government will step in. For your parts supply chain: autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt. 19 days to August 19.",
 };
 
 const quoteOfTheDay = {
-  text: "We agreed to remain in close contact and continue working together.",
-  author: "Trade Minister Dominic LeBlanc",
-  title: "After meeting USTR Greer in Washington — July 29, 2026",
+  text: "The decision to issue a lockout notice, in response to the actions taken by the union, was not one that was made lightly. We sincerely regret the inconvenience and uncertainty this continues to cause for our guests.",
+  author: "Alexis von Hoensbroech, CEO, WestJet Group",
+  title: "After WestJet issued a lockout notice in response to CUPE's 72-hour strike notice — July 30, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 AMC Javelin AMX 401 — Trans-Am Red, White Racing Stripes, Ontario-Plated",
-  description: "Trans-Am Red — a deep, vivid red that commands attention on the street and on the track. Broad white racing stripes running the full length of the hood and roof. AMX 401 badging on the front fenders. The 401 cubic inch V8 producing 330 horsepower — AMC's largest engine, available only in the Javelin AMX in 1971. Ontario licence plate on the rear. The Javelin AMX was AMC's answer to the Mustang, Camaro, and Challenger — built by a company with a fraction of the resources of the Big Three, competing above its weight class in Trans-Am racing. Mark Donohue drove a Javelin to the 1971 Trans-Am championship. AMC was the scrappy underdog of the muscle car era — outgunned, outspent, and underestimated. It won anyway. Canada's position in these trade talks. LeBlanc met Greer and 'agreed to remain in close contact.' The Javelin AMX does not agree to remain in close contact. It goes.",
+  name: "1972 Pontiac Firebird Trans Am 455 HO — Cameo White, Blue Firebird Hood Decal, Ontario-Plated",
+  description: "Cameo White — the most iconic Trans Am colour combination, paired with the large blue Firebird hood decal that covers the entire hood. 455 HO (High Output) badge on the front fender. The 455 cubic inch V8 producing 300 horsepower net (SAE net — the emissions era forced honest numbers). Ontario licence plate on the rear. The 1972 Trans Am was built at the twilight of the muscle car era — emissions regulations were strangling the big-blocks, insurance costs were rising, and the horsepower wars were ending. Pontiac built the Trans Am anyway. The 455 HO was the last gasp of the big-block era — more torque than almost anything on the road, wrapped in the most aggressive body Pontiac had ever produced. The Trans Am survived the emissions era, the oil crisis, and the malaise era. It came back stronger in 1977 with Burt Reynolds and a bigger Firebird decal. Canada will survive Section 338. The Trans Am approves.",
   image: HOTROD_IMG,
 };
 
