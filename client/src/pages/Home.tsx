@@ -10,49 +10,49 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 88;
-const BRIEFING_DATE = "August 3, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 89;
+const BRIEFING_DATE = "August 4, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WczgLTpNjIGNhySy.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tTZgFSruTGxpVfmV.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xhXRwzKidhHLBJDb.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ETgXMfwHiGGZwbVb.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/btHudUKvRsBPdJph.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VwsMmHQARcwhXagn.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/biXDDqosBvAOsVwt.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/duUUSIAEGqBWuySC.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FeoEsCIDOWKlqsjy.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TBuEUfAUmGJHPJmj.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "WESTJET STRIKE DAY 2 / 600+ FLIGHTS CANCELLED / 250,000 PASSENGERS STRANDED / GOVERNMENT UNDER PRESSURE / CIVIC HOLIDAY MONDAY",
-    tagColor: "#b91c1c",
-    headline: "WestJet Strike Day 2 — 600+ Flights Cancelled — 250,000 Passengers Stranded — Civic Holiday Monday — Government Under Pressure to Invoke Section 107",
-    summary: "WestJet's strike entered Day 2 on Monday August 3 — Canada's Civic Holiday. More than 600 flights have been cancelled since Friday. Approximately 250,000 passengers are impacted. Aviation expert John Gradek (McGill University): 'Tomorrow's done. Even if the strike is settled today, the earliest that flights would resume is late Tuesday afternoon.' WestJet extended its fee waiver to August 6. Negotiations continue in Calgary. The Business Council of Alberta called for immediate Section 107 intervention Sunday night. NL Premier John Hogan called for Section 107. In 2025, the federal government invoked Section 107 within hours of the Air Canada cabin crew strike — the BCA notes Canadians deserve the same response for an Alberta-based airline. Jobs Minister Patty Hajdu: expects parties to reach a deal at the table. The federal government has NOT invoked Section 107 as of Monday morning. Passenger rights advocate Gábor Lukács: 'If they don't get back to you within three hours of the cancellation of your flight, go buy yourself a ticket at another airline and send the bill to WestJet.' WestJet Encore Q400 and codeshare flights remain unaffected.",
-    whyItMatters: "Monday flights are cancelled. Even if the strike ends today, flights won't resume until late Tuesday. If WestJet hasn't rebooked you within 3 hours of cancellation, book your own ticket on Air Canada or Porter and bill WestJet under the Air Passenger Protection Regulations. WestJet fee waiver extended to August 6. Government intervention possible today but not guaranteed. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. 16 days to August 19. Unifor-GM bargaining opens August 10 — 7 days.",
-    source: "CP24 / Business Council of Alberta / CBC — August 3, 2026",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/03/its-your-only-lifeline-alberta-couple-waits-19-hours-on-hold-after-westjet-cancels-flight/",
+    tag: "WESTJET STRIKE OVER / TENTATIVE DEAL REACHED / FLIGHTS RESUMING / 1 DAY STRIKE / NO SECTION 107 NEEDED",
+    tagColor: "#15803d",
+    headline: "WestJet Strike Is Over — Tentative Deal Reached Monday After Just One Day — Flights Resuming Tuesday — No Government Intervention Required",
+    summary: "WestJet and CUPE Local 8125 reached a tentative agreement Monday August 3 — just one day after 4,400 flight attendants walked off the job. CUPE president Alia Hussain: 'This deal certainly addressed the wage gap.' WestJet CEO Alexis von Hoensbroech: 'We are pleased to have reached a tentative agreement.' The deal includes double-digit wage increases in year one and pay for all time worked including boarding, deplaning, and ground delays — the core union demand. No Section 107 government intervention was required. Ratification vote within 30 days. WestJet is gradually restoring its schedule Tuesday — full schedule not restored until later this week. 600+ flights were cancelled and approximately 250,000 passengers were impacted during the 30-hour work stoppage. WestJet Encore Q400 and codeshare flights were unaffected throughout.",
+    whyItMatters: "WestJet is back. If you were stranded, check your rebooking status and keep receipts for any out-of-pocket expenses — you may still be entitled to compensation under the Air Passenger Protection Regulations. For your shop: the WestJet disruption is over. Refocus on Section 338 (15 days to August 19) and Unifor-GM bargaining (6 days to August 10). Autos and auto parts remain exempt from Section 338 under Section 232.",
+    source: "Reuters / CBC / CUPE — August 3–4, 2026",
+    sourceUrl: "https://www.reuters.com/legal/litigation/westjet-flight-attendants-union-reach-wage-increase-deal-end-strike-2026-08-03/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "SECTION 338 — 16 DAYS TO AUGUST 19 / AUTOS & PARTS EXEMPT / CIVIC HOLIDAY NO NEW DEAL / SECTION 301 AT 10% HOLDING / CUSMA EXEMPT CONFIRMED",
-    tagColor: "#b45309",
-    headline: "Section 338 — 16 Days to August 19 — Civic Holiday Monday — No New Trade Developments — Autos and Auto Parts Remain Exempt",
-    summary: "No new trade developments on Civic Holiday Monday. Canada-U.S. negotiations continue but no breakthrough is expected before August 19. The framework remains: Section 338 (50% tariff, effective August 19) covers dairy, alcohol, cement, hockey sticks, wood products — NOT autos or auto parts (exempt under Section 232). CUSMA does NOT protect against Section 338. The three Section 338 proclamations cover: Motor Vehicles (439 HTSUS codes, $19.3B in 2024 Canadian imports — but Section 232 products are explicitly excluded), Dairy (52 HTSUS codes, $97M), and Alcoholic Beverages (63 HTSUS codes, $1B). USTR Greer's stated goal: 'interim' agreements with Mexico and Canada separately by end of 2026. CUSMA rules of origin pushed to 2027. Section 301 at 10% for non-CUSMA goods — CUSMA-compliant auto parts exempt. Peter Navarro's July 22 National Post op-ed: Section 338 specifically targets Canada's Supply Management dairy quota system and what Navarro calls discrimination against U.S. retailers in favour of European retailers under CETA.",
-    whyItMatters: "16 days to August 19. The tariff clock is running and no deal is imminent. For your shop: your parts supply chain is protected. Autos and auto parts are exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt. The risk to your shop is Unifor-GM bargaining (August 10), not the tariffs. Build your GM buffer today if you haven't already.",
-    source: "USTR / BLG / White & Case — August 3, 2026",
-    sourceUrl: "https://www.hklaw.com/en/insights/publications/2026/07/50-percent-opening-bid-canadian-imports-subject-to-section-338-tariffs",
+    tag: "SECTION 338 — 15 DAYS TO AUGUST 19 / LEGAL CHALLENGE FILED / AUTOS & PARTS EXEMPT / MICHIGAN PRIMARY TODAY / 25 STATES SUING",
+    tagColor: "#b91c1c",
+    headline: "Section 338 — 15 Days — Legal Challenges Filed — Georgetown Scholars: Three Strong Arguments — 25 States Suing — Michigan Primary Today",
+    summary: "Georgetown Law scholars published the most detailed Section 338 legal analysis yet Monday. Three strong arguments the tariffs are legally vulnerable: (1) Offset requirement violated — the 50% tariff is nearly 2x the alleged harm from Canadian dairy practices; (2) Canada's dairy practices don't discriminate against U.S. imports vs. 'every foreign country' as required by Section 338; (3) Trump bypassed the ITC fact-finding requirement. Twenty-five states filed suit Monday. Volokh Conspiracy (Georgetown): 'A legal challenge is going to happen. I think it's more likely to succeed than Section 301 litigation.' But courts move slowly — 15 days to August 19. Autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10%, CUSMA-compliant auto parts exempt. Michigan primary TODAY — Abdul El-Sayed vs. Haley Stevens for the Senate seat vacated by Gary Peters. Polls: El-Sayed leading. Republican Mike Rogers likely wins the general (November 3) if El-Sayed wins the primary.",
+    whyItMatters: "15 days to August 19. Legal challenges are filed but courts move slowly — do not count on an injunction before August 19. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt. Michigan primary today: whoever wins the Senate seat votes on CUSMA renegotiation. Unifor-GM bargaining opens August 10 — 6 days.",
+    source: "Georgetown Law / Volokh Conspiracy / Reuters — August 3–4, 2026",
+    sourceUrl: "https://reason.com/volokh/2026/08/03/prospective-legal-challenges-to-trumps-section-338-tariffs-against-canada/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "GORDIE HOWE BRIDGE PEDESTRIAN PATH OPENS WEDNESDAY AUGUST 5 / FREE / UNIFOR-GM 7 DAYS / FORD PATTERN 3% / OSHAWA SILVERADO / CAMI EQUINOX EV",
+    tag: "GORDIE HOWE BRIDGE PEDESTRIAN PATH OPENS TOMORROW AUGUST 5 / FREE / UNIFOR-GM 6 DAYS / MICHIGAN PRIMARY TODAY / FORD PATTERN 3%",
     tagColor: "#15803d",
-    headline: "Gordie Howe Bridge Pedestrian & Cyclist Path Opens Wednesday August 5 — Free — Unifor-GM Bargaining 7 Days — Build Your GM Buffer Today",
-    summary: "The Gordie Howe International Bridge multi-use pedestrian and cyclist path opens Wednesday August 5 at 8 a.m. — free of charge. It is the only pedestrian border crossing between Canada and the United States. Summer hours: 8 a.m. to 8 p.m., seven days per week. Car toll: $5.75 (compared to $10 at the Ambassador Bridge). The bridge is now fully operational for all modes of transport — commercial trucks, passenger vehicles, and pedestrians/cyclists. Windsor-Detroit corridor: $350 million per day. Unifor formal bargaining with General Motors opens Monday August 10 in Toronto — 7 days. Unifor represents more than 4,600 members at Ontario GM facilities: Oshawa Assembly (Silverado pickup), CAMI Assembly in Ingersoll (Equinox EV), and the St. Catharines Propulsion Plant. The Ford pattern is the established floor: 3% annual wage increases, signing bonuses, and a $500 million Essex Engine Plant investment commitment. The GM contract expires September 20 — 48 days.",
-    whyItMatters: "Gordie Howe Bridge pedestrian path opens Wednesday — 2 days. Unifor-GM bargaining opens in 7 days. If bargaining reaches an impasse in late August or early September, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability across Ontario. Build your 30-day GM buffer today if you haven't already. Michigan primary August 4 — tomorrow.",
-    source: "ClickOnDetroit / Unifor — August 3, 2026",
+    headline: "Gordie Howe Bridge Pedestrian Path Opens TOMORROW August 5 — Free — Michigan Primary Today — Unifor-GM Bargaining 6 Days",
+    summary: "The Gordie Howe International Bridge multi-use pedestrian and cyclist path opens TOMORROW Wednesday August 5 at 8 a.m. — free of charge. It is the only pedestrian border crossing between Canada and the United States. Summer hours: 8 a.m. to 8 p.m., seven days per week. Car toll: $5.75 (compared to $10 at the Ambassador Bridge). Michigan primary is TODAY — Abdul El-Sayed (progressive) vs. Haley Stevens (moderate) for the U.S. Senate seat vacated by Gary Peters. Polls: El-Sayed leading. Republican Mike Rogers is the likely general election winner (November 3) if El-Sayed wins the primary. Whoever wins the Senate seat votes on CUSMA renegotiation. Unifor formal bargaining with General Motors opens Monday August 10 in Toronto — 6 days. Unifor represents more than 4,600 members at Ontario GM facilities: Oshawa Assembly (Silverado pickup), CAMI Assembly in Ingersoll (Equinox EV), and the St. Catharines Propulsion Plant. The Ford pattern is the established floor: 3% annual wage increases, signing bonuses, and a $500 million Essex Engine Plant investment commitment. The GM contract expires September 20 — 47 days.",
+    whyItMatters: "Gordie Howe Bridge pedestrian path opens TOMORROW — August 5. Michigan primary today: whoever wins the Senate seat votes on CUSMA renegotiation. Unifor-GM bargaining opens in 6 days. If bargaining reaches an impasse, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability across Ontario. Build your 30-day GM buffer today if you haven't already.",
+    source: "ClickOnDetroit / Unifor / Michigan SOS — August 4, 2026",
     sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
     image: STORY3_IMG,
   },
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "✈️",
-    text: "WestJet Strike Day 2 — Monday flights are CANCELLED. 600+ flights cancelled since Friday, 250,000 passengers stranded. Aviation expert John Gradek (McGill): 'Even if the strike is settled today, the earliest that flights would resume is late Tuesday afternoon.' Fee waiver extended to August 6. Book Air Canada now.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/03/its-your-only-lifeline-alberta-couple-waits-19-hours-on-hold-after-westjet-cancels-flight/",
+    text: "WestJet strike is OVER. Tentative deal reached Monday August 3 after just 30 hours. Double-digit wage increase year one. Flights resuming Tuesday — full schedule restored later this week. Ratification vote within 30 days. Keep receipts if you incurred out-of-pocket costs.",
+    sourceUrl: "https://www.reuters.com/legal/litigation/westjet-flight-attendants-union-reach-wage-increase-deal-end-strike-2026-08-03/",
   },
   {
     icon: "⚖️",
-    text: "If WestJet hasn't rebooked you within 3 hours of cancellation, book your own ticket on Air Canada or Porter and bill WestJet. Air Passenger Protection Regulations require WestJet to reimburse you. Do not wait on hold — book yourself and send the invoice.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/03/its-your-only-lifeline-alberta-couple-waits-19-hours-on-hold-after-westjet-cancels-flight/",
+    text: "Section 338 legal challenges: Georgetown Law scholars identified 3 strong arguments. 25 states filed suit Monday. But courts move slowly — do not count on an injunction before August 19. 15 days. Autos and auto parts EXEMPT under Section 232.",
+    sourceUrl: "https://reason.com/volokh/2026/08/03/prospective-legal-challenges-to-trumps-section-338-tariffs-against-canada/",
+  },
+  {
+    icon: "🗳️",
+    text: "Michigan primary TODAY — Abdul El-Sayed vs. Haley Stevens for U.S. Senate. Polls: El-Sayed leading. Republican Mike Rogers likely wins the general (November 3) if El-Sayed wins. Whoever wins votes on CUSMA renegotiation.",
+    sourceUrl: "https://www.mlive.com/politics/2026/08/michigan-senate-primary-2026-results-live-updates.html",
   },
   {
     icon: "🌉",
-    text: "Gordie Howe Bridge pedestrian & cyclist path opens WEDNESDAY August 5 at 8 a.m. FREE. Only pedestrian border crossing between Canada and the U.S. Car toll: $5.75 (vs. $10 at Ambassador Bridge). Windsor-Detroit corridor: $350M/day.",
+    text: "Gordie Howe Bridge pedestrian & cyclist path opens TOMORROW August 5 at 8 a.m. FREE. Only pedestrian border crossing between Canada and the U.S. Car toll: $5.75 (vs. $10 at Ambassador Bridge).",
     sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
   },
   {
     icon: "🔧",
-    text: "BUILD YOUR GM BUFFER TODAY. Unifor-GM formal bargaining opens August 10 — 7 days. Ford pattern: 3% annual increases, $500M Essex Engine Plant. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry — 48 days.",
+    text: "Unifor-GM formal bargaining opens August 10 — 6 days. Ford pattern: 3% annual increases, $500M Essex Engine Plant. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry — 47 days. Build your GM buffer today.",
     sourceUrl: "https://www.unifor.org/news/all-news/unifor-commence-negotiations-general-motors",
-  },
-  {
-    icon: "🚗",
-    text: "Section 338 — 16 days to August 19. Autos and auto parts EXEMPT under Section 232. CUSMA does NOT protect against Section 338. Section 301 at 10%, CUSMA-compliant auto parts exempt. Your parts supply chain is protected.",
-    sourceUrl: "https://www.hklaw.com/en/insights/publications/2026/07/50-percent-opening-bid-canadian-imports-subject-to-section-338-tariffs",
   },
 ];
 
 const tipOfTheDay = {
-  title: "WestJet Strike Day 2 — Monday Flights Are Cancelled — Know Your Rights — Build Your GM Buffer",
-  text: "Two action items for Monday August 3 (Civic Holiday). First: WestJet strike is Day 2. Monday flights are cancelled. Aviation expert John Gradek (McGill): 'Even if the strike is settled today, the earliest that flights would resume is late Tuesday afternoon.' If WestJet hasn't rebooked you within 3 hours of your cancellation notice, you are entitled under the Air Passenger Protection Regulations to book your own ticket on another airline and bill WestJet. Do not wait 19 hours on hold. Book Air Canada or Porter, keep your receipt, and send the invoice to WestJet. Fee waiver extended to August 6. WestJet Encore Q400 and codeshare flights are unaffected. Government intervention (Section 107) is possible today — but do not assume it. Second: if you service GM vehicles and have not yet built your 30-day parts buffer, do it today. Unifor-GM formal bargaining opens August 10 — 7 days. The Ford pattern (3% annual, $500M Essex Engine Plant) is the floor. 16 days to Section 338 (August 19). Autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt.",
+  title: "WestJet Is Back — Section 338 Legal Challenge Filed — Michigan Primary Today — Gordie Howe Bridge Pedestrian Path Tomorrow — Unifor-GM 6 Days",
+  text: "Five things for Tuesday August 4. First: WestJet is back. Flights are resuming today — full schedule restored later this week. If you incurred out-of-pocket rebooking costs during the 30-hour strike, keep your receipts — you may be entitled to reimbursement under the Air Passenger Protection Regulations. Second: Section 338 legal challenges are filed. Georgetown Law scholars identified 3 strong arguments. 25 states sued Monday. But courts move slowly — do not count on an injunction before August 19. 15 days. Third: Michigan primary today — whoever wins the Senate seat votes on CUSMA renegotiation. Fourth: Gordie Howe Bridge pedestrian path opens TOMORROW August 5 at 8 a.m. — free. Fifth: Unifor-GM bargaining opens August 10 — 6 days. Build your 30-day GM buffer today. Autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt.",
 };
 
 const quoteOfTheDay = {
-  text: "Tomorrow's done. Even if the strike is settled today, the earliest that flights would resume is late Tuesday afternoon.",
-  author: "John Gradek, Aviation Management Faculty, McGill University",
-  title: "WestJet strike Day 2 — August 3, 2026",
+  text: "This deal certainly addressed the wage gap.",
+  author: "Alia Hussain, President, CUPE Local 8125",
+  title: "WestJet tentative agreement reached — August 3, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Chevrolet Camaro ZL1 COPO — Fathom Green Metallic, Black Racing Stripes, Ontario-Plated",
-  description: "Fathom Green Metallic with black racing stripes — the most expensive and rarest Camaro ever built in 1969. Only 69 were built. The ZL1 was a Central Office Production Order (COPO) car — it bypassed Chevrolet's corporate ban on engines over 400 cubic inches in the Camaro. The 427 ZL1 all-aluminum V8 was officially rated at 430 horsepower (actually closer to 500 hp — same deliberate underrating trick as the L88). The ZL1 engine alone cost more than a base Camaro. It required 103-octane racing fuel. It was the most expensive production Camaro ever built. WestJet is on strike. The ZL1 does not strike.",
+  name: "1970 Dodge Challenger R/T 440 Six Pack — Plum Crazy Purple, Black Bumblebee Stripe, Ontario-Plated",
+  description: "Plum Crazy Purple with black bumblebee stripe — the most visually aggressive Challenger colour combination ever offered. The 440 Six Pack: three two-barrel Holley carburetors on an Edelbrock intake, 390 horsepower, 490 lb-ft of torque. The Six Pack was Chrysler's answer to the 440 4-barrel and the 426 Hemi — more accessible, nearly as fast, and impossible to ignore. WestJet's strike lasted 30 hours. The Challenger R/T doesn't negotiate.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["WESTJET STRIKE DAY 2", "SECTION 338: 16 DAYS", "GORDIE HOWE PEDESTRIAN: WED", "'69 CAMARO ZL1"].map((tag) => (
+                {["WESTJET STRIKE OVER", "SECTION 338: 15 DAYS", "MICHIGAN PRIMARY TODAY", "'70 CHALLENGER R/T"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition (Civic Holiday)</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
