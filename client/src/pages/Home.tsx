@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 89;
-const BRIEFING_DATE = "August 4, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 90;
+const BRIEFING_DATE = "August 5, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VwsMmHQARcwhXagn.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/biXDDqosBvAOsVwt.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/duUUSIAEGqBWuySC.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FeoEsCIDOWKlqsjy.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TBuEUfAUmGJHPJmj.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xgFZSNAJNRJpjkph.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ivJdPaKEdcmKfDPD.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aYCOutNjhXObROZQ.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/znoPqweNJTiUHboV.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AlwCamTTKDSEqMMB.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "WESTJET STRIKE OVER / TENTATIVE DEAL REACHED / FLIGHTS RESUMING / 1 DAY STRIKE / NO SECTION 107 NEEDED",
+    tag: "GORDIE HOWE BRIDGE PEDESTRIAN PATH OPENS TODAY / FREE / 8 A.M. / ONLY PEDESTRIAN BORDER CROSSING IN CANADA / BRING PASSPORT",
     tagColor: "#15803d",
-    headline: "WestJet Strike Is Over — Tentative Deal Reached Monday After Just One Day — Flights Resuming Tuesday — No Government Intervention Required",
-    summary: "WestJet and CUPE Local 8125 reached a tentative agreement Monday August 3 — just one day after 4,400 flight attendants walked off the job. CUPE president Alia Hussain: 'This deal certainly addressed the wage gap.' WestJet CEO Alexis von Hoensbroech: 'We are pleased to have reached a tentative agreement.' The deal includes double-digit wage increases in year one and pay for all time worked including boarding, deplaning, and ground delays — the core union demand. No Section 107 government intervention was required. Ratification vote within 30 days. WestJet is gradually restoring its schedule Tuesday — full schedule not restored until later this week. 600+ flights were cancelled and approximately 250,000 passengers were impacted during the 30-hour work stoppage. WestJet Encore Q400 and codeshare flights were unaffected throughout.",
-    whyItMatters: "WestJet is back. If you were stranded, check your rebooking status and keep receipts for any out-of-pocket expenses — you may still be entitled to compensation under the Air Passenger Protection Regulations. For your shop: the WestJet disruption is over. Refocus on Section 338 (15 days to August 19) and Unifor-GM bargaining (6 days to August 10). Autos and auto parts remain exempt from Section 338 under Section 232.",
-    source: "Reuters / CBC / CUPE — August 3–4, 2026",
-    sourceUrl: "https://www.reuters.com/legal/litigation/westjet-flight-attendants-union-reach-wage-increase-deal-end-strike-2026-08-03/",
+    headline: "Gordie Howe Bridge Pedestrian Path Opens TODAY at 8 a.m. — Free — Only Pedestrian Border Crossing in Canada — Bring Your Passport",
+    summary: "The Gordie Howe International Bridge multi-use pedestrian and cyclist path opens TODAY Wednesday August 5 at 8 a.m. — free of charge. It is the only pedestrian border crossing between Canada and the United States. WXYZ Detroit reported at least one person was already in line before 8 a.m. Summer hours: 8 a.m. to 8 p.m., seven days per week (last entry 7 p.m.). Winter hours: 8 a.m. to 4 p.m. No e-bikes, no motorized scooters, no pets. Car toll: $5.75 (compared to $10 at the Ambassador Bridge). The bridge opened to commercial and passenger vehicle traffic July 27. The pedestrian path is the final milestone in the $6.4 billion, eight-year construction project. The bridge connects I-75 in Detroit directly to Hwy 401 in Windsor — the Windsor-Detroit corridor handles $350 million per day in cross-border trade.",
+    whyItMatters: "The Gordie Howe Bridge is now fully open — vehicles, trucks, pedestrians, and cyclists. Walk to Detroit and back on your lunch break. The corridor now has full redundancy for the first time since 1929. For your shop: Section 338 is 14 days away (August 19). Autos and auto parts remain exempt under Section 232. Unifor-GM bargaining opens August 10 — 5 days.",
+    source: "WXYZ Detroit / Windsor Star / WDBA — August 5, 2026",
+    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "SECTION 338 — 15 DAYS TO AUGUST 19 / LEGAL CHALLENGE FILED / AUTOS & PARTS EXEMPT / MICHIGAN PRIMARY TODAY / 25 STATES SUING",
-    tagColor: "#b91c1c",
-    headline: "Section 338 — 15 Days — Legal Challenges Filed — Georgetown Scholars: Three Strong Arguments — 25 States Suing — Michigan Primary Today",
-    summary: "Georgetown Law scholars published the most detailed Section 338 legal analysis yet Monday. Three strong arguments the tariffs are legally vulnerable: (1) Offset requirement violated — the 50% tariff is nearly 2x the alleged harm from Canadian dairy practices; (2) Canada's dairy practices don't discriminate against U.S. imports vs. 'every foreign country' as required by Section 338; (3) Trump bypassed the ITC fact-finding requirement. Twenty-five states filed suit Monday. Volokh Conspiracy (Georgetown): 'A legal challenge is going to happen. I think it's more likely to succeed than Section 301 litigation.' But courts move slowly — 15 days to August 19. Autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10%, CUSMA-compliant auto parts exempt. Michigan primary TODAY — Abdul El-Sayed vs. Haley Stevens for the Senate seat vacated by Gary Peters. Polls: El-Sayed leading. Republican Mike Rogers likely wins the general (November 3) if El-Sayed wins the primary.",
-    whyItMatters: "15 days to August 19. Legal challenges are filed but courts move slowly — do not count on an injunction before August 19. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt. Michigan primary today: whoever wins the Senate seat votes on CUSMA renegotiation. Unifor-GM bargaining opens August 10 — 6 days.",
-    source: "Georgetown Law / Volokh Conspiracy / Reuters — August 3–4, 2026",
-    sourceUrl: "https://reason.com/volokh/2026/08/03/prospective-legal-challenges-to-trumps-section-338-tariffs-against-canada/",
+    tag: "MICHIGAN PRIMARY RESULT / EL-SAYED WINS / UAW ENDORSED / FACES ROGERS IN NOVEMBER / CUSMA RENEGOTIATION VOTE AT STAKE",
+    tagColor: "#1d4ed8",
+    headline: "Abdul El-Sayed Wins Michigan Democratic Senate Primary — UAW-Endorsed — Faces Republican Mike Rogers in November — CUSMA Vote at Stake",
+    summary: "Abdul El-Sayed has won Michigan's Democratic Senate primary, NBC News projects, defeating Rep. Haley Stevens 49% to 47%. El-Sayed overcame nearly $65 million in outside money against him, including more than $30 million from an AIPAC-linked group. He was endorsed by Bernie Sanders, AOC, and the United Auto Workers. Gov. Gretchen Whitmer had endorsed Stevens in a last-ditch effort to stop El-Sayed. El-Sayed goes on to face former Rep. Mike Rogers, who claimed the Republican nomination without opposition. The race in November is expected to be one of the most competitive in the country and could determine which party controls the Senate. Republicans have 53 seats; Democrats need to flip four to win the majority. Whoever wins the seat vacated by Sen. Gary Peters will vote on CUSMA renegotiation. The UAW endorsement is the most significant Canada-adjacent signal: the UAW is the most pro-CUSMA union in the United States.",
+    whyItMatters: "El-Sayed is UAW-endorsed — the UAW is the most pro-CUSMA union in the U.S. If El-Sayed wins in November, he votes on CUSMA renegotiation as a UAW-backed senator from Michigan. Republican Mike Rogers is the likely general election winner per most analysts — Rogers is a former House Intelligence Committee chair and a Trump ally. Michigan is the most Canada-adjacent U.S. Senate race. Watch this race closely through November 3.",
+    source: "NBC News / Bridge Michigan — August 4–5, 2026",
+    sourceUrl: "https://www.nbcnews.com/politics/2026-election/abdul-el-sayed-wins-michigans-democratic-senate-primary-notching-midwe-rcna589750",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "GORDIE HOWE BRIDGE PEDESTRIAN PATH OPENS TOMORROW AUGUST 5 / FREE / UNIFOR-GM 6 DAYS / MICHIGAN PRIMARY TODAY / FORD PATTERN 3%",
-    tagColor: "#15803d",
-    headline: "Gordie Howe Bridge Pedestrian Path Opens TOMORROW August 5 — Free — Michigan Primary Today — Unifor-GM Bargaining 6 Days",
-    summary: "The Gordie Howe International Bridge multi-use pedestrian and cyclist path opens TOMORROW Wednesday August 5 at 8 a.m. — free of charge. It is the only pedestrian border crossing between Canada and the United States. Summer hours: 8 a.m. to 8 p.m., seven days per week. Car toll: $5.75 (compared to $10 at the Ambassador Bridge). Michigan primary is TODAY — Abdul El-Sayed (progressive) vs. Haley Stevens (moderate) for the U.S. Senate seat vacated by Gary Peters. Polls: El-Sayed leading. Republican Mike Rogers is the likely general election winner (November 3) if El-Sayed wins the primary. Whoever wins the Senate seat votes on CUSMA renegotiation. Unifor formal bargaining with General Motors opens Monday August 10 in Toronto — 6 days. Unifor represents more than 4,600 members at Ontario GM facilities: Oshawa Assembly (Silverado pickup), CAMI Assembly in Ingersoll (Equinox EV), and the St. Catharines Propulsion Plant. The Ford pattern is the established floor: 3% annual wage increases, signing bonuses, and a $500 million Essex Engine Plant investment commitment. The GM contract expires September 20 — 47 days.",
-    whyItMatters: "Gordie Howe Bridge pedestrian path opens TOMORROW — August 5. Michigan primary today: whoever wins the Senate seat votes on CUSMA renegotiation. Unifor-GM bargaining opens in 6 days. If bargaining reaches an impasse, a work stoppage at Oshawa or CAMI would immediately affect GM parts availability across Ontario. Build your 30-day GM buffer today if you haven't already.",
-    source: "ClickOnDetroit / Unifor / Michigan SOS — August 4, 2026",
-    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
+    tag: "SECTION 338 — 14 DAYS TO AUGUST 19 / FASKEN ANALYSIS / CUSMA DOES NOT PROTECT / AUTOS & PARTS EXEMPT / UNIFOR-GM 5 DAYS",
+    tagColor: "#b91c1c",
+    headline: "Section 338 — 14 Days — Fasken: CUSMA Does NOT Protect Against Section 338 — Autos and Auto Parts EXEMPT — Unifor-GM 5 Days",
+    summary: "Fasken published the most comprehensive legal analysis of the Section 338 tariffs on August 4. Key finding: the Section 338 tariffs do NOT include a CUSMA exemption — goods qualifying under CUSMA are still subject to the 50% tariff. The only exemptions from Section 338 are: energy, potash, fish, critical minerals, and goods already subject to Section 232 tariffs (steel, aluminum, autos, and auto parts). This is the critical difference from Section 301, which does exempt CUSMA-originating goods. Fasken: 'These new actions suggest that Canada-US trade relations have entered a particularly unpredictable period following the July 1, 2026, joint review and the failure of the parties to reach any comprehensive agreement.' Canada has not announced retaliatory tariffs but has not ruled them out. New Canadian forced labour legislation is expected — will materially increase enforcement and seizure risk at the border. Unifor-GM formal bargaining opens Monday August 10 in Toronto — 5 days. Ford pattern: 3% annual wage increases, signing bonuses, $500M Essex Engine Plant. GM contract expires September 20.",
+    whyItMatters: "14 days to August 19. CUSMA does NOT protect against Section 338 — this is the critical distinction. Section 301 at 10% — CUSMA-compliant auto parts ARE exempt from Section 301. Section 338 at 50% — CUSMA does NOT protect. Autos and auto parts are exempt from BOTH under Section 232. Unifor-GM bargaining opens August 10 — 5 days. Build your 30-day GM buffer today.",
+    source: "Fasken / Georgetown Law — August 4–5, 2026",
+    sourceUrl: "https://www.fasken.com/en/knowledge/2026/08/new-us-tariffs-on-canadian-goods",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "✈️",
-    text: "WestJet strike is OVER. Tentative deal reached Monday August 3 after just 30 hours. Double-digit wage increase year one. Flights resuming Tuesday — full schedule restored later this week. Ratification vote within 30 days. Keep receipts if you incurred out-of-pocket costs.",
-    sourceUrl: "https://www.reuters.com/legal/litigation/westjet-flight-attendants-union-reach-wage-increase-deal-end-strike-2026-08-03/",
-  },
-  {
-    icon: "⚖️",
-    text: "Section 338 legal challenges: Georgetown Law scholars identified 3 strong arguments. 25 states filed suit Monday. But courts move slowly — do not count on an injunction before August 19. 15 days. Autos and auto parts EXEMPT under Section 232.",
-    sourceUrl: "https://reason.com/volokh/2026/08/03/prospective-legal-challenges-to-trumps-section-338-tariffs-against-canada/",
-  },
-  {
-    icon: "🗳️",
-    text: "Michigan primary TODAY — Abdul El-Sayed vs. Haley Stevens for U.S. Senate. Polls: El-Sayed leading. Republican Mike Rogers likely wins the general (November 3) if El-Sayed wins. Whoever wins votes on CUSMA renegotiation.",
-    sourceUrl: "https://www.mlive.com/politics/2026/08/michigan-senate-primary-2026-results-live-updates.html",
-  },
-  {
     icon: "🌉",
-    text: "Gordie Howe Bridge pedestrian & cyclist path opens TOMORROW August 5 at 8 a.m. FREE. Only pedestrian border crossing between Canada and the U.S. Car toll: $5.75 (vs. $10 at Ambassador Bridge).",
+    text: "Gordie Howe Bridge pedestrian & cyclist path is OPEN — TODAY August 5 at 8 a.m. FREE. Bring your passport. No e-bikes, no motorized scooters, no pets. Summer hours: 8 a.m.–8 p.m. Only pedestrian border crossing in Canada.",
     sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
   },
   {
+    icon: "🗳️",
+    text: "El-Sayed wins Michigan primary. UAW-endorsed. Faces Republican Mike Rogers in November general. Whoever wins votes on CUSMA renegotiation. Rogers is the likely general election winner per analysts.",
+    sourceUrl: "https://www.nbcnews.com/politics/2026-election/abdul-el-sayed-wins-michigans-democratic-senate-primary-notching-midwe-rcna589750",
+  },
+  {
+    icon: "⚖️",
+    text: "Fasken: CUSMA does NOT protect against Section 338. Only exemptions: energy, potash, fish, critical minerals, Section 232 (autos, auto parts). Section 301 at 10% — CUSMA-compliant parts ARE exempt. 14 days to August 19.",
+    sourceUrl: "https://www.fasken.com/en/knowledge/2026/08/new-us-tariffs-on-canadian-goods",
+  },
+  {
+    icon: "✈️",
+    text: "WestJet schedule fully restored by end of this week. Ratification vote within 30 days. If you incurred out-of-pocket costs during the 30-hour strike, keep receipts — Air Passenger Protection Regulations may apply.",
+    sourceUrl: "https://www.reuters.com/legal/litigation/westjet-flight-attendants-union-reach-wage-increase-deal-end-strike-2026-08-03/",
+  },
+  {
     icon: "🔧",
-    text: "Unifor-GM formal bargaining opens August 10 — 6 days. Ford pattern: 3% annual increases, $500M Essex Engine Plant. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry — 47 days. Build your GM buffer today.",
+    text: "Unifor-GM formal bargaining opens August 10 — 5 days. Ford pattern: 3% annual increases, $500M Essex Engine Plant. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry — 46 days. Build your GM buffer today.",
     sourceUrl: "https://www.unifor.org/news/all-news/unifor-commence-negotiations-general-motors",
   },
 ];
 
 const tipOfTheDay = {
-  title: "WestJet Is Back — Section 338 Legal Challenge Filed — Michigan Primary Today — Gordie Howe Bridge Pedestrian Path Tomorrow — Unifor-GM 6 Days",
-  text: "Five things for Tuesday August 4. First: WestJet is back. Flights are resuming today — full schedule restored later this week. If you incurred out-of-pocket rebooking costs during the 30-hour strike, keep your receipts — you may be entitled to reimbursement under the Air Passenger Protection Regulations. Second: Section 338 legal challenges are filed. Georgetown Law scholars identified 3 strong arguments. 25 states sued Monday. But courts move slowly — do not count on an injunction before August 19. 15 days. Third: Michigan primary today — whoever wins the Senate seat votes on CUSMA renegotiation. Fourth: Gordie Howe Bridge pedestrian path opens TOMORROW August 5 at 8 a.m. — free. Fifth: Unifor-GM bargaining opens August 10 — 6 days. Build your 30-day GM buffer today. Autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% for non-CUSMA parts — CUSMA-compliant auto parts exempt.",
+  title: "Gordie Howe Bridge Pedestrian Path Open TODAY — El-Sayed Wins Michigan — Section 338 14 Days — CUSMA Does NOT Protect — Unifor-GM 5 Days",
+  text: "Five things for Wednesday August 5. First: Gordie Howe Bridge pedestrian path is open TODAY at 8 a.m. — free. Bring your passport. No e-bikes, no motorized scooters, no pets. Walk to Detroit and back. Second: El-Sayed wins Michigan primary. UAW-endorsed. Faces Rogers in November. Whoever wins votes on CUSMA renegotiation. Third: Fasken confirmed — CUSMA does NOT protect against Section 338. The only exemptions from Section 338 are energy, potash, fish, critical minerals, and Section 232 goods (autos, auto parts). Section 301 at 10% — CUSMA-compliant parts ARE exempt from Section 301. Know the difference. Fourth: 14 days to August 19. Courts move slowly — do not count on an injunction. Fifth: Unifor-GM bargaining opens August 10 — 5 days. Build your 30-day GM buffer today.",
 };
 
 const quoteOfTheDay = {
-  text: "This deal certainly addressed the wage gap.",
-  author: "Alia Hussain, President, CUPE Local 8125",
-  title: "WestJet tentative agreement reached — August 3, 2026",
+  text: "This is about whether or not you deserve a politics of the people, by the people and for the people, or of the corporations, by the billionaires and for the special interests.",
+  author: "Abdul El-Sayed, Democratic Senate Nominee, Michigan",
+  title: "Election night victory speech, Majestic Theatre, Detroit — August 4, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Dodge Challenger R/T 440 Six Pack — Plum Crazy Purple, Black Bumblebee Stripe, Ontario-Plated",
-  description: "Plum Crazy Purple with black bumblebee stripe — the most visually aggressive Challenger colour combination ever offered. The 440 Six Pack: three two-barrel Holley carburetors on an Edelbrock intake, 390 horsepower, 490 lb-ft of torque. The Six Pack was Chrysler's answer to the 440 4-barrel and the 426 Hemi — more accessible, nearly as fast, and impossible to ignore. WestJet's strike lasted 30 hours. The Challenger R/T doesn't negotiate.",
+  name: "1970 Pontiac GTO 455 HO — Orbit Orange, Black Racing Stripes, Ontario-Plated",
+  description: "Orbit Orange with black racing stripes — the most aggressive GTO colour combination of the era. The 455 HO: 360 horsepower, 500 lb-ft of torque. The GTO was the original muscle car — John DeLorean put a 389 in a Tempest in 1964 and created the muscle car era. The 1970 455 HO was the most powerful GTO ever built. The Gordie Howe Bridge pedestrian path opened this morning. The GTO approves.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["WESTJET STRIKE OVER", "SECTION 338: 15 DAYS", "MICHIGAN PRIMARY TODAY", "'70 CHALLENGER R/T"].map((tag) => (
+                {["GORDIE HOWE BRIDGE OPEN", "EL-SAYED WINS MICHIGAN", "SECTION 338: 14 DAYS", "'70 GTO 455 HO"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,7 +187,7 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Section 301 In Effect — CUSMA Exempt Confirmed — Charlottetown United Front — Gordie Howe Bridge Revenue Controversy — Opens Monday — Baywash Daily Briefing Edition No. 78"
+              alt="Gordie Howe Bridge Pedestrian Path Opens Today — El-Sayed Wins Michigan Primary — Section 338 14 Days — Baywash Daily Briefing Edition No. 90"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
