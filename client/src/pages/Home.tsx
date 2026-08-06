@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 90;
-const BRIEFING_DATE = "August 5, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 91;
+const BRIEFING_DATE = "August 6, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xgFZSNAJNRJpjkph.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ivJdPaKEdcmKfDPD.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aYCOutNjhXObROZQ.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/znoPqweNJTiUHboV.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AlwCamTTKDSEqMMB.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aEXtPhJTHBSatTeW.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/MihwgMSGGZjDKkEo.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/posjLOzzlSytfLRF.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZGgOYrGcUtXFytlS.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gLWnMHPlQWvHxmCS.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "GORDIE HOWE BRIDGE PEDESTRIAN PATH OPENS TODAY / FREE / 8 A.M. / ONLY PEDESTRIAN BORDER CROSSING IN CANADA / BRING PASSPORT",
-    tagColor: "#15803d",
-    headline: "Gordie Howe Bridge Pedestrian Path Opens TODAY at 8 a.m. — Free — Only Pedestrian Border Crossing in Canada — Bring Your Passport",
-    summary: "The Gordie Howe International Bridge multi-use pedestrian and cyclist path opens TODAY Wednesday August 5 at 8 a.m. — free of charge. It is the only pedestrian border crossing between Canada and the United States. WXYZ Detroit reported at least one person was already in line before 8 a.m. Summer hours: 8 a.m. to 8 p.m., seven days per week (last entry 7 p.m.). Winter hours: 8 a.m. to 4 p.m. No e-bikes, no motorized scooters, no pets. Car toll: $5.75 (compared to $10 at the Ambassador Bridge). The bridge opened to commercial and passenger vehicle traffic July 27. The pedestrian path is the final milestone in the $6.4 billion, eight-year construction project. The bridge connects I-75 in Detroit directly to Hwy 401 in Windsor — the Windsor-Detroit corridor handles $350 million per day in cross-border trade.",
-    whyItMatters: "The Gordie Howe Bridge is now fully open — vehicles, trucks, pedestrians, and cyclists. Walk to Detroit and back on your lunch break. The corridor now has full redundancy for the first time since 1929. For your shop: Section 338 is 14 days away (August 19). Autos and auto parts remain exempt under Section 232. Unifor-GM bargaining opens August 10 — 5 days.",
-    source: "WXYZ Detroit / Windsor Star / WDBA — August 5, 2026",
-    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
+    tag: "STEEL & ALUMINUM TRQ DEAL REVIVED / LEBLANC IN WASHINGTON / 13 DAYS TO AUGUST 19 / CARNEY: GET TOUGHER / AUTOS EXEMPT",
+    tagColor: "#b91c1c",
+    headline: "Steel & Aluminum TRQ Deal Revived — LeBlanc Back in Washington — 13 Days to August 19 — Carney: Canada Ready to 'Get Tougher'",
+    summary: "Globe and Mail reported Wednesday that Canada and the U.S. are reviving a tariff rate quota (TRQ) proposal for Canadian steel and aluminum exports that was first discussed last October. Under the framework: Canadian metals exports would be subject to a quota. Exports below the quota would face a reduced tariff (approximately 10–15% for steel); exports above the quota would face tariffs in the 25–50% range. In exchange, the U.S. would reduce its Section 232 metals tariffs (currently 50%) for exports under the quota. LeBlanc and chief negotiator Janice Charette flew to Washington Tuesday for the second time in two weeks. Their schedule includes meetings with U.S. senators and key U.S. industry groups that support CUSMA. Carney and Trump have been talking directly. The U.S. also handed Canada 10 NEW demands last week — on top of the June letter. Autos: NOT part of detailed negotiations. Greer confirmed CUSMA auto rules of origin pushed to 2027. Canadian-made autos remain subject to 25% Section 232 tariff. Section 338 (50% tariff, August 19): 13 days. CUSMA does NOT protect against Section 338. Autos and auto parts EXEMPT under Section 232.",
+    whyItMatters: "The TRQ deal is the most concrete progress in Canada-U.S. trade talks since negotiations began. If a TRQ deal closes before August 19: Section 232 metals tariffs (50%) would be reduced for quota exports. Section 338 is still 13 days away — CUSMA does NOT protect. Carney said Wednesday Canada is ready to 'get tougher' if no deal before the deadline. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% — CUSMA-compliant parts exempt.",
+    source: "Globe and Mail / CBC — August 4–5, 2026",
+    sourceUrl: "https://www.theglobeandmail.com/world/us-politics/article-leblanc-charette-washington-carney-trump-tariffs-trade/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "MICHIGAN PRIMARY RESULT / EL-SAYED WINS / UAW ENDORSED / FACES ROGERS IN NOVEMBER / CUSMA RENEGOTIATION VOTE AT STAKE",
-    tagColor: "#1d4ed8",
-    headline: "Abdul El-Sayed Wins Michigan Democratic Senate Primary — UAW-Endorsed — Faces Republican Mike Rogers in November — CUSMA Vote at Stake",
-    summary: "Abdul El-Sayed has won Michigan's Democratic Senate primary, NBC News projects, defeating Rep. Haley Stevens 49% to 47%. El-Sayed overcame nearly $65 million in outside money against him, including more than $30 million from an AIPAC-linked group. He was endorsed by Bernie Sanders, AOC, and the United Auto Workers. Gov. Gretchen Whitmer had endorsed Stevens in a last-ditch effort to stop El-Sayed. El-Sayed goes on to face former Rep. Mike Rogers, who claimed the Republican nomination without opposition. The race in November is expected to be one of the most competitive in the country and could determine which party controls the Senate. Republicans have 53 seats; Democrats need to flip four to win the majority. Whoever wins the seat vacated by Sen. Gary Peters will vote on CUSMA renegotiation. The UAW endorsement is the most significant Canada-adjacent signal: the UAW is the most pro-CUSMA union in the United States.",
-    whyItMatters: "El-Sayed is UAW-endorsed — the UAW is the most pro-CUSMA union in the U.S. If El-Sayed wins in November, he votes on CUSMA renegotiation as a UAW-backed senator from Michigan. Republican Mike Rogers is the likely general election winner per most analysts — Rogers is a former House Intelligence Committee chair and a Trump ally. Michigan is the most Canada-adjacent U.S. Senate race. Watch this race closely through November 3.",
-    source: "NBC News / Bridge Michigan — August 4–5, 2026",
-    sourceUrl: "https://www.nbcnews.com/politics/2026-election/abdul-el-sayed-wins-michigans-democratic-senate-primary-notching-midwe-rcna589750",
+    tag: "UNIFOR PLAYING THE LONG GAME / GM BARGAINING AUGUST 10 / CAMI EQUINOX EV FUTURE UNCLEAR / FORD PATTERN 3% / 4 DAYS",
+    tagColor: "#15803d",
+    headline: "Unifor 'Playing the Long Game' in GM Talks — CAMI Equinox EV Future 'Unclear' — Bargaining Opens August 10 — 4 Days",
+    summary: "Unifor National President Lana Payne gave an exclusive interview to WardsAuto published Wednesday August 5. Key quote: 'I remind the D3 these are a moment in time. We as a union must play the long game, and they should too.' Payne said she is optimistic GM and Stellantis will strike deals similar to Ford's — but acknowledged the ground is shifting. The Ford deal (ratified July 19, 74% yes) is the established floor: 3% annual wage increases, $500M Essex Engine Plant, $400M Oakville retooling, commitment not to close or sell Canadian factories for three years. CAMI Assembly in Ingersoll (Equinox EV): future 'unclear.' Stellantis Brampton: future 'unclear.' Payne: 'They are important facilities to these companies. They are a footprint that gives a competitive advantage.' Unifor represents 4,600+ members at Ontario GM facilities: Oshawa Assembly (Silverado), CAMI (Equinox EV), St. Catharines Propulsion Plant. GM contract expires September 20 — 45 days. Formal bargaining opens Monday August 10 at the Toronto Sheraton Centre.",
+    whyItMatters: "CAMI Assembly (Equinox EV) future is 'unclear' — this is the most significant new disclosure. If CAMI closes or is idled, Equinox EV supply ends. Oshawa Silverado production is the higher-volume risk. Build your 30-day GM buffer TODAY — bargaining opens in 4 days. Ford pattern is the floor: 3% annual increases. Unifor is playing the long game. So should you.",
+    source: "WardsAuto / Unifor — August 5, 2026",
+    sourceUrl: "https://www.wardsauto.com/news/unifor-is-playing-the-long-game-in-contract-talks-and-wants-automakers/826674/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "SECTION 338 — 14 DAYS TO AUGUST 19 / FASKEN ANALYSIS / CUSMA DOES NOT PROTECT / AUTOS & PARTS EXEMPT / UNIFOR-GM 5 DAYS",
-    tagColor: "#b91c1c",
-    headline: "Section 338 — 14 Days — Fasken: CUSMA Does NOT Protect Against Section 338 — Autos and Auto Parts EXEMPT — Unifor-GM 5 Days",
-    summary: "Fasken published the most comprehensive legal analysis of the Section 338 tariffs on August 4. Key finding: the Section 338 tariffs do NOT include a CUSMA exemption — goods qualifying under CUSMA are still subject to the 50% tariff. The only exemptions from Section 338 are: energy, potash, fish, critical minerals, and goods already subject to Section 232 tariffs (steel, aluminum, autos, and auto parts). This is the critical difference from Section 301, which does exempt CUSMA-originating goods. Fasken: 'These new actions suggest that Canada-US trade relations have entered a particularly unpredictable period following the July 1, 2026, joint review and the failure of the parties to reach any comprehensive agreement.' Canada has not announced retaliatory tariffs but has not ruled them out. New Canadian forced labour legislation is expected — will materially increase enforcement and seizure risk at the border. Unifor-GM formal bargaining opens Monday August 10 in Toronto — 5 days. Ford pattern: 3% annual wage increases, signing bonuses, $500M Essex Engine Plant. GM contract expires September 20.",
-    whyItMatters: "14 days to August 19. CUSMA does NOT protect against Section 338 — this is the critical distinction. Section 301 at 10% — CUSMA-compliant auto parts ARE exempt from Section 301. Section 338 at 50% — CUSMA does NOT protect. Autos and auto parts are exempt from BOTH under Section 232. Unifor-GM bargaining opens August 10 — 5 days. Build your 30-day GM buffer today.",
-    source: "Fasken / Georgetown Law — August 4–5, 2026",
-    sourceUrl: "https://www.fasken.com/en/knowledge/2026/08/new-us-tariffs-on-canadian-goods",
+    tag: "NORTON ROSE FULBRIGHT / SECTION 338 NEVER JUDICIALLY TESTED / CUSMA DOES NOT PROTECT / WTO COMPATIBILITY UNCERTAIN / 13 DAYS",
+    tagColor: "#7c3aed",
+    headline: "Norton Rose Fulbright: Section 338 'Has Never Been Judicially Tested' — CUSMA Does NOT Protect — WTO Compatibility 'Genuinely Uncertain' — 13 Days",
+    summary: "Norton Rose Fulbright published the most authoritative Section 338 legal analysis today. Key findings: (1) CUSMA does NOT protect — 'a significant departure from the tariffs first introduced in early 2025.' (2) Section 338 'has never been judicially tested in the modern era.' (3) WTO compatibility is 'genuinely uncertain.' (4) There is no product-specific exclusion or relief process — only presidential action can modify the tariffs. The three proclamations: Motor Vehicles (439 HTSUS codes, $19.3B in 2024 imports), Dairy (52 codes, $97M), Alcoholic Beverages (63 codes, $1B). Despite being titled 'Motor Vehicles,' the third proclamation does NOT cover actual vehicles or auto parts — they are excluded because they already carry the separate 25% Section 232 tariff. Norton Rose: 'The 30-day coming-into-force window is notable. As seen with the first round of US tariffs on Canada in February 2025, the intervening period may allow scope for negotiation or modification.' Canada has not announced retaliation but has not ruled it out.",
+    whyItMatters: "Section 338 has never been judicially tested. WTO compatibility is genuinely uncertain. But courts move slowly — do not count on an injunction before August 19. CUSMA does NOT protect. Autos and auto parts are exempt from Section 338 under Section 232. Section 301 at 10% — CUSMA-compliant parts ARE exempt from Section 301. The TRQ deal being revived is the most likely path to relief before August 19.",
+    source: "Norton Rose Fulbright — August 6, 2026",
+    sourceUrl: "https://www.nortonrosefulbright.com/en/knowledge/publications/8a7d16d5/smoke-or-fire-the-us-proclaims-potential-50-tariffs-on-a-wide-range-of-canadian-goods",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🌉",
-    text: "Gordie Howe Bridge pedestrian & cyclist path is OPEN — TODAY August 5 at 8 a.m. FREE. Bring your passport. No e-bikes, no motorized scooters, no pets. Summer hours: 8 a.m.–8 p.m. Only pedestrian border crossing in Canada.",
-    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
-  },
-  {
-    icon: "🗳️",
-    text: "El-Sayed wins Michigan primary. UAW-endorsed. Faces Republican Mike Rogers in November general. Whoever wins votes on CUSMA renegotiation. Rogers is the likely general election winner per analysts.",
-    sourceUrl: "https://www.nbcnews.com/politics/2026-election/abdul-el-sayed-wins-michigans-democratic-senate-primary-notching-midwe-rcna589750",
-  },
-  {
-    icon: "⚖️",
-    text: "Fasken: CUSMA does NOT protect against Section 338. Only exemptions: energy, potash, fish, critical minerals, Section 232 (autos, auto parts). Section 301 at 10% — CUSMA-compliant parts ARE exempt. 14 days to August 19.",
-    sourceUrl: "https://www.fasken.com/en/knowledge/2026/08/new-us-tariffs-on-canadian-goods",
-  },
-  {
-    icon: "✈️",
-    text: "WestJet schedule fully restored by end of this week. Ratification vote within 30 days. If you incurred out-of-pocket costs during the 30-hour strike, keep receipts — Air Passenger Protection Regulations may apply.",
-    sourceUrl: "https://www.reuters.com/legal/litigation/westjet-flight-attendants-union-reach-wage-increase-deal-end-strike-2026-08-03/",
+    icon: "🇲🇽",
+    text: "Steel & aluminum TRQ deal revived — most concrete progress yet. Canada exports below quota: ~10–15% tariff. Above quota: 25–50%. In exchange: U.S. reduces Section 232 metals tariffs from 50%. LeBlanc and Charette in Washington this week.",
+    sourceUrl: "https://www.theglobeandmail.com/world/us-politics/article-leblanc-charette-washington-carney-trump-tariffs-trade/",
   },
   {
     icon: "🔧",
-    text: "Unifor-GM formal bargaining opens August 10 — 5 days. Ford pattern: 3% annual increases, $500M Essex Engine Plant. Oshawa Silverado and CAMI Equinox EV at stake. September 20 contract expiry — 46 days. Build your GM buffer today.",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-commence-negotiations-general-motors",
+    text: "Unifor: CAMI Equinox EV future 'unclear.' Stellantis Brampton future 'unclear.' GM bargaining opens August 10 — 4 days. Ford pattern: 3% annual increases, $500M Essex Engine Plant. Build your GM buffer TODAY.",
+    sourceUrl: "https://www.wardsauto.com/news/unifor-is-playing-the-long-game-in-contract-talks-and-wants-automakers/826674/",
+  },
+  {
+    icon: "⚖️",
+    text: "Norton Rose Fulbright: Section 338 'has never been judicially tested.' CUSMA does NOT protect. WTO compatibility 'genuinely uncertain.' No product exclusion process. 13 days to August 19. Autos/parts EXEMPT under Section 232.",
+    sourceUrl: "https://www.nortonrosefulbright.com/en/knowledge/publications/8a7d16d5/smoke-or-fire-the-us-proclaims-potential-50-tariffs-on-a-wide-range-of-canadian-goods",
+  },
+  {
+    icon: "💪",
+    text: "Carney: Canada ready to 'get tougher' if no deal before August 19. Retaliation back on the table. U.S. handed Canada 10 NEW demands last week on top of June letter. Autos NOT part of detailed negotiations.",
+    sourceUrl: "https://www.cbc.ca/news/politics/leblanc-august-meetings-tariffs-9.7295896",
+  },
+  {
+    icon: "🌉",
+    text: "Gordie Howe Bridge pedestrian path open. El-Sayed won Michigan primary — UAW-endorsed, faces Rogers in November. WestJet schedule fully restored. Section 301 at 10% — CUSMA-compliant auto parts exempt.",
+    sourceUrl: "https://www.clickondetroit.com/news/local/2026/07/28/pedestrians-cyclists-can-cross-gordie-howe-international-bridge-for-free-beginning-aug-5/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Gordie Howe Bridge Pedestrian Path Open TODAY — El-Sayed Wins Michigan — Section 338 14 Days — CUSMA Does NOT Protect — Unifor-GM 5 Days",
-  text: "Five things for Wednesday August 5. First: Gordie Howe Bridge pedestrian path is open TODAY at 8 a.m. — free. Bring your passport. No e-bikes, no motorized scooters, no pets. Walk to Detroit and back. Second: El-Sayed wins Michigan primary. UAW-endorsed. Faces Rogers in November. Whoever wins votes on CUSMA renegotiation. Third: Fasken confirmed — CUSMA does NOT protect against Section 338. The only exemptions from Section 338 are energy, potash, fish, critical minerals, and Section 232 goods (autos, auto parts). Section 301 at 10% — CUSMA-compliant parts ARE exempt from Section 301. Know the difference. Fourth: 14 days to August 19. Courts move slowly — do not count on an injunction. Fifth: Unifor-GM bargaining opens August 10 — 5 days. Build your 30-day GM buffer today.",
+  title: "Steel TRQ Deal Revived — Unifor CAMI Future Unclear — Section 338 Never Tested — 13 Days — Build GM Buffer TODAY",
+  text: "Five things for Thursday August 6. First: the steel and aluminum TRQ deal is the most concrete trade progress yet. If it closes before August 19, Section 232 metals tariffs (50%) would be reduced for quota exports. Watch for an announcement this week. Second: Unifor disclosed CAMI Equinox EV future is 'unclear' — this is the most significant new automotive risk. Build your 30-day GM buffer TODAY — bargaining opens in 4 days. Third: Norton Rose Fulbright confirmed — Section 338 has never been judicially tested. CUSMA does NOT protect. WTO compatibility genuinely uncertain. Do not count on a court injunction before August 19. Fourth: Carney is ready to get tougher. Retaliation is back on the table. Fifth: autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% — CUSMA-compliant parts exempt.",
 };
 
 const quoteOfTheDay = {
-  text: "This is about whether or not you deserve a politics of the people, by the people and for the people, or of the corporations, by the billionaires and for the special interests.",
-  author: "Abdul El-Sayed, Democratic Senate Nominee, Michigan",
-  title: "Election night victory speech, Majestic Theatre, Detroit — August 4, 2026",
+  text: "I remind the D3 these are a moment in time. We as a union must play the long game, and they should too. They need to be producing market share in Canada — they do that by investing in the Canadian footprint.",
+  author: "Lana Payne, Unifor National President",
+  title: "WardsAuto exclusive interview — August 5, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Pontiac GTO 455 HO — Orbit Orange, Black Racing Stripes, Ontario-Plated",
-  description: "Orbit Orange with black racing stripes — the most aggressive GTO colour combination of the era. The 455 HO: 360 horsepower, 500 lb-ft of torque. The GTO was the original muscle car — John DeLorean put a 389 in a Tempest in 1964 and created the muscle car era. The 1970 455 HO was the most powerful GTO ever built. The Gordie Howe Bridge pedestrian path opened this morning. The GTO approves.",
+  name: "1969 Ford Mustang Mach 1 428 Cobra Jet — Candy Apple Red, Black Mach 1 Stripes, Ontario-Plated",
+  description: "Candy Apple Red with black Mach 1 hood stripes and side scoops — the definitive performance Mustang of the muscle car era. The 428 Cobra Jet: 335 horsepower (factory-underrated), 440 lb-ft of torque. Ford rated it conservatively to keep insurance companies happy. The actual output was closer to 410 hp. LeBlanc is in Washington playing the long game. The Mach 1 approves.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["GORDIE HOWE BRIDGE OPEN", "EL-SAYED WINS MICHIGAN", "SECTION 338: 14 DAYS", "'70 GTO 455 HO"].map((tag) => (
+                {["STEEL TRQ DEAL REVIVED", "UNIFOR: CAMI FUTURE UNCLEAR", "SECTION 338: 13 DAYS", "'69 MACH 1 428 CJ"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
             </div>
           </div>
         </header>
@@ -187,7 +187,7 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Gordie Howe Bridge Pedestrian Path Opens Today — El-Sayed Wins Michigan Primary — Section 338 14 Days — Baywash Daily Briefing Edition No. 90"
+              alt="Steel TRQ Deal Revived — LeBlanc in Washington — Unifor CAMI Future Unclear — Section 338 13 Days — Baywash Daily Briefing Edition No. 91"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
