@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 96;
-const BRIEFING_DATE = "August 11, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 97;
+const BRIEFING_DATE = "August 12, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QbswHySPEBMDGeqq.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OrBIjnpuVUQXQjEZ.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KgCabIIAPzXjxzRm.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xUUfbITFbZyTmvkZ.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gfkyBaWjsyKhRyBZ.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JvRqYAXOuPWCIayY.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gftoQHWTVgDaolJQ.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jVMcHxqEzLFTAZEG.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nFJbmSVRLRuEGoht.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/pBRumIZSzOVWXSPA.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "LEBLANC ADVISORY COUNCIL / NO DEAL YET / 8 DAYS TO AUGUST 19 / CARNEY ITALY UNTIL AUG 17 / AUTOS PARTS EXEMPT",
+    tag: "GREER + LEBLANC MEET / THIRD IN THREE WEEKS / SECTION 338: 7 DAYS / NO DEAL ANNOUNCED / PARTS CUSMA EXEMPT",
     tagColor: "#b91c1c",
-    headline: "LeBlanc Convenes Canada-US Advisory Council — No Deal Yet — 8 Days to August 19 — Carney in Italy Until August 17",
-    summary: "LeBlanc convened the Canada-US Advisory Council Monday afternoon in Washington. It is unclear who he and Charette are meeting with on the U.S. side. No deal announced. LeBlanc is in Washington all week. Carney is in Italy on 'reduced schedule' until August 17 — two days before Section 338 takes effect. BNN Bloomberg: 'It's unclear who he and Canada's lead trade negotiator, Janice Charette, could be meeting with.' CBC: Canada preparing to end alcohol bans and lift auto retaliatory tariffs in exchange for tariff relief. Carney's government 'has told the provinces not to expect major changes to the supply management regime.' PEI Premier Rob Lantz at the New England Governors and Eastern Canadian Premiers conference in Shelburne, Vermont Monday: 'Those alcohol bans are simply on the table — but we would like to know what we get in return.' Nova Scotia Premier Tim Houston: 'What we're living through right now with the tariffs, with the threat of tariffs, with some of the insults and the talking points, they're difficult. There's no way around that.' Vermont Gov. Phil Scott (Republican) sent letter to Commerce Secretary Lutnick urging reversal of tariffs — no response yet. 8 days to August 19. Autos and auto parts EXEMPT under Section 232.",
-    whyItMatters: "No deal yet. LeBlanc is in Washington but it is unclear who he is meeting with on the U.S. side. Carney is in Italy until August 17. The premiers are signalling the alcohol bans are on the table — but conditional on getting something in return. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% — CUSMA-compliant parts exempt. 8 days to August 19.",
-    source: "BNN Bloomberg / CBC / VTDigger — August 10–11, 2026",
-    sourceUrl: "https://www.bnnbloomberg.ca/tariffs/2026/08/11/all-it-does-is-hurt-americans-weigh-in-on-canada-us-trade-war/",
+    headline: "Greer + LeBlanc Meet in Washington — Third Round in Three Weeks — No Deal Announced — 7 Days to August 19",
+    summary: "U.S. Trade Representative Jamieson Greer and Minister Responsible for U.S. Trade Dominic LeBlanc met in Washington Tuesday for another round of negotiations — their third meeting in three weeks. The pace has accelerated as Ottawa seeks to avert the 50% Section 338 tariff threat scheduled for August 19. No deal was announced. Automotive Parts Manufacturers' Association president Flavio Volpe says Ottawa should stay firm rather than settle for piecemeal relief: Canada has 'gone to the mattresses' for a protracted negotiation. The auto sector is already facing Section 232 tariffs: 25% on imported vehicles, with a U.S.-content carve-out for CUSMA-compliant vehicles; auto parts have a blanket CUSMA-compliance exemption. The proposed Section 338 action is separate and, unlike most earlier tariff rounds, does not provide a general CUSMA exception for covered goods.",
+    whyItMatters: "Seven days is not much runway, but no agreement has been signed. Do not confuse the upcoming Section 338 threat with the existing sectoral auto rules: for your parts bill, the operational question remains CUSMA compliance. Confirm written origin status and quoted lead times with your three highest-volume suppliers this week. CUSMA-compliant auto parts retain their Section 232 exemption.",
+    source: "Inside U.S. Trade / iPolitics — August 11–12, 2026",
+    sourceUrl: "https://www.ipolitics.ca/2026/08/11/gone-to-the-mattresses-auto-industry-urges-carney-government-to-stay-strong-in-trade-talks/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "UNIFOR-GM DAY 2 / 30% OF GM MEMBERS ON LAYOFF / AUGUST 21 TARGET DEADLINE / FORD PATTERN FLOOR / CONTRACT EXPIRES SEPT 20",
+    tag: "UNIFOR WANTS GMC SIERRA AT OSHAWA / SIERRA SALES BEAT SILVERADO / GM SOLD 300K, BUILT 130K / TARGET: AUG 21",
     tagColor: "#15803d",
-    headline: "Unifor-GM Day 2 — 30% of GM Members in Canada on Layoff as Talks Open — August 21 Target Deadline — Ford Pattern Is the Floor",
-    summary: "Unifor's official press release (August 10) confirmed that as talks open, approximately 30% of Unifor members at GM in Canada are on layoff. Breakdown: 2,750 members at Oshawa Assembly (active), 1,050 at CAMI Assembly in Ingersoll (idled), 700 at St. Catharines Propulsion Plant (active), 110 at Woodstock Parts Distribution Centre (active). Unifor has set a target deadline of August 21 to reach a tentative agreement with GM — two days after Section 338 takes effect. Lana Payne: 'We're entering this next round of negotiations with the solid foundation established by the pattern agreement with Ford, and we intend to have meaningful discussions on company operations and the future of auto jobs at GM in Canada.' Trevor Longpre (GM Master Bargaining Committee Chair): 'Our members expect the Ford pattern to be respected and these talks to give certainty about the future of their facilities.' Ford pattern ratified: 3% annual wage increases, $500M Essex Engine Plant, $400M Oakville retooling, no-closure agreement, pathway to full employment at Oakville by July 2027. GM contract expires September 20 — 40 days. The interim trade deal being discussed would require Canada to remove retaliatory tariffs on U.S. autos — which could affect GM's negotiating position.",
-    whyItMatters: "30% of Unifor's GM members are on layoff. CAMI has been idle since May 2025. The August 21 target deadline overlaps with Section 338 taking effect August 19. If a trade deal is reached that removes Canada's auto retaliatory tariffs, GM's leverage at the table changes. Ford pattern is the floor: 3% annual increases. For your shop: GM parts supply is determined by Oshawa Silverado (higher volume) and CAMI (Equinox EV). Contract expires September 20 — 40 days.",
-    source: "Unifor — August 10, 2026",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unifor-opens-negotiations-general-motors-151400401.html",
+    headline: "Unifor Presses GM to Build GMC Sierra at Oshawa — Canada Bought More Sierras Than Silverados in H1",
+    summary: "Unifor is pressing GM to add GMC Sierra production at Oshawa Assembly alongside the Chevrolet Silverado as contract talks continue. In the first half of 2026, GM sold 29,483 Sierras in Canada versus 27,740 Silverados — yet Oshawa builds only the Chevrolet-branded full-size pickup. Lana Payne points to a bigger gap: GM sold roughly 300,000 vehicles in Canada last year but assembled only about 130,000 here. GM has committed Oshawa to next-generation full-size pickup production but has not specified the future model mix. The plant lost a production shift earlier this year, eliminating roughly 700 unionized positions. Unifor's bargaining target is August 21; the current contract expires September 20.",
+    whyItMatters: "Oshawa output matters to every independent shop that supports work trucks. A locally built Sierra alongside the Silverado would strengthen Canadian pickup supply, parts availability and fleet-service volume. It is still a union request, not a GM production announcement — so do not order parts around it. Watch the August 21 target date for an investment or product-allocation commitment.",
+    source: "GM Authority / Automotive News — August 11, 2026",
+    sourceUrl: "https://gmauthority.com/blog/2026/08/unifor-pressing-gm-to-build-gmc-sierra-at-oshawa-plant/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "NEW ENGLAND GOVERNORS + EASTERN CANADIAN PREMIERS / SHELBURNE VERMONT / ALCOHOL BANS ON TABLE / 8 DAYS TO AUGUST 19",
+    tag: "30% OF UNIFOR GM MEMBERS ON LAYOFF / 4,610 MEMBERS / CAMI IDLED / AUGUST 21 TARGET / FORD PATTERN FLOOR",
     tagColor: "#0369a1",
-    headline: "New England Governors + Eastern Canadian Premiers — Shelburne, Vermont — 'Alcohol Bans Are Simply on the Table' — 8 Days to August 19",
-    summary: "The annual New England Governors and Eastern Canadian Premiers conference was held Monday August 10 in Shelburne, Vermont. PEI Premier Rob Lantz: 'Those alcohol bans are simply on the table — but we would like to know what we get in return. This seems to be an opportunity to come to a comprehensive deal and try to put most of this behind us, if not all of it, and move forward.' Nova Scotia Premier Tim Houston: 'What we're living through right now with the tariffs, with the threat of tariffs, with some of the insults and the talking points, they're difficult. There's no way around that.' Vermont Gov. Phil Scott (Republican) sent a letter to Commerce Secretary Lutnick urging reversal of tariffs — no response yet. Scott: 'We can support American workers, strengthen domestic manufacturing, and insist on fair trade without unnecessarily increasing the cost of living for working-class Americans or weakening our economic partnership with Canada.' The Canadian American Business Council built two interactive games to explain trade integration: 'Where does it come from' and 'Top Customer' (showing how many U.S. states count on Canada as their top export destination). 8 days to August 19. Autos and auto parts EXEMPT under Section 232.",
-    whyItMatters: "Eastern Canadian premiers are signalling the alcohol bans are on the table — but conditional on getting something in return. Vermont's Republican governor is pushing back against Trump's tariffs. The cross-border business community is mobilizing. For your shop: autos and auto parts remain exempt from Section 338 under Section 232. Section 301 at 10% — CUSMA-compliant parts exempt. 8 days to August 19.",
-    source: "VTDigger / BNN Bloomberg — August 10–11, 2026",
-    sourceUrl: "https://vtdigger.org/2026/08/10/new-england-canadian-leaders-tout-cross-border-ties-in-face-of-trumps-latest-tariff-threat/",
+    headline: "Unifor-GM: 30% of Members on Layoff — 1,050 CAMI Workers Idled — August 21 Target Deadline",
+    summary: "Unifor officially opened bargaining for more than 4,600 GM members across Ontario and confirmed that approximately 30% are on layoff. The union represents 2,750 workers at Oshawa, 1,050 at the idled CAMI plant in Ingersoll, 700 at St. Catharines Propulsion and 110 at the Woodstock Parts Distribution Centre. Unifor has set August 21 as its target for a tentative agreement — two days after the Section 338 deadline — with the current contract expiring September 20. Lana Payne says the Ford agreement is the foundation for talks; GM master-bargaining chair Trevor Longpre says members expect that pattern to be respected and want certainty about their facilities' future.",
+    whyItMatters: "The CAMI shutdown and Oshawa's lost shift make job security and product allocation central to this bargaining round. That shapes the medium-term availability of Canadian-built GM vehicles and the local service ecosystem around them. Keep normal GM service work moving, but build a modest 30-day buffer of predictable, fast-moving GM service parts rather than speculating on a strike.",
+    source: "Unifor — August 10, 2026",
+    sourceUrl: "https://www.unifor.org/news/all-news/unifor-opens-negotiations-general-motors",
     image: STORY3_IMG,
   },
 ];
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "🏛️",
-    text: "LeBlanc convened Canada-US Advisory Council Monday. No deal announced. It is unclear who he and Charette are meeting with on the U.S. side. Carney in Italy until August 17. 8 days to August 19.",
-    sourceUrl: "https://www.bnnbloomberg.ca/tariffs/2026/08/11/all-it-does-is-hurt-americans-weigh-in-on-canada-us-trade-war/",
+    text: "Greer and LeBlanc met Tuesday — their third meeting in three weeks. No deal announced. Negotiations have intensified ahead of the August 19 Section 338 deadline.",
+    sourceUrl: "https://insidetrade.com/daily-news/top-us-canadian-officials-meet-aug-19-tariff-deadline-looms",
+  },
+  {
+    icon: "🛻",
+    text: "Unifor says GMC Sierra output belongs in Oshawa: 29,483 Sierras sold in Canada in H1 versus 27,740 Silverados. GM sold roughly 300,000 vehicles in Canada last year but built about 130,000 here.",
+    sourceUrl: "https://gmauthority.com/blog/2026/08/unifor-pressing-gm-to-build-gmc-sierra-at-oshawa-plant/",
   },
   {
     icon: "🏭",
-    text: "Unifor confirmed: 30% of GM members in Canada are on layoff as talks open. CAMI: 1,050 idled. Oshawa: 2,750 active. Target deadline: August 21 — two days after Section 338 takes effect.",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unifor-opens-negotiations-general-motors-151400401.html",
+    text: "GM bargaining scope: 2,750 members at Oshawa, 1,050 at idled CAMI, 700 at St. Catharines and 110 at Woodstock. Approximately 30% of Unifor's GM members are on layoff.",
+    sourceUrl: "https://www.unifor.org/news/all-news/unifor-opens-negotiations-general-motors",
   },
   {
-    icon: "🇺🇸",
-    text: "Vermont Gov. Phil Scott (Republican) sent letter to Commerce Secretary Lutnick urging reversal of tariffs. No response yet. 'We can support American workers without weakening our economic partnership with Canada.'",
-    sourceUrl: "https://vtdigger.org/2026/08/10/new-england-canadian-leaders-tout-cross-border-ties-in-face-of-trumps-latest-tariff-threat/",
-  },
-  {
-    icon: "🍾",
-    text: "PEI Premier Lantz: 'Those alcohol bans are simply on the table — but we would like to know what we get in return.' Eastern Canadian premiers are signalling conditional flexibility on alcohol.",
-    sourceUrl: "https://vtdigger.org/2026/08/10/new-england-canadian-leaders-tout-cross-border-ties-in-face-of-trumps-latest-tariff-threat/",
+    icon: "🥛",
+    text: "Talks reportedly focus on possible tariff-rate quota allocation changes for U.S. dairy, not dismantling Canada's supply-management system. Provincial U.S. alcohol restrictions remain a possible concession, not an announced deal term.",
+    sourceUrl: "https://www.ipolitics.ca/2026/08/10/canada-u-s-trade-talks-gain-momentum-as-both-sides-signal-room-for-concessions/",
   },
   {
     icon: "⚖️",
-    text: "Section 338: 8 days to August 19. CUSMA does NOT protect. Autos/parts EXEMPT under Section 232. Section 301 at 10% — CUSMA-compliant parts ARE exempt. B.C. wildfire state of emergency ongoing.",
-    sourceUrl: "https://www.nortonrosefulbright.com/en/knowledge/publications/8a7d16d5/smoke-or-fire-the-us-proclaims-potential-50-tariffs-on-a-wide-range-of-canadian-goods",
+    text: "For parts planning: Section 232 auto-parts tariffs have a blanket CUSMA-compliance exemption. The Section 338 threat is separate and has no general CUSMA exception for covered goods. Seven days to August 19.",
+    sourceUrl: "https://www.ipolitics.ca/2026/08/11/gone-to-the-mattresses-auto-industry-urges-carney-government-to-stay-strong-in-trade-talks/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "LeBlanc in Washington No Deal Yet — 30% of GM Members on Layoff — Premiers Signal Alcohol Bans Conditional — 8 Days to August 19",
-  text: "Five things for Tuesday August 11. First: LeBlanc convened the Canada-US Advisory Council Monday. No deal. It is unclear who he is meeting with on the U.S. side. Carney in Italy until August 17. Second: 30% of Unifor's GM members in Canada are on layoff as talks open. CAMI has been idle since May 2025. August 21 target deadline. Third: Eastern Canadian premiers at Shelburne, Vermont: alcohol bans are on the table — but conditional on getting something in return. Fourth: Vermont's Republican governor is pushing back against Trump's tariffs. The cross-border business community is mobilizing. Fifth: 8 days to August 19. Section 338 covers dairy, alcohol, cement, wood — NOT autos or auto parts. CUSMA does NOT protect. Section 301 at 10% — CUSMA-compliant parts exempt.",
+  title: "Do a 20-Minute CUSMA + Lead-Time Check — Seven Days to August 19",
+  text: "Call your three highest-volume parts suppliers today. Ask for written confirmation of CUSMA origin on regular replenishment items, their current lead time, and whether they expect a price or freight adjustment this month. The practical distinction is critical: CUSMA-compliant auto parts retain their exemption from the existing Section 232 parts tariff, while the Section 338 threat is a separate action on covered goods without a general CUSMA exception. Carry a modest 30-day buffer only on predictable, fast-moving service parts — not on speculative inventory.",
 };
 
 const quoteOfTheDay = {
-  text: "Those alcohol bans are simply on the table — but we would like to know what we get in return.",
-  author: "PEI Premier Rob Lantz",
-  title: "New England Governors and Eastern Canadian Premiers Conference, Shelburne, Vermont — August 10, 2026",
+  text: "There's a lot of room here to be able to increase production not just because of the capacity that we have in our facilities, but because of what Canadians buy.",
+  author: "Lana Payne, Unifor National President",
+  title: "On Unifor's request for GMC Sierra production at Oshawa — August 11, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1968 Pontiac GTO 400 Ram Air I — Fathom Green, Black Stripes, Ontario-Plated",
-  description: "Fathom Green with black stripes — the original muscle car, built in Oshawa. The Ram Air I 400: 360 horsepower, 445 lb-ft of torque. The GTO started the muscle car era. 30% of Unifor's GM members are on layoff. The GTO does not lay off.",
+  name: "1970 GMC Sierra 1500 396 — Forest Green, Ontario-Plated",
+  description: "Forest Green with a big-block 396 — a period-correct Canadian pickup built for the jobsite, not the showroom. Unifor wants the modern GMC Sierra added to Oshawa's product mix. This classic is a reminder that a good truck earns its keep for decades. The Sierra approves.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["LEBLANC ADVISORY COUNCIL", "UNIFOR-GM DAY 2", "SECTION 338: 8 DAYS", "'68 PONTIAC GTO 400"].map((tag) => (
+                {["GREER + LEBLANC MEET", "UNIFOR WANTS SIERRA AT OSHAWA", "SECTION 338: 7 DAYS", "'70 GMC SIERRA 1500"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="LeBlanc Advisory Council No Deal — Unifor-GM Day 2 30% on Layoff — New England Governors Eastern Canadian Premiers — 8 Days to August 19 — Baywash Daily Briefing Edition No. 96"
+              alt="Greer and LeBlanc Meet in Washington — Unifor Presses GM for Sierra Production at Oshawa — Baywash Daily Briefing Edition No. 97"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 78 — Friday, July 24, 2026 — S.301 In Effect / CUSMA Exempt Confirmed / Charlottetown: United Front / Gordie Howe: Monday</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 97 — Wednesday, August 12, 2026 — Greer + LeBlanc Meet / Unifor Wants Sierra at Oshawa / 7 Days to August 19</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Section 301 Now In Effect — CUSMA Exemption Confirmed — Charlottetown: 'Everything On the Table' — Gordie Howe Bridge Revenue Deal Controversy — Opens Monday
+                Greer + LeBlanc Meet for Third Time in Three Weeks — No Deal Announced — Unifor Presses GM to Build GMC Sierra at Oshawa
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Pontiac GTO Judge Ram Air IV</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 GMC Sierra 1500 396</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
