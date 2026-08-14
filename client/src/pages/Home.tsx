@@ -10,49 +10,49 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 98;
-const BRIEFING_DATE = "August 13, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 99;
+const BRIEFING_DATE = "August 14, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NnwNgtqnCxfPqaMp.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dMNfVkvcqNzfwRyr.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VJZijpVCDpLvPVPa.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qvVPLWWaaIxcJEUo.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GTcxaUpomnvIchCS.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hMBKJQPDrpBeQawe.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/apoBCCIqJtzUaiNa.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AZgbYZckOKzrzAYD.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OaHdcvgVOIHWodjw.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KtbkUrUjPnCTYbEI.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "REPORTED AUTO COMPROMISE / 10–15% TOLERABLE / U.S. CONTENT EXEMPT / NOT A SIGNED DEAL / 6 DAYS",
+    tag: "GREER: TRUMP + CARNEY TO GET OPTIONS / FOURTH MEETING IN 3 WEEKS / NO DEAL SIGNED / AUG 19: 5 DAYS",
     tagColor: "#b91c1c",
-    headline: "Canada Reportedly Weighs a 10–15% Auto Tariff Compromise — U.S. Content Would Stay Exempt — No Deal Signed",
-    summary: "Canadian officials are reportedly considering whether to accept a lower U.S. Section 232 tariff on CUSMA-compliant vehicle exports, rather than hold out for a complete exemption. The reported industry tolerance range is 10% to 15%, down from the current 25% rate, provided U.S.-made content remains excluded from the tariff calculation. Roughly half the content of a Canadian-made vehicle can originate in the United States because of the integrated supply chain. Another option discussed would apply the tariff only to non-North American content, cutting the effective levy further. This is a reported negotiating concept — not an agreement, and it is unclear whether Washington would accept it. Six days remain to August 19.",
-    whyItMatters: "This is not an immediate parts-price change or a signed deal. It is the first credible outline of a possible auto compromise, but shops should operate on confirmed rules, not negotiating leaks. For your shop: CUSMA-compliant auto parts retain their existing Section 232 exemption; confirm origin status in writing with high-volume suppliers and keep normal pricing conversations separate from vehicle-tariff headlines.",
-    source: "Globe and Mail reporting via Yahoo Finance / Daily Sabah — August 12, 2026",
-    sourceUrl: "https://finance.yahoo.com/economy/policy/articles/canada-weighs-accepting-us-auto-180830101.html",
+    headline: "Greer: Trump and Carney Will Get ‘Options’ — Talks Move Toward a Political Decision — 5 Days to August 19",
+    summary: "U.S. Trade Representative Jamieson Greer says the U.S. president and Canadian prime minister will now be given ‘options’ after the latest Canada-U.S. trade talks — the clearest public indication yet that negotiators are packaging choices for political decisions. Greer described the meetings as ‘good’ and ‘cordial.’ Trade Minister Dominic LeBlanc and chief negotiator Janice Charette met Greer for the second time this week and the fourth time in three weeks; a source told CBC that Charette returned to the USTR office to keep working late into the evening. CBC reports both sides are working toward a potential path to put before Trump as early as Monday. No agreement has been announced, and the Section 338 deadline remains August 19.",
+    whyItMatters: "A decision package is not a deal, but it is a more concrete signal than another round of vague statements. Keep ordering and pricing tied to confirmed supplier terms, not political headlines. This week, have your major suppliers reconfirm CUSMA origin and lead times on regular service parts; CUSMA-compliant auto parts retain their separate Section 232 exemption.",
+    source: "CBC News — August 13–14, 2026",
+    sourceUrl: "https://www.cbc.ca/news/politics/trade-tariff-talks-canada-us-canada-dominic-leblanc-jamieson-greer-9.7305811",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "LATEST U.S. OFFER FALLS SHORT / TALKS DAILY IN WASHINGTON / SECTION 338: 6 DAYS / NO DEAL ANNOUNCED",
+    tag: "DETROIT 3 WARNING / 50% U.S.-CONTENT RULE / $2B ANNUAL COST EACH / GM TARIFF BILL: $2.5–$3.5B",
     tagColor: "#0369a1",
-    headline: "Canada Unhappy With Latest U.S. Tariff Offer — Negotiations Now Daily in Washington — 6 Days to August 19",
-    summary: "Reuters, citing two CBC sources, reports that Canadian officials are unhappy with the latest U.S. proposal to ease tariffs. The offer reportedly would lower some tariffs, but not by as much as Canada wants. Negotiators are now meeting daily in Washington; no agreement has been announced. Ottawa is seeking relief on autos, steel, aluminum and forestry products while the White House has tied its August 19 Section 338 threat to what it calls discriminatory treatment of U.S.-made cars, alcohol and dairy goods. The deadline is six days away, and the relevant distinction for automotive businesses remains clear: the Section 338 threat is separate from the existing Section 232 auto rules.",
-    whyItMatters: "Daily meetings are progress, but a weaker-than-expected offer means a last-minute agreement is not assured. Use this week to remove uncertainty that you can control: obtain current lead times, written CUSMA-origin confirmation, and a 30-day quote on fast-moving service parts. Avoid speculative buying. The existing CUSMA-compliant auto-parts exemption remains the operational fact to manage.",
-    source: "Reuters / CBC News — August 12, 2026",
-    sourceUrl: "https://www.reuters.com/business/canada-unhappy-with-latest-us-offer-lower-tariffs-cbc-reports-2026-08-12/",
+    headline: "Detroit Automakers Warn Proposed CUSMA Rewrite Could Add US$2 Billion a Year — Per Company",
+    summary: "Detroit automakers are preparing to lobby against U.S. proposals that would make lower vehicle tariffs conditional on at least 50% U.S.-made content and raise the overall North American-content threshold above the current 75%. Reuters reports estimates at two automakers that the changes would add at least US$2 billion in annual costs for each Detroit automaker. The companies are already absorbing steep tariff costs: GM expects gross tariff expenses of US$2.5 billion to US$3.5 billion this year, while Ford has estimated a net impact of about US$1 billion. The proposed CUSMA changes are not final rules, but they show why the tariff dispute reaches far beyond the border crossing.",
+    whyItMatters: "Ontario shops operate inside the same regional parts and vehicle ecosystem. A tougher content test can raise costs, complicate sourcing and affect launch timing long before it shows up as a retail price change. Treat this as a risk signal, not a reason to buy ahead: keep a 30-day buffer only on predictable, fast-moving parts and ask suppliers where their replacement components are sourced.",
+    source: "Reuters — August 13, 2026",
+    sourceUrl: "https://www.reuters.com/business/autos-transportation/detroit-automakers-fear-north-american-trade-deal-revamp-could-cost-them-2026-08-13/",
     image: STORY2_IMG,
   },
   {
     id: 3,
     tag: "UNIFOR WANTS GMC SIERRA AT OSHAWA / SIERRA OUTSOLD SILVERADO / 30% OF GM MEMBERS ON LAYOFF / TARGET: AUG 21",
     tagColor: "#15803d",
-    headline: "Unifor Wants GMC Sierra Built at Oshawa — A Direct Test of GM's Canadian Production Commitment",
-    summary: "Unifor is pressing GM to add GMC Sierra production at Oshawa Assembly alongside the Chevrolet Silverado as bargaining continues. In the first half of 2026, GM sold 29,483 Sierras in Canada versus 27,740 Silverados, but Oshawa builds only the Chevrolet-branded full-size pickup. Unifor says GM sold roughly 300,000 vehicles in Canada last year while assembling about 130,000 here. The request comes after Oshawa lost a production shift earlier this year, cutting roughly 700 unionized positions. More than 4,600 members are covered by the talks; Unifor says approximately 30% are on layoff, including 1,050 at the idled CAMI plant. The target date for a tentative deal is August 21; the contract expires September 20.",
-    whyItMatters: "Oshawa pickup allocation affects the Canadian work-truck ecosystem: new-vehicle availability, fleet turnover and the local service pipeline. A Sierra decision would be a meaningful production commitment, but it is a union ask — not a GM announcement. Keep routine GM service work moving and watch August 21 for a potential investment or product-allocation signal.",
-    source: "GM Authority / Unifor — August 11–13, 2026",
+    headline: "Unifor’s Sierra-at-Oshawa Push Is a Test of GM’s Canadian Production Commitment",
+    summary: "Unifor is pressing GM to add GMC Sierra production at Oshawa Assembly alongside Chevrolet Silverado production. The union notes that GM sold 29,483 Sierras in Canada in the first half of 2026, versus 27,740 Silverados, yet Oshawa makes only Chevrolet-branded full-size pickups. GM Authority reports that Oshawa was previously expected to focus on Silverado HD production, with roughly 80,000 trucks targeted annually, while GM has not specified the next-generation pickup mix. The request comes after Oshawa lost a production shift earlier this year, cutting roughly 700 unionized positions. More than 4,600 members are covered by the talks; Unifor says about 30% are on layoff, including 1,050 at idled CAMI. The target date for a tentative agreement is August 21.",
+    whyItMatters: "Canadian pickup allocation directly shapes work-truck availability, fleet turnover and future service demand. A Sierra decision would be a material production commitment, but it remains a union request — not a GM announcement. Keep regular GM service work moving and watch the August 21 target for any investment or product-allocation signal.",
+    source: "GM Authority / Unifor — August 10–13, 2026",
     sourceUrl: "https://gmauthority.com/blog/2026/08/unifor-pressing-gm-to-build-gmc-sierra-at-oshawa-plant/",
     image: STORY3_IMG,
   },
@@ -60,19 +60,19 @@ const stories = [
 
 const quickHits = [
   {
-    icon: "🚗",
-    text: "Reported auto compromise: a 10%–15% Section 232 rate could be tolerable to industry if U.S.-made content stays excluded. It is a negotiating concept, not a signed deal.",
-    sourceUrl: "https://finance.yahoo.com/economy/policy/articles/canada-weighs-accepting-us-auto-180830101.html",
-  },
-  {
     icon: "🏛️",
-    text: "Reuters: Canada is unhappy with the latest U.S. offer, which would reportedly lower some tariffs but not as much as Ottawa seeks. Negotiations are now daily in Washington.",
-    sourceUrl: "https://www.reuters.com/business/canada-unhappy-with-latest-us-offer-lower-tariffs-cbc-reports-2026-08-12/",
+    text: "Greer says Trump and Carney will receive ‘options’ after the latest talks. LeBlanc and Charette met Greer twice this week; CBC reports a potential pitch could reach Trump as early as Monday.",
+    sourceUrl: "https://www.cbc.ca/news/politics/trade-tariff-talks-canada-us-canada-dominic-leblanc-jamieson-greer-9.7305811",
   },
   {
-    icon: "🛻",
-    text: "Sierra versus Silverado: 29,483 Sierras sold in Canada in H1 versus 27,740 Silverados. Unifor is asking GM to build both full-size pickups at Oshawa.",
-    sourceUrl: "https://gmauthority.com/blog/2026/08/unifor-pressing-gm-to-build-gmc-sierra-at-oshawa-plant/",
+    icon: "🍁",
+    text: "Ontario Premier Doug Ford says he would put U.S. alcohol back on shelves if a fair agreement protects Ontario steel, autos, forestry, agriculture and manufacturing.",
+    sourceUrl: "https://www.cbc.ca/news/politics/trade-tariff-talks-canada-us-canada-dominic-leblanc-jamieson-greer-9.7305811",
+  },
+  {
+    icon: "🚛",
+    text: "If you export a Section 338-covered good: U.S. entry date, not Canadian ship date, determines duty. A shipment leaving August 18 but entering after 12:01 a.m. ET August 19 may face the tariff.",
+    sourceUrl: "https://www.ghy.com/trade-compliance/section-338-tariffs-how-canadian-exporters-should-prepare-before-august-19/",
   },
   {
     icon: "🏭",
@@ -81,25 +81,25 @@ const quickHits = [
   },
   {
     icon: "⚖️",
-    text: "Shop planning rule: CUSMA-compliant auto parts retain their Section 232 exemption. Section 338 is a separate proposed action on designated goods. Six days to August 19.",
-    sourceUrl: "https://www.reuters.com/business/canada-unhappy-with-latest-us-offer-lower-tariffs-cbc-reports-2026-08-12/",
+    text: "Do not mix tariff regimes: the new Section 338 action applies only to its covered goods, while CUSMA-compliant auto parts retain their separate Section 232 exemption. Five days to August 19.",
+    sourceUrl: "https://www.ghy.com/trade-compliance/section-338-tariffs-how-canadian-exporters-should-prepare-before-august-19/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Run a Confirmed-Rules Check — Not a Headline-Driven Buying Spree",
-  text: "The reported 10%–15% auto-tariff compromise is not a signed deal, so keep your purchasing plan tied to confirmed supplier terms. Today, ask your three largest parts suppliers for a written CUSMA-origin statement on regularly replenished items, their current lead time, and a 30-day quote. Stock only predictable, fast-moving service parts. The key fact for shop operations remains that CUSMA-compliant auto parts retain their Section 232 exemption; do not turn an unconfirmed vehicle-tariff proposal into excess inventory.",
+  title: "If You Export Covered Goods, Manage the Entry Date — Not Just the Ship Date",
+  text: "For any Section 338-covered goods you send to U.S. customers, call your customs broker and carrier today: the relevant date is the U.S. entry date, not when the shipment leaves your dock. Work backward from the 12:01 a.m. ET August 19 deadline and build a border-delay buffer. For ordinary shop parts purchasing, keep the rule set separate: CUSMA-compliant auto parts retain their Section 232 exemption. Do not create excess inventory based on a rule that applies only to Section 338-covered goods.",
 };
 
 const quoteOfTheDay = {
-  text: "The two sides are holding daily negotiations in Washington in an effort to work out a deal.",
-  author: "Reuters",
-  title: "August 12, 2026",
+  text: "The president, the prime minister, obviously they’ll be given options and discussions.",
+  author: "Jamieson Greer, U.S. Trade Representative",
+  title: "Following Canada-U.S. trade talks — August 13, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Chevrolet C10 396 — Hugger Orange, Ontario-Plated",
-  description: "Hugger Orange with a white lower accent and a period-correct big-block 396 — the kind of truck that earned a living before becoming a classic. Rated at 325 hp in truck trim, it was built for honest work and long days. Unifor wants more full-size pickup production at Oshawa. The C10 approves.",
+  name: "1969 Chevrolet Nova SS 396 — Fathom Green, Ontario-Plated",
+  description: "Fathom Green, a white vinyl roof and a big-block 396: compact GM muscle with an honest Canadian-garage attitude. The Nova’s simple formula — accessible size, serious torque and no wasted motion — belongs outside an Ontario service bay. Unifor is asking GM to build more of the work trucks Canadians buy. The Nova approves.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["AUTO COMPROMISE REPORTED", "U.S. OFFER FALLS SHORT", "SECTION 338: 6 DAYS", "'70 CHEVROLET C10 396"].map((tag) => (
+                {["GREER: ‘OPTIONS’ FOR LEADERS", "DETROIT 3: $2B COST WARNING", "SECTION 338: 5 DAYS", "'69 CHEVROLET NOVA SS 396"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Reported Canadian Auto Tariff Compromise — Latest U.S. Offer Falls Short — Unifor Sierra Push at Oshawa — Baywash Daily Briefing Edition No. 98"
+              alt="Greer Says Trump and Carney Will Receive Trade Options — Detroit Automakers Warn of Costly CUSMA Rewrite — Baywash Daily Briefing Edition No. 99"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 98 — Thursday, August 13, 2026 — Auto Compromise Reported / U.S. Offer Falls Short / 6 Days to August 19</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 99 — Friday, August 14, 2026 — Greer: ‘Options’ for Trump + Carney / Detroit 3 Cost Warning / 5 Days to August 19</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Canada Reportedly Weighs a 10–15% Auto Tariff Compromise — But Latest U.S. Offer Still Falls Short
+                Greer Says Trump + Carney Will Get ‘Options’ — Detroit Automakers Warn of a Costly CUSMA Rewrite
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Chevrolet C10 396</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Chevrolet Nova SS 396</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
