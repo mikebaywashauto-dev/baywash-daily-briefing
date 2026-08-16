@@ -10,48 +10,48 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 100;
-const BRIEFING_DATE = "August 15, 2026";
-const BRIEFING_DAY = "Saturday";
+const BRIEFING_NUMBER = 101;
+const BRIEFING_DATE = "August 16, 2026";
+const BRIEFING_DAY = "Sunday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tJBsWcjdHaOHYfLT.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QWxIsyWunvMLuEsR.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YchpRkKSiPjLiMtA.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YCNPMUfSuMXCIoqF.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/uZmoIEQjDclODXpV.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/pxgSQaLjVfJokLEZ.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/flurZlvgfKwBYlSM.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EzVxiKNKECRLepcO.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iZaJCzRmFjjdsoee.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kSwNCIiuKWjEVAZd.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CANADA + U.S. ‘NOT CLOSE’ / INTERIM DEAL FOCUS / 10–15% AUTO PROPOSAL DISCUSSED / AUG 19: 4 DAYS",
+    tag: "AUTO MUST BE IN ANY DEAL / BRAMPTON MAYOR: NO DEAL > BAD DEAL / 10–15% RATE ONLY A PROPOSAL / AUG 19: 3 DAYS",
     tagColor: "#b91c1c",
-    headline: "Canada and U.S. ‘Not Close’ to a Deal — Ottawa Focuses on an Interim Agreement Before August 19",
-    summary: "Canada and the United States are not close to signing a deal to reduce current tariffs and avoid the new August 19 measures, according to sources with direct knowledge of the talks. Negotiators have worked through individual tariff lines in Washington, but major gaps remain. Canada’s immediate objective is now an interim agreement that prevents the new Section 338 tariffs from taking effect, with broader sectoral issues to follow. One proposal discussed would set a 10%–15% tariff on CUSMA-compliant autos and parts, down from the current 25% rate, but auto-industry insiders oppose any tariff on compliant vehicles or parts. LeBlanc and Charette briefed premiers Friday and are staying in Washington through the weekend. No agreement has been announced.",
-    whyItMatters: "A discussed rate is not a new rule. Do not re-price routine jobs or buy excess stock based on a negotiating proposal. The operational step is the same: ask major suppliers for written origin confirmation and current lead times on fast-moving service parts, then keep your purchase decisions tied to confirmed invoices and supplier terms.",
-    source: "Global News / National Post — August 14–15, 2026",
-    sourceUrl: "https://globalnews.ca/news/12022041/canada-us-trade-talks-tariffs-gap-source/",
+    headline: "Auto Must Be in Any Interim Deal — Brampton Mayor Says ‘No Deal Is Better Than a Bad Deal’",
+    summary: "Brampton Mayor Patrick Brown says any Canada-U.S. agreement that excludes the auto sector would be a bad deal. He spoke as sources described talks as constructive but still far from a completed agreement, with the August 19 Section 338 deadline now three days away. Negotiators are working line-by-line through tariffs, and any agreement the U.S. signs is expected to retain some form of duty on steel, aluminum, autos and lumber. A source says a 10%–15% tariff on CUSMA-compliant autos and parts has been discussed, but it is not a signed rule and auto-industry insiders oppose any tariff on compliant vehicles or parts.",
+    whyItMatters: "Treat the reported 10%–15% figure as a negotiating signal, not a pricing instruction. Do not change routine repair estimates or overbuy parts based on a proposal. Ask major suppliers for current origin, CUSMA status, lead time and quote-expiry details; then base your shop pricing on confirmed supplier terms.",
+    source: "Global News — August 15, 2026",
+    sourceUrl: "https://globalnews.ca/news/12022917/brampton-auto-industry-canada-us-talks-stellantis/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "STELLANTIS CONSIDERING BRAMPTON SALE / NO FINAL DECISION / ~3,000 WORKERS IDLED / FEDERAL GRANT AT ISSUE",
+    tag: "BRAMPTON AT RISK / STELLANTIS CONSIDERS CLOSURE + SALE / NO FINAL DECISION / ~3,000 WORKERS",
     tagColor: "#15803d",
-    headline: "Stellantis Is Considering Closing and Selling Brampton Assembly — Unifor Says No Outcome Is Acceptable",
-    summary: "Unifor president Lana Payne says Stellantis informed the union this week that it is seriously considering closing and selling Brampton Assembly. The company says it is preparing to enter collective bargaining, has ‘nothing to announce’ and remains focused on finding a sustainable manufacturing solution for Brampton. The plant was idled in 2023 for EV retooling and Jeep Compass production later moved to Illinois. Roughly 3,000 workers have been without work since February 2025. Stellantis received a C$529 million federal grant in 2022 to retool Brampton and Windsor, contingent on retaining production at both facilities; Ottawa served a default notice in December 2025. This is not a final closure announcement, but it is a major escalation in the plant’s uncertainty.",
-    whyItMatters: "Brampton’s status will not change your parts pricing tomorrow, but it matters to the Ontario vehicle ecosystem: skilled jobs, fleet turnover, dealership demand and the long-term local service base. Treat this as a labour and production risk signal — not a reason to speculate on Mopar parts. Watch for the upcoming Stellantis bargaining process and any formal company decision.",
-    source: "Global News / The Globe and Mail — August 14–15, 2026",
-    sourceUrl: "https://globalnews.ca/news/12021873/stellantis-unifor-brampton-plant-closure/",
+    headline: "Brampton Assembly Is Now the Immediate Test of Canada’s Auto Production Base",
+    summary: "Unifor says Stellantis has told the union it is seriously considering closing and selling Brampton Assembly. The company says it has ‘nothing to announce’ and remains focused on finding a sustainable manufacturing solution, so this is not a final closure announcement. Brampton was idled in 2023 for EV retooling and future Jeep Compass production later moved to Illinois. Approximately 3,000 workers have been without work since February 2025. Stellantis received a C$529 million federal grant in 2022 to retool Brampton and Windsor, conditional on maintaining production; Ottawa served a default notice in December 2025.",
+    whyItMatters: "The Brampton uncertainty will not change a brake-job invoice tomorrow, but it matters to Ontario’s vehicle ecosystem: skilled jobs, fleet turnover, dealership activity and the long-term local service base. Treat it as a production-risk signal, not a reason to speculate on Mopar inventory. Watch for a formal company decision and the Stellantis bargaining outcome.",
+    source: "The Globe and Mail / CBC — August 14–15, 2026",
+    sourceUrl: "https://www.theglobeandmail.com/business/article-stellantis-weighs-sale-of-brampton-ont-plant-unifor-says-auto/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "DETROIT 3 WARNING / 50% U.S.-CONTENT RULE / US$2B ANNUAL COST EACH / GM TARIFF BILL: US$2.5–$3.5B",
+    tag: "DETROIT 3 WARNING / 50% U.S.-CONTENT RULE / US$2B ANNUAL COST EACH / CUSMA REWRITE NOT FINAL",
     tagColor: "#0369a1",
-    headline: "Detroit Automakers Warn a Proposed CUSMA Rewrite Could Add US$2 Billion a Year — Per Company",
-    summary: "Detroit automakers are preparing to oppose proposed North American trade changes that would require at least 50% U.S.-made content to qualify for lower tariffs and raise the total North American-content threshold above the current 75%. Estimates at two automakers indicate the changes could add at least US$2 billion in annual costs for each Detroit automaker. The added expense would come on top of existing tariff burden: GM expects US$2.5 billion to US$3.5 billion in gross tariff expenses this year, while Ford estimates about a US$1 billion net impact. The proposals are not final rules, but they show how content tests can alter sourcing, production and vehicle economics across the integrated Canada-U.S.-Mexico supply chain.",
-    whyItMatters: "Parts move through the same North American system as vehicles. More restrictive content tests can complicate sourcing and raise costs before a specific part price visibly changes. Keep a measured buffer only on predictable, fast-moving components, and ask suppliers where their replacement parts are sourced rather than relying on broad tariff headlines.",
+    headline: "Detroit Automakers Warn a Tougher U.S.-Content Test Could Add US$2 Billion a Year — Per Company",
+    summary: "Detroit automakers are preparing to oppose proposed North American trade changes that would require at least 50% U.S.-made content to qualify for lower tariffs and lift the regional-content threshold above the current 75%. Estimates at two automakers suggest the changes could add at least US$2 billion in annual costs for each company. The burden would come on top of current tariffs: GM expects US$2.5 billion to US$3.5 billion in gross tariff expenses this year, while Ford estimates a US$1 billion net hit. The measures are not final rules, but they show how a content test can alter parts sourcing, production timing and vehicle economics across the integrated Canada-U.S.-Mexico system.",
+    whyItMatters: "Parts travel through the same cross-border network as completed vehicles. More restrictive content tests can complicate sourcing long before a specific part price moves. Keep a measured buffer only on predictable fast-moving components and ask suppliers where replacement parts are sourced instead of reacting to broad tariff headlines.",
     source: "CBC News / Reuters — August 14, 2026",
     sourceUrl: "https://www.cbc.ca/news/canada/windsor/detroit-automakers-fear-cusma-revamp-cost-billions-9.7307030",
     image: STORY3_IMG,
@@ -61,18 +61,13 @@ const stories = [
 const quickHits = [
   {
     icon: "🏛️",
-    text: "USTR Greer says the U.S. will not tolerate Canadian retaliation, while sources say a proposal could be put to President Trump on Monday. No agreement has been announced.",
-    sourceUrl: "https://nationalpost.com/news/u-s-not-going-to-tolerate-retaliation-from-canada-in-trade-talks-greer-says",
-  },
-  {
-    icon: "📦",
-    text: "Canadian firms appear to be taking a watchful-waiting approach instead of broadly front-loading Section 338-covered shipments. The targeted U.S. duties are scheduled for August 19.",
-    sourceUrl: "https://edmonton.citynews.ca/2026/08/14/anxious-canadian-firms-bet-trump-will-buckle-ahead-of-50-tariff-deadline/",
+    text: "Talks are continuing line-by-line through tariff measures. Sources say the discussions are constructive, but a completed Canada-U.S. agreement remains distant with three days to August 19.",
+    sourceUrl: "https://globalnews.ca/news/12022917/brampton-auto-industry-canada-us-talks-stellantis/",
   },
   {
     icon: "🛻",
-    text: "Unifor-GM bargaining covers more than 4,600 Ontario members. About 30% are on layoff, including 1,050 workers at idled CAMI; the target for a tentative agreement is August 21.",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-opens-negotiations-general-motors",
+    text: "Unifor-GM bargaining covers more than 4,600 Ontario members. About 30% are on layoff, including 1,050 at idled CAMI; the target for a tentative agreement is August 21.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/unifor_opens_negotiations_with_general_motors",
   },
   {
     icon: "🏭",
@@ -80,26 +75,31 @@ const quickHits = [
     sourceUrl: "https://gmauthority.com/blog/2026/08/unifor-pressing-gm-to-build-gmc-sierra-at-oshawa-plant/",
   },
   {
+    icon: "📦",
+    text: "Section 338 deadline: August 19 — three days. For affected exporters, border entry timing matters; for regular shop-parts purchases, wait for confirmed supplier terms instead of speculative stockpiling.",
+    sourceUrl: "https://globalnews.ca/news/12022917/brampton-auto-industry-canada-us-talks-stellantis/",
+  },
+  {
     icon: "⚖️",
-    text: "Rule check: the possible 10%–15% rate on CUSMA-compliant autos and parts is a reported proposal, not a signed agreement. Confirm source-country details with suppliers before changing any estimate.",
-    sourceUrl: "https://globalnews.ca/news/12022041/canada-us-trade-talks-tariffs-gap-source/",
+    text: "Rule check: the potential 10%–15% rate on CUSMA-compliant autos and parts is a reported proposal, not a signed agreement. Confirm origin and CUSMA status before altering an estimate.",
+    sourceUrl: "https://globalnews.ca/news/12022917/brampton-auto-industry-canada-us-talks-stellantis/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build a Confirmed-Rules Sheet Before You Buy Ahead",
-  text: "The proposed 10%–15% tariff on CUSMA-compliant autos and parts is not a signed deal. Before you change any estimate or stock position, call your top suppliers for four facts: country of origin, CUSMA status, current lead time and the date their price quote expires. Keep a modest 30-day buffer only on predictable, fast-moving parts; do not let a Saturday headline become a costly shelf full of speculative inventory.",
+  title: "Put a Time Limit on Every Parts Quote This Week",
+  text: "With an unfinalized auto proposal circulating, ask key suppliers to state the expiry date on each price quote and whether its price is contingent on origin or CUSMA documentation. Enter that date in your job file before you quote a major repair. Keep a modest 30-day buffer on predictable fast-moving parts only; waiting for written supplier terms is cheaper than stocking a shelf on a political rumour.",
 };
 
 const quoteOfTheDay = {
-  text: "We shouldn’t be offering any concessions to the United States right now. The reality is the U.S. has imposed tariffs on Canada.",
-  author: "Lana Payne, Unifor National President",
-  title: "Brampton, Ontario — August 14, 2026",
+  text: "No deal is better than a bad deal.",
+  author: "Patrick Brown, Mayor of Brampton",
+  title: "On the need to include auto in any Canada-U.S. deal — August 15, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Dodge Challenger R/T 440 Magnum — Go Mango, Ontario-Plated",
-  description: "Go Mango orange, black hood accents and a 440 Magnum V8: the Challenger R/T was Mopar’s long-hood answer to the muscle-car moment. Big, direct and impossible to miss, it belongs outside an Ontario service garage. Brampton’s future is uncertain; this Challenger is not waiting for anyone to make a decision.",
+  name: "1971 Dodge Charger R/T 440 Magnum — Hemi Orange, Ontario-Plated",
+  description: "Hemi Orange, a black vinyl roof and a 440 Magnum V8: the 1971 Charger R/T carried the muscle-car era into a sharper, more dramatic body. It belongs outside an Ontario repair shop under warm bay lights. Brampton’s future deserves a clear decision; the Charger has never been confused about its direction.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["INTERIM DEAL: 4 DAYS", "BRAMPTON AT RISK", "DETROIT 3: US$2B WARNING", "'70 DODGE CHALLENGER R/T"].map((tag) => (
+                {["AUTO MUST BE IN DEAL", "BRAMPTON AT RISK", "SECTION 338: 3 DAYS", "'71 DODGE CHARGER R/T"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canada and U.S. Still Far Apart on an Interim Deal — Brampton Assembly at Risk — Baywash Daily Briefing Edition No. 100"
+              alt="Auto Must Be Included in a Canada-U.S. Deal — Brampton Assembly at Risk — Baywash Daily Briefing Edition No. 101"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 100 — Saturday, August 15, 2026 — Interim Deal Push / Brampton at Risk / 4 Days to August 19</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 101 — Sunday, August 16, 2026 — Auto Must Be In Any Deal / Brampton at Risk / 3 Days to August 19</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Canada + U.S. ‘Not Close’ to a Deal — Brampton Faces New Uncertainty — 4 Days to August 19
+                Auto Must Be in the Deal — Brampton Faces a Defining Test — 3 Days to August 19
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Dodge Challenger R/T 440</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '71 Dodge Charger R/T 440</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
