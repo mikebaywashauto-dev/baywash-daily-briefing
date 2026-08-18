@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 102;
-const BRIEFING_DATE = "August 17, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 103;
+const BRIEFING_DATE = "August 18, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mgDegMOgSWSeJhyZ.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RdNzNgSzpdqweBHu.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YeGhznAFxoqNrqnl.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tOMfBTQuzpCskhst.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lFKVeCrSxsQQQqes.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HchFdeyfdJiJJDgL.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JdzVeYNlsqzSVPLz.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/MRuKaWIWGGFFrPRV.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RkDEUvuSvIrfSupL.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FzgGIdeHBqpWKayO.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CBC: U.S. 12.5% AUTO OFFER / CANADA SAYS NOT GOOD ENOUGH / SECTION 338: 2 DAYS / NO DEAL SIGNED",
+    tag: "CARNEY + TRUMP SPOKE / LEBLANC–GREER–LUTNICK: 1H45M / NO DEAL ANNOUNCED / AUG 19: TOMORROW",
     tagColor: "#b91c1c",
-    headline: "U.S. 12.5% Auto Offer Falls Short — Canada and U.S. Still at an Impasse With Two Days to August 19",
-    summary: "CBC reports Canada and the United States remain at an impasse with two days to the August 19 Section 338 deadline. Sources say the U.S. is proposing to reduce its existing 25% auto tariff to 12.5%, but the Canadian side considers that offer insufficient. Negotiators fear the new 50% tariffs on hundreds of Canadian goods may still take effect as Washington maintains its demands and Ottawa works with provinces on restrictions affecting American alcohol. Unifor president Lana Payne says the auto levies also hurt U.S. companies and warns that agreeing to tariffs in writing could give Washington a path to pursue permanent auto tariffs in a future CUSMA renegotiation. The 12.5% figure is a reported proposal — not a signed agreement or a new rule.",
-    whyItMatters: "Do not price a repair around a 12.5% headline. Until a signed measure changes your supplier’s actual price, use confirmed invoices, origin information and quote-expiry dates. This is the time to document your top service-part suppliers, not to turn normal inventory into a tariff bet.",
-    source: "CBC News — August 17, 2026",
-    sourceUrl: "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218",
+    headline: "Carney and Trump Spoke — Canada’s Longest U.S. Trade Meeting Ends With No Deal Announced",
+    summary: "Prime Minister Mark Carney and U.S. President Donald Trump spoke by phone Monday afternoon as final Section 338 negotiations intensified. Earlier, Trade Minister Dominic LeBlanc and chief negotiator Janice Charette met USTR Jamieson Greer and Commerce Secretary Howard Lutnick for roughly one hour and 45 minutes — the longest ministerial meeting of the recent process. Carney called the talks ‘delicate’ and ‘intense,’ while LeBlanc said: ‘We’re going to continue working; our job is not yet done.’ No agreement has been announced. CBC reported the American negotiating team was expected to see Trump after the meeting and that another Canadian-U.S. meeting remained possible before the deadline. Section 338 is scheduled for August 19 — tomorrow.",
+    whyItMatters: "The negotiating activity is real, but it is not a new supplier price list. Keep estimates tied to confirmed invoices, written supplier quotes and their expiry dates. Do not promise customers a tariff outcome, add speculative fees or make a broad parts-stock purchase until an actual rule and supplier response are known.",
+    source: "CBC News — August 18, 2026",
+    sourceUrl: "https://www.cbc.ca/news/politics/carney-negotiations-delicate-intense-9.7309934",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "BRAMPTON ASSEMBLY / POSSIBLE CLOSURE + SALE / NO FINAL DECISION / ~3,000 WORKERS IDLED",
+    tag: "SECTION 338: ~US$20B GOODS / UP TO 50% / HOCKEY STICKS + CEMENT + PLYWOOD / EXCLUSIONS MATTER",
     tagColor: "#15803d",
-    headline: "Brampton Is the Test of What ‘Auto Relief’ Means Beyond a Tariff Percentage",
-    summary: "Stellantis told Unifor it is seriously considering closing and selling Brampton Assembly. The company says it has ‘nothing to announce’ and remains focused on finding a sustainable manufacturing solution, so there is no final closure announcement. The plant was idled in 2023 for EV retooling, and its planned Jeep Compass production later moved to Illinois. Roughly 3,000 workers have been without work since February 2025. Stellantis received a C$529 million federal grant in 2022 to retool Brampton and Windsor, conditional on maintaining production; Ottawa issued a default notice in December 2025. The plant’s future makes clear why automotive relief is about production commitments and investment, not simply a tariff rate.",
-    whyItMatters: "Brampton will not change a brake-job invoice today, but it affects Ontario’s long-term vehicle ecosystem: jobs, fleet turnover, dealership activity and the local service base. Treat it as a production-risk signal — not a reason to speculate on Mopar parts — and watch for formal company steps and the Stellantis bargaining process.",
-    source: "The Globe and Mail / CBC — August 14–17, 2026",
-    sourceUrl: "https://www.cbc.ca/news/canada/toronto/stellantis-brampton-assembly-plant-unifor-9.7307672",
+    headline: "Section 338 Is a Defined Export Risk — Not a Licence to Guess at Every Auto-Part Price",
+    summary: "If implemented on August 19, Section 338 would affect about US$20 billion of Canadian products imported to the United States, according to NBC News. The targeted goods include hockey sticks, some clothing, wines, dairy products and building materials such as cement and plywood. Energy products, potash, fish and critical minerals are excluded. The White House frames the measure as a response to Canadian treatment of U.S. cars, alcohol and dairy, but the reported targeted export list is different from a universal auto-parts measure. Section 338 comes from the 1930 Tariff Act, has never before been used by a U.S. president and is expected to face legal challenges if imposed.",
+    whyItMatters: "For a normal independent-shop parts order, keep the rule practical: the headline does not automatically change the price of a brake caliper, sensor or filter. Ask suppliers for part-level confirmation when a price changes, and distinguish their actual origin and CUSMA documentation from general tariff news.",
+    source: "NBC News — August 17, 2026",
+    sourceUrl: "https://www.nbcnews.com/business/consumer/canada-trump-tariffs-talks-hockey-sticks-rcna592931",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "METALS: 10–50% TARIFFS / DOMESTIC STEEL FREIGHT: C$100M / LUMBER AT 45% / SEPARATE TALKS",
+    tag: "UNIFOR–GM / TARGET: FRIDAY AUG 21 / 4,600+ ONTARIO MEMBERS / CAMI FUTURE STILL CENTRAL",
     tagColor: "#0369a1",
-    headline: "Steel, Aluminum and Lumber Remain the Hard Sectoral Problems — Ottawa Adds C$100M for Domestic Steel Freight",
-    summary: "Canada is seeking relief from existing U.S. tariffs of 10% to 50% on steel, aluminum and copper. Ottawa last week added C$100 million to a program that reimburses half the cost of moving Canadian-made steel within Canada by ship or rail; the program runs for one year or until its funding is exhausted, with a C$50 million maximum rebate per producer. On lumber, Washington is not interested in adding Canada’s existing 45% total tariff rate to the current package of talks. The U.S. position is that lumber should be negotiated separately, even as the looming Section 338 measures target various wood products such as plywood, doors, fixtures and charcoal.",
-    whyItMatters: "Metals and wood are embedded in shop equipment, facility maintenance, tool supply and the wider parts network. The domestic steel freight support is not a direct shop rebate, but it signals that supplier input costs remain under pressure. Keep quotes time-limited and ask whether a supplier’s price has a specific origin, metal or freight exposure.",
-    source: "CBC News — August 17, 2026",
-    sourceUrl: "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218",
+    headline: "Unifor-GM Talks Enter Their Target Week — Friday Is the Internal Deadline for a Tentative Deal",
+    summary: "Unifor says National President Lana Payne is providing an update as General Motors bargaining approaches Friday’s internal target for a tentative agreement. The union represents more than 4,600 members across Ontario GM facilities. Earlier union materials identified roughly 30% of GM members in Canada as on layoff, including 1,050 workers at idled CAMI in Ingersoll. The bargaining remains about more than wages: future operations, secure jobs and a credible path for facilities affected by changing North American vehicle production are central questions. No tentative agreement has been announced.",
+    whyItMatters: "GM’s labour outcome matters for local parts demand, fleet turnover and the broader service base — particularly in Ontario — but it does not justify a parts panic. Maintain a modest buffer on predictable fast-moving GM service items, watch official announcements, and avoid treating a bargaining target date as a strike or settlement date.",
+    source: "Unifor Auto Talks — August 18, 2026",
+    sourceUrl: "https://autotalks.uniforautohub.ca/general_motors_bargaining_update",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
+    icon: "☎️",
+    text: "Carney and Trump spoke Monday afternoon. Carney says the talks are ‘delicate’ and ‘intense’; no agreement has been announced with the August 19 deadline one day away.",
+    sourceUrl: "https://www.cbc.ca/news/politics/carney-negotiations-delicate-intense-9.7309934",
+  },
+  {
     icon: "🏛️",
-    text: "Negotiators remain at an impasse with two days to August 19. Sources say Ottawa fears the new 50% Section 338 tariffs on hundreds of goods may still take effect.",
-    sourceUrl: "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218",
-  },
-  {
-    icon: "🛻",
-    text: "The reported 12.5% U.S. auto offer is not considered sufficient by the Canadian side and is not a signed agreement. Current supplier pricing remains the only shop rule that counts.",
-    sourceUrl: "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218",
-  },
-  {
-    icon: "🏭",
-    text: "Unifor-GM bargaining covers more than 4,600 Ontario members. About 30% are on layoff, including 1,050 at idled CAMI; the tentative-agreement target is August 21.",
-    sourceUrl: "https://autotalks.uniforautohub.ca/unifor_opens_negotiations_with_general_motors",
+    text: "LeBlanc, Charette, Greer and Lutnick met for roughly 1 hour 45 minutes — the longest ministerial session of recent talks. LeBlanc: ‘our job is not yet done.’",
+    sourceUrl: "https://www.cbc.ca/news/politics/carney-negotiations-delicate-intense-9.7309934",
   },
   {
     icon: "📦",
-    text: "Ontario and other provinces are being asked to be ready to return U.S. alcohol to shelves if a deal emerges. Ontario says it needs a fair deal that addresses auto, steel, forestry, agriculture and manufacturing tariffs.",
-    sourceUrl: "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218",
+    text: "Section 338’s reported target list includes hockey sticks, some clothing, wines, dairy, cement and plywood. Energy, potash, fish and critical minerals are excluded.",
+    sourceUrl: "https://www.nbcnews.com/business/consumer/canada-trump-tariffs-talks-hockey-sticks-rcna592931",
+  },
+  {
+    icon: "🏭",
+    text: "Unifor-GM bargaining is approaching its internal tentative-agreement target on Friday, August 21. No tentative agreement has been announced.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/general_motors_bargaining_update",
   },
   {
     icon: "⚖️",
-    text: "Rule check: Section 338’s August 19 deadline, the existing Section 232 tariffs, and any future CUSMA rewrite are separate issues. Do not combine them when quoting a customer.",
-    sourceUrl: "https://www.cbc.ca/news/politics/canada-united-states-trade-negotiations-tariffs-9.7309218",
+    text: "Rule check: a tariff announcement is not a supplier invoice. Confirm part origin, CUSMA status, lead time and quote expiry before changing an estimate or ordering extra inventory.",
+    sourceUrl: "https://www.cbc.ca/news/politics/carney-negotiations-delicate-intense-9.7309934",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Separate the Three Trade Questions Before You Quote",
-  text: "On every significant estimate this week, keep three questions separate: what your supplier charges today; whether the part has CUSMA-origin documentation; and when the supplier’s quote expires. The reported 12.5% auto figure is only a proposal, and the August 19 Section 338 deadline concerns a different tariff measure. Clear notes in the job file protect your margin better than a speculative inventory purchase.",
+  title: "Use a Customer-Authorized Price-Protection Note for Major Special Orders",
+  text: "For a major special-order part this week, record the supplier’s written quote, its expiry time, origin and CUSMA status in the job file; then have the customer authorize any price change that occurs before the part is ordered. That protects your margin without adding an invented tariff surcharge. Keep normal, fast-moving stock normal until a supplier gives you an actual updated price.",
 };
 
 const quoteOfTheDay = {
-  text: "We can’t afford to give any more concessions here, and we need a good deal. And that means we’ve got to grind it out until the very end.",
-  author: "Lana Payne, Unifor National President",
-  title: "On Canada-U.S. auto negotiations — August 14, 2026",
+  text: "We’re going to continue working; our job is not yet done.",
+  author: "Dominic LeBlanc, Canada-U.S. Trade Minister",
+  title: "After meeting USTR Jamieson Greer and Commerce Secretary Howard Lutnick — August 18, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 Dodge Charger R/T 440 Magnum — Hemi Orange, Ontario-Plated",
-  description: "Hemi Orange, a black vinyl roof and a 440 Magnum V8: the 1971 Charger R/T carried the muscle-car era into a sharper, more dramatic body. It belongs outside an Ontario repair shop under warm bay lights. Two days to August 19; the Charger reminds us that clear engine notes beat unclear negotiating signals.",
+  name: "1970 Plymouth Road Runner 440 Six Pack — Vitamin C Orange, Ontario-Plated",
+  description: "Vitamin C Orange, a black hood and the 440 Six Pack’s three two-barrel carburetors: the 1970 Road Runner made its case with directness, not theatre. It belongs outside an Ontario repair shop under warm bay lights. Tomorrow may bring a trade announcement; today, the Road Runner says to wait for the actual paperwork.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["AUTO OFFER: 12.5%", "SECTION 338: 2 DAYS", "BRAMPTON AT RISK", "'71 DODGE CHARGER R/T"].map((tag) => (
+                {["CARNEY–TRUMP CALL", "SECTION 338: TOMORROW", "GM TARGET: AUG 21", "'70 ROAD RUNNER 440"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="U.S. 12.5 Percent Auto Offer Falls Short — Canada-U.S. Impasse — Baywash Daily Briefing Edition No. 102"
+              alt="Carney and Trump Speak as Section 338 Deadline Approaches — Baywash Daily Briefing Edition No. 103"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 102 — Monday, August 17, 2026 — 12.5% Auto Offer Falls Short / Brampton at Risk / 2 Days to August 19</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 103 — Tuesday, August 18, 2026 — Carney–Trump Call / Longest U.S. Trade Meeting / Section 338 Tomorrow</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                U.S. 12.5% Auto Offer Falls Short — Impasse With 2 Days to August 19
+                Carney and Trump Spoke — No Deal Announced Before Tomorrow’s Deadline
               </h3>
             </div>
           </div>
