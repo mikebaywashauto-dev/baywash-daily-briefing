@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 104;
-const BRIEFING_DATE = "August 19, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 105;
+const BRIEFING_DATE = "August 20, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bPSEspcayNMDSlDk.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ziBLApIMBKDpHyAt.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/vHFcWBHcxnzNbsWG.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KXitEcOYcqeWaRSG.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GDhkawjrcIcntcgE.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LUBZujcEeJgHxjrK.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ciLtlrMkUaRmlLCm.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JyoKgpUNKrFPXvgu.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nqdSIrwdQnyIVPrk.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/BIkdcVZkjZZdTAJa.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SECTION 338 PAUSED 3 DAYS / SUBSTANTIAL PROGRESS / DOCUMENTS NOT FINAL / NO SIGNED INTERIM DEAL",
+    tag: "SECTION 338 PAUSE / DEADLINE: SAT AUG 22, 12:01 A.M. ET / DEAL CLOSE, NOT FINAL",
     tagColor: "#b91c1c",
-    headline: "Three-Day Tariff Reprieve — Section 338 Is Paused, But the Canada-U.S. Deal Is Not Yet Final",
-    summary: "President Donald Trump announced a three-day pause on the new 50% Section 338 tariffs that were due to start at midnight on roughly US$20 billion of Canadian imports. Trump said the countries had a deal subject to final documents. Prime Minister Mark Carney confirmed the pause, but said only that ‘substantial progress has been made’ and that important work remains. The White House said a prospective agreement would include market access, economic-security commitments and digital-trade alignment; it also said Canada had committed to address U.S. concerns involving dairy, alcohol and motor vehicles. Canada did not confirm those terms. The pause buys time — it is not a signed interim agreement or a permanent tariff resolution.",
-    whyItMatters: "A three-day pause is breathing room, not a reason to erase your price-protection discipline. Keep customer estimates tied to the supplier’s actual quote, origin and expiry date. Call major suppliers for their part-specific position, but do not promise a customer that a tariff outcome is settled until the documents and supplier pricing are final.",
-    source: "Reuters — August 19, 2026",
-    sourceUrl: "https://www.reuters.com/world/americas/carney-trump-speak-ahead-50-us-tariff-deadline-2026-08-18/",
+    headline: "The Three-Day Clock Is Running — Canada-U.S. Deal Is Close, But the Section 338 Deadline Is Saturday",
+    summary: "Canada and the United States are closing in on a trade deal, but neither government has announced a final agreement. Reuters reports President Donald Trump said the U.S. would ‘probably’ have a deal with Canada, while Prime Minister Mark Carney said the sides were moving toward an agreement. The temporary suspension of the 50% Section 338 tariffs expires at 12:01 a.m. EDT on Saturday, August 22, unless the countries finalize a deal or extend the pause. The tariffs would affect about US$20 billion in Canadian goods. The legal pause was issued because senior U.S. officials said Canada had expressed commitments and the negotiations supported temporary suspension — it is not a permanent cancellation.",
+    whyItMatters: "Treat the time window as a verification window, not a buying panic. Get written answers from suppliers on price, origin, CUSMA documentation and expiry for major special orders. A deal that is ‘close’ is still not a new supplier invoice; do not promise customers a tariff outcome or add a blanket surcharge before terms and price lists are final.",
+    source: "Reuters — August 20, 2026",
+    sourceUrl: "https://www.reuters.com/world/us-canada-trade-negotiators-meet-after-trump-sets-new-tariff-deadline-2026-08-19/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "AUTO PATH: POSSIBLE 25% → 15% / CONTENT DEDUCTION DISPUTE / U.S.-ONLY VS NORTH AMERICAN",
+    tag: "PROPOSED: AUTOS 25% → 15% / U.S. CONTENT DEDUCTION / METALS 50% → 25% UNDER QUOTA",
     tagColor: "#15803d",
-    headline: "Auto Relief Is Still About Content Math — A Possible 15% Rate Is Not a Final Rule",
-    summary: "Reuters reports the two sides have discussed reducing existing U.S. Section 232 tariffs on Canadian vehicles to 15% from 25%, with further reductions tied to U.S. content in each vehicle. The key unresolved issue is how content deductions are calculated: Washington has demanded that only U.S.-produced content count, while Canada has pushed for all North American content, including Canadian and Mexican parts. Separately, the U.S. Commerce Department issued annual procedures for eligible automakers exporting from Canada and Mexico to certify U.S. content for tariff deductions. Vehicles must be re-certified by September 30 for the annual cycle beginning December 1. These are automaker compliance procedures, not a new retail-parts tariff schedule.",
-    whyItMatters: "Do not turn a proposed vehicle tariff into a generic parts-price assumption. The auto discussion is still conditional and detailed; ordinary shop parts are priced through your supplier’s real sourcing and distribution chain. Ask for written confirmation before revising an estimate, especially on special orders and long-lead components.",
-    source: "Reuters — August 19, 2026",
-    sourceUrl: "https://www.reuters.com/world/americas/carney-trump-speak-ahead-50-us-tariff-deadline-2026-08-18/",
+    headline: "Proposed Auto and Metals Relief Has Numbers — But They Are Still Negotiating Terms, Not Final Rules",
+    summary: "A source familiar with the negotiations told Reuters that a proposed deal would cut the top-line U.S. tariff on Canadian-built cars and trucks to 15% from 25%, before deductions for U.S.-produced content. Canadian auto executives say even that proposed rate threatens Canadian manufacturing, and sources say Canada is pushing for 10%. The same report says top-line U.S. tariffs on Canadian steel and aluminum could be cut to 25% from 50%, with lower steel tariffs applying only below a quota. One source said a likely quota could be 4 million metric tons annually; steel imports above it would face the original 50% rate. These are reported proposed terms, not a published final regulation.",
+    whyItMatters: "Vehicle and metals terms can influence parts costs over time, but they are not a licence to guess at the price of a sensor, brake job or filter. Keep shop estimates grounded in supplier quotes and real part-level sourcing. On an expensive special order, document the quote expiry and get customer approval for any genuine price revision before purchase.",
+    source: "Reuters — August 20, 2026",
+    sourceUrl: "https://www.reuters.com/world/us-canada-trade-negotiators-meet-after-trump-sets-new-tariff-deadline-2026-08-19/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "GM–UNIFOR / AUG 21 TARGET / 299,813 SOLD VS ~130,000 BUILT / CAMI LAYOFFS CENTRAL",
+    tag: "PROVINCIAL PACKAGE / U.S. ALCOHOL: PENDING FINAL DEAL / GM–UNIFOR TARGET: AUG 21",
     tagColor: "#0369a1",
-    headline: "GM’s Canadian Sales–Production Gap Drives Unifor’s Bargaining Push as the Aug. 21 Target Nears",
-    summary: "Unifor says GM sold 299,813 vehicles in Canada in 2025 while building roughly 130,000 here. The union is pressing GM to restore laid-off workers and increase Canadian production as bargaining approaches its August 21 target for a tentative agreement. Detroit Free Press reports about one-third of GM’s Canadian workforce is on layoff, primarily after the BrightDrop production halt at CAMI in Ingersoll; around 1,200 CAMI employees were laid off. GM’s Canadian tariff-remission quota was reduced 24.2% after those layoffs. Labour economist Jim Stanford estimates GM could save more than US$500 million annually by making enough Canadian investment to regain full remission eligibility — an external estimate, not a company commitment.",
-    whyItMatters: "This is a vehicle-production and jobs story, not a cue to overbuy GM parts. It matters because production commitments affect local fleets, dealer activity and future service demand. For your shop, maintain normal buffers on known fast movers, track formal bargaining announcements, and avoid treating the August 21 target as a confirmed settlement date.",
-    source: "Detroit Free Press — August 18, 2026",
-    sourceUrl: "https://www.freep.com/story/money/cars/general-motors/2026/08/18/unifor-gm-contract-negotiations-may-be-tougher-than-fords/91264859007/",
+    headline: "Provinces Are Part of the Trade Package — and GM–Unifor Enters Its Target-Day Window",
+    summary: "Carney briefed the provincial premiers on the negotiations. Reuters reports Nova Scotia Premier Tim Houston said Carney had asked provinces to return U.S. alcohol to store shelves, but that any step remains pending a final agreement. The White House has said Canada expressed commitments involving U.S. alcohol, cheese and motor vehicles; Canada has not confirmed final terms. At the same time, GM–Unifor talks approach their August 21 internal target for a tentative agreement. Unifor’s Canadian-production demand is being driven by the 299,813 GM vehicles sold in Canada in 2025 versus roughly 130,000 built here, alongside major CAMI layoffs. No final trade deal or GM tentative agreement is confirmed.",
+    whyItMatters: "Both files are still outcome-dependent. The province’s alcohol decision will not automatically reprice a repair order, and the Aug. 21 GM target is not a strike date or a settlement guarantee. Watch official announcements, keep a normal buffer on fast-moving GM service lines, and avoid expanding stock based on a negotiation headline alone.",
+    source: "Reuters and Detroit Free Press — August 20, 2026",
+    sourceUrl: "https://www.reuters.com/world/us-canada-trade-negotiators-meet-after-trump-sets-new-tariff-deadline-2026-08-19/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "⏸️",
-    text: "Trump paused the planned Section 338 tariffs for three days shortly before they were due to begin. Canada says substantial progress has been made, but important work remains.",
-    sourceUrl: "https://www.reuters.com/world/americas/carney-trump-speak-ahead-50-us-tariff-deadline-2026-08-18/",
-  },
-  {
-    icon: "📄",
-    text: "The White House described a prospective agreement; Canada did not confirm its contents. Treat it as a negotiation framework until documents are finalized and announced by both sides.",
-    sourceUrl: "https://www.npr.org/2026/08/19/g-s1-139156/trump-canada-tariffs",
+    icon: "⏱️",
+    text: "The Section 338 pause expires at 12:01 a.m. EDT Saturday, Aug. 22, unless a final deal or new extension is announced. Negotiators are still working.",
+    sourceUrl: "https://www.internationaltradeinsights.com/2026/08/president-trump-delays-50-tariff-on-canada-by-3-days/",
   },
   {
     icon: "🛻",
-    text: "A possible 15% auto-tariff route, down from 25%, remains tied to unresolved content-deduction rules. U.S.-only and North American-content calculations are not the same thing.",
-    sourceUrl: "https://www.reuters.com/world/americas/carney-trump-speak-ahead-50-us-tariff-deadline-2026-08-18/",
+    text: "Reuters: a proposed deal could reduce top-line U.S. tariffs on Canadian-built cars and trucks from 25% to 15%, before U.S.-content deductions. Canada is seeking 10%.",
+    sourceUrl: "https://www.reuters.com/world/us-canada-trade-negotiators-meet-after-trump-sets-new-tariff-deadline-2026-08-19/",
+  },
+  {
+    icon: "🏗️",
+    text: "Proposed steel and aluminum relief would lower top-line U.S. rates from 50% to 25%; lower steel rates would be quota-based, according to Reuters sources.",
+    sourceUrl: "https://www.reuters.com/world/us-canada-trade-negotiators-meet-after-trump-sets-new-tariff-deadline-2026-08-19/",
   },
   {
     icon: "🏭",
-    text: "GM–Unifor bargaining approaches its August 21 internal target. GM’s 2025 Canadian sales were 299,813 vehicles versus roughly 130,000 Canadian builds, according to Unifor figures reported by the Free Press.",
+    text: "GM–Unifor’s internal target is Aug. 21. No tentative agreement is confirmed; CAMI layoffs and Canadian production remain core issues.",
     sourceUrl: "https://www.freep.com/story/money/cars/general-motors/2026/08/18/unifor-gm-contract-negotiations-may-be-tougher-than-fords/91264859007/",
   },
   {
     icon: "📦",
-    text: "Shop rule: the three-day pause does not change an invoice by itself. Confirm part origin, CUSMA status, lead time and quote expiry before changing an estimate or stocking up.",
-    sourceUrl: "https://www.reuters.com/world/americas/carney-trump-speak-ahead-50-us-tariff-deadline-2026-08-18/",
+    text: "Shop rule: use the pause to document supplier price, origin, CUSMA proof and quote expiry. Do not impose a blanket tariff fee before terms and invoices change.",
+    sourceUrl: "https://www.reuters.com/world/us-canada-trade-negotiators-meet-after-trump-sets-new-tariff-deadline-2026-08-19/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Use the Three-Day Pause to Get Written Supplier Answers",
-  text: "Call your three largest parts suppliers today and ask four questions on your key special-order lines: current price, country of origin, CUSMA documentation and quote expiry. Record the answer in the job file. The pause creates time to verify real exposure; it does not justify a blanket tariff surcharge or a blind inventory purchase.",
+  title: "Protect Special-Order Margin With a Four-Point Supplier Check",
+  text: "Before ordering a major special-order part, record the supplier’s current price, country of origin, CUSMA documentation and quote-expiry time in the job file. If a real price change arrives before the order is placed, obtain customer authorization first. This protects margin without inventing a tariff surcharge or turning a proposed deal into a parts-price assumption.",
 };
 
 const quoteOfTheDay = {
-  text: "Substantial progress has been made, although there is important work still to be done.",
-  author: "Mark Carney, Prime Minister of Canada",
-  title: "On the three-day Section 338 tariff pause — August 19, 2026",
+  text: "We have more work to do.",
+  author: "Dominic LeBlanc, Canada-U.S. Trade Minister",
+  title: "After Carney briefed provincial premiers on the ongoing negotiations — August 19, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Chevrolet Monte Carlo SS 454 — Classic Copper, Ontario-Plated",
-  description: "Classic Copper paint, black vinyl roof and big-block SS presence: the 1970 Monte Carlo SS 454 combined muscle with a long-legged grand-touring stance. It belongs outside an Ontario repair shop under warm bay lights. The tariff is paused for three days; the Monte Carlo says enjoy the breathing room, but wait for the paperwork.",
+  name: "1970 Ford Torino Cobra 429 — Grabber Blue, Ontario-Plated",
+  description: "Grabber Blue paint, a white Cobra side stripe and the 429 under the hood: the 1970 Torino Cobra made an unmistakably direct case. It belongs outside an Ontario repair shop under warm bay lights. The deal may be close, but the Torino says wait for the final documents before calling the race.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SECTION 338: PAUSED 3 DAYS", "DOCUMENTS NOT FINAL", "GM TARGET: AUG 21", "'70 MONTE CARLO SS 454"].map((tag) => (
+                {["SECTION 338: SAT 12:01 A.M.", "DEAL: CLOSE, NOT FINAL", "GM TARGET: AUG 21", "'70 TORINO COBRA 429"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Section 338 Tariff Pause Gives Canada and U.S. Three More Days — Baywash Daily Briefing Edition No. 104"
+              alt="Canada-U.S. Trade Deal Nears as Section 338 Pause Approaches Saturday Deadline — Baywash Daily Briefing Edition No. 105"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 104 — Wednesday, August 19, 2026 — Section 338 Paused 3 Days / Progress, Not a Final Deal / GM Target Week</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 105 — Thursday, August 20, 2026 — Section 338 Clock / Proposed Auto Relief / GM Target Window</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Three-Day Tariff Reprieve — Progress, but No Final Canada-U.S. Deal Yet
+                The Three-Day Clock Is Running — Deal Close, but the Saturday Deadline Still Matters
               </h3>
             </div>
           </div>
