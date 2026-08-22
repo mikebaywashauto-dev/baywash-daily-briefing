@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 106;
-const BRIEFING_DATE = "August 21, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 107;
+const BRIEFING_DATE = "August 22, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FuEjzqPzMAhyFcpB.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/pyDeEnrLGviWviNg.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JsLkPCqdzexxLyue.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/cOeaUPymEKEJxaAd.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xVvvLtJRPXltoDNz.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iJYnGwvAVNTudtVk.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WgdSYlEethImLktS.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TPyXtuzyGcOApJTq.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GkcsjHiHpovzwlNY.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TSVMjfOUTHSUZXKp.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SECTION 338 / SAT AUG 22, 12:01 A.M. ET / LEBLANC: ‘VERY CLOSE’ / NO FINAL AGREEMENT",
+    tag: "SECTION 338 NOW IN FORCE / 50% ON $28B+ TARGETED GOODS / CANADA: DOLLAR-FOR-DOLLAR",
     tagColor: "#b91c1c",
-    headline: "LeBlanc Stays in Washington — ‘Very Close’ Is Not a Signed Deal as the Saturday Tariff Deadline Nears",
-    summary: "Canada-U.S. Trade Minister Dominic LeBlanc said negotiators are ‘very close’ to an agreement after a more-than-three-hour meeting with USTR Jamieson Greer, and his office confirmed he stayed overnight in Washington for Friday negotiations. The temporary suspension of the 50% Section 338 tariffs expires at 12:01 a.m. EDT on Saturday, August 22, unless a final agreement or another extension is announced. CTV reports that multiple sources expect reductions in sectoral tariffs such as steel and aluminum, but neither government has published final terms or the size of those reductions. The real status remains: intensive talks, a near deadline, and no signed agreement announced.",
-    whyItMatters: "Use today to verify exposure, not to predict it. For expensive special orders, obtain written supplier confirmation of current price, country of origin, CUSMA status and quote expiry. A negotiating update is not an invoice change — do not promise customers a tariff result, add a blanket fee or overbuy inventory before final terms and supplier pricing are clear.",
-    source: "CTV News / CP24 — August 21, 2026",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/20/canada-us-very-close-to-finalizing-trade-deal-leblanc-says-live-updates-here/",
+    headline: "Deal Collapses; Section 338 Tariffs Take Effect and Canada Suspends U.S. Trade Talks",
+    summary: "The three-day pause ended without an agreement. CBC reports the United States imposed 50% Section 338 tariffs just after midnight Saturday on more than $28 billion of targeted Canadian goods. Prime Minister Mark Carney suspended negotiations, recalled Canada’s negotiators to Ottawa and pledged to match the new levies ‘dollar for dollar.’ In his official statement, Carney said late U.S. changes were ‘unfair, uneconomic, and called into question the reliability of any deal.’ The targeted list spans hundreds of products, including plywood, cement, wine, hockey sticks, electronics, plastics and certain electrical boards and controllers.",
+    whyItMatters: "This is a real policy change, not a headline drill — but it is product-specific, not a blanket 50% charge on every repair part. Start with your actual exposure: ask suppliers whether any controller, module, shop material or special-order line is on the affected list, what the origin is and when a revised price could take effect. Do not add a blanket surcharge to customer invoices.",
+    source: "CBC News / Prime Minister of Canada — August 22, 2026",
+    sourceUrl: "https://www.cbc.ca/news/canada/canada-us-tariffs-trump-imposes-new-50-per-cent-levy-on-canadian-goods-august-22-9.7311417",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "SECTORAL RELIEF: REPORTED / AUTOS & PARTS: TERMS NOT PUBLISHED / SHOP PRICES: SUPPLIER-LED",
-    tagColor: "#15803d",
-    headline: "Sectoral Tariff Relief Is Reported, but the Auto-and-Parts Rulebook Is Still Not Published",
-    summary: "CTV reports multiple sources say the tentative Canada-U.S. agreement includes reductions in sectoral tariffs such as steel and aluminum, while the scope remains unknown. Reuters previously reported source-based proposals to cut the top-line U.S. tariff on Canadian-built cars and trucks to 15% from 25%, with U.S.-content deductions, and to cut top-line steel and aluminum tariffs to 25% from 50% under a quota structure. None of these proposed figures has been released as a final regulation. For shop owners, the key distinction is simple: automaker certification and a headline tariff proposal are not a retail parts-price schedule.",
-    whyItMatters: "Do not convert a reported tariff proposal into a generic price increase for brakes, sensors or maintenance parts. Shop pricing follows your supplier’s real sourcing and distribution chain. Keep estimates tied to an actual quote, especially on special orders and long-lead components, and document any real price revision before ordering.",
-    source: "CTV News / CP24 and Reuters — August 21, 2026",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/20/canada-us-very-close-to-finalizing-trade-deal-leblanc-says-live-updates-here/",
+    tag: "AUTO / METALS RELIEF: NOT FINALIZED / CUSMA REVIEW CONTINUES / INTEGRATED SUPPLY CHAINS AT RISK",
+    tagColor: "#0369a1",
+    headline: "The Proposed Auto and Metals Relief Vanished With the Deal — Supply-Chain Uncertainty Returns",
+    summary: "The proposed interim agreement reportedly would have lowered U.S. tariffs on automobiles, steel and aluminum if Canada dropped retaliatory measures and offered greater U.S. access in dairy and lumber. Politico reports that no final terms were published before the arrangement collapsed. Autos Drive America said U.S. auto exports to Canada had already fallen 23% over the past year and warned that stable North American partnerships are essential to the industry. Reuters says the broader CUSMA review continues separately, with tougher automotive rules of origin, labour and environmental issues expected to be left for 2027.",
+    whyItMatters: "No auto-tariff reduction is in force because none was finalized. Treat the auto file, Section 232, and the new Section 338 list as separate questions. For a customer estimate, use your current supplier quote and actual sourcing path — never a promised 15% rate, an assumed exemption or a generic tariff percentage.",
+    source: "Politico / Reuters — August 22, 2026",
+    sourceUrl: "https://www.politico.com/news/2026/08/22/canada-us-trade-deal-tariffs-01046723",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "PREMIERS: U.S. ALCOHOL RETURN / CONDITIONAL IMPLEMENTATION / GM–UNIFOR TARGET DAY",
-    tagColor: "#0369a1",
-    headline: "All Premiers Back a Conditional U.S.-Alcohol Return — While GM–Unifor Reaches Its Target Day",
-    summary: "Newfoundland and Labrador Premier Tony Wakeham said all premiers agreed to return U.S. alcohol to store shelves as part of the tentative trade agreement and as a good-faith step. The decision remains conditional on a final deal; CTV says U.S. products are currently off shelves everywhere except Alberta and Saskatchewan. Manitoba Premier Wab Kinew said a return could be relatively quick for some products but could take weeks for complete catalogues because of labelling standards, and urged consumers to keep buying Canadian. Meanwhile, today is Unifor-GM’s internal target for a tentative agreement. No GM settlement is confirmed in reliable current reporting; CAMI layoffs and Canadian-production commitments remain central.",
-    whyItMatters: "The liquor decision is a provincial retail implementation step, not a parts-tariff rule. And an internal GM target is neither a strike date nor proof of a settlement. Watch official announcements, hold normal buffers on confirmed fast-moving lines, and keep your operations based on supplier availability rather than a political headline.",
-    source: "CTV News / CP24 and Detroit Free Press — August 21, 2026",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/20/canada-us-very-close-to-finalizing-trade-deal-leblanc-says-live-updates-here/",
+    tag: "SHOP EXPOSURE MAP / ELECTRONICS & CONTROLLERS: CHECK LINE BY LINE / GM–UNIFOR: NO DEAL CONFIRMED",
+    tagColor: "#15803d",
+    headline: "For Shops, the Exposure Is a Parts-and-Supplier Map — Not a Blank 50% Fee",
+    summary: "CBC identifies electronics and certain electrical boards and controllers among the affected Canadian export categories, alongside plastics and wood/paper products. The impact on an independent repair shop therefore depends on the actual country of origin, supplier sourcing and the specific product line — not a single tariff headline. Section 338 applies to a targeted list; Section 232 autos and auto parts are a separate legal regime. GM–Unifor’s Aug. 21 internal target has passed without a tentative agreement confirmed in reliable current reporting. CAMI layoffs and domestic production commitments remain the labour file to watch.",
+    whyItMatters: "Create a short exposure list today: controllers/modules, electronic diagnostics components, shop supplies and expensive special orders. Ask your suppliers which lines, if any, carry affected Canadian content and when price changes would apply. Keep your normal fast-moving inventory buffer and avoid panic orders based on a category that may not touch your actual part number.",
+    source: "CBC News / Detroit Free Press — August 22, 2026",
+    sourceUrl: "https://www.cbc.ca/news/canada/canada-us-tariffs-trump-imposes-new-50-per-cent-levy-on-canadian-goods-august-22-9.7311417",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "⏱️",
-    text: "LeBlanc stayed overnight in Washington after a more-than-three-hour meeting. The Section 338 pause expires at 12:01 a.m. EDT Saturday, Aug. 22, unless a final deal or extension is announced.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/20/canada-us-very-close-to-finalizing-trade-deal-leblanc-says-live-updates-here/",
+    icon: "⚠️",
+    text: "Section 338 tariffs took effect early Saturday: 50% on more than $28 billion of targeted Canadian goods, according to CBC and the Prime Minister’s Office.",
+    sourceUrl: "https://www.cbc.ca/news/canada/canada-us-tariffs-trump-imposes-new-50-per-cent-levy-on-canadian-goods-august-22-9.7311417",
   },
   {
-    icon: "📉",
-    text: "Multiple CTV sources say a tentative deal contains reductions in sectoral tariffs such as steel and aluminum, but the scope is not confirmed publicly.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/20/canada-us-very-close-to-finalizing-trade-deal-leblanc-says-live-updates-here/",
+    icon: "🍁",
+    text: "Carney suspended trade talks, recalled negotiators to Ottawa and said Canada will match the new U.S. tariffs dollar for dollar.",
+    sourceUrl: "https://www.pm.gc.ca/en/news/statements/2026/08/21/statement-prime-minister-carney-canada-us-trade-negotiations",
   },
   {
-    icon: "🥃",
-    text: "Premiers agreed to restock U.S. alcohol as a contingent good-faith step. Product returns could vary by province and take time because of labelling and catalogue logistics.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/20/canada-us-very-close-to-finalizing-trade-deal-leblanc-says-live-updates-here/",
+    icon: "🔌",
+    text: "Affected categories include electronics and certain electrical boards/controllers. Verify actual supplier exposure line by line; Section 338 is not a blanket repair-parts fee.",
+    sourceUrl: "https://www.cbc.ca/news/canada/canada-us-tariffs-trump-imposes-new-50-per-cent-levy-on-canadian-goods-august-22-9.7311417",
+  },
+  {
+    icon: "🚗",
+    text: "The interim auto-and-metals relief was never finalized. Autos Drive America says U.S. auto exports to Canada are already down 23% over the past year.",
+    sourceUrl: "https://www.politico.com/news/2026/08/22/canada-us-trade-deal-tariffs-01046723",
   },
   {
     icon: "🏭",
-    text: "Today is Unifor-GM’s internal target day. No tentative agreement is confirmed; CAMI layoffs and Canadian production are still the core issues.",
+    text: "GM–Unifor’s internal target has passed with no tentative agreement confirmed in current reliable reporting; CAMI layoffs and Canadian production remain watch items.",
     sourceUrl: "https://www.freep.com/story/money/cars/general-motors/2026/08/18/unifor-gm-contract-negotiations-may-be-tougher-than-fords/91264859007/",
-  },
-  {
-    icon: "📦",
-    text: "Shop rule: document the current supplier price, origin, CUSMA status and quote expiry on special orders. A reported deal term is not an invoice change.",
-    sourceUrl: "https://www.cp24.com/news/canada/2026/08/20/canada-us-very-close-to-finalizing-trade-deal-leblanc-says-live-updates-here/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Take a Friday Supplier-Price Snapshot",
-  text: "For each expensive special order, capture the supplier’s quoted price, country of origin, CUSMA status and expiry time in the job file today. If a real price changes before you place the order, get customer approval first. This preserves margin while you wait for official final terms instead of using a blanket tariff surcharge or a speculative price adjustment.",
+  title: "Build a Product-Specific Exposure List — Not a Blanket Surcharge",
+  text: "Today, ask your key suppliers whether any controller, module, electronics line, shop material or special-order component has an affected Canadian origin and whether a price change is actually scheduled. Record the quoted price, origin, CUSMA status where relevant and expiry time. Obtain customer approval only for a real price revision — never add a flat 50% tariff fee to every repair order.",
 };
 
 const quoteOfTheDay = {
-  text: "We’re very close, we continue to make progress.",
-  author: "Dominic LeBlanc, Canada-U.S. Trade Minister",
-  title: "After a more-than-three-hour meeting with USTR Jamieson Greer — August 20, 2026",
+  text: "Last-minute changes in the U.S. proposed terms were unfair, uneconomic, and called into question the reliability of any deal.",
+  author: "Mark Carney, Prime Minister of Canada",
+  title: "Statement suspending negotiations and announcing dollar-for-dollar tariff matching — August 21, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Mercury Cyclone Spoiler 429 — Competition Blue, Ontario-Plated",
-  description: "Competition Blue paint, a white side stripe and the 429 under the hood: the 1970 Mercury Cyclone Spoiler made a direct, full-throttle case. It belongs outside an Ontario repair shop under warm bay lights. Negotiators say they are close; the Cyclone says finish the work before declaring victory.",
+  name: "1970 Chevrolet Camaro SS 396 — Cortez Silver, Ontario-Plated",
+  description: "Cortez Silver paint, black SS sport stripes and a 396 under the hood: the 1970 Camaro SS makes a clear case in the rain outside an Ontario repair shop. The deal collapsed overnight; the Camaro says check the part number before making the call.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SECTION 338: SAT 12:01 A.M.", "LEBLANC: ‘VERY CLOSE’", "GM TARGET: TODAY", "'70 CYCLONE SPOILER 429"].map((tag) => (
+                {["SECTION 338: NOW IN FORCE", "50% ON TARGETED GOODS", "CANADA: DOLLAR-FOR-DOLLAR", "'70 CAMARO SS 396"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canada-U.S. Negotiators Work Overnight as Section 338 Deadline Nears — Baywash Daily Briefing Edition No. 106"
+              alt="Section 338 Tariffs Take Effect After Canada-U.S. Talks Collapse — Baywash Daily Briefing Edition No. 107"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 106 — Friday, August 21, 2026 — LeBlanc Stays in Washington / Saturday Deadline / GM Target Day</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 107 — Saturday, August 22, 2026 — Section 338 Now in Force / Canada Responds / Shop Exposure Map</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                ‘Very Close’ — but Still No Signed Deal Before Saturday’s Section 338 Deadline
+                The Deal Collapsed — Section 338 Tariffs Are Now in Force
               </h3>
             </div>
           </div>
