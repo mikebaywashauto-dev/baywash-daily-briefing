@@ -10,48 +10,48 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 109;
-const BRIEFING_DATE = "August 24, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 110;
+const BRIEFING_DATE = "August 25, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/fHqomZyLqYVtsAlG.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CEbQXlVLkqzlyEhl.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zPAqVKLtRPTyQQbT.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rEGBvcRvxWrCcVBS.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EuEsErkNSQTRKDyo.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sifOgVzytbWPoWgP.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gsjBYFOEBsoCPBmg.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HWcpXihPphkCPYbI.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jqzWQdSxBfOJpDkt.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/eDlhstpyrdtmRVqG.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "FIRST BUSINESS DAY / SECTION 338: IN FORCE / CANADA LIST: NOT YET PUBLISHED",
+    tag: "BREAKING / 50% AUTO, PARTS & STEEL THREAT / JAN. 1, 2027 / NOT A CURRENT PRICE RULE",
     tagColor: "#b91c1c",
-    headline: "First Business Day After Section 338: Separate Today’s U.S. Disruption From Canada’s September 8 Response",
-    summary: "The 50% U.S. Section 338 tariffs are now in force on a targeted group of Canadian exports after the last-minute deal collapsed. PBS/AP estimates the levies affect roughly US$20 billion in goods — about 5% of Canada’s annual exports to the U.S. — and include some goods previously protected by CUSMA. Canada’s matching counter-tariffs are scheduled to begin September 8, but the government has not yet released the Canadian tariff-code list or affected-business supports. For shops, that creates two separate timelines: supplier disruption to monitor today and potential Canadian import costs to map before September 8.",
-    whyItMatters: "Do not combine two different tariff questions into one customer fee. The U.S. tariff is paid by U.S. importers and may affect your Canadian shop only through a supplier’s sourcing path. Canada’s future list could affect some U.S.-sourced lines, but exact codes are pending. Use this week to collect facts, not to guess at a percentage.",
-    source: "PBS NewsHour / Associated Press — August 22, 2026",
-    sourceUrl: "https://www.pbs.org/newshour/economy/what-to-know-about-trumps-50-tariffs-on-canadian-goods-that-just-went-into-effect",
+    headline: "Trump Says Canadian Cars, Trucks and Auto Parts Will Face 50% Tariffs in 2027",
+    summary: "President Donald Trump said Monday that U.S. tariffs on Canadian cars, trucks, automotive parts and steel will rise to 50% on January 1, 2027. CNBC reports the statement would double the current 25% top-line auto tariff. U.S. steel tariffs on Canada are already at 50%. The announcement follows the collapse of last week’s trade talks and is a forward-looking threat — it does not create a new August repair-parts surcharge. The stakes are high for integrated production: CNBC notes auto components can cross the border several times before final installation, exposing the supply chain to repeated tariff risk.",
+    whyItMatters: "Treat January 1, 2027 as an exposure-mapping deadline, not an excuse to rewrite today’s estimates. For high-value imported parts, document supplier country, shipment path and alternative source now. Keep using current supplier quotes for customer work until a real supplier notice changes a part number’s price or availability.",
+    source: "CNBC — August 24, 2026",
+    sourceUrl: "https://www.cnbc.com/2026/08/24/trump-canada-auto-tariffs-trade-war.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CANADA RESPONSE: SEP. 8 / NAMED SECTORS / DETAILED CODES & SUPPORTS PENDING",
+    tag: "CANADA RESPONSE / ANNOUNCEMENT EXPECTED TODAY / TARGETED, NOT AUTOMATICALLY DOLLAR-FOR-DOLLAR",
     tagColor: "#0369a1",
-    headline: "September 8 Is a Supplier-Preparation Date — Not an Immediate Repricing Date",
-    summary: "Prime Minister Mark Carney says Canada’s dollar-for-dollar retaliation starts September 8, with steel, dairy, appliances, agricultural equipment, pulp and paper and electronics named as target sectors. The federal government says detailed measures and support for affected businesses will follow. No further Canada-U.S. talks were scheduled as of the weekend. This leaves independent shops a useful planning window: identify U.S.-sourced inputs in the named sectors, preserve supplier quotes and wait for actual tariff-code guidance before deciding whether any order needs a change.",
-    whyItMatters: "A category headline does not identify a taxable part number. Start with your 20 most expensive or fastest-moving U.S.-sourced items, especially modules, shop equipment and consumables. Record supplier, origin, current price, availability and quote expiry. If a supplier changes a price later, get the revised quote in writing before changing a customer estimate.",
-    source: "CityNews Ottawa / Canadian Press — August 22, 2026",
-    sourceUrl: "https://ottawa.citynews.ca/2026/08/22/carney-to-hold-news-conference-after-failed-trade-talks-with-u-s/",
+    headline: "Carney Signals a More Targeted Counter-Response as Canada Prepares Its Next Move",
+    summary: "Canada is expected to announce retaliatory tariffs Tuesday, according to an official briefed to The Associated Press. Prime Minister Mark Carney said Ottawa may move away from a strict dollar-for-dollar formula toward more targeted retaliation designed to protect Canadian workers and businesses. That distinction matters: an announced sector or tariff code may not translate directly to an everyday replacement part. Carney said the U.S. demands would dismantle major Canadian industries, including autos, steel and aluminum. Until Ottawa releases its final measures, the exact Canadian import codes and effective dates remain unconfirmed.",
+    whyItMatters: "Do not pre-load a generic Canada tariff into your parts matrix. Monitor the official release and ask key distributors for code-specific exposure on their U.S.-sourced inventory. A targeted response may change the relative risk across product families; a written supplier update should be your trigger for an estimate change.",
+    source: "Associated Press via The Hindu — August 25, 2026",
+    sourceUrl: "https://www.thehindu.com/news/international/canada-will-announce-retaliatory-tariffs-against-us-on-august-25-official-say/article71386372.ece",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "UNIFOR–GM / TENTATIVE AGREEMENTS / 4,600+ MEMBERS / RATIFICATION AUG. 29–30",
+    tag: "GM–UNIFOR / RATIFICATION WEEK / 4,600+ MEMBERS / DETAILS RELEASED AUG. 29–30",
     tagColor: "#15803d",
-    headline: "GM–Unifor Tentative Deal Enters Ratification Week — Details Still Under Wraps",
-    summary: "Unifor’s tentative agreements with General Motors cover more than 4,600 members at Oshawa Assembly, CAMI Assembly in Ingersoll, St. Catharines Propulsion and Woodstock Parts Distribution. The GM Master Bargaining Committee unanimously endorsed the agreements and says the deal secures the pattern previously set with Ford. Full terms will be released to members at ratification meetings scheduled for August 29 and 30. The union has said the deal delivers strong income and benefit gains, but no public production, investment or plant-status terms have been released.",
-    whyItMatters: "The agreement reduces immediate labour-disruption risk across important Ontario GM facilities, but it is not final until members vote. Do not read a tentative contract as proof of a CAMI restart, a new Oshawa product or a specific parts-volume change. The practical shop signal is stability, with the key details arriving at ratification.",
+    headline: "GM–Unifor Moves Into Ratification Week With Details Still to Be Released",
+    summary: "Unifor’s tentative GM agreements cover more than 4,600 workers at Oshawa Assembly, CAMI Assembly, St. Catharines Propulsion and Woodstock Parts Distribution. The union says its bargaining committee unanimously endorsed the agreements, which secure the Ford pattern and deliver income and benefit gains. The full terms will be presented to members at ratification meetings August 29 and 30. The deal is a stabilizing signal for Ontario’s GM network, but it remains tentative until members vote — and no public plant investment, production allocation or CAMI status detail has been released.",
+    whyItMatters: "The immediate strike-risk has eased, which supports normal GM-linked parts and service planning. But avoid over-reading a tentative agreement: it is not proof of a CAMI restart, a new Oshawa program or a near-term change in replacement-parts volume. Watch the ratification materials for confirmed operational commitments.",
     source: "Unifor — August 22, 2026",
     sourceUrl: "https://www.unifor.org/news/all-news/unifor-reaches-tentative-agreements-general-motors",
     image: STORY3_IMG,
@@ -60,46 +60,46 @@ const stories = [
 
 const quickHits = [
   {
-    icon: "⏱️",
-    text: "First business day rule: the U.S. Section 338 list is in force now; Canada’s future counter-list is a separate September 8 question.",
-    sourceUrl: "https://www.pbs.org/newshour/economy/what-to-know-about-trumps-50-tariffs-on-canadian-goods-that-just-went-into-effect",
+    icon: "🚨",
+    text: "Trump says Canadian cars, trucks, auto parts and steel will face a 50% U.S. tariff on Jan. 1, 2027. This is an announced future threat, not an August price rule.",
+    sourceUrl: "https://www.cnbc.com/2026/08/24/trump-canada-auto-tariffs-trade-war.html",
   },
   {
-    icon: "📅",
-    text: "Canada named steel, dairy, appliances, agricultural equipment, pulp/paper and electronics as target sectors. Detailed tariff codes and business supports are pending.",
-    sourceUrl: "https://ottawa.citynews.ca/2026/08/22/carney-to-hold-news-conference-after-failed-trade-talks-with-u-s/",
+    icon: "🔁",
+    text: "Auto components can cross the Canada-U.S. border multiple times before final installation, making documented sourcing paths a 2027 risk-management priority.",
+    sourceUrl: "https://www.cnbc.com/2026/08/24/trump-canada-auto-tariffs-trade-war.html",
   },
   {
-    icon: "📋",
-    text: "Shop action: record supplier, origin, current quote, availability and expiry date for high-value U.S.-sourced special orders before Sept. 8.",
-    sourceUrl: "https://ottawa.citynews.ca/2026/08/22/carney-to-hold-news-conference-after-failed-trade-talks-with-u-s/",
+    icon: "🎯",
+    text: "Canada is expected to announce its next retaliatory steps today. Carney has signalled a more targeted approach, so wait for official tariff codes.",
+    sourceUrl: "https://www.thehindu.com/news/international/canada-will-announce-retaliatory-tariffs-against-us-on-august-25-official-say/article71386372.ece",
   },
   {
     icon: "🏭",
-    text: "GM–Unifor tentative agreements cover 4,600+ members at Oshawa, CAMI, St. Catharines and Woodstock. Ratification meetings are Aug. 29–30.",
+    text: "GM–Unifor ratification meetings are Aug. 29–30 for 4,600+ members at Oshawa, CAMI, St. Catharines and Woodstock; full terms are pending.",
     sourceUrl: "https://www.unifor.org/news/all-news/unifor-reaches-tentative-agreements-general-motors",
   },
   {
-    icon: "🧾",
-    text: "Do not pass through a headline as a fee. Change a repair estimate only when a supplier gives a real, part-specific price update.",
-    sourceUrl: "https://www.pbs.org/newshour/economy/what-to-know-about-trumps-50-tariffs-on-canadian-goods-that-just-went-into-effect",
+    icon: "📌",
+    text: "Section 338 remains a separate 50% regime for its targeted goods; products already subject to Section 232 are excluded from that list.",
+    sourceUrl: "https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/august/section-338-tariff-takes-effect;-u-scanada-both-pledge-escalation",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Freeze the Facts Before You Change a Price",
-  text: "For every expensive special order, capture the supplier, origin, current price, availability and quote-expiry date. Keep one list for current cross-border disruption and another for potential September 8 Canadian exposure. If a supplier later changes a price, attach the written update to the job and obtain customer approval — never retrofit a blanket tariff surcharge.",
+  title: "Build Your 2027 Exposure Baseline — Without Stockpiling",
+  text: "For your highest-value imported parts, record supplier, country of origin, current price, annual purchase volume, cross-border path and a practical alternate source. That creates a baseline for the announced January 1, 2027 auto-parts threat. Keep buying normal demand; a future policy threat is not a reason to tie up cash in speculative inventory or add a customer surcharge today.",
 };
 
 const quoteOfTheDay = {
-  text: "We entered this round of talks in the midst of tariff uncertainty and relentless U.S. trade aggression.",
-  author: "Trevor Longpre, Unifor GM Master Bargaining Chairperson",
-  title: "Announcing tentative agreements with General Motors — August 22, 2026",
+  text: "This is the most successful automotive partnership in history.",
+  author: "Mark Carney, Prime Minister of Canada",
+  title: "Remarks on Canada-U.S. trade and the auto sector — August 24, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 Plymouth Road Runner 440 Six Pack — In-Violet, Ontario-Plated",
-  description: "In-Violet paint, a matte-black performance hood and a 440 Six Pack under the hood: this 1971 Plymouth Road Runner belongs outside an Ontario repair shop after a Monday shift. The Road Runner says leave the guesswork at the counter — get the quote, check the origin and keep the work moving.",
+  name: "1970 Ford Mustang Boss 429 — Grabber Blue, Ontario-Plated",
+  description: "Grabber Blue paint, a matte-black hood scoop and a 429 under the hood: this 1970 Ford Mustang Boss 429 sits outside an Ontario repair shop after a rainy Tuesday shift. The Boss says measure the 2027 exposure, source wisely and do not let a headline run today’s invoice.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SECTION 338: IN FORCE", "CANADA LIST: SEP. 8", "GM RATIFICATION: AUG. 29–30", "'71 ROAD RUNNER 440"].map((tag) => (
+                {["AUTO/PARTS: 50% THREAT IN 2027", "CANADA RESPONSE: PENDING", "GM RATIFICATION: AUG. 29–30", "'70 BOSS 429"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="First Business Day After Section 338 Takes Effect — Baywash Daily Briefing Edition No. 109"
+              alt="Trump Announces 2027 Canadian Auto Parts Tariff Threat — Baywash Daily Briefing Edition No. 110"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 109 — Monday, August 24, 2026 — First Business Day / Canada List Sept. 8 / GM Ratification Week</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 110 — Tuesday, August 25, 2026 — 2027 Auto/Parts Threat / Canada Response / GM Ratification Week</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                First Business Day After Section 338: Freeze the Facts Before You Change a Price
+                A 2027 Auto-Parts Tariff Threat — Map the Exposure, Don’t Reprice Today
               </h3>
             </div>
           </div>
