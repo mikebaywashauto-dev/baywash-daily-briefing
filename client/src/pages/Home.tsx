@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 113;
-const BRIEFING_DATE = "August 28, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 114;
+const BRIEFING_DATE = "August 29, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/MxHhxdfhsBVhESeZ.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tYpxPybjOfTeLrIy.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EOpcFXdnGNlfGagi.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kvlhWACWXLviHDZp.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dLuuFMWemQIdsVkb.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sulULKBnwTFwZMgG.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FrIyLLrZqLtcNPSc.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZEDnjydhCUNaFEpc.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RhLRFozlgQqkuWTo.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TitrNokMGJmdjuxT.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "LIST ADJUSTED / SEAFOOD REMOVED / SEPT. 8 / RECHECK EXPOSURE",
+    tag: "GM–UNIFOR / VOTING TODAY–SUNDAY / RESULTS AFTER FINAL COUNT",
     tagColor: "#b91c1c",
-    headline: "Seafood Was Removed From Canada’s September 8 List — Treat Big Quotes as a Live Check",
-    summary: "Canada removed U.S. fish and seafood products from its planned counter-tariff list on August 27 after industry feedback. Finance Canada said it made select adjustments to protect against broader economic harms; the remaining countermeasures are still scheduled to start September 8. The change is a useful reminder that the tariff schedule is product-specific and can move before the effective date.",
-    whyItMatters: "Do not rely on an old summary or add a blanket charge because a supplier is American. For high-value or long-lead jobs, confirm the current part number, origin and tariff-item assessment with your distributor shortly before ordering. Keep a time-stamped response with the job file and refresh the quote when the supplier’s landed cost actually changes.",
-    source: "Reuters — August 27, 2026",
-    sourceUrl: "https://www.reuters.com/business/canada-excludes-us-seafood-retaliatory-tariffs-2026-08-27/",
+    headline: "GM–Unifor Voting Begins Today — Keep the Agreement Tentative Until the Final Tally",
+    summary: "Unifor local leadership unanimously endorsed the tentative GM agreements ahead of member briefings and ratification meetings today and Sunday. The Master agreement covers Oshawa, St. Catharines and Woodstock, with a separate CAMI agreement for Ingersoll. Unifor says the Master Bargaining Committee and local leadership recommend ratification, but results will be released only after the final vote tabulation.",
+    whyItMatters: "This is a labour-stability watch, not a confirmed production change. Do not make a service-parts inventory call from a recommendation or a meeting schedule. Keep normal supplier relationships in place, track the final result when it is released and wait for a specific plant, allocation or distribution announcement before changing plans.",
+    source: "Unifor AutoHub — August 28, 2026",
+    sourceUrl: "https://autotalks.uniforautohub.ca/tentative_agreements_between_unifor_and_general_motors_unanimously_endorsed_by_local_leadership",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "OFFICIAL TEST / U.S. ORIGIN + TARIFF ITEM / 12:01 A.M. SEP. 8",
+    tag: "CROSS-BORDER PARTS / OHIO–CANADA / NETWORK-SPECIFIC EXPOSURE",
     tagColor: "#0369a1",
-    headline: "September 8 Applies by Origin and Tariff Item — Not by the Logo on a Supplier Invoice",
-    summary: "Finance Canada says the countermeasures begin at 12:01 a.m. on September 8 at 15%, 25% or 50%, with the individual rate tied to the listed tariff item. They apply only to goods originating in the U.S. that meet Canada’s CUSMA marking test; U.S. goods already in transit to Canada that day are excluded. The official backgrounder highlights steel, appliances, agricultural equipment, pulp and paper and electronics among the targeted sectors.",
-    whyItMatters: "Most shops buy through distributors, so ask the party importing the item to confirm the tariff-item result instead of trying to infer it from a brand or invoice address. For a large order, record the supplier, part number, country of origin, current landed price and quote expiry. That protects margin without misrepresenting an unverified duty to a customer.",
-    source: "Department of Finance Canada — August 25, 2026",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
+    headline: "The Parts Network Runs Both Ways — Verify the Item, Not the Supplier’s Postal Code",
+    summary: "CBC reports Ohio exported US$1.8 billion in auto parts to Canada last year and imported US$1.1 billion in vehicle parts from Canada, alongside major trade in steel, plastics and other industrial inputs. Not all of those flows are caught by the tariff measures, and companies on both sides are still assessing Canada’s September 8 counter-tariffs. The exposure for any repair order is therefore specific to the actual item and import path.",
+    whyItMatters: "A U.S. vendor address does not prove a customer’s part faces a new Canadian duty, and a Canadian brand does not prove its supply chain is untouched. For modules, sensors, wiring and metal-heavy components with long lead times, ask the distributor for origin, tariff-item assessment, current landed price and availability. Change a quote only after that answer is documented.",
+    source: "CBC News — August 29, 2026",
+    sourceUrl: "https://www.cbc.ca/news/world/in-ohio-canada-u-s-trade-war-sparks-anger-and-uncertainty-9.7324331",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "AUTO & PARTS / TRADE-DEAL RED LINE / GM VOTE STARTS TOMORROW",
+    tag: "SEPT. 8 / LIVE SCHEDULE / ORIGIN + TARIFF ITEM / IN-TRANSIT EXCEPTION",
     tagColor: "#15803d",
-    headline: "Auto and Parts Remain a Trade-Deal Red Line — GM–Unifor Voting Starts Tomorrow",
-    summary: "Canada’s ambassador to Washington says a U.S. deal must preserve a robust Canadian auto assembly and parts industry, while offering no timetable for talks to resume. Separately, Unifor members at Oshawa, CAMI, St. Catharines and Woodstock begin voting on tentative GM agreements tomorrow, August 29. The agreements cover more than 4,600 members, but terms will be released to members at the August 29–30 ratification meetings.",
-    whyItMatters: "This is a policy and labour-stability watch, not a new repair-part tariff or a confirmed plant restart. Keep cross-border availability discussions separate from the GM vote. Monitor the ratification result and any subsequent production announcement, but make parts and staffing decisions from confirmed supplier information rather than trade-talk headlines.",
-    source: "Reuters / Unifor — August 27, 2026",
-    sourceUrl: "https://www.reuters.com/business/any-us-trade-deal-must-ensure-robust-canadian-auto-sector-ambassador-says-2026-08-27/",
+    headline: "September 8 Is Ten Days Away — Work From the Live Schedule, Not a Blanket Rule",
+    summary: "Canada’s countermeasures begin at 12:01 a.m. on September 8, with 15%, 25% or 50% rates set by the listed tariff item. Finance Canada says they apply to U.S.-origin goods that meet the Canadian CUSMA marking test, while goods in transit to Canada that day are excluded. The recent removal of U.S. fish and seafood after industry feedback shows why the current list and supplier confirmation matter.",
+    whyItMatters: "Set a 48-hour confirmation point for high-value work that will be ordered or delivered after September 8. Record the part number, country of origin, tariff-item result, landed cost, stock status and quote expiry. Do not add a broad customer surcharge; use a documented, item-specific change if the distributor confirms one.",
+    source: "Department of Finance Canada / Reuters — August 25–27, 2026",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
     image: STORY3_IMG,
   },
 ];
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "Canada removed U.S. fish and seafood from its upcoming counter-tariff list after industry feedback; the remaining measures are still set for Sept. 8.",
-    sourceUrl: "https://www.reuters.com/business/canada-excludes-us-seafood-retaliatory-tariffs-2026-08-27/",
+    text: "GM–Unifor member briefings and ratification meetings run today and Sunday; the union says it will release results after final tabulation.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/tentative_agreements_between_unifor_and_general_motors_unanimously_endorsed_by_local_leadership",
   },
   {
     icon: "🔩",
-    text: "Finance Canada says the rate is 15%, 25% or 50% by tariff item, and the measure applies only to goods meeting the U.S.-origin marking test.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
+    text: "Unifor local leadership unanimously endorsed the tentative agreements; a recommendation is not the same thing as a completed ratification.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/tentative_agreements_between_unifor_and_general_motors_unanimously_endorsed_by_local_leadership",
   },
   {
     icon: "🗂️",
-    text: "U.S. goods already in transit to Canada on Sept. 8 are excluded. Ask your distributor for the actual origin and tariff-item outcome on a large order.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
+    text: "CBC reports Ohio exported US$1.8B in auto parts to Canada last year and imported US$1.1B in vehicle parts from Canada — a connected supply network, not one blanket outcome.",
+    sourceUrl: "https://www.cbc.ca/news/world/in-ohio-canada-u-s-trade-war-sparks-anger-and-uncertainty-9.7324331",
   },
   {
     icon: "🏭",
-    text: "GM–Unifor ratification meetings begin tomorrow, Aug. 29; agreement details are scheduled for release to members during the Aug. 29–30 meetings.",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-reaches-tentative-agreements-general-motors",
+    text: "Canada’s countermeasures start at 12:01 a.m. on Sept. 8, at 15%, 25% or 50% by tariff item; goods in transit that day are excluded.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
   },
   {
     icon: "↔️",
-    text: "Canada calls a robust domestic auto assembly and parts industry essential to a future U.S. trade deal; no timetable for talks to resume was given.",
-    sourceUrl: "https://www.reuters.com/business/any-us-trade-deal-must-ensure-robust-canadian-auto-sector-ambassador-says-2026-08-27/",
+    text: "Canada’s fish and seafood removal from the proposed package is a reminder to recheck a live tariff schedule and supplier price before a major order.",
+    sourceUrl: "https://www.reuters.com/business/canada-excludes-us-seafood-retaliatory-tariffs-2026-08-27/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Add a Quote Checkpoint Before You Order",
-  text: "For any high-value job landing after September 8, set a supplier checkpoint close to order time. Capture the part number, country of origin, tariff-item assessment, landed price, availability and quote expiry. List adjustments can occur, so refresh the estimate only when the distributor confirms an actual change — never by adding a blanket customer surcharge.",
+  title: "Use a 48-Hour Quote-Confirmation Rule",
+  text: "For high-value work scheduled after September 8, recheck the order within 48 hours of purchase. Ask your distributor for the part number, country of origin, tariff-item assessment, landed price, stock status and quote expiry. Keep the response in the job file, and revise a customer estimate only when an item-specific change is confirmed.",
 };
 
 const quoteOfTheDay = {
-  text: "Based on feedback, we have made select adjustments to protect against broader economic harms, including removing seafood and fish products from our list of counter tariffs.",
-  author: "Department of Finance Canada",
-  title: "On the revised September 8 counter-tariff list — August 27, 2026",
+  text: "Vote results will be released following the final vote tabulation.",
+  author: "Unifor",
+  title: "On the GM tentative-agreement ratification meetings — August 28, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Dodge Challenger R/T 440 Six Pack — Plum Crazy, Ontario-Plated",
-  description: "Plum Crazy paint, a 440 Six Pack and period-correct stance make this 1970 Challenger the right iron for an Ontario shop on a Friday night. Its September 8 rule is simple: confirm the exact item, origin and supplier’s actual landed price before you promise a number.",
+  name: "1971 Plymouth 'Cuda 440 Six Pack — In-Violet, Ontario-Plated",
+  description: "In-Violet paint, a 440 Six Pack and unmistakable E-body lines make this 1971 'Cuda the right iron for an Ontario shop on a Saturday night. Its parts rule is equally direct: verify the specific item, origin and supplier’s landed price before you promise a number.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["LIST ADJUSTED: RECHECK", "SEP. 8 / ORIGIN + ITEM", "GM VOTE: AUG. 29–30", "'70 CHALLENGER R/T"].map((tag) => (
+                {["GM VOTE: TODAY–SUNDAY", "RESULTS AFTER FINAL COUNT", "SEP. 8 / CHECK BY ITEM", "'71 'CUDA 440 SIX PACK"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Shop Owner Rechecks a Supplier Quote Ahead of September 8 Counter-Tariffs — Baywash Daily Briefing Edition No. 113"
+              alt="Auto Workers Head to a GM–Unifor Ratification Meeting — Baywash Daily Briefing Edition No. 114"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 113 — Friday, August 28, 2026 — List Adjusted / Verify Before Ordering / GM Vote Starts Tomorrow</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 114 — Saturday, August 29, 2026 — GM–Unifor Vote Underway / Parts Network Watch / Verify Sept. 8 Exposure</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                September 8 Counter-Tariffs Can Move: Recheck Before You Reprice
+                Saturday Watch: GM–Unifor Voting Begins as Shops Prep for September 8
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Dodge Challenger R/T 440 Six Pack</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '71 Plymouth 'Cuda 440 Six Pack</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
