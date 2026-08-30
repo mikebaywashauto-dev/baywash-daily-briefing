@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 114;
-const BRIEFING_DATE = "August 29, 2026";
-const BRIEFING_DAY = "Saturday";
+const BRIEFING_NUMBER = 115;
+const BRIEFING_DATE = "August 30, 2026";
+const BRIEFING_DAY = "Sunday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sulULKBnwTFwZMgG.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/FrIyLLrZqLtcNPSc.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZEDnjydhCUNaFEpc.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RhLRFozlgQqkuWTo.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TitrNokMGJmdjuxT.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YMyEVJqIMrlftCxd.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zJxPMdNbehqTSzzL.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PzGXakcQvqmAuonQ.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/MFAEEryOsyoYBZXS.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iQVgOOifngDDdPzi.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "GM–UNIFOR / VOTING TODAY–SUNDAY / RESULTS AFTER FINAL COUNT",
+    tag: "GM–UNIFOR / TENTATIVE / OSHAWA SIERRA HD / VOTE CONCLUDES TODAY",
     tagColor: "#b91c1c",
-    headline: "GM–Unifor Voting Begins Today — Keep the Agreement Tentative Until the Final Tally",
-    summary: "Unifor local leadership unanimously endorsed the tentative GM agreements ahead of member briefings and ratification meetings today and Sunday. The Master agreement covers Oshawa, St. Catharines and Woodstock, with a separate CAMI agreement for Ingersoll. Unifor says the Master Bargaining Committee and local leadership recommend ratification, but results will be released only after the final vote tabulation.",
-    whyItMatters: "This is a labour-stability watch, not a confirmed production change. Do not make a service-parts inventory call from a recommendation or a meeting schedule. Keep normal supplier relationships in place, track the final result when it is released and wait for a specific plant, allocation or distribution announcement before changing plans.",
-    source: "Unifor AutoHub — August 28, 2026",
-    sourceUrl: "https://autotalks.uniforautohub.ca/tentative_agreements_between_unifor_and_general_motors_unanimously_endorsed_by_local_leadership",
+    headline: "Sierra HD Would Return to Oshawa if GM–Unifor Members Approve the Tentative Deal",
+    summary: "GM’s tentative agreement with Unifor includes C$144 million to equip Oshawa Assembly for next-generation heavy-duty GMC Sierra pickup production, Reuters reports. Unifor’s bargaining report says the Sierra truck would return to Oshawa. The commitment depends on approval by members voting through today, August 30, so it remains a proposed investment rather than a ratified production launch.",
+    whyItMatters: "This is a positive capacity signal, not an immediate service-parts promise. Keep your current supplier and inventory decisions tied to actual availability, landed cost and lead time. Track the final ratification result, then wait for a confirmed launch schedule or OEM distribution notice before factoring an Oshawa program into shop forecasts.",
+    source: "Reuters / Unifor — August 29, 2026",
+    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CROSS-BORDER PARTS / OHIO–CANADA / NETWORK-SPECIFIC EXPOSURE",
+    tag: "C$1.1B TENTATIVE PACKAGE / V8 + TRANSMISSION / LONG-TERM CAPACITY",
     tagColor: "#0369a1",
-    headline: "The Parts Network Runs Both Ways — Verify the Item, Not the Supplier’s Postal Code",
-    summary: "CBC reports Ohio exported US$1.8 billion in auto parts to Canada last year and imported US$1.1 billion in vehicle parts from Canada, alongside major trade in steel, plastics and other industrial inputs. Not all of those flows are caught by the tariff measures, and companies on both sides are still assessing Canada’s September 8 counter-tariffs. The exposure for any repair order is therefore specific to the actual item and import path.",
-    whyItMatters: "A U.S. vendor address does not prove a customer’s part faces a new Canadian duty, and a Canadian brand does not prove its supply chain is untouched. For modules, sensors, wiring and metal-heavy components with long lead times, ask the distributor for origin, tariff-item assessment, current landed price and availability. Change a quote only after that answer is documented.",
-    source: "CBC News — August 29, 2026",
-    sourceUrl: "https://www.cbc.ca/news/world/in-ohio-canada-u-s-trade-war-sparks-anger-and-uncertainty-9.7324331",
+    headline: "GM’s C$1.1B Investment Headline Is Long-Term Capacity — Not a Monday-Morning Parts Signal",
+    summary: "Reuters says the tentative GM–Unifor package totals C$1.1 billion, including a C$691-million V8-engine commitment announced in April. It also cites a C$215-million plan for a next-generation transmission at St. Catharines beginning in late 2029; Unifor projects approximately 250 jobs from that work. These are manufacturing commitments tied to the proposed agreement and longer production timelines.",
+    whyItMatters: "Avoid translating a large plant-investment headline into a predicted price or lead-time change for a customer repair. The immediate controls remain your distributor’s stock status, part-specific origin, tariff-item assessment, landed cost and quote expiry. Treat long-dated plant capacity as context for supplier conversations, not as a reason to reprice today.",
+    source: "Reuters / Unifor — August 29, 2026",
+    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "SEPT. 8 / LIVE SCHEDULE / ORIGIN + TARIFF ITEM / IN-TRANSIT EXCEPTION",
+    tag: "CAMI / NO-CLOSE-OR-SELL INTENT / NO NEW VEHICLE PROGRAM / VOTE PENDING",
     tagColor: "#15803d",
-    headline: "September 8 Is Ten Days Away — Work From the Live Schedule, Not a Blanket Rule",
-    summary: "Canada’s countermeasures begin at 12:01 a.m. on September 8, with 15%, 25% or 50% rates set by the listed tariff item. Finance Canada says they apply to U.S.-origin goods that meet the Canadian CUSMA marking test, while goods in transit to Canada that day are excluded. The recent removal of U.S. fish and seafood after industry feedback shows why the current list and supplier confirmation matter.",
-    whyItMatters: "Set a 48-hour confirmation point for high-value work that will be ordered or delivered after September 8. Record the part number, country of origin, tariff-item result, landed cost, stock status and quote expiry. Do not add a broad customer surcharge; use a documented, item-specific change if the distributor confirms one.",
-    source: "Department of Finance Canada / Reuters — August 25–27, 2026",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
+    headline: "CAMI Gets a No-Close-or-Sell Intent Letter — But Not a New Vehicle Allocation",
+    summary: "Unifor’s CAMI bargaining report says GM has committed in writing that it intends not to close or sell the Ingersoll plant while it studies alternative-production opportunities. CAMI would receive first consideration for Canadian Armed Forces defence work only if GM wins such a contract. The report also says GM did not make a product commitment in this round, citing tariff and trade uncertainty.",
+    whyItMatters: "The language adds plant-stability context, but it is not a confirmed restart, defence contract or new model allocation. Do not buy inventory or promise turnaround changes based on it. Continue to source the parts actually needed for current work, and watch for a ratification result plus a separate confirmed program or production announcement.",
+    source: "Unifor CAMI Bargaining Report — August 2026",
+    sourceUrl: "https://assets.nationbuilder.com/unifortheunion/pages/12217/attachments/original/1788011251/GM_CAMI_Master_Brochure-FINAL-web.pdf?1788011251",
     image: STORY3_IMG,
   },
 ];
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "GM–Unifor member briefings and ratification meetings run today and Sunday; the union says it will release results after final tabulation.",
-    sourceUrl: "https://autotalks.uniforautohub.ca/tentative_agreements_between_unifor_and_general_motors_unanimously_endorsed_by_local_leadership",
+    text: "The C$144M Oshawa Sierra HD investment remains contingent on approval of the tentative GM–Unifor deal as voting concludes today.",
+    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
   },
   {
     icon: "🔩",
-    text: "Unifor local leadership unanimously endorsed the tentative agreements; a recommendation is not the same thing as a completed ratification.",
-    sourceUrl: "https://autotalks.uniforautohub.ca/tentative_agreements_between_unifor_and_general_motors_unanimously_endorsed_by_local_leadership",
+    text: "Reuters says the C$1.1B investment total includes the C$691M V8-engine commitment announced in April; keep the timing in view.",
+    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
   },
   {
     icon: "🗂️",
-    text: "CBC reports Ohio exported US$1.8B in auto parts to Canada last year and imported US$1.1B in vehicle parts from Canada — a connected supply network, not one blanket outcome.",
-    sourceUrl: "https://www.cbc.ca/news/world/in-ohio-canada-u-s-trade-war-sparks-anger-and-uncertainty-9.7324331",
+    text: "The proposed St. Catharines next-generation transmission program is slated for late 2029 and is projected by Unifor to create about 250 jobs.",
+    sourceUrl: "https://assets.nationbuilder.com/unifortheunion/pages/12217/attachments/original/1788011252/GMCC_Master_Brochure-FINAL-web.pdf?1788011252",
   },
   {
     icon: "🏭",
-    text: "Canada’s countermeasures start at 12:01 a.m. on Sept. 8, at 15%, 25% or 50% by tariff item; goods in transit that day are excluded.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
+    text: "CAMI’s letter says GM intends not to close or sell the plant while alternative production is studied; that is not a confirmed allocation or restart.",
+    sourceUrl: "https://assets.nationbuilder.com/unifortheunion/pages/12217/attachments/original/1788011251/GM_CAMI_Master_Brochure-FINAL-web.pdf?1788011251",
   },
   {
     icon: "↔️",
-    text: "Canada’s fish and seafood removal from the proposed package is a reminder to recheck a live tariff schedule and supplier price before a major order.",
-    sourceUrl: "https://www.reuters.com/business/canada-excludes-us-seafood-retaliatory-tariffs-2026-08-27/",
+    text: "The threatened U.S. 50% duty on Canadian vehicles, trucks, parts and steel is a January 1, 2027 risk — not a new Canadian repair-parts rate today.",
+    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Use a 48-Hour Quote-Confirmation Rule",
-  text: "For high-value work scheduled after September 8, recheck the order within 48 hours of purchase. Ask your distributor for the part number, country of origin, tariff-item assessment, landed price, stock status and quote expiry. Keep the response in the job file, and revise a customer estimate only when an item-specific change is confirmed.",
+  title: "Separate Plant News From Quote Controls",
+  text: "Use manufacturing headlines to frame supplier conversations, not to reset customer pricing. Before a high-value order, record the actual part number, origin, tariff-item assessment, landed price, stock status and quote expiry from your distributor. Change a repair estimate only when an item-specific cost or availability change is confirmed.",
 };
 
 const quoteOfTheDay = {
-  text: "Vote results will be released following the final vote tabulation.",
-  author: "Unifor",
-  title: "On the GM tentative-agreement ratification meetings — August 28, 2026",
+  text: "Yes, the Sierra truck is finally returning to Oshawa.",
+  author: "Unifor Master Bargaining Committee",
+  title: "On the proposed Oshawa heavy-duty pickup investment — August 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 Plymouth 'Cuda 440 Six Pack — In-Violet, Ontario-Plated",
-  description: "In-Violet paint, a 440 Six Pack and unmistakable E-body lines make this 1971 'Cuda the right iron for an Ontario shop on a Saturday night. Its parts rule is equally direct: verify the specific item, origin and supplier’s landed price before you promise a number.",
+  name: "1969 Pontiac GTO Judge — Carousel Red, Ontario-Plated",
+  description: "Carousel Red paint, Ram Air attitude and classic Judge stripes make this 1969 GTO the right iron for an Ontario shop on a Sunday evening. Its rule for the bay is equally direct: let confirmed part availability and price — not a headline — set the promise you make to a customer.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["GM VOTE: TODAY–SUNDAY", "RESULTS AFTER FINAL COUNT", "SEP. 8 / CHECK BY ITEM", "'71 'CUDA 440 SIX PACK"].map((tag) => (
+                {["GM VOTE: CONCLUDES TODAY", "OSHAWA SIERRA HD: TENTATIVE", "CAMI: NO NEW ALLOCATION", "'69 GTO JUDGE"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Auto Workers Head to a GM–Unifor Ratification Meeting — Baywash Daily Briefing Edition No. 114"
+              alt="Ontario Heavy-Duty Pickup Assembly Concept Ahead of the GM–Unifor Vote Result — Baywash Daily Briefing Edition No. 115"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 114 — Saturday, August 29, 2026 — GM–Unifor Vote Underway / Parts Network Watch / Verify Sept. 8 Exposure</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 115 — Sunday, August 30, 2026 — Sierra HD Proposal / Long-Term Investment / CAMI Watch</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Saturday Watch: GM–Unifor Voting Begins as Shops Prep for September 8
+                Sunday Watch: GM’s Ontario Investment Plan Awaits the Final Ratification Tally
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '71 Plymouth 'Cuda 440 Six Pack</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Pontiac GTO Judge</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
