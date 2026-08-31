@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 115;
-const BRIEFING_DATE = "August 30, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 116;
+const BRIEFING_DATE = "August 31, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YMyEVJqIMrlftCxd.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zJxPMdNbehqTSzzL.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PzGXakcQvqmAuonQ.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/MFAEEryOsyoYBZXS.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iQVgOOifngDDdPzi.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sKaQqSFCNPUAQvkm.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qJsVktLVmUZmNhhP.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tCCxFiknScfVfDPD.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/haacUElwfwhbCIKM.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lYMfOEDtNWOWdsIX.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "GM–UNIFOR / TENTATIVE / OSHAWA SIERRA HD / VOTE CONCLUDES TODAY",
+    tag: "GM–UNIFOR / RATIFIED / 4,600+ MEMBERS / 80.5% + 96.5% SUPPORT",
     tagColor: "#b91c1c",
-    headline: "Sierra HD Would Return to Oshawa if GM–Unifor Members Approve the Tentative Deal",
-    summary: "GM’s tentative agreement with Unifor includes C$144 million to equip Oshawa Assembly for next-generation heavy-duty GMC Sierra pickup production, Reuters reports. Unifor’s bargaining report says the Sierra truck would return to Oshawa. The commitment depends on approval by members voting through today, August 30, so it remains a proposed investment rather than a ratified production launch.",
-    whyItMatters: "This is a positive capacity signal, not an immediate service-parts promise. Keep your current supplier and inventory decisions tied to actual availability, landed cost and lead time. Track the final ratification result, then wait for a confirmed launch schedule or OEM distribution notice before factoring an Oshawa program into shop forecasts.",
-    source: "Reuters / Unifor — August 29, 2026",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
+    headline: "GM–Unifor Contracts Are Ratified — The Ontario Capacity Commitments Now Move Forward",
+    summary: "Unifor says its new GM contracts have been ratified by more than 4,600 Ontario members. Workers at Oshawa, St. Catharines and Woodstock approved the GMCC agreement by 80.5%; CAMI members in Ingersoll voted 96.5% in support. The three-year agreements mirror the Detroit Three pattern, lifting full-rate production wages to $50.20 an hour and skilled-trades wages to $62.71 over the term.",
+    whyItMatters: "The labour settlement and associated GM commitments are now confirmed, which is useful context for long-term supplier conversations. It does not create an immediate parts-availability or price change for a repair order. Keep your inventory and estimate decisions grounded in the part number, current stock, landed price and stated lead time.",
+    source: "Unifor / The Canadian Press — August 30, 2026",
+    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "C$1.1B TENTATIVE PACKAGE / V8 + TRANSMISSION / LONG-TERM CAPACITY",
+    tag: "OSHAWA + ST. CATHARINES / C$144M + C$215M / TIMELINES MATTER",
     tagColor: "#0369a1",
-    headline: "GM’s C$1.1B Investment Headline Is Long-Term Capacity — Not a Monday-Morning Parts Signal",
-    summary: "Reuters says the tentative GM–Unifor package totals C$1.1 billion, including a C$691-million V8-engine commitment announced in April. It also cites a C$215-million plan for a next-generation transmission at St. Catharines beginning in late 2029; Unifor projects approximately 250 jobs from that work. These are manufacturing commitments tied to the proposed agreement and longer production timelines.",
-    whyItMatters: "Avoid translating a large plant-investment headline into a predicted price or lead-time change for a customer repair. The immediate controls remain your distributor’s stock status, part-specific origin, tariff-item assessment, landed cost and quote expiry. Treat long-dated plant capacity as context for supplier conversations, not as a reason to reprice today.",
-    source: "Reuters / Unifor — August 29, 2026",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
+    headline: "Oshawa Sierra HD and St. Catharines Transmission Plans Are Confirmed — but Their Timelines Differ",
+    summary: "The ratified agreements include C$144 million to add next-generation GMC Sierra Heavy-Duty production at Oshawa and C$215 million to make St. Catharines the sole source for a next-generation transmission. GM says transmission work is anticipated to begin in late 2029. Combined with the previously announced C$691-million sixth-generation V8 program, reported St. Catharines investment exceeds C$900 million.",
+    whyItMatters: "These are confirmed industrial commitments, but the transmission schedule is long-dated. Do not treat a late-2029 production plan or the previously announced V8 program as a Monday-morning aftermarket supply signal. For today’s work, confirm actual part availability and price with the distributor before you set the customer promise.",
+    source: "The Canadian Press / Unifor — August 30, 2026",
+    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CAMI / NO-CLOSE-OR-SELL INTENT / NO NEW VEHICLE PROGRAM / VOTE PENDING",
+    tag: "CAMI / STILL IDLED / BENEFITS EXTENDED / NO NEW PROGRAM CONFIRMED",
     tagColor: "#15803d",
-    headline: "CAMI Gets a No-Close-or-Sell Intent Letter — But Not a New Vehicle Allocation",
-    summary: "Unifor’s CAMI bargaining report says GM has committed in writing that it intends not to close or sell the Ingersoll plant while it studies alternative-production opportunities. CAMI would receive first consideration for Canadian Armed Forces defence work only if GM wins such a contract. The report also says GM did not make a product commitment in this round, citing tariff and trade uncertainty.",
-    whyItMatters: "The language adds plant-stability context, but it is not a confirmed restart, defence contract or new model allocation. Do not buy inventory or promise turnaround changes based on it. Continue to source the parts actually needed for current work, and watch for a ratification result plus a separate confirmed program or production announcement.",
-    source: "Unifor CAMI Bargaining Report — August 2026",
-    sourceUrl: "https://assets.nationbuilder.com/unifortheunion/pages/12217/attachments/original/1788011251/GM_CAMI_Master_Brochure-FINAL-web.pdf?1788011251",
+    headline: "CAMI Is Still an Idled-Plant Watch — Ratification Did Not Confirm a Restart or New Model",
+    summary: "Unifor says CAMI Assembly in Ingersoll remains idled, with most members on indefinite layoff. The ratified agreement extends layoff benefits while GM assesses potential opportunities. CAMI is designated as first consideration for Canadian Armed Forces defence work only if GM is awarded that work, and Unifor says it will keep pressing for production to return.",
+    whyItMatters: "The agreement improves support and plant-stability context, but it is not a new vehicle allocation, defence contract or restart announcement. Avoid inventory bets or turnaround promises tied to CAMI speculation. Continue sourcing against real repair demand and watch for a separate, specific program or production update.",
+    source: "Unifor / The Canadian Press — August 30, 2026",
+    sourceUrl: "https://ca.finance.yahoo.com/news/unifor-members-ratify-contracts-gm-010300142.html",
     image: STORY3_IMG,
   },
 ];
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "The C$144M Oshawa Sierra HD investment remains contingent on approval of the tentative GM–Unifor deal as voting concludes today.",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
+    text: "GMCC members at Oshawa, St. Catharines and Woodstock voted 80.5% in favour; CAMI members voted 96.5% in support.",
+    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
   },
   {
     icon: "🔩",
-    text: "Reuters says the C$1.1B investment total includes the C$691M V8-engine commitment announced in April; keep the timing in view.",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
+    text: "The ratified package adds C$144M for next-generation Sierra Heavy-Duty production at Oshawa, alongside prior truck-program investment.",
+    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
   },
   {
     icon: "🗂️",
-    text: "The proposed St. Catharines next-generation transmission program is slated for late 2029 and is projected by Unifor to create about 250 jobs.",
-    sourceUrl: "https://assets.nationbuilder.com/unifortheunion/pages/12217/attachments/original/1788011252/GMCC_Master_Brochure-FINAL-web.pdf?1788011252",
+    text: "St. Catharines’ C$215M sole-source transmission plan is anticipated to start in late 2029; it is not a near-term repair-parts supply event.",
+    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
   },
   {
     icon: "🏭",
-    text: "CAMI’s letter says GM intends not to close or sell the plant while alternative production is studied; that is not a confirmed allocation or restart.",
-    sourceUrl: "https://assets.nationbuilder.com/unifortheunion/pages/12217/attachments/original/1788011251/GM_CAMI_Master_Brochure-FINAL-web.pdf?1788011251",
+    text: "CAMI remains idled; its defence-work priority applies only if GM is awarded a contract, with no restart or allocation confirmed.",
+    sourceUrl: "https://ca.finance.yahoo.com/news/unifor-members-ratify-contracts-gm-010300142.html",
   },
   {
     icon: "↔️",
-    text: "The threatened U.S. 50% duty on Canadian vehicles, trucks, parts and steel is a January 1, 2027 risk — not a new Canadian repair-parts rate today.",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/gm-deal-with-workers-would-add-sierra-pickup-assembly-canadian-plant-despite-us-2026-08-29/",
+    text: "September 8 countermeasures remain item- and origin-specific; ask the distributor to confirm the actual tariff-item result before changing a quote.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Separate Plant News From Quote Controls",
-  text: "Use manufacturing headlines to frame supplier conversations, not to reset customer pricing. Before a high-value order, record the actual part number, origin, tariff-item assessment, landed price, stock status and quote expiry from your distributor. Change a repair estimate only when an item-specific cost or availability change is confirmed.",
+  title: "Put Quote Proof in Every Major Job File",
+  text: "For high-value work crossing the September 8 implementation date, save a line in the job file with the distributor, part number, origin, tariff-item outcome, landed price, availability, quote expiry and time checked. Use that evidence — not an auto-industry headline or a blanket surcharge — to revise a customer price.",
 };
 
 const quoteOfTheDay = {
-  text: "Yes, the Sierra truck is finally returning to Oshawa.",
-  author: "Unifor Master Bargaining Committee",
-  title: "On the proposed Oshawa heavy-duty pickup investment — August 2026",
+  text: "These agreements commit more than one billion dollars in vital investments to Canadian GM facilities.",
+  author: "Lana Payne, Unifor National President",
+  title: "On the ratified GM agreements — August 30, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Pontiac GTO Judge — Carousel Red, Ontario-Plated",
-  description: "Carousel Red paint, Ram Air attitude and classic Judge stripes make this 1969 GTO the right iron for an Ontario shop on a Sunday evening. Its rule for the bay is equally direct: let confirmed part availability and price — not a headline — set the promise you make to a customer.",
+  name: "1970 Oldsmobile 442 W-30 — Sebring Yellow, Ontario-Plated",
+  description: "Sebring Yellow paint, W-30 muscle and unmistakable 442 lines make this 1970 Olds the right iron for an Ontario shop on a Monday evening. Its rule for the bay is equally direct: let verified availability and landed price — not a headline — determine the promise you make to a customer.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["GM VOTE: CONCLUDES TODAY", "OSHAWA SIERRA HD: TENTATIVE", "CAMI: NO NEW ALLOCATION", "'69 GTO JUDGE"].map((tag) => (
+                {["GM DEAL: RATIFIED", "OSHAWA SIERRA HD: CONFIRMED", "CAMI: STILL IDLED", "'70 OLDS 442 W-30"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Ontario Heavy-Duty Pickup Assembly Concept Ahead of the GM–Unifor Vote Result — Baywash Daily Briefing Edition No. 115"
+              alt="Ontario Heavy-Duty Pickup Assembly Following GM–Unifor Ratification — Baywash Daily Briefing Edition No. 116"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 115 — Sunday, August 30, 2026 — Sierra HD Proposal / Long-Term Investment / CAMI Watch</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 116 — Monday, August 31, 2026 — GM Deal Ratified / Ontario Capacity / CAMI Watch</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Sunday Watch: GM’s Ontario Investment Plan Awaits the Final Ratification Tally
+                Monday Watch: Ratified GM Agreements Put Ontario Capacity Plans on the Clock
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Pontiac GTO Judge</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Oldsmobile 442 W-30</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
