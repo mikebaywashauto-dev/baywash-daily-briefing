@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 116;
-const BRIEFING_DATE = "August 31, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 117;
+const BRIEFING_DATE = "September 1, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sKaQqSFCNPUAQvkm.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qJsVktLVmUZmNhhP.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/tCCxFiknScfVfDPD.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/haacUElwfwhbCIKM.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lYMfOEDtNWOWdsIX.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IqgPxpJQlbgzBYdf.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RBeAMWfonSQZQdUw.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/lMbtpTteaDiHztAo.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GRNUNSzUUhdJUrim.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bCWYwNRmdcIOlbue.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "GM–UNIFOR / RATIFIED / 4,600+ MEMBERS / 80.5% + 96.5% SUPPORT",
+    tag: "SEPT. 8 TARIFFS / REMISSION PROCESS / EXCEPTIONAL RELIEF ONLY",
     tagColor: "#b91c1c",
-    headline: "GM–Unifor Contracts Are Ratified — The Ontario Capacity Commitments Now Move Forward",
-    summary: "Unifor says its new GM contracts have been ratified by more than 4,600 Ontario members. Workers at Oshawa, St. Catharines and Woodstock approved the GMCC agreement by 80.5%; CAMI members in Ingersoll voted 96.5% in support. The three-year agreements mirror the Detroit Three pattern, lifting full-rate production wages to $50.20 an hour and skilled-trades wages to $62.71 over the term.",
-    whyItMatters: "The labour settlement and associated GM commitments are now confirmed, which is useful context for long-term supplier conversations. It does not create an immediate parts-availability or price change for a repair order. Keep your inventory and estimate decisions grounded in the part number, current stock, landed price and stated lead time.",
-    source: "Unifor / The Canadian Press — August 30, 2026",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
+    headline: "Finance Canada Opens a Remission Path — But It Is a Narrow, Evidence-Heavy Exception",
+    summary: "Finance Canada says its tariff-remission framework remains available for exceptional relief from the 15%, 25% and 50% counter-tariffs taking effect September 8. It may consider cases where an input cannot reasonably be sourced in Canada or from non-U.S. suppliers, or other exceptional circumstances that could severely hurt the Canadian economy. The department stresses that remission is an exception, not the rule.",
+    whyItMatters: "Do not treat the process as a blanket repair-shop exemption or immediate price relief. A Canadian-registered importer needs detailed support, including the 8-digit tariff item, import information and evidence that alternatives were canvassed. If a material exposure is real, assemble records and consult a customs or trade professional; keep normal repair estimates tied to the actual part and supplier quote.",
+    source: "Finance Canada — August 31, 2026",
+    sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/process-requesting-remission-tariffs-that-apply-on-certain-goods-us.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "OSHAWA + ST. CATHARINES / C$144M + C$215M / TIMELINES MATTER",
+    tag: "GM ONTARIO / ~C$1.4B OVER 3 YEARS / NEW + PRIOR INVESTMENT BUCKETS",
     tagColor: "#0369a1",
-    headline: "Oshawa Sierra HD and St. Catharines Transmission Plans Are Confirmed — but Their Timelines Differ",
-    summary: "The ratified agreements include C$144 million to add next-generation GMC Sierra Heavy-Duty production at Oshawa and C$215 million to make St. Catharines the sole source for a next-generation transmission. GM says transmission work is anticipated to begin in late 2029. Combined with the previously announced C$691-million sixth-generation V8 program, reported St. Catharines investment exceeds C$900 million.",
-    whyItMatters: "These are confirmed industrial commitments, but the transmission schedule is long-dated. Do not treat a late-2029 production plan or the previously announced V8 program as a Monday-morning aftermarket supply signal. For today’s work, confirm actual part availability and price with the distributor before you set the customer promise.",
-    source: "The Canadian Press / Unifor — August 30, 2026",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
+    headline: "GM’s Ontario Capacity Plan Is Ratified — Keep the C$1.4B Headline in Its Proper Bucket",
+    summary: "GM Canada says its planned Oshawa and St. Catharines investments total approximately C$1.4 billion over the next three years. Driving reports that includes an additional C$144 million for next-generation GMC Sierra HD production at Oshawa, building on a previously announced C$343 million in next-generation truck work and manufacturing enhancements. Unifor separately describes more than C$1 billion in Canadian-facility investment.",
+    whyItMatters: "The reported totals use different investment groupings, so do not add them together or call every dollar new on Tuesday. Ratification confirms the capacity direction; it does not promise a current repair-part price or stock change. Keep parts orders, customer quotes and turnaround promises tied to current distributor availability and landed cost.",
+    source: "Driving — August 31, 2026",
+    sourceUrl: "https://driving.ca/auto-news/industry/general-motors-unifor-ratify-new-contract-wages-benefits-security",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CAMI / STILL IDLED / BENEFITS EXTENDED / NO NEW PROGRAM CONFIRMED",
+    tag: "COLLISION OPERATIONS / MARGIN UP / REVENUE DOWN / JOB-MIX DISCIPLINE",
     tagColor: "#15803d",
-    headline: "CAMI Is Still an Idled-Plant Watch — Ratification Did Not Confirm a Restart or New Model",
-    summary: "Unifor says CAMI Assembly in Ingersoll remains idled, with most members on indefinite layoff. The ratified agreement extends layoff benefits while GM assesses potential opportunities. CAMI is designated as first consideration for Canadian Armed Forces defence work only if GM is awarded that work, and Unifor says it will keep pressing for production to return.",
-    whyItMatters: "The agreement improves support and plant-stability context, but it is not a new vehicle allocation, defence contract or restart announcement. Avoid inventory bets or turnaround promises tied to CAMI speculation. Continue sourcing against real repair demand and watch for a separate, specific program or production update.",
-    source: "Unifor / The Canadian Press — August 30, 2026",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unifor-members-ratify-contracts-gm-010300142.html",
+    headline: "AutoCanada’s Collision Margin Rose While Revenue Fell — A Reminder to Measure the Job Mix",
+    summary: "Collision Repair magazine reports AutoCanada’s Q2 collision revenue declined 5.3% year over year to C$36.4 million, while collision gross profit rose 7.1% to C$17.7 million. Its reported collision gross margin increased to 48.7% from 43.1%, helped by acquired conventional collision businesses and a shift away from lower-margin paintless-dent repair after prior-year hail activity.",
+    whyItMatters: "These are public-company segment results, not a margin benchmark or forecast for every independent shop. The useful operating cue is to track gross profit by job type, document repair-plan changes and review parts and sublet costs before a file closes. Revenue growth alone can hide a weaker mix.",
+    source: "Collision Repair magazine — August 31, 2026",
+    sourceUrl: "https://www.collisionrepairmag.com/people/article/15833744/boyd-group-services-inc-boyd-group-hits-1b-quarterly-sales-milestone",
     image: STORY3_IMG,
   },
 ];
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "GMCC members at Oshawa, St. Catharines and Woodstock voted 80.5% in favour; CAMI members voted 96.5% in support.",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
+    text: "Finance Canada calls remission an exception and will consider it only in exceptional and compelling circumstances.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/process-requesting-remission-tariffs-that-apply-on-certain-goods-us.html",
   },
   {
     icon: "🔩",
-    text: "The ratified package adds C$144M for next-generation Sierra Heavy-Duty production at Oshawa, alongside prior truck-program investment.",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
+    text: "Only companies registered in Canada may request remission; the template calls for an 8-digit tariff item and substantive evidence.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/process-requesting-remission-tariffs-that-apply-on-certain-goods-us.html",
   },
   {
     icon: "🗂️",
-    text: "St. Catharines’ C$215M sole-source transmission plan is anticipated to start in late 2029; it is not a near-term repair-parts supply event.",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unionized-gm-workers-vote-ratify-013151238.html",
+    text: "GM’s roughly C$1.4B three-year framing includes the C$144M incremental Sierra HD commitment and prior investment work.",
+    sourceUrl: "https://driving.ca/auto-news/industry/general-motors-unifor-ratify-new-contract-wages-benefits-security",
   },
   {
     icon: "🏭",
-    text: "CAMI remains idled; its defence-work priority applies only if GM is awarded a contract, with no restart or allocation confirmed.",
-    sourceUrl: "https://ca.finance.yahoo.com/news/unifor-members-ratify-contracts-gm-010300142.html",
+    text: "AutoCanada reported Q2 collision revenue of C$36.4M, gross profit of C$17.7M and a 48.7% segment gross margin.",
+    sourceUrl: "https://www.collisionrepairmag.com/people/article/15833744/boyd-group-services-inc-boyd-group-hits-1b-quarterly-sales-milestone",
   },
   {
     icon: "↔️",
-    text: "September 8 countermeasures remain item- and origin-specific; ask the distributor to confirm the actual tariff-item result before changing a quote.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
+    text: "September 8 countermeasures remain tariff-item and origin specific; a U.S. supplier address alone does not determine a part’s treatment.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/process-requesting-remission-tariffs-that-apply-on-certain-goods-us.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Put Quote Proof in Every Major Job File",
-  text: "For high-value work crossing the September 8 implementation date, save a line in the job file with the distributor, part number, origin, tariff-item outcome, landed price, availability, quote expiry and time checked. Use that evidence — not an auto-industry headline or a blanket surcharge — to revise a customer price.",
+  title: "Build an Evidence Pack Only for Material, Qualified Exposure",
+  text: "If your Canadian business imports a materially affected input and believes it cannot reasonably be sourced in Canada or from a non-U.S. supplier, preserve the 8-digit tariff item, invoices and customs documents, usage, alternatives canvassed and supplier responses. Ask a customs or trade professional about a remission request; do not use it as a blanket customer surcharge rationale.",
 };
 
 const quoteOfTheDay = {
-  text: "These agreements commit more than one billion dollars in vital investments to Canadian GM facilities.",
-  author: "Lana Payne, Unifor National President",
-  title: "On the ratified GM agreements — August 30, 2026",
+  text: "Remission represents an exception to the rules by providing for relief of otherwise applicable duties.",
+  author: "Finance Canada",
+  title: "On the September 8 counter-tariff remission framework — August 31, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Oldsmobile 442 W-30 — Sebring Yellow, Ontario-Plated",
-  description: "Sebring Yellow paint, W-30 muscle and unmistakable 442 lines make this 1970 Olds the right iron for an Ontario shop on a Monday evening. Its rule for the bay is equally direct: let verified availability and landed price — not a headline — determine the promise you make to a customer.",
+  name: "1970 Buick GSX Stage 1 — Saturn Yellow, Ontario-Plated",
+  description: "Saturn Yellow paint, a black GSX hood and Stage 1 muscle make this 1970 Buick the right iron for an Ontario shop on a Tuesday evening. Its rule for the bay is equally direct: let documented part treatment and actual supplier pricing — not a broad headline — set the promise you make to a customer.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["GM DEAL: RATIFIED", "OSHAWA SIERRA HD: CONFIRMED", "CAMI: STILL IDLED", "'70 OLDS 442 W-30"].map((tag) => (
+                {["REMISSION: EXCEPTION ONLY", "SEPT. 8: 7 DAYS", "GM: ~C$1.4B PLAN", "'70 BUICK GSX"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Ontario Heavy-Duty Pickup Assembly Following GM–Unifor Ratification — Baywash Daily Briefing Edition No. 116"
+              alt="Canadian Automotive Shop Owner Reviewing Parts Documentation for Tariff Remission — Baywash Daily Briefing Edition No. 117"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 116 — Monday, August 31, 2026 — GM Deal Ratified / Ontario Capacity / CAMI Watch</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 117 — Tuesday, September 1, 2026 — Tariff Evidence / GM Investment / Collision Margin</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Monday Watch: Ratified GM Agreements Put Ontario Capacity Plans on the Clock
+                Tuesday Check: Build Proof Before the September 8 Tariff Clock Starts
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Oldsmobile 442 W-30</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Buick GSX Stage 1</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
