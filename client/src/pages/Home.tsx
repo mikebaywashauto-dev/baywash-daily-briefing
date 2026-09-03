@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 118;
-const BRIEFING_DATE = "September 2, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 119;
+const BRIEFING_DATE = "September 3, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hFFMYgHQwraIQQoX.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OHcNYnDLvewzHeHg.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VGrAvAepktbIqpku.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rSCiKNcygJtFjUuN.png";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RwxCpHDbDMGwhuWX.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dBaNqCeVkocBpWfq.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xEBUfXNrbhJnUTMw.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KycshJrPpTdTPyMi.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ALwUEMNHPFpfYJZC.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/vzYAMVXbRNETTLEH.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SEPT. 8 / 648 TARIFF ITEMS / C$27.6B / VERIFY THE LINE",
+    tag: "SEPT. 8 / 5 DAYS / C$27.6B / TARGETED, NOT BLANKET",
     tagColor: "#b91c1c",
-    headline: "Canada’s Official September 8 Table Has 648 Entries — Make the Parts Desk Read the Line",
-    summary: "Finance Canada says its new countermeasures on C$27.6 billion of U.S. products begin at 12:01 a.m. on September 8. The authoritative page, updated August 26, shows 648 effective-September-8 tariff entries across targeted sectors including steel and aluminum, dairy, appliances, agricultural equipment, pulp and paper, plastics and electronics. It directs users to read the tariff-item list with Canada’s Customs Tariff.",
-    whyItMatters: "The 648 entries are not 648 automotive parts, and a U.S. supplier address alone does not settle a repair part’s treatment. For any meaningful exposure, ask the distributor for the specific part number, origin, tariff item, landed price, stock status and quote expiry. Do not apply a shop-wide tariff add-on.",
+    headline: "Five Days to September 8: Treat Finance Canada’s 648 Lines as a Parts-Desk Check, Not a Surcharge Button",
+    summary: "Finance Canada says its new countermeasures on C$27.6 billion of U.S. products take effect at 12:01 a.m. on September 8. Its authoritative list shows 648 effective-September-8 tariff entries concentrated in sectors including steel and aluminum, dairy, appliances, agricultural equipment, pulp and paper, plastics and electronics. The page says to read the tariff-item list with Canada’s Customs Tariff.",
+    whyItMatters: "The table is tariff-item specific, not a blanket automotive-parts list, and a U.S. supplier address alone does not settle treatment. For material exposure, ask for the part number, origin/marking, tariff-item result, landed price, stock status and quote expiry. Do not add one shop-wide tariff charge to every repair order.",
     source: "Finance Canada — updated August 26, 2026",
     sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-response-us-tariffs/complete-list-us-products-subject-to-counter-tariffs.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "STELLANTIS–UNIFOR / SEPT. 11 DEADLINE / BRAMPTON UNRESOLVED",
+    tag: "STELLANTIS–UNIFOR / 9,000+ WORKERS / BRAMPTON STILL OPEN",
     tagColor: "#0369a1",
-    headline: "Stellantis Bargaining Is Open — Brampton’s Future Is Still a Negotiation, Not a Result",
-    summary: "Unifor and Stellantis opened the final Detroit Three bargaining round on September 1 with a stated September 11 deadline. The Canadian Press reports Unifor’s central concern is job security after more than 2,000 workers were laid off from the Brampton, Ontario assembly plant, idled since 2023. The union says Stellantis was considering a closure and sale after the paused Jeep retooling plan.",
-    whyItMatters: "There is no announced deal, strike, plant sale, closure, vehicle allocation or reopening. Treat the Brampton story as live bargaining context, not a current supply forecast. Keep service, collision and parts promises anchored to your actual supplier lead time and stock position.",
-    source: "The Canadian Press / BNN Bloomberg — September 1, 2026",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/2026/09/01/stellantis-unifor-begin-contract-negotiations-in-final-round-of-auto-sector-talks/",
+    headline: "Stellantis Signals Confidence in Canada — But the Bargaining Table Still Decides Brampton",
+    summary: "On the second day of talks, Stellantis Canada said investments made since 2022 reflect its confidence in Canada, its workforce and the long-term future of Canadian manufacturing. The Windsor Star reports the company says it has invested more than C$8 billion in Canadian operations since 2022. Yet the negotiations remain unresolved: the Brampton Guardian says talks cover more than 9,000 Canadian workers, with about 2,200 Brampton members on indefinite layoff.",
+    whyItMatters: "A confidence statement is not a ratified contract, Brampton reopening, vehicle allocation or near-term parts-supply commitment. Treat it as bargaining context. Keep service, collision and parts promises tied to your distributor’s confirmed availability and lead time, rather than a plant headline.",
+    source: "Windsor Star / Brampton Guardian — September 2, 2026",
+    sourceUrl: "https://windsorstar.com/news/local-news/stellantis-has-confidence-in-canada-going-into-bargaining",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "U.S. AUTO TARIFFS / 25% CURRENT / 50% JAN. THREAT / TWO CLOCKS",
+    tag: "SECTION 338 / USMCA GOODS / JAN. 50% THREAT / SEPARATE CLOCKS",
     tagColor: "#15803d",
-    headline: "Separate the Active U.S. Auto Regime from the Threatened January 50% Escalation",
-    summary: "Canadian Press reporting says the current U.S. 25% levy on cars and trucks not built in the United States remains in force, while CUSMA-compliant vehicles are excluded. The President’s posted threat to raise tariffs on Canadian vehicles, auto parts and steel to 50% beginning January 1 is future-facing. It is not a new current 50% Canadian-parts rate.",
-    whyItMatters: "Your repair order has two checks: what applies to this specific part today, and what your supplier can confirm on price and availability today. Do not turn a January threat into an immediate universal surcharge, and do not assume vehicle rules automatically determine individual service-part treatment.",
-    source: "The Canadian Press / BNN Bloomberg — September 1, 2026",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/2026/09/01/stellantis-unifor-begin-contract-negotiations-in-final-round-of-auto-sector-talks/",
+    headline: "Section 338 Has Changed the Trade Backdrop — Keep a January Threat Separate from Today’s Part Quote",
+    summary: "The Conference Board says the U.S. Section 338 tariffs took effect August 22 on motor vehicles, alcoholic beverages and dairy, affecting about US$20 billion of bilateral trade. Its September 2 backgrounder says the measures do not exempt USMCA-covered goods. It also describes the administration’s threatened increase to 50% on Canadian autos, auto parts and steel from January 1 as a subsequent escalation, not a current new parts rate.",
+    whyItMatters: "This is a cross-border supply-chain risk signal, not a price list for your repair order. Distinguish the specific part’s current treatment from the future January threat, and confirm current cost and availability with the supplier. Never convert a forward-looking threat into a universal customer surcharge.",
+    source: "The Conference Board — September 2, 2026",
+    sourceUrl: "https://www.conference-board.org/research/policy-backgrounders/us-canada-trade-war",
     image: STORY3_IMG,
   },
 ];
@@ -61,7 +61,7 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "The official September 8 table shows 648 targeted tariff items; Finance Canada calls the tariff-item descriptions illustrative.",
+    text: "September 8 is five days away; the official table has 648 tariff entries and calls its descriptions illustrative.",
     sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-response-us-tariffs/complete-list-us-products-subject-to-counter-tariffs.html",
   },
   {
@@ -71,35 +71,35 @@ const quickHits = [
   },
   {
     icon: "🗂️",
-    text: "Stellantis–Unifor talks have a stated September 11 deadline; Brampton remains idled and its outcome is unresolved.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/2026/09/01/stellantis-unifor-begin-contract-negotiations-in-final-round-of-auto-sector-talks/",
+    text: "Stellantis says it has invested more than C$8B in Canada since 2022; bargaining remains unresolved.",
+    sourceUrl: "https://windsorstar.com/news/local-news/stellantis-has-confidence-in-canada-going-into-bargaining",
   },
   {
     icon: "🏭",
-    text: "More than 2,000 Brampton workers were reported laid off after the plant was idled in 2023.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/2026/09/01/stellantis-unifor-begin-contract-negotiations-in-final-round-of-auto-sector-talks/",
+    text: "The Brampton Guardian reports talks cover 9,000+ Canadian workers and about 2,200 Brampton members remain on indefinite layoff.",
+    sourceUrl: "https://www.bramptonguardian.com/business/stellantis-unifor-labour-talks-brampton/article_4ba9e52c-5b8e-50da-9645-22f64517c449.html",
   },
   {
     icon: "↔️",
-    text: "The reported January 1 50% U.S. auto-parts escalation is a threat, not a new current tariff rate.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/2026/09/01/stellantis-unifor-begin-contract-negotiations-in-final-round-of-auto-sector-talks/",
+    text: "The reported January 1 50% U.S. auto-parts escalation remains a threat, not a new current tariff rate.",
+    sourceUrl: "https://www.conference-board.org/research/policy-backgrounders/us-canada-trade-war",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Run a September 8 Quote Check at the Parts Desk",
-  text: "For each meaningful quote that may cross September 8, record the part number, country-of-origin/marking confirmation, tariff-item result, supplier landed price, stock status, quote expiry and time checked. Escalate a genuine importer issue to a customs professional; do not paste one tariff rate onto every repair order.",
+  title: "Assign One Owner to Each September 8 Exposure Check",
+  text: "For every meaningful quote that may cross September 8, assign one person to capture the part number, origin/marking confirmation, tariff-item result, supplier landed price, stock status, quote expiry and time checked. Escalate unresolved importer exposure; do not turn a general trade headline into a blanket customer charge.",
 };
 
 const quoteOfTheDay = {
-  text: "We expect this round of negotiations to be our most difficult and challenging yet, possibly ever.",
-  author: "Lana Payne, Unifor National President",
-  title: "On the opening of Stellantis bargaining — September 1, 2026",
+  text: "The investments we have made in Canada in recent years reflect our confidence in Canada, our workforce and the long-term future of Canadian manufacturing.",
+  author: "Trevor Longley, President, Stellantis Canada",
+  title: "Written statement on the opening of bargaining — September 2, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 Dodge Charger R/T 440 — Hemi Orange, Ontario-Plated",
-  description: "Hemi Orange paint, a broad Coke-bottle stance and big-block 440 power make this 1971 Charger R/T the right iron for an Ontario shop on a Wednesday evening. Its rule for the bay is equally direct: let the actual part line, verified origin and current supplier quote — not a headline — determine the promise you make to a customer.",
+  name: "1970 Ford Torino Cobra 429 — Calypso Coral, Ontario-Plated",
+  description: "Calypso Coral paint, a black hood scoop and 429 big-block muscle make this 1970 Ford Torino Cobra the right iron for an Ontario shop on a Thursday evening. Its rule for the bay is equally direct: let the actual part line, verified origin and current supplier quote — not a broad trade headline — determine the promise you make to a customer.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SEPT. 8: 6 DAYS", "648 TARIFF ITEMS", "BRAMPTON: TALKS OPEN", "'71 CHARGER R/T"].map((tag) => (
+                {["SEPT. 8: 5 DAYS", "C$27.6B TARGETED", "BRAMPTON: TALKS ON", "'70 TORINO COBRA"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Parts Manager Reviewing a Targeted Tariff List — Baywash Daily Briefing Edition No. 118"
+              alt="Canadian Automotive Parts Manager Reviewing a Tariff-Item Schedule — Baywash Daily Briefing Edition No. 119"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 118 — Wednesday, September 2, 2026 — Sept. 8 Checklist / Brampton Talks / Two Tariff Clocks</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 119 — Thursday, September 3, 2026 — Five-Day Check / Stellantis Talks / Section 338 Context</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Wednesday Watch: Read the Tariff Line, Not the Headline
+                Thursday Check: Assign the Quote Check Before September 8
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '71 Dodge Charger R/T 440</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Ford Torino Cobra 429</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
