@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 122;
-const BRIEFING_DATE = "September 6, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 123;
+const BRIEFING_DATE = "September 7, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VMhTPysQmemPsrvX.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XZhFjrTFuKZVBTkI.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JIKTTaFNKHGZcsyW.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/paSFooZGEzfYDLhk.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hhdrLAQqNQWwAuoB.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RIMAvDPBUTXelbbv.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/whqihKYkdOSPpTdg.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dzuOaDcYcJIxMAMO.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CvpeGIjTeaRxLvYw.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XAiwXXWNaMrBkhTr.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "SEPT. 8 / 2 DAYS / C$27.6B / 648 ENTRIES",
+    tag: "SEPT. 8 / TOMORROW / C$27.6B / 15–25–50%",
     tagColor: "#b91c1c",
-    headline: "Two Days to September 8: Make the 648-Line Table an Exact-Item Check, Not a Blanket Surcharge",
-    summary: "Finance Canada says new countermeasures on C$27.6 billion of U.S. products take effect at 12:01 a.m. on September 8. Its authoritative effective-date table contains 648 entries concentrated in sectors including steel and aluminum, dairy, appliances, agricultural equipment, pulp and paper, plastics and electronics. The department says its descriptions are illustrative and the tariff-item list must be read with Canada’s Customs Tariff.",
-    whyItMatters: "The table is item-specific, not a blanket automotive-parts list, and a U.S. supplier address alone does not settle treatment. Before confirming a material repair quote, get the part number, origin/marking, tariff-item result, landed price, stock position and quote expiry. Do not add one generalized tariff charge to every repair order.",
-    source: "Finance Canada — official counter-tariff list",
-    sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-response-us-tariffs/complete-list-us-products-subject-to-counter-tariffs.html",
+    headline: "Tomorrow at 12:01: Use the Tariff Item, Origin and Transit Facts — Not a Blanket Surcharge",
+    summary: "Finance Canada says its C$27.6 billion countermeasures on U.S. imports take effect at 12:01 a.m. September 8, at individual rates of 15%, 25% and 50%. The department says the measures apply only to goods originating in the U.S. under the CUSMA marking rules, and not to U.S. goods in transit to Canada on the effective date. The tariff-item list must be read with Canada’s Customs Tariff.",
+    whyItMatters: "For a material job due this week, record the exact part number, tariff-item result, origin/marking, importer of record, landed quote and actual shipment or transit status. A U.S. supplier address—and an order date before September 8—does not settle treatment. Do not apply one generalized tariff charge to every repair order.",
+    source: "Finance Canada — September 8 counter-tariff backgrounder",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "SUPPLY VISIBILITY / CROSS-BORDER / DOCUMENT / NO PANIC",
+    tag: "TRAILERS / 25% REPORTED / 12:01 TUESDAY / VERIFY",
     tagColor: "#0369a1",
-    headline: "An Integrated Auto Supply Chain Rewards Visibility, Not Last-Minute Network Changes",
-    summary: "C.H. Robinson’s September automotive update says a component can cross the border several times before it reaches a finished vehicle. It recommends evaluating inventory position for high-value or tariff-sensitive components, supplier exposure, origin and USMCA documentation, and parts or materials that may face future changes. It cautions against reactive network changes.",
-    whyItMatters: "Use that as a shop-side workflow, not a claim that a specific part has already changed price. For material jobs, capture current distributor stock, quoted price, origin or classification confirmation where material, delivery timing and an alternate-source option. Promise customers only what the supplier confirms today.",
-    source: "C.H. Robinson — September 2026 automotive freight update",
-    sourceUrl: "https://www.chrobinson.com/en-us/resources/insights-and-advisories/north-america-freight-insights/sep-2026-freight-market-update/industry-insights/automotive/",
+    headline: "Trailer Equipment Is a Specific Exposure — Keep Routine Parts on Their Own Check",
+    summary: "CBC reports that U.S.-built semi-trailers are among the products scheduled for a 25% Canadian counter-tariff on September 8. Ocean Trailer says it is trying to bring U.S.-manufactured units over the border before the effective date, while the Manitoba Trucking Association says most semi-trailers in Canada come from the U.S. The report is about trailer equipment and fleet context, not a universal repair-parts rate.",
+    whyItMatters: "For trailer, fleet and fabrication work, make today a supplier-verification trigger. Ask whether the exact equipment or component is listed, what its origin and tariff item are, and whether its entry or transit position changes the quote. Do not carry the reported 25% trailer rate into routine passenger-vehicle repairs or add it to every line on a commercial job.",
+    source: "CBC News — September 6, 2026",
+    sourceUrl: "https://www.cbc.ca/news/canada/manitoba/trucking-semi-trailer-costs-us-tariffs-9.7330014",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "AFTERMARKET DISTRIBUTION / US$30M SALE / CHECK LOCAL SERVICE",
+    tag: "CROSS-BORDER PICKUP / DECLARE / DOCUMENT / NO SHORTCUT",
     tagColor: "#15803d",
-    headline: "Myers Tire Supply Has a New Owner — Treat It as a Contact-and-Lead-Time Check",
-    summary: "Collision Repair Magazine reports Myers Industries completed the US$30 million sale of Myers Tire Supply to Lion Equity Partners. The aftermarket distributor supplies tools, equipment and products for tire, wheel and undervehicle work to tire dealers, automotive service centres, commercial fleets and retreaders across North America. The report does not identify an immediate Canadian price, availability or account-policy change.",
-    whyItMatters: "An ownership transaction is not proof of a local supply interruption. If this is a channel you use, confirm your account contact, branch coverage, backorder position, freight cut-off and lead time before you promise a tire, wheel or undervehicle completion date. Keep the customer update tied to your actual supplier response.",
-    source: "Collision Repair Magazine — September 4, 2026",
-    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/market-trends/article/15834217/tuesday-ticker-september-8-2026",
+    headline: "A U.S. Pickup Address Doesn’t Answer the Customs Question",
+    summary: "CNN’s profile of a freight-forwarding shop on the New York–Quebec border notes customers receive old car parts, tractor pieces and engine transmissions through its location, but every shipment still has to be declared at a nearby customs office. The example shows that a cross-border pickup or forwarding arrangement remains a customs transaction; it does not set the origin, tariff item or rate for a particular part.",
+    whyItMatters: "Do not use a U.S. pickup address as a duty workaround or a substitute for documentation. For a material order, preserve the supplier invoice, origin/marking information, tariff-item result where applicable, import declaration or entry record, transit evidence and landed quote before you promise a completion date or customer price.",
+    source: "CNN Business — September 6, 2026",
+    sourceUrl: "https://www.cnn.com/2026/09/06/business/canada-us-tariffs-business",
     image: STORY3_IMG,
   },
 ];
@@ -61,23 +61,23 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "September 8 is two days away; Finance Canada’s official effective-date table shows 648 entries and calls its descriptions illustrative.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-response-us-tariffs/complete-list-us-products-subject-to-counter-tariffs.html",
+    text: "Canada’s C$27.6B countermeasures take effect tomorrow at 12:01 a.m., at individual 15%, 25% and 50% rates.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
   },
   {
-    icon: "🔩",
-    text: "New C$27.6B countermeasures begin at 12:01 a.m. September 8; existing counter-tariffs against U.S. autos continue separately.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-response-us-tariffs/complete-list-us-products-subject-to-counter-tariffs.html",
-  },
-  {
-    icon: "🔎",
-    text: "C.H. Robinson advises reviewing current inventory, supplier exposure and origin/USMCA documentation for high-value or tariff-sensitive components.",
-    sourceUrl: "https://www.chrobinson.com/en-us/resources/insights-and-advisories/north-america-freight-insights/sep-2026-freight-market-update/industry-insights/automotive/",
+    icon: "🚚",
+    text: "Finance Canada says U.S. goods in transit to Canada on September 8 are not subject to the new countermeasures; an earlier order date alone is not the stated test.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
   },
   {
     icon: "🛞",
-    text: "Myers Tire Supply has been sold to Lion Equity Partners; the cited report does not identify an immediate Canadian price or availability change.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/market-trends/article/15834217/tuesday-ticker-september-8-2026",
+    text: "CBC reports a 25% counter-tariff is expected on named U.S.-built semi-trailers; verify the exact part or equipment line before pricing fleet work.",
+    sourceUrl: "https://www.cbc.ca/news/canada/manitoba/trucking-semi-trailer-costs-us-tariffs-9.7330014",
+  },
+  {
+    icon: "📋",
+    text: "The new measures apply only to goods originating in the U.S. under the CUSMA marking rules; a supplier address alone does not answer the question.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/08/list-of-products-from-the-united-states-subject-to-counter-tariffs-effective-september-8-2026.html",
   },
   {
     icon: "↔️",
@@ -87,19 +87,19 @@ const quickHits = [
 ];
 
 const tipOfTheDay = {
-  title: "Run a Monday-Opening Exception Huddle",
-  text: "Put only material, open purchase orders and expiring estimates on one issue log before Monday. For each, record part number, origin/marking or classification confirmation, importer or distributor response, quoted price, stock, expected entry or delivery timing, alternate source and a named owner. Escalate a real gap; do not create a universal tariff fee from a general trade headline.",
+  title: "Open a Transit-Versus-Entry Log Today",
+  text: "Track only material open POs: part number, supplier, origin/marking, tariff-item check, importer of record, shipment or in-transit evidence, expected entry or delivery time, landed quote and named owner. The stated exclusion concerns goods in transit to Canada on September 8—not simply when you placed the order. Escalate actual gaps; do not create a shop-wide tariff fee.",
 };
 
 const quoteOfTheDay = {
-  text: "This is not a moment for reactive network changes.",
-  author: "C.H. Robinson",
-  title: "September 2026 automotive freight market update",
+  text: "These tariffs only apply to goods originating from the U.S.",
+  author: "Finance Canada",
+  title: "September 8, 2026 counter-tariff backgrounder",
 };
 
 const rideOfTheDay = {
-  name: "1970 Pontiac Firebird Trans Am Ram Air III — Lucerne Blue, Ontario-Plated",
-  description: "Lucerne Blue paint, white hood stripes and Ram Air III 400 V8 muscle make this 1970 Pontiac Firebird Trans Am the right iron for an Ontario shop on a Sunday evening. Its rule for the bay is equally direct: let the exact part line, verified origin and current supplier quote — not a broad trade headline — determine the promise you make to a customer.",
+  name: "1970 Chevrolet Camaro Z28 LT-1 — Fathom Green, Ontario-Plated",
+  description: "Fathom Green paint, black hood stripes and LT-1 small-block V8 muscle make this 1970 Chevrolet Camaro Z28 the right iron for an Ontario shop on a Labour Day Monday evening. Its rule for the bay is equally direct: let the exact part line, verified origin and current supplier quote — not a broad trade headline — determine the promise you make to a customer.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SEPT. 8: 2 DAYS", "648 OFFICIAL LINES", "SUPPLY: VERIFY", "'70 TRANS AM"].map((tag) => (
+                {["SEPT. 8: TOMORROW", "15/25/50% BY LINE", "TRAILER: VERIFY", "'70 CAMARO Z28"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Parts Manager Preparing a Monday-Opening Exception Log — Baywash Daily Briefing Edition No. 122"
+              alt="Canadian Automotive Parts Manager Reviewing Transit and Entry Documentation — Baywash Daily Briefing Edition No. 123"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 122 — Sunday, September 6, 2026 — Two-Day Check / Supply Visibility / Tire-Supply Contact</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 123 — Monday, September 7, 2026 — Tomorrow’s Check / Trailer Lines / Customs Proof</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Sunday Prep: Run a Monday-Opening Exception Huddle
+                Labour Day Prep: Open a Transit-Versus-Entry Log
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Pontiac Trans Am Ram Air III</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Chevrolet Camaro Z28 LT-1</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
