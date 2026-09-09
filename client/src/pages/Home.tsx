@@ -10,25 +10,25 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 124;
-const BRIEFING_DATE = "September 8, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 125;
+const BRIEFING_DATE = "September 9, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/uELPLudAlRMIhkIn.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/apAgPkWYaCIursMe.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NElbXqpUNfQhKjbq.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/BTkwHSdCvtZktptr.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZFCcTMUNTeIqpNdX.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mHCwilxtZkGDFoMT.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/gPVIuOZqfeQjAlLT.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RHmkXUAafFldAclD.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SvzUGcdTYezylPMe.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GCbbkJmqGnwBRHXt.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "ACTIVE TODAY / CBSA / 15–25–50% / VALUE FOR DUTY",
+    tag: "DAY TWO / CBSA / 15–25–50% / ITEM SPECIFIC",
     tagColor: "#b91c1c",
-    headline: "The New U.S. Surtax Is Live: Treat It as an Importer-and-Item Check",
-    summary: "CBSA says certain goods imported into Canada and originating in the U.S. are now subject to a surtax of 15%, 25% or 50% of value for duty, as applicable under the United States Surtax Order (2026). The applicable rate sits in the Order’s schedules at the tariff-item level. The order applies to U.S.-origin goods even when they are exported to Canada from another country.",
+    headline: "Day Two: Make the Importer’s Answer Part of Every Material Quote",
+    summary: "CBSA says certain goods imported into Canada and originating in the U.S. are subject to a surtax of 15%, 25% or 50% of value for duty, as applicable under the United States Surtax Order (2026). The schedules hold the item-level list and rate. The order applies to U.S.-origin goods even when they are exported to Canada from another country.",
     whyItMatters: "This is not a blanket automotive-parts rate or a service-advisor billing code. For a material job, get the part number, U.S.-origin/marking confirmation, tariff-item result, importer-of-record or broker response, landed quote, stock and delivery status. Ask the distributor how the exact item was treated; do not create a generalized customer surcharge.",
     source: "CBSA — Customs Notice 26-23",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
@@ -36,24 +36,24 @@ const stories = [
   },
   {
     id: 2,
-    tag: "IN TRANSIT / CARRIER CONTROL / PROVE IT / CBSA",
+    tag: "IN TRANSIT / DOCUMENTS / CARRIER CONTROL / VERIFY",
     tagColor: "#0369a1",
-    headline: "The In-Transit Exception Has a Documentation Test, Not an Order-Date Test",
-    summary: "CBSA says its surtax does not apply to U.S. goods that were in transit to Canada on September 8. For this notice, that means goods bound for Canada, not yet arrived in Canada and under the control of a carrier. Importers must have proof; CBSA lists shipping documents such as a bill of lading, report-of-entry documents and cargo-control documents as examples.",
-    whyItMatters: "Flag any high-value part, shop-equipment order or fleet component arriving today for supplier or broker confirmation. Record the carrier reference, transit evidence, actual entry date, origin/marking, tariff-item result, importer response and landed quote. A pre-September-8 PO alone is not the stated test, so do not promise either an exemption or a surcharge until it is verified.",
+    headline: "Transit Relief Is Evidence-Based — Keep the Carrier Record",
+    summary: "CBSA says the transit exception applies to U.S. goods bound for Canada, not yet arrived in Canada and under a carrier’s control when the surtax came into force. Importers must have proof; CBSA lists a bill of lading, report-of-entry documents and cargo-control documents as examples. For commercial goods, CBSA says proof of origin may be an invoice or other document containing the CUSMA minimum data elements.",
+    whyItMatters: "For a delivery arriving today, record the part number, carrier/tracking reference, transit evidence, actual entry timing, origin/marking, tariff-item result and distributor or broker answer. A pre-September-8 PO, a U.S. supplier address or a pickup point is not a substitute for the stated proof. Mark the customer quote pending where a material fact is still unverified.",
     source: "CBSA — Customs Notice 26-23",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "TRAILER EQUIPMENT / 25% REPORTED / FLEET WORK / VERIFY",
+    tag: "SEPT. 29 / U.S. / 8711.50.00 / MOTORCYCLES ONLY",
     tagColor: "#15803d",
-    headline: "Trailer Equipment Is the Fleet-Work Watchpoint — Check the Exact Line",
-    summary: "CBC reports U.S.-built semi-trailers are among the products expected to face a 25% Canadian counter-tariff today. Ocean Trailer said it had tried to bring U.S.-manufactured units into Canada before the effective date, while the Manitoba Trucking Association said most semi-trailers in Canada come from the U.S. The report is about named trailer equipment and fleet context, not a universal rate on trailer parts or auto repairs.",
-    whyItMatters: "For trailer, fleet and fabrication work, confirm the specific equipment or component’s tariff item, U.S. origin/marking, in-transit position and supplier’s landed quote before promising a completion date. Do not extend the reported 25% trailer context to routine passenger-vehicle repairs, all trailer parts or every commercial invoice.",
-    source: "CBC News — September 6, 2026",
-    sourceUrl: "https://www.cbc.ca/news/canada/manitoba/trucking-semi-trailer-costs-us-tariffs-9.7330014",
+    headline: "The New U.S. Import-Exclusion Notice Is Narrow: Large Motorcycles, Not Auto Parts",
+    summary: "A September 8 White House proclamation says certain Canadian products will be excluded from importation into the U.S. effective September 29. Its Annex I identifies HTSUS 8711.50.00: motorcycles and cycles with a reciprocating piston engine over 800 cc. The proclamation says qualifying products imported before September 29 remain subject to the prior 50% duty rate, rather than the new exclusion.",
+    whyItMatters: "This is a future-dated, narrow motorcycle measure — not a current ban on Canadian cars, trucks or all automotive parts. For mixed auto/motorcycle shops, do not revise ordinary automotive service quotes because of it. For an affected commercial motorcycle shipment, have the exporter or importer confirm the HTS scope and effective date with its customs broker.",
+    source: "White House — September 8, 2026 proclamation and Annex I",
+    sourceUrl: "https://www.whitehouse.gov/presidential-actions/2026/09/excluding-certain-canadian-products-from-importation-into-the-united-states-in-response-to-continued-discrimination-against-the-commerce-of-the-united-states-with-respect-to-motor-vehicles/",
     image: STORY3_IMG,
   },
 ];
@@ -61,34 +61,34 @@ const stories = [
 const quickHits = [
   {
     icon: "📅",
-    text: "CBSA confirms the U.S. Surtax Order is active today; listed U.S.-origin goods face a 15%, 25% or 50% rate on value for duty, as applicable.",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
-  },
-  {
-    icon: "🚚",
-    text: "The in-transit exception requires goods to be bound for Canada, not yet arrived and under carrier control; CBSA may request documentary proof.",
+    text: "CBSA says the U.S. Surtax Order is now operating at 15%, 25% or 50% of value for duty on the listed U.S.-origin goods, as applicable.",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
   },
   {
     icon: "📋",
-    text: "For commercial imports, CBSA says proof of origin may be a commercial invoice or other documentation with the CUSMA minimum data elements.",
+    text: "Commercial proof of origin may be an invoice or other document with the CUSMA Annex 5-A minimum data elements, subject to the stated exceptions.",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
   },
   {
     icon: "🔩",
-    text: "If both the 2026 U.S. Surtax Order and the Steel Derivative Goods Surtax Order could apply, CBSA says only the 2026 Order’s surtax applies.",
+    text: "Where both the 2026 U.S. Surtax Order and the Steel Derivative Goods Surtax Order could apply, CBSA says only the 2026 Order’s surtax applies.",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
   },
   {
-    icon: "↔️",
-    text: "The reported January 1, 2027 50% U.S. auto-parts escalation remains a future threat, not a new current Canadian service-parts rate.",
-    sourceUrl: "https://www.reuters.com/business/autos-transportation/canadas-retaliatory-tariffs-take-effect-us-trade-talks-stall-2026-09-08/",
+    icon: "🛠️",
+    text: "CBSA describes specific Chapter 99 cases in which U.S.-made goods repaired or altered across the border may be non-subject; verify the exact customs treatment rather than assuming a general repair exemption.",
+    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+  },
+  {
+    icon: "🏍️",
+    text: "The official annex to the future September 29 U.S. import exclusion names HTSUS 8711.50.00 large motorcycles — not all Canadian auto parts or motor vehicles.",
+    sourceUrl: "https://www.whitehouse.gov/wp-content/uploads/2026/09/ANNEX-I-MOTOR-VEHICLES.pdf",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Open an Active-Order Exception Board",
-  text: "For material orders entered today, log the part number, U.S. origin/marking, tariff-item check, importer or broker reply, carrier/tracking proof, actual entry status, landed quote, availability, quote expiry and a named owner. Use “pending verification” where facts are incomplete. Do not convert a general trade headline into one universal surcharge.",
+  title: "Run a 24-Hour Landed-Quote Proof Check",
+  text: "For each material high-value job, log the part number, origin/marking, tariff-item check, distributor or importer answer, carrier proof, actual entry status, landed price, stock, ETA, quote expiry and a named owner. Mark gaps as “pending verification.” This protects the customer promise without creating a shop-wide tariff fee.",
 };
 
 const quoteOfTheDay = {
@@ -98,8 +98,8 @@ const quoteOfTheDay = {
 };
 
 const rideOfTheDay = {
-  name: "1970 Dodge Challenger R/T 440 Six Pack — Plum Crazy, Ontario-Plated",
-  description: "Plum Crazy paint, black side stripes and 440 Six Pack V8 muscle make this 1970 Dodge Challenger R/T the right iron for an Ontario shop on a Tuesday evening. Its rule for the bay is equally direct: let the exact part line, verified origin and current supplier quote — not a broad trade headline — determine the promise you make to a customer.",
+  name: "1970 Ford Mustang Boss 302 — Grabber Blue, Ontario-Plated",
+  description: "Grabber Blue paint, a black hood treatment and Boss 302 V8 muscle make this 1970 Ford Mustang the right iron for an Ontario shop on a Wednesday evening. Its rule for the bay is equally direct: let the exact part line, verified origin and current supplier quote — not a broad trade headline — determine the promise you make to a customer.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["SEPT. 8: ACTIVE", "15/25/50% BY LINE", "TRANSIT: PROVE IT", "'70 CHALLENGER R/T"].map((tag) => (
+                {["Surtax: Day Two", "15/25/50% By Line", "Transit: Show Proof", "'70 Boss 302"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Parts Manager Verifying a Commercial Parts Shipment — Baywash Daily Briefing Edition No. 124"
+              alt="Canadian Automotive Parts Manager Reviewing a Material Parts Quote — Baywash Daily Briefing Edition No. 125"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 124 — Tuesday, September 8, 2026 — Active Today / Transit Proof / Fleet Lines</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 125 — Wednesday, September 9, 2026 — Day Two / Transit Proof / Narrow U.S. Scope</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                September 8 Is Live: Verify the Exact Import Before You Quote
+                Day Two: Keep the Proof With the Quote
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Dodge Challenger R/T 440 Six Pack</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Ford Mustang Boss 302</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
