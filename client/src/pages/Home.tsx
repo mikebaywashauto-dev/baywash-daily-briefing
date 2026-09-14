@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 129;
-const BRIEFING_DATE = "September 13, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 130;
+const BRIEFING_DATE = "September 14, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SYiJBWcBYLsuTWYf.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TahOFDJyfwIjbzsr.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mRjZNYGVjTarvBLK.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RnmYylqepzKdJLIv.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sDWgVQwgZHYLxxVs.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OUVdNeYrbEbVxPdT.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rDzsjoseezVwNxiJ.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HKXjodGenIqwTpCi.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wVTJqYCZhSKOzOMk.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RetYZxNQhqGUcoXE.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "TWO DAYS / SEPT. 15 / U.S. / 122 HTS LINES",
+    tag: "TOMORROW / SEPT. 15 / U.S. / FINAL RULE",
     tagColor: "#b91c1c",
-    headline: "Two Days to the U.S. Scope Change: CBP Has Issued the Filing Map",
-    summary: "U.S. Customs and Border Protection’s September 11 filing notice says the modified Section 338 treatment applies to certain Canadian goods entered for U.S. consumption, or withdrawn from warehouse, on or after 12:01 a.m. Eastern on September 15. CBP says 122 additional HTSUS classifications will be subject to the regime under headings 9903.03.12 or 9903.03.14; it says classifications under 9903.03.13 do not change.",
-    whyItMatters: "This is a future-dated U.S. customs control for specified Canadian goods, not a new rate for every Canadian shop part. Put any genuine U.S.-bound wholesale, specialty-vehicle or customer export job on a broker-controlled list now. Before quoting, obtain the exact HTS result, origin, U.S. entry date, duty treatment, freight and quote expiry in writing. Keep ordinary Canadian service estimates separate.",
-    source: "U.S. Customs and Border Protection — CSMS #69851916",
-    sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
+    headline: "U.S. Scope Change Lands at 12:01 A.M. Tuesday",
+    summary: "The final Federal Register version of Proclamation 11065 confirms that specified Canadian products in Annex I Part A will be subject to the 50% U.S. Section 338 duty, while products in Part B leave that list. The change applies to goods entered for U.S. consumption, or withdrawn from warehouse for consumption, on or after 12:01 a.m. Eastern on September 15. The proclamation also says this Section 338 duty applies in addition to Section 232 duties where applicable.",
+    whyItMatters: "This is a U.S. export-side, product-specific customs rule—not a new rate for every Canadian repair part or a reason to change ordinary domestic estimates. Put any genuine U.S.-bound wholesale, specialty-vehicle or customer export job on a broker-controlled list. Before you quote, obtain the exact HTS result, origin, entry date, duty treatment, freight and quote expiry in writing.",
+    source: "Federal Register — Proclamation 11065 (91 FR 58339)",
+    sourceUrl: "https://www.federalregister.gov/documents/2026/09/14/2026-18839/modifying-the-scope-of-products-of-canada-subject-to-the-additional-duties-imposed-to-offset",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "0% PROVISION / NARROWED SEPT. 15 / U.S. ENTRY / VERIFY",
+    tag: "CBP / 122 ADDED / .12 & .14 / CLASSIFY",
     tagColor: "#0369a1",
-    headline: "A 0% Vehicle/Parts Provision Still Needs the Right U.S. Heading",
-    summary: "CBP’s notice identifies HTSUS 9903.03.15 as a 0% additional-rate provision for specified groups that include passenger vehicles, light trucks, medium/heavy-duty vehicles and their parts. But CBP says that, as of September 15, only goods subject to 9903.03.13 are eligible to claim it. The same notice says 122 classifications join 9903.03.12 or .14, while .13 classifications do not change.",
-    whyItMatters: "Do not read a generic “vehicle part” description, a CUSMA certificate or a prior quote as proof that a U.S.-bound job gets a 0% result. Ask the customs broker for the exact HTS classification, applicable Chapter 99 heading, any valid Chapter 98 treatment, entry date and landed quote. Document the answer before committing to an export price or completion date.",
-    source: "U.S. Customs and Border Protection — September 15 guidance",
+    headline: "122 More U.S. Lines, But the 0% Route Is Narrow",
+    summary: "CBP says 122 additional HTSUS classifications will be subject to Section 338 under headings 9903.03.12 or 9903.03.14 from September 15, while the classifications under .13 do not change. CBP identifies 9903.03.15 as a 0% additional-rate provision for enumerated groups including certain vehicles and parts, but says only goods subject to .13 may claim it after the change.",
+    whyItMatters: "A generic “vehicle part” label, CUSMA paperwork or an old quote does not establish a 0% or 50% U.S. result. Have the customs broker confirm the actual HTS classification, Chapter 99 heading, entry date and any legitimate Chapter 98 claim for the particular export. Do not promise a cross-border price or completion date until that answer is documented.",
+    source: "U.S. Customs and Border Protection — CSMS #69851916",
     sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CANADA / ACTIVE SURTAX / IMPORTER RECORD / NO DOUBLE COUNT",
+    tag: "STELLANTIS / TALKS PAUSED / BRAMPTON / SEPT. 20",
     tagColor: "#15803d",
-    headline: "Canadian Receiving Is Still a Separate Importer Record",
-    summary: "CBSA says Canada’s active United States Surtax Order applies 15%, 25% or 50% of value for duty only to listed U.S.-origin goods imported into Canada. For commercial imports, the importer declares the applicable surtax code on its Commercial Accounting Declaration. CBSA also says that where the 2026 Order and the Steel Derivative Goods Surtax Order could both apply, only the 2026 Order’s surtax applies; those two Canadian surtaxes are not cumulative.",
-    whyItMatters: "Your distributor, importer of record or broker—not the service writer—must confirm the part number’s tariff item, U.S. marking/origin, Canadian entry result, landed price, stock and quote expiry. Keep that written Canadian receiving record with the job and avoid double-counting the named surtaxes. It does not establish a result for a separate U.S.-bound export.",
-    source: "Canada Border Services Agency — Customs Notice 26-23",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+    headline: "Stellantis–Unifor Paused; Brampton Remains Unresolved",
+    summary: "Unifor says it and Stellantis reached an impasse after ten days of bargaining, with the future of Brampton Assembly central to the dispute. The union says formal talks are paused, the company has not confirmed forecasted plans for Windsor Assembly or Etobicoke Casting, and the current agreement expires September 20 at 11:59 p.m. Unifor also says an MOU exists with Roshel regarding a potential Brampton purchase.",
+    whyItMatters: "This is an unresolved Ontario industrial and supply-network watch item—not a confirmed Brampton closure, sale, vehicle allocation, restart or near-term service-parts disruption. Keep local fleet, body and service work quoted from current distributor availability. Track the bargaining update and use supplier confirmation, rather than predicting a shortage for customers.",
+    source: "Unifor — Statement on Stellantis negotiations",
+    sourceUrl: "https://autotalks.uniforautohub.ca/unifor_statement_on_contract_negotiations_with_stellantis",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "📅",
-    text: "CBP says September 15 changes apply at 12:01 a.m. Eastern to specified Canadian goods entered for U.S. consumption or withdrawn from warehouse for consumption.",
-    sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
+    icon: "⏰",
+    text: "The final U.S. proclamation makes the Section 338 scope change effective for specified Canadian goods entered for U.S. consumption at 12:01 a.m. Eastern on September 15.",
+    sourceUrl: "https://www.federalregister.gov/documents/2026/09/14/2026-18839/modifying-the-scope-of-products-of-canada-subject-to-the-additional-duties-imposed-to-offset",
   },
   {
     icon: "🔢",
-    text: "CBP says 122 additional HTSUS classifications will be subject to Section 338 under 9903.03.12 or .14, with no changes to classifications under .13.",
+    text: "CBP says 122 HTSUS classifications join 9903.03.12 or .14; classifications under .13 do not change.",
     sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
   },
   {
-    icon: "📋",
-    text: "CBP says certain Chapter 98 entries generally avoid the additional Section 338 duty, subject to its listed exceptions; some 9802 cases use repair, alteration or processing value rather than full entered value.",
+    icon: "🧭",
+    text: "From September 15, CBP says only goods subject to .13 may claim the .15 0% additional-rate provision; use an exact broker-reviewed entry result.",
     sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
   },
   {
     icon: "🇨🇦",
-    text: "For commercial Canadian imports, CBSA says proof of origin may be an invoice or other document with the CUSMA Annex 5-A minimum data elements.",
+    text: "Canada’s separate active surtax remains 15%, 25% or 50% only for listed U.S.-origin imports; commercial proof of origin and the CAD record matter.",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
   },
   {
-    icon: "🧾",
-    text: "CBSA lists CAD surtax codes 26186A, 26186B and 26186C for the current 15%, 25% and 50% Canadian rates, respectively.",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+    icon: "🏭",
+    text: "Unifor says formal Stellantis talks are paused and the current agreement expires September 20; Brampton’s future is still unresolved.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/unifor_statement_on_contract_negotiations_with_stellantis",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build an After-Midnight Export File",
-  text: "For any job that may enter the U.S. on or after September 15, log the part number/SKU, actual HTS classification, origin, Chapter 99 result if provided, any asserted Chapter 98 treatment, U.S. entry date, broker confirmation, freight, stock/ETA and customer quote expiry. Keep Canadian receiving on a separate sheet. Do not turn a pending classification result into a blanket customer surcharge.",
+  title: "Run a 12:01 Entry Huddle",
+  text: "For each U.S.-bound job, log the part/SKU, exact HTS, origin, broker’s .12/.13/.14 result, any Chapter 98 claim, U.S. entry date, freight, landed cost and quote expiry. Record Canadian receiving separately. Start with high-value assemblies, modules and metal-heavy components; never blanket-surcharge customers.",
 };
 
 const quoteOfTheDay = {
-  text: "The attached list provides the complete list of HTSUS classifications subject to Section 338 duties as of September 15, 2026, including 122 additional HTSUS classifications.",
-  author: "U.S. Customs and Border Protection",
-  title: "CSMS #69851916 — September 11, 2026",
+  text: "These changes shall be effective with respect to goods entered for consumption, or withdrawn from warehouse for consumption, on or after 12:01 a.m. eastern time on September 15, 2026.",
+  author: "Proclamation 11065",
+  title: "Federal Register — 91 FR 58339",
 };
 
 const rideOfTheDay = {
-  name: "1970 Chevrolet Chevelle SS 454 — Cranberry Red, Ontario-Plated",
-  description: "Cranberry Red paint, black SS stripes and 454 big-block muscle make this 1970 Chevrolet Chevelle SS the right iron for an Ontario shop on a Sunday evening. Its rule for the bay is equally direct: put cross-border work into the right file, then rely on the exact tariff line and a verified broker or supplier response before you promise a price or date.",
+  name: "1970 Dodge Challenger R/T 440 Magnum — Go Mango, Ontario-Plated",
+  description: "Go Mango paint, a 440 Magnum and pure long-hood muscle make this 1970 Dodge Challenger R/T the right iron for a Monday Ontario shop. Its rule for the bay is just as direct: keep the U.S. export file separate from Canadian receiving, then let the exact tariff line and a broker-confirmed entry result—not a product nickname—set the next move.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Two Days: Sept. 15", "CBP: 122 Lines", "Imports: Separate", "'70 Chevelle SS"].map((tag) => (
+                {["Tomorrow: Sept. 15", "CBP: 122 Lines", "Brampton: Paused", "'70 Challenger R/T"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Owner Reviewing Cross-Border Parts Records — Baywash Daily Briefing Edition No. 129"
+              alt="Canadian Automotive Shop Owner Reviewing Cross-Border Automotive Parts Entry Records — Baywash Daily Briefing Edition No. 130"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 129 — Sunday, September 13, 2026 — Two Days / CBP Map / Import Split</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 130 — Monday, September 14, 2026 — Tomorrow / U.S. Scope / Entry Check</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Two Days to the U.S. Customs Scope Change
+                Tomorrow: U.S. Scope Change Goes Live at 12:01 A.M.
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Chevrolet Chevelle SS 454</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Dodge Challenger R/T 440</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
