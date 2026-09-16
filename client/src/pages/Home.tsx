@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 131;
-const BRIEFING_DATE = "September 15, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 132;
+const BRIEFING_DATE = "September 16, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KHbygAQiHYdImceF.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/UGbSVVdPuRSnYlGb.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ELQyArAWhoSSuqMc.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XGBOobTsjXnyYdlv.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/brLQBRRiRtfTDGfa.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZKeSsiLKXREaDXRX.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZQjJXIvNZhyaWrol.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zukLbfTHSYiOegHA.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WFkplpFsbZKPQxts.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zIZtAjAIPmmpzWle.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "LIVE / SEPT. 15 / U.S. ENTRY / 50% SCOPE",
+    tag: "DAY TWO / U.S. ENTRY / 50% SCOPE / EXACT HTS",
     tagColor: "#b91c1c",
-    headline: "U.S. Scope Change Is Live for Specified Canadian Entries",
-    summary: "At 12:01 a.m. Eastern today, Proclamation 11065’s revised Section 338 scope took effect for specified Canadian goods entered for U.S. consumption or withdrawn from warehouse. Annex I Part A items face the additional 50% duty, while Part B items leave that list. The proclamation says any applicable Section 232 duties can still apply in addition.",
-    whyItMatters: "This is a U.S. export-side, product-specific customs rule—not a new rate for every Canadian repair part or a reason to change ordinary domestic estimates. Put any genuine U.S.-bound wholesale, specialty-vehicle or customer-export job on a broker-controlled list. Before you quote, obtain the exact HTS result, origin, entry time, duty treatment, freight and quote expiry in writing.",
+    headline: "Day Two: U.S. Scope Still Runs on the Exact Entry",
+    summary: "Proclamation 11065’s revised Section 338 scope has applied since 12:01 a.m. Eastern on September 15 to specified Canadian goods entered for U.S. consumption or withdrawn from warehouse. Annex I Part A items face the additional 50% duty, while Part B items leave that list. The proclamation says applicable Section 232 duties can still apply in addition.",
+    whyItMatters: "This remains a U.S. export-side, product-specific customs rule—not a Canadian domestic repair-parts rate. Put genuine U.S.-bound wholesale, specialty-vehicle or customer-export work on a broker-controlled list. Before you quote, get the exact HTS result, origin, entry time, duty treatment, freight and quote expiry in writing.",
     source: "Federal Register — Proclamation 11065 (91 FR 58339)",
     sourceUrl: "https://www.federalregister.gov/documents/2026/09/14/2026-18839/modifying-the-scope-of-products-of-canada-subject-to-the-additional-duties-imposed-to-offset",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CBP / 122 LINES / .13 ONLY / VERIFY",
+    tag: "CANADA / U.S. ORIGIN / 15–50% / CAD",
     tagColor: "#0369a1",
-    headline: "Today’s Entry File Decides Whether the 0% Provision Exists",
-    summary: "CBP says 122 additional HTSUS classifications are now subject to Section 338 under 9903.03.12 or 9903.03.14, while .13 classifications do not change. CBP lists .12, .13 and .14 at 50% additional duty. Its .15 0% provision covers enumerated groups that include certain vehicles and parts, but after today only goods subject to .13 may claim it.",
-    whyItMatters: "A generic “vehicle part” label, CUSMA paperwork or an old quote does not establish a 0% or 50% U.S. result. Have the customs broker confirm the actual HTS classification, Chapter 99 heading, entry time and any legitimate Chapter 98 treatment for the particular export. Do not promise a cross-border price or completion date until that answer is documented.",
-    source: "U.S. Customs and Border Protection — CSMS #69851916",
-    sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
+    headline: "Canada’s Surtax Is an Import File—Not an Export Rate",
+    summary: "CBSA says certain listed U.S.-origin goods imported into Canada are subject to 15%, 25% or 50% surtax on value for duty. Commercial proof of origin may be an invoice or other document with the required CUSMA data elements, and the CAD record must carry the applicable surtax code. This Canadian result is separate from a U.S. Section 338 entry.",
+    whyItMatters: "Do not let an export-side broker answer substitute for a Canadian import answer. On affected inbound parts, have the distributor, importer of record or broker confirm origin, tariff item, value-for-duty treatment, stock, landed price and quote expiry for the exact SKU. Do not add a blanket surcharge to every job.",
+    source: "Canada Border Services Agency — Customs Notice 26-23",
+    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "BRAMPTON / POSSIBLE MOU / SEPT. 20 / WATCH",
+    tag: "SUPPLY CHAIN / PART BY PART / NO BLANKET CALL",
     tagColor: "#15803d",
-    headline: "Brampton’s Roshel MOU Is a Watch Item—Not a Parts Call",
-    summary: "Collision Repair Magazine reports that Stellantis and Roshel signed an MOU covering a possible sale of the idled Brampton Assembly Plant, with Roshel proposing more than 2,000 defence-manufacturing jobs. The proposed transaction is part of the current Stellantis–Unifor bargaining impasse; the existing agreement expires September 20.",
-    whyItMatters: "This is an Ontario industrial and supply-network watch item—not a completed sale, confirmed closure, automotive restart, job result or near-term service-parts disruption. Keep fleet, body and service work quoted from actual distributor stock, ETA and documented quote expiry. Track the bargaining update rather than forecasting a shortage to customers.",
-    source: "Collision Repair Magazine — Tuesday Ticker",
-    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/article/15834813/market-update-stellantis-plant-sale-insurance-costs-rise",
+    headline: "One ‘Part’ Can Still Have Several Border Crossings",
+    summary: "Recent reporting on North American auto suppliers underscores how components can move between Mexico, the U.S. and Canada for processing and subassembly before final completion. Reworking that network takes time and money, so suppliers are monitoring conditions rather than instantly rerouting every part.",
+    whyItMatters: "Supply-chain complexity is not proof of an immediate shortage or a universal price move. For high-value modules, wiring, assemblies and metal-heavy items, ask for the part number, actual source/origin, route, stock, ETA, landed price and quote expiry. Use the supplier’s answer for the job in front of you—not a broad tariff assumption.",
+    source: "Georgia Public Broadcasting / NPR — Auto-Parts Supply Chain Report",
+    sourceUrl: "https://www.gpb.org/news/2026/09/11/the-us-canada-trade-war-creating-headache-for-auto-parts-makers",
     image: STORY3_IMG,
   },
 ];
@@ -61,17 +61,17 @@ const stories = [
 const quickHits = [
   {
     icon: "⏰",
-    text: "The revised U.S. Section 338 scope applies today to specified Canadian goods entered for U.S. consumption or withdrawn from warehouse at or after 12:01 a.m. Eastern.",
+    text: "The revised U.S. Section 338 scope remains active for specified Canadian goods entered for U.S. consumption or withdrawn from warehouse on or after 12:01 a.m. Eastern, September 15.",
     sourceUrl: "https://www.federalregister.gov/documents/2026/09/14/2026-18839/modifying-the-scope-of-products-of-canada-subject-to-the-additional-duties-imposed-to-offset",
   },
   {
     icon: "🔢",
-    text: "CBP says 122 HTSUS classifications now join 9903.03.12 or .14; classifications under .13 do not change.",
+    text: "CBP says 122 HTSUS classifications joined 9903.03.12 or .14 on September 15; classifications under .13 did not change.",
     sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
   },
   {
     icon: "🧭",
-    text: "CBP says only .13 goods may claim the .15 0% additional-rate provision after today’s scope change; .12, .13 and .14 are 50% additional-duty headings.",
+    text: "CBP says only .13 goods may claim the .15 0% additional-rate provision; .12, .13 and .14 are 50% additional-duty headings.",
     sourceUrl: "https://content.govdelivery.com/bulletins/gd/USDHSCBP-429db0c?wgt_ref=USDHSCBP_WIDGET_2",
   },
   {
@@ -81,14 +81,14 @@ const quickHits = [
   },
   {
     icon: "🏭",
-    text: "The reported Brampton MOU is a possible transaction, while the Stellantis–Unifor agreement expires September 20; no service-parts interruption is confirmed.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/article/15834813/market-update-stellantis-plant-sale-insurance-costs-rise",
+    text: "Stellantis–Unifor talks remain paused over Brampton; the Roshel MOU is a potential transaction, and no near-term service-parts interruption is confirmed.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/unifor_statement_on_contract_negotiations_with_stellantis",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Launch a Live-Entry Exception Board",
-  text: "For every U.S.-bound job that may enter today, log the part/SKU, exact HTS, origin, broker’s .12/.13/.14 result, any asserted Chapter 98 treatment, entry timestamp, broker confirmation, freight, landed cost and quote expiry. Maintain a separate Canadian inbound record. Do not turn a pending classification result into a blanket customer surcharge.",
+  title: "Build a Cross-Border Split Board",
+  text: "For every U.S.-bound job, record the part/SKU, exact HTS, origin, broker’s Chapter 99 result, entry time, any Chapter 98 claim, freight, landed cost and quote expiry. For Canadian inbound, record origin, tariff code, CAD result, stock, price and proof. Start with modules, wiring, assemblies and metal-heavy items. Do not add a blanket surcharge.",
 };
 
 const quoteOfTheDay = {
@@ -98,8 +98,8 @@ const quoteOfTheDay = {
 };
 
 const rideOfTheDay = {
-  name: "1970 Pontiac GTO Judge Ram Air III — Orbit Orange, Ontario-Plated",
-  description: "Orbit Orange paint, Judge stripes and Ram Air III muscle make this 1970 Pontiac GTO Judge the right iron for a Tuesday Ontario shop. Its rule for the bay is equally useful: an exact entry result beats a broad product label, and a documented supplier or broker response beats a tariff guess.",
+  name: "1970 Buick GSX Stage 1 — Apollo White, Ontario-Plated",
+  description: "Apollo White paint, black hood stripes and the GSX’s red lower accent make this 1970 Buick Stage 1 the right iron for a Wednesday Ontario shop. Its reminder fits the desk as well: an exact entry result beats a broad part label, and a documented supplier or broker answer beats a tariff guess.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Live: Sept. 15", "CBP: 122 Lines", "Canada: Separate", "'70 GTO Judge"].map((tag) => (
+                {["Day 2: U.S. Scope", "CBP: 122 Lines", "Canada: 15–50%", "'70 Buick GSX"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Owner Verifying U.S.-Bound Automotive Parts Entry Records — Baywash Daily Briefing Edition No. 131"
+              alt="Canadian Automotive Shop Owner Separating Cross-Border Parts Records — Baywash Daily Briefing Edition No. 132"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 131 — Tuesday, September 15, 2026 — Live / U.S. Entry / Exact HTS</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 132 — Wednesday, September 16, 2026 — Day Two / U.S. Entry / Exact HTS</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Today: U.S. Scope Change Is Live for Exact Entries
+                Day Two: Entry Detail Rules the Cross-Border Quote
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Pontiac GTO Judge</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Buick GSX Stage 1</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
