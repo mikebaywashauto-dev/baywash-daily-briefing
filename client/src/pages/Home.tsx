@@ -10,96 +10,96 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 134;
-const BRIEFING_DATE = "September 18, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 135;
+const BRIEFING_DATE = "September 19, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EDdHJzDIRREGHiIX.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OAGnUVropKmoSZHm.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/eToTgeAEuYNVfods.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IWeSPLVHuxfvuVTT.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WAvEvpAlggKgVpaJ.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/reurrFXFNzXvbDeK.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CPRTvDfyFmbRLdXS.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QoMdndPOndUJadto.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JbXGYSInKGtDfuiQ.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sShRJRoUDEXLOvEw.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "BRAMPTON / STRIKE POSSIBLE / MOU / SEPT. 20",
+    tag: "BRAMPTON / EXPIRY / NOT A STRIKE DEADLINE",
     tagColor: "#b91c1c",
-    headline: "Brampton Pressure Rises—But a Strike Is Not a Result",
-    summary: "Unifor says strike action is a “real possibility” after Stellantis talks broke down over the company’s intent to sell Brampton Assembly. Canadian Press reports the union represents more than 9,000 Stellantis workers in Canada; CP24 reports Unifor says the company is serious about exiting Brampton. The current agreement expires at 11:59 p.m. on September 20.",
-    whyItMatters: "This is an Ontario manufacturing and supplier-network watch item—not a confirmed strike, sale, closure, restart or service-parts interruption. Keep customer quotes tied to the actual part number, distributor stock, documented ETA and written quote expiry. Do not forecast a shortage or surcharge to every customer.",
-    source: "Canadian Press / Yahoo Canada — Stellantis–Unifor Update",
-    sourceUrl: "https://ca.news.yahoo.com/strike-action-table-stellantis-sticks-182835512.html",
+    headline: "Sunday’s Expiry Is Not a Strike Clock",
+    summary: "Unifor and Stellantis remain at an impasse over the idled Brampton Assembly Plant, while the current agreement expires at 11:59 p.m. Sunday. Unifor says that date is not a strike deadline and none has been set. Stellantis’ Roshel arrangement remains a potential sale under due diligence—not a completed sale, new vehicle program or confirmed restart.",
+    whyItMatters: "Treat Brampton as an Ontario manufacturing and supplier-network watch item, not a reason to predict a strike, sale, closure, restart or service-parts interruption. On Monday’s open jobs, quote the actual part number from documented distributor stock, ETA and written quote expiry—never a blanket contingency surcharge.",
+    source: "BNN Bloomberg / Canadian Press — Brampton Update",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/09/17/we-need-time-unifor-says-stellantis-brampton-plant-could-be-lost-for-good-as-it-urges-feds-to-step-in/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CANADA / U.S. ORIGIN / 15–50% / CAD",
+    tag: "REPAIR RETURN / ORIGIN / PROOF / CBSA",
     tagColor: "#0369a1",
-    headline: "A Canadian Surtax File Needs the Receipt Trail",
-    summary: "CBSA says certain listed U.S.-origin goods imported into Canada are subject to 15%, 25% or 50% surtax on value for duty. Commercial proof may be an invoice or other document containing CUSMA’s required data elements; the CAD uses code 26186A, 26186B or 26186C as applicable. CBSA also describes correction, adjustment and post-release verification processes.",
-    whyItMatters: "On a potentially affected inbound part, retain the invoice and written distributor, importer-of-record or broker response—not a product-family guess. Ask for the exact SKU, origin, tariff item, value-for-duty treatment, CAD result, stock, landed price and quote expiry. Do not self-assess from a headline or add a blanket surcharge.",
+    headline: "Cross-Border Repair Return? The File Is the First Part",
+    summary: "CBSA’s active U.S. surtax notice sets out limited, fact-specific cases in which certain U.S.-made goods previously duty-paid in Canada, or goods repaired or altered across the border, may not be subject to surtax. The notice also requires origin proof for commercial imports and permits post-release verification of origin, tariff classification and value for duty.",
+    whyItMatters: "Do not promise a repair-return exemption at the service counter. Before sending or receiving a cross-border component, have the importer of record or broker confirm the exact tariff treatment and preserve the repair order, prior entry proof, invoice, shipping record, SKU, origin and broker response.",
     source: "Canada Border Services Agency — Customs Notice 26-23",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "TWO BORDERS / TWO FILES / EXACT ENTRY / VERIFY",
+    tag: "CUSMA / SECTION 232 / SECTION 338 / VERIFY",
     tagColor: "#15803d",
-    headline: "One Part, Two Borders, Two Separate Answers",
-    summary: "The current U.S. Section 338 treatment is a U.S.-bound import-entry decision tied to the exact HTS result, origin and timing for listed Canadian goods. Canada’s separate surtax is an inbound Canadian decision for listed U.S.-origin imports. Foley’s September automotive update notes both live regimes in the current trade dispute.",
-    whyItMatters: "Do not let a U.S. broker answer substitute for a Canadian inbound answer—or the reverse. Maintain a U.S.-bound broker sheet with HTS, Chapter 99 result, origin, entry time and freight; maintain a Canadian inbound sheet with origin, tariff item, CAD result, value for duty, stock and quote expiry.",
-    source: "Foley & Lardner — Automotive Update, September 17",
-    sourceUrl: "https://www.jdsupra.com/legalnews/foley-automotive-update-september-2026-2-8119934/",
+    headline: "CUSMA Is a Checkpoint, Not a Blanket Border Result",
+    summary: "Canada’s Trade Commissioner Service says CUSMA-compliant auto and truck parts are not currently subject to the U.S. 25% Section 232 auto-parts tariff. It separately says specified Canadian goods under U.S. Section 338 have no CUSMA-compliance exemption. The result depends on the exact product, classification, origin, entry timing and applicable U.S. regime.",
+    whyItMatters: "For a genuine U.S.-bound special order, reconditioned component or wholesale shipment, obtain a broker-controlled written entry result: HTS, origin, Chapter 99 treatment, entry date/time, freight, landed cost and quote expiry. Do not call every part ‘CUSMA exempt’ or apply a broad U.S. rate.",
+    source: "Trade Commissioner Service — U.S. Tariff Resources",
+    sourceUrl: "https://www.tradecommissioner.gc.ca/en/market-industry-info/search-country-region/country/canada-united-states-export/us-tariffs/supporting-exporters-through-tariff-challenges.html",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🏭",
-    text: "Unifor calls strike action a “real possibility” after Stellantis talks broke down over Brampton, but no strike, completed sale or parts interruption has been confirmed.",
-    sourceUrl: "https://ca.news.yahoo.com/strike-action-table-stellantis-sticks-182835512.html",
+    icon: "⏰",
+    text: "The Stellantis agreement expires at 11:59 p.m. Sunday, September 20, but Unifor says that is not a strike deadline and no strike deadline has been set.",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/09/17/we-need-time-unifor-says-stellantis-brampton-plant-could-be-lost-for-good-as-it-urges-feds-to-step-in/",
   },
   {
-    icon: "⏰",
-    text: "The current Stellantis collective agreement expires at 11:59 p.m. on September 20; treat it as a watch date, not a prediction of a bargaining outcome.",
-    sourceUrl: "https://ca.news.yahoo.com/strike-action-table-stellantis-sticks-182835512.html",
+    icon: "🏭",
+    text: "The Roshel arrangement is a potential Brampton sale with due diligence ongoing—not a completed transaction, confirmed restart or announced vehicle allocation.",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/09/17/we-need-time-unifor-says-stellantis-brampton-plant-could-be-lost-for-good-as-it-urges-feds-to-step-in/",
   },
   {
     icon: "🇨🇦",
-    text: "Canada’s separate surtax is 15%, 25% or 50% only for listed U.S.-origin imports; the commercial CAD uses 26186A, 26186B or 26186C as applicable.",
+    text: "Canada’s 15%, 25% and 50% surtax treatment is item-, U.S.-origin- and value-for-duty-specific; commercial accounting uses 26186A, 26186B or 26186C as applicable.",
+    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+  },
+  {
+    icon: "🔧",
+    text: "CBSA lists limited repair-and-alteration scenarios that may be non-subject to surtax. Confirm the exact facts and documentation with the broker or importer of record; it is not a generic shop exemption.",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
   },
   {
     icon: "🧾",
-    text: "CBSA says a commercial invoice or other document with CUSMA minimum data elements can support origin; post-release verification may examine origin, classification and value for duty.",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
-  },
-  {
-    icon: "🛞",
-    text: "A Cambridge-made brake program is a supplier-specific sourcing lead, not proof that every brake line is Canadian-origin, tariff-free, in stock or price-stable.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/how-one-north-american-manufacturer-is-responding-to-u-s-tariffs-threats/",
+    text: "For U.S.-bound auto/truck parts, CUSMA may matter under Section 232, while specified Canadian goods under Section 338 do not receive a CUSMA-compliance exemption.",
+    sourceUrl: "https://www.tradecommissioner.gc.ca/en/market-industry-info/search-country-region/country/canada-united-states-export/us-tariffs/supporting-exporters-through-tariff-challenges.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Friday Proof-Pack Sweep",
-  text: "For each open job with a potentially affected inbound part, attach the invoice, part/SKU, actual origin, tariff item, CAD code/result, value-for-duty or landed-price basis, written broker/distributor confirmation, stock, ETA and quote expiry. Keep a separate U.S.-bound broker sheet. Start with modules, wiring, brake assemblies and metal-heavy items. Do not add a blanket surcharge.",
+  title: "Sunday Deadline Quote Check",
+  text: "Before Monday, list every open order tied to Brampton, U.S. origin or a U.S.-bound delivery. Record the part/SKU, actual origin, direction, broker or distributor result, stock, ETA, price or landed-price basis and quote expiry. Keep Canadian inbound and U.S. outbound files separate. Do not add a blanket surcharge.",
 };
 
 const quoteOfTheDay = {
-  text: "Imported goods may be subject to examination at the time of importation and to post-release verification for compliance with the Tariff Classification, Valuation, Origin, and any other applicable provisions administered by the CBSA.",
-  author: "Canada Border Services Agency",
-  title: "Customs Notice 26-23 — United States Surtax Order (2026)",
+  text: "The date is not a strike deadline and no strike deadline has been set.",
+  author: "Lana Payne, Unifor National President",
+  title: "Brampton bargaining update, via BNN Bloomberg",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Road Runner 440 Six Barrel — Limelight Green, Ontario-Plated",
-  description: "Limelight Green paint, the black performance hood and big-block 440 Six Barrel attitude make this 1970 Plymouth Road Runner the right iron for a Friday Ontario shop. Its reminder fits the parts desk: a brand or ship-from location is a lead, but documented origin, stock, landed price and quote expiry decide the job.",
+  name: "1970 AMC Rebel Machine — Machine Blue, Ontario-Plated",
+  description: "Machine Blue paint, a white performance hood and bold red-white-blue accent striping make this 1970 AMC Rebel Machine a proper Saturday Ontario shop feature. Its reminder suits the parts desk: provenance matters, but the documented SKU, origin, border direction, stock and quote expiry decide the repair plan.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Brampton Watch", "CAD: 15–50%", "Two Border Files", "'70 Road Runner"].map((tag) => (
+                {["Brampton Watch", "Repair Returns", "CUSMA ≠ Blanket", "'70 Rebel Machine"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Owner Building a Parts-Origin Proof Pack — Baywash Daily Briefing Edition No. 134"
+              alt="Canadian Automotive Shop Owner Reviewing a Saturday Parts Quote — Baywash Daily Briefing Edition No. 135"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 134 — Friday, September 18, 2026 — Brampton Watch / CAD / Proof Pack</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 135 — Saturday, September 19, 2026 — Brampton Watch / Repair Returns / CUSMA</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Friday Proof Pack: Quote From the Documented Part
+                Sunday Watch: Quote From the Verified File
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth Road Runner</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 AMC Rebel Machine</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
