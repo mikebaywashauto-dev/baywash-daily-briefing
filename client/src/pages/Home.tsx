@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 135;
-const BRIEFING_DATE = "September 19, 2026";
-const BRIEFING_DAY = "Saturday";
+const BRIEFING_NUMBER = 136;
+const BRIEFING_DATE = "September 20, 2026";
+const BRIEFING_DAY = "Sunday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/reurrFXFNzXvbDeK.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CPRTvDfyFmbRLdXS.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QoMdndPOndUJadto.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/JbXGYSInKGtDfuiQ.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sShRJRoUDEXLOvEw.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xiqmTDsYeymBnEjx.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/yrZwqnnOTXbjSfbI.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EhHIwxbvqiaSpMwf.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CoTBgGCzeViRkejD.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AkogMSjkpoLOiSRg.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "BRAMPTON / EXPIRY / NOT A STRIKE DEADLINE",
+    tag: "STELLANTIS / EXPIRY TODAY / CONCILIATION / NO LEGAL STRIKE",
     tagColor: "#b91c1c",
-    headline: "Sunday’s Expiry Is Not a Strike Clock",
-    summary: "Unifor and Stellantis remain at an impasse over the idled Brampton Assembly Plant, while the current agreement expires at 11:59 p.m. Sunday. Unifor says that date is not a strike deadline and none has been set. Stellantis’ Roshel arrangement remains a potential sale under due diligence—not a completed sale, new vehicle program or confirmed restart.",
-    whyItMatters: "Treat Brampton as an Ontario manufacturing and supplier-network watch item, not a reason to predict a strike, sale, closure, restart or service-parts interruption. On Monday’s open jobs, quote the actual part number from documented distributor stock, ETA and written quote expiry—never a blanket contingency surcharge.",
-    source: "BNN Bloomberg / Canadian Press — Brampton Update",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/09/17/we-need-time-unifor-says-stellantis-brampton-plant-could-be-lost-for-good-as-it-urges-feds-to-step-in/",
+    headline: "Expiry Day Is Not Legal Strike Day",
+    summary: "The Stellantis collective agreement expires at 11:59 p.m. today. In its September 16 member update, Unifor said it will not be in a legal strike position as of September 20 because the parties remain in conciliation, which must finish before either a legal strike or lockout position exists. The union says bargaining is at impasse and a strike remains possible, but local members would first be notified of any strike-vote meetings.",
+    whyItMatters: "This is a verification watch, not a confirmed work stoppage or parts outage. Keep open repairs anchored to the actual part number, documented distributor stock, written ETA and quote expiry. If labour status changes, update the file from a verified union, company or regulator source—do not preload a customer surcharge.",
+    source: "Unifor — Stellantis Membership Update",
+    sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "REPAIR RETURN / ORIGIN / PROOF / CBSA",
+    tag: "BRAMPTON / WINDSOR / FOOTPRINT / WATCH, NOT PREDICT",
     tagColor: "#0369a1",
-    headline: "Cross-Border Repair Return? The File Is the First Part",
-    summary: "CBSA’s active U.S. surtax notice sets out limited, fact-specific cases in which certain U.S.-made goods previously duty-paid in Canada, or goods repaired or altered across the border, may not be subject to surtax. The notice also requires origin proof for commercial imports and permits post-release verification of origin, tariff classification and value for duty.",
-    whyItMatters: "Do not promise a repair-return exemption at the service counter. Before sending or receiving a cross-border component, have the importer of record or broker confirm the exact tariff treatment and preserve the repair order, prior entry proof, invoice, shipping record, SKU, origin and broker response.",
-    source: "Canada Border Services Agency — Customs Notice 26-23",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+    headline: "Brampton and Windsor Are Different Watch Points",
+    summary: "The Windsor Star reports Brampton’s future, Windsor’s third shift and the wider Canadian footprint are bargaining issues. It reports the Roshel arrangement concerns the idled Brampton plant, while Unifor says it has not set a strike deadline. Those facts do not confirm a completed Brampton sale, a replacement vehicle program, a production restart, a strike or an immediate interruption in any named service part.",
+    whyItMatters: "Separate regional manufacturing risk from a customer’s repair job. For parts you may need Monday, ask the distributor for the exact SKU, origin, on-hand stock, confirmed ETA, landed-price basis and written quote validity. Do not turn one plant headline into a forecast for every OE or aftermarket component.",
+    source: "Windsor Star — Stellantis Bargaining Report",
+    sourceUrl: "https://windsorstar.com/news/strike-threat-hangs-over-windsor-assembly-plant-as-brampton-fight-continues-with-stellantis/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CUSMA / SECTION 232 / SECTION 338 / VERIFY",
+    tag: "CANADA / 15–50% / ORIGIN / CAD / NON-CUMULATIVE",
     tagColor: "#15803d",
-    headline: "CUSMA Is a Checkpoint, Not a Blanket Border Result",
-    summary: "Canada’s Trade Commissioner Service says CUSMA-compliant auto and truck parts are not currently subject to the U.S. 25% Section 232 auto-parts tariff. It separately says specified Canadian goods under U.S. Section 338 have no CUSMA-compliance exemption. The result depends on the exact product, classification, origin, entry timing and applicable U.S. regime.",
-    whyItMatters: "For a genuine U.S.-bound special order, reconditioned component or wholesale shipment, obtain a broker-controlled written entry result: HTS, origin, Chapter 99 treatment, entry date/time, freight, landed cost and quote expiry. Do not call every part ‘CUSMA exempt’ or apply a broad U.S. rate.",
-    source: "Trade Commissioner Service — U.S. Tariff Resources",
-    sourceUrl: "https://www.tradecommissioner.gc.ca/en/market-industry-info/search-country-region/country/canada-united-states-export/us-tariffs/supporting-exporters-through-tariff-challenges.html",
+    headline: "The CAD File Decides the Canadian Inbound Result",
+    summary: "CBSA’s active notice says Canada’s U.S. surtax applies at 15%, 25% or 50% only to listed goods originating in the U.S., calculated on value for duty. Commercial proof of origin may be an invoice or document containing CUSMA minimum data elements. When both Canada’s United States Surtax Order and Steel Derivative Goods Surtax Order could apply, CBSA says only the U.S. Surtax Order applies—they do not cumulate.",
+    whyItMatters: "For a potentially affected inbound part, retain the SKU, origin, tariff item, value-for-duty treatment, invoice and broker/CAD result before revising a quote. The relevant CAD codes are 26186A, 26186B and 26186C as applicable. This customs rule does not make every tool or repair part surcharge-free or surchargeable.",
+    source: "Canada Border Services Agency — Customs Notice 26-23",
+    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
     image: STORY3_IMG,
   },
 ];
@@ -61,45 +61,45 @@ const stories = [
 const quickHits = [
   {
     icon: "⏰",
-    text: "The Stellantis agreement expires at 11:59 p.m. Sunday, September 20, but Unifor says that is not a strike deadline and no strike deadline has been set.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/09/17/we-need-time-unifor-says-stellantis-brampton-plant-could-be-lost-for-good-as-it-urges-feds-to-step-in/",
+    text: "The Stellantis agreement expires at 11:59 p.m. today, but Unifor says it will not be in a legal strike position as of September 20 while conciliation remains incomplete.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
+  },
+  {
+    icon: "🗳️",
+    text: "Strike action remains possible, but Unifor says members would be notified locally if the next step—strike-vote meetings—becomes necessary.",
+    sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
   },
   {
     icon: "🏭",
-    text: "The Roshel arrangement is a potential Brampton sale with due diligence ongoing—not a completed transaction, confirmed restart or announced vehicle allocation.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/company-news/2026/09/17/we-need-time-unifor-says-stellantis-brampton-plant-could-be-lost-for-good-as-it-urges-feds-to-step-in/",
+    text: "Brampton’s possible Roshel transaction and Windsor third-shift protection remain bargaining matters—not confirmed sale, restart, allocation or service-parts outcomes.",
+    sourceUrl: "https://windsorstar.com/news/strike-threat-hangs-over-windsor-assembly-plant-as-brampton-fight-continues-with-stellantis/",
   },
   {
     icon: "🇨🇦",
-    text: "Canada’s 15%, 25% and 50% surtax treatment is item-, U.S.-origin- and value-for-duty-specific; commercial accounting uses 26186A, 26186B or 26186C as applicable.",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
-  },
-  {
-    icon: "🔧",
-    text: "CBSA lists limited repair-and-alteration scenarios that may be non-subject to surtax. Confirm the exact facts and documentation with the broker or importer of record; it is not a generic shop exemption.",
+    text: "Canada’s U.S. surtax applies only to listed U.S.-origin goods at 15%, 25% or 50% of value for duty; commercial accounting uses 26186A, 26186B or 26186C as applicable.",
     sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
   },
   {
     icon: "🧾",
-    text: "For U.S.-bound auto/truck parts, CUSMA may matter under Section 232, while specified Canadian goods under Section 338 do not receive a CUSMA-compliance exemption.",
-    sourceUrl: "https://www.tradecommissioner.gc.ca/en/market-industry-info/search-country-region/country/canada-united-states-export/us-tariffs/supporting-exporters-through-tariff-challenges.html",
+    text: "CBSA says its U.S. Surtax Order and Steel Derivative Goods Surtax Order do not cumulate when both would otherwise apply; only the U.S. Surtax Order applies.",
+    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Sunday Deadline Quote Check",
-  text: "Before Monday, list every open order tied to Brampton, U.S. origin or a U.S.-bound delivery. Record the part/SKU, actual origin, direction, broker or distributor result, stock, ETA, price or landed-price basis and quote expiry. Keep Canadian inbound and U.S. outbound files separate. Do not add a blanket surcharge.",
+  title: "Sunday-to-Monday Status Board",
+  text: "Before Monday, keep three columns: verified labour status with source/time; open parts by SKU, origin, stock, ETA and quote expiry; and customs proof with tariff item, value-for-duty basis and broker/CAD result. Update only when a verified change occurs. Do not pre-load a blanket surcharge.",
 };
 
 const quoteOfTheDay = {
-  text: "The date is not a strike deadline and no strike deadline has been set.",
-  author: "Lana Payne, Unifor National President",
-  title: "Brampton bargaining update, via BNN Bloomberg",
+  text: "Unifor will not be in a legal strike position as of September 20, 2026.",
+  author: "Unifor",
+  title: "Stellantis Membership Update — September 16, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 AMC Rebel Machine — Machine Blue, Ontario-Plated",
-  description: "Machine Blue paint, a white performance hood and bold red-white-blue accent striping make this 1970 AMC Rebel Machine a proper Saturday Ontario shop feature. Its reminder suits the parts desk: provenance matters, but the documented SKU, origin, border direction, stock and quote expiry decide the repair plan.",
+  name: "1970 Ford Mustang Mach 1 428 Cobra Jet — Grabber Blue, Ontario-Plated",
+  description: "Grabber Blue paint, the blackout hood and 428 Cobra Jet stance make this 1970 Mustang Mach 1 a proper Sunday Ontario shop feature. Its reminder suits Monday planning: a strong story is not a parts quote—use the documented SKU, actual origin, stock, landed-price basis and expiry before promising the repair.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +173,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Brampton Watch", "Repair Returns", "CUSMA ≠ Blanket", "'70 Rebel Machine"].map((tag) => (
+                {["Expiry ≠ Strike", "Brampton + Windsor", "CAD Proof", "'70 Mach 1"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +187,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Owner Reviewing a Saturday Parts Quote — Baywash Daily Briefing Edition No. 135"
+              alt="Canadian Automotive Shop Owner Reviewing a Sunday Status Board — Baywash Daily Briefing Edition No. 136"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 135 — Saturday, September 19, 2026 — Brampton Watch / Repair Returns / CUSMA</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 136 — Sunday, September 20, 2026 — Expiry / Conciliation / CAD Proof</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Sunday Watch: Quote From the Verified File
+                Expiry Day: Verify Before You Quote
               </h3>
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 AMC Rebel Machine</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Ford Mustang Mach 1</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
