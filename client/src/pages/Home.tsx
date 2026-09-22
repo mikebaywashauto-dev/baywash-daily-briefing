@@ -10,16 +10,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 137;
-const BRIEFING_DATE = "September 21, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 138;
+const BRIEFING_DATE = "September 22, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jkhcFXBaxceoHNqJ.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WczCEcvzGDtQQjFH.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jTNavVVTkEbdUOSc.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XNBEiRlkWIvdRhLB.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CjOmtkHYiLtyAwmo.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/AYfdDBkyyVzEjpeb.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KVzKVvnjJTTWyeFd.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rHDlEEAwUXnSfwJx.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/WMddtdwwSlvbLgIy.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/RCBxUowfNXtePqzG.jpg";
 
 // --- Data ---
 const stories = [
@@ -27,33 +27,33 @@ const stories = [
     id: 1,
     tag: "STELLANTIS / POST-EXPIRY / CONCILIATION / NO LEGAL STRIKE",
     tagColor: "#b91c1c",
-    headline: "Post-Expiry Still Is Not a Legal Strike",
-    summary: "The Stellantis agreement has expired, but Unifor’s latest primary membership update says the union was not in a legal strike position as of September 20 because conciliation must finish first. Bargaining remains at impasse and a strike remains possible, but a future legal deadline and local strike-vote notice would be separate steps. Brampton income security for laid-off Local 1285 members is extended under the stated conditions.",
-    whyItMatters: "This is a verification watch—not a confirmed work stoppage, plant restart or service-parts outage. Keep open repairs anchored to the exact part number, written distributor stock, ETA and quote expiry. Change a customer estimate only when a verified union, company or regulator update affects that actual supply file.",
+    headline: "Conciliation Still Sets the Labour Clock",
+    summary: "The Stellantis agreement has expired, but the latest primary Unifor update says the union was not in a legal strike position as of September 20 because conciliation must finish first. Bargaining remains at impasse and a strike remains possible, but a future legal deadline and local strike-vote notice would be separate steps. No reliable September 22 source located confirms a settlement, strike or lockout.",
+    whyItMatters: "Treat this as a verification watch—not a confirmed work stoppage, plant restart or service-parts outage. Keep each open repair tied to its actual part number, written distributor stock, ETA and quote expiry. Update a customer estimate only when a verified union, company or regulator change affects that actual supply file.",
     source: "Unifor — Stellantis Membership Update",
     sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CANADA / 15–50% / ORIGIN / VALUE FOR DUTY / CAD",
+    tag: "BRAMPTON / COLLISION FILES / FUNDING / PART-NUMBER TEST",
     tagColor: "#0369a1",
-    headline: "A Canadian Inbound Price Starts With the CAD File",
-    summary: "CBSA’s active notice applies Canada’s U.S. surtax at 15%, 25% or 50% only to listed goods originating in the U.S., calculated on value for duty. Commercial proof can be an invoice or other document with CUSMA minimum data elements. The relevant CAD codes are 26186A, 26186B and 26186C; CBSA says this order and the Steel Derivative Goods Surtax Order do not cumulate when both would otherwise apply.",
-    whyItMatters: "Do not price from the country of the distributor alone. Before revising a Canadian inbound quote, retain the SKU, actual origin, tariff item, value-for-duty basis, invoice, broker or CAD result, stock, ETA and expiry. The rule neither makes every U.S.-sourced part surchargeable nor gives a blanket exemption.",
-    source: "Canada Border Services Agency — Customs Notice 26-23",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+    headline: "Brampton Is a Collision-File Watch, Not a Parts Forecast",
+    summary: "Collision Repair Magazine reports that federal officials warned public funding could be recovered from Stellantis if vehicle production does not return to Brampton. It describes a September 11 memorandum of understanding with Roshel as a potential sale, and notes Brampton’s former Chrysler 300, Dodge Charger and Dodge Challenger production—vehicles still common in Canadian collision repair. None of that confirms a sale closing, a production restart or a named-part interruption.",
+    whyItMatters: "For a 300, Charger or Challenger repair, quote the actual OE, aftermarket and recycled alternatives by part number. Record written stock, ETA, quote validity and insurer approval where relevant. Do not turn a plant-policy story into a blanket forecast for every legacy component or add a blanket surcharge.",
+    source: "Collision Repair Magazine — Tuesday Ticker",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/15835394/stellantis-tuesday-ticker-sept-22-2026",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "U.S.-BOUND / SECTION 338 / SEP. 15 ACTIVE / SEP. 29 SEPARATE",
+    tag: "CANADA / CAD / CORRECTION / ORIGIN / VALUE FOR DUTY",
     tagColor: "#15803d",
-    headline: "Keep September 15 and September 29 Separate",
-    summary: "The U.S. September 15 Section 338 scope change is already active for the specific Canadian products set out in its annex; the proclamation says its 50% duty applies in addition to applicable Section 232 duties. A separate September 29 action concerns selected products, including certain motorcycles and related transportation equipment. Neither date is a generic new tariff or ban on every Canadian auto part, truck or repair order.",
-    whyItMatters: "For the uncommon U.S.-bound special order, rebuilt unit or wholesale shipment, get a broker-controlled written result for HTS classification, origin, Chapter 99 treatment, entry date and time, freight, landed cost and quote expiry. Keep U.S.-bound and Canadian-inbound files separate.",
-    source: "Federal Register & C.H. Robinson — Section 338 Update",
-    sourceUrl: "https://www.chrobinson.com/en-us/resources/blog/u-s-expands-section-338-actions-on-canada",
+    headline: "Correct the CAD File on the Right Clock",
+    summary: "CBSA’s active notice applies Canada’s U.S. surtax at 15%, 25% or 50% only to listed U.S.-origin goods, calculated on value for duty. It says commercial proof of origin can be an invoice or other document with CUSMA minimum data elements. Where a commercial surtax amount was self-assessed incorrectly, a change before the payment due date can be a correction; an adjustment may be made after the due date within the legislative timeframe.",
+    whyItMatters: "The importer of record or broker—not a parts counter headline—must decide the customs treatment. Preserve the SKU, origin evidence, tariff item, value-for-duty basis, invoice, broker/CAD result, stock, ETA and expiry. Ask in writing whether the file needs a correction now or a later adjustment before changing the customer quote.",
+    source: "Canada Border Services Agency — Customs Notice 26-23",
+    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
     image: STORY3_IMG,
   },
 ];
@@ -61,18 +61,18 @@ const stories = [
 const quickHits = [
   {
     icon: "⏰",
-    text: "The Stellantis agreement has expired, but Unifor’s current primary update says conciliation remains and there was no legal strike position as of September 20.",
+    text: "The Stellantis agreement is expired, but Unifor’s latest primary update says conciliation remains and did not confirm a legal strike position as of September 20.",
     sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
   },
   {
     icon: "🗳️",
-    text: "A strike remains possible, but Unifor says a legal deadline and local notice of strike-vote meetings would be later, separate steps if necessary.",
+    text: "A strike remains possible, but a future legal deadline and local notice of strike-vote meetings would be separate steps if Unifor moves there.",
     sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
   },
   {
     icon: "🏭",
-    text: "Brampton income security for laid-off Local 1285 members is extended until a legal strike or lockout position, or a renewal agreement—neither is confirmed today.",
-    sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
+    text: "Brampton production, a potential Roshel sale and public-funding recovery remain policy and bargaining watch points—not completed outcomes or a general parts forecast.",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/15835394/stellantis-tuesday-ticker-sept-22-2026",
   },
   {
     icon: "🇨🇦",
@@ -81,14 +81,19 @@ const quickHits = [
   },
   {
     icon: "🧾",
-    text: "September 15 U.S. Section 338 scope treatment is active for annex-listed products. September 29 is a separate, narrow action covering selected products including certain motorcycles.",
-    sourceUrl: "https://www.chrobinson.com/en-us/resources/blog/u-s-expands-section-338-actions-on-canada",
+    text: "For commercial entries, CBSA distinguishes a correction before the payment due date from an adjustment after the due date; confirm the route with the importer of record or broker.",
+    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+  },
+  {
+    icon: "🏍️",
+    text: "September 29 is a separate, narrow U.S. date for specified Canadian motorcycles under HTSUS 8711.50.00—not a general auto-parts or vehicle ban.",
+    sourceUrl: "https://www.challenger.com/resources/news/u-s-modifies-section-338-tariffs-and-imposes-import-bans-on-certain-canadian-products/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Monday Evidence Board",
-  text: "For every open part, record the SKU, direction (Canadian inbound or U.S.-bound), actual origin, tariff item or HTS, written distributor or broker result, stock, ETA, landed-price basis and quote expiry. Add a source-and-time line for labour status. Do not reprice from a headline alone.",
+  title: "Open-File Correction Sweep",
+  text: "For every potentially affected inbound part, compare the supplier invoice and origin evidence against the broker or CAD result before the payment deadline. Log the SKU, tariff item, value-for-duty basis, stock, ETA and expiry, then ask whether the importer calls the next step a correction or a later adjustment. Keep labour status in a separate dated source row.",
 };
 
 const quoteOfTheDay = {
@@ -98,8 +103,8 @@ const quoteOfTheDay = {
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Barracuda 440 Six Barrel — Moulin Rouge, Ontario-Plated",
-  description: "Moulin Rouge burgundy paint, black performance hood accents and 440 Six Barrel presence make this 1970 Barracuda a proper Monday Ontario shop feature. Its reminder is simple: a strong story is not a parts quote—confirm the exact SKU, direction, actual origin, landed-price basis and expiry before promising the repair.",
+  name: "1970 AMC AMX 390 — Bittersweet Orange, Ontario-Plated",
+  description: "Bittersweet Orange paint, black stripe accents and compact 390 V8 muscle make this 1970 AMC AMX a proper Tuesday Ontario shop feature. Its reminder fits every open ticket: a strong story is not a parts quote—confirm the actual SKU, origin evidence, broker result and expiry before promising the repair.",
   image: HOTROD_IMG,
 };
 
@@ -173,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Post-Expiry ≠ Strike", "CAD File", "Sep. 15 ≠ Sep. 29", "'70 Barracuda"].map((tag) => (
+                {["Conciliation Still", "Brampton Watch", "CAD Correction", "'70 AMX"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -187,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Owner Reviewing a Monday Evidence Board — Baywash Daily Briefing Edition No. 137"
+              alt="Canadian Automotive Shop Owner Reviewing a Tuesday Customs Correction File — Baywash Daily Briefing Edition No. 138"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 137 — Monday, September 21, 2026 — Conciliation / CAD File / Cross-Border</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 138 — Tuesday, September 22, 2026 — Conciliation / Brampton Watch / CAD Correction</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Post-Expiry: Verify the File, Not the Headline
+                Tuesday Check: Price the File, Not the Forecast
               </h3>
             </div>
           </div>
@@ -316,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth Barracuda</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 AMC AMX</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
