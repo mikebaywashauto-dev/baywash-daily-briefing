@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 139;
-const BRIEFING_DATE = "September 23, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 140;
+const BRIEFING_DATE = "October 15, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nlQDUDsyKttLjtNm.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ffNyjWaehLGpyEMz.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/qoVJVEdeyAVjRqCZ.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZvmpyhJXAuxGQNtR.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NApwdNllFvhyoDWd.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zDpOqZXVWjYUoMgR.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/szqEFLRshLZEvyKJ.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bcaTrMEnrvrdeucW.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/whXemCOjvOixBuJH.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/UTVJeXOYbpXeACPF.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "STELLANTIS / POST-EXPIRY / CONCILIATION / VERIFY FIRST",
+    tag: "KIA / SELTOS AWD / VIN CHECK / SAFETY REFERRAL",
     tagColor: "#b91c1c",
-    headline: "Post-Expiry Is Still a Verification Watch",
-    summary: "CBC reports the Stellantis agreement has expired, with the union quiet and the company’s public position unchanged. Unifor’s latest membership update says conciliation must finish before either side can be in a legal strike or lockout position; bargaining remains at impasse and strike action remains possible. No verified September 23 source confirms a settlement, strike, lockout, legal deadline, strike vote, plant restart or service-parts outage.",
-    whyItMatters: "Do not turn an expired agreement into a work-stoppage forecast. Keep every open repair tied to the actual part number, written distributor stock, ETA and quote expiry. Change a customer estimate only when a verified union, company or regulator update affects that specific supply file.",
-    source: "CBC News / Unifor — Stellantis Update",
-    sourceUrl: "https://www.cbc.ca/player/play/video/9.7354436",
+    headline: "Kia Seltos AWD Recall: Verify, Then Park It Outside",
+    summary: "CTV News, reporting a Transport Canada notice, says Kia recalled 48,070 Canadian 2024–2026 Seltos SUVs with all-wheel drive. The reported concern is salt and moisture contamination at the 4WD control unit beneath the driver’s seat, which can create a fire-risk condition. Owners are advised to park outdoors, away from other vehicles and structures, until the recall repair is completed.",
+    whyItMatters: "Make this a VIN-and-drivetrain safety referral—not a blanket diagnosis for every Seltos or electrical complaint. Check campaign status, record the customer’s reported condition and the safety advice, then keep any unrelated diagnostic or repair authorization separate from the manufacturer campaign.",
+    source: "CTV News / Transport Canada — Kia Seltos Recall",
+    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CBSA / REPAIR-RETURN / EVIDENCE / BROKER TEST",
+    tag: "TOYOTA / LAND CRUISER / FUEL CONNECTION / VIN CHECK",
     tagColor: "#0369a1",
-    headline: "A Repair Return Is an Evidence File, Not an Assumption",
-    summary: "CBSA’s September 7 notice says the U.S. surtax applies at 15%, 25% or 50% only to listed U.S.-origin goods. It also describes a fact-specific exception for some U.S.-made goods repaired or altered across the border when the required tariff-item and prior duty-paid conditions are met. That does not make every warranty core, rebuilt unit or return automatically exempt.",
-    whyItMatters: "Before quoting a cross-border core or rebuilt unit, retain the SKU or serial, original release or CAD evidence, RMA, carrier and export documents, repair invoice, origin proof and written broker treatment. The importer of record or broker must determine the actual customs result; do not promise a blanket surcharge or exemption.",
-    source: "Canada Border Services Agency — Customs Notice 26-23",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+    headline: "Toyota Land Cruiser Campaign Starts With the VIN",
+    summary: "Toyota Canada says approximately 6,721 Canadian 2024–2027 Land Cruiser vehicles are covered by a safety recall. A fuel-tube connection near the fuel tank could disconnect, allowing fuel to leak until the hybrid-system engine shuts off; Toyota says dealers will inspect the connection, add a supplemental clamp and, if needed, replace the resin tube at no charge. Toyota says known owners will be notified by mid-December.",
+    whyItMatters: "Do not convert a model-year headline into a paid fuel-system conclusion. Confirm the VIN in the recall lookup, direct an eligible owner to the dealer campaign and document the referral. If a customer reports fuel odour, leakage or driveability concerns, apply normal shop safety triage and obtain separate approval for unrelated work.",
+    source: "Toyota Canada — Land Cruiser Safety Recall",
+    sourceUrl: "https://media.toyota.ca/en/releases/2026/toyota-is-conducting-a-recall-involving-certain-toyota-vehicles1.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "BRAMPTON / ROSHEL MOU / PRODUCTION WATCH / SOURCE BY SKU",
+    tag: "EVAP / SERVICE MIX / HYBRIDS / CAPABILITY PLANNING",
     tagColor: "#15803d",
-    headline: "Brampton Remains a Potential Production Watch",
-    summary: "CBC reports that Stellantis signed a memorandum of understanding with Roshel concerning a potential sale of the Brampton Assembly Plant. The plant has been idle since 2023, and the prior Jeep Compass retooling plan was paused. The MOU, policy pressure and stated job ambitions are not a completed sale, approved restart, new vehicle allocation or blanket parts forecast.",
-    whyItMatters: "For a collision or mechanical repair, source OE, aftermarket and recycled choices by the actual part number. Save written stock, ETA, quote validity and insurer approval where relevant. Keep a plant-policy headline separate from the service-parts promise you make to a customer.",
-    source: "CBC News — Brampton Assembly Plant",
-    sourceUrl: "https://www.cbc.ca/news/canada/toronto/stellantis-brampton-plant-union-talks-9.7348153",
+    headline: "Plan Hybrid and EV Work From the Car Parc, Not a Headline",
+    summary: "Transport Canada says its EV Affordability Program supports eligible purchase or lease transactions and had $1.92 billion remaining as of October 1. That is not a repair or equipment subsidy. Separately, CADA’s retrospective 2025 data found hybrids rose to 230,081 registrations while ZEVs were 9.32% of new registrations, down from 14.6% in 2024—a change in mix, not a forecast for your bay schedule.",
+    whyItMatters: "Use booked work, local vehicle mix and technician competency to decide training, tooling and process investments. Confirm the actual vehicle, job scope and safety procedure before accepting high-voltage work; do not promise an incentive, reimbursement or immediate demand shift from a funding announcement.",
+    source: "Transport Canada / Canadian Auto Dealer",
+    sourceUrl: "https://tc.canada.ca/en/road-transportation/innovative-technologies/electric-vehicles/electric-vehicle-affordability-program",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "⏰",
-    text: "CBC’s latest update says the Stellantis agreement is expired, the union is quiet and the company’s public position has not shifted; that is not confirmation of a work stoppage or settlement.",
-    sourceUrl: "https://www.cbc.ca/player/play/video/9.7354436",
+    icon: "🚙",
+    text: "The Kia campaign reported by CTV applies to 48,070 Canadian 2024–2026 Seltos SUVs with all-wheel drive; confirm the individual vehicle by VIN.",
+    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
   },
   {
-    icon: "🗳️",
-    text: "Unifor says conciliation must finish before a legal strike or lockout position; any future legal deadline and local strike-vote notice would be separate steps.",
-    sourceUrl: "https://autotalks.uniforautohub.ca/stellantis_membership_update_2026_09_16",
+    icon: "🏠",
+    text: "Affected Seltos owners are advised to park outdoors and away from other vehicles and structures until the recall repair is complete.",
+    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
+  },
+  {
+    icon: "🔌",
+    text: "Kia’s reported dealer remedy is inspection of the 4WD control unit, replacement of it and other components if necessary, and installation of a protective cover.",
+    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
+  },
+  {
+    icon: "⛽",
+    text: "Toyota says its 2024–2027 Land Cruiser campaign involves about 6,721 Canadian vehicles and a fuel-tube connection near the tank; VIN status is the confirmation tool.",
+    sourceUrl: "https://media.toyota.ca/en/releases/2026/toyota-is-conducting-a-recall-involving-certain-toyota-vehicles1.html",
   },
   {
     icon: "🔧",
-    text: "CBSA’s repair-or-alteration example is conditional: preserve the original duty-paid history and repair-return documents before treating a part as non-subject to surtax.",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
+    text: "Toyota’s dealer remedy is a supplemental clamp or, if necessary, a resin fuel-tube replacement plus the clamp; known owners are to be notified by mid-December.",
+    sourceUrl: "https://media.toyota.ca/en/releases/2026/toyota-is-conducting-a-recall-involving-certain-toyota-vehicles1.html",
   },
   {
-    icon: "🇨🇦",
-    text: "Canada’s current U.S. surtax is item-, U.S.-origin- and value-for-duty-specific at 15%, 25% or 50%; it can also apply to de minimis shipments.",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
-  },
-  {
-    icon: "🧾",
-    text: "Commercial proof of origin can be an invoice or other document carrying CUSMA minimum data elements; qualifying exceptions must be declared non-subject at accounting.",
-    sourceUrl: "https://www.cbsa-asfc.gc.ca/publications/cn-ad/cn26-23-eng.html",
-  },
-  {
-    icon: "🏭",
-    text: "Brampton’s Roshel MOU remains a possible transaction and production path—not a completed sale, a restart or a general forecast for legacy-vehicle parts.",
-    sourceUrl: "https://www.cbc.ca/news/canada/toronto/stellantis-brampton-plant-union-talks-9.7348153",
+    icon: "⚡",
+    text: "EVAP had $1.92 billion remaining as of October 1 and runs until March 2031 or funding exhaustion, but it concerns eligible purchases and leases—not repair reimbursement.",
+    sourceUrl: "https://tc.canada.ca/en/road-transportation/innovative-technologies/electric-vehicles/electric-vehicle-affordability-program",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build the Return-Repair Packet",
-  text: "Before promising a warranty-core or rebuilt-unit cost, file the original CAD or release proof, serial or SKU, RMA, carrier and export documents, repair invoice, origin evidence and written broker treatment. Do not call a repair return exempt until the importer’s file supports it.",
+  title: "Make the VIN-Safety Referral Note",
+  text: "For every recall conversation, record the VIN lookup result, customer-reported symptoms, safety guidance provided, referral destination and the separate authorization for any unrelated shop work. A clean note prevents a campaign headline from becoming an unapproved diagnosis or repair promise.",
 };
 
 const quoteOfTheDay = {
-  text: "Unifor will not be in a legal strike position as of September 20, 2026.",
-  author: "Unifor",
-  title: "Stellantis Membership Update — September 16, 2026",
+  text: "Owners are advised to park their vehicles outdoors and away from other vehicles and structures until the repairs are completed.",
+  author: "CTV News, reporting Transport Canada’s Kia recall notice",
+  title: "Kia Seltos AWD Recall — October 9, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Ford Torino GT 429 Cobra Jet — Medium Ivy Green, Ontario-Plated",
-  description: "Medium Ivy Green paint, a black hood treatment and big-block Cobra Jet presence make this 1970 Ford Torino GT a proper Wednesday shop feature. Its reminder belongs on every open ticket: separate confirmed facts from forecasts, then document the actual part, source, price and expiry before promising the repair.",
+  name: "1971 Dodge Challenger R/T 440 Six Pack — Citron Yella, Ontario-Plated",
+  description: "Citron Yella paint, black side graphics and unapologetic 440 Six Pack muscle make this 1971 Dodge Challenger R/T a proper Thursday shop feature. Its reminder fits the day’s safety files: confirm the exact vehicle, document what you know and keep campaign work distinct from the repair promise you make to the customer.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Verify First", "Repair-Return File", "Brampton Watch", "'70 Torino"].map((tag) => (
+                {["VIN First", "Seltos AWD", "Land Cruiser", "'71 Challenger"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Owner Building a Repair-Return Evidence File — Baywash Daily Briefing Edition No. 139"
+              alt="Canadian Automotive Shop Advisor Performing a VIN-Based Safety Check — Baywash Daily Briefing Edition No. 140"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 139 — Wednesday, September 23, 2026 — Verify First / Repair-Return File / Brampton Watch</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 140 — Thursday, October 15, 2026 — VIN First / Seltos AWD / Land Cruiser</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Wednesday Check: Verify the File Before You Price It
+                Thursday Check: Verify the VIN Before You Promise the Repair
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Ford Torino</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '71 Dodge Challenger</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
