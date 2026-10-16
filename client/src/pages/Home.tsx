@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 140;
-const BRIEFING_DATE = "October 15, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 141;
+const BRIEFING_DATE = "October 16, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zDpOqZXVWjYUoMgR.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/szqEFLRshLZEvyKJ.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bcaTrMEnrvrdeucW.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/whXemCOjvOixBuJH.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/UTVJeXOYbpXeACPF.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jsgWmuwbSWTYreFu.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/INgnlblZpFUNSxrb.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dgeTiLCAJgLDJJvv.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZKgYOXSwoMdquyHN.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zyLBrjKfZORiyhrY.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "KIA / SELTOS AWD / VIN CHECK / SAFETY REFERRAL",
+    tag: "HONDA / U.S. FOLLOW-UP / CANADIAN VIN / VERIFY FIRST",
     tagColor: "#b91c1c",
-    headline: "Kia Seltos AWD Recall: Verify, Then Park It Outside",
-    summary: "CTV News, reporting a Transport Canada notice, says Kia recalled 48,070 Canadian 2024–2026 Seltos SUVs with all-wheel drive. The reported concern is salt and moisture contamination at the 4WD control unit beneath the driver’s seat, which can create a fire-risk condition. Owners are advised to park outdoors, away from other vehicles and structures, until the recall repair is completed.",
-    whyItMatters: "Make this a VIN-and-drivetrain safety referral—not a blanket diagnosis for every Seltos or electrical complaint. Check campaign status, record the customer’s reported condition and the safety advice, then keep any unrelated diagnostic or repair authorization separate from the manufacturer campaign.",
-    source: "CTV News / Transport Canada — Kia Seltos Recall",
-    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
+    headline: "Honda Follow-Up: A Canadian VIN Check Comes First",
+    summary: "Driving.ca reports Honda issued a new 4,804-vehicle U.S. follow-up campaign after a supplier reportedly mixed faulty tire-sealant bottles with corrected replacements used in an earlier remedy. The report says the earlier campaign included 118,000 vehicles in Canada, but this new recall is not yet listed on Transport Canada’s site. The reported U.S. scope covers specified 2023–2026 CR-V Hybrid, 2023–2026 Accord Hybrid and 2025–2026 CR-V Fuel Cell EV vehicles.",
+    whyItMatters: "Do not import a U.S. re-recall to every Canadian hybrid owner. Check the customer’s VIN in the Canadian manufacturer or Transport Canada record, document the result and keep any puncture repair, tire work or paid inspection separately authorized from a manufacturer campaign.",
+    source: "Driving.ca — Honda Tire-Repair-Kit Follow-Up",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "TOYOTA / LAND CRUISER / FUEL CONNECTION / VIN CHECK",
+    tag: "CHINA EV QUOTA / OFFICIAL TABLE / RETAIL PAUSE / VERIFY",
     tagColor: "#0369a1",
-    headline: "Toyota Land Cruiser Campaign Starts With the VIN",
-    summary: "Toyota Canada says approximately 6,721 Canadian 2024–2027 Land Cruiser vehicles are covered by a safety recall. A fuel-tube connection near the fuel tank could disconnect, allowing fuel to leak until the hybrid-system engine shuts off; Toyota says dealers will inspect the connection, add a supplemental clamp and, if needed, replace the resin tube at no charge. Toyota says known owners will be notified by mid-December.",
-    whyItMatters: "Do not convert a model-year headline into a paid fuel-system conclusion. Confirm the VIN in the recall lookup, direct an eligible owner to the dealer campaign and document the referral. If a customer reports fuel odour, leakage or driveability concerns, apply normal shop safety triage and obtain separate approval for unrelated work.",
-    source: "Toyota Canada — Land Cruiser Safety Recall",
-    sourceUrl: "https://media.toyota.ca/en/releases/2026/toyota-is-conducting-a-recall-involving-certain-toyota-vehicles1.html",
+    headline: "China EV Quota: Read the Official Table, Not One Retail Listing",
+    summary: "Global Affairs Canada’s October 9 quota report shows 15,931 of 49,000 Chinese-EV quota units used for March 1, 2026 to February 28, 2027, leaving 33,069. Separately, Driving.ca reports Tesla paused orders for its China-imported base Model 3 Premium while its site cited an exhausted import quota. The government table does not establish the availability or allocation for any one manufacturer.",
+    whyItMatters: "A paused retail order page is not a blanket parts disruption, price change or bay-schedule forecast. Quote and order from the actual VIN, OE or aftermarket part number, distributor confirmation, written ETA and quote expiry. Treat any brand-allocation explanation beyond the published table as unconfirmed.",
+    source: "Global Affairs Canada / Driving.ca — Chinese EV Quota",
+    sourceUrl: "https://www.eics-scei.gc.ca/report-rapport/Imports_of_electric_vehicles_from_China.htm",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "EVAP / SERVICE MIX / HYBRIDS / CAPABILITY PLANNING",
+    tag: "GEELY / CANADA / 2027 PLAN / NETWORK WATCH",
     tagColor: "#15803d",
-    headline: "Plan Hybrid and EV Work From the Car Parc, Not a Headline",
-    summary: "Transport Canada says its EV Affordability Program supports eligible purchase or lease transactions and had $1.92 billion remaining as of October 1. That is not a repair or equipment subsidy. Separately, CADA’s retrospective 2025 data found hybrids rose to 230,081 registrations while ZEVs were 9.32% of new registrations, down from 14.6% in 2024—a change in mix, not a forecast for your bay schedule.",
-    whyItMatters: "Use booked work, local vehicle mix and technician competency to decide training, tooling and process investments. Confirm the actual vehicle, job scope and safety procedure before accepting high-voltage work; do not promise an incentive, reimbursement or immediate demand shift from a funding announcement.",
-    source: "Transport Canada / Canadian Auto Dealer",
-    sourceUrl: "https://tc.canada.ca/en/road-transportation/innovative-technologies/electric-vehicles/electric-vehicle-affordability-program",
+    headline: "Geely’s Canadian Network Is a 2027 Watch, Not Today’s Service Promise",
+    summary: "Geely Auto says it has established a Canadian team and is developing a retail and service network ahead of introducing its first vehicles to Canadian consumers in 2027. The company says vehicle details, retail and service locations, pricing and availability will be shared as it progresses toward that launch. Those are future announcements—not current confirmation of parts catalogues, independent-shop access or tooling requirements.",
+    whyItMatters: "Add the brand to a future product watchlist, but do not buy equipment, advertise capability or promise parts from a forward-looking launch release. Base every job on the vehicle in front of you, published service information and a supplier-confirmed part number.",
+    source: "Geely Auto — Canadian Market Entry",
+    sourceUrl: "https://newsroom.geely.com/geely-auto-entry-canadian-market",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🚙",
-    text: "The Kia campaign reported by CTV applies to 48,070 Canadian 2024–2026 Seltos SUVs with all-wheel drive; confirm the individual vehicle by VIN.",
-    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
+    icon: "🛞",
+    text: "Driving.ca reports the new Honda follow-up scope is 4,804 U.S. vehicles after a supplier mix-up; it is not yet listed as a Canadian recall on Transport Canada’s site.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
   },
   {
-    icon: "🏠",
-    text: "Affected Seltos owners are advised to park outdoors and away from other vehicles and structures until the recall repair is complete.",
-    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
+    icon: "🚘",
+    text: "The reported U.S. Honda follow-up covers specified 2023–2026 CR-V Hybrid, 2023–2026 Accord Hybrid and 2025–2026 CR-V Fuel Cell EV vehicles; Canadian VIN status controls.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
   },
   {
-    icon: "🔌",
-    text: "Kia’s reported dealer remedy is inspection of the 4WD control unit, replacement of it and other components if necessary, and installation of a protective cover.",
-    sourceUrl: "https://www.ctvnews.ca/business/autos/article/kia-is-recalling-more-than-48k-suvs-in-canada-heres-why/",
+    icon: "📋",
+    text: "Driving.ca says the earlier Honda tire-repair-kit campaign included 118,000 Canadian vehicles; an earlier campaign does not prove a new Canadian follow-up is open.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
   },
   {
-    icon: "⛽",
-    text: "Toyota says its 2024–2027 Land Cruiser campaign involves about 6,721 Canadian vehicles and a fuel-tube connection near the tank; VIN status is the confirmation tool.",
-    sourceUrl: "https://media.toyota.ca/en/releases/2026/toyota-is-conducting-a-recall-involving-certain-toyota-vehicles1.html",
+    icon: "📊",
+    text: "Global Affairs Canada’s October 9 report lists a 49,000 Chinese-EV quota for the current year, 15,931 used and 33,069 remaining—system-level data, not a retailer’s allocation.",
+    sourceUrl: "https://www.eics-scei.gc.ca/report-rapport/Imports_of_electric_vehicles_from_China.htm",
   },
   {
-    icon: "🔧",
-    text: "Toyota’s dealer remedy is a supplemental clamp or, if necessary, a resin fuel-tube replacement plus the clamp; known owners are to be notified by mid-December.",
-    sourceUrl: "https://media.toyota.ca/en/releases/2026/toyota-is-conducting-a-recall-involving-certain-toyota-vehicles1.html",
+    icon: "⚙️",
+    text: "The same official table reports 328 units utilized in September’s second period and zero shown for October as of its October 9 update.",
+    sourceUrl: "https://www.eics-scei.gc.ca/report-rapport/Imports_of_electric_vehicles_from_China.htm",
   },
   {
-    icon: "⚡",
-    text: "EVAP had $1.92 billion remaining as of October 1 and runs until March 2031 or funding exhaustion, but it concerns eligible purchases and leases—not repair reimbursement.",
-    sourceUrl: "https://tc.canada.ca/en/road-transportation/innovative-technologies/electric-vehicles/electric-vehicle-affordability-program",
+    icon: "🇨🇦",
+    text: "Geely says its first Canadian consumer vehicles are planned for 2027; locations, pricing, availability and service details remain future updates.",
+    sourceUrl: "https://newsroom.geely.com/geely-auto-entry-canadian-market",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Make the VIN-Safety Referral Note",
-  text: "For every recall conversation, record the VIN lookup result, customer-reported symptoms, safety guidance provided, referral destination and the separate authorization for any unrelated shop work. A clean note prevents a campaign headline from becoming an unapproved diagnosis or repair promise.",
+  title: "Log the Country and the VIN",
+  text: "For a campaign reported outside Canada, record the source country, VIN-lookup result, campaign identifier if shown, customer concern and referral route. Obtain separate approval for non-campaign work. This keeps a U.S. news item, a Canadian recall record and your repair order from becoming the same unsupported promise.",
 };
 
 const quoteOfTheDay = {
-  text: "Owners are advised to park their vehicles outdoors and away from other vehicles and structures until the repairs are completed.",
-  author: "CTV News, reporting Transport Canada’s Kia recall notice",
-  title: "Kia Seltos AWD Recall — October 9, 2026",
+  text: "this recall is not yet listed on the Transport Canada site",
+  author: "Driving.ca",
+  title: "Honda Tire-Repair-Kit Follow-Up — October 15, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 Dodge Challenger R/T 440 Six Pack — Citron Yella, Ontario-Plated",
-  description: "Citron Yella paint, black side graphics and unapologetic 440 Six Pack muscle make this 1971 Dodge Challenger R/T a proper Thursday shop feature. Its reminder fits the day’s safety files: confirm the exact vehicle, document what you know and keep campaign work distinct from the repair promise you make to the customer.",
+  name: "1970 Plymouth Road Runner 440 Six Pack — In-Violet, Ontario-Plated",
+  description: "In-Violet paint, a black hood and the unmistakable attitude of a 440 Six Pack make this 1970 Plymouth Road Runner a proper Friday shop feature. Its reminder fits today’s files: identify the exact car, verify the applicable record and document the source before you promise the next step.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["VIN First", "Seltos AWD", "Land Cruiser", "'71 Challenger"].map((tag) => (
+                {["Canadian VIN", "Official Table", "Geely 2027", "'70 Road Runner"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Advisor Performing a VIN-Based Safety Check — Baywash Daily Briefing Edition No. 140"
+              alt="Canadian Automotive Shop Advisor Verifying a Canadian VIN Record — Baywash Daily Briefing Edition No. 141"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 140 — Thursday, October 15, 2026 — VIN First / Seltos AWD / Land Cruiser</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 141 — Friday, October 16, 2026 — Canadian VIN / Official Table / Geely 2027</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Thursday Check: Verify the VIN Before You Promise the Repair
+                Friday Check: Confirm the Country and the VIN Before You Promise the Repair
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '71 Dodge Challenger</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth Road Runner</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
