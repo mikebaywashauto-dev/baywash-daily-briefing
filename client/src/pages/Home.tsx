@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 141;
-const BRIEFING_DATE = "October 16, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 142;
+const BRIEFING_DATE = "October 17, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jsgWmuwbSWTYreFu.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/INgnlblZpFUNSxrb.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dgeTiLCAJgLDJJvv.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZKgYOXSwoMdquyHN.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zyLBrjKfZORiyhrY.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TGsHvBapsgPjPXVP.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kWVXuBgQgRYTLVfC.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XgZiDUHleYsqFnFH.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/woifBuSObMHnruUy.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PoIeTiBANauYDXkP.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "HONDA / U.S. FOLLOW-UP / CANADIAN VIN / VERIFY FIRST",
+    tag: "RAV4 PHEV / U.S. CAMPAIGN / CANADIAN VIN / VERIFY FIRST",
     tagColor: "#b91c1c",
-    headline: "Honda Follow-Up: A Canadian VIN Check Comes First",
-    summary: "Driving.ca reports Honda issued a new 4,804-vehicle U.S. follow-up campaign after a supplier reportedly mixed faulty tire-sealant bottles with corrected replacements used in an earlier remedy. The report says the earlier campaign included 118,000 vehicles in Canada, but this new recall is not yet listed on Transport Canada’s site. The reported U.S. scope covers specified 2023–2026 CR-V Hybrid, 2023–2026 Accord Hybrid and 2025–2026 CR-V Fuel Cell EV vehicles.",
-    whyItMatters: "Do not import a U.S. re-recall to every Canadian hybrid owner. Check the customer’s VIN in the Canadian manufacturer or Transport Canada record, document the result and keep any puncture repair, tire work or paid inspection separately authorized from a manufacturer campaign.",
-    source: "Driving.ca — Honda Tire-Repair-Kit Follow-Up",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
+    headline: "RAV4 Plug-In Hybrid: Confirm Canada Before You Call It a Recall",
+    summary: "Driving.ca reports a U.S. safety campaign covering 30,978 model-year 2026 Toyota RAV4 Plug-In Hybrids for a motor-generator ECU software issue that can lead to reduced or lost propulsion. The report says Transport Canada had not yet made a corresponding Toyota recall public in Canada at publication time. It describes a U.S. ECU-reflash remedy and December owner notification timing in the United States.",
+    whyItMatters: "Treat the U.S. report as a Canadian VIN-research trigger—not proof a Canadian campaign is open. Confirm the vehicle in the manufacturer or Transport Canada record, log the result and keep any driveability diagnosis or other shop work separately authorized from a possible future manufacturer campaign.",
+    source: "Driving.ca — Toyota RAV4 Plug-In Hybrid Campaign",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CHINA EV QUOTA / OFFICIAL TABLE / RETAIL PAUSE / VERIFY",
+    tag: "PREVOST / PLATFORM PROJECT / BUS MANUFACTURING / WATCH",
     tagColor: "#0369a1",
-    headline: "China EV Quota: Read the Official Table, Not One Retail Listing",
-    summary: "Global Affairs Canada’s October 9 quota report shows 15,931 of 49,000 Chinese-EV quota units used for March 1, 2026 to February 28, 2027, leaving 33,069. Separately, Driving.ca reports Tesla paused orders for its China-imported base Model 3 Premium while its site cited an exhausted import quota. The government table does not establish the availability or allocation for any one manufacturer.",
-    whyItMatters: "A paused retail order page is not a blanket parts disruption, price change or bay-schedule forecast. Quote and order from the actual VIN, OE or aftermarket part number, distributor confirmation, written ETA and quote expiry. Treat any brand-allocation explanation beyond the published table as unconfirmed.",
-    source: "Global Affairs Canada / Driving.ca — Chinese EV Quota",
-    sourceUrl: "https://www.eics-scei.gc.ca/report-rapport/Imports_of_electric_vehicles_from_China.htm",
+    headline: "Prevost Funding Supports a Platform Project—Not Today’s Parts Promise",
+    summary: "The federal government announced an $18.5 million Strategic Response Fund investment in Prevost, a Volvo Group Canada division, supporting an $87.5 million One Prevost Platform project in Sainte-Claire, Quebec. Ottawa says the project supports multiple propulsion technologies, including clean and zero-emission options, strengthens supply-chain and R&D capacity, and maintains 1,265 full-time-equivalent jobs.",
+    whyItMatters: "This is a manufacturing and product-platform signal—not confirmation of vehicle allocation, service information, independent-shop authorization or immediate parts availability. Put it on the product watchlist, then quote every fleet job from the actual VIN, published repair procedure and supplier-confirmed part number.",
+    source: "Innovation, Science and Economic Development Canada — Prevost",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "GEELY / CANADA / 2027 PLAN / NETWORK WATCH",
+    tag: "AUTO ASSEMBLY / PARTS SHIPMENTS / SKU DISCIPLINE / QUOTE",
     tagColor: "#15803d",
-    headline: "Geely’s Canadian Network Is a 2027 Watch, Not Today’s Service Promise",
-    summary: "Geely Auto says it has established a Canadian team and is developing a retail and service network ahead of introducing its first vehicles to Canadian consumers in 2027. The company says vehicle details, retail and service locations, pricing and availability will be shared as it progresses toward that launch. Those are future announcements—not current confirmation of parts catalogues, independent-shop access or tooling requirements.",
-    whyItMatters: "Add the brand to a future product watchlist, but do not buy equipment, advertise capability or promise parts from a forward-looking launch release. Base every job on the vehicle in front of you, published service information and a supplier-confirmed part number.",
-    source: "Geely Auto — Canadian Market Entry",
-    sourceUrl: "https://newsroom.geely.com/geely-auto-entry-canadian-market",
+    headline: "Assembly Softness Is Not a Replacement-Parts Shortage Forecast",
+    summary: "Canadian Auto Dealer, citing DesRosiers Automotive Consultants, says Canadian motor-vehicle assembly shipments continue to decline amid trade tension and production uncertainty. The report also says automotive-parts shipments have remained relatively resilient despite weaker assembly activity, while body and trailer manufacturing shipments are above pre-pandemic levels.",
+    whyItMatters: "Do not turn an industry-condition headline into a blanket shortage, automatic surcharge or promise that an order cannot be filled. Confirm each part through the actual VIN, OE, aftermarket or recycled part number, distributor stock, written ETA and quote expiry; explain documented changes on the real order.",
+    source: "Canadian Auto Dealer / DesRosiers Automotive Consultants",
+    sourceUrl: "https://canadianautodealer.ca/2026/10/canadian-auto-production-loses-momentum/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🛞",
-    text: "Driving.ca reports the new Honda follow-up scope is 4,804 U.S. vehicles after a supplier mix-up; it is not yet listed as a Canadian recall on Transport Canada’s site.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
+    icon: "🚙",
+    text: "Driving.ca reports the U.S. RAV4 Plug-In Hybrid campaign covers 30,978 model-year 2026 vehicles; its article said a corresponding Canadian Toyota notice was not public at publication time.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
   },
   {
-    icon: "🚘",
-    text: "The reported U.S. Honda follow-up covers specified 2023–2026 CR-V Hybrid, 2023–2026 Accord Hybrid and 2025–2026 CR-V Fuel Cell EV vehicles; Canadian VIN status controls.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
+    icon: "💻",
+    text: "The reported U.S. issue concerns motor-generator ECU software; the article describes an ECU reflash as the U.S. remedy—do not treat that as a Canadian VIN result.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
   },
   {
     icon: "📋",
-    text: "Driving.ca says the earlier Honda tire-repair-kit campaign included 118,000 Canadian vehicles; an earlier campaign does not prove a new Canadian follow-up is open.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/honda-recalls-accord-cr-v-hybrids-for-earlier-repair-kit-issue-again",
+    text: "Driving.ca says U.S. owners of affected RAV4 Plug-In Hybrids are to be notified in December; Canadian dealer or owner timing was not established by that report.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
   },
   {
-    icon: "📊",
-    text: "Global Affairs Canada’s October 9 report lists a 49,000 Chinese-EV quota for the current year, 15,931 used and 33,069 remaining—system-level data, not a retailer’s allocation.",
-    sourceUrl: "https://www.eics-scei.gc.ca/report-rapport/Imports_of_electric_vehicles_from_China.htm",
+    icon: "🚌",
+    text: "Ottawa’s Prevost announcement is $18.5 million toward an $87.5 million platform project in Sainte-Claire, Quebec.",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html",
   },
   {
-    icon: "⚙️",
-    text: "The same official table reports 328 units utilized in September’s second period and zero shown for October as of its October 9 update.",
-    sourceUrl: "https://www.eics-scei.gc.ca/report-rapport/Imports_of_electric_vehicles_from_China.htm",
+    icon: "⚡",
+    text: "The One Prevost Platform is intended to support multiple propulsion technologies, including clean and zero-emission options; no current independent-shop service requirement is announced.",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html",
   },
   {
-    icon: "🇨🇦",
-    text: "Geely says its first Canadian consumer vehicles are planned for 2027; locations, pricing, availability and service details remain future updates.",
-    sourceUrl: "https://newsroom.geely.com/geely-auto-entry-canadian-market",
+    icon: "📦",
+    text: "Canadian Auto Dealer says DAC sees automotive-parts shipments as relatively resilient despite weaker assembly activity—verify real availability part by part.",
+    sourceUrl: "https://canadianautodealer.ca/2026/10/canadian-auto-production-loses-momentum/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Log the Country and the VIN",
-  text: "For a campaign reported outside Canada, record the source country, VIN-lookup result, campaign identifier if shown, customer concern and referral route. Obtain separate approval for non-campaign work. This keeps a U.S. news item, a Canadian recall record and your repair order from becoming the same unsupported promise.",
+  title: "Write the Cross-Border Recall Note",
+  text: "When an owner asks about a U.S.-reported campaign, record the source country, Canadian VIN-lookup result, customer-reported concern and referral route. Then obtain separate approval for non-campaign diagnosis or repair. This preserves the distinction between a foreign report, a Canadian record and your own work order.",
 };
 
 const quoteOfTheDay = {
-  text: "this recall is not yet listed on the Transport Canada site",
-  author: "Driving.ca",
-  title: "Honda Tire-Repair-Kit Follow-Up — October 15, 2026",
+  text: "automotive parts shipments have remained relatively resilient despite weaker vehicle assembly activity.",
+  author: "Canadian Auto Dealer, citing DesRosiers Automotive Consultants",
+  title: "Canadian Auto Production Loses Momentum — October 16, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth Road Runner 440 Six Pack — In-Violet, Ontario-Plated",
-  description: "In-Violet paint, a black hood and the unmistakable attitude of a 440 Six Pack make this 1970 Plymouth Road Runner a proper Friday shop feature. Its reminder fits today’s files: identify the exact car, verify the applicable record and document the source before you promise the next step.",
+  name: "1969 Pontiac GTO Judge Ram Air III — Carousel Red, Ontario-Plated",
+  description: "Carousel Red paint, black hood treatment and proper Ram Air III attitude make this 1969 Pontiac GTO Judge a Saturday shop feature. Its reminder fits today’s files: identify the exact vehicle, verify the applicable record and source every repair promise from evidence—not the headline.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Canadian VIN", "Official Table", "Geely 2027", "'70 Road Runner"].map((tag) => (
+                {["Canada First", "Prevost Watch", "Part by Part", "'69 GTO Judge"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Advisor Verifying a Canadian VIN Record — Baywash Daily Briefing Edition No. 141"
+              alt="Canadian Automotive Shop Advisor Confirming a Canadian VIN Record — Baywash Daily Briefing Edition No. 142"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 141 — Friday, October 16, 2026 — Canadian VIN / Official Table / Geely 2027</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 142 — Saturday, October 17, 2026 — Canada First / Prevost Watch / Part by Part</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Friday Check: Confirm the Country and the VIN Before You Promise the Repair
+                Saturday Check: Confirm the Canadian VIN Before You Promise the Remedy
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth Road Runner</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Pontiac GTO Judge</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
