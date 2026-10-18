@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 142;
-const BRIEFING_DATE = "October 17, 2026";
-const BRIEFING_DAY = "Saturday";
+const BRIEFING_NUMBER = 143;
+const BRIEFING_DATE = "October 18, 2026";
+const BRIEFING_DAY = "Sunday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TGsHvBapsgPjPXVP.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kWVXuBgQgRYTLVfC.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XgZiDUHleYsqFnFH.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/woifBuSObMHnruUy.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PoIeTiBANauYDXkP.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mLlAYTDNBoZCwCZh.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ySsNhczEJsCwXApD.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GWzhSKaURjvumOFB.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OIzmXiiwRYZjtBfg.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rReTUBOiuWVrklQx.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "RAV4 PHEV / U.S. CAMPAIGN / CANADIAN VIN / VERIFY FIRST",
+    tag: "VW ID.4 / CANADIAN RECALL / 80% LIMIT / VIN FIRST",
     tagColor: "#b91c1c",
-    headline: "RAV4 Plug-In Hybrid: Confirm Canada Before You Call It a Recall",
-    summary: "Driving.ca reports a U.S. safety campaign covering 30,978 model-year 2026 Toyota RAV4 Plug-In Hybrids for a motor-generator ECU software issue that can lead to reduced or lost propulsion. The report says Transport Canada had not yet made a corresponding Toyota recall public in Canada at publication time. It describes a U.S. ECU-reflash remedy and December owner notification timing in the United States.",
-    whyItMatters: "Treat the U.S. report as a Canadian VIN-research trigger—not proof a Canadian campaign is open. Confirm the vehicle in the manufacturer or Transport Canada record, log the result and keep any driveability diagnosis or other shop work separately authorized from a possible future manufacturer campaign.",
-    source: "Driving.ca — Toyota RAV4 Plug-In Hybrid Campaign",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
+    headline: "VW ID.4: Respect the Interim 80% Charge Instruction—Do Not Invent a Repair",
+    summary: "Driving.ca and The Car Guide report Volkswagen has a Canadian recall for 5,633 model-year 2023–2025 ID.4 vehicles involving high-voltage battery overheating/fire risk. Both describe an interim instruction to limit charging to 80%. Driving.ca says Volkswagen is not advising owners to park outside for this campaign and says no final remedy is available; The Car Guide says Transport Canada’s notice identifies a fire risk even when parked with the ignition off.",
+    whyItMatters: "Use the campaign as a VIN-and-owner-guidance handoff, not as permission to alter high-voltage settings or promise a repair. Confirm the Canadian VIN status, document the owner’s concern and direct the customer to Volkswagen’s campaign guidance. Keep unrelated work separately authorized; do not infer every ID.4, EV or charging event is affected.",
+    source: "Driving.ca / The Car Guide — Volkswagen ID.4 Recall",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/volkswagen-id-4-recall-fire-risk-charging",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "PREVOST / PLATFORM PROJECT / BUS MANUFACTURING / WATCH",
+    tag: "RAV4 PHEV / CANADIAN RECORD / SOFTWARE UPDATE / VIN",
     tagColor: "#0369a1",
-    headline: "Prevost Funding Supports a Platform Project—Not Today’s Parts Promise",
-    summary: "The federal government announced an $18.5 million Strategic Response Fund investment in Prevost, a Volvo Group Canada division, supporting an $87.5 million One Prevost Platform project in Sainte-Claire, Quebec. Ottawa says the project supports multiple propulsion technologies, including clean and zero-emission options, strengthens supply-chain and R&D capacity, and maintains 1,265 full-time-equivalent jobs.",
-    whyItMatters: "This is a manufacturing and product-platform signal—not confirmation of vehicle allocation, service information, independent-shop authorization or immediate parts availability. Put it on the product watchlist, then quote every fleet job from the actual VIN, published repair procedure and supplier-confirmed part number.",
-    source: "Innovation, Science and Economic Development Canada — Prevost",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html",
+    headline: "RAV4 Plug-In Hybrid: The Canadian Record Is Now the Starting Point",
+    summary: "INSAUGA reports Transport Canada has a Toyota recall for 7,847 model-year 2026 RAV4 Plug-In Hybrid vehicles. It says a motor-generator ECU software problem could shut down the plug-in hybrid system while driving, leading to a sudden loss of power to the wheels. The report says Toyota will notify owners by mail and direct them to a dealership for a software update.",
+    whyItMatters: "This update makes the individual Canadian VIN—not yesterday’s U.S. report—the practical first check. Do not say every RAV4 or conventional RAV4 Hybrid is covered. Route an eligible VIN to the manufacturer campaign; use normal safety triage for any customer-reported driveability concern and separately authorize independent diagnostic work.",
+    source: "INSAUGA — Toyota RAV4 Plug-In Hybrid Recall",
+    sourceUrl: "https://www.insauga.com/recall-nearly-8000-vehicles-could-suddenly-lose-power-in-canada/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "AUTO ASSEMBLY / PARTS SHIPMENTS / SKU DISCIPLINE / QUOTE",
+    tag: "MERCEDES / BRAKE HOSES / CANADIAN RECALL / REFER",
     tagColor: "#15803d",
-    headline: "Assembly Softness Is Not a Replacement-Parts Shortage Forecast",
-    summary: "Canadian Auto Dealer, citing DesRosiers Automotive Consultants, says Canadian motor-vehicle assembly shipments continue to decline amid trade tension and production uncertainty. The report also says automotive-parts shipments have remained relatively resilient despite weaker assembly activity, while body and trailer manufacturing shipments are above pre-pandemic levels.",
-    whyItMatters: "Do not turn an industry-condition headline into a blanket shortage, automatic surcharge or promise that an order cannot be filled. Confirm each part through the actual VIN, OE, aftermarket or recycled part number, distributor stock, written ETA and quote expiry; explain documented changes on the real order.",
-    source: "Canadian Auto Dealer / DesRosiers Automotive Consultants",
-    sourceUrl: "https://canadianautodealer.ca/2026/10/canadian-auto-production-loses-momentum/",
+    headline: "Mercedes Brake-Hose Campaign: Refer the VIN, Then Triage the Actual Complaint",
+    summary: "Motor Illustrated reports a Transport Canada campaign affecting 2,160 Canadian 2021–2025 Mercedes-Benz S-Class and Maybach S-Class vehicles. The report quotes Transport Canada: front brake hoses could fail and cause a progressive brake-fluid leak, potentially changing brake-pedal feel and travel and reducing braking. The reported manufacturer action is owner notification and dealer replacement of the front brake hoses.",
+    whyItMatters: "A campaign headline does not diagnose every brake concern. Check the customer’s VIN, record the result and route eligible vehicles to the manufacturer remedy. Any pedal-feel change, warning or visible leak still calls for your normal safety workflow; obtain separate authorization for any independent diagnosis or repair outside the campaign.",
+    source: "Motor Illustrated — Mercedes-Benz S-Class Brake-Hose Recall",
+    sourceUrl: "https://motorillustrated.com/mercedes-benz-recalls-more-than-30000-s-class-sedans-over-brake-issue/199143/",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🚙",
-    text: "Driving.ca reports the U.S. RAV4 Plug-In Hybrid campaign covers 30,978 model-year 2026 vehicles; its article said a corresponding Canadian Toyota notice was not public at publication time.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
+    icon: "🔋",
+    text: "Canadian reports place the VW ID.4 recall at 5,633 model-year 2023–2025 vehicles; the interim manufacturer instruction is to limit charging to 80%.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/volkswagen-id-4-recall-fire-risk-charging",
   },
   {
-    icon: "💻",
-    text: "The reported U.S. issue concerns motor-generator ECU software; the article describes an ECU reflash as the U.S. remedy—do not treat that as a Canadian VIN result.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
-  },
-  {
-    icon: "📋",
-    text: "Driving.ca says U.S. owners of affected RAV4 Plug-In Hybrids are to be notified in December; Canadian dealer or owner timing was not established by that report.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/2026-toyota-rav4-plug-in-hybrid-software-recall-loss-power-ecu",
-  },
-  {
-    icon: "🚌",
-    text: "Ottawa’s Prevost announcement is $18.5 million toward an $87.5 million platform project in Sainte-Claire, Quebec.",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html",
+    icon: "🔌",
+    text: "Driving.ca says Volkswagen has not advised owners to park outside for this ID.4 campaign; no final remedy is currently available.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/volkswagen-id-4-recall-fire-risk-charging",
   },
   {
     icon: "⚡",
-    text: "The One Prevost Platform is intended to support multiple propulsion technologies, including clean and zero-emission options; no current independent-shop service requirement is announced.",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/the-government-of-canada-announces-investment-in-prevost-volvo-group-canada-inc-in-sainte-claire-to-support-canadian-bus-manufacturing-and-clean-tr.html",
+    text: "The Car Guide says Transport Canada’s ID.4 notice identifies a fire risk even when parked with the ignition off; VIN status and current manufacturer instructions control.",
+    sourceUrl: "https://www.guideautoweb.com/en/articles/83531/volkswagen-id.4-recalled-again-over-fire-risk-may-need-new-battery/",
   },
   {
-    icon: "📦",
-    text: "Canadian Auto Dealer says DAC sees automotive-parts shipments as relatively resilient despite weaker assembly activity—verify real availability part by part.",
-    sourceUrl: "https://canadianautodealer.ca/2026/10/canadian-auto-production-loses-momentum/",
+    icon: "🚙",
+    text: "INSAUGA reports 7,847 Canadian 2026 RAV4 Plug-In Hybrid vehicles are covered by Toyota’s motor-generator ECU software campaign—not every RAV4 model.",
+    sourceUrl: "https://www.insauga.com/recall-nearly-8000-vehicles-could-suddenly-lose-power-in-canada/",
+  },
+  {
+    icon: "💻",
+    text: "The reported RAV4 Plug-In Hybrid manufacturer action is owner notification and a dealer software update; use the 17-character VIN to confirm the individual vehicle.",
+    sourceUrl: "https://www.insauga.com/recall-nearly-8000-vehicles-could-suddenly-lose-power-in-canada/",
+  },
+  {
+    icon: "🛞",
+    text: "Motor Illustrated reports 2,160 Canadian 2021–2025 Mercedes-Benz S-Class and Maybach S-Class vehicles are affected by a front brake-hose campaign.",
+    sourceUrl: "https://motorillustrated.com/mercedes-benz-recalls-more-than-30000-s-class-sedans-over-brake-issue/199143/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Write the Cross-Border Recall Note",
-  text: "When an owner asks about a U.S.-reported campaign, record the source country, Canadian VIN-lookup result, customer-reported concern and referral route. Then obtain separate approval for non-campaign diagnosis or repair. This preserves the distinction between a foreign report, a Canadian record and your own work order.",
+  title: "Make the Recall Intake a One-Minute Record",
+  text: "For every campaign question, record the exact VIN, customer concern, live Canadian campaign result, current manufacturer instruction and referral destination. Then separately authorize any non-campaign diagnostic or repair work. This simple intake distinguishes a safety notice from the repair order you actually own.",
 };
 
 const quoteOfTheDay = {
-  text: "automotive parts shipments have remained relatively resilient despite weaker vehicle assembly activity.",
-  author: "Canadian Auto Dealer, citing DesRosiers Automotive Consultants",
-  title: "Canadian Auto Production Loses Momentum — October 16, 2026",
+  text: "The fix had not yet been identified or finalized.",
+  author: "The Car Guide",
+  title: "Volkswagen ID.4 Canadian Recall — October 13, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Pontiac GTO Judge Ram Air III — Carousel Red, Ontario-Plated",
-  description: "Carousel Red paint, black hood treatment and proper Ram Air III attitude make this 1969 Pontiac GTO Judge a Saturday shop feature. Its reminder fits today’s files: identify the exact vehicle, verify the applicable record and source every repair promise from evidence—not the headline.",
+  name: "1970 Chevrolet Chevelle SS 454 LS6 — Cranberry Red, Ontario-Plated",
+  description: "Cranberry Red paint, a black cowl-induction hood and big-block presence make this 1970 Chevrolet Chevelle SS 454 LS6 a Sunday shop feature. Its reminder suits today’s files: identify the exact vehicle, verify the active instruction and separate the campaign from the work you are actually authorized to perform.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Canada First", "Prevost Watch", "Part by Part", "'69 GTO Judge"].map((tag) => (
+                {["ID.4: 80%", "Canadian VIN", "Brake Referral", "'70 Chevelle"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Advisor Confirming a Canadian VIN Record — Baywash Daily Briefing Edition No. 142"
+              alt="Canadian Automotive Shop Advisor Verifying an EV Recall Instruction — Baywash Daily Briefing Edition No. 143"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 142 — Saturday, October 17, 2026 — Canada First / Prevost Watch / Part by Part</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 143 — Sunday, October 18, 2026 — ID.4: 80% / Canadian VIN / Brake Referral</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Saturday Check: Confirm the Canadian VIN Before You Promise the Remedy
+                Sunday Check: Respect the Interim Instruction, Then Verify the VIN
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Pontiac GTO Judge</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Chevrolet Chevelle SS</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
