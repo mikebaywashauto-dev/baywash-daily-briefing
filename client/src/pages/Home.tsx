@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 143;
-const BRIEFING_DATE = "October 18, 2026";
-const BRIEFING_DAY = "Sunday";
+const BRIEFING_NUMBER = 144;
+const BRIEFING_DATE = "October 19, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mLlAYTDNBoZCwCZh.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ySsNhczEJsCwXApD.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GWzhSKaURjvumOFB.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/OIzmXiiwRYZjtBfg.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rReTUBOiuWVrklQx.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GNwLLVFnPBnJRzCQ.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/oChfKjvqjoNvVmlq.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/pVlbDEUXAlOUxtyd.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NSbdYtFXTDIVJoSD.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HwCRpVMQWjqKICEs.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "VW ID.4 / CANADIAN RECALL / 80% LIMIT / VIN FIRST",
+    tag: "STELLANTIS / STRIKE VOTE / NO AUTOMATIC STRIKE / CHECK FACTS",
     tagColor: "#b91c1c",
-    headline: "VW ID.4: Respect the Interim 80% Charge Instruction—Do Not Invent a Repair",
-    summary: "Driving.ca and The Car Guide report Volkswagen has a Canadian recall for 5,633 model-year 2023–2025 ID.4 vehicles involving high-voltage battery overheating/fire risk. Both describe an interim instruction to limit charging to 80%. Driving.ca says Volkswagen is not advising owners to park outside for this campaign and says no final remedy is available; The Car Guide says Transport Canada’s notice identifies a fire risk even when parked with the ignition off.",
-    whyItMatters: "Use the campaign as a VIN-and-owner-guidance handoff, not as permission to alter high-voltage settings or promise a repair. Confirm the Canadian VIN status, document the owner’s concern and direct the customer to Volkswagen’s campaign guidance. Keep unrelated work separately authorized; do not infer every ID.4, EV or charging event is affected.",
-    source: "Driving.ca / The Car Guide — Volkswagen ID.4 Recall",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/volkswagen-id-4-recall-fire-risk-charging",
+    headline: "Stellantis Vote: A Mandate Is Leverage, Not a Parts-Outage Notice",
+    summary: "Canadian Press reporting says Unifor held weekend strike-authorization votes for more than 9,000 Canadian Stellantis workers and planned to release results at the start of the week. The prior agreement expired September 20 and bargaining was reported stalled over job security and the idled Brampton plant. The union says a strike authorization gives its bargaining committee authority to call a strike if necessary; it does not automatically mean a strike will take place.",
+    whyItMatters: "Use this as a sourcing-and-customer-communication watch, not a reason to declare a strike, lockout, settlement or parts outage. Quote the specific vehicle and part number in front of you, confirm distributor stock and written ETA, and update customers only on a documented order change. The Brampton Roshel MOU remains a potential sale—not a completed transaction, restart or parts forecast.",
+    source: "The Canadian Press / BNN Bloomberg — Stellantis Strike-Authorization Vote",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/economics/2026/10/16/stellantis-workers-set-to-vote-on-potential-strike-action-this-weekend/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "RAV4 PHEV / CANADIAN RECORD / SOFTWARE UPDATE / VIN",
+    tag: "KIA SELTOS / AWD ONLY / PARK OUTSIDE / VIN FIRST",
     tagColor: "#0369a1",
-    headline: "RAV4 Plug-In Hybrid: The Canadian Record Is Now the Starting Point",
-    summary: "INSAUGA reports Transport Canada has a Toyota recall for 7,847 model-year 2026 RAV4 Plug-In Hybrid vehicles. It says a motor-generator ECU software problem could shut down the plug-in hybrid system while driving, leading to a sudden loss of power to the wheels. The report says Toyota will notify owners by mail and direct them to a dealership for a software update.",
-    whyItMatters: "This update makes the individual Canadian VIN—not yesterday’s U.S. report—the practical first check. Do not say every RAV4 or conventional RAV4 Hybrid is covered. Route an eligible VIN to the manufacturer campaign; use normal safety triage for any customer-reported driveability concern and separately authorize independent diagnostic work.",
-    source: "INSAUGA — Toyota RAV4 Plug-In Hybrid Recall",
-    sourceUrl: "https://www.insauga.com/recall-nearly-8000-vehicles-could-suddenly-lose-power-in-canada/",
+    headline: "Kia Seltos AWD: Treat the Park-Outside Direction as a VIN-Specific Handoff",
+    summary: "Yahoo Autos, citing Transport Canada and 604 Now, reports a Canadian campaign covering more than 48,000 model-year 2024–2026 Kia Seltos AWD vehicles. The report says salt and moisture can contaminate the 4WD control unit beneath the driver’s seat, leading over time to corrosion and a possible short circuit/fire risk, including when the vehicle is off. It says affected owners are instructed to park outside, away from buildings or other vehicles, until the repair is completed.",
+    whyItMatters: "Do not generalize this instruction to every Seltos, Kia or water-exposure visit. Check the exact Canadian VIN and current manufacturer direction, document the result and refer an eligible vehicle to the campaign remedy. Keep any independent inspection or repair outside the campaign separately diagnosed and authorized; do not promise a campaign repair from a headline.",
+    source: "Yahoo Autos / Transport Canada Reporting — Kia Seltos AWD Campaign",
+    sourceUrl: "https://autos.yahoo.com/safety-and-recalls/articles/owners-recalled-kia-vehicles-told-182600665.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "MERCEDES / BRAKE HOSES / CANADIAN RECALL / REFER",
+    tag: "FORD LIGHTING / U.S. FILE / CANADIAN VIN CHECK / NO ASSUMPTION",
     tagColor: "#15803d",
-    headline: "Mercedes Brake-Hose Campaign: Refer the VIN, Then Triage the Actual Complaint",
-    summary: "Motor Illustrated reports a Transport Canada campaign affecting 2,160 Canadian 2021–2025 Mercedes-Benz S-Class and Maybach S-Class vehicles. The report quotes Transport Canada: front brake hoses could fail and cause a progressive brake-fluid leak, potentially changing brake-pedal feel and travel and reducing braking. The reported manufacturer action is owner notification and dealer replacement of the front brake hoses.",
-    whyItMatters: "A campaign headline does not diagnose every brake concern. Check the customer’s VIN, record the result and route eligible vehicles to the manufacturer remedy. Any pedal-feel change, warning or visible leak still calls for your normal safety workflow; obtain separate authorization for any independent diagnosis or repair outside the campaign.",
-    source: "Motor Illustrated — Mercedes-Benz S-Class Brake-Hose Recall",
-    sourceUrl: "https://motorillustrated.com/mercedes-benz-recalls-more-than-30000-s-class-sedans-over-brake-issue/199143/",
+    headline: "Ford LED Headlamp Alert: A U.S. Campaign Is a Canadian VIN Check—Not a Recall Claim",
+    summary: "Driving.ca reports a U.S. Ford campaign for 41,748 vehicles: 2025–2027 Expedition SUVs and 2026 F-250, F-350, F-450 and F-550 trucks. The article says contaminants under an LED chip can lead to daytime running lamp, parking-lamp, high-beam or low-beam failure. At publication, it said Transport Canada had not made a counterpart campaign public; the F-150 is not in the reported U.S. scope.",
+    whyItMatters: "Do not book every Ford truck as a Canadian recall, replace headlights based on a U.S. notice or include the F-150 in this reported scope. Check the actual Canadian VIN in the manufacturer or Transport Canada record, log the result and separately authorize diagnosis of any active lighting concern. Base roadworthiness guidance on the observed condition and applicable law—not a cross-border headline.",
+    source: "Driving.ca — Ford Expedition and HD Truck LED Headlamp Alert",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/ford-expedition-hd-trucks-recall-led-headlight-issue-failure",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🔋",
-    text: "Canadian reports place the VW ID.4 recall at 5,633 model-year 2023–2025 vehicles; the interim manufacturer instruction is to limit charging to 80%.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/volkswagen-id-4-recall-fire-risk-charging",
+    icon: "⚙️",
+    text: "The Canadian Press reports more than 9,000 Unifor-represented Stellantis workers voted over the weekend on a strike authorization; a mandate is not an automatic strike.",
+    sourceUrl: "https://www.bnnbloomberg.ca/business/economics/2026/10/16/stellantis-workers-set-to-vote-on-potential-strike-action-this-weekend/",
   },
   {
-    icon: "🔌",
-    text: "Driving.ca says Volkswagen has not advised owners to park outside for this ID.4 campaign; no final remedy is currently available.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/volkswagen-id-4-recall-fire-risk-charging",
-  },
-  {
-    icon: "⚡",
-    text: "The Car Guide says Transport Canada’s ID.4 notice identifies a fire risk even when parked with the ignition off; VIN status and current manufacturer instructions control.",
-    sourceUrl: "https://www.guideautoweb.com/en/articles/83531/volkswagen-id.4-recalled-again-over-fire-risk-may-need-new-battery/",
+    icon: "🏭",
+    text: "The prior Stellantis-Unifor agreement expired September 20; reported bargaining issues include job security and the future of the idled Brampton plant.",
+    sourceUrl: "https://vancouver.citynews.ca/2026/10/17/stellantis-workers-begin-voting-on-strike-mandate-as-talks-remain-stalled/",
   },
   {
     icon: "🚙",
-    text: "INSAUGA reports 7,847 Canadian 2026 RAV4 Plug-In Hybrid vehicles are covered by Toyota’s motor-generator ECU software campaign—not every RAV4 model.",
-    sourceUrl: "https://www.insauga.com/recall-nearly-8000-vehicles-could-suddenly-lose-power-in-canada/",
+    text: "The cited Canadian Kia report applies to more than 48,000 2024–2026 Seltos AWD vehicles—not every Seltos model or Kia vehicle.",
+    sourceUrl: "https://autos.yahoo.com/safety-and-recalls/articles/owners-recalled-kia-vehicles-told-182600665.html",
   },
   {
-    icon: "💻",
-    text: "The reported RAV4 Plug-In Hybrid manufacturer action is owner notification and a dealer software update; use the 17-character VIN to confirm the individual vehicle.",
-    sourceUrl: "https://www.insauga.com/recall-nearly-8000-vehicles-could-suddenly-lose-power-in-canada/",
+    icon: "🏠",
+    text: "The reported interim instruction for an eligible Seltos AWD is to park outdoors, away from buildings or other vehicles, until the manufacturer remedy is completed.",
+    sourceUrl: "https://autos.yahoo.com/safety-and-recalls/articles/owners-recalled-kia-vehicles-told-182600665.html",
   },
   {
-    icon: "🛞",
-    text: "Motor Illustrated reports 2,160 Canadian 2021–2025 Mercedes-Benz S-Class and Maybach S-Class vehicles are affected by a front brake-hose campaign.",
-    sourceUrl: "https://motorillustrated.com/mercedes-benz-recalls-more-than-30000-s-class-sedans-over-brake-issue/199143/",
+    icon: "💡",
+    text: "Driving.ca’s U.S. Ford LED-headlamp report names 2025–2027 Expedition and 2026 F-250 through F-550 vehicles; the F-150 is not in that reported scope.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/ford-expedition-hd-trucks-recall-led-headlight-issue-failure",
+  },
+  {
+    icon: "🧾",
+    text: "At the source’s publication, Transport Canada had not made a counterpart Ford campaign public—so the correct Canadian shop action is a VIN check, not an assumption.",
+    sourceUrl: "https://driving.ca/auto-news/driver-info/ford-expedition-hd-trucks-recall-led-headlight-issue-failure",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Make the Recall Intake a One-Minute Record",
-  text: "For every campaign question, record the exact VIN, customer concern, live Canadian campaign result, current manufacturer instruction and referral destination. Then separately authorize any non-campaign diagnostic or repair work. This simple intake distinguishes a safety notice from the repair order you actually own.",
+  title: "Use a Five-Field Bulletin Record",
+  text: "For every campaign or production headline, record the source country, exact VIN, live Canadian campaign result, current manufacturer instruction and separate authorization for non-campaign work. This one-minute record prevents a U.S. alert, a bargaining update or an owner direction from being mistaken for a repair order you actually own.",
 };
 
 const quoteOfTheDay = {
-  text: "The fix had not yet been identified or finalized.",
-  author: "The Car Guide",
-  title: "Volkswagen ID.4 Canadian Recall — October 13, 2026",
+  text: "A strike authorization gives the bargaining committee the authority to call a strike if necessary, it does not automatically mean a strike will take place.",
+  author: "Unifor Bargaining Committee",
+  title: "Statement carried by The Canadian Press — October 16, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Chevrolet Chevelle SS 454 LS6 — Cranberry Red, Ontario-Plated",
-  description: "Cranberry Red paint, a black cowl-induction hood and big-block presence make this 1970 Chevrolet Chevelle SS 454 LS6 a Sunday shop feature. Its reminder suits today’s files: identify the exact vehicle, verify the active instruction and separate the campaign from the work you are actually authorized to perform.",
+  name: "1970 AMC AMX 390 — Big Bad Blue, Ontario-Plated",
+  description: "Big Bad Blue paint, a white cabin and compact 390-powered muscle give this 1970 AMC AMX its Monday presence. Its reminder fits today’s files: establish the exact vehicle, check the record that applies in Canada and never let a broad headline replace a documented repair decision.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["ID.4: 80%", "Canadian VIN", "Brake Referral", "'70 Chevelle"].map((tag) => (
+                {["Vote ≠ Strike", "Seltos AWD", "Canadian VIN", "'70 AMX"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Sunday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Advisor Verifying an EV Recall Instruction — Baywash Daily Briefing Edition No. 143"
+              alt="Canadian Automotive Shop Advisor Checking Documented Part Availability — Baywash Daily Briefing Edition No. 144"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 143 — Sunday, October 18, 2026 — ID.4: 80% / Canadian VIN / Brake Referral</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 144 — Monday, October 19, 2026 — Vote ≠ Strike / Seltos AWD / Canadian VIN</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Sunday Check: Respect the Interim Instruction, Then Verify the VIN
+                Monday Check: Follow the Specific Record, Not the Broad Headline
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Chevrolet Chevelle SS</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 AMC AMX 390</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
