@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 144;
-const BRIEFING_DATE = "October 19, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 145;
+const BRIEFING_DATE = "October 20, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GNwLLVFnPBnJRzCQ.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/oChfKjvqjoNvVmlq.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/pVlbDEUXAlOUxtyd.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NSbdYtFXTDIVJoSD.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/HwCRpVMQWjqKICEs.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PKirXaTnihmDUkUj.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PWgdxowbUnjzfBnZ.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xxtvwTdXHzmdgKcv.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wQtBnuqjwUOHWbny.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EgUhdXuWtfZKJJVc.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "STELLANTIS / STRIKE VOTE / NO AUTOMATIC STRIKE / CHECK FACTS",
+    tag: "STELLANTIS / 97.3% MANDATE / NO BOARD / NOT LEGAL NOW",
     tagColor: "#b91c1c",
-    headline: "Stellantis Vote: A Mandate Is Leverage, Not a Parts-Outage Notice",
-    summary: "Canadian Press reporting says Unifor held weekend strike-authorization votes for more than 9,000 Canadian Stellantis workers and planned to release results at the start of the week. The prior agreement expired September 20 and bargaining was reported stalled over job security and the idled Brampton plant. The union says a strike authorization gives its bargaining committee authority to call a strike if necessary; it does not automatically mean a strike will take place.",
-    whyItMatters: "Use this as a sourcing-and-customer-communication watch, not a reason to declare a strike, lockout, settlement or parts outage. Quote the specific vehicle and part number in front of you, confirm distributor stock and written ETA, and update customers only on a documented order change. The Brampton Roshel MOU remains a potential sale—not a completed transaction, restart or parts forecast.",
-    source: "The Canadian Press / BNN Bloomberg — Stellantis Strike-Authorization Vote",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/economics/2026/10/16/stellantis-workers-set-to-vote-on-potential-strike-action-this-weekend/",
+    headline: "Stellantis Strike Mandate: Confirmed Vote, No Legal Job Action Yet",
+    summary: "Unifor says 97.3% of participating Stellantis members voted October 17–18 in favour of authorizing strike action if needed after September bargaining reached an impasse. CBC reports the affected workforce is in Windsor, Toronto and the idled Brampton plant. Unifor also says neither side has requested a No Board report, so the union is not in a legal strike position at this time; Stellantis told CBC it remains prepared to bargain in good faith.",
+    whyItMatters: "A mandate is confirmed, but it is not a confirmed strike, lockout, work stoppage, settlement, legal strike date, plant restart or parts outage. Do not add a blanket customer surcharge or make a sweeping parts prediction. Quote the exact vehicle and SKU, confirm actual distributor stock plus written ETA, and update customers only if their specific order changes.",
+    source: "Unifor / CBC — Stellantis Strike Mandate",
+    sourceUrl: "https://www.unifor.org/news/all-news/unifor-members-stellantis-deliver-overwhelming-strike-mandate",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "KIA SELTOS / AWD ONLY / PARK OUTSIDE / VIN FIRST",
+    tag: "AXANZO / PROPOSED MERGER / CURRENT BRANDS / NO SWITCH YET",
     tagColor: "#0369a1",
-    headline: "Kia Seltos AWD: Treat the Park-Outside Direction as a VIN-Specific Handoff",
-    summary: "Yahoo Autos, citing Transport Canada and 604 Now, reports a Canadian campaign covering more than 48,000 model-year 2024–2026 Kia Seltos AWD vehicles. The report says salt and moisture can contaminate the 4WD control unit beneath the driver’s seat, leading over time to corrosion and a possible short circuit/fire risk, including when the vehicle is off. It says affected owners are instructed to park outside, away from buildings or other vehicles, until the repair is completed.",
-    whyItMatters: "Do not generalize this instruction to every Seltos, Kia or water-exposure visit. Check the exact Canadian VIN and current manufacturer direction, document the result and refer an eligible vehicle to the campaign remedy. Keep any independent inspection or repair outside the campaign separately diagnosed and authorized; do not promise a campaign repair from a headline.",
-    source: "Yahoo Autos / Transport Canada Reporting — Kia Seltos AWD Campaign",
-    sourceUrl: "https://autos.yahoo.com/safety-and-recalls/articles/owners-recalled-kia-vehicles-told-182600665.html",
+    headline: "Axanzo Name, Future Deal: Keep Today’s Refinish System Exactly Current",
+    summary: "AkzoNobel and Axalta announced that their intended combined company will be called Axanzo after the proposed merger closes. Their October 15 release says both companies will continue to operate independently until closing, expected in early 2027 only after regulatory approvals and customary closing conditions. It also says the name announcement does not change how customers and partners currently work with either company: existing teams, brands and relationships remain in place.",
+    whyItMatters: "Do not pre-emptively change mixing systems, product approvals, repair procedures, supplier orders or refinish estimates based on a future corporate name. Use the paint system, technical data, supplier availability and customer authorization that apply today. Treat any eventual vendor notice as a controlled change: confirm it locally before scheduling a process or product switch.",
+    source: "AkzoNobel / Axalta — Axanzo Naming Announcement",
+    sourceUrl: "https://www.akzonobel.com/en/media/media-releases/akzonobel-and-axalta-to-be-called-axanzo-following-merger",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "FORD LIGHTING / U.S. FILE / CANADIAN VIN CHECK / NO ASSUMPTION",
+    tag: "CCC / US$6.1B PROPOSAL / Q1 2027 TARGET / NO REWRITE",
     tagColor: "#15803d",
-    headline: "Ford LED Headlamp Alert: A U.S. Campaign Is a Canadian VIN Check—Not a Recall Claim",
-    summary: "Driving.ca reports a U.S. Ford campaign for 41,748 vehicles: 2025–2027 Expedition SUVs and 2026 F-250, F-350, F-450 and F-550 trucks. The article says contaminants under an LED chip can lead to daytime running lamp, parking-lamp, high-beam or low-beam failure. At publication, it said Transport Canada had not made a counterpart campaign public; the F-150 is not in the reported U.S. scope.",
-    whyItMatters: "Do not book every Ford truck as a Canadian recall, replace headlights based on a U.S. notice or include the F-150 in this reported scope. Check the actual Canadian VIN in the manufacturer or Transport Canada record, log the result and separately authorize diagnosis of any active lighting concern. Base roadworthiness guidance on the observed condition and applicable law—not a cross-border headline.",
-    source: "Driving.ca — Ford Expedition and HD Truck LED Headlamp Alert",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/ford-expedition-hd-trucks-recall-led-headlight-issue-failure",
+    headline: "CCC Take-Private: A 2027 Transaction Watch, Not a Collision-File Rewrite",
+    summary: "Reuters reports CCC Intelligent Solutions agreed to a US$6.1-billion take-private transaction led by GTCR and including Elliott Investment Management. CCC supplies property-and-casualty claims-management and damage-estimating tools. Reuters says the proposed deal is expected to close in the first quarter of 2027 and is not subject to financing conditions, but it remains a future transaction rather than a completed change to current repair operations.",
+    whyItMatters: "Do not tell insurers, customers or staff that current system access, estimate rules, data permissions, integrations or pricing have changed because of a proposed deal. Preserve today’s approved workflow, document insurer and customer authorization, and act only on an actual platform or insurer notice. A clean file record is more useful than reacting to a transaction headline.",
+    source: "Reuters — CCC Intelligent Solutions Proposed Take-Private",
+    sourceUrl: "https://www.reuters.com/legal/transactional/gtcr-elliott-buy-ccc-intelligent-solutions-61-billion-deal-2026-10-15/",
     image: STORY3_IMG,
   },
 ];
@@ -61,50 +61,50 @@ const stories = [
 const quickHits = [
   {
     icon: "⚙️",
-    text: "The Canadian Press reports more than 9,000 Unifor-represented Stellantis workers voted over the weekend on a strike authorization; a mandate is not an automatic strike.",
-    sourceUrl: "https://www.bnnbloomberg.ca/business/economics/2026/10/16/stellantis-workers-set-to-vote-on-potential-strike-action-this-weekend/",
+    text: "Unifor says 97.3% of participating Stellantis members authorized strike action if needed; the vote is confirmed, not an automatic work stoppage.",
+    sourceUrl: "https://www.unifor.org/news/all-news/unifor-members-stellantis-deliver-overwhelming-strike-mandate",
   },
   {
-    icon: "🏭",
-    text: "The prior Stellantis-Unifor agreement expired September 20; reported bargaining issues include job security and the future of the idled Brampton plant.",
-    sourceUrl: "https://vancouver.citynews.ca/2026/10/17/stellantis-workers-begin-voting-on-strike-mandate-as-talks-remain-stalled/",
+    icon: "⚖️",
+    text: "Unifor says it is not in a legal strike position because neither side has requested the No Board report required as a labour-law step toward job action.",
+    sourceUrl: "https://www.unifor.org/news/all-news/unifor-members-stellantis-deliver-overwhelming-strike-mandate",
   },
   {
-    icon: "🚙",
-    text: "The cited Canadian Kia report applies to more than 48,000 2024–2026 Seltos AWD vehicles—not every Seltos model or Kia vehicle.",
-    sourceUrl: "https://autos.yahoo.com/safety-and-recalls/articles/owners-recalled-kia-vehicles-told-182600665.html",
+    icon: "🎨",
+    text: "AkzoNobel and Axalta say the future combined company will be called Axanzo only after their intended merger closes, expected early 2027 subject to approvals and conditions.",
+    sourceUrl: "https://www.akzonobel.com/en/media/media-releases/akzonobel-and-axalta-to-be-called-axanzo-following-merger",
   },
   {
-    icon: "🏠",
-    text: "The reported interim instruction for an eligible Seltos AWD is to park outdoors, away from buildings or other vehicles, until the manufacturer remedy is completed.",
-    sourceUrl: "https://autos.yahoo.com/safety-and-recalls/articles/owners-recalled-kia-vehicles-told-182600665.html",
+    icon: "🧪",
+    text: "The Axanzo name announcement does not change current customer support: the companies say existing teams, brands and relationships remain in place before closing.",
+    sourceUrl: "https://www.akzonobel.com/en/media/media-releases/akzonobel-and-axalta-to-be-called-axanzo-following-merger",
   },
   {
-    icon: "💡",
-    text: "Driving.ca’s U.S. Ford LED-headlamp report names 2025–2027 Expedition and 2026 F-250 through F-550 vehicles; the F-150 is not in that reported scope.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/ford-expedition-hd-trucks-recall-led-headlight-issue-failure",
+    icon: "💻",
+    text: "Reuters reports CCC’s proposed US$6.1-billion deal targets a first-quarter 2027 close; it is not an instruction to alter a live collision estimate or insurer workflow today.",
+    sourceUrl: "https://www.reuters.com/legal/transactional/gtcr-elliott-buy-ccc-intelligent-solutions-61-billion-deal-2026-10-15/",
   },
   {
-    icon: "🧾",
-    text: "At the source’s publication, Transport Canada had not made a counterpart Ford campaign public—so the correct Canadian shop action is a VIN check, not an assumption.",
-    sourceUrl: "https://driving.ca/auto-news/driver-info/ford-expedition-hd-trucks-recall-led-headlight-issue-failure",
+    icon: "🏢",
+    text: "Collision Repair magazine reports AutoCanada operates 40 ACX collision centres and is reviewing the division—an industry watch, not a reported operating change for independent shops.",
+    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/market-trends/article/15837849/ppg-tuesday-ticker-canadian-auto-sector-consolidation-growth-news",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Use a Five-Field Bulletin Record",
-  text: "For every campaign or production headline, record the source country, exact VIN, live Canadian campaign result, current manufacturer instruction and separate authorization for non-campaign work. This one-minute record prevents a U.S. alert, a bargaining update or an owner direction from being mistaken for a repair order you actually own.",
+  title: "Turn External News into a Controlled Change Log",
+  text: "When a labour, vendor or platform headline arrives, log five things: source and date, service or product affected, an actual provider notice, customer or insurer impact and the owner of the next decision. Keep current workflow in place until that record supports a specific change. This separates a transaction or mandate from the repair file you actually own.",
 };
 
 const quoteOfTheDay = {
-  text: "A strike authorization gives the bargaining committee the authority to call a strike if necessary, it does not automatically mean a strike will take place.",
-  author: "Unifor Bargaining Committee",
-  title: "Statement carried by The Canadian Press — October 16, 2026",
+  text: "The union is not in a legal strike position at this time as neither Stellantis nor Unifor has requested a ‘No Board’ report.",
+  author: "Unifor",
+  title: "Stellantis Strike-Mandate Update — October 19, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 AMC AMX 390 — Big Bad Blue, Ontario-Plated",
-  description: "Big Bad Blue paint, a white cabin and compact 390-powered muscle give this 1970 AMC AMX its Monday presence. Its reminder fits today’s files: establish the exact vehicle, check the record that applies in Canada and never let a broad headline replace a documented repair decision.",
+  name: "1969 Mercury Cougar Eliminator 428 Cobra Jet — Competition Orange, Ontario-Plated",
+  description: "Competition Orange paint, black Eliminator-style hood striping and 428 Cobra Jet presence make this 1969 Mercury Cougar Eliminator a Tuesday shop feature. Its reminder fits today’s files: keep the equipment and process in front of you current until a documented change—not a future headline—requires action.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Vote ≠ Strike", "Seltos AWD", "Canadian VIN", "'70 AMX"].map((tag) => (
+                {["97.3% Mandate", "No Board", "Current Systems", "'69 Cougar"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Automotive Shop Advisor Checking Documented Part Availability — Baywash Daily Briefing Edition No. 144"
+              alt="Canadian Collision Shop Estimator Reviewing Current Refinish Process — Baywash Daily Briefing Edition No. 145"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 144 — Monday, October 19, 2026 — Vote ≠ Strike / Seltos AWD / Canadian VIN</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 145 — Tuesday, October 20, 2026 — 97.3% Mandate / Current Systems / No Board</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Monday Check: Follow the Specific Record, Not the Broad Headline
+                Tuesday Check: Keep Today’s System Current Until the Notice Changes
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 AMC AMX 390</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Mercury Cougar Eliminator</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
