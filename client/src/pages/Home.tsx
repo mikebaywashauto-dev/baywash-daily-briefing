@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 145;
-const BRIEFING_DATE = "October 20, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 146;
+const BRIEFING_DATE = "October 21, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PKirXaTnihmDUkUj.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/PWgdxowbUnjzfBnZ.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xxtvwTdXHzmdgKcv.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wQtBnuqjwUOHWbny.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/EgUhdXuWtfZKJJVc.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/INPEfLcXpBmefVnj.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LwZCfIxvWhHgpUiN.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NBdNsnDLdAtYTkFv.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SHuOwqaaAUpkJmUE.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wKzEflmBdekZOLOw.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "STELLANTIS / 97.3% MANDATE / NO BOARD / NOT LEGAL NOW",
+    tag: "TRANSPORT CANADA / 2024 DATA / SAFETY RECORDS / NOT A FORECAST",
     tagColor: "#b91c1c",
-    headline: "Stellantis Strike Mandate: Confirmed Vote, No Legal Job Action Yet",
-    summary: "Unifor says 97.3% of participating Stellantis members voted October 17–18 in favour of authorizing strike action if needed after September bargaining reached an impasse. CBC reports the affected workforce is in Windsor, Toronto and the idled Brampton plant. Unifor also says neither side has requested a No Board report, so the union is not in a legal strike position at this time; Stellantis told CBC it remains prepared to bargain in good faith.",
-    whyItMatters: "A mandate is confirmed, but it is not a confirmed strike, lockout, work stoppage, settlement, legal strike date, plant restart or parts outage. Do not add a blanket customer surcharge or make a sweeping parts prediction. Quote the exact vehicle and SKU, confirm actual distributor stock plus written ETA, and update customers only if their specific order changes.",
-    source: "Unifor / CBC — Stellantis Strike Mandate",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-members-stellantis-deliver-overwhelming-strike-mandate",
+    headline: "New Collision Data: Strengthen Safety Records—Don’t Treat It as a Demand Forecast",
+    summary: "Transport Canada updated its Canadian Motor Vehicle Traffic Collision Statistics: 2024 on October 20. Its National Collision Database reports 2,050 fatalities, 9,357 serious injuries and 130,551 total injuries in 2024—up 2.5%, 2.7% and 5.5% respectively from 2023. The department notes Ontario and Alberta data are preliminary, New Brunswick data are estimated and a Manitoba reporting change captured more minimal injuries.",
+    whyItMatters: "Use the national data as a safety-readiness reminder, not as a prediction of your shop’s collision volume, revenue or insurer work. Keep every repair tied to the actual vehicle: documented condition, applicable procedure, scan/calibration decision, road-test result and customer authorization. A national statistic never replaces the specific repair record in front of you.",
+    source: "Transport Canada — Canadian Motor Vehicle Traffic Collision Statistics: 2024",
+    sourceUrl: "https://tc.canada.ca/en/road-transportation/statistics-data/canadian-motor-vehicle-traffic-collision-statistics/2024/canadian-motor-vehicle-traffic-collision-statistics-2024",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "AXANZO / PROPOSED MERGER / CURRENT BRANDS / NO SWITCH YET",
+    tag: "UNIMOTOR / 18-MONTH MOVE / HVAC MOTORS / SKU FIRST",
     tagColor: "#0369a1",
-    headline: "Axanzo Name, Future Deal: Keep Today’s Refinish System Exactly Current",
-    summary: "AkzoNobel and Axalta announced that their intended combined company will be called Axanzo after the proposed merger closes. Their October 15 release says both companies will continue to operate independently until closing, expected in early 2027 only after regulatory approvals and customary closing conditions. It also says the name announcement does not change how customers and partners currently work with either company: existing teams, brands and relationships remain in place.",
-    whyItMatters: "Do not pre-emptively change mixing systems, product approvals, repair procedures, supplier orders or refinish estimates based on a future corporate name. Use the paint system, technical data, supplier availability and customer authorization that apply today. Treat any eventual vendor notice as a controlled change: confirm it locally before scheduling a process or product switch.",
-    source: "AkzoNobel / Axalta — Axanzo Naming Announcement",
-    sourceUrl: "https://www.akzonobel.com/en/media/media-releases/akzonobel-and-axalta-to-be-called-axanzo-following-merger",
+    headline: "St. Thomas Unimotor: An 18-Month Parts Watch, Not a Shortage Notice",
+    summary: "CBC reports Standard Motor Products plans to reduce production at its St. Thomas, Ontario Unimotor facility and move some work to Reynosa, Mexico within the next 18 months. The company cited ongoing global competitiveness and market pressures—not U.S. tariffs—and said the number of layoffs remains undetermined. CBC says the facility makes blower motors, cooling-fan motors, brushless motors and condenser-fan motors for aftermarket, heavy-equipment and military markets.",
+    whyItMatters: "This is a category-level sourcing watch—not evidence that a particular blower or cooling-fan motor is unavailable, changing price, changing origin or subject to a surcharge. Quote the live part number, distributor stock, warranty terms, written ETA and quote expiry. Keep normal OE, aftermarket, remanufactured and recycled choices grounded in the actual vehicle and SKU.",
+    source: "CBC News — St. Thomas Unimotor Production Change",
+    sourceUrl: "https://www.cbc.ca/news/canada/london/st-thomas-auto-parts-plant-to-cut-production-move-some-work-to-mexico-9.7384399",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CCC / US$6.1B PROPOSAL / Q1 2027 TARGET / NO REWRITE",
+    tag: "CCC BENCHMARK / U.S. DATA / SCAN + CALIBRATION / PROCEDURE FIRST",
     tagColor: "#15803d",
-    headline: "CCC Take-Private: A 2027 Transaction Watch, Not a Collision-File Rewrite",
-    summary: "Reuters reports CCC Intelligent Solutions agreed to a US$6.1-billion take-private transaction led by GTCR and including Elliott Investment Management. CCC supplies property-and-casualty claims-management and damage-estimating tools. Reuters says the proposed deal is expected to close in the first quarter of 2027 and is not subject to financing conditions, but it remains a future transaction rather than a completed change to current repair operations.",
-    whyItMatters: "Do not tell insurers, customers or staff that current system access, estimate rules, data permissions, integrations or pricing have changed because of a proposed deal. Preserve today’s approved workflow, document insurer and customer authorization, and act only on an actual platform or insurer notice. A clean file record is more useful than reacting to a transaction headline.",
-    source: "Reuters — CCC Intelligent Solutions Proposed Take-Private",
-    sourceUrl: "https://www.reuters.com/legal/transactional/gtcr-elliott-buy-ccc-intelligent-solutions-61-billion-deal-2026-10-15/",
+    headline: "CCC Diagnostic Trend: Use a U.S. Benchmark for Intake Discipline, Not a Canadian Rule",
+    summary: "CCC’s October 15 Crash Course 2026 Mid-Year Update says 74.8% of repairable appraisals in its network included a scan and 29.9% included a calibration in Q1 2026, up from 70.9% and 23.3% a year earlier. It also says 83% of scans and 47% of calibrations appeared on the initial estimate. CCC describes its data as aggregate electronic appraisal and total-loss network data, so it is a U.S. industry benchmark—not Canadian claim-volume or insurer-policy data.",
+    whyItMatters: "Identify possible diagnostics and calibrations early, then use the actual vehicle configuration, damage, OEM procedure and local authorization process to decide the work. Do not add operations because a benchmark percentage rose, and do not present U.S. network data as a Canadian legal requirement, insurer instruction or automatic billing authority.",
+    source: "CCC Intelligent Solutions — Crash Course 2026 Mid-Year Update",
+    sourceUrl: "https://www.cccis.com/news-and-insights/posts/crash-course-2026-mid-year-update",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
+    icon: "🛣️",
+    text: "Transport Canada reports 2,050 fatalities, 9,357 serious injuries and 130,551 total injuries in its 2024 national collision dataset; these are safety data, not a shop-demand forecast.",
+    sourceUrl: "https://tc.canada.ca/en/road-transportation/statistics-data/canadian-motor-vehicle-traffic-collision-statistics/2024/canadian-motor-vehicle-traffic-collision-statistics-2024",
+  },
+  {
+    icon: "📊",
+    text: "The department says Ontario and Alberta data are preliminary, New Brunswick data are estimated, and a Manitoba reporting change captured more minimal injuries in 2024.",
+    sourceUrl: "https://tc.canada.ca/en/road-transportation/statistics-data/canadian-motor-vehicle-traffic-collision-statistics/2024/canadian-motor-vehicle-traffic-collision-statistics-2024",
+  },
+  {
     icon: "⚙️",
-    text: "Unifor says 97.3% of participating Stellantis members authorized strike action if needed; the vote is confirmed, not an automatic work stoppage.",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-members-stellantis-deliver-overwhelming-strike-mandate",
+    text: "CBC reports SMP will move some St. Thomas Unimotor work to Mexico within 18 months; the company says affected job numbers remain undetermined.",
+    sourceUrl: "https://www.cbc.ca/news/canada/london/st-thomas-auto-parts-plant-to-cut-production-move-some-work-to-mexico-9.7384399",
   },
   {
-    icon: "⚖️",
-    text: "Unifor says it is not in a legal strike position because neither side has requested the No Board report required as a labour-law step toward job action.",
-    sourceUrl: "https://www.unifor.org/news/all-news/unifor-members-stellantis-deliver-overwhelming-strike-mandate",
+    icon: "🌬️",
+    text: "The St. Thomas facility makes blower, cooling-fan, brushless and condenser-fan motors for several markets. Confirm availability by exact part number rather than infer a broad disruption.",
+    sourceUrl: "https://www.cbc.ca/news/canada/london/st-thomas-auto-parts-plant-to-cut-production-move-some-work-to-mexico-9.7384399",
   },
   {
-    icon: "🎨",
-    text: "AkzoNobel and Axalta say the future combined company will be called Axanzo only after their intended merger closes, expected early 2027 subject to approvals and conditions.",
-    sourceUrl: "https://www.akzonobel.com/en/media/media-releases/akzonobel-and-axalta-to-be-called-axanzo-following-merger",
+    icon: "🖥️",
+    text: "CCC reports 74.8% of Q1 repairable appraisals in its network included a scan and 29.9% a calibration—useful U.S. benchmark data, not Canadian authorization rules.",
+    sourceUrl: "https://www.cccis.com/news-and-insights/posts/crash-course-2026-mid-year-update",
   },
   {
-    icon: "🧪",
-    text: "The Axanzo name announcement does not change current customer support: the companies say existing teams, brands and relationships remain in place before closing.",
-    sourceUrl: "https://www.akzonobel.com/en/media/media-releases/akzonobel-and-axalta-to-be-called-axanzo-following-merger",
-  },
-  {
-    icon: "💻",
-    text: "Reuters reports CCC’s proposed US$6.1-billion deal targets a first-quarter 2027 close; it is not an instruction to alter a live collision estimate or insurer workflow today.",
-    sourceUrl: "https://www.reuters.com/legal/transactional/gtcr-elliott-buy-ccc-intelligent-solutions-61-billion-deal-2026-10-15/",
-  },
-  {
-    icon: "🏢",
-    text: "Collision Repair magazine reports AutoCanada operates 40 ACX collision centres and is reviewing the division—an industry watch, not a reported operating change for independent shops.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/collision-repair/market-trends/article/15837849/ppg-tuesday-ticker-canadian-auto-sector-consolidation-growth-news",
+    icon: "📋",
+    text: "CCC says 83% of scans and 47% of calibrations appeared on the initial estimate. The shop action is early procedure review, not automatic addition of an operation.",
+    sourceUrl: "https://www.cccis.com/news-and-insights/posts/crash-course-2026-mid-year-update",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Turn External News into a Controlled Change Log",
-  text: "When a labour, vendor or platform headline arrives, log five things: source and date, service or product affected, an actual provider notice, customer or insurer impact and the owner of the next decision. Keep current workflow in place until that record supports a specific change. This separates a transaction or mandate from the repair file you actually own.",
+  title: "Build a Repair-Readiness Record at Intake",
+  text: "For each collision file, record the exact vehicle, observed damage, applicable OEM procedure, required scan or calibration, approval path and road-test or release notes. That record helps you act on the car in front of you—not on a national statistic, a part-industry headline or a U.S. benchmark.",
 };
 
 const quoteOfTheDay = {
-  text: "The union is not in a legal strike position at this time as neither Stellantis nor Unifor has requested a ‘No Board’ report.",
-  author: "Unifor",
-  title: "Stellantis Strike-Mandate Update — October 19, 2026",
+  text: "The year 2024 saw increases in the number of fatalities, serious injuries, and total injuries compared to 2023.",
+  author: "Transport Canada",
+  title: "Canadian Motor Vehicle Traffic Collision Statistics: 2024 — Updated October 20, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1969 Mercury Cougar Eliminator 428 Cobra Jet — Competition Orange, Ontario-Plated",
-  description: "Competition Orange paint, black Eliminator-style hood striping and 428 Cobra Jet presence make this 1969 Mercury Cougar Eliminator a Tuesday shop feature. Its reminder fits today’s files: keep the equipment and process in front of you current until a documented change—not a future headline—requires action.",
+  name: "1970 Buick GSX Stage 1 — Saturn Yellow, Ontario-Plated",
+  description: "Saturn Yellow paint, black hood striping and a hood-mounted tach give this 1970 Buick GSX Stage 1 its Wednesday authority. Its reminder fits today’s files: every vehicle needs its own documented condition, procedure and release decision—not a shortcut built from a broad trend.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["97.3% Mandate", "No Board", "Current Systems", "'69 Cougar"].map((tag) => (
+                {["Safety Records", "SKU First", "Procedure First", "'70 GSX"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Collision Shop Estimator Reviewing Current Refinish Process — Baywash Daily Briefing Edition No. 145"
+              alt="Canadian Collision Shop Team Reviewing Documented Repair Readiness — Baywash Daily Briefing Edition No. 146"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 145 — Tuesday, October 20, 2026 — 97.3% Mandate / Current Systems / No Board</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 146 — Wednesday, October 21, 2026 — Safety Records / SKU First / Procedure First</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Tuesday Check: Keep Today’s System Current Until the Notice Changes
+                Wednesday Check: Work the Exact Vehicle, SKU and Procedure in Front of You
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '69 Mercury Cougar Eliminator</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Buick GSX Stage 1</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
