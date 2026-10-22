@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 146;
-const BRIEFING_DATE = "October 21, 2026";
-const BRIEFING_DAY = "Wednesday";
+const BRIEFING_NUMBER = 147;
+const BRIEFING_DATE = "October 22, 2026";
+const BRIEFING_DAY = "Thursday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/INPEfLcXpBmefVnj.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/LwZCfIxvWhHgpUiN.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NBdNsnDLdAtYTkFv.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SHuOwqaaAUpkJmUE.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wKzEflmBdekZOLOw.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bRbLpazVMRYeMJAf.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NSbmQaXcudKQNSSw.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XmFkrYMswjtbTYxG.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NbxpWjDolYWLKSHa.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/yJcmVXjPulPeBXTm.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "TRANSPORT CANADA / 2024 DATA / SAFETY RECORDS / NOT A FORECAST",
+    tag: "C$2.5B / CAPITAL PROJECTS / TWO YEARS / NOT A SHOP GRANT",
     tagColor: "#b91c1c",
-    headline: "New Collision Data: Strengthen Safety Records—Don’t Treat It as a Demand Forecast",
-    summary: "Transport Canada updated its Canadian Motor Vehicle Traffic Collision Statistics: 2024 on October 20. Its National Collision Database reports 2,050 fatalities, 9,357 serious injuries and 130,551 total injuries in 2024—up 2.5%, 2.7% and 5.5% respectively from 2023. The department notes Ontario and Alberta data are preliminary, New Brunswick data are estimated and a Manitoba reporting change captured more minimal injuries.",
-    whyItMatters: "Use the national data as a safety-readiness reminder, not as a prediction of your shop’s collision volume, revenue or insurer work. Keep every repair tied to the actual vehicle: documented condition, applicable procedure, scan/calibration decision, road-test result and customer authorization. A national statistic never replaces the specific repair record in front of you.",
-    source: "Transport Canada — Canadian Motor Vehicle Traffic Collision Statistics: 2024",
-    sourceUrl: "https://tc.canada.ca/en/road-transportation/statistics-data/canadian-motor-vehicle-traffic-collision-statistics/2024/canadian-motor-vehicle-traffic-collision-statistics-2024",
+    headline: "Ontario Auto Package: Major Capital Support, Not an Instant Shop Program",
+    summary: "Canada and Ontario announced October 21 that they will invest an additional C$2.5 billion over two years in large-scale automotive capital projects—up to C$1.5 billion federal and up to C$1 billion provincial. The official backgrounder says the funding is intended to help automotive companies adapt to economic conditions, strengthen competitiveness and support jobs across the supply chain while building connected and electrified vehicles.",
+    whyItMatters: "This is a policy and manufacturing-capital watch, not a direct repair-shop grant, immediate parts subsidy, price change or vehicle-availability promise. Keep sourcing, customer quotes, training and diagnostic planning tied to the VIN, the part number and actual program/provider documentation. Do not alter a customer file because a capital announcement has been made.",
+    source: "Government of Canada — Ontario Auto Action Plan Backgrounder",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "UNIMOTOR / 18-MONTH MOVE / HVAC MOTORS / SKU FIRST",
+    tag: "FLEET STANDARD / 2026 LEVELS / THROUGH 2029 / NO REPAIR CHANGE",
     tagColor: "#0369a1",
-    headline: "St. Thomas Unimotor: An 18-Month Parts Watch, Not a Shortage Notice",
-    summary: "CBC reports Standard Motor Products plans to reduce production at its St. Thomas, Ontario Unimotor facility and move some work to Reynosa, Mexico within the next 18 months. The company cited ongoing global competitiveness and market pressures—not U.S. tariffs—and said the number of layoffs remains undetermined. CBC says the facility makes blower motors, cooling-fan motors, brushless motors and condenser-fan motors for aftermarket, heavy-equipment and military markets.",
-    whyItMatters: "This is a category-level sourcing watch—not evidence that a particular blower or cooling-fan motor is unavailable, changing price, changing origin or subject to a surcharge. Quote the live part number, distributor stock, warranty terms, written ETA and quote expiry. Keep normal OE, aftermarket, remanufactured and recycled choices grounded in the actual vehicle and SKU.",
-    source: "CBC News — St. Thomas Unimotor Production Change",
-    sourceUrl: "https://www.cbc.ca/news/canada/london/st-thomas-auto-parts-plant-to-cut-production-move-some-work-to-mexico-9.7384399",
+    headline: "Fleet Standard Timing Shifts: Keep Service Decisions Vehicle-Specific",
+    summary: "The same federal-provincial announcement says Canada’s light-duty fleet-average greenhouse-gas performance standard will remain at 2026 levels of 172 grams per mile through 2029; annual increases resume in the 2030 model year. Ottawa says the change provides manufacturers near-term flexibility during trade-related pressures while allowing credits to be generated for later use.",
+    whyItMatters: "A fleet-average policy adjustment is not an individual vehicle exemption, an end to regulations, or a new repair procedure. It does not change the software, service information, recall status, parts requirement or diagnostic need of the vehicle in your bay. Continue following the applicable OEM procedure and documented customer or payer authorization.",
+    source: "Government of Canada — Light-Duty Fleet Standard Measure",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CCC BENCHMARK / U.S. DATA / SCAN + CALIBRATION / PROCEDURE FIRST",
+    tag: "CCS PRECISION / EVIDENCE-BACKED ESTIMATES / DOCUMENT THE WHY",
     tagColor: "#15803d",
-    headline: "CCC Diagnostic Trend: Use a U.S. Benchmark for Intake Discipline, Not a Canadian Rule",
-    summary: "CCC’s October 15 Crash Course 2026 Mid-Year Update says 74.8% of repairable appraisals in its network included a scan and 29.9% included a calibration in Q1 2026, up from 70.9% and 23.3% a year earlier. It also says 83% of scans and 47% of calibrations appeared on the initial estimate. CCC describes its data as aggregate electronic appraisal and total-loss network data, so it is a U.S. industry benchmark—not Canadian claim-volume or insurer-policy data.",
-    whyItMatters: "Identify possible diagnostics and calibrations early, then use the actual vehicle configuration, damage, OEM procedure and local authorization process to decide the work. Do not add operations because a benchmark percentage rose, and do not present U.S. network data as a Canadian legal requirement, insurer instruction or automatic billing authority.",
-    source: "CCC Intelligent Solutions — Crash Course 2026 Mid-Year Update",
-    sourceUrl: "https://www.cccis.com/news-and-insights/posts/crash-course-2026-mid-year-update",
+    headline: "Collision Quality Conference: Make Clear Evidence the Backbone of Every Estimate",
+    summary: "Collision Repair magazine’s October 21 coverage of the CCS Precision 2026 conference in Niagara Falls highlighted estimating accuracy, repair documentation, workforce development and consistent repair quality. The article says a Mitchell International presentation stressed that estimates should be logical, accurate and supported by clear evidence; photographs and documents should establish accident circumstances and support why recommended repairs are necessary.",
+    whyItMatters: "Build the repair file so the next technician, customer and payer can understand it: clear photos, observed damage, vehicle configuration, applicable repair information, logical estimate and approvals. One speaker’s forward-looking consolidation comment is an opinion—not an industry forecast, insurer rule or instruction for your business. Focus on the file discipline you control today.",
+    source: "Collision Repair Magazine — CCS Precision 2026 Conference",
+    sourceUrl: "https://www.collisionrepairmag.com/events/article/15838113/precision-in-collision-repair-industry-conference-highlights",
     image: STORY3_IMG,
   },
 ];
 
 const quickHits = [
   {
-    icon: "🛣️",
-    text: "Transport Canada reports 2,050 fatalities, 9,357 serious injuries and 130,551 total injuries in its 2024 national collision dataset; these are safety data, not a shop-demand forecast.",
-    sourceUrl: "https://tc.canada.ca/en/road-transportation/statistics-data/canadian-motor-vehicle-traffic-collision-statistics/2024/canadian-motor-vehicle-traffic-collision-statistics-2024",
+    icon: "🏗️",
+    text: "The additional C$2.5 billion is set for large-scale automotive capital projects over two years, with up to C$1.5 billion federal and up to C$1 billion provincial support.",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
   },
   {
-    icon: "📊",
-    text: "The department says Ontario and Alberta data are preliminary, New Brunswick data are estimated, and a Manitoba reporting change captured more minimal injuries in 2024.",
-    sourceUrl: "https://tc.canada.ca/en/road-transportation/statistics-data/canadian-motor-vehicle-traffic-collision-statistics/2024/canadian-motor-vehicle-traffic-collision-statistics-2024",
+    icon: "🔋",
+    text: "Canada says the light-duty fleet-average performance standard stays at the 2026 level through 2029, with annual increases resuming in the 2030 model year.",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
+  },
+  {
+    icon: "🤝",
+    text: "A Canada–Ontario Automotive Task Force will oversee the policy measures. Its creation is not a new repair-shop program or a new customer service requirement.",
+    sourceUrl: "https://news.ontario.ca/en/backgrounder/1008172/premier-ford-and-prime-minister-carney-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries",
+  },
+  {
+    icon: "📷",
+    text: "CCS Precision programming emphasized logical, accurate estimates supported by clear evidence—use photos and documents to show why a recommended repair is necessary.",
+    sourceUrl: "https://www.collisionrepairmag.com/events/article/15838113/precision-in-collision-repair-industry-conference-highlights",
+  },
+  {
+    icon: "🎓",
+    text: "I-CAR Canada and the Database Enhancement Gateway appeared in the CCS conference programming, reinforcing training and information resources rather than a new mandated workflow.",
+    sourceUrl: "https://www.collisionrepairmag.com/events/article/15838113/precision-in-collision-repair-industry-conference-highlights",
   },
   {
     icon: "⚙️",
-    text: "CBC reports SMP will move some St. Thomas Unimotor work to Mexico within 18 months; the company says affected job numbers remain undetermined.",
+    text: "St. Thomas Unimotor remains an 18-month category sourcing watch. Confirm stock, ETA, warranty and price by exact HVAC-motor part number before advising a customer.",
     sourceUrl: "https://www.cbc.ca/news/canada/london/st-thomas-auto-parts-plant-to-cut-production-move-some-work-to-mexico-9.7384399",
-  },
-  {
-    icon: "🌬️",
-    text: "The St. Thomas facility makes blower, cooling-fan, brushless and condenser-fan motors for several markets. Confirm availability by exact part number rather than infer a broad disruption.",
-    sourceUrl: "https://www.cbc.ca/news/canada/london/st-thomas-auto-parts-plant-to-cut-production-move-some-work-to-mexico-9.7384399",
-  },
-  {
-    icon: "🖥️",
-    text: "CCC reports 74.8% of Q1 repairable appraisals in its network included a scan and 29.9% a calibration—useful U.S. benchmark data, not Canadian authorization rules.",
-    sourceUrl: "https://www.cccis.com/news-and-insights/posts/crash-course-2026-mid-year-update",
-  },
-  {
-    icon: "📋",
-    text: "CCC says 83% of scans and 47% of calibrations appeared on the initial estimate. The shop action is early procedure review, not automatic addition of an operation.",
-    sourceUrl: "https://www.cccis.com/news-and-insights/posts/crash-course-2026-mid-year-update",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Build a Repair-Readiness Record at Intake",
-  text: "For each collision file, record the exact vehicle, observed damage, applicable OEM procedure, required scan or calibration, approval path and road-test or release notes. That record helps you act on the car in front of you—not on a national statistic, a part-industry headline or a U.S. benchmark.",
+  title: "Give Every Estimate a Documentation Spine",
+  text: "Build four anchors into every collision file: before-and-after photos, a vehicle-specific procedure reference, diagnostic or calibration record, and signed authorization/release. Make the estimate intelligible to the next technician, the customer and the payer—without relying on a policy headline or conference sound bite.",
 };
 
 const quoteOfTheDay = {
-  text: "The year 2024 saw increases in the number of fatalities, serious injuries, and total injuries compared to 2023.",
-  author: "Transport Canada",
-  title: "Canadian Motor Vehicle Traffic Collision Statistics: 2024 — Updated October 20, 2026",
+  text: "The Government of Canada and the Government of Ontario are investing an additional $2.5 billion over two years in large-scale automotive capital projects.",
+  author: "Government of Canada",
+  title: "Ontario Auto Action Plan Backgrounder — October 21, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Buick GSX Stage 1 — Saturn Yellow, Ontario-Plated",
-  description: "Saturn Yellow paint, black hood striping and a hood-mounted tach give this 1970 Buick GSX Stage 1 its Wednesday authority. Its reminder fits today’s files: every vehicle needs its own documented condition, procedure and release decision—not a shortcut built from a broad trend.",
+  name: "1970 Dodge Coronet R/T 440 Six Pack — FJ6 Green Go, Ontario-Plated",
+  description: "FJ6 Green Go paint, a period-correct hood scoop and 440 Six Pack muscle make this 1970 Dodge Coronet R/T a Thursday shop feature. Its reminder is simple: show the work, document the why and keep each repair decision anchored to the exact vehicle—not a broad policy headline.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Safety Records", "SKU First", "Procedure First", "'70 GSX"].map((tag) => (
+                {["Capital Watch", "VIN First", "Document the Why", "'70 Coronet"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Collision Shop Team Reviewing Documented Repair Readiness — Baywash Daily Briefing Edition No. 146"
+              alt="Canadian Collision Shop Team Reviewing a Vehicle-Specific Repair File — Baywash Daily Briefing Edition No. 147"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 146 — Wednesday, October 21, 2026 — Safety Records / SKU First / Procedure First</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 147 — Thursday, October 22, 2026 — Capital Watch / VIN First / Document the Why</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Wednesday Check: Work the Exact Vehicle, SKU and Procedure in Front of You
+                Thursday Check: Treat Policy Headlines as a Watch—Then Document the Exact Repair
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Buick GSX Stage 1</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Dodge Coronet R/T</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
