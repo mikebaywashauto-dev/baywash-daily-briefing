@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 147;
-const BRIEFING_DATE = "October 22, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 148;
+const BRIEFING_DATE = "October 23, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/bRbLpazVMRYeMJAf.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NSbmQaXcudKQNSSw.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XmFkrYMswjtbTYxG.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/NbxpWjDolYWLKSHa.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/yJcmVXjPulPeBXTm.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZcTyYqCjqsTxXESI.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TwMmyvqaNWfnBaLW.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zJqwpRJlGPnhcvTV.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wXETniVeeQmODqLV.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iuLORtOJMSiDkDHO.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "C$2.5B / CAPITAL PROJECTS / TWO YEARS / NOT A SHOP GRANT",
+    tag: "H1 2026 / 28.4% U.S.-BUILT / NEW-VEHICLE SALES / MIX WATCH",
     tagColor: "#b91c1c",
-    headline: "Ontario Auto Package: Major Capital Support, Not an Instant Shop Program",
-    summary: "Canada and Ontario announced October 21 that they will invest an additional C$2.5 billion over two years in large-scale automotive capital projects—up to C$1.5 billion federal and up to C$1 billion provincial. The official backgrounder says the funding is intended to help automotive companies adapt to economic conditions, strengthen competitiveness and support jobs across the supply chain while building connected and electrified vehicles.",
-    whyItMatters: "This is a policy and manufacturing-capital watch, not a direct repair-shop grant, immediate parts subsidy, price change or vehicle-availability promise. Keep sourcing, customer quotes, training and diagnostic planning tied to the VIN, the part number and actual program/provider documentation. Do not alter a customer file because a capital announcement has been made.",
-    source: "Government of Canada — Ontario Auto Action Plan Backgrounder",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
+    headline: "Canadian New-Vehicle Mix Shifts: Plan Coverage by VIN, Not Assumption",
+    summary: "The Detroit Free Press, citing J.D. Power Canada data, reports that U.S.-built vehicles made up 28.4% of Canadian new-vehicle sales in the first half of 2026, down from 35.4% in the first half of 2025. The report says vehicles built in duty-free Mexico and Japan have taken a larger share. This is a new-vehicle sales-mix measure—not the Canadian service parc, individual vehicle origin, repair demand or parts availability.",
+    whyItMatters: "Use the trend as a coverage-planning prompt: review the actual VINs arriving in your bays, commonly needed service information, diagnostic capability and confirmed supplier options. Do not infer an immediate parts shortage, tariff charge, price move or repair-volume change from a national sales-share statistic. Confirm build, configuration, procedure and part number for each job.",
+    source: "Detroit Free Press — J.D. Power Canada Sales-Mix Reporting",
+    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/10/22/u-s-made-vehicle-sales-fall-to-new-low-in-canada-what-details-show/92330174007/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "FLEET STANDARD / 2026 LEVELS / THROUGH 2029 / NO REPAIR CHANGE",
+    tag: "2025–30 FORECAST / FOREIGN NAMEPLATES / U.S. DATA / COVERAGE CHECK",
     tagColor: "#0369a1",
-    headline: "Fleet Standard Timing Shifts: Keep Service Decisions Vehicle-Specific",
-    summary: "The same federal-provincial announcement says Canada’s light-duty fleet-average greenhouse-gas performance standard will remain at 2026 levels of 172 grams per mile through 2029; annual increases resume in the 2030 model year. Ottawa says the change provides manufacturers near-term flexibility during trade-related pressures while allowing credits to be generated for later use.",
-    whyItMatters: "A fleet-average policy adjustment is not an individual vehicle exemption, an end to regulations, or a new repair procedure. It does not change the software, service information, recall status, parts requirement or diagnostic need of the vehicle in your bay. Continue following the applicable OEM procedure and documented customer or payer authorization.",
-    source: "Government of Canada — Light-Duty Fleet Standard Measure",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
+    headline: "Foreign-Nameplate Forecast: A Coverage Prompt, Not a Canadian Stocking Order",
+    summary: "Aftermarket Matters reports the latest Lang Aftermarket iReport expects foreign nameplates to produce more than 90% of total U.S. car and light-truck aftermarket product growth at user price from 2025 to 2030, adding more than US$23 billion in product volume. The analysis says competitive strength will vary by nameplate, distribution channel, repair outlet and product category. It is a multi-year U.S. forecast—not Canadian registrations, Canadian demand data or a prediction for any one shop.",
+    whyItMatters: "Check your local service mix and recurring repair categories, then keep catalog fitment, technical information and vendor coverage current for the foreign-nameplate vehicles you actually service. Do not turn a U.S. forecast into a blanket mandate to change brands, pre-stock inventory, alter warranty commitments or source a part without VIN, application and supplier confirmation.",
+    source: "Aftermarket Matters — Lang Aftermarket iReport Coverage",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/foreign-nameplates-to-generate-90-of-light-vehicle-aftermarket-product-growth/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "CCS PRECISION / EVIDENCE-BACKED ESTIMATES / DOCUMENT THE WHY",
+    tag: "WORLDPAC UPDATE / U.S. OPERATIONS / LOCAL CONFIRMATION / FITMENT FIRST",
     tagColor: "#15803d",
-    headline: "Collision Quality Conference: Make Clear Evidence the Backbone of Every Estimate",
-    summary: "Collision Repair magazine’s October 21 coverage of the CCS Precision 2026 conference in Niagara Falls highlighted estimating accuracy, repair documentation, workforce development and consistent repair quality. The article says a Mitchell International presentation stressed that estimates should be logical, accurate and supported by clear evidence; photographs and documents should establish accident circumstances and support why recommended repairs are necessary.",
-    whyItMatters: "Build the repair file so the next technician, customer and payer can understand it: clear photos, observed damage, vehicle configuration, applicable repair information, logical estimate and approvals. One speaker’s forward-looking consolidation comment is an opinion—not an industry forecast, insurer rule or instruction for your business. Focus on the file discipline you control today.",
-    source: "Collision Repair Magazine — CCS Precision 2026 Conference",
-    sourceUrl: "https://www.collisionrepairmag.com/events/article/15838113/precision-in-collision-repair-industry-conference-highlights",
+    headline: "Supplier Network Update: Local Availability Still Requires a Live Part Check",
+    summary: "Aftermarket Matters reports that Worldpac’s CEO described US$150 million of inventory growth since the company became independent, 190,000 SKUs, roughly 325 warehouses and 40,000 to 50,000 daily deliveries in its U.S. operations. The report also says the company has added branches, delivery routes and technology to improve picks and routes. These are supplier-reported U.S. operating figures—not a Canadian stock commitment, local delivery promise, fitment warranty or price offer.",
+    whyItMatters: "For every repair, confirm the exact part number, vehicle application, brand/source, local stock, order cut-off, warranty terms and written ETA with the supplier serving your location. A large catalog or network presentation does not prove that a particular Canadian customer’s component is available, correct or covered today.",
+    source: "Aftermarket Matters — Worldpac Supplier & Training Expo Update",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/ceo-highlights-worldpac-performance-since-acquisition/",
     image: STORY3_IMG,
-  },
+  }
 ];
 
 const quickHits = [
   {
-    icon: "🏗️",
-    text: "The additional C$2.5 billion is set for large-scale automotive capital projects over two years, with up to C$1.5 billion federal and up to C$1 billion provincial support.",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
+    icon: "🚗",
+    text: "U.S.-built vehicles accounted for 28.4% of Canadian new-vehicle sales in H1 2026, versus 35.4% in H1 2025, according to J.D. Power Canada data reported by the Detroit Free Press.",
+    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/10/22/u-s-made-vehicle-sales-fall-to-new-low-in-canada-what-details-show/92330174007/",
   },
   {
-    icon: "🔋",
-    text: "Canada says the light-duty fleet-average performance standard stays at the 2026 level through 2029, with annual increases resuming in the 2030 model year.",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/10/prime-minister-carney-and-premier-ford-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries.html",
+    icon: "🧭",
+    text: "The sales-share figure is a market-mix measure, not a parts-availability statistic or a forecast for your shop’s repair demand. Use the actual VIN and application for each file.",
+    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/10/22/u-s-made-vehicle-sales-fall-to-new-low-in-canada-what-details-show/92330174007/",
   },
   {
-    icon: "🤝",
-    text: "A Canada–Ontario Automotive Task Force will oversee the policy measures. Its creation is not a new repair-shop program or a new customer service requirement.",
-    sourceUrl: "https://news.ontario.ca/en/backgrounder/1008172/premier-ford-and-prime-minister-carney-launch-new-action-plan-to-protect-workers-from-tariffs-and-strengthen-ontario-industries",
+    icon: "📈",
+    text: "Lang forecasts foreign nameplates will generate more than 90% of U.S. light-vehicle aftermarket product growth from 2025–2030—use it as a coverage check, not Canadian demand data.",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/foreign-nameplates-to-generate-90-of-light-vehicle-aftermarket-product-growth/",
   },
   {
-    icon: "📷",
-    text: "CCS Precision programming emphasized logical, accurate estimates supported by clear evidence—use photos and documents to show why a recommended repair is necessary.",
-    sourceUrl: "https://www.collisionrepairmag.com/events/article/15838113/precision-in-collision-repair-industry-conference-highlights",
+    icon: "🧩",
+    text: "The Lang report says brand strength will vary by vehicle nameplate, distribution channel, repair outlet group and product category; fitment and source must stay job-specific.",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/foreign-nameplates-to-generate-90-of-light-vehicle-aftermarket-product-growth/",
   },
   {
-    icon: "🎓",
-    text: "I-CAR Canada and the Database Enhancement Gateway appeared in the CCS conference programming, reinforcing training and information resources rather than a new mandated workflow.",
-    sourceUrl: "https://www.collisionrepairmag.com/events/article/15838113/precision-in-collision-repair-industry-conference-highlights",
+    icon: "📦",
+    text: "Worldpac said its U.S. operations carry 190,000 SKUs and make 40,000–50,000 daily deliveries. Neither number confirms stock or delivery timing for a Canadian order.",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/ceo-highlights-worldpac-performance-since-acquisition/",
   },
   {
-    icon: "⚙️",
-    text: "St. Thomas Unimotor remains an 18-month category sourcing watch. Confirm stock, ETA, warranty and price by exact HVAC-motor part number before advising a customer.",
-    sourceUrl: "https://www.cbc.ca/news/canada/london/st-thomas-auto-parts-plant-to-cut-production-move-some-work-to-mexico-9.7384399",
+    icon: "✅",
+    text: "Before quoting a part, verify live local stock, precise application, brand/source, warranty, order cut-off and written ETA with the supplier that serves your shop.",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/ceo-highlights-worldpac-performance-since-acquisition/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Give Every Estimate a Documentation Spine",
-  text: "Build four anchors into every collision file: before-and-after photos, a vehicle-specific procedure reference, diagnostic or calibration record, and signed authorization/release. Make the estimate intelligible to the next technician, the customer and the payer—without relying on a policy headline or conference sound bite.",
+  title: "Add a Coverage Check to Your Weekly Parts Review",
+  text: "Review the top VINs and repeat repair categories arriving this week, then confirm local supplier options, fitment, technical information and warranty/source records. For each live job, validate through the vehicle application and written ETA—not a national sales share or supplier presentation.",
 };
 
 const quoteOfTheDay = {
-  text: "The Government of Canada and the Government of Ontario are investing an additional $2.5 billion over two years in large-scale automotive capital projects.",
-  author: "Government of Canada",
-  title: "Ontario Auto Action Plan Backgrounder — October 21, 2026",
+  text: "The competitive strength of these five types of brands will vary substantially by vehicle nameplate, distribution channel, repair outlet group, and product category.",
+  author: "Lang Aftermarket iReport",
+  title: "Reported by Aftermarket Matters — October 21, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Dodge Coronet R/T 440 Six Pack — FJ6 Green Go, Ontario-Plated",
-  description: "FJ6 Green Go paint, a period-correct hood scoop and 440 Six Pack muscle make this 1970 Dodge Coronet R/T a Thursday shop feature. Its reminder is simple: show the work, document the why and keep each repair decision anchored to the exact vehicle—not a broad policy headline.",
+  name: "1970 Plymouth GTX 440 Six Barrel — In-Violet Metallic, Ontario-Plated",
+  description: "In-Violet Metallic paint, a twin-scoop hood and 440 Six Barrel muscle give this 1970 Plymouth GTX its Friday presence. Its reminder fits today’s parts file: confirm the exact application, source and arrival path before promising the customer a component—not after a broad industry signal.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Capital Watch", "VIN First", "Document the Why", "'70 Coronet"].map((tag) => (
+                {["Coverage Check", "VIN First", "Local ETA", "'70 GTX"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Collision Shop Team Reviewing a Vehicle-Specific Repair File — Baywash Daily Briefing Edition No. 147"
+              alt="Canadian Independent Shop Team Reviewing VIN-Specific Parts Coverage — Baywash Daily Briefing Edition No. 148"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 147 — Thursday, October 22, 2026 — Capital Watch / VIN First / Document the Why</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 148 — Friday, October 23, 2026 — Coverage Check / VIN First / Local ETA</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Thursday Check: Treat Policy Headlines as a Watch—Then Document the Exact Repair
+                Friday Check: Plan Coverage Broadly—Then Quote Every Exact Part Locally
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Dodge Coronet R/T</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth GTX</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
