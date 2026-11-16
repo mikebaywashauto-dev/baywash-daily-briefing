@@ -10,50 +10,50 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 148;
-const BRIEFING_DATE = "October 23, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 149;
+const BRIEFING_DATE = "November 16, 2026";
+const BRIEFING_DAY = "Monday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ZcTyYqCjqsTxXESI.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TwMmyvqaNWfnBaLW.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zJqwpRJlGPnhcvTV.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wXETniVeeQmODqLV.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/iuLORtOJMSiDkDHO.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GJPazoEHUpivjdqF.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ANaoiNYfBkNdCvSi.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nruyMqLDEcCXdnQj.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wlAWWEVxAWaVHgal.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IvwfGLpLiEePMKfo.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "H1 2026 / 28.4% U.S.-BUILT / NEW-VEHICLE SALES / MIX WATCH",
+    tag: "CANADA / OCTOBER SALES / SUBARU HONDA TOYOTA / MIX WATCH",
     tagColor: "#b91c1c",
-    headline: "Canadian New-Vehicle Mix Shifts: Plan Coverage by VIN, Not Assumption",
-    summary: "The Detroit Free Press, citing J.D. Power Canada data, reports that U.S.-built vehicles made up 28.4% of Canadian new-vehicle sales in the first half of 2026, down from 35.4% in the first half of 2025. The report says vehicles built in duty-free Mexico and Japan have taken a larger share. This is a new-vehicle sales-mix measure—not the Canadian service parc, individual vehicle origin, repair demand or parts availability.",
-    whyItMatters: "Use the trend as a coverage-planning prompt: review the actual VINs arriving in your bays, commonly needed service information, diagnostic capability and confirmed supplier options. Do not infer an immediate parts shortage, tariff charge, price move or repair-volume change from a national sales-share statistic. Confirm build, configuration, procedure and part number for each job.",
-    source: "Detroit Free Press — J.D. Power Canada Sales-Mix Reporting",
-    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/10/22/u-s-made-vehicle-sales-fall-to-new-low-in-canada-what-details-show/92330174007/",
+    headline: "October Sales Gain: Let Your Local VIN Mix Set the Parts Plan",
+    summary: "Automotive News Canada reports that Canadian new-vehicle sales were estimated to rise 1.8% in October, with Subaru, Honda and Toyota posting double-digit percentage gains. Subaru sold 9,198 vehicles versus 5,422 a year earlier, while the article notes the Outback returned to 1,630 units from essentially zero. This is a new-vehicle sales report—not a local service-parc count, parts-demand forecast or guarantee of your shop’s mix.",
+    whyItMatters: "Use the signal to compare recent bookings, customer vehicles and repeat repair categories against your current catalog and technical coverage. Do not turn a national sales estimate into an inventory mandate; identify the nameplates actually entering your bays, then verify VIN-specific fitment, procedure, supplier stock and ETA.",
+    source: "Automotive News Canada — October Canadian Sales",
+    sourceUrl: "https://www.autonews.com/retail/anc-canadian-new-vehicle-sales-october-1109/",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "2025–30 FORECAST / FOREIGN NAMEPLATES / U.S. DATA / COVERAGE CHECK",
+    tag: "ALLISTON / C$166M / HYBRID PRODUCTION / TRAINING WATCH",
     tagColor: "#0369a1",
-    headline: "Foreign-Nameplate Forecast: A Coverage Prompt, Not a Canadian Stocking Order",
-    summary: "Aftermarket Matters reports the latest Lang Aftermarket iReport expects foreign nameplates to produce more than 90% of total U.S. car and light-truck aftermarket product growth at user price from 2025 to 2030, adding more than US$23 billion in product volume. The analysis says competitive strength will vary by nameplate, distribution channel, repair outlet and product category. It is a multi-year U.S. forecast—not Canadian registrations, Canadian demand data or a prediction for any one shop.",
-    whyItMatters: "Check your local service mix and recurring repair categories, then keep catalog fitment, technical information and vendor coverage current for the foreign-nameplate vehicles you actually service. Do not turn a U.S. forecast into a blanket mandate to change brands, pre-stock inventory, alter warranty commitments or source a part without VIN, application and supplier confirmation.",
-    source: "Aftermarket Matters — Lang Aftermarket iReport Coverage",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/foreign-nameplates-to-generate-90-of-light-vehicle-aftermarket-product-growth/",
+    headline: "Honda’s Alliston Investment Makes Hybrid Readiness a Local Shop Issue",
+    summary: "Honda Canada announced a C$166 million investment in its Alliston, Ontario manufacturing facilities as part of a broader C$867 million commitment. Honda says the project will support next-generation hybrid-electric and gasoline-powered vehicles, engines and hybrid systems while maintaining a workforce of more than 4,000 Canadians. The plant currently builds Civic and CR-V gasoline and hybrid variants.",
+    whyItMatters: "Treat this as a medium-term Canadian vehicle-mix signal: audit high-voltage safety procedures, scan-tool coverage, hybrid service information and technician training. The announcement does not establish immediate repair volume or a specific repair procedure, so confirm model year, system architecture and OEM requirements before quoting work.",
+    source: "Honda Canada — Canadian Manufacturing Investment",
+    sourceUrl: "https://hondanews.ca/en-CA/releases/honda-strengthens-commitment-to-canadian-manufacturing-with-investment-to-expand-hybrid-production",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "WORLDPAC UPDATE / U.S. OPERATIONS / LOCAL CONFIRMATION / FITMENT FIRST",
+    tag: "2028 CR-V / 100% HYBRID / CANADIAN-BUILT / FORWARD WATCH",
     tagColor: "#15803d",
-    headline: "Supplier Network Update: Local Availability Still Requires a Live Part Check",
-    summary: "Aftermarket Matters reports that Worldpac’s CEO described US$150 million of inventory growth since the company became independent, 190,000 SKUs, roughly 325 warehouses and 40,000 to 50,000 daily deliveries in its U.S. operations. The report also says the company has added branches, delivery routes and technology to improve picks and routes. These are supplier-reported U.S. operating figures—not a Canadian stock commitment, local delivery promise, fitment warranty or price offer.",
-    whyItMatters: "For every repair, confirm the exact part number, vehicle application, brand/source, local stock, order cut-off, warranty terms and written ETA with the supplier serving your location. A large catalog or network presentation does not prove that a particular Canadian customer’s component is available, correct or covered today.",
-    source: "Aftermarket Matters — Worldpac Supplier & Training Expo Update",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/ceo-highlights-worldpac-performance-since-acquisition/",
+    headline: "All-Hybrid CR-V Announced: Build a Watchlist, Not a Shortcut",
+    summary: "Honda Canada says the next-generation 2028 CR-V will arrive in 2027 with an exclusively hybrid powertrain, a new platform and a new two-motor hybrid system. Honda reports that the CR-V Hybrid was Canada’s best-selling hybrid in 2025, represents nearly 70% of CR-V sales and is on pace to grow 17% year over year; all CR-V models sold in Canada are built at Alliston. These are manufacturer-reported product and sales figures.",
+    whyItMatters: "Put the CR-V and other common hybrid platforms on a forward-looking training and information watchlist. Confirm model year, system architecture, isolation requirements, OEM procedures and parts availability before scheduling or promising a repair; a product announcement is not a substitute for the live service file.",
+    source: "Honda Canada — Next-Generation CR-V Announcement",
+    sourceUrl: "https://hondanews.ca/en-CA/releases/all-new-honda-cr-v-to-go-100-hybrid-next-year-honda-canadas-top-selling-suv-to-debut-new-platform-powertrain-and-design",
     image: STORY3_IMG,
   }
 ];
@@ -61,50 +61,50 @@ const stories = [
 const quickHits = [
   {
     icon: "🚗",
-    text: "U.S.-built vehicles accounted for 28.4% of Canadian new-vehicle sales in H1 2026, versus 35.4% in H1 2025, according to J.D. Power Canada data reported by the Detroit Free Press.",
-    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/10/22/u-s-made-vehicle-sales-fall-to-new-low-in-canada-what-details-show/92330174007/",
+    text: "Canadian new-vehicle sales were estimated up 1.8% in October; Subaru, Honda and Toyota posted double-digit gains, but national sales do not define your local service mix.",
+    sourceUrl: "https://www.autonews.com/retail/anc-canadian-new-vehicle-sales-october-1109/",
   },
   {
-    icon: "🧭",
-    text: "The sales-share figure is a market-mix measure, not a parts-availability statistic or a forecast for your shop’s repair demand. Use the actual VIN and application for each file.",
-    sourceUrl: "https://www.freep.com/story/money/cars/ford/2026/10/22/u-s-made-vehicle-sales-fall-to-new-low-in-canada-what-details-show/92330174007/",
+    icon: "🏭",
+    text: "Honda’s Alliston plan includes C$166 million for next-generation hybrid and gasoline production, within a broader C$867 million commitment; treat it as a medium-term readiness signal.",
+    sourceUrl: "https://hondanews.ca/en-CA/releases/honda-strengthens-commitment-to-canadian-manufacturing-with-investment-to-expand-hybrid-production",
+  },
+  {
+    icon: "⚡",
+    text: "Honda says the 2028 CR-V arriving next year will be 100% hybrid and built in Canada; confirm the live model year and system architecture before quoting service.",
+    sourceUrl: "https://hondanews.ca/en-CA/releases/all-new-honda-cr-v-to-go-100-hybrid-next-year-honda-canadas-top-selling-suv-to-debut-new-platform-powertrain-and-design",
   },
   {
     icon: "📈",
-    text: "Lang forecasts foreign nameplates will generate more than 90% of U.S. light-vehicle aftermarket product growth from 2025–2030—use it as a coverage check, not Canadian demand data.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/foreign-nameplates-to-generate-90-of-light-vehicle-aftermarket-product-growth/",
+    text: "A U.S. forecast puts post-warranty electrification-parts revenue growth near 24% annually through 2035 and ADAS hardware near 23%; use it as a training prompt, not Canadian demand data.",
+    sourceUrl: "https://www.aftermarketmatters.com/national-news/electrification-parts-revenue-to-grow-24-annually-through-2035/",
   },
   {
-    icon: "🧩",
-    text: "The Lang report says brand strength will vary by vehicle nameplate, distribution channel, repair outlet group and product category; fitment and source must stay job-specific.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/foreign-nameplates-to-generate-90-of-light-vehicle-aftermarket-product-growth/",
-  },
-  {
-    icon: "📦",
-    text: "Worldpac said its U.S. operations carry 190,000 SKUs and make 40,000–50,000 daily deliveries. Neither number confirms stock or delivery timing for a Canadian order.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/ceo-highlights-worldpac-performance-since-acquisition/",
+    icon: "🛠️",
+    text: "Canadian collision repair averages reached C$5,377 per insurance-paid order in October, while WIP hit 12.3:1 and cycle time reached 13.3 days—measure flow before adding overhead.",
+    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
   },
   {
     icon: "✅",
-    text: "Before quoting a part, verify live local stock, precise application, brand/source, warranty, order cut-off and written ETA with the supplier that serves your shop.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/ceo-highlights-worldpac-performance-since-acquisition/",
+    text: "Before quoting hybrid or ADAS work, verify training, isolation equipment, OEM information, scan-tool access, calibration steps, parts ETA and job documentation.",
+    sourceUrl: "https://www.aiacanada.com/news/addressing-the-technician-shortage-investing-in-the-next-generation-of-automotive-professionals/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Add a Coverage Check to Your Weekly Parts Review",
-  text: "Review the top VINs and repeat repair categories arriving this week, then confirm local supplier options, fitment, technical information and warranty/source records. For each live job, validate through the vehicle application and written ETA—not a national sales share or supplier presentation.",
+  title: "Run a 30-Minute Hybrid + ADAS Readiness Audit",
+  text: "Check staff safety training, OEM information access, scan-tool subscriptions, isolation equipment, calibration process, parts ETA and job documentation. Turn the result into one practical upgrade this week, then validate every live job by VIN, procedure and supplier confirmation.",
 };
 
 const quoteOfTheDay = {
-  text: "The competitive strength of these five types of brands will vary substantially by vehicle nameplate, distribution channel, repair outlet group, and product category.",
-  author: "Lang Aftermarket iReport",
-  title: "Reported by Aftermarket Matters — October 21, 2026",
+  text: "The opportunity isn't simply getting more work through the door. It's getting more work out.",
+  author: "Mike Gilliland",
+  title: "Quoted by Collision Repair magazine — November 13, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Plymouth GTX 440 Six Barrel — In-Violet Metallic, Ontario-Plated",
-  description: "In-Violet Metallic paint, a twin-scoop hood and 440 Six Barrel muscle give this 1970 Plymouth GTX its Friday presence. Its reminder fits today’s parts file: confirm the exact application, source and arrival path before promising the customer a component—not after a broad industry signal.",
+  name: "1971 Dodge Charger R/T — Forest Green, Canadian Shop Morning",
+  description: "Deep metallic green, quad headlamps and a cold late-autumn shop entrance give this classic Charger its Monday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
   image: HOTROD_IMG,
 };
 
@@ -182,7 +182,7 @@ export default function Home() {
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Independent Shop Team Reviewing VIN-Specific Parts Coverage — Baywash Daily Briefing Edition No. 148"
+              alt="Canadian Independent Shop Team Reviewing Hybrid Service Readiness — Baywash Daily Briefing Edition No. 149"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 148 — Friday, October 23, 2026 — Coverage Check / VIN First / Local ETA</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 149 — Monday, November 16, 2026 — Hybrid Ready / Flow First / VIN Confirmed</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Friday Check: Plan Coverage Broadly—Then Quote Every Exact Part Locally
+                Monday Check: Build Hybrid Readiness—Then Move Every Job with Measured Flow
               </h3>
             </div>
           </div>
