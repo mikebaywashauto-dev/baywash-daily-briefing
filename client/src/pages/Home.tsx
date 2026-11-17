@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 149;
-const BRIEFING_DATE = "November 16, 2026";
-const BRIEFING_DAY = "Monday";
+const BRIEFING_NUMBER = 150;
+const BRIEFING_DATE = "November 17, 2026";
+const BRIEFING_DAY = "Tuesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GJPazoEHUpivjdqF.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/ANaoiNYfBkNdCvSi.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/nruyMqLDEcCXdnQj.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wlAWWEVxAWaVHgal.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IvwfGLpLiEePMKfo.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IkVOqWsTyQUfIMjJ.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wYXfPWKTeptNcaLd.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rmVyUuTHoFeOklpC.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xkkdxOGdZAyyUhyQ.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YfRLQwuTPNmetzxo.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CANADA / OCTOBER SALES / SUBARU HONDA TOYOTA / MIX WATCH",
+    tag: "CANADIAN TIRE / 25TH QUARTER / AFTERMARKET DEMAND / LOCAL MIX",
     tagColor: "#b91c1c",
-    headline: "October Sales Gain: Let Your Local VIN Mix Set the Parts Plan",
-    summary: "Automotive News Canada reports that Canadian new-vehicle sales were estimated to rise 1.8% in October, with Subaru, Honda and Toyota posting double-digit percentage gains. Subaru sold 9,198 vehicles versus 5,422 a year earlier, while the article notes the Outback returned to 1,630 units from essentially zero. This is a new-vehicle sales report—not a local service-parc count, parts-demand forecast or guarantee of your shop’s mix.",
-    whyItMatters: "Use the signal to compare recent bookings, customer vehicles and repeat repair categories against your current catalog and technical coverage. Do not turn a national sales estimate into an inventory mandate; identify the nameplates actually entering your bays, then verify VIN-specific fitment, procedure, supplier stock and ETA.",
-    source: "Automotive News Canada — October Canadian Sales",
-    sourceUrl: "https://www.autonews.com/retail/anc-canadian-new-vehicle-sales-october-1109/",
+    headline: "Canadian Tire Growth: Use the Signal, Then Check Your Own Bays",
+    summary: "Collision Repair magazine’s Tuesday Ticker reports that Canadian Tire’s automotive sales rose for a 25th consecutive quarter. The article says third-quarter revenue reached C$4.32 billion, up from C$4.11 billion a year earlier, while comparable retail sales increased 3.2%. This is a retailer-reported performance signal—not a measure of independent-shop bookings, the Canadian service parc or local parts availability.",
+    whyItMatters: "Compare the broader aftermarket signal with your own booked work, declined work, parts-category mix and local customer demand. Use it to review service-menu visibility and coverage; do not assume national retail growth justifies extra inventory, a price change or a new warranty promise.",
+    source: "Collision Repair magazine — Tuesday Ticker, November 17",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "ALLISTON / C$166M / HYBRID PRODUCTION / TRAINING WATCH",
+    tag: "CANADA / C$313M / ALLISTON / HYBRID TRAINING",
     tagColor: "#0369a1",
-    headline: "Honda’s Alliston Investment Makes Hybrid Readiness a Local Shop Issue",
-    summary: "Honda Canada announced a C$166 million investment in its Alliston, Ontario manufacturing facilities as part of a broader C$867 million commitment. Honda says the project will support next-generation hybrid-electric and gasoline-powered vehicles, engines and hybrid systems while maintaining a workforce of more than 4,000 Canadians. The plant currently builds Civic and CR-V gasoline and hybrid variants.",
-    whyItMatters: "Treat this as a medium-term Canadian vehicle-mix signal: audit high-voltage safety procedures, scan-tool coverage, hybrid service information and technician training. The announcement does not establish immediate repair volume or a specific repair procedure, so confirm model year, system architecture and OEM requirements before quoting work.",
-    source: "Honda Canada — Canadian Manufacturing Investment",
-    sourceUrl: "https://hondanews.ca/en-CA/releases/honda-strengthens-commitment-to-canadian-manufacturing-with-investment-to-expand-hybrid-production",
+    headline: "Ottawa’s Honda Investment Makes Hybrid Readiness Concrete",
+    summary: "The Government of Canada announced a C$313 million Strategic Response Fund investment alongside Ontario support for Honda Canada’s C$867 million Alliston retooling plan. The release says the project will support next-generation Civic and CR-V production, increase electrified-vehicle output, modernize manufacturing technologies and provide employee training and upskilling. It is expected to maintain more than 4,000 jobs and support production of up to 400,000 vehicles annually.",
+    whyItMatters: "Treat this as a concrete medium-term reason to audit hybrid safety, diagnostic subscriptions, OEM service-information access and technician development. The investment does not establish immediate repair volume or a universal procedure; confirm the exact vehicle, system, model year and OEM instructions before quoting work.",
+    source: "Government of Canada — Honda Alliston Investment",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/canada-invests-313-million-in-honda-north-america-to-advance-next-generation-vehicle-manufacturing-in-ontario.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "2028 CR-V / 100% HYBRID / CANADIAN-BUILT / FORWARD WATCH",
+    tag: "BRAMPTON / C$529M / FUNDING DISPUTE / CUSTOMER COMMS",
     tagColor: "#15803d",
-    headline: "All-Hybrid CR-V Announced: Build a Watchlist, Not a Shortcut",
-    summary: "Honda Canada says the next-generation 2028 CR-V will arrive in 2027 with an exclusively hybrid powertrain, a new platform and a new two-motor hybrid system. Honda reports that the CR-V Hybrid was Canada’s best-selling hybrid in 2025, represents nearly 70% of CR-V sales and is on pace to grow 17% year over year; all CR-V models sold in Canada are built at Alliston. These are manufacturer-reported product and sales figures.",
-    whyItMatters: "Put the CR-V and other common hybrid platforms on a forward-looking training and information watchlist. Confirm model year, system architecture, isolation requirements, OEM procedures and parts availability before scheduling or promising a repair; a product announcement is not a substitute for the live service file.",
-    source: "Honda Canada — Next-Generation CR-V Announcement",
-    sourceUrl: "https://hondanews.ca/en-CA/releases/all-new-honda-cr-v-to-go-100-hybrid-next-year-honda-canadas-top-selling-suv-to-debut-new-platform-powertrain-and-design",
+    headline: "Brampton Funding Dispute: Keep Every Customer Claim VIN-First",
+    summary: "Collision Repair magazine reports that Industry Minister Mélanie Joly gave Stellantis 30 days to address alleged breaches of its federal funding agreement connected to the abandoned Jeep Compass production plan and proposed sale of the Brampton assembly plant. The article says Ottawa’s 2022 commitment of up to C$529 million covered Brampton and Windsor retooling, while Stellantis Canada said C$24 million received for Brampton’s original plan would be returned voluntarily. The proposed sale remains subject to conditions.",
+    whyItMatters: "Do not turn an industrial-policy dispute into a parts, tariff, price or warranty claim. Keep customer communications grounded in the live repair file: verify VIN, vehicle configuration, supplier stock, written ETA and warranty terms for each job.",
+    source: "Collision Repair magazine — Stellantis Brampton Update",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
     image: STORY3_IMG,
   }
 ];
 
 const quickHits = [
   {
-    icon: "🚗",
-    text: "Canadian new-vehicle sales were estimated up 1.8% in October; Subaru, Honda and Toyota posted double-digit gains, but national sales do not define your local service mix.",
-    sourceUrl: "https://www.autonews.com/retail/anc-canadian-new-vehicle-sales-october-1109/",
+    icon: "📈",
+    text: "Canadian Tire automotive sales rose for a 25th consecutive quarter; compare the national retailer signal with your own booked work before changing inventory or pricing.",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
   },
   {
     icon: "🏭",
-    text: "Honda’s Alliston plan includes C$166 million for next-generation hybrid and gasoline production, within a broader C$867 million commitment; treat it as a medium-term readiness signal.",
-    sourceUrl: "https://hondanews.ca/en-CA/releases/honda-strengthens-commitment-to-canadian-manufacturing-with-investment-to-expand-hybrid-production",
+    text: "The federal government is investing C$313 million in Honda’s C$867 million Alliston retooling plan, supporting hybrid production, technology modernization and worker upskilling.",
+    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/canada-invests-313-million-in-honda-north-america-to-advance-next-generation-vehicle-manufacturing-in-ontario.html",
   },
   {
     icon: "⚡",
-    text: "Honda says the 2028 CR-V arriving next year will be 100% hybrid and built in Canada; confirm the live model year and system architecture before quoting service.",
-    sourceUrl: "https://hondanews.ca/en-CA/releases/all-new-honda-cr-v-to-go-100-hybrid-next-year-honda-canadas-top-selling-suv-to-debut-new-platform-powertrain-and-design",
+    text: "Honda’s next-generation CR-V is expected to begin Canadian production in 2027 with a hybrid-only powertrain; build a model-specific watchlist, not a generic promise.",
+    sourceUrl: "https://www.autonews.com/manufacturing/automakers/anc-honda-crv-2028-canada-production-1112/",
   },
   {
-    icon: "📈",
-    text: "A U.S. forecast puts post-warranty electrification-parts revenue growth near 24% annually through 2035 and ADAS hardware near 23%; use it as a training prompt, not Canadian demand data.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/electrification-parts-revenue-to-grow-24-annually-through-2035/",
+    icon: "🧩",
+    text: "Martinrea plans deep European restructuring after a 25% third-quarter net-income decline; company news is not a local supplier-stock or delivery commitment.",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
   },
   {
-    icon: "🛠️",
-    text: "Canadian collision repair averages reached C$5,377 per insurance-paid order in October, while WIP hit 12.3:1 and cycle time reached 13.3 days—measure flow before adding overhead.",
-    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
+    icon: "📦",
+    text: "LKQ appointed Paul Shaw president of North America effective January 1, 2027; keep supplier redundancy and written ETAs in place regardless of leadership changes.",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
   },
   {
     icon: "✅",
-    text: "Before quoting hybrid or ADAS work, verify training, isolation equipment, OEM information, scan-tool access, calibration steps, parts ETA and job documentation.",
-    sourceUrl: "https://www.aiacanada.com/news/addressing-the-technician-shortage-investing-in-the-next-generation-of-automotive-professionals/",
+    text: "Before quoting a job, verify VIN, configuration, service procedure, supplier stock, part number, warranty and written ETA—especially when headlines involve tariffs or plant funding.",
+    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Run a 30-Minute Hybrid + ADAS Readiness Audit",
-  text: "Check staff safety training, OEM information access, scan-tool subscriptions, isolation equipment, calibration process, parts ETA and job documentation. Turn the result into one practical upgrade this week, then validate every live job by VIN, procedure and supplier confirmation.",
+  title: "Run a 30-Minute Readiness + Flow Audit",
+  text: "Check hybrid safety training, OEM information access, scan-tool subscriptions, parts ETA, work-in-progress and customer update timing. Choose one practical improvement this week, then validate every live job by VIN, procedure, supplier confirmation and written promise.",
 };
 
 const quoteOfTheDay = {
-  text: "The opportunity isn't simply getting more work through the door. It's getting more work out.",
-  author: "Mike Gilliland",
-  title: "Quoted by Collision Repair magazine — November 13, 2026",
+  text: "Canadian automotive investment is becoming more electrified and more connected—but the repair file still starts with the exact vehicle in the bay.",
+  author: "Baywash shop-floor note",
+  title: "Edition No. 150 — Tuesday, November 17, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1971 Dodge Charger R/T — Forest Green, Canadian Shop Morning",
-  description: "Deep metallic green, quad headlamps and a cold late-autumn shop entrance give this classic Charger its Monday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
+  name: "1967 Chevrolet Camaro — Deep Blue, First Snow Service Call",
+  description: "Deep blue paint, bright chrome and a first-snow shop entrance give this classic Camaro its Tuesday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
   image: HOTROD_IMG,
 };
 
@@ -182,7 +182,7 @@ export default function Home() {
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Monday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Independent Shop Team Reviewing Hybrid Service Readiness — Baywash Daily Briefing Edition No. 149"
+              alt="Canadian Independent Shop Team Reviewing Hybrid Service Readiness — Baywash Daily Briefing Edition No. 150"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 149 — Monday, November 16, 2026 — Hybrid Ready / Flow First / VIN Confirmed</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 150 — Tuesday, November 17, 2026 — Demand Signal / Hybrid Ready / VIN First</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Monday Check: Build Hybrid Readiness—Then Move Every Job with Measured Flow
+                Tuesday Check: Read the Signal—Then Quote the Exact Vehicle in Your Bay
               </h3>
             </div>
           </div>
