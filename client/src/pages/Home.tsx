@@ -10,101 +10,101 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 150;
-const BRIEFING_DATE = "November 17, 2026";
-const BRIEFING_DAY = "Tuesday";
+const BRIEFING_NUMBER = 151;
+const BRIEFING_DATE = "November 18, 2026";
+const BRIEFING_DAY = "Wednesday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/IkVOqWsTyQUfIMjJ.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wYXfPWKTeptNcaLd.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/rmVyUuTHoFeOklpC.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/xkkdxOGdZAyyUhyQ.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/YfRLQwuTPNmetzxo.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/eczkobNVWGkzHqPr.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/XRcfixXQyjKUkZdL.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QTZJPdjAnySvmctT.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/QBoOWgYhwWhYHRku.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/SgxuomzGyhvJFOLy.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "CANADIAN TIRE / 25TH QUARTER / AFTERMARKET DEMAND / LOCAL MIX",
+    tag: "EV POLICY / C$150K THRESHOLD / PROPOSAL / CUSTOMER COMMS",
     tagColor: "#b91c1c",
-    headline: "Canadian Tire Growth: Use the Signal, Then Check Your Own Bays",
-    summary: "Collision Repair magazine’s Tuesday Ticker reports that Canadian Tire’s automotive sales rose for a 25th consecutive quarter. The article says third-quarter revenue reached C$4.32 billion, up from C$4.11 billion a year earlier, while comparable retail sales increased 3.2%. This is a retailer-reported performance signal—not a measure of independent-shop bookings, the Canadian service parc or local parts availability.",
-    whyItMatters: "Compare the broader aftermarket signal with your own booked work, declined work, parts-category mix and local customer demand. Use it to review service-menu visibility and coverage; do not assume national retail growth justifies extra inventory, a price change or a new warranty promise.",
-    source: "Collision Repair magazine — Tuesday Ticker, November 17",
-    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
+    headline: "EV Luxury-Tax Proposal: Keep the Shop Estimate Out of Tax Advice",
+    summary: "Finance Canada announced a proposal to raise the luxury-tax threshold for more fully electric and hydrogen-powered passenger vehicles from C$100,000 to C$150,000. The announcement says the measure would be effective the following day, subject to subsequent parliamentary approval, while other vehicles would remain at the C$100,000 threshold. This is a policy announcement—not a repair estimate, tax opinion or settled rule for every transaction.",
+    whyItMatters: "If a customer asks whether the proposal changes their purchase or lease economics, keep the answer narrow: identify the vehicle and transaction, point them to current official guidance, and avoid giving tax advice unless qualified. Keep every repair quote focused on diagnosis, parts, labour, procedures and warranty terms.",
+    source: "Department of Finance Canada — Zero-Emission Vehicle Threshold",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/11/government-of-canada-adjusts-the-taxable-value-threshold-for-zero-emission-vehicles.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "CANADA / C$313M / ALLISTON / HYBRID TRAINING",
+    tag: "55,000 CHARGERS / BUDGET 2026 / SITE AUDIT / EV READINESS",
     tagColor: "#0369a1",
-    headline: "Ottawa’s Honda Investment Makes Hybrid Readiness Concrete",
-    summary: "The Government of Canada announced a C$313 million Strategic Response Fund investment alongside Ontario support for Honda Canada’s C$867 million Alliston retooling plan. The release says the project will support next-generation Civic and CR-V production, increase electrified-vehicle output, modernize manufacturing technologies and provide employee training and upskilling. It is expected to maintain more than 4,000 jobs and support production of up to 400,000 vehicles annually.",
-    whyItMatters: "Treat this as a concrete medium-term reason to audit hybrid safety, diagnostic subscriptions, OEM service-information access and technician development. The investment does not establish immediate repair volume or a universal procedure; confirm the exact vehicle, system, model year and OEM instructions before quoting work.",
-    source: "Government of Canada — Honda Alliston Investment",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/canada-invests-313-million-in-honda-north-america-to-advance-next-generation-vehicle-manufacturing-in-ontario.html",
+    headline: "55,000-Charger Plan: Audit Your Site Before Buying Hardware",
+    summary: "Finance Canada says Budget 2026 committed C$587 million over five years, beginning in 2027–28, to install more than 55,000 EV chargers through a renewed Zero Emission Vehicle Infrastructure Program. The release also cites C$45 million over five years proposed for charging-infrastructure research and development and more than 50,000 chargers supported to date. These are federal program figures, not a guarantee of local shop demand or funding eligibility.",
+    whyItMatters: "Before advertising charging or purchasing equipment, measure actual EV arrivals, parking turnover, electrical capacity, winter operating needs, insurance requirements and the customer-pay business case. Use qualified electrical and code professionals for any installation; do not treat a national charger target as a site plan.",
+    source: "Department of Finance Canada — Charging Infrastructure",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/11/government-of-canada-adjusts-the-taxable-value-threshold-for-zero-emission-vehicles.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "BRAMPTON / C$529M / FUNDING DISPUTE / CUSTOMER COMMS",
+    tag: "AIA CANADA / TECHNICIAN SHORTAGE / MENTORSHIP / RED SEAL",
     tagColor: "#15803d",
-    headline: "Brampton Funding Dispute: Keep Every Customer Claim VIN-First",
-    summary: "Collision Repair magazine reports that Industry Minister Mélanie Joly gave Stellantis 30 days to address alleged breaches of its federal funding agreement connected to the abandoned Jeep Compass production plan and proposed sale of the Brampton assembly plant. The article says Ottawa’s 2022 commitment of up to C$529 million covered Brampton and Windsor retooling, while Stellantis Canada said C$24 million received for Brampton’s original plan would be returned voluntarily. The proposed sale remains subject to conditions.",
-    whyItMatters: "Do not turn an industrial-policy dispute into a parts, tariff, price or warranty claim. Keep customer communications grounded in the live repair file: verify VIN, vehicle configuration, supplier stock, written ETA and warranty terms for each job.",
-    source: "Collision Repair magazine — Stellantis Brampton Update",
-    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
+    headline: "Technician Shortage: Build a Pathway, Not Just a Job Posting",
+    summary: "AIA Canada’s November 13 article says the Canadian automotive aftermarket needs more skilled technicians and argues that recruitment alone is insufficient. It highlights meaningful pathways into the trade, training, mentorship, scholarships, recognition, ongoing education and professional development. The article notes that the Auto Value Technician of the Year program in Canada requires Red Seal certification and work at a participating Certified Service Center.",
+    whyItMatters: "Choose one measurable workforce action this week: a school or apprenticeship relationship, a documented mentorship schedule, paid training time, a course budget, a quarterly skills matrix or a recognition path for current staff. Retention improves when development is treated as an operating process rather than an occasional perk.",
+    source: "AIA Canada — Investing in the Next Generation",
+    sourceUrl: "https://www.aiacanada.com/news/addressing-the-technician-shortage-investing-in-the-next-generation-of-automotive-professionals/",
     image: STORY3_IMG,
   }
 ];
 
 const quickHits = [
   {
-    icon: "📈",
-    text: "Canadian Tire automotive sales rose for a 25th consecutive quarter; compare the national retailer signal with your own booked work before changing inventory or pricing.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
+    icon: "⚖️",
+    text: "Finance Canada proposed raising the luxury-tax threshold for more fully electric and hydrogen-powered vehicles to C$150,000; subject to parliamentary approval, it is not tax advice for a customer transaction.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/11/government-of-canada-adjusts-the-taxable-value-threshold-for-zero-emission-vehicles.html",
+  },
+  {
+    icon: "🔌",
+    text: "Budget 2026 committed C$587 million over five years beginning in 2027–28 for more than 55,000 EV chargers; audit your local site and demand before buying hardware.",
+    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/11/government-of-canada-adjusts-the-taxable-value-threshold-for-zero-emission-vehicles.html",
   },
   {
     icon: "🏭",
-    text: "The federal government is investing C$313 million in Honda’s C$867 million Alliston retooling plan, supporting hybrid production, technology modernization and worker upskilling.",
+    text: "Honda’s C$867 million Alliston retooling plan, backed by a C$313 million federal investment and Ontario support, includes electrified-vehicle production and worker upskilling.",
     sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/canada-invests-313-million-in-honda-north-america-to-advance-next-generation-vehicle-manufacturing-in-ontario.html",
   },
   {
-    icon: "⚡",
-    text: "Honda’s next-generation CR-V is expected to begin Canadian production in 2027 with a hybrid-only powertrain; build a model-specific watchlist, not a generic promise.",
-    sourceUrl: "https://www.autonews.com/manufacturing/automakers/anc-honda-crv-2028-canada-production-1112/",
+    icon: "🧑‍🔧",
+    text: "AIA Canada emphasizes mentorship, scholarships, training, recognition and professional development as part of the technician-shortage response; choose one measurable pipeline action this week.",
+    sourceUrl: "https://www.aiacanada.com/news/addressing-the-technician-shortage-investing-in-the-next-generation-of-automotive-professionals/",
   },
   {
-    icon: "🧩",
-    text: "Martinrea plans deep European restructuring after a 25% third-quarter net-income decline; company news is not a local supplier-stock or delivery commitment.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
-  },
-  {
-    icon: "📦",
-    text: "LKQ appointed Paul Shaw president of North America effective January 1, 2027; keep supplier redundancy and written ETAs in place regardless of leadership changes.",
+    icon: "📈",
+    text: "Canadian Tire automotive sales rose for a 25th consecutive quarter; compare national aftermarket signals with your own bookings, parts mix and local customer demand.",
     sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
   },
   {
     icon: "✅",
-    text: "Before quoting a job, verify VIN, configuration, service procedure, supplier stock, part number, warranty and written ETA—especially when headlines involve tariffs or plant funding.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
+    text: "Before quoting EV, hybrid or conventional work, verify VIN, system architecture, service procedure, training, isolation needs, supplier stock, warranty and written ETA.",
+    sourceUrl: "https://www.aiacanada.com/news/addressing-the-technician-shortage-investing-in-the-next-generation-of-automotive-professionals/",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Run a 30-Minute Readiness + Flow Audit",
-  text: "Check hybrid safety training, OEM information access, scan-tool subscriptions, parts ETA, work-in-progress and customer update timing. Choose one practical improvement this week, then validate every live job by VIN, procedure, supplier confirmation and written promise.",
+  title: "Run a 30-Minute EV + Staffing Audit",
+  text: "Check high-voltage safety, OEM information access, scan-tool subscriptions, local charging demand, electrical capacity, training time, work-in-progress and customer updates. Choose one practical improvement this week, then validate every job by VIN, procedure, supplier confirmation and written promise.",
 };
 
 const quoteOfTheDay = {
-  text: "Canadian automotive investment is becoming more electrified and more connected—but the repair file still starts with the exact vehicle in the bay.",
-  author: "Baywash shop-floor note",
-  title: "Edition No. 150 — Tuesday, November 17, 2026",
+  text: "Addressing the technician shortage will take commitment at every stage of a career.",
+  author: "Automotive Industries Association of Canada",
+  title: "Investing in the Next Generation — November 13, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1967 Chevrolet Camaro — Deep Blue, First Snow Service Call",
-  description: "Deep blue paint, bright chrome and a first-snow shop entrance give this classic Camaro its Tuesday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
+  name: "1969 Chevrolet Chevelle SS — Burgundy, First Snow Bay",
+  description: "Deep burgundy paint, bright chrome and a frosty Canadian shop entrance give this Chevelle its Wednesday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
   image: HOTROD_IMG,
 };
 
@@ -182,7 +182,7 @@ export default function Home() {
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Tuesday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Wednesday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Independent Shop Team Reviewing Hybrid Service Readiness — Baywash Daily Briefing Edition No. 150"
+              alt="Canadian Independent Shop Team Reviewing EV Readiness — Baywash Daily Briefing Edition No. 151"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 150 — Tuesday, November 17, 2026 — Demand Signal / Hybrid Ready / VIN First</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 151 — Wednesday, November 18, 2026 — EV Policy / Site Audit / People First</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Tuesday Check: Read the Signal—Then Quote the Exact Vehicle in Your Bay
+                Wednesday Check: Read the EV Signal—Then Build the Capability to Service It
               </h3>
             </div>
           </div>
