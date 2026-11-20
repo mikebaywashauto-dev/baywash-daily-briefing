@@ -10,44 +10,44 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 152;
-const BRIEFING_DATE = "November 19, 2026";
-const BRIEFING_DAY = "Thursday";
+const BRIEFING_NUMBER = 153;
+const BRIEFING_DATE = "November 20, 2026";
+const BRIEFING_DAY = "Friday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/TxDZztKSmheavEdD.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/sDfBJsTqFaePvdIM.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/jqlpylxMzDIxPOEj.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/CSvaLjhfYMhYwXaC.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/VOicRUwrxQMPhsLw.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wKTTOuInYuRWtcQB.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kTTTjDVQARYjgwAY.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hRGVDfvCgDYFmrlY.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mZxlCSzZHLHQIuqL.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KPzsBiFoePuWgCJe.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "TARIFF RELIEF / JUNE 2028 / PARTS SOURCING / VERIFY SCHEDULE",
+    tag: "COLLISION FLOW / WIP 12.3:1 / 13.3 DAYS / TOUCH TIME",
     tagColor: "#b91c1c",
-    headline: "Tariff Relief Extended: Verify the Part Before You Promise the Price",
-    summary: "Finance Canada says horizontal remission for U.S. tariffs is extended by one year to June 30, 2028. The release says relief is expanded for certain non-steel goods used in mining, quarrying, or oil and gas extraction and for goods used by public education entities. It also says relief will be removed for certain trailers on December 1, 2026, and for certain aluminum wire and extrusions and paperboard products on February 1, 2027. Detailed product schedules are to be published online.",
-    whyItMatters: "Do not turn a tariff headline into a customer quote. Ask the supplier for the exact product classification, country of origin, effective date, landed-cost treatment and written ETA. Keep a second source for high-turn parts and document any price or availability change before revising an estimate.",
-    source: "Department of Finance Canada — Tariff Relief Measures",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/11/canada-modifies-tariff-relief-measures-to-better-support-workers-and-businesses.html",
+    headline: "Repair Values Are Up—But WIP Is Telling the Real Story",
+    summary: "Collision Repair magazine’s October Pulse of the Industry report says average insurance-paid repair orders reached C$5,377, up 3.1% year over year, while customer-pay repair values increased 5.2% from September. But the industry-average work-in-progress ratio reached 12.3:1, up 5.7% against the prior three-month average and 17% since June. Average touch time stayed at 2.5 hours per day, and average cycle time reached 13.3 days; the top 10% averaged 6.1 days with 4.5 hours of touch time per repair per day.",
+    whyItMatters: "Measure vehicles in production, not only dollars sold. Track WIP by stage, parts holds, supplement waits, touch time, promised date and actual delivery. Schedule to available capacity and improve flow before adding overhead or accepting more work.",
+    source: "Collision Repair magazine — Pulse of the Industry, October 2026",
+    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "ALIGNMENT / SUSPENSION / WINTER TIRES / LOCAL JOB MIX",
+    tag: "BUDGET 2026 / PRODUCTIVITY / EQUIPMENT / DOCUMENT THE CASE",
     tagColor: "#0369a1",
-    headline: "Road-Repair Trends: Pull Your Own Postal-Code Data",
-    summary: "Aftermarket Matters highlights an analysis of service trends identifying regions where alignments, suspension work, tire repairs, single-tire replacements and wheel balancing occur most often. The accessible report is U.S.-focused, so it is not Canadian demand data or a forecast for your shop. Its value for a Canadian operator is as a prompt to compare regional road and weather conditions with the jobs actually entering the bay.",
-    whyItMatters: "Pull the last 90 days of work by postal code, service category, season and vehicle type. Compare alignment, suspension and tire-repair demand with local road, fleet and winter conditions before buying equipment, changing staffing or adding inventory; let your own repair orders set the plan.",
-    source: "Aftermarket Matters — Worst Roads Service-Trend Analysis",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/worst-roads-in-america-report-finds-southern-markets-dominate-list/",
+    headline: "Budget 2026: Document the Business Case Before You Spend",
+    summary: "Budget 2026 says Canada is strengthening supply chains and helping businesses and workers respond to trade disruptions. Its competitiveness chapter describes trade-infrastructure measures, a Productivity Mega Deduction intended to support new business investment, and a more competitive connected economy. These are federal budget measures—not a guarantee that a particular shop qualifies for a tax treatment or program.",
+    whyItMatters: "Separate three questions before buying equipment or software: what will improve throughput, what the business can document as an eligible investment, and which qualified adviser should confirm the treatment. Keep purchase records, business purpose, commissioning date and training documentation together.",
+    source: "Government of Canada — Budget 2026, Chapter 2",
+    sourceUrl: "https://budget.canada.ca/2026/report-rapport/chap2-en.html",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "HONDA ALLISTON / C$867M / ELECTRIFICATION / TRAINING",
+    tag: "HONDA ALLISTON / ELECTRIFICATION / SAFETY / TRAINING",
     tagColor: "#15803d",
     headline: "Honda Alliston: Convert the Investment Signal into Bay Capability",
     summary: "The Government of Canada says Ottawa is investing C$313 million through the Strategic Response Fund alongside Ontario support for Honda Canada’s C$867 million Alliston retooling plan. The project is described as supporting next-generation Civic and CR-V production, higher electrified-vehicle output, modernized manufacturing technologies and worker training and upskilling. The release says the project is expected to maintain more than 4,000 jobs and support up to 400,000 vehicles annually.",
@@ -60,9 +60,14 @@ const stories = [
 
 const quickHits = [
   {
+    icon: "📊",
+    text: "Canadian collision repair values strengthened in October, but WIP reached 12.3:1 and cycle time 13.3 days; improve vehicle flow before adding overhead.",
+    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
+  },
+  {
     icon: "🧾",
-    text: "Finance Canada extended horizontal remission for U.S. tariffs to June 30, 2028, but exact product schedules and exceptions matter; verify classification, origin and effective date.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/11/canada-modifies-tariff-relief-measures-to-better-support-workers-and-businesses.html",
+    text: "Budget 2026 describes supply-chain and investment measures; document equipment purpose, commissioning and training, and confirm business-specific treatment with a qualified adviser.",
+    sourceUrl: "https://budget.canada.ca/2026/report-rapport/chap2-en.html",
   },
   {
     icon: "🚗",
@@ -80,31 +85,26 @@ const quickHits = [
     sourceUrl: "https://www.aiacanada.com/news/addressing-the-technician-shortage-investing-in-the-next-generation-of-automotive-professionals/",
   },
   {
-    icon: "📈",
-    text: "Canadian Tire automotive sales rose for a 25th consecutive quarter; compare national aftermarket signals with your own bookings, parts mix and local customer demand.",
-    sourceUrl: "https://www.collisionrepairmag.com/news/article/16541599/market-movers-auto-industry-updates-november-2026",
-  },
-  {
     icon: "✅",
-    text: "Before quoting work, verify VIN, system architecture, service procedure, supplier stock, product classification, warranty and written ETA—especially when tariffs or plant news dominate the headlines.",
-    sourceUrl: "https://www.canada.ca/en/department-finance/news/2026/11/canada-modifies-tariff-relief-measures-to-better-support-workers-and-businesses.html",
+    text: "Before quoting work, verify VIN, system architecture, service procedure, supplier stock, parts hold, warranty and written ETA—then track the promised delivery date against the actual handoff.",
+    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Run a 30-Minute Parts + People Audit",
-  text: "Check tariff classification, supplier fill rate, written ETA, high-voltage safety, OEM information access, training time and work-in-progress. Choose one practical improvement this week, then validate every job by VIN, procedure, supplier confirmation and written promise.",
+  title: "Run a 30-Minute WIP + People Audit",
+  text: "Count vehicles by production stage, parts hold, supplement wait, touch time and promised delivery. Then check training time, high-voltage safety and customer updates. Choose one flow improvement and one people action this week, and measure both next Friday.",
 };
 
 const quoteOfTheDay = {
-  text: "The future of the aftermarket depends on the people who will carry it forward.",
-  author: "Automotive Industries Association of Canada",
-  title: "Investing in the Next Generation — November 13, 2026",
+  text: "The opportunity isn't simply getting more work through the door. It's getting more work out.",
+  author: "Mike Gilliland, quoted by Collision Repair magazine",
+  title: "Pulse of the Industry — October 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Ford Torino Cobra — Dark Blue, Snow-Bay Inspection",
-  description: "Dark metallic blue, long hood and a snowy Canadian shop entrance give this Torino its Thursday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
+  name: "1970 Chevrolet Chevelle SS — Forest Green, Friday Flow Check",
+  description: "Forest green paint, bright chrome and a frosty Canadian shop entrance give this Chevelle its Friday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
   image: HOTROD_IMG,
 };
 
@@ -182,7 +182,7 @@ export default function Home() {
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Thursday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Independent Shop Team Reviewing Parts and Service Readiness — Baywash Daily Briefing Edition No. 152"
+              alt="Canadian Collision Repair Team Reviewing Work in Progress — Baywash Daily Briefing Edition No. 153"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 152 — Thursday, November 19, 2026 — Verify the Part / Measure the Mix / Build the Team</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 153 — Friday, November 20, 2026 — Move the Work / Document the Spend / Build the Capability</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Thursday Check: Verify the Part, Measure the Mix, Build the Team
+                Friday Check: Move the Work, Document the Spend, Build the Capability
               </h3>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
             <div className="flex items-center gap-4 mb-6">
               <h2 className="font-['Oswald'] text-2xl font-bold uppercase tracking-tight">Ride of the Day</h2>
               <div className="flex-1 h-px bg-gray-300"></div>
-              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Plymouth GTX</span>
+              <span className="font-['Source_Code_Pro'] text-xs text-gray-500 uppercase tracking-widest">Classic Iron — '70 Chevelle SS</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="overflow-hidden aspect-[4/3]">
