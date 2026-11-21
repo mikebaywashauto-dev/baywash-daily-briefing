@@ -10,72 +10,72 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BRIEFING_NUMBER = 153;
-const BRIEFING_DATE = "November 20, 2026";
-const BRIEFING_DAY = "Friday";
+const BRIEFING_NUMBER = 154;
+const BRIEFING_DATE = "November 21, 2026";
+const BRIEFING_DAY = "Saturday";
 
 // Image URLs
-const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/wKTTOuInYuRWtcQB.jpg";
-const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/kTTTjDVQARYjgwAY.jpg";
-const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/hRGVDfvCgDYFmrlY.jpg";
-const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/mZxlCSzZHLHQIuqL.jpg";
-const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KPzsBiFoePuWgCJe.jpg";
+const HERO_BANNER = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/aenbgNVacFPmIIAf.jpg";
+const STORY1_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/GWZltmfuHotDnyFt.jpg";
+const STORY2_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/zkxrcEkpEEpUopXU.jpg";
+const STORY3_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/KsXSqHJZHQlxglQN.jpg";
+const HOTROD_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663378653340/dCTOlfcbsugBCmTC.jpg";
 
 // --- Data ---
 const stories = [
   {
     id: 1,
-    tag: "COLLISION FLOW / WIP 12.3:1 / 13.3 DAYS / TOUCH TIME",
+    tag: "FORD OAKVILLE / C$464.5M / SUPER DUTY / 100K VEHICLES",
     tagColor: "#b91c1c",
-    headline: "Repair Values Are Up—But WIP Is Telling the Real Story",
-    summary: "Collision Repair magazine’s October Pulse of the Industry report says average insurance-paid repair orders reached C$5,377, up 3.1% year over year, while customer-pay repair values increased 5.2% from September. But the industry-average work-in-progress ratio reached 12.3:1, up 5.7% against the prior three-month average and 17% since June. Average touch time stayed at 2.5 hours per day, and average cycle time reached 13.3 days; the top 10% averaged 6.1 days with 4.5 hours of touch time per repair per day.",
-    whyItMatters: "Measure vehicles in production, not only dollars sold. Track WIP by stage, parts holds, supplement waits, touch time, promised date and actual delivery. Schedule to available capacity and improve flow before adding overhead or accepting more work.",
-    source: "Collision Repair magazine — Pulse of the Industry, October 2026",
-    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
+    headline: "Ford Oakville Reopens: A Canadian Truck Signal, Not a Shortcut to a Quote",
+    summary: "Innovation, Science and Economic Development Canada announced a C$464.5 million Strategic Response Fund investment supporting Ford Canada’s nearly C$5 billion Oakville retooling project. The release says the complex will produce F-Series Super Duty trucks, add a new stamping plant, introduce multi-energy variants, protect more than 2,000 Canadian jobs and support capacity of up to 100,000 vehicles a year.",
+    whyItMatters: "Review commercial-truck capability, lift and bay capacity, diagnostic access, ADAS and calibration procedures, and supplier ETAs. Treat the investment as a medium-term fleet and parts signal—not proof that a part is available or that local repair volume will immediately change. Quote by VIN, configuration and written supplier confirmation.",
+    source: "Innovation, Science and Economic Development Canada — Ford Oakville Investment",
+    sourceUrl: "https://www.newswire.ca/news-releases/government-of-canada-announces-major-investment-in-ford-motor-company-of-canada-that-will-strengthen-auto-manufacturing-in-ontario-and-canada-885229657.html",
     image: STORY1_IMG,
   },
   {
     id: 2,
-    tag: "BUDGET 2026 / PRODUCTIVITY / EQUIPMENT / DOCUMENT THE CASE",
+    tag: "SERVICE ADVISOR / TRUST / FINDING / CONSEQUENCE / REPAIR PATH",
     tagColor: "#0369a1",
-    headline: "Budget 2026: Document the Business Case Before You Spend",
-    summary: "Budget 2026 says Canada is strengthening supply chains and helping businesses and workers respond to trade disruptions. Its competitiveness chapter describes trade-infrastructure measures, a Productivity Mega Deduction intended to support new business investment, and a more competitive connected economy. These are federal budget measures—not a guarantee that a particular shop qualifies for a tax treatment or program.",
-    whyItMatters: "Separate three questions before buying equipment or software: what will improve throughput, what the business can document as an eligible investment, and which qualified adviser should confirm the treatment. Keep purchase records, business purpose, commissioning date and training documentation together.",
-    source: "Government of Canada — Budget 2026, Chapter 2",
-    sourceUrl: "https://budget.canada.ca/2026/report-rapport/chap2-en.html",
+    headline: "The Service Advisor Is a Technical Capability",
+    summary: "Aftermarket Matters argues that the service advisor is often the face of the business: explaining what the technician found, why the repair matters, what could happen if it is postponed, and how the work fits the customer’s priorities and budget. The column frames informed, non-pressured communication as a trust-building capability, not a sales script.",
+    whyItMatters: "Standardize the customer update around four points: finding, consequence of postponement, repair path and next decision. Track declined-work reasons, callbacks and approval rates without overstating what the numbers prove. Better explanations should reduce uncertainty; they do not replace accurate diagnosis or a written scope.",
+    source: "Aftermarket Matters — Your Biggest Competitor Might Be You",
+    sourceUrl: "https://www.aftermarketmatters.com/mechanical-repair/your-biggest-competitor-might-be-you/",
     image: STORY2_IMG,
   },
   {
     id: 3,
-    tag: "HONDA ALLISTON / ELECTRIFICATION / SAFETY / TRAINING",
+    tag: "COLLISION FLOW / WIP 12.3:1 / 13.3 DAYS / WEEKEND REVIEW",
     tagColor: "#15803d",
-    headline: "Honda Alliston: Convert the Investment Signal into Bay Capability",
-    summary: "The Government of Canada says Ottawa is investing C$313 million through the Strategic Response Fund alongside Ontario support for Honda Canada’s C$867 million Alliston retooling plan. The project is described as supporting next-generation Civic and CR-V production, higher electrified-vehicle output, modernized manufacturing technologies and worker training and upskilling. The release says the project is expected to maintain more than 4,000 jobs and support up to 400,000 vehicles annually.",
-    whyItMatters: "Turn the manufacturing signal into a capability checklist: high-voltage safety, diagnostic access, OEM service information, battery isolation, calibration and training time. The investment is not an immediate repair-volume forecast; confirm VIN, model year, system architecture and procedures for every job.",
-    source: "Government of Canada — Honda Alliston Investment",
-    sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/canada-invests-313-million-in-honda-north-america-to-advance-next-generation-vehicle-manufacturing-in-ontario.html",
+    headline: "Your Weekend Review: Move the Vehicle, Not Just the Paper",
+    summary: "Collision Repair magazine’s October Pulse of the Industry report says average insurance-paid repair orders reached C$5,377, up 3.1% year over year, while the Canadian industry-average work-in-progress ratio reached 12.3:1 and average cycle time 13.3 days. Average touch time was 2.5 hours per day; the top 10% averaged 6.1 days and 4.5 hours of touch time per repair per day.",
+    whyItMatters: "Use the benchmark as a question, not a universal target. Review vehicles by stage, parts hold, supplement delay, touch time, promised date and delivery. Identify the one bottleneck keeping work from moving out before adding overhead or accepting more volume.",
+    source: "Collision Repair magazine — Pulse of the Industry, October 2026",
+    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
     image: STORY3_IMG,
   }
 ];
 
 const quickHits = [
   {
+    icon: "🏭",
+    text: "Ford’s Oakville project includes a C$464.5 million federal investment, a new stamping plant, Super Duty production, more than 2,000 protected jobs and capacity of up to 100,000 vehicles annually.",
+    sourceUrl: "https://www.newswire.ca/news-releases/government-of-canada-announces-major-investment-in-ford-motor-company-of-canada-that-will-strengthen-auto-manufacturing-in-ontario-and-canada-885229657.html",
+  },
+  {
+    icon: "🗣️",
+    text: "Use a four-part service-advisor update: finding, consequence of postponement, repair path and next decision. Track understanding and callbacks, not pressure.",
+    sourceUrl: "https://www.aftermarketmatters.com/mechanical-repair/your-biggest-competitor-might-be-you/",
+  },
+  {
     icon: "📊",
-    text: "Canadian collision repair values strengthened in October, but WIP reached 12.3:1 and cycle time 13.3 days; improve vehicle flow before adding overhead.",
+    text: "Canadian collision benchmarks show WIP at 12.3:1 and cycle time at 13.3 days; review the bottleneck that keeps vehicles from moving out.",
     sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
   },
   {
-    icon: "🧾",
-    text: "Budget 2026 describes supply-chain and investment measures; document equipment purpose, commissioning and training, and confirm business-specific treatment with a qualified adviser.",
-    sourceUrl: "https://budget.canada.ca/2026/report-rapport/chap2-en.html",
-  },
-  {
     icon: "🚗",
-    text: "Aftermarket Matters highlights regional differences in alignment, suspension and tire work; use your own 90-day postal-code job mix instead of importing a U.S. market conclusion.",
-    sourceUrl: "https://www.aftermarketmatters.com/national-news/worst-roads-in-america-report-finds-southern-markets-dominate-list/",
-  },
-  {
-    icon: "🏭",
     text: "Honda’s C$867 million Alliston retooling plan, backed by a C$313 million federal investment and Ontario support, includes electrified-vehicle production and worker upskilling.",
     sourceUrl: "https://www.canada.ca/en/innovation-science-economic-development/news/2026/11/canada-invests-313-million-in-honda-north-america-to-advance-next-generation-vehicle-manufacturing-in-ontario.html",
   },
@@ -86,25 +86,25 @@ const quickHits = [
   },
   {
     icon: "✅",
-    text: "Before quoting work, verify VIN, system architecture, service procedure, supplier stock, parts hold, warranty and written ETA—then track the promised delivery date against the actual handoff.",
-    sourceUrl: "https://www.collisionrepairmag.com/pulse-of-the-industry/article/16425545/autohouse-technologies-inc-exclusive-report-pulse-of-the-industry-october-2026",
+    text: "Before quoting truck or collision work, verify VIN, configuration, procedure, calibration, supplier stock, parts hold, warranty and written ETA—then track the promised date against handoff.",
+    sourceUrl: "https://www.newswire.ca/news-releases/government-of-canada-announces-major-investment-in-ford-motor-company-of-canada-that-will-strengthen-auto-manufacturing-in-ontario-and-canada-885229657.html",
   },
 ];
 
 const tipOfTheDay = {
-  title: "Run a 30-Minute WIP + People Audit",
-  text: "Count vehicles by production stage, parts hold, supplement wait, touch time and promised delivery. Then check training time, high-voltage safety and customer updates. Choose one flow improvement and one people action this week, and measure both next Friday.",
+  title: "Run a 30-Minute Truck + Trust Audit",
+  text: "Check heavy-duty bay capacity, calibration access, supplier ETA and VIN/configuration discipline. Then review one service-advisor conversation for finding, consequence, repair path and next decision. Choose one capability action and one trust action, and measure both next Saturday.",
 };
 
 const quoteOfTheDay = {
-  text: "The opportunity isn't simply getting more work through the door. It's getting more work out.",
-  author: "Mike Gilliland, quoted by Collision Repair magazine",
-  title: "Pulse of the Industry — October 2026",
+  text: "They explain what the technician found, why the repair matters, what could happen if it's postponed, and how it fits into the customer's priorities and budget.",
+  author: "Mike DelaCruz, Aftermarket Matters",
+  title: "Your Biggest Competitor Might Be You — November 16, 2026",
 };
 
 const rideOfTheDay = {
-  name: "1970 Chevrolet Chevelle SS — Forest Green, Friday Flow Check",
-  description: "Forest green paint, bright chrome and a frosty Canadian shop entrance give this Chevelle its Friday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
+  name: "1970 Chevrolet Chevelle SS — Forest Green, Saturday Bay Check",
+  description: "Forest green paint, bright chrome and a frosty Canadian shop entrance give this Chevelle its Saturday presence. The lesson carries into every modern bay: respect the vehicle’s exact configuration, document the repair path and confirm the part before promising the customer a finish date.",
   image: HOTROD_IMG,
 };
 
@@ -178,11 +178,11 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-2">
               <div className="flex gap-2 flex-wrap justify-end">
-                {["Coverage Check", "VIN First", "Local ETA", "'70 GTX"].map((tag) => (
+                {["Coverage Check", "VIN First", "Local ETA", "'70 SS"].map((tag) => (
                   <span key={tag} className="bg-[#1a1a1a] text-white px-2 py-1 text-xs font-bold tracking-widest uppercase">{tag}</span>
                 ))}
               </div>
-              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Friday Edition</p>
+              <p className="font-['Source_Code_Pro'] text-xs text-gray-400 uppercase tracking-widest">For Canadian Shop Owners — Saturday Edition</p>
             </div>
           </div>
         </header>
@@ -192,14 +192,14 @@ export default function Home() {
           <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden">
             <img
               src={HERO_BANNER}
-              alt="Canadian Collision Repair Team Reviewing Work in Progress — Baywash Daily Briefing Edition No. 153"
+              alt="Canadian Heavy-Duty Shop Team Reviewing a Truck Inspection — Baywash Daily Briefing Edition No. 154"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8">
-              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 153 — Friday, November 20, 2026 — Move the Work / Document the Spend / Build the Capability</span>
+              <span className="bg-[#b91c1c] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-3 inline-block">Edition No. 154 — Saturday, November 21, 2026 — Read the Signal / Earn the Trust / Move the Vehicle</span>
               <h3 className="font-['Oswald'] text-white text-3xl md:text-4xl font-bold leading-tight max-w-3xl uppercase">
-                Friday Check: Move the Work, Document the Spend, Build the Capability
+                Saturday Check: Read the Signal, Earn the Trust, Move the Vehicle
               </h3>
             </div>
           </div>
